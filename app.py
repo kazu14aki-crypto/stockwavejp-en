@@ -1572,18 +1572,9 @@ if pidx == PAGE_THEME_LIST:
     with st.spinner("データを取得中...（初回は時間がかかります）"):
         theme_results, theme_details, _cache_time = fetch_all_theme_data(period, theme_keys)
 
-    # USD/JPYレート取得（未定義対策）
-    try:
-        _usd_rate = fetch_usdjpy()
-        _usd_str = f"💱 USD/JPY: {_usd_rate:.1f}" if _usd_rate else ""
-    except Exception:
-        _usd_str = ""
 
     # データ取得後に現在時刻・更新時刻を表示（_cache_time定義後）
-    _caption_parts = [f"🕐 {now} JST", f"📦 Updated: {_cache_time}", f"{len(themes)} themes · ~{len(all_stocks)} stocks"]
-    if _usd_str:
-        _caption_parts.append(_usd_str)
-    st.caption("  |  ".join(_caption_parts))
+    st.caption(f"🕐 {now} JST  |  📦 Updated: {_cache_time}  |  {len(themes)} themes · ~{len(all_stocks)} stocks  |  💱 USD/JPY: {_usd_rate:.1f}")
 
     # 表示件数に応じて上位・下位を切り出し
     n = display_count if display_count < 99 else len(theme_results)
@@ -1697,12 +1688,12 @@ elif pidx == PAGE_MOMENTUM:
         cur   = now_map.get(theme_n, 0)
         dw    = round(cur - w1_map.get(theme_n, cur), 2)
         dm    = round(cur - m1_map.get(theme_n, cur), 2)
-        if   dw > 3  and dm > 5:  state = "🔥加速"
-        elif dw < -3 and dm < -5: state = "❄️失速"
-        elif dw > 2:               state = "↗転換↑"
-        elif dw < -2:              state = "↘転換↓"
-        else:                      state = "→横ばい"
-        momentum_data.append({"Theme": theme_n, "Return": cur, "先週比": dw, "先月比": dm, "状態": state})
+        if   dw > 3  and dm > 5:  state = "🔥Accel"
+        elif dw < -3 and dm < -5: state = "❄️Fade"
+        elif dw > 2:               state = "↗Rising"
+        elif dw < -2:              state = "↘Falling"
+        else:                      state = "→Flat"
+        momentum_data.append({"Theme": theme_n, "Return": cur, "WeekChg": dw, "MonthChg": dm, "State": state})
 
     # 並び替え選択
     sort_key = st.selectbox("Sort by", ["Return (desc)", "Week change (desc)", "Month change (desc)"],
@@ -1710,31 +1701,31 @@ elif pidx == PAGE_MOMENTUM:
     if sort_key == "Return (desc)":
         momentum_data.sort(key=lambda x: x["Return"], reverse=True)
     elif sort_key == "Week change (desc)":
-        momentum_data.sort(key=lambda x: x["先週比"], reverse=True)
+        momentum_data.sort(key=lambda x: x["WeekChg"], reverse=True)
     else:
-        momentum_data.sort(key=lambda x: x["先月比"], reverse=True)
+        momentum_data.sort(key=lambda x: x["MonthChg"], reverse=True)
 
     # フィルター
     filter_state = st.multiselect("State filter (empty=all)",
-                                   ["🔥加速","↗転換↑","→横ばい","↘転換↓","❄️失速"])
+                                   ["🔥Accel", "↗Rising", "→Flat", "↘Falling", "❄️Fade"])
     if filter_state:
-        momentum_data = [d for d in momentum_data if d["状態"] in filter_state]
+        momentum_data = [d for d in momentum_data if d["State"] in filter_state]
 
     # ヘッダー行
     hcol1, hcol2, hcol3, hcol4, hcol5 = st.columns([3, 2, 2, 2, 2])
-    hcol1.markdown(f"<small style='color:#666'>{"Theme name"}</small>", unsafe_allow_html=True)
-    hcol2.markdown(f"<small style='color:#666'>{"Return(%)"}</small>", unsafe_allow_html=True)
-    hcol3.markdown(f"<small style='color:#666'>{"先週比(pt)"}</small>", unsafe_allow_html=True)
-    hcol4.markdown(f"<small style='color:#666'>{"先月比(pt)"}</small>", unsafe_allow_html=True)
-    hcol5.markdown(f"<small style='color:#666'>{"状態"}</small>", unsafe_allow_html=True)
+    hcol1.markdown("<small style='color:#666'>Theme</small>", unsafe_allow_html=True)
+    hcol2.markdown("<small style='color:#666'>Return(%)</small>", unsafe_allow_html=True)
+    hcol3.markdown("<small style='color:#666'>vs Week(pt)</small>", unsafe_allow_html=True)
+    hcol4.markdown("<small style='color:#666'>vs Month(pt)</small>", unsafe_allow_html=True)
+    hcol5.markdown("<small style='color:#666'>State</small>", unsafe_allow_html=True)
     st.markdown("<hr style='margin:2px 0 6px;border-color:#2a2a3a'>", unsafe_allow_html=True)
 
     # 表示
     for i, d in enumerate(momentum_data):
         cur = d["Return"]
-        dw  = d["先週比"]
-        dm  = d["先月比"]
-        state = d["状態"]
+        dw  = d["WeekChg"]
+        dm  = d["MonthChg"]
+        state = d["State"]
         c_color = "🔴" if cur >= 0 else "🟢"
         dw_icon = "▲" if dw > 1 else "▼" if dw < -1 else "→"
         dm_icon = "▲" if dm > 1 else "▼" if dm < -1 else "→"
@@ -1742,7 +1733,7 @@ elif pidx == PAGE_MOMENTUM:
         dw_sign = "+" if dw >= 0 else ""
         dm_sign = "+" if dm >= 0 else ""
         col1, col2, col3, col4, col5 = st.columns([3, 2, 2, 2, 2])
-        col1.write(f"**{i+1}. {d['テーマ']}**")
+        col1.write(f"**{i+1}. {d['Theme']}**")
         col2.write(f"{c_color} {sign}{cur}%")
         col3.write(f"{dw_icon} {dw_sign}{dw}pt")
         col4.write(f"{dm_icon} {dm_sign}{dm}pt")
