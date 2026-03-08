@@ -1569,12 +1569,21 @@ if pidx == PAGE_THEME_LIST:
         st.caption("All Themes" if display_count >= 99 else "Top/Bottom {} themes".format(display_count))
 
     theme_keys = tuple(themes.keys())
-    with st.spinner("データを取得中...（初回は時間がかかります）"):
+    with st.spinner("Loading data..."):
         theme_results, theme_details, _cache_time = fetch_all_theme_data(period, theme_keys)
 
+    # USD/JPYレート取得（未定義対策）
+    try:
+        _usd_rate = fetch_usdjpy()
+        _usd_str = f"💱 USD/JPY: {_usd_rate:.1f}" if _usd_rate else ""
+    except Exception:
+        _usd_str = ""
 
-    # データ取得後に現在時刻・更新時刻を表示（_cache_time定義後）
-    st.caption(f"🕐 {now} JST  |  📦 Updated: {_cache_time}  |  {len(themes)} themes · ~{len(all_stocks)} stocks  |  💱 USD/JPY: {_usd_rate:.1f}")
+    # データ取得後に現在時刻・更新時刻を表示
+    _caption_parts = [f"🕐 {now} JST", f"📦 Updated: {_cache_time}", f"{len(themes)} themes · ~{len(all_stocks)} stocks"]
+    if _usd_str:
+        _caption_parts.append(_usd_str)
+    st.caption("  |  ".join(_caption_parts))
 
     # 表示件数に応じて上位・下位を切り出し
     n = display_count if display_count < 99 else len(theme_results)
