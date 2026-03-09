@@ -1320,13 +1320,13 @@ def fetch_all_theme_data(period: str, theme_keys: tuple) -> tuple:
             vol_chg = round((total_vol-prev_total_vol)/prev_total_vol*100,1) if prev_total_vol>0 else 0
             total_tv = sum(d["trade_value"] for d in details.values())
             theme_results.append({
-                "Theme": theme_name,
+                "Theme": te(theme_name),
                 "Avg Return (%)": avg,
                 "Volume Change (%)": vol_chg,
                 "合計出来高": int(total_vol),
                 "合計売買代金": total_tv,
             })
-            theme_details[theme_name] = details
+            theme_details[te(theme_name)] = details
 
     theme_results.sort(key=lambda x: x["Avg Return (%)"], reverse=True)
     return theme_results, theme_details, _cache_created
