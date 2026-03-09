@@ -5,6 +5,9 @@ import numpy as np
 import plotly.graph_objects as go
 from datetime import datetime
 from concurrent.futures import ThreadPoolExecutor, as_completed
+import threading
+import json
+import datetime as _dt_log
 
 # ファビコン（ロゴPNG）を読み込む
 import os as _os
@@ -727,6 +730,74 @@ NISA_THEME = {
 def get_code(ticker: str) -> str:
     """8035.T → 8035"""
     return ticker.split(".")[0] if "." in ticker else ticker
+
+# ══════════════════════════════════════════════════════════
+# Google Sheets アナリティクス連携
+# ══════════════════════════════════════════════════════════
+def _get_gsheets_client():
+    """Google Sheets クライアントを取得（Streamlit Secrets経由）"""
+    try:
+        import gspread
+        from google.oauth2.service_account import Credentials
+        creds_dict = dict(st.secrets["gcp_service_account"])
+        scopes = [
+            "https://www.googleapis.com/auth/spreadsheets",
+            "https://www.googleapis.com/auth/drive",
+        ]
+        creds = Credentials.from_service_account_info(creds_dict, scopes=scopes)
+        return gspread.authorize(creds)
+    except Exception:
+        return None
+
+def _get_sheet(client, sheet_name: str):
+    """スプレッドシートのワークシートを取得・なければ作成"""
+    try:
+        spreadsheet_id = st.secrets.get("analytics_sheet_id", "")
+        if not spreadsheet_id:
+            return None
+        ss = client.open_by_key(spreadsheet_id)
+        try:
+            return ss.worksheet(sheet_name)
+        except Exception:
+            ws = ss.add_worksheet(title=sheet_name, rows=10000, cols=10)
+            # ヘッダー行を設定
+            headers = {
+                "fav_log":    ["timestamp_jst", "theme", "action", "session_id"],
+                "view_log":   ["timestamp_jst", "theme", "session_id"],
+                "click_log":  ["timestamp_jst", "theme", "session_id"],
+            }
+            if sheet_name in headers:
+                ws.append_row(headers[sheet_name])
+            return ws
+    except Exception:
+        return None
+
+def _log_to_sheets(sheet_name: str, row: list):
+    """Google Sheetsへの非同期書き込み（UIをブロックしない）"""
+    def _write():
+        try:
+            client = _get_gsheets_client()
+            if client is None:
+                return
+            ws = _get_sheet(client, sheet_name)
+            if ws:
+                ws.append_row(row)
+        except Exception:
+            pass  # ログ失敗はサイレントに無視
+    threading.Thread(target=_write, daemon=True).start()
+
+def _now_jst_str() -> str:
+    """現在時刻（JST）を文字列で返す"""
+    return (_dt_log.datetime.utcnow() + _dt_log.timedelta(hours=9)).strftime("%Y-%m-%d %H:%M:%S")
+
+def _session_id() -> str:
+    """セッションIDを取得（プライバシー配慮・ハッシュ化）"""
+    if "analytics_session_id" not in st.session_state:
+        import hashlib, random
+        st.session_state["analytics_session_id"] = hashlib.md5(
+            str(random.random()).encode()
+        ).hexdigest()[:8]
+    return st.session_state["analytics_session_id"]
 
 # ── ADRバッジHTML ──
 def adr_badge(ticker: str) -> str:
@@ -1788,7 +1859,13 @@ if pidx == PAGE_THEME_LIST:
         }
         table_data.append(row)
     df_table = pd.DataFrame(table_data).set_index("Rank")
+
+    # テーマ行ごとにクリックログ付き「→ Detail」ボタンを表示
+    _hcols = st.columns([1, 4, 2, 2, 1])
+    for _lbl, _w in zip(["Rank","Theme","Return","Vol Chg",""], [1,4,2,2,1]):
+        pass  # ヘッダーはDataFrameに任せる
     st.dataframe(df_table, use_container_width=True)
+
     st.download_button("📥 Download CSV", df_table.to_csv(encoding="utf-8-sig"),
                        f"theme_list_{now}.csv", "text/csv")
 
@@ -2586,6 +2663,7 @@ elif pidx == PAGE_FAVORITES:
             with col1: st.write(f"{c} **{r["Stock"]}**  {r['change']}%")
             with col2:
                 if st.button("⭐ Remove", key=f"fd_{list(r.values())[0]}"):
+                    _log_to_sheets("fav_log", [_now_jst_str(), r["Stock"], "remove", _session_id()])
                     del st.session_state["favorites"][r["Stock"]]; st.rerun()
 
 # =====================
@@ -2606,6 +2684,11 @@ elif pidx == PAGE_THEME_DETAIL:
     theme_display_list = [r["Theme"] for r in td_results]
     selected_theme_disp = st.selectbox("Select theme", theme_display_list, key="detail_theme_sel")
     selected_theme = _en2jp_td.get(selected_theme_disp, selected_theme_disp)
+    # 前回と違うテーマが選択されたらview_logに記録
+    _prev_theme_key = "analytics_last_theme_detail"
+    if st.session_state.get(_prev_theme_key) != selected_theme_disp:
+        st.session_state[_prev_theme_key] = selected_theme_disp
+        _log_to_sheets("view_log", [_now_jst_str(), selected_theme_disp, _session_id()])
 
     result = next((r for r in td_results if r["Theme"] == selected_theme), None)
     stocks_d = td_details.get(selected_theme, {})
@@ -2654,6 +2737,30 @@ elif pidx == PAGE_THEME_DETAIL:
             df_detail = pd.DataFrame(detail_rows).set_index("Stock")
             st.dataframe(df_detail, use_container_width=True)
             st.caption("💡 ADR = Tradable on US market  |  EN-IR✓ = English IR disclosure available")
+
+            # ── お気に入り追加ボタン（銘柄ごと）──
+            st.markdown("**⭐ Add to Favorites**")
+            _fav_cols = st.columns(min(4, len(stocks_d)))
+            for _ci, (sname, d) in enumerate(stocks_d.items()):
+                _tkr = d.get("ticker", "")
+                _en_name = se(sname)
+                _code = get_code(_tkr)
+                _already = _en_name in st.session_state["favorites"]
+                _col = _fav_cols[_ci % len(_fav_cols)]
+                if _already:
+                    _col.button(f"✅ {_en_name} ({_code})", key=f"fav_td_{_tkr}", disabled=True, use_container_width=True)
+                else:
+                    if _col.button(f"☆ {_en_name} ({_code})", key=f"fav_td_{_tkr}", use_container_width=True):
+                        st.session_state["favorites"][_en_name] = _tkr
+                        # お気に入り追加ログ記録（テーマ名も一緒に記録）
+                        _log_to_sheets("fav_log", [
+                            _now_jst_str(),
+                            selected_theme_disp,  # どのテーマから追加されたか
+                            "add",
+                            _session_id(),
+                        ])
+                        st.success(f"Added {_en_name} to Favorites!")
+                        st.rerun()
 
 # =====================
 # お知らせ
