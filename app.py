@@ -2611,6 +2611,7 @@ elif pidx == PAGE_MARKET_RANK:
 # =====================
 elif pidx == PAGE_FAVORITES:
     st.subheader("⭐ Favorite Stocks")
+    st.caption("⚠️ Favorites are reset when you close your browser. Save functionality coming soon — please wait a little longer.")
     period = period_buttons(key_prefix="fav")
     if len(st.session_state["favorites"]) == 0:
         st.info("Go to Theme List and press the ☆ button to add stocks.")
@@ -3099,7 +3100,7 @@ elif pidx == PAGE_HOWTO:
         ("🌍 Macro", "Compare Nikkei 225, USD/JPY, S&P 500, and TOPIX on a single chart."),
         ("📋 Market Ranking", "Return rankings by market segment: Nikkei225, Prime, Standard, and Growth."),
         ("🔍 Theme Detail", "Select a theme to view detailed data for each constituent stock (RSI, Sharpe ratio, 52-week high/low)."),
-        ("⭐ Favorites", "Bookmark stocks of interest and view them in a single list."),
+        ("⭐ Favorites", "Bookmark stocks of interest and view them in a single list. Note: Favorites are reset when you close your browser. Save functionality is coming soon."),
         ("🎨 Custom Theme", "Create your own theme and stock list for tracking."),
     ]
     for title, desc in _guide:
