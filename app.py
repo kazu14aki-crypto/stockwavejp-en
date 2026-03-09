@@ -322,6 +322,8 @@ THEME_EN = {
     "TOPIX100（Large70：時価総額上位大型株）": "TOPIX100 (Large70: Large Cap)",
     "スタンダード注目銘柄": "Standard Market Picks",
     "グロース注目銘柄": "Growth Market Picks",
+    "バフェット保有・五大商社": "Buffett Holdings — 5 Trading Giants",
+    "NISA成長投資枠・人気銘柄": "NISA Growth Picks",
 }
 
 # ── 銘柄名英語辞書 ──
@@ -631,6 +633,114 @@ def te_rev(en_name):
 
 def te(name): return THEME_EN.get(name, name)
 def se(name): return STOCK_EN.get(name, name)
+
+# ── ADRティッカー辞書（米国市場で購入可能な銘柄） ──
+# Key: 東証ティッカー(例 "8035.T"), Value: NYSE/NASDAQティッカー
+ADR_TICKERS = {
+    "8035.T": "TOELY",   # Tokyo Electron
+    "6857.T": "ATEYY",   # Advantest
+    "6723.T": "RNECY",   # Renesas
+    "6920.T": "LSRCY",   # Lasertec
+    "6501.T": "HTHIY",   # Hitachi
+    "6758.T": "SONY",    # Sony Group (NYSE full listing)
+    "7974.T": "NTDOY",   # Nintendo
+    "7203.T": "TM",      # Toyota (NYSE full listing)
+    "7267.T": "HMC",     # Honda (NYSE full listing)
+    "6954.T": "FANUY",   # Fanuc
+    "9984.T": "SFTBY",   # SoftBank Group
+    "4502.T": "TAK",     # Takeda (NYSE full listing)
+    "4503.T": "ALPMY",   # Astellas
+    "4568.T": "DSNKY",   # Daiichi Sankyo
+    "4519.T": "CGUSY",   # Chugai
+    "4523.T": "ESALY",   # Eisai
+    "8306.T": "MUFG",    # MUFG (NYSE full listing)
+    "8316.T": "SMFG",    # SMFG (NYSE full listing)
+    "8411.T": "MFG",     # Mizuho (NYSE full listing)
+    "8766.T": "TKOMY",   # Tokio Marine
+    "9432.T": "NTTYY",   # NTT
+    "9433.T": "KDDIY",   # KDDI
+    "9984.T": "SFTBY",   # SoftBank
+    "6367.T": "DKILY",   # Daikin
+    "6301.T": "KMTUY",   # Komatsu
+    "5401.T": "NPSCY",   # Nippon Steel
+    "4063.T": "SHECY",   # Shin-Etsu Chemical
+    "3382.T": "STBFY",   # Seven & i
+    "8267.T": "AONNY",   # Aeon
+    "2802.T": "AJINY",   # Ajinomoto
+    "4901.T": "FUJIY",   # Fujifilm
+    "6971.T": "KYCOY",   # Kyocera
+    "6752.T": "PCRFY",   # Panasonic
+    "6503.T": "MIELY",   # Mitsubishi Electric
+    "7011.T": "MHVYF",   # Mitsubishi Heavy
+    "9020.T": "EJPRY",   # JR East
+    "9022.T": "JTCRY",   # JR Central
+    "9101.T": "NPNYY",   # NYK Line
+    "8601.T": "NRILY",   # Nomura HD
+    "1925.T": "DWAHY",   # Daiwa House
+    "1928.T": "SKHSY",   # Sekisui House
+}
+
+# ── 英文IR開示企業（English IR available） ──
+# 主要企業の英語IR・英文決算開示有無
+ENGLISH_IR = {
+    # 確実に英文開示あり（グローバル上場・海外投資家向け）
+    "8035.T","6857.T","6723.T","6501.T","6758.T","7974.T","7203.T","7267.T",
+    "6954.T","9984.T","4502.T","4503.T","4568.T","4519.T","4523.T",
+    "8306.T","8316.T","8411.T","8766.T","9432.T","9433.T","6367.T",
+    "6301.T","5401.T","4063.T","3382.T","8267.T","2802.T","4901.T",
+    "6971.T","6752.T","6503.T","7011.T","4452.T","6326.T","6273.T",
+    "5713.T","4005.T","3407.T","4188.T","7751.T","6645.T","9020.T",
+    "8601.T","1925.T","1928.T","9101.T","5020.T","5108.T","5201.T",
+    "2503.T","2502.T","4507.T","4528.T","6920.T","6526.T","3436.T",
+    "6146.T","7012.T","7013.T","5802.T","6988.T","6479.T","6471.T",
+    "4578.T","8031.T","8058.T","8053.T","9022.T","6861.T","7832.T",
+}
+
+# ── バフェット保有・注目銘柄テーマ ──
+BUFFETT_THEME = {
+    "五大商社 (Buffett Holdings)": {
+        "三菱商事": "8058.T",
+        "三井物産": "8031.T",
+        "伊藤忠商事": "8001.T",
+        "住友商事": "8053.T",
+        "丸紅": "8002.T",
+    }
+}
+
+# ── NISA成長投資枠 人気テーマ ──
+NISA_THEME = {
+    "NISA Growth Fund Picks": {
+        "トヨタ自動車": "7203.T",
+        "ソニーグループ": "6758.T",
+        "任天堂": "7974.T",
+        "三菱UFJ FG": "8306.T",
+        "東京エレクトロン": "8035.T",
+        "信越化学工業": "4063.T",
+        "キーエンス": "6861.T",
+        "ダイキン工業": "6367.T",
+        "リクルートHD": "6098.T",
+        "ファーストリテイリング": "9983.T",
+    }
+}
+
+# ── ティッカーから証券コード4桁を取得 ──
+def get_code(ticker: str) -> str:
+    """8035.T → 8035"""
+    return ticker.split(".")[0] if "." in ticker else ticker
+
+# ── ADRバッジHTML ──
+def adr_badge(ticker: str) -> str:
+    adr = ADR_TICKERS.get(ticker, "")
+    if adr:
+        return f"<span title='Tradable on US market as {adr}' style='background:#1a4a8a;color:#7ab8ff;font-size:10px;padding:1px 5px;border-radius:3px;margin-left:4px;font-weight:700;'>ADR:{adr}</span>"
+    return ""
+
+# ── 英文開示バッジHTML ──
+def ir_badge(ticker: str) -> str:
+    if ticker in ENGLISH_IR:
+        return "<span title='English IR disclosure available' style='background:#1a4a2a;color:#6ddc8a;font-size:10px;padding:1px 5px;border-radius:3px;margin-left:4px;font-weight:700;'>EN-IR</span>"
+    return ""
+
 
 
 DEFAULT_THEMES = {
@@ -955,6 +1065,18 @@ MARKET_SEGMENTS = {
         "メドレー":"4480.T","ケアネット":"2150.T","レノバ":"9519.T",
         "ACSL":"6232.T","Appier Group":"4180.T","弁護士ドットコム":"6027.T",
         "freee":"4478.T","マネーフォワード":"3994.T",
+    },
+    # ── Buffett Holdings ──
+    "バフェット保有・五大商社": {
+        "三菱商事":"8058.T","三井物産":"8031.T","伊藤忠商事":"8001.T",
+        "住友商事":"8053.T","丸紅":"8002.T",
+    },
+    # ── NISA人気テーマ ──
+    "NISA成長投資枠・人気銘柄": {
+        "トヨタ自動車":"7203.T","ソニーグループ":"6758.T","任天堂":"7974.T",
+        "三菱UFJ FG":"8306.T","東京エレクトロン":"8035.T",
+        "信越化学工業":"4063.T","キーエンス":"6861.T","ダイキン工業":"6367.T",
+        "リクルートHD":"6098.T","ファーストリテイリング":"9983.T",
     },
 }
 
@@ -2314,17 +2436,27 @@ elif pidx == PAGE_MARKET_RANK:
                         rv = target_df["Volume"].mean()
                         trade_val = int(rv * price)
                         seg_results.append({
-                            "Stock": se(stock_name), "Price": f"¥{price:,}",
+                            "Stock": se(stock_name),
+                            "Code": get_code(ticker),
+                            "Price": f"¥{price:,}",
                             "Day Change": f"🔴 +{day_c}%" if day_c and day_c>0 else f"🟢 {day_c}%" if day_c else "N/A",
                             "Return": change,
                             "Trade Value": format_large_number(trade_val),
                             "ticker": ticker,
+                            "has_adr": ticker in ADR_TICKERS,
+                            "has_en_ir": ticker in ENGLISH_IR,
                         })
                     except: pass
 
             if seg_results:
                 seg_results.sort(key=lambda x: x["Return"], reverse=True)
                 n_seg = len(seg_results)
+
+                # USD/JPYレート取得
+                try:
+                    _seg_usd_rate = fetch_usdjpy()
+                except Exception:
+                    _seg_usd_rate = 150.0
 
                 # 上位5件グラフ
                 top5 = seg_results[:5]
@@ -2333,7 +2465,7 @@ elif pidx == PAGE_MARKET_RANK:
                 col_t, col_b = st.columns(2)
                 with col_t:
                     st.markdown("**🔴 Top 5 Stocks**")
-                    t_labels = [f"#{i+1} {r['Stock']}" for i, r in enumerate(top5)]
+                    t_labels = [f"#{i+1} {r['Stock']} ({r['Code']})" for i, r in enumerate(top5)]
                     t_values = [r["Return"] for r in top5]
                     t_colors = ["#ff4b4b" if v>=0 else "#39d353" for v in t_values]
                     st.plotly_chart(make_bar_chart(t_labels, t_values, t_colors),
@@ -2341,29 +2473,56 @@ elif pidx == PAGE_MARKET_RANK:
                 with col_b:
                     if bot5:
                         st.markdown("**🟢 Bottom 5 Stocks**")
-                        b_labels = [f"#{n_seg-4+i+1} {r['Stock']}" for i, r in enumerate(bot5)]
+                        b_labels = [f"#{n_seg-4+i+1} {r['Stock']} ({r['Code']})" for i, r in enumerate(bot5)]
                         b_values = [r["Return"] for r in bot5]
                         b_colors = ["#ff4b4b" if v>=0 else "#39d353" for v in b_values]
                         st.plotly_chart(make_bar_chart(b_labels, b_values, b_colors),
                                         use_container_width=True, config=PLOT_CONFIG)
 
-                # 上位5件テーブル
+                # Top5テーブル（証券コード・ドル建て・ADR・英文IR付き）
+                def _price_jpy(r):
+                    try: return int(r["Price"].replace("¥","").replace(",",""))
+                    except: return None
+
+                def _usd_price(r):
+                    p = _price_jpy(r)
+                    if p and _seg_usd_rate:
+                        return f"${p/_seg_usd_rate:,.2f}"
+                    return "N/A"
+
+                def _badges(r):
+                    parts = []
+                    if r.get("has_adr"):
+                        adr_t = ADR_TICKERS.get(r["ticker"],"")
+                        parts.append(f"ADR:{adr_t}")
+                    if r.get("has_en_ir"):
+                        parts.append("EN-IR✓")
+                    return " | ".join(parts) if parts else "—"
+
                 df_top5 = pd.DataFrame([{
-                    "Stock": r["Stock"], "Price": r["Price"],
-                    "Day Change": r["Day Change"],
+                    "Stock": f"{r['Stock']} ({r['Code']})",
+                    "Price (JPY)": r["Price"],
+                    "Price (USD)": _usd_price(r),
+                    "Day Chg": r["Day Change"],
                     "Return": f"🔴 +{r['Return']}%" if r["Return"]>0 else f"🟢 {r['Return']}%",
                     "Trade Value": r["Trade Value"],
+                    "Global Info": _badges(r),
                 } for r in top5]).set_index("Stock")
                 st.dataframe(df_top5, use_container_width=True)
+
+                st.caption("💡 ADR = Tradable on US market  |  EN-IR✓ = English IR disclosure available")
 
                 # 全件展開
                 with st.expander("Show all {} stocks".format(n_seg)):
                     df_all_seg = pd.DataFrame([{
                         "Rank": "#{}".format(i+1),
-                        "Stock": r["Stock"], "Price": r["Price"],
-                        "Day Change": r["Day Change"],
+                        "Stock": f"{r['Stock']} ({r['Code']})",
+                        "Price (JPY)": r["Price"],
+                        "Price (USD)": _usd_price(r),
+                        "Day Chg": r["Day Change"],
                         "Return": f"🔴 +{r['Return']}%" if r["Return"]>0 else f"🟢 {r['Return']}%",
-                            "Trade Value": r["Trade Value"],
+                        "Trade Value": r["Trade Value"],
+                        "Global Info": _badges(r),
                     } for i, r in enumerate(seg_results)]).set_index("Rank")
                     st.dataframe(df_all_seg, use_container_width=True)
 
@@ -2457,7 +2616,44 @@ elif pidx == PAGE_THEME_DETAIL:
         col_h1, col_h2, col_h3 = st.columns(3)
         col_h1.metric("Avg Return", f"{'🔴 +' if c_val>0 else '🟢 '}{c_val}%")
         col_h2.metric("Volume Change (%)", f"{'📈 +' if v_val>0 else '📉 '}{v_val}%")
-        col_h3.metric("Stocks", f"{len(stocks_d)}{"Stock"}")
+        col_h3.metric("Stocks", f"{len(stocks_d)} stocks")
+
+        # USD/JPYレート
+        try:
+            _td_usd_rate = fetch_usdjpy()
+        except Exception:
+            _td_usd_rate = 150.0
+
+        # 銘柄テーブル（証券コード・ドル建て・ADR・英文IR付き）
+        detail_rows = []
+        for sname, d in stocks_d.items():
+            tkr = d.get("ticker","")
+            code = get_code(tkr)
+            price_jpy = d.get("price")
+            price_usd = f"${price_jpy/_td_usd_rate:,.2f}" if price_jpy and _td_usd_rate else "N/A"
+            chg = d.get("change", 0)
+            dc  = d.get("day_change")
+            badges = []
+            if tkr in ADR_TICKERS:
+                badges.append(f"ADR:{ADR_TICKERS[tkr]}")
+            if tkr in ENGLISH_IR:
+                badges.append("EN-IR✓")
+            detail_rows.append({
+                "Stock": f"{se(sname)} ({code})",
+                "Price (JPY)": f"¥{int(price_jpy):,}" if price_jpy else "N/A",
+                "Price (USD)": price_usd,
+                "Return": f"🔴 +{chg}%" if chg>0 else f"🟢 {chg}%",
+                "Day Chg": f"🔴 +{dc}%" if dc and dc>0 else f"🟢 {dc}%" if dc else "N/A",
+                "RSI": d.get("rsi","N/A"),
+                "52W High": f"¥{int(d['52w_high']):,}" if d.get("52w_high") else "N/A",
+                "52W Low":  f"¥{int(d['52w_low']):,}"  if d.get("52w_low")  else "N/A",
+                "Trade Val": format_large_number(d.get("trade_value",0)),
+                "Global": " | ".join(badges) if badges else "—",
+            })
+        if detail_rows:
+            df_detail = pd.DataFrame(detail_rows).set_index("Stock")
+            st.dataframe(df_detail, use_container_width=True)
+            st.caption("💡 ADR = Tradable on US market  |  EN-IR✓ = English IR disclosure available")
 
 # =====================
 # お知らせ
