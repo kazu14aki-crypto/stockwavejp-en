@@ -17,28 +17,28 @@ import Settings    from './components/pages/Settings'
 import Disclaimer  from './components/pages/Disclaimer'
 
 const PAGES = [
-  { icon:'🏠', label:'ホーム',           component:TopPage     },
-  { icon:'📊', label:'テーマ一覧',        component:ThemeList   },
-  { icon:'📡', label:'騰落モメンタム',     component:Momentum    },
-  { icon:'💹', label:'資金フロー',         component:FundFlow    },
-  { icon:'📈', label:'騰落推移',           component:Trend       },
-  { icon:'🔥', label:'ヒートマップ',       component:Heatmap     },
-  { icon:'📊', label:'テーマ・マクロ比較', component:Compare     },
-  { icon:'📋', label:'市場別ランキング',   component:MarketRank  },
-  { icon:'🔍', label:'テーマ別詳細',       component:ThemeDetail },
+  { icon:'🏠', label:'Home',         component:TopPage     },
+  { icon:'📊', label:'Theme List',   component:ThemeList   },
+  { icon:'📡', label:'Momentum',     component:Momentum    },
+  { icon:'💹', label:'Fund Flow',    component:FundFlow    },
+  { icon:'📈', label:'Trend',        component:Trend       },
+  { icon:'🔥', label:'Heatmap',      component:Heatmap     },
+  { icon:'📊', label:'Compare',      component:Compare     },
+  { icon:'📋', label:'Market Rank',  component:MarketRank  },
+  { icon:'🔍', label:'Theme Detail', component:ThemeDetail },
 ]
 const PAGES_OTHER = [
-  { icon:'🎨', label:'カスタムテーマ', component:CustomTheme },
-  { icon:'📣', label:'お知らせ',       component:News        },
-  { icon:'📖', label:'使い方',         component:HowTo       },
-  { icon:'⚙️', label:'設定',           component:Settings    },
-  { icon:'⚖️', label:'免責事項',       component:Disclaimer  },
+  { icon:'🎨', label:'Custom Theme', component:CustomTheme },
+  { icon:'📣', label:'News',         component:News        },
+  { icon:'📖', label:'How To',       component:HowTo       },
+  { icon:'⚙️', label:'Settings',     component:Settings    },
+  { icon:'⚖️', label:'Disclaimer',   component:Disclaimer  },
 ]
 const ALL_PAGES = [...PAGES, ...PAGES_OTHER]
 const COLOR_THEME_KEY = 'swjp_color_theme'
 
 export default function App() {
-  const [currentPage, setCurrentPage] = useState('ホーム')
+  const [currentPage, setCurrentPage] = useState('Home')
   const [sidebarOpen, setSidebarOpen] = useState(false)
   const [viewMode,    setViewMode]    = useState('auto')
   const [isMobile,    setIsMobile]    = useState(false)
@@ -66,19 +66,19 @@ export default function App() {
   useEffect(() => {
     const fetchStatus = async () => {
       try {
-        const apiBase = import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000'
+        const apiBase = import.meta.env.VITE_API_URL || 'http://127.0.0.1:8001'
         const res  = await fetch(apiBase + '/api/status')
         const data = await res.json()
         setStatus({
           ...data,
-          label: data.is_open ? '市場オープン中' : '市場クローズ中',
+          label: data.is_open ? 'Market Open' : 'Market Closed',
         })
       } catch {
         const now = new Date()
         const jst = new Date(now.getTime() + (now.getTimezoneOffset() + 540) * 60000)
         setStatus({
           time: `${String(jst.getHours()).padStart(2,'0')}:${String(jst.getMinutes()).padStart(2,'0')} JST`,
-          is_open: false, label: '接続エラー',
+          is_open: false, label: 'Connection Error',
         })
       }
     }
@@ -91,11 +91,11 @@ export default function App() {
   const PageComponent  = currentPageObj?.component
 
   const handlePageChange = (label) => { setCurrentPage(label); setSidebarOpen(false) }
-  const handleLogoClick  = () => { setCurrentPage('ホーム'); setSidebarOpen(false) }
+  const handleLogoClick  = () => { setCurrentPage('Home'); setSidebarOpen(false) }
 
   const pageProps = (() => {
-    if (currentPage === '設定') return { viewMode, onViewModeChange: setViewMode, colorTheme, onColorThemeChange: setColorTheme }
-    if (currentPage === 'ホーム') return { onNavigate: handlePageChange }
+    if (currentPage === 'Settings') return { viewMode, onViewModeChange: setViewMode, colorTheme, onColorThemeChange: setColorTheme }
+    if (currentPage === 'Home') return { onNavigate: handlePageChange }
     return {}
   })()
 
@@ -136,7 +136,7 @@ export default function App() {
             height:'calc(100vh - var(--header))', flexDirection:'column', gap:'16px', color:'var(--text3)' }}>
             <div style={{ fontSize:'48px' }}>{currentPageObj?.icon}</div>
             <div style={{ fontSize:'18px', fontWeight:600, color:'var(--text2)' }}>{currentPage}</div>
-            <div style={{ fontSize:'13px' }}>このページは準備中です</div>
+            <div style={{ fontSize:'13px' }}>This page is under construction</div>
           </div>
         )}
 
@@ -145,7 +145,7 @@ export default function App() {
           <span style={{ color:'#e63030', fontWeight:700 }}>Stock</span>
           <span style={{ fontWeight:700, color:'var(--text2)' }}>Wave</span>
           <span style={{ color:'#e63030', fontWeight:700, fontSize:'10px' }}>JP</span>
-          {'  —  stockwavejp.com  —  投資助言ではありません  —  © 2026'}
+          {'  —  stockwavejp-en.com  —  Not investment advice  —  © 2026'}
         </footer>
       </main>
     </div>
