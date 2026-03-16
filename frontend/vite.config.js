@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/',
+  base: '/stockwavejp-en/',
   server: {
     host: true,
     port: 5173,
