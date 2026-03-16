@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react'
 
-const API = import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000'
+const API = import.meta.env.VITE_API_URL || 'http://127.0.0.1:8001'
 
 const NEWS_LIST = [
-  { date:'2026/03/15', tag:'NEW',    title:'React版リリース' },
-  { date:'2026/03/01', tag:'UPDATE', title:'出来高・売買代金ランキング追加' },
-  { date:'2026/02/15', tag:'UPDATE', title:'市場別ランキング拡充' },
+  { date:'2026/03/15', tag:'NEW',    title:'React Version Released' },
+  { date:'2026/03/01', tag:'UPDATE', title:'Added Volume & Trade Value Ranking' },
+  { date:'2026/02/15', tag:'UPDATE', title:'Expanded Market Segment Ranking' },
 ]
 const TAG_COLORS = {
   'NEW':    { bg:'rgba(255,83,112,0.15)', color:'var(--red)',    border:'rgba(255,83,112,0.3)' },
@@ -54,8 +54,7 @@ function MacroCard({ name, data }) {
   const pts = vals.map((v,i)=>`${(i/(vals.length-1))*W},${H-((v-min)/(max-min||1))*H}`).join(' ')
   return (
     <div style={{ background:'var(--bg2)', border:'1px solid var(--border)', borderRadius:'8px', padding:'12px 14px',
-      display:'flex', alignItems:'center', justifyContent:'space-between', gap:'10px',
-      minWidth:0, /* 見切れ防止 */ }}>
+      display:'flex', alignItems:'center', justifyContent:'space-between', gap:'10px', minWidth:0 }}>
       <div style={{ minWidth:0 }}>
         <div style={{ fontSize:'11px', color:'var(--text3)', marginBottom:'3px', overflow:'hidden', textOverflow:'ellipsis', whiteSpace:'nowrap' }}>{name}</div>
         <div style={{ fontFamily:'var(--mono)', fontSize:'15px', fontWeight:700, color }}>{last.pct>=0?'+':''}{last.pct.toFixed(1)}%</div>
@@ -101,7 +100,7 @@ export default function TopPage() {
   return (
     <div style={{ padding:'20px 24px 48px', maxWidth:'100%', overflowX:'hidden' }}>
 
-      {/* ヒーロー */}
+      {/* Hero */}
       <div style={{
         background:'linear-gradient(135deg,rgba(91,156,246,0.07) 0%,rgba(255,83,112,0.05) 100%)',
         border:'1px solid var(--border)', borderRadius:'var(--radius)',
@@ -111,14 +110,13 @@ export default function TopPage() {
           <span style={{ color:'var(--logo-red)' }}>Stock</span>Wave
           <span style={{ color:'var(--logo-red)', fontSize:'13px' }}>JP</span>
         </h1>
-        {/* PC:1行 / SP:折り返し */}
         <p style={{ fontSize:'13px', color:'var(--text2)', lineHeight:1.7 }} className="hero-desc">
-          日本株テーマ別の騰落率・出来高・売買代金をリアルタイムで追跡。どのテーマに資金が集まっているかを視覚的に把握できます。
+          Track Japanese stock themes in real time — price changes, volume, and fund flows at a glance.
         </p>
       </div>
 
-      {/* お知らせ（小見出しのみ・コンパクト） */}
-      <SHead title="📣 お知らせ" />
+      {/* News */}
+      <SHead title="📣 News" />
       <div style={{ display:'flex', flexDirection:'column', gap:'4px', marginBottom:'4px' }}>
         {NEWS_LIST.map((n,i)=>{
           const tc = TAG_COLORS[n.tag]||TAG_COLORS['INFO']
@@ -127,8 +125,7 @@ export default function TopPage() {
               background:'var(--bg2)', border:'1px solid var(--border)',
               borderRadius:'6px', padding:'7px 12px',
               display:'flex', alignItems:'center', gap:'8px',
-              animation:`fadeUp 0.25s ease ${i*0.05}s both`,
-              minWidth:0,
+              animation:`fadeUp 0.25s ease ${i*0.05}s both`, minWidth:0,
             }}>
               <span style={{ fontSize:'9px', fontWeight:700, padding:'1px 7px', borderRadius:'20px', flexShrink:0,
                 background:tc.bg, color:tc.color, border:`1px solid ${tc.border}` }}>{n.tag}</span>
@@ -139,26 +136,24 @@ export default function TopPage() {
         })}
       </div>
 
-      {/* KPIカード */}
-      <SHead title="📊 マーケットサマリー（1ヶ月）" />
+      {/* Market Summary KPI */}
+      <SHead title="📊 Market Summary (1 Month)" />
       <div className="responsive-grid-4" style={{ marginBottom:'4px' }}>
-        <KpiCard delay={0.05} loading={loading} label="上昇テーマ"
-          value={s?`${s.rise} / ${s.total}`:'-'} valueColor="var(--red)" sub="全テーマ中"/>
-        <KpiCard delay={0.1} loading={loading} label="平均騰落率"
+        <KpiCard delay={0.05} loading={loading} label="Rising Themes"
+          value={s?`${s.rise} / ${s.total}`:'-'} valueColor="var(--red)" sub="All Themes"/>
+        <KpiCard delay={0.1} loading={loading} label="Avg. Change"
           value={s?`${s.avg>=0?'+':''}${s.avg?.toFixed(2)}%`:'-'}
-          valueColor={s?.avg>=0?'var(--red)':'var(--green)'} sub="期間:1ヶ月"/>
-        {/* 資金流入TOP：赤フォント */}
-        <KpiCard delay={0.15} loading={loading} label="資金流入TOP"
+          valueColor={s?.avg>=0?'var(--red)':'var(--green)'} sub="Period: 1 Month"/>
+        <KpiCard delay={0.15} loading={loading} label="Top Gainer"
           value={<span style={{ fontSize:'14px', color:'var(--red)', fontWeight:700 }}>{s?.top?.theme||'-'}</span>}
           sub={s?.top?<span style={{ color:'var(--red)', fontWeight:600 }}>+{s.top.pct.toFixed(1)}%</span>:'-'}/>
-        {/* 資金流出TOP：黄緑フォント */}
-        <KpiCard delay={0.2} loading={loading} label="資金流出TOP"
+        <KpiCard delay={0.2} loading={loading} label="Top Loser"
           value={<span style={{ fontSize:'14px', color:'var(--green)', fontWeight:700 }}>{s?.bot?.theme||'-'}</span>}
           sub={s?.bot?<span style={{ color:'var(--green)', fontWeight:600 }}>{s.bot.pct.toFixed(1)}%</span>:'-'}/>
       </div>
 
-      {/* マクロ指標 */}
-      <SHead title="📈 マクロ指標（1ヶ月）" />
+      {/* Macro Indicators */}
+      <SHead title="📈 Macro Indicators (1 Month)" />
       {loading ? (
         <div style={{ color:'var(--text3)', fontSize:'13px', padding:'12px 0' }}><Dots /></div>
       ) : (
