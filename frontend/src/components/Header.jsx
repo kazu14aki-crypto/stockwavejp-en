@@ -13,7 +13,6 @@ const LogoSvg = () => (
       stroke="var(--text)" strokeWidth="2.5" fill="none" strokeLinecap="round"/>
   </svg>
 )
-
 export default function Header({ status, onMenuClick, sidebarOpen, viewMode, onViewModeChange, onLogoClick }) {
   return (
     <>
@@ -23,27 +22,21 @@ export default function Header({ status, onMenuClick, sidebarOpen, viewMode, onV
         background: 'var(--bg2)',
         borderBottom: '1px solid var(--border)',
         display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-        padding: '0 12px', zIndex: 1000,
-        minWidth: 0,  /* 見切れ防止 */
+        padding: '0 12px', zIndex: 1000, minWidth: 0,
       }}>
-        {/* 左側 */}
+        {/* Left */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexShrink: 0 }}>
-          {/* スマホ用ハンバーガー（左上） */}
           <button onClick={onMenuClick} className="hamburger-btn" style={{
             display: 'none',
             background: 'var(--bg3)', border: '1px solid var(--border)',
             borderRadius: '6px', color: 'var(--text)', fontSize: '15px',
-            padding: '4px 9px', cursor: 'pointer', fontFamily: 'var(--font)',
-            flexShrink: 0,
+            padding: '4px 9px', cursor: 'pointer', fontFamily: 'var(--font)', flexShrink: 0,
           }}>
             {sidebarOpen ? '✕' : '☰'}
           </button>
-
-          {/* ロゴ */}
           <button onClick={onLogoClick} style={{
             display: 'flex', alignItems: 'center', gap: '8px',
-            background: 'none', border: 'none', cursor: 'pointer', padding: 0,
-            flexShrink: 0,
+            background: 'none', border: 'none', cursor: 'pointer', padding: 0, flexShrink: 0,
           }}>
             <LogoSvg />
             <div style={{ textAlign: 'left' }} className="logo-text">
@@ -52,15 +45,13 @@ export default function Header({ status, onMenuClick, sidebarOpen, viewMode, onV
                 <span style={{ color: '#e63030', fontSize: '10px', marginLeft: '2px' }}>JP</span>
               </div>
               <div style={{ fontSize: '7px', letterSpacing: '0.3em', color: 'var(--text3)', fontWeight: 600, marginTop: '1px' }}>
-                株　式　波　動
+                STOCK · WAVE · JP
               </div>
             </div>
           </button>
         </div>
-
-        {/* 右側 */}
+        {/* Right */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexShrink: 0 }}>
-          {/* 市場ステータス */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '5px' }} className="status-area">
             <span style={{
               width: '7px', height: '7px', borderRadius: '50%', display: 'inline-block', flexShrink: 0,
@@ -71,19 +62,15 @@ export default function Header({ status, onMenuClick, sidebarOpen, viewMode, onV
               {status.label}
             </span>
           </div>
-
-          {/* 時刻 */}
           <span className="status-time" style={{ fontFamily: 'var(--mono)', fontSize: '11px', color: 'var(--text3)', whiteSpace: 'nowrap' }}>
-            {status.time}
+            {status.time_jst || status.time}
           </span>
-
-          {/* PC/SP切替（常時表示・見切れなし） */}
           <div style={{
             display: 'flex', gap: '2px', flexShrink: 0,
             background: 'var(--bg3)', border: '1px solid var(--border)',
             borderRadius: '6px', padding: '2px',
           }}>
-            {[{ key: 'pc', label: '🖥' }, { key: 'mobile', label: '📱' }].map(({ key, label }) => (
+            {[{ key: 'pc', label: 'PC' }, { key: 'mobile', label: 'SP' }].map(({ key, label }) => (
               <button key={key} onClick={() => onViewModeChange(key)} style={{
                 padding: '3px 9px', borderRadius: '4px', fontSize: '12px',
                 border: 'none', cursor: 'pointer', fontFamily: 'var(--font)',
@@ -97,7 +84,6 @@ export default function Header({ status, onMenuClick, sidebarOpen, viewMode, onV
           </div>
         </div>
       </header>
-
       <style>{`
         @media (max-width: 768px) {
           .hamburger-btn { display: block !important; }

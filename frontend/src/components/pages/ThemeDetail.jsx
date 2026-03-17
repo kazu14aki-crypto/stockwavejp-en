@@ -1,19 +1,16 @@
 import { useState, useEffect } from 'react'
-
-const API = import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000'
+const API = import.meta.env.VITE_API_URL || 'http://127.0.0.1:8001'
 const PERIODS = [
-  { label:'1週間',value:'5d'},{label:'1ヶ月',value:'1mo'},
-  { label:'3ヶ月',value:'3mo'},{label:'6ヶ月',value:'6mo'},{label:'1年',value:'1y'},
+  { label:'1 Week', value:'5d'  }, { label:'1 Month',  value:'1mo' },
+  { label:'3 Months',value:'3mo'}, { label:'6 Months', value:'6mo' }, { label:'1 Year', value:'1y' },
 ]
-
 function formatLarge(n) {
   if (!n) return '0'
-  if (n>=1e12) return (n/1e12).toFixed(1)+'兆'
-  if (n>=1e8)  return (n/1e8).toFixed(1)+'億'
-  if (n>=1e4)  return (n/1e4).toFixed(1)+'万'
+  if (n>=1e12) return (n/1e12).toFixed(1)+'T'
+  if (n>=1e8)  return (n/1e8).toFixed(1)+'B'
+  if (n>=1e4)  return (n/1e4).toFixed(1)+'M'
   return n.toLocaleString()
 }
-
 function Loading() {
   return (
     <div style={{ textAlign:'center', padding:'40px', color:'var(--text3)' }}>
@@ -21,11 +18,10 @@ function Loading() {
         <span key={i} style={{ display:'inline-block', width:'6px', height:'6px', borderRadius:'50%',
           background:'var(--accent)', margin:'0 3px', animation:`pulse 1.2s ease-in-out ${d}s infinite`}}/>
       ))}
-      <div style={{ marginTop:'12px', fontSize:'12px' }}>個別株データ取得中...</div>
+      <div style={{ marginTop:'12px', fontSize:'12px' }}>Loading stock data...</div>
     </div>
   )
 }
-
 function Top5Bar({ items, title, colorFn }) {
   if (!items||!items.length) return null
   const maxAbs = Math.max(...items.map(s=>Math.abs(s.pct)),1)
@@ -44,7 +40,7 @@ function Top5Bar({ items, title, colorFn }) {
             <g key={s.ticker}>
               <rect x={x} y={y} width={bW} height={h} rx="2" fill={c} opacity="0.85"/>
               <text x={x+bW/2} y={y-4} textAnchor="middle" fill={c} fontSize="9" fontFamily="DM Mono">{s.pct>=0?'+':''}{s.pct.toFixed(1)}%</text>
-              <text x={x+bW/2} y={H-PB+14} textAnchor="middle" fill="var(--text3)" fontSize="9" fontFamily="DM Sans">{s.name.length>4?s.name.slice(0,4)+'…':s.name}</text>
+              <text x={x+bW/2} y={H-PB+14} textAnchor="middle" fill="var(--text3)" fontSize="9" fontFamily="DM Sans">{s.name.length>8?s.name.slice(0,8)+'…':s.name}</text>
             </g>
           )
         })}
@@ -53,17 +49,15 @@ function Top5Bar({ items, title, colorFn }) {
     </div>
   )
 }
-
-// スマホ対応テーブル（銘柄名左固定）
 function StockTable({ stocks }) {
   if (!stocks||!stocks.length) return null
-  const headers = ['コード','株価','騰落率','寄与度','寄与順位','出来高増減','出来高','出来高順位','売買代金','売買代金順位']
+  const headers = ['Code','Price','Change','Contrib. Rank','Contrib.','Vol. Rank','Vol. Chg','Volume','TV Rank','Trade Value']
   return (
     <div className="sticky-table">
       <table style={{ borderCollapse:'collapse', fontSize:'12px', fontFamily:'var(--font)', width:'100%' }}>
         <thead>
           <tr style={{ borderBottom:'1px solid var(--border)' }}>
-            <th style={{ ...thStyle, textAlign:'left', minWidth:'120px', background:'var(--bg3)' }}>銘柄名</th>
+            <th style={{ ...thStyle, textAlign:'left', minWidth:'120px', background:'var(--bg3)' }}>Name</th>
             {headers.map(h => <th key={h} style={{ ...thStyle, minWidth:'80px' }}>{h}</th>)}
           </tr>
         </thead>
@@ -84,12 +78,12 @@ function StockTable({ stocks }) {
                 <td style={tdR}><span style={{ fontFamily:'var(--mono)', color:'var(--text2)' }}>¥{s.price?.toLocaleString()}</span></td>
                 <td style={{ ...tdR, color:pColor, fontWeight:700, fontFamily:'var(--mono)' }}>{s.pct>=0?'+':''}{s.pct?.toFixed(1)}%</td>
                 <td style={{ ...tdR, color:cColor, fontFamily:'var(--mono)' }}>{s.contribution>=0?'+':''}{s.contribution?.toFixed(1)}%</td>
-                <td style={tdC}>{i+1}位</td>
+                <td style={tdC}>{i+1}</td>
                 <td style={{ ...tdR, color:s.volume_chg>=0?'var(--red)':'var(--green)', fontFamily:'var(--mono)' }}>{s.volume_chg>=0?'+':''}{s.volume_chg?.toFixed(1)}%</td>
                 <td style={{ ...tdR, fontFamily:'var(--mono)', color:'var(--text2)' }}>{formatLarge(s.volume)}</td>
-                <td style={tdC}>{s.vol_rank}位</td>
+                <td style={tdC}>{s.vol_rank}</td>
                 <td style={{ ...tdR, fontFamily:'var(--mono)', color:'var(--text2)' }}>{formatLarge(s.trade_value)}</td>
-                <td style={tdC}>{s.tv_rank}位</td>
+                <td style={tdC}>{s.tv_rank}</td>
               </tr>
             )
           })}
@@ -98,26 +92,22 @@ function StockTable({ stocks }) {
     </div>
   )
 }
-
 const thStyle = { padding:'8px 10px', textAlign:'right', fontSize:'10px', fontWeight:600, letterSpacing:'0.06em', color:'var(--text3)', textTransform:'uppercase', whiteSpace:'nowrap', background:'var(--bg3)' }
 const tdC = { padding:'8px 10px', textAlign:'center', whiteSpace:'nowrap', color:'var(--text2)' }
 const tdR = { padding:'8px 10px', textAlign:'right', whiteSpace:'nowrap' }
 const tdL = { padding:'8px 12px', textAlign:'left', minWidth:'120px' }
-
 export default function ThemeDetail() {
-  const [period,      setPeriod]      = useState('1mo')
-  const [themeNames,  setThemeNames]  = useState([])
-  const [selTheme,    setSelTheme]    = useState('')
-  const [detail,      setDetail]      = useState(null)
-  const [loading,     setLoading]     = useState(false)
-
+  const [period,     setPeriod]     = useState('1mo')
+  const [themeNames, setThemeNames] = useState([])
+  const [selTheme,   setSelTheme]   = useState('')
+  const [detail,     setDetail]     = useState(null)
+  const [loading,    setLoading]    = useState(false)
   useEffect(()=>{
     fetch(`${API}/api/theme-names`).then(r=>r.json()).then(d=>{
       setThemeNames(d.themes)
       if (d.themes.length) setSelTheme(d.themes[0])
     }).catch(()=>{})
   },[])
-
   useEffect(()=>{
     if (!selTheme) return
     setLoading(true); setDetail(null)
@@ -125,17 +115,14 @@ export default function ThemeDetail() {
       .then(r=>r.json()).then(d=>setDetail(d.data))
       .catch(()=>{}).finally(()=>setLoading(false))
   },[selTheme, period])
-
   const pctColor = (v) => v>=0 ? 'var(--red)' : 'var(--green)'
   const stocks = detail?.stocks ?? []
   const top5   = stocks.slice(0,5)
   const bot5   = [...stocks].sort((a,b)=>a.pct-b.pct).slice(0,5)
-
   return (
     <div>
-      {/* 固定ヘッダー */}
       <div className="page-header-sticky">
-        <h1 style={{ fontSize:'18px', fontWeight:700, color:'var(--text)', whiteSpace:'nowrap' }}>テーマ別詳細</h1>
+        <h1 style={{ fontSize:'18px', fontWeight:700, color:'var(--text)', whiteSpace:'nowrap' }}>Theme Detail</h1>
         <select value={selTheme} onChange={e=>setSelTheme(e.target.value)} style={selStyle}>
           {themeNames.map(t=><option key={t} value={t}>{t}</option>)}
         </select>
@@ -143,47 +130,40 @@ export default function ThemeDetail() {
           {PERIODS.map(p=><option key={p.value} value={p.value}>{p.label}</option>)}
         </select>
       </div>
-
       <div style={{ padding:'20px 32px 48px' }}>
         {loading ? <Loading /> : detail ? (
           <>
-            {/* サマリー */}
             <div style={{ display:'flex', alignItems:'center', gap:'16px', marginBottom:'20px', flexWrap:'wrap' }}>
               <span style={{ fontSize:'18px', fontWeight:700, color:'var(--text)' }}>{selTheme}</span>
               <span style={{ fontSize:'16px', fontFamily:'var(--mono)', fontWeight:700,
                 color:detail.avg>=0?'var(--red)':'var(--green)' }}>
-                平均 {detail.avg>=0?'+':''}{detail.avg.toFixed(1)}%
+                Avg. {detail.avg>=0?'+':''}{detail.avg.toFixed(1)}%
               </span>
-              <span style={{ fontSize:'12px', color:'var(--text3)' }}>{stocks.length}銘柄構成</span>
+              <span style={{ fontSize:'12px', color:'var(--text3)' }}>{stocks.length} stocks</span>
               <span style={{ fontSize:'11px', padding:'2px 8px', borderRadius:'20px',
                 background:'rgba(91,156,246,0.1)', color:'var(--accent)', border:'1px solid rgba(91,156,246,0.2)' }}>
                 {PERIODS.find(p=>p.value===period)?.label}
               </span>
             </div>
-
-            {/* TOP5グラフ */}
             <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:'16px', marginBottom:'24px' }} className="top5g">
-              <Top5Bar items={top5} title="▲ 上昇TOP5" colorFn={pctColor}/>
-              <Top5Bar items={bot5} title="▼ 下落TOP5" colorFn={pctColor}/>
+              <Top5Bar items={top5} title="🔺 Top Gainers TOP5" colorFn={pctColor}/>
+              <Top5Bar items={bot5} title="🔻 Top Losers TOP5" colorFn={pctColor}/>
             </div>
-
-            {/* 構成銘柄テーブル */}
             <div style={{ fontSize:'11px', fontWeight:600, letterSpacing:'0.1em', color:'var(--text3)', textTransform:'uppercase', marginBottom:'8px' }}>
-              構成銘柄一覧 <span style={{ color:'var(--text3)', fontSize:'10px', fontWeight:400 }}>← 横にスワイプで詳細確認</span>
+              All Stocks <span style={{ color:'var(--text3)', fontSize:'10px', fontWeight:400 }}>— swipe horizontally for details</span>
             </div>
             <div style={{ background:'var(--bg2)', border:'1px solid var(--border)', borderRadius:'var(--radius)', overflow:'hidden' }}>
               <StockTable stocks={stocks}/>
             </div>
           </>
         ) : (
-          <div style={{ color:'var(--text3)', fontSize:'13px' }}>テーマを選択してください</div>
+          <div style={{ color:'var(--text3)', fontSize:'13px' }}>Please select a theme.</div>
         )}
       </div>
       <style>{`@media (max-width:640px){.top5g{grid-template-columns:1fr !important;}}`}</style>
     </div>
   )
 }
-
 const selStyle = {
   background:'var(--bg3)', color:'var(--text)',
   border:'1px solid var(--border)', borderRadius:'6px',

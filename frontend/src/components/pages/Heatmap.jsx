@@ -1,8 +1,6 @@
 import { useState, useEffect } from 'react'
-
-const API = import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000'
+const API = import.meta.env.VITE_API_URL || 'http://127.0.0.1:8001'
 const PERIODS = ['1W', '1M', '3M', '6M', '1Y']
-
 function Loading() {
   return (
     <div style={{ textAlign: 'center', padding: '60px', color: 'var(--text3)' }}>
@@ -13,11 +11,10 @@ function Loading() {
           animation: `pulse 1.2s ease-in-out ${d}s infinite`,
         }} />
       ))}
-      <div style={{ marginTop: '12px', fontSize: '12px' }}>ヒートマップ生成中...（初回は時間がかかります）</div>
+      <div style={{ marginTop: '12px', fontSize: '12px' }}>Generating heatmap... (may take a moment)</div>
     </div>
   )
 }
-
 function colorForValue(v, absMax) {
   if (v === null || v === undefined) return '#1a1e30'
   const ratio = Math.min(Math.abs(v) / absMax, 1)
@@ -31,23 +28,17 @@ function colorForValue(v, absMax) {
     return `rgb(0, ${g}, ${b})`
   }
 }
-
 function HeatmapTable({ data, columns }) {
   if (!data || !Object.keys(data).length) return null
-
   const themes = Object.keys(data)
   const allVals = themes.flatMap(t => columns.map(c => data[t][c]).filter(v => v !== null && v !== undefined))
   const absMax = Math.max(...allVals.map(Math.abs), 1)
-
   return (
     <div style={{ overflowX: 'auto' }}>
-      <table style={{
-        width: '100%', borderCollapse: 'collapse', fontSize: '12px',
-        fontFamily: 'var(--font)',
-      }}>
+      <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '12px', fontFamily: 'var(--font)' }}>
         <thead>
           <tr>
-            <th style={{ ...thStyle, textAlign: 'left', minWidth: '140px' }}>テーマ</th>
+            <th style={{ ...thStyle, textAlign: 'left', minWidth: '140px' }}>Theme</th>
             {columns.map(c => (
               <th key={c} style={thStyle}>{c}</th>
             ))}
@@ -70,8 +61,7 @@ function HeatmapTable({ data, columns }) {
                     padding: '6px 8px', textAlign: 'center',
                     background: bg, borderBottom: '1px solid rgba(0,0,0,0.2)',
                     fontFamily: 'var(--mono)', fontWeight: 600, fontSize: '11px',
-                    color: v !== null ? '#fff' : 'var(--text3)',
-                    minWidth: '60px',
+                    color: v !== null ? '#fff' : 'var(--text3)', minWidth: '60px',
                   }}>
                     {v !== null && v !== undefined ? `${v >= 0 ? '+' : ''}${v.toFixed(1)}%` : '-'}
                   </td>
@@ -84,22 +74,19 @@ function HeatmapTable({ data, columns }) {
     </div>
   )
 }
-
 const thStyle = {
   padding: '8px 8px', textAlign: 'center',
   fontSize: '10px', fontWeight: 600, letterSpacing: '0.1em',
   color: 'var(--text3)', textTransform: 'uppercase',
   borderBottom: '1px solid var(--border)',
 }
-
 export default function Heatmap() {
-  const [tab,           setTab]           = useState('period')
-  const [heatmapData,   setHeatmapData]   = useState(null)
-  const [monthlyData,   setMonthlyData]   = useState(null)
-  const [months,        setMonths]        = useState([])
-  const [loading,       setLoading]       = useState(true)
-  const [error,         setError]         = useState(null)
-
+  const [tab,         setTab]         = useState('period')
+  const [heatmapData, setHeatmapData] = useState(null)
+  const [monthlyData, setMonthlyData] = useState(null)
+  const [months,      setMonths]      = useState([])
+  const [loading,     setLoading]     = useState(true)
+  const [error,       setError]       = useState(null)
   useEffect(() => {
     const fetch_ = async () => {
       setLoading(true); setError(null)
@@ -115,29 +102,25 @@ export default function Heatmap() {
           setMonths(json.months)
         }
       } catch {
-        setError('データ取得に失敗しました')
+        setError('Failed to load data.')
       } finally {
         setLoading(false)
       }
     }
     fetch_()
   }, [tab])
-
   const TABS = [
-    { key: 'period',  label: '🟥 期間別ヒートマップ' },
-    { key: 'monthly', label: '📅 月次推移' },
+    { key: 'period',  label: '🔍 Period Heatmap' },
+    { key: 'monthly', label: '📅 Monthly Trend'  },
   ]
-
   return (
     <div style={{ padding: '28px 32px 48px' }}>
       <h1 style={{ fontSize: '24px', fontWeight: 700, letterSpacing: '-0.02em', color: '#e8f0ff', marginBottom: '4px' }}>
-        ヒートマップ
+        Heatmap
       </h1>
       <p style={{ fontSize: '12px', color: 'var(--text3)', marginBottom: '20px' }}>
-        テーマ別騰落率を色で直感的に把握。赤=上昇、緑=下落
+        Visualize theme performance by color. Red = rising, Blue/Green = falling.
       </p>
-
-      {/* タブ */}
       <div style={{ display: 'flex', gap: '4px', marginBottom: '24px',
         borderBottom: '1px solid var(--border)', paddingBottom: '0' }}>
         {TABS.map(t => (
@@ -154,21 +137,15 @@ export default function Heatmap() {
           </button>
         ))}
       </div>
-
-      {/* 凡例 */}
       <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '16px', fontSize: '12px', color: 'var(--text3)' }}>
-        <span>▲ 赤 = 上昇</span>
-        <span>▼ 緑 = 下落</span>
-        <span>■ 黒 = データなし</span>
+        <span>🔴 Red = Rising</span>
+        <span>🔵 Blue = Falling</span>
+        <span>⬛ Dark = No data</span>
       </div>
-
       {loading ? <Loading /> : error ? (
         <div style={{ color: 'var(--red)', fontSize: '13px' }}>{error}</div>
       ) : (
-        <div style={{
-          background: 'var(--bg2)', border: '1px solid var(--border)',
-          borderRadius: 'var(--radius)', padding: '16px',
-        }}>
+        <div style={{ background: 'var(--bg2)', border: '1px solid var(--border)', borderRadius: 'var(--radius)', padding: '16px' }}>
           {tab === 'period' ? (
             <HeatmapTable data={heatmapData} columns={PERIODS} />
           ) : (
