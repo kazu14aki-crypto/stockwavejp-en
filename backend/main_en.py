@@ -45,6 +45,8 @@ def _jp_result_to_en(result: dict) -> dict:
 @app.on_event("startup")
 async def startup_event():
     warmup_cache_extended(DEFAULT_THEMES)
+    warmup_cache_extended(EXTRA_THEMES_EN)
+
 
 
 @app.get("/")
