@@ -25,12 +25,36 @@ app.add_middleware(
     allow_origins=["*"], allow_methods=["*"], allow_headers=["*"],
 )
 
-# 英語版テーマ（既存30テーマ英語化 + 英語版専用5テーマ）
 THEMES_EN = {**translate_themes_dict(DEFAULT_THEMES), **EXTRA_THEMES_EN}
 
-# 日本語テーマ名 → 英語名のマップ（APIレスポンス変換用）
+# Macro indicator name translation
+MACRO_NAME_EN = {
+    "日経平均":   "Nikkei 225",
+    "TOPIX":      "TOPIX",
+    "S&P500":     "S&P500",
+    "ドル円":     "USD/JPY",
+    "ナスダック": "Nasdaq",
+    "VIX":        "VIX",
+}
+
+# Market segment name translation
+SEGMENT_NAME_EN = {
+    "日経225｜技術・電気機器":  "Nikkei225 | Tech & Electronics",
+    "日経225｜素材・化学":      "Nikkei225 | Materials & Chemicals",
+    "日経225｜資本財・機械":    "Nikkei225 | Capital Goods & Machinery",
+    "日経225｜消費・サービス":  "Nikkei225 | Consumer & Services",
+    "日経225｜金融":            "Nikkei225 | Financials",
+    "日経225｜運輸・通信":      "Nikkei225 | Transport & Telecom",
+    "TOPIX Core30":             "TOPIX Core30",
+    "TOPIX Large70":            "TOPIX Large70",
+    "TOPIX Mid400":             "TOPIX Mid400",
+    "TOPIX Small":              "TOPIX Small",
+    "市場区分｜プライム":       "Market | Prime",
+    "市場区分｜スタンダード":   "Market | Standard",
+    "市場区分｜グロース":       "Market | Growth",
+}
+
 def _jp_result_to_en(result: dict) -> dict:
-    """APIレスポンスのテーマ名・銘柄名を英語に変換"""
     r = result.copy()
     if "theme" in r:
         r["theme"] = translate_theme(r["theme"])
@@ -46,7 +70,6 @@ def _jp_result_to_en(result: dict) -> dict:
 async def startup_event():
     warmup_cache_extended(DEFAULT_THEMES)
     warmup_cache_extended(EXTRA_THEMES_EN)
-
 
 
 @app.get("/")
@@ -69,39 +92,32 @@ def get_status():
     is_open = now_jst.weekday() < 5 and (
         (h == 9 and m >= 0) or (10 <= h <= 14) or (h == 15 and m == 0)
     )
-    # USD/JPY レート取得
     try:
         import yfinance as yf
         rate_df = yf.Ticker("JPY=X").history(period="1d", interval="1m", auto_adjust=True)
         usd_jpy = round(float(rate_df["Close"].iloc[-1]), 2) if len(rate_df) > 0 else None
     except Exception:
         usd_jpy = None
-
     return {
-        "time_jst":   now_jst.strftime("%H:%M JST"),
-        "time_est":   now_est.strftime("%H:%M EST"),
-        "date":       now_jst.strftime("%Y/%m/%d"),
-        "is_open":    is_open,
-        "label":      "Market Open" if is_open else "Market Closed",
-        "usd_jpy":    usd_jpy,
+        "time_jst": now_jst.strftime("%H:%M JST"),
+        "time_est": now_est.strftime("%H:%M EST"),
+        "date":     now_jst.strftime("%Y/%m/%d"),
+        "is_open":  is_open,
+        "label":    "Market Open" if is_open else "Market Closed",
+        "usd_jpy":  usd_jpy,
     }
 
 
 @app.get("/api/themes")
 def get_themes(period: str = Query(default="1mo")):
-    # 日本語版データを取得して英語名に変換（重複しないよう英語名のみ）
     results_ja = fetch_theme_results(DEFAULT_THEMES, period)
     results_en = [{**r, "theme": translate_theme(r["theme"])} for r in results_ja]
-
-    # 英語版専用テーマを追加
     extra_results = fetch_theme_results(EXTRA_THEMES_EN, period)
     results_en.extend(extra_results)
     results_en.sort(key=lambda x: x["pct"], reverse=True)
-
     rise = sum(1 for r in results_en if r["up"])
     fall = len(results_en) - rise
     avg  = round(sum(r["pct"] for r in results_en) / len(results_en), 2) if results_en else 0
-
     return {
         "period": period,
         "themes": results_en,
@@ -141,7 +157,6 @@ def get_fund_flow(period: str = Query(default="1mo")):
 
 @app.get("/api/trend/{theme_name}")
 def get_trend(theme_name: str, period: str = Query(default="1y")):
-    # 英語テーマ名 → 日本語に逆引き
     ja_name = next((k for k, v in THEME_NAME_EN.items() if v == theme_name), theme_name)
     themes_to_use = EXTRA_THEMES_EN if theme_name in EXTRA_THEMES_EN else DEFAULT_THEMES
     name_to_use   = theme_name if theme_name in EXTRA_THEMES_EN else ja_name
@@ -165,23 +180,27 @@ def get_monthly_heatmap():
 
 @app.get("/api/macro")
 def get_macro(period: str = Query(default="1y")):
-    return {"period": period, "data": fetch_macro_data(period)}
+    data_ja = fetch_macro_data(period)
+    data_en = {MACRO_NAME_EN.get(k, k): v for k, v in data_ja.items()}
+    return {"period": period, "data": data_en}
 
 
 @app.get("/api/market-rank")
 def get_market_rank(period: str = Query(default="1mo")):
-    data = fetch_market_segments(period)
+    data_ja = fetch_market_segments(period)
+    data_en = {SEGMENT_NAME_EN.get(k, k): v for k, v in data_ja.items()}
     groups_en = {
-        "Nikkei 225": [k for k in SEGMENT_GROUPS.get("日経225", [])],
-        "TOPIX":      [k for k in SEGMENT_GROUPS.get("TOPIX", [])],
-        "Market":     [k for k in SEGMENT_GROUPS.get("市場区分", [])],
+        "Nikkei 225": [SEGMENT_NAME_EN.get(k, k) for k in SEGMENT_GROUPS.get("日経225", [])],
+        "TOPIX":      [SEGMENT_NAME_EN.get(k, k) for k in SEGMENT_GROUPS.get("TOPIX", [])],
+        "Market":     [SEGMENT_NAME_EN.get(k, k) for k in SEGMENT_GROUPS.get("市場区分", [])],
     }
-    return {"period": period, "data": data, "groups": groups_en}
+    return {"period": period, "data": data_en, "groups": groups_en}
 
 
 @app.get("/api/market-rank/{seg_name}")
 def get_segment_detail(seg_name: str, period: str = Query(default="1mo")):
-    data = fetch_segment_detail(seg_name, period)
+    ja_name = next((k for k, v in SEGMENT_NAME_EN.items() if v == seg_name), seg_name)
+    data = fetch_segment_detail(ja_name, period)
     stocks_en = [
         {**s, "name": translate_stock(s.get("name", ""))}
         for s in data.get("stocks", [])
@@ -211,7 +230,6 @@ def get_stock_info(ticker: str):
         hist = t.history(period="2d", interval="1d", auto_adjust=True)
         price_jpy = round(float(hist["Close"].iloc[-1]), 0) if len(hist) > 0 else None
         name = info.get("longName") or info.get("shortName") or ticker
-        # USD換算
         usd_jpy = None
         price_usd = None
         try:
@@ -255,7 +273,7 @@ def search_stocks(q: str = Query(default="")):
                     sym  = item.get("symbol", "")
                     name = item.get("longname") or item.get("shortname") or sym
                     if sym and name:
-                        results.append({"ticker": sym, "name": name, "exchange": item.get("exchange",""), "price": None})
+                        results.append({"ticker": sym, "name": name, "exchange": item.get("exchange", ""), "price": None})
             except Exception:
                 pass
         return {"results": results[:8]}
