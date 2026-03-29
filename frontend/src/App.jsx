@@ -1,51 +1,53 @@
 import { useState, useEffect } from 'react'
-import Header      from './components/Header'
-import Sidebar     from './components/Sidebar'
-import TopPage     from './components/pages/TopPage'
-import ThemeList   from './components/pages/ThemeList'
-import Momentum    from './components/pages/Momentum'
-import FundFlow    from './components/pages/FundFlow'
-import Trend       from './components/pages/Trend'
-import Heatmap     from './components/pages/Heatmap'
-import Compare     from './components/pages/Compare'
-import MarketRank  from './components/pages/MarketRank'
-import ThemeDetail from './components/pages/ThemeDetail'
-import CustomTheme from './components/pages/CustomTheme'
-import News        from './components/pages/News'
-import HowTo       from './components/pages/HowTo'
-import Settings    from './components/pages/Settings'
-import Disclaimer  from './components/pages/Disclaimer'
+import { useStatus }    from './hooks/useMarketData'
+import { AuthProvider }  from './hooks/useAuth.jsx'
+import Header       from './components/Header'
+import Sidebar      from './components/Sidebar'
+import TopPage      from './components/pages/TopPage'
+import ThemeList    from './components/pages/ThemeList'
+import FlowMomentum from './components/pages/FlowMomentum'
+import Heatmap      from './components/pages/Heatmap'
+import MarketRank   from './components/pages/MarketRank'
+import ThemeDetail  from './components/pages/ThemeDetail'
+import CustomTheme  from './components/pages/CustomTheme'
+import News         from './components/pages/News'
+import HowTo        from './components/pages/HowTo'
+import Settings     from './components/pages/Settings'
+import Disclaimer   from './components/pages/Disclaimer'
+import Column       from './components/pages/Column'
+import PrivacyPolicy from './components/pages/PrivacyPolicy'
+import SiteInfo     from './components/pages/SiteInfo'
 
 const PAGES = [
-  { icon:'🏠', label:'Home',         component:TopPage     },
-  { icon:'📊', label:'Theme List',   component:ThemeList   },
-  { icon:'📡', label:'Momentum',     component:Momentum    },
-  { icon:'💹', label:'Fund Flow',    component:FundFlow    },
-  { icon:'📈', label:'Trend',        component:Trend       },
-  { icon:'🔥', label:'Heatmap',      component:Heatmap     },
-  { icon:'📊', label:'Compare',      component:Compare     },
-  { icon:'📋', label:'Market Rank',  component:MarketRank  },
-  { icon:'🔍', label:'Theme Detail', component:ThemeDetail },
+  { icon:'🏠', label:'Home',                    component:TopPage       },
+  { icon:'📊', label:'Theme List',              component:ThemeList     },
+  { icon:'🔍', label:'Theme Detail',            component:ThemeDetail   },
+  { icon:'📋', label:'Market Ranking',          component:MarketRank    },
+  { icon:'🔥', label:'Heatmap',                 component:Heatmap       },
+  { icon:'💹', label:'Fund Flow & Momentum',    component:FlowMomentum  },
+  { icon:'🎨', label:'Custom Theme',            component:CustomTheme   },
 ]
 const PAGES_OTHER = [
-  { icon:'🎨', label:'Custom Theme', component:CustomTheme },
-  { icon:'📣', label:'News',         component:News        },
-  { icon:'📖', label:'How To',       component:HowTo       },
-  { icon:'⚙️', label:'Settings',     component:Settings    },
-  { icon:'⚖️', label:'Disclaimer',   component:Disclaimer  },
+  { icon:'📝', label:'Column',                  component:Column        },
+  { icon:'🏢', label:'About',                   component:SiteInfo      },
+  { icon:'📣', label:'News',                    component:News          },
+  { icon:'📖', label:'How to Use',              component:HowTo         },
+  { icon:'⚙️', label:'Settings',               component:Settings      },
+  { icon:'⚖️', label:'Disclaimer',             component:Disclaimer    },
+  { icon:'🔒', label:'Privacy Policy',          component:PrivacyPolicy },
 ]
-const ALL_PAGES = [...PAGES, ...PAGES_OTHER]
-const COLOR_THEME_KEY = 'swjp_color_theme'
+const ALL_PAGES       = [...PAGES, ...PAGES_OTHER]
+const COLOR_THEME_KEY = 'swjp_en_color_theme'
 
-export default function App() {
+function AppInner() {
   const [currentPage, setCurrentPage] = useState('Home')
   const [sidebarOpen, setSidebarOpen] = useState(false)
   const [viewMode,    setViewMode]    = useState('auto')
   const [isMobile,    setIsMobile]    = useState(false)
-  const [status,      setStatus]      = useState({ time:'--:--', is_open:false, label:'...' })
   const [colorTheme,  setColorTheme]  = useState(
     () => localStorage.getItem(COLOR_THEME_KEY) || 'dark'
   )
+  const status = useStatus()
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', colorTheme)
@@ -63,39 +65,14 @@ export default function App() {
     return () => window.removeEventListener('resize', check)
   }, [viewMode])
 
-  useEffect(() => {
-    const fetchStatus = async () => {
-      try {
-        const apiBase = import.meta.env.VITE_API_URL || 'http://127.0.0.1:8001'
-        const res  = await fetch(apiBase + '/api/status')
-        const data = await res.json()
-        setStatus({
-          ...data,
-          label: data.is_open ? 'Market Open' : 'Market Closed',
-        })
-      } catch {
-        const now = new Date()
-        const jst = new Date(now.getTime() + (now.getTimezoneOffset() + 540) * 60000)
-        setStatus({
-          time: `${String(jst.getHours()).padStart(2,'0')}:${String(jst.getMinutes()).padStart(2,'0')} JST`,
-          is_open: false, label: 'Connection Error',
-        })
-      }
-    }
-    fetchStatus()
-    const id = setInterval(fetchStatus, 30000)
-    return () => clearInterval(id)
-  }, [])
-
-  const currentPageObj = ALL_PAGES.find(p => p.label === currentPage)
-  const PageComponent  = currentPageObj?.component
-
+  const currentPageObj   = ALL_PAGES.find(p => p.label === currentPage)
+  const PageComponent    = currentPageObj?.component
   const handlePageChange = (label) => { setCurrentPage(label); setSidebarOpen(false) }
   const handleLogoClick  = () => { setCurrentPage('Home'); setSidebarOpen(false) }
 
   const pageProps = (() => {
-    if (currentPage === 'Settings') return { viewMode, onViewModeChange: setViewMode, colorTheme, onColorThemeChange: setColorTheme }
-    if (currentPage === 'Home') return { onNavigate: handlePageChange }
+    if (currentPage === 'Settings') return { viewMode, onViewModeChange:setViewMode, colorTheme, onColorThemeChange:setColorTheme }
+    if (currentPage === 'Home')     return { onNavigate: handlePageChange }
     return {}
   })()
 
@@ -109,19 +86,16 @@ export default function App() {
         onViewModeChange={setViewMode}
         onLogoClick={handleLogoClick}
       />
-
       {sidebarOpen && isMobile && (
         <div onClick={() => setSidebarOpen(false)} style={{
           position:'fixed', inset:0, background:'rgba(0,0,0,0.5)', zIndex:800,
         }} />
       )}
-
       <Sidebar
         pages={PAGES} pagesOther={PAGES_OTHER}
         currentPage={currentPage} onPageChange={handlePageChange}
         isOpen={sidebarOpen} isMobile={isMobile}
       />
-
       <main style={{
         marginLeft: isMobile ? '0' : 'var(--sidebar)',
         paddingTop: 'var(--header)',
@@ -139,7 +113,6 @@ export default function App() {
             <div style={{ fontSize:'13px' }}>This page is under construction</div>
           </div>
         )}
-
         <footer style={{ borderTop:'1px solid var(--border)', padding:'20px 32px',
           textAlign:'center', color:'var(--text3)', fontSize:'11px' }}>
           <span style={{ color:'#e63030', fontWeight:700 }}>Stock</span>
@@ -149,5 +122,13 @@ export default function App() {
         </footer>
       </main>
     </div>
+  )
+}
+
+export default function App() {
+  return (
+    <AuthProvider>
+      <AppInner />
+    </AuthProvider>
   )
 }

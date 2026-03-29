@@ -1,55 +1,53 @@
 export default function Sidebar({ pages, pagesOther, currentPage, onPageChange, isOpen, isMobile }) {
-  const sidebarStyle = {
-    position: 'fixed',
-    top: 'var(--header)',
-    left: 0,
-    bottom: 0,
-    width: 'var(--sidebar)',
-    background: 'var(--bg2)',
-    borderRight: '1px solid var(--border)',
-    padding: '16px 8px',
-    overflowY: 'auto',
-    zIndex: 900,
-    transition: 'transform 0.25s cubic-bezier(0.22,1,0.36,1)',
-    transform: isMobile && !isOpen ? 'translateX(-100%)' : 'translateX(0)',
-  }
-
   const NavBtn = ({ icon, label }) => {
-    const isActive = currentPage === label
+    const active = currentPage === label
     return (
       <button onClick={() => onPageChange(label)} style={{
-        padding: isActive ? '9px 12px 9px 10px' : '9px 12px',
-        fontSize: '13px',
-        color: isActive ? 'var(--text)' : 'var(--text2)',
-        borderRadius: '6px', marginBottom: '1px', cursor: 'pointer',
-        display: 'flex', alignItems: 'center', gap: '8px',
-        letterSpacing: '-0.01em', fontWeight: isActive ? 600 : 400,
-        border: isActive ? '2px solid transparent' : '2px solid transparent',
-        borderLeft: isActive ? '2px solid var(--accent)' : '2px solid transparent',
-        background: isActive ? 'rgba(74,158,255,0.1)' : 'transparent',
-        width: '100%', textAlign: 'left', fontFamily: 'var(--font)',
-        transition: 'all 0.15s',
+        display:'flex', alignItems:'center', gap:'10px',
+        width:'100%', background: active ? 'rgba(74,158,255,0.12)' : 'transparent',
+        border:'none', borderRadius:'8px',
+        padding:'9px 14px', cursor:'pointer', fontFamily:'var(--font)',
+        color: active ? 'var(--accent)' : 'var(--text2)',
+        fontSize:'13px', fontWeight: active ? 700 : 400,
+        transition:'all 0.15s', textAlign:'left',
+        borderLeft: active ? '3px solid var(--accent)' : '3px solid transparent',
       }}
-        onMouseEnter={e => { if (!isActive) { e.currentTarget.style.background='rgba(74,158,255,0.06)'; e.currentTarget.style.color='#8aaad0' }}}
-        onMouseLeave={e => { if (!isActive) { e.currentTarget.style.background='transparent'; e.currentTarget.style.color='var(--text2)' }}}
+        onMouseEnter={e => !active && (e.currentTarget.style.background = 'rgba(255,255,255,0.04)')}
+        onMouseLeave={e => !active && (e.currentTarget.style.background = 'transparent')}
       >
-        <span style={{ fontSize:'13px', opacity:0.7 }}>{icon}</span>{label}
+        <span style={{ fontSize:'16px', flexShrink:0 }}>{icon}</span>
+        <span style={{ overflow:'hidden', textOverflow:'ellipsis', whiteSpace:'nowrap' }}>{label}</span>
       </button>
     )
   }
 
-  const SLabel = ({ children }) => (
-    <div style={{ fontSize:'9px', fontWeight:600, letterSpacing:'0.2em', color:'var(--text3)', textTransform:'uppercase', padding:'0 10px', margin:'16px 0 6px' }}>
-      {children}
-    </div>
-  )
+  const sidebarStyle = {
+    position:'fixed', top:'var(--header)', left:0, bottom:0,
+    width:'var(--sidebar)', background:'var(--bg2)',
+    borderRight:'1px solid var(--border)',
+    overflowY:'auto', overflowX:'hidden',
+    zIndex: isMobile ? 900 : 100,
+    transform: isMobile && !isOpen ? 'translateX(-100%)' : 'translateX(0)',
+    transition:'transform 0.25s',
+    padding:'12px 8px 24px',
+  }
 
   return (
     <nav style={sidebarStyle}>
-      <SLabel>MENU</SLabel>
-      {pages.map(({ icon, label }) => <NavBtn key={label} icon={icon} label={label} />)}
-      <SLabel>OTHER</SLabel>
-      {pagesOther.map(({ icon, label }) => <NavBtn key={label} icon={icon} label={label} />)}
+      <div style={{ marginBottom:'8px' }}>
+        <div style={{ fontSize:'9px', fontWeight:700, color:'var(--text3)', letterSpacing:'0.15em',
+          textTransform:'uppercase', padding:'4px 14px 6px' }}>
+          Main
+        </div>
+        {pages.map(p => <NavBtn key={p.label} icon={p.icon} label={p.label} />)}
+      </div>
+      <div style={{ borderTop:'1px solid var(--border)', paddingTop:'8px', marginTop:'4px' }}>
+        <div style={{ fontSize:'9px', fontWeight:700, color:'var(--text3)', letterSpacing:'0.15em',
+          textTransform:'uppercase', padding:'4px 14px 6px' }}>
+          Info
+        </div>
+        {pagesOther.map(p => <NavBtn key={p.label} icon={p.icon} label={p.label} />)}
+      </div>
     </nav>
   )
 }
