@@ -18,9 +18,7 @@ import Column      from './components/pages/Column'
 import PrivacyPolicy from './components/pages/PrivacyPolicy'
 import TermsOfService from './components/pages/TermsOfService'
 import About from './components/pages/About'
-import TermsOfService from './components/pages/TermsOfService'
 import SiteInfo    from './components/pages/SiteInfo'
-import WeeklyReport from './components/pages/WeeklyReport'
 
 const PAGES = [
   { icon:'🏠', label:'Home',                   component:TopPage       },
@@ -34,13 +32,11 @@ const PAGES_OTHER = [
   { icon:'🏢', label:'About',            component:About,    component:SiteInfo      },
   { icon:'📣', label:'News',            component:News          },
   { icon:'📖', label:'How to Use',              component:HowTo         },
-  { icon:'📰', label:'Weekly Report',          component:WeeklyReport  },
   { icon:'📝', label:'コラム・解説',        component:Column        },
   { icon:'⚙️', label:'Settings',               component:Settings      },
   { icon:'⚖️', label:'Disclaimer',           component:Disclaimer    },
   { icon:'📜', label:'Terms of Service', component:TermsOfService },
   { icon:'🔒', label:'Privacy Policy', component:PrivacyPolicy },
-  { icon:'📋', label:'Terms of Service',             component:TermsOfService},
 ]
 
 // お問い合わせGoogleフォームURL（実際のURLに変更してください）
