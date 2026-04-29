@@ -104,7 +104,7 @@ export default function Sidebar({ pages, pagesOther, currentPage, onPageChange, 
           onMouseEnter={e => { e.currentTarget.style.background='rgba(74,158,255,0.06)'; e.currentTarget.style.color='#8aaad0' }}
           onMouseLeave={e => { e.currentTarget.style.background='transparent'; e.currentTarget.style.color='var(--text2)' }}
         >
-          <span style={{ fontSize:'13px', opacity:0.7 }}>✉️</span>お問い合わせ
+          <span style={{ fontSize:'13px', opacity:0.7 }}>✉️</span>Contact
         </a>
       )}
     </nav>

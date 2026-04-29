@@ -3,7 +3,6 @@ import { useStatus }   from './hooks/useMarketData'
 import { AuthProvider } from './hooks/useAuth.jsx'
 import Header      from './components/Header'
 import Sidebar     from './components/Sidebar'
-import Footer      from './components/Footer'
 import TopPage     from './components/pages/TopPage'
 import ThemeList   from './components/pages/ThemeList'
 import Heatmap     from './components/pages/Heatmap'
@@ -17,26 +16,25 @@ import Disclaimer  from './components/pages/Disclaimer'
 import Column      from './components/pages/Column'
 import PrivacyPolicy from './components/pages/PrivacyPolicy'
 import TermsOfService from './components/pages/TermsOfService'
-import About from './components/pages/About'
 import SiteInfo    from './components/pages/SiteInfo'
 
 const PAGES = [
   { icon:'🏠', label:'Home',                   component:TopPage       },
-  { icon:'📊', label:'Theme List',                component:ThemeList     },
-  { icon:'🔥', label:'Heatmap',              component:Heatmap       },
-  { icon:'🔍', label:'Theme Detail',              component:ThemeDetail   },
-  { icon:'📋', label:'Market Ranking',           component:MarketRank    },
-  { icon:'🎨', label:'Custom Theme',             component:CustomTheme   },
+  { icon:'📊', label:'Theme List',              component:ThemeList     },
+  { icon:'🔥', label:'Theme Heatmap',           component:Heatmap       },
+  { icon:'🔍', label:'Theme Detail',            component:ThemeDetail   },
+  { icon:'📋', label:'Market Ranking',          component:MarketRank    },
+  { icon:'🎨', label:'Custom Theme',            component:CustomTheme   },
 ]
 const PAGES_OTHER = [
-  { icon:'🏢', label:'About',            component:About,    component:SiteInfo      },
-  { icon:'📣', label:'News',            component:News          },
-  { icon:'📖', label:'How to Use',              component:HowTo         },
-  { icon:'📝', label:'Column',        component:Column        },
-  { icon:'⚙️', label:'Settings',               component:Settings      },
-  { icon:'⚖️', label:'Disclaimer',           component:Disclaimer    },
-  { icon:'📜', label:'Terms of Service', component:TermsOfService },
-  { icon:'🔒', label:'Privacy Policy', component:PrivacyPolicy },
+  { icon:'🏢', label:'About',                  component:SiteInfo      },
+  { icon:'📣', label:'News',                   component:News          },
+  { icon:'📖', label:'How to Use',             component:HowTo         },
+  { icon:'📝', label:'Column',                 component:Column        },
+  { icon:'⚙️', label:'Settings',              component:Settings      },
+  { icon:'⚖️', label:'Disclaimer',            component:Disclaimer    },
+  { icon:'🔒', label:'Privacy Policy',         component:PrivacyPolicy },
+  { icon:'📋', label:'Terms of Service',       component:TermsOfService},
 ]
 
 // Contact Google Form URL
@@ -73,6 +71,7 @@ function AppInner() {
     window.addEventListener('hashchange', onHashChange)
     return () => window.removeEventListener('hashchange', onHashChange)
   }, [])
+
   const [sidebarOpen, setSidebarOpen] = useState(false)
   const [viewMode,    setViewMode]    = useState('auto')
   const [isMobile,    setIsMobile]    = useState(() => typeof window !== 'undefined' && window.innerWidth <= 1280)
@@ -105,6 +104,7 @@ function AppInner() {
 
   const currentPageObj = ALL_PAGES.find(p => p.label === currentPage)
   const PageComponent  = currentPageObj?.component
+
   const handlePageChange = (label, articleId = null) => {
     setCurrentPage(label)
     setSidebarOpen(false)
@@ -127,7 +127,7 @@ function AppInner() {
     }
   }
 
-  const handleLogoClick  = () => { setCurrentPage('Home'); setSidebarOpen(false) }
+  const handleLogoClick = () => { setCurrentPage('Home'); setSidebarOpen(false) }
 
   const pageProps = (() => {
     if (currentPage === 'Settings') return { viewMode, onViewModeChange:setViewMode, colorTheme, onColorThemeChange:setColorTheme, isMobile }
@@ -135,8 +135,7 @@ function AppInner() {
     if (currentPage === 'Column') return { initialArticleId: targetArticleId, onNavigate: handlePageChange, isMobile }
     if (currentPage === 'Theme List') return { onNavigate: handlePageChange, isMobile }
     if (currentPage === 'Theme Detail') return { onNavigate: handlePageChange, initialTheme: targetTheme, isMobile }
-    if (currentPage === 'Heatmap') return { onNavigate: handlePageChange, isMobile }
-    if (currentPage === 'Weekly Report') return { onNavigate: handlePageChange, isMobile }
+    if (currentPage === 'Theme Heatmap') return { onNavigate: handlePageChange, isMobile }
     if (currentPage === 'Market Ranking') return { onNavigate: handlePageChange, isMobile }
     return { isMobile }
   })()
@@ -212,7 +211,7 @@ function AppInner() {
             <span style={{ color:'#e63030', fontWeight:700 }}>Stock</span>
             <span style={{ fontWeight:700, color:'var(--text2)' }}>Wave</span>
             <span style={{ color:'#e63030', fontWeight:700, fontSize:'10px' }}>JP</span>
-            <span style={{ whiteSpace:'nowrap' }}>&nbsp;—&nbsp;stockwavejp.com</span>
+            <span style={{ whiteSpace:'nowrap' }}>&nbsp;—&nbsp;stockwavejp-en.com</span>
             <span style={{ whiteSpace:'nowrap' }}>&nbsp;—&nbsp;Not financial advice</span>
             <span style={{ whiteSpace:'nowrap' }}>&nbsp;—&nbsp;© 2026</span>
           </div>

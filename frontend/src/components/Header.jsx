@@ -78,7 +78,7 @@ export default function Header({ status, onMenuClick, sidebarOpen, viewMode, onV
               <span className="status-updated" style={{ fontSize: '10px', color: 'var(--text3)', whiteSpace: 'nowrap', marginLeft: '4px' }}>
                 {(() => {
                   const m = (status.updatedAt || '').match(/(\d{2}\/\d{2} \d{2}:\d{2})/)
-                  return 'Updated：' + (m ? m[1] : status.updatedAt.slice(0,16))
+                  return '最終更新：' + (m ? m[1] : status.updatedAt.slice(0,16))
                 })()}
               </span>
             )}
