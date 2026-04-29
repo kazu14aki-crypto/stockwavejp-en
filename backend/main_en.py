@@ -202,6 +202,18 @@ def get_market_rank(period: str = Query(default="1mo")):
     return {"period": period, "data": data_en, "groups": groups_en}
 
 
+
+@app.get("/api/market-rank-list")
+def get_market_rank_list_en(period: str = Query(default="1mo")):
+    """market-rank-list endpoint for English frontend"""
+    data = fetch_market_segments(period)
+    # Translate segment names to English
+    translated = {}
+    for seg_name, seg_data in data.items():
+        en_name = SEGMENT_NAME_EN.get(seg_name, seg_name)
+        translated[en_name] = seg_data
+    return {"period": period, "data": translated, "groups": SEGMENT_GROUPS}
+
 @app.get("/api/market-rank/{seg_name}")
 def get_segment_detail(seg_name: str, period: str = Query(default="1mo")):
     ja_name = SEGMENT_NAME_JA.get(seg_name, seg_name)

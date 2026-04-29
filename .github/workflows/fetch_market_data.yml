@@ -1,31 +1,22 @@
-name: Fetch Market Data
+name: Fetch Market Data (EN)
 
 on:
   schedule:
-    # ── 平日の市場時間中：1時間おき（JST 9時〜16時） ──
     # JST 9:05  = UTC 0:05
     - cron: '5 0 * * 1-5'
     # JST 10:05 = UTC 1:05
     - cron: '5 1 * * 1-5'
-    # JST 11:05 = UTC 2:05
-    - cron: '5 2 * * 1-5'
     # JST 12:05 = UTC 3:05
     - cron: '5 3 * * 1-5'
-    # JST 13:05 = UTC 4:05
-    - cron: '5 4 * * 1-5'
-    # JST 14:05 = UTC 5:05
-    - cron: '5 5 * * 1-5'
     # JST 15:05 = UTC 6:05
     - cron: '5 6 * * 1-5'
-    # JST 15:40 = UTC 6:40（後場引け後・最終データ）
+    # JST 15:40 = UTC 6:40
     - cron: '40 6 * * 1-5'
-  workflow_dispatch:  # 手動実行も可能
+  workflow_dispatch:
 
 jobs:
   fetch:
     runs-on: ubuntu-latest
-    env:
-      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
     permissions:
       contents: write
 
@@ -37,14 +28,6 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-
-      - name: Cache pip packages
-        uses: actions/cache@v4
-        with:
-          path: ~/.cache/pip
-          key: ${{ runner.os }}-pip-${{ hashFiles('scripts/requirements.txt') }}
-          restore-keys: |
-            ${{ runner.os }}-pip-
 
       - name: Install dependencies
         run: pip install -r scripts/requirements.txt
