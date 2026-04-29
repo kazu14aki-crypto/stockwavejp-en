@@ -1,6 +1,6 @@
 /**
- * AddToThemeModal — 銘柄をカスタムテーマに追加するミニモーダル
- * ThemeDetail・MarketRankの銘柄テーブル各行から呼び出す
+ * AddToThemeModal — StockをAdd to Custom Themeするミニモーダル
+ * ThemeDetail・MarketRankのStockテーブル各行から呼び出す
  */
 import { useState } from 'react'
 import { useCustomThemes } from '../hooks/useCustomThemes'
@@ -14,7 +14,7 @@ export default function AddToThemeModal({ stock, onClose }) {
 
   const handleAdd = (idx) => {
     addStockToTheme(idx, stock)
-    setMsg(`「${themes[idx].name}」に追加しました`)
+    setMsg(`「${themes[idx].name}」toしました`)
     setDone(true)
     setTimeout(onClose, 1200)
   }
@@ -45,7 +45,7 @@ export default function AddToThemeModal({ stock, onClose }) {
         <div style={{ display:'flex', alignItems:'flex-start', justifyContent:'space-between', marginBottom:'14px' }}>
           <div>
             <div style={{ fontSize:'13px', fontWeight:700, color:'var(--text)', marginBottom:'2px' }}>
-              カスタムテーマに追加
+              Add to Custom Theme
             </div>
             <div style={{ fontSize:'11px', color:'var(--text3)' }}>
               {stock.ticker.replace('.T','')} · {stock.name}
@@ -98,7 +98,7 @@ export default function AddToThemeModal({ stock, onClose }) {
                         onMouseLeave={e => (e.currentTarget.style.borderColor='var(--border)')}>
                         <span style={{ fontSize:'13px', fontWeight:600, color:'var(--text)' }}>{t.name}</span>
                         <span style={{ fontSize:'10px', color: alreadyIn ? 'var(--text3)' : 'var(--accent)', fontWeight:600 }}>
-                          {alreadyIn ? '追加済み' : `＋ 追加（${(t.stocks||[]).length}銘柄）`}
+                          {alreadyIn ? '追加済み' : `＋ 追加（${(t.stocks||[]).length}Stock）`}
                         </span>
                       </button>
                     )
@@ -108,14 +108,14 @@ export default function AddToThemeModal({ stock, onClose }) {
             ) : (
               <div>
                 <div style={{ fontSize:'11px', color:'var(--text3)', marginBottom:'6px' }}>
-                  新しいテーマ名
+                  新しいTheme Name
                 </div>
                 <div style={{ display:'flex', gap:'6px' }}>
                   <input
                     value={newName}
                     onChange={e => setNewName(e.target.value)}
                     onKeyDown={e => e.key === 'Enter' && handleCreate()}
-                    placeholder="例：注目銘柄、マイポートフォリオ"
+                    placeholder="例：注目Stock、マイポートフォリオ"
                     autoFocus
                     style={{
                       flex:1, background:'var(--bg3)', color:'var(--text)',

@@ -1,119 +1,126 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
-const COLUMNS = [
-  { id:'theme-investing-basics', category:'Basics', icon:'📘', date:'2026/03/20',
-    title:'What is Theme Investing? How It Differs from Individual Stocks & Index Funds',
-    summary:'You may have heard news like "semiconductor stocks surged" or "capital concentrating in AI stocks." This article explains what theme investing is and its merits and risks from the ground up.',
-    body:`## What is Theme Investing?
+const THEME_ARTICLE_MAP = {
+  '半導体製造装置':    'semiconductor-theme',
+  '半導体検査装置':    'semiconductor-theme',
+  '半導体材料':        'semiconductor-theme',
+  'メモリ':            'semiconductor-theme',
+  'パワー半導体':      'power-semiconductor',
+  '次世代半導体':      'semiconductor-theme',
+  '生成AI':            'ai-cloud-theme',
+  'AIデータセンター':  'ai-cloud-theme',
+  'フィジカルAI':      'physical-ai-edge-ai',
+  'AI半導体':          'semiconductor-theme',
+  'AI人材':            'education-hr-theme',
+  'エッジAI':          'physical-ai-edge-ai',
+  'EV・電気自動車':    'ev-green-theme',
+  '全固体電池':        'ev-green-theme',
+  '自動運転':          'ev-green-theme',
+  'ドローン':          'drone-theme',
+  '輸送・物流':        'transport-logistics-theme',
+  '造船':              'shipbuilding-theme',
+  '再生可能エネルギー':'renewable-energy-theme',
+  '太陽光発電':        'renewable-energy-theme',
+  '核融合発電':        'renewable-energy-theme',
+  '原子力発電':        'renewable-energy-theme',
+  '電力会社':          'renewable-energy-theme',
+  'LNG':               'inpex-analysis',
+  '石油':              'inpex-analysis',
+  '蓄電池':            'ev-green-theme',
+  '資源（水素・ヘリウム・水）': 'rare-earth-resources-theme',
+  'IOWN':              'optical-communication',
+  '光通信':            'optical-communication',
+  '通信':              'telecom-theme',
+  '量子コンピューター':'ai-cloud-theme',
+  'SaaS':              'fintech-theme',
+  'ウェアラブル端末':  'game-entertainment-theme',
+  '仮想通貨':          'fintech-theme',
+  'ネット銀行':        'banking-finance-theme',
+  '鉄鋼・素材':        'steel-materials-theme',
+  '化学':              'chemical-theme',
+  '建築資材':          'construction-infra-theme',
+  '塗料':              'chemical-theme',
+  '医薬品・バイオ':    'pharma-bio-theme',
+  'ヘルスケア・介護':  'healthcare-nursing-theme',
+  '薬局・ドラッグストア': 'healthcare-nursing-theme',
+  '銀行・金融':        'banking-finance-theme',
+  '地方銀行':          'regional-bank-theme',
+  '保険':              'insurance-theme',
+  'フィンテック':      'fintech-theme',
+  '不動産':            'real-estate-theme',
+  '建設・インフラ':    'construction-infra-theme',
+  '国土強靭化計画':    'national-resilience',
+  '下水道':            'construction-infra-theme',
+  '食品・飲料':        'food-beverage-theme',
+  '農業・フードテック':'agritech-foodtech-theme',
+  '小売・EC':          'retail-ec-theme',
+  '観光・ホテル・レジャー': 'tourism-hotel-theme',
+  'インバウンド':      'inbound-theme',
+  'リユース・中古品':  'retail-ec-theme',
+  '防衛・航空':        'defense-theme',
+  '宇宙・衛星':        'space-satellite-theme',
+  'ロボット・自動化':  'robot-automation-theme',
+  'レアアース・資源':  'rare-earth-resources-theme',
+  'バフェット銘柄':    'sogo-shosha-analysis',
+  'サイバーセキュリティ': 'cybersecurity-theme',
+  '警備':              'cybersecurity-theme',
+  '脱炭素・ESG':       'ev-green-theme',
+  '教育・HR・人材':    'education-hr-theme',
+  '人材派遣':          'education-hr-theme',
+  'ゲーム・エンタメ':  'game-entertainment-theme',
+}
+import COLUMNS from './columnData'
 
-Theme investing is an investment style that groups multiple stocks related to specific social trends or technological innovations as a "theme" and analyzes the overall movement of that theme.
+const CATEGORIES = ['All', 'テーマ', '入門', '分析手法', '投資手法', '用語解説', '個別銘柄']
 
-For example, for the "Semiconductors" theme, semiconductor equipment manufacturers, material manufacturers, and design companies are viewed as one group within the semiconductor industry.
-
-## Difference from Individual Stock Investing
-
-Individual stock investing involves deep analysis of a single company's performance and financials before trading. Theme investing, on the other hand, focuses on grasping the big picture of "which industries and technologies capital is flowing into."
-
-The risk of large losses due to a single company's earnings miss can be mitigated by diversification across the entire theme.
-
-## Difference from Index Investing
-
-Index investing (e.g., tracking the Nikkei Average or S&P 500) invests in the entire market. Theme investing focuses on "specific high-growth areas" within that market.
-
-While there is potential for higher returns than indices, there is also the risk of sharp declines if a theme becomes obsolete.
-
-## Theme Stock Cycles
-
-Theme stocks have a cycle of "attention phase → heating phase → correction phase → maturity phase." Large returns can be expected by entering early when attention begins, but entering after overheating risks buying at the peak.
-
-Reading which phase you are in by combining return rates, volume, and trading value is the core of theme investing.`,
-  },
-  { id:'semiconductor-theme', category:'Semiconductors', icon:'⚡', date:'2026/03/18',
-    title:'Semiconductors Deep Dive: Structural Growth Driven by AI Demand & Key Stock Relationships',
-    summary:'Semiconductors are called the "rice of modern industry." AI, EVs, and smartphones all need them. We explain the structure of the semiconductor theme and the roles of major domestic stocks.',
-    body:`## Why Semiconductors Are in Focus
-
-Semiconductors are used in smartphones, computers, automobiles, home appliances, industrial equipment, and data centers running generative AI. Since the generative AI boom from 2023, demand for GPUs and HBM (High Bandwidth Memory) has exploded, making semiconductor-related stocks globally prominent.
-
-## Semiconductor Value Chain & Japanese Companies
-
-**Manufacturing Equipment (Core Strength)**
-- Tokyo Electron (8035): World top share in etching equipment and coaters/developers
-- Advantest (6857): World top in semiconductor test equipment
-- Disco (6146): Dominant market share in dicing/grinding equipment
-- Lasertec (6920): Near-monopoly in EUV mask defect inspection equipment
-
-**Design/SoC**
-- Renesas Electronics (6723): World top 3 in automotive microcontrollers
-- Socionext (6526): Pure-play SoC design (fabless)
-
-**Materials**
-- SUMCO (3436): World #2 in silicon wafers
-
-## Recent Topics
-
-- Explosive growth in advanced semiconductor (2nm/3nm) equipment demand
-- HBM (High Bandwidth Memory) inspection equipment demand increase
-- Japan-US semiconductor supply chain reconstruction (TSMC Kumamoto, etc.)
-- Export control developments (China restrictions affecting equipment makers)`,
-  },
-  { id:'how-to-read-data', category:'Analysis', icon:'📊', date:'2026/03/08',
-    title:'How to Read Return Rate, Volume & Trading Value: 3 Key Indicators for Theme Analysis',
-    summary:'This article explains what each of the 3 indicators on StockWaveJP (return rate, volume, trading value) means and how to use them in actual theme analysis.',
-    body:`## The 3 Key Indicators
-
-### 1. Return Rate (Price Change %)
-
-Shows the rate of price change within the period. Represents "how much this theme rose (or fell) on average during the period."
-
-A theme's return rate is calculated as the average of the return rates of stocks within the theme.
-
-**How to Use**
-- Compare all themes to see "which theme capital is entering right now"
-- Change periods (1W, 1M, 3M, 1Y) to check "is it short-term movement or a long-term trend"
-
-### 2. Volume (Trading Quantity)
-
-The number of shares traded during the period. Higher volume indicates greater market participant interest in that theme.
-
-**How to Use**
-- High return rate but low volume → "A catalyst appeared but overall market interest is low"
-- Rising return rate + increasing volume → "Possibility of serious capital inflow"
-
-### 3. Trading Value (Transaction Amount)
-
-An amount-based indicator calculated as volume × price. Themes with many high-priced stocks will have large trading values even with low volume.
-
-**How to Use**
-- Trading value is most appropriate for understanding actual "money movement" in themes
-- Movements of institutional and large investors tend to be reflected in trading value
-
-## Combined Analysis of 3 Indicators
-
-| Return | Volume | Trading Value | Interpretation |
-|---|---|---|---|
-| Rise↑ | Increase↑ | Increase↑ | Strong uptrend, capital inflow accelerating |
-| Rise↑ | Decrease↓ | Decrease↓ | Rise is temporary, momentum weakening |
-| Fall↓ | Increase↑ | Increase↑ | Sharp drop/panic selling |
-| Fall↓ | Decrease↓ | Decrease↓ | Quiet correction, waiting for bottom |
-
-## Important Note
-
-These indicators are "reference information" and do not guarantee future stock prices. Always consider company financials, macroeconomics, and your own risk tolerance comprehensively for actual investment decisions.`,
-  },
-]
-
-const CATEGORIES = ['All', 'Theme', 'Basics', 'Analysis']
 const CAT_COLORS = {
-  'Basics':      { bg:'rgba(74,158,255,0.1)',  color:'#4a9eff',  border:'rgba(74,158,255,0.25)' },
-  'Semiconductors':{ bg:'rgba(255,69,96,0.1)', color:'#ff4560',  border:'rgba(255,69,96,0.25)' },
-  'AI/Cloud':    { bg:'rgba(170,119,255,0.1)', color:'#aa77ff',  border:'rgba(170,119,255,0.25)' },
-  'Defense':     { bg:'rgba(76,175,130,0.1)',  color:'#4caf82',  border:'rgba(76,175,130,0.25)' },
-  'Inbound':     { bg:'rgba(255,140,66,0.1)',  color:'#ff8c42',  border:'rgba(255,140,66,0.25)' },
-  'EV/Green':    { bg:'rgba(6,214,160,0.1)',   color:'#06d6a0',  border:'rgba(6,214,160,0.25)' },
-  'Analysis':    { bg:'rgba(255,214,25,0.1)',  color:'#ffd619',  border:'rgba(255,214,25,0.25)' },
+  '入門':       { bg:'rgba(74,158,255,0.1)',  color:'#4a9eff',  border:'rgba(74,158,255,0.25)' },
+  '半導体':     { bg:'rgba(255,69,96,0.1)',   color:'#ff4560',  border:'rgba(255,69,96,0.25)' },
+  'AI・クラウド':{ bg:'rgba(170,119,255,0.1)', color:'#aa77ff', border:'rgba(170,119,255,0.25)' },
+  '防衛・宇宙': { bg:'rgba(76,175,130,0.1)',  color:'#4caf82',  border:'rgba(76,175,130,0.25)' },
+  'インバウンド':{ bg:'rgba(255,140,66,0.1)',  color:'#ff8c42',  border:'rgba(255,140,66,0.25)' },
+  'EV・脱炭素': { bg:'rgba(6,214,160,0.1)',   color:'#06d6a0',  border:'rgba(6,214,160,0.25)' },
+  '分析手法':   { bg:'rgba(255,214,25,0.1)',  color:'#ffd619',  border:'rgba(255,214,25,0.25)' },
+  '造船':       { bg:'rgba(91,156,246,0.1)',  color:'#5b9cf6',  border:'rgba(91,156,246,0.25)' },
+  '親子上場':   { bg:'rgba(255,140,66,0.1)',  color:'#ff8c42',  border:'rgba(255,140,66,0.25)' },
+  'バフェット銘柄': { bg:'rgba(255,214,25,0.1)', color:'#ffd619', border:'rgba(255,214,25,0.25)' },
+  'フィジカルAI': { bg:'rgba(170,119,255,0.1)', color:'#aa77ff', border:'rgba(170,119,255,0.25)' },
+  '再生可能エネルギー': { bg:'rgba(6,214,160,0.12)', color:'#06d6a0', border:'rgba(6,214,160,0.3)' },
+  'エッジAI':   { bg:'rgba(170,119,255,0.1)', color:'#aa77ff', border:'rgba(170,119,255,0.25)' },
+  'パワー半導体': { bg:'rgba(255,69,96,0.1)',  color:'#ff4560',  border:'rgba(255,69,96,0.25)' },
+  'NISA':       { bg:'rgba(6,214,160,0.1)',   color:'#06d6a0',  border:'rgba(6,214,160,0.25)' },
+  '光通信':     { bg:'rgba(74,158,255,0.1)',  color:'#4a9eff',  border:'rgba(74,158,255,0.25)' },
+  '国土強靭化': { bg:'rgba(76,175,130,0.1)',  color:'#4caf82',  border:'rgba(76,175,130,0.25)' },
+  'イラク':     { bg:'rgba(180,120,80,0.1)',  color:'#b47850',  border:'rgba(180,120,80,0.25)' },
+  'ゲーム・エンタメ':    { bg:'rgba(170,119,255,0.1)', color:'#aa77ff', border:'rgba(170,119,255,0.25)' },
+  '銀行・金融':         { bg:'rgba(74,158,255,0.1)',  color:'#4a9eff', border:'rgba(74,158,255,0.25)' },
+  '地方銀行':           { bg:'rgba(74,158,255,0.08)', color:'#4a9eff', border:'rgba(74,158,255,0.2)' },
+  '保険':               { bg:'rgba(76,175,130,0.1)',  color:'#4caf82', border:'rgba(76,175,130,0.25)' },
+  '不動産':             { bg:'rgba(255,140,66,0.1)',  color:'#ff8c42', border:'rgba(255,140,66,0.25)' },
+  '医薬品・バイオ':     { bg:'rgba(255,69,96,0.1)',   color:'#ff4560', border:'rgba(255,69,96,0.25)' },
+  'ヘルスケア・介護':   { bg:'rgba(6,214,160,0.1)',   color:'#06d6a0', border:'rgba(6,214,160,0.25)' },
+  '食品・飲料':         { bg:'rgba(255,214,25,0.1)',  color:'#ffd619', border:'rgba(255,214,25,0.25)' },
+  '小売・EC':           { bg:'rgba(255,140,66,0.1)',  color:'#ff8c42', border:'rgba(255,140,66,0.25)' },
+  '通信':               { bg:'rgba(74,158,255,0.1)',  color:'#4a9eff', border:'rgba(74,158,255,0.25)' },
+  '鉄鋼・素材':         { bg:'rgba(180,120,80,0.1)',  color:'#b47850', border:'rgba(180,120,80,0.25)' },
+  '化学':               { bg:'rgba(6,214,160,0.1)',   color:'#06d6a0', border:'rgba(6,214,160,0.25)' },
+  '建設・インフラ':     { bg:'rgba(76,175,130,0.1)',  color:'#4caf82', border:'rgba(76,175,130,0.25)' },
+  '輸送・物流':         { bg:'rgba(91,156,246,0.1)',  color:'#5b9cf6', border:'rgba(91,156,246,0.25)' },
+  'フィンテック':       { bg:'rgba(170,119,255,0.1)', color:'#aa77ff', border:'rgba(170,119,255,0.25)' },
+  'ロボット・自動化':   { bg:'rgba(255,69,96,0.1)',   color:'#ff4560', border:'rgba(255,69,96,0.25)' },
+  'レアアース・資源':   { bg:'rgba(180,120,80,0.1)',  color:'#b47850', border:'rgba(180,120,80,0.25)' },
+  'サイバーセキュリティ':{ bg:'rgba(74,158,255,0.1)', color:'#4a9eff', border:'rgba(74,158,255,0.25)' },
+  'ドローン':           { bg:'rgba(6,214,160,0.1)',   color:'#06d6a0', border:'rgba(6,214,160,0.25)' },
+  '観光・ホテル・レジャー':{ bg:'rgba(255,214,25,0.1)',color:'#ffd619',border:'rgba(255,214,25,0.25)' },
+  '農業・フードテック': { bg:'rgba(76,175,130,0.1)',  color:'#4caf82', border:'rgba(76,175,130,0.25)' },
+  '教育・HR・人材':     { bg:'rgba(170,119,255,0.1)', color:'#aa77ff', border:'rgba(170,119,255,0.25)' },
+  '宇宙・衛星':         { bg:'rgba(74,158,255,0.1)',  color:'#4a9eff', border:'rgba(74,158,255,0.25)' },
+  '投資手法':           { bg:'rgba(255,140,66,0.1)',  color:'#ff8c42', border:'rgba(255,140,66,0.25)' },
+  '用語解説':           { bg:'rgba(170,119,255,0.1)', color:'#aa77ff', border:'rgba(170,119,255,0.25)' },
+  '個別銘柄':           { bg:'rgba(255,69,96,0.1)',   color:'#ff4560', border:'rgba(255,69,96,0.25)' },
 }
 
+// Markdown風テキストを簡易レンダリング
 function RenderBody({ text }) {
   const lines = text.trim().split('\n')
   const elements = []
@@ -121,50 +128,336 @@ function RenderBody({ text }) {
   while (i < lines.length) {
     const line = lines[i].trim()
     if (!line) { i++; continue }
-    if (line.startsWith('## ')) {
-      elements.push(<h2 key={i} style={{ fontSize:'16px', fontWeight:700, color:'#e8f0ff', margin:'24px 0 10px', borderBottom:'1px solid var(--border)', paddingBottom:'6px' }}>{line.slice(3)}</h2>)
+    if (line.startsWith('H2: ')) {
+      elements.push(
+        <h2 key={i} style={{ fontSize:'16px', fontWeight:700, color:'#e8f0ff',
+          margin:'24px 0 10px', borderBottom:'1px solid var(--border)', paddingBottom:'6px' }}>
+          {line.slice(4)}
+        </h2>
+      )
+    } else if (line.startsWith('H3: ')) {
+      elements.push(
+        <h3 key={i} style={{ fontSize:'14px', fontWeight:700, color:'var(--accent)', margin:'16px 0 6px' }}>
+          {line.slice(4)}
+        </h3>
+      )
+    } else if (line.startsWith('## ')) {
+      elements.push(
+        <h2 key={i} style={{ fontSize:'16px', fontWeight:700, color:'#e8f0ff',
+          margin:'24px 0 10px', borderBottom:'1px solid var(--border)', paddingBottom:'6px' }}>
+          {line.slice(3)}
+        </h2>
+      )
     } else if (line.startsWith('**') && line.endsWith('**')) {
-      elements.push(<p key={i} style={{ fontSize:'13px', fontWeight:700, color:'var(--accent)', margin:'14px 0 6px' }}>{line.slice(2,-2)}</p>)
+      elements.push(
+        <p key={i} style={{ fontSize:'13px', fontWeight:700, color:'var(--accent)', margin:'14px 0 6px' }}>
+          {line.slice(2, -2)}
+        </p>
+      )
     } else if (line.startsWith('- ')) {
       const items = []
-      while (i < lines.length && lines[i].trim().startsWith('- ')) { items.push(lines[i].trim().slice(2)); i++ }
-      elements.push(<ul key={`ul-${i}`} style={{ margin:'6px 0 12px', paddingLeft:'20px' }}>{items.map((item,j)=><li key={j} style={{ fontSize:'13px', color:'var(--text2)', lineHeight:1.8, marginBottom:'2px' }}>{item}</li>)}</ul>)
+      while (i < lines.length && lines[i].trim().startsWith('- ')) {
+        items.push(lines[i].trim().slice(2))
+        i++
+      }
+      elements.push(
+        <ul key={`ul-${i}`} style={{ margin:'6px 0 12px', paddingLeft:'20px' }}>
+          {items.map((item, j) => (
+            <li key={j} style={{ fontSize:'13px', color:'#e8f0ff', lineHeight:1.8, marginBottom:'2px' }}>
+              {item.includes('（') ? (
+                <>
+                  <span style={{ color:'var(--text)', fontWeight:600 }}>{item.split('：')[0]}</span>
+                  {item.includes('：') ? <span style={{ color:'var(--text2)' }}>：{item.split('：').slice(1).join('：')}</span> : null}
+                </>
+              ) : item}
+            </li>
+          ))}
+        </ul>
+      )
       continue
     } else if (line.startsWith('| ')) {
       const rows = []
-      while (i < lines.length && lines[i].trim().startsWith('| ')) { if (!lines[i].includes('---')) rows.push(lines[i].trim().split('|').filter(c=>c.trim()).map(c=>c.trim())); i++ }
-      if (rows.length > 0) elements.push(<div key={`t-${i}`} style={{ overflowX:'auto', margin:'12px 0 20px' }}><table style={{ borderCollapse:'collapse', fontSize:'12px', width:'100%', minWidth:'400px' }}><thead><tr>{rows[0].map((h,j)=><th key={j} style={{ padding:'8px 12px', textAlign:'left', borderBottom:'1px solid var(--border)', color:'var(--text3)', fontWeight:600, background:'var(--bg3)', whiteSpace:'nowrap' }}>{h}</th>)}</tr></thead><tbody>{rows.slice(1).map((row,ri)=><tr key={ri} style={{ borderBottom:'1px solid rgba(255,255,255,0.04)' }}>{row.map((cell,ci)=><td key={ci} style={{ padding:'8px 12px', color:'var(--text2)', lineHeight:1.6 }}>{cell}</td>)}</tr>)}</tbody></table></div>)
+      while (i < lines.length && lines[i].trim().startsWith('| ')) {
+        if (!lines[i].includes('---')) {
+          rows.push(lines[i].trim().split('|').filter(c => c.trim()).map(c => c.trim()))
+        }
+        i++
+      }
+      if (rows.length > 0) {
+        elements.push(
+          <div key={`table-${i}`} style={{ overflowX:'auto', margin:'12px 0 20px' }}>
+            <table style={{ borderCollapse:'collapse', fontSize:'12px', width:'100%', minWidth:'400px' }}>
+              <thead>
+                <tr>
+                  {rows[0].map((h, j) => (
+                    <th key={j} style={{ padding:'8px 12px', textAlign:'left', borderBottom:'1px solid var(--border)',
+                      color:'var(--text3)', fontWeight:600, background:'var(--bg3)', whiteSpace:'nowrap' }}>
+                      {h}
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {rows.slice(1).map((row, ri) => (
+                  <tr key={ri} style={{ borderBottom:'1px solid rgba(255,255,255,0.04)' }}>
+                    {row.map((cell, ci) => (
+                      <td key={ci} style={{ padding:'8px 12px', color:'#e8f0ff', lineHeight:1.6 }}>
+                        {cell}
+                      </td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        )
+      }
       continue
     } else {
-      elements.push(<p key={i} style={{ fontSize:'13px', color:'var(--text2)', lineHeight:1.9, margin:'0 0 12px' }}>{line}</p>)
+      elements.push(
+        <p key={i} style={{ fontSize:'13px', color:'#e8f0ff', lineHeight:1.9, margin:'0 0 12px' }}>
+          {line}
+        </p>
+      )
     }
     i++
   }
   return <div>{elements}</div>
 }
 
-export default function Column() {
-  const [activeCat, setActiveCat] = useState('All')
-  const [activeCol, setActiveCol] = useState(null)
-  const THEME_CATS = ['Semiconductors','AI/Cloud','Defense','Inbound','EV/Green']
-  const filtered = activeCat === 'All' ? COLUMNS
-    : activeCat === 'Theme' ? COLUMNS.filter(c => THEME_CATS.includes(c.category))
+export default function Column({ initialArticleId = null, onNavigate }) {
+  const [activeCat,  setActiveCat]  = useState('All')
+  const [activeCol,  setActiveCol]  = useState(initialArticleId)
+  const [searchQuery, setSearchQuery] = useState('')
+  const [page,        setPage]        = useState(1)
+  const ITEMS_PER_PAGE = 20
+
+  // テーマ一覧・テーマ詳細から特定記事IDで来たときに追従
+  useEffect(() => {
+    if (initialArticleId) {
+      setActiveCol(initialArticleId)
+      window.history.replaceState(null, '', `#column/${initialArticleId}`)
+    }
+  }, [initialArticleId])
+
+  const openArticle = (id) => {
+    setActiveCol(id)
+    window.history.replaceState(null, '', `#column/${id}`)
+    window.scrollTo(0, 0)
+  }
+  const closeArticle = () => {
+    setActiveCol(null)
+    window.history.replaceState(null, '', window.location.pathname)
+    window.scrollTo(0, 0)
+  }
+
+  const THEME_CATS = [
+    '半導体製造装置','半導体検査装置','半導体材料','メモリ','パワー半導体','次世代半導体',
+    '生成AI','AIデータセンター','フィジカルAI','AI半導体','AI人材','エッジAI',
+    'EV・電気自動車','全固体電池','自動運転','ドローン','輸送・物流','造船',
+    '再生可能エネルギー','太陽光発電','核融合発電','原子力発電','電力会社',
+    'LNG','石油','蓄電池','資源（水素・ヘリウム・水）','IOWN','光通信',
+    '通信','量子コンピューター','SaaS','ウェアラブル端末','仮想通貨','ネット銀行',
+    '鉄鋼・素材','化学','建築資材','塗料',
+    '医薬品・バイオ','ヘルスケア・介護','薬局・ドラッグストア',
+    '銀行・金融','地方銀行','保険','フィンテック',
+    '不動産','建設・インフラ','国土強靭化計画','下水道',
+    '食品・飲料','農業・フードテック','小売・EC','観光・ホテル・レジャー',
+    'インバウンド','リユース・中古品',
+    '防衛・航空','宇宙・衛星','ロボット・自動化',
+    'レアアース・資源','バフェット銘柄',
+    'サイバーセキュリティ','警備','脱炭素・ESG',
+    '教育・HR・人材','人材派遣','ゲーム・エンタメ',
+  ]
+  const _base = activeCat === 'All'
+    ? COLUMNS
+    : activeCat === 'テーマ'
+    ? COLUMNS.filter(c => THEME_CATS.includes(c.category))
     : COLUMNS.filter(c => c.category === activeCat)
+
+  const filtered = [..._base]
+    .filter(col => {
+      if (!searchQuery.trim()) return true
+      const q = searchQuery.trim().toLowerCase()
+      return (
+        col.title.toLowerCase().includes(q) ||
+        col.summary.toLowerCase().includes(q) ||
+        (col.keywords || []).some(k => k.toLowerCase().includes(q)) ||
+        (col.themes || []).some(t => t.toLowerCase().includes(q))
+      )
+    })
+    .sort((a, b) => b.date.localeCompare(a.date))
+
+  const totalPages = Math.ceil(filtered.length / ITEMS_PER_PAGE)
+  const pagedItems = filtered.slice((page - 1) * ITEMS_PER_PAGE, page * ITEMS_PER_PAGE)
 
   if (activeCol) {
     const col = COLUMNS.find(c => c.id === activeCol)
-    const cat = CAT_COLORS[col.category] || CAT_COLORS['Basics']
+    if (!col) { setActiveCol(null); return null }
+    const cat = CAT_COLORS[col.category] || { bg:'rgba(74,158,255,0.1)', color:'#4a9eff', border:'rgba(74,158,255,0.25)' }
     return (
       <div style={{ padding:'20px 32px 60px', maxWidth:'760px', margin:'0 auto' }}>
-        <button onClick={() => setActiveCol(null)} style={{ display:'flex', alignItems:'center', gap:'6px', background:'transparent', border:'none', color:'var(--accent)', fontSize:'13px', cursor:'pointer', fontFamily:'var(--font)', padding:'0', marginBottom:'20px' }}>← Back to Column List</button>
-        <span style={{ fontSize:'11px', fontWeight:600, padding:'3px 10px', borderRadius:'20px', background:cat.bg, color:cat.color, border:`1px solid ${cat.border}`, display:'inline-block', marginBottom:'12px' }}>{col.category}</span>
-        <h1 style={{ fontSize:'20px', fontWeight:700, color:'#e8f0ff', lineHeight:1.5, marginBottom:'8px' }}>{col.title}</h1>
-        <div style={{ fontSize:'11px', color:'var(--text3)', marginBottom:'24px' }}>{col.date}</div>
-        <div style={{ background:'var(--bg2)', border:'1px solid var(--border)', borderRadius:'10px', padding:'6px 20px 20px', marginBottom:'28px' }}>
+        <button onClick={() => closeArticle()} style={{
+          display:'flex', alignItems:'center', gap:'6px',
+          background:'transparent', border:'none', color:'var(--accent)',
+          fontSize:'13px', cursor:'pointer', fontFamily:'var(--font)',
+          padding:'0', marginBottom:'20px',
+        }}>
+          ← Column一覧に戻る
+        </button>
+        <span style={{ fontSize:'11px', fontWeight:600, padding:'3px 10px', borderRadius:'20px',
+          background:cat.bg, color:cat.color, border:`1px solid ${cat.border}`,
+          display:'inline-block', marginBottom:'12px' }}>
+          {col.category}
+        </span>
+        <h1 style={{ fontSize:'20px', fontWeight:700, color:'#e8f0ff', lineHeight:1.5, marginBottom:'8px' }}>
+          {col.title}
+        </h1>
+        <div style={{ fontSize:'11px', color:'var(--text3)', marginBottom:'24px' }}>
+          {col.date}
+        </div>
+        <div style={{ background:'var(--bg2)', border:'1px solid var(--border)', borderRadius:'10px',
+          padding:'6px 20px 20px', marginBottom:'28px' }}>
           <RenderBody text={col.body} />
         </div>
-        <div style={{ background:'rgba(255,140,66,0.07)', border:'1px solid rgba(255,140,66,0.2)', borderRadius:'8px', padding:'14px 18px', fontSize:'12px', color:'var(--text2)', lineHeight:1.8 }}>
-          ⚠️ This column is for informational purposes only and does not recommend specific stocks or investment methods. Please make all investment decisions at your own risk and judgment.
+        <div style={{ background:'rgba(255,140,66,0.07)', border:'1px solid rgba(255,140,66,0.2)',
+          borderRadius:'8px', padding:'14px 18px', fontSize:'12px', color:'#e8f0ff', lineHeight:1.8 }}>
+          ⚠️ 本Columnは情報提供を目的としており、特定の銘柄・投資方法を推奨するものではありません。
+          実際のInvestment decisions are at your own riskにおいて行ってください。
+        </div>
+
+        {/* ⑤ Related Themesセクション（col.themesフィールドベース） */}
+        {col.themes && col.themes.length > 0 && onNavigate && (
+          <div style={{ marginTop:'24px', padding:'16px 20px',
+            background:'var(--bg2)', border:'1px solid var(--border)',
+            borderRadius:'10px' }}>
+            <div style={{ fontSize:'11px', fontWeight:600, color:'var(--text3)',
+              letterSpacing:'0.08em', textTransform:'uppercase', marginBottom:'10px' }}>
+              🔗 Related Themes
+            </div>
+            <p style={{ fontSize:'12px', color:'var(--text2)', lineHeight:1.8, marginBottom:'12px' }}>
+              {'Related Themes: ' + col.themes.join('、')}
+            </p>
+            <div style={{ display:'flex', flexDirection:'column', gap:'10px' }}>
+              {col.themes.map(theme => (
+                <div key={theme} style={{
+                  background:'rgba(255,255,255,0.03)', borderRadius:'6px',
+                  padding:'10px 12px', border:'1px solid rgba(255,255,255,0.06)',
+                }}>
+                  <div style={{ fontSize:'12px', fontWeight:700, color:'var(--text)',
+                    marginBottom:'8px' }}>
+                    {theme}
+                  </div>
+                  <div style={{ display:'flex', flexWrap:'wrap', gap:'6px' }}>
+                    <button
+                      onClick={() => onNavigate('テーマ別詳細', theme)}
+                      style={{ padding:'5px 12px', borderRadius:'5px', fontSize:'11px', fontWeight:600,
+                        background:'rgba(170,119,255,0.1)', border:'1px solid rgba(170,119,255,0.3)',
+                        color:'#aa77ff', cursor:'pointer', fontFamily:'var(--font)', transition:'all 0.15s',
+                      }}
+                      onMouseEnter={e => e.currentTarget.style.background='rgba(170,119,255,0.2)'}
+                      onMouseLeave={e => e.currentTarget.style.background='rgba(170,119,255,0.1)'}
+                    >
+                      📊 テーマ詳細を見る
+                    </button>
+                    {THEME_ARTICLE_MAP[theme] && THEME_ARTICLE_MAP[theme] !== col.id && (
+                      <button
+                        onClick={() => onNavigate('Column・解説', THEME_ARTICLE_MAP[theme])}
+                        style={{ padding:'5px 12px', borderRadius:'5px', fontSize:'11px', fontWeight:600,
+                          background:'rgba(74,158,255,0.07)', border:'1px solid rgba(74,158,255,0.2)',
+                          color:'var(--accent)', cursor:'pointer', fontFamily:'var(--font)', transition:'all 0.15s',
+                        }}
+                        onMouseEnter={e => e.currentTarget.style.background='rgba(74,158,255,0.15)'}
+                        onMouseLeave={e => e.currentTarget.style.background='rgba(74,158,255,0.07)'}
+                      >
+                        📖 関連Columnを読む
+                      </button>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* テーマデータへのリンクボタン */}
+        {(() => {
+          const CAT_TO_THEME = {
+            '半導体製造装置':'半導体製造装置','半導体検査装置':'半導体検査装置',
+            '半導体材料':'半導体材料','メモリ':'メモリ','パワー半導体':'パワー半導体',
+            '次世代半導体':'次世代半導体','生成AI':'生成AI','AIデータセンター':'AIデータセンター',
+            'フィジカルAI':'フィジカルAI','AI半導体':'AI半導体','AI人材':'AI人材','エッジAI':'エッジAI',
+            'EV・電気自動車':'EV・電気自動車','全固体電池':'全固体電池','自動運転':'自動運転',
+            'ドローン':'ドローン','輸送・物流':'輸送・物流','造船':'造船',
+            '再生可能エネルギー':'再生可能エネルギー','太陽光発電':'太陽光発電',
+            '核融合発電':'核融合発電','原子力発電':'原子力発電','電力会社':'電力会社',
+            'LNG':'LNG','石油':'石油','蓄電池':'蓄電池',
+            '資源（水素・ヘリウム・水）':'資源（水素・ヘリウム・水）',
+            'IOWN':'IOWN','光通信':'光通信','通信':'通信',
+            '量子コンピューター':'量子コンピューター','SaaS':'SaaS',
+            'ウェアラブル端末':'ウェアラブル端末','仮想通貨':'仮想通貨','ネット銀行':'ネット銀行',
+            '鉄鋼・素材':'鉄鋼・素材','化学':'化学','建築資材':'建築資材','塗料':'塗料',
+            '医薬品・バイオ':'医薬品・バイオ','ヘルスケア・介護':'ヘルスケア・介護',
+            '薬局・ドラッグストア':'薬局・ドラッグストア',
+            '銀行・金融':'銀行・金融','地方銀行':'地方銀行','保険':'保険','フィンテック':'フィンテック',
+            '不動産':'不動産','建設・インフラ':'建設・インフラ',
+            '国土強靭化計画':'国土強靭化計画','下水道':'下水道',
+            '食品・飲料':'食品・飲料','農業・フードテック':'農業・フードテック',
+            '小売・EC':'小売・EC','観光・ホテル・レジャー':'観光・ホテル・レジャー',
+            'インバウンド':'インバウンド','リユース・中古品':'リユース・中古品',
+            '防衛・航空':'防衛・航空','宇宙・衛星':'宇宙・衛星','ロボット・自動化':'ロボット・自動化',
+            'レアアース・資源':'レアアース・資源','バフェット銘柄':'バフェット銘柄',
+            'サイバーセキュリティ':'サイバーセキュリティ','警備':'警備','脱炭素・ESG':'脱炭素・ESG',
+            '教育・HR・人材':'教育・HR・人材','人材派遣':'人材派遣','ゲーム・エンタメ':'ゲーム・エンタメ',
+          }
+          const themeName = CAT_TO_THEME[col.category]
+          if (!themeName || !onNavigate) return null
+          return (
+            <div style={{ marginTop:'20px', display:'flex', gap:'10px', flexWrap:'wrap' }}>
+              <button
+                onClick={() => onNavigate('テーマ別詳細', themeName)}
+                style={{ display:'inline-flex', alignItems:'center', gap:'8px',
+                  background:'rgba(74,158,255,0.1)', border:'1px solid rgba(74,158,255,0.3)',
+                  borderRadius:'8px', color:'var(--accent)', cursor:'pointer',
+                  fontFamily:'var(--font)', fontSize:'13px', fontWeight:600,
+                  padding:'10px 20px', transition:'all 0.15s',
+                }}
+                onMouseEnter={e => { e.currentTarget.style.background='rgba(74,158,255,0.2)' }}
+                onMouseLeave={e => { e.currentTarget.style.background='rgba(74,158,255,0.1)' }}
+              >
+                📊 {themeName}テーマのデータを見る
+              </button>
+              <button
+                onClick={() => onNavigate('テーマ一覧')}
+                style={{ display:'inline-flex', alignItems:'center', gap:'8px',
+                  background:'rgba(170,119,255,0.1)', border:'1px solid rgba(170,119,255,0.3)',
+                  borderRadius:'8px', color:'#aa77ff', cursor:'pointer',
+                  fontFamily:'var(--font)', fontSize:'13px', fontWeight:600,
+                  padding:'10px 20px', transition:'all 0.15s',
+                }}
+                onMouseEnter={e => { e.currentTarget.style.background='rgba(170,119,255,0.2)' }}
+                onMouseLeave={e => { e.currentTarget.style.background='rgba(170,119,255,0.1)' }}
+              >
+                📈 全テーマ一覧を見る
+              </button>
+            </div>
+          )
+        })()}
+
+        {/* 下部の戻るボタン */}
+        <div style={{ marginTop:'32px', paddingTop:'24px', borderTop:'1px solid var(--border)', textAlign:'center' }}>
+          <button onClick={() => closeArticle()} style={{
+            display:'inline-flex', alignItems:'center', gap:'8px',
+            background:'var(--bg2)', border:'1px solid var(--border)',
+            borderRadius:'8px', color:'var(--text2)', cursor:'pointer',
+            fontFamily:'var(--font)', fontSize:'13px', fontWeight:600,
+            padding:'10px 28px', transition:'all 0.15s',
+          }}
+            onMouseEnter={e => { e.currentTarget.style.borderColor='var(--accent)'; e.currentTarget.style.color='var(--accent)' }}
+            onMouseLeave={e => { e.currentTarget.style.borderColor='var(--border)'; e.currentTarget.style.color='var(--text2)' }}
+          >
+            ← Column一覧に戻る
+          </button>
         </div>
       </div>
     )
@@ -172,33 +465,138 @@ export default function Column() {
 
   return (
     <div style={{ padding:'20px 32px 60px' }}>
-      <h1 style={{ fontSize:'24px', fontWeight:700, letterSpacing:'-0.02em', color:'#e8f0ff', marginBottom:'4px' }}>Column</h1>
-      <p style={{ fontSize:'13px', color:'var(--text3)', marginBottom:'24px' }}>From investment basics to detailed theme analysis — information to support your investment decisions.</p>
+      <h1 style={{ fontSize:'24px', fontWeight:700, letterSpacing:'-0.02em', color:'#e8f0ff', marginBottom:'4px' }}>
+        Column・解説
+      </h1>
+      <p style={{ fontSize:'13px', color:'var(--text3)', marginBottom:'24px' }}>
+        テーマ株投資の基礎から各テーマの詳細解説まで、投資判断に役立つ情報を提供します。
+      </p>
+
+      {/* キーワード・テーマ検索 */}
+      <div style={{ position:'relative', marginBottom:'12px', maxWidth:'400px' }}>
+        <input
+          type="text"
+          placeholder="キーワード・テーマ名で検索..."
+          value={searchQuery}
+          onChange={e => { setSearchQuery(e.target.value); setPage(1) }}
+          style={{
+            width:'100%', padding:'9px 36px 9px 14px',
+            background:'var(--bg2)', border:'1px solid var(--border)',
+            borderRadius:'8px', color:'var(--text)', fontSize:'13px',
+            fontFamily:'var(--font)', outline:'none', boxSizing:'border-box',
+          }}
+        />
+        {searchQuery && (
+          <button onClick={() => setSearchQuery('')} style={{
+            position:'absolute', right:'8px', top:'50%', transform:'translateY(-50%)',
+            background:'none', border:'none', color:'var(--text3)', cursor:'pointer',
+            fontSize:'14px', padding:'2px 4px',
+          }}>✕</button>
+        )}
+      </div>
+
+      {/* Categoryフィルタ */}
       <div style={{ display:'flex', gap:'6px', flexWrap:'wrap', marginBottom:'24px' }}>
         {CATEGORIES.map(cat => (
-          <button key={cat} onClick={() => setActiveCat(cat)} style={{ padding:'5px 14px', borderRadius:'20px', fontSize:'12px', cursor:'pointer', fontFamily:'var(--font)', transition:'all 0.15s', border: activeCat===cat ? '1px solid var(--accent)' : '1px solid var(--border)', background: activeCat===cat ? 'rgba(74,158,255,0.12)' : 'transparent', color: activeCat===cat ? 'var(--accent)' : 'var(--text3)', fontWeight: activeCat===cat ? 600 : 400 }}>{cat}</button>
+          <button key={cat} onClick={() => { setActiveCat(cat); setPage(1) }} style={{
+            padding:'5px 14px', borderRadius:'20px', fontSize:'12px', cursor:'pointer',
+            fontFamily:'var(--font)', transition:'all 0.15s',
+            border: activeCat === cat ? '1px solid var(--accent)' : '1px solid var(--border)',
+            background: activeCat === cat ? 'rgba(74,158,255,0.12)' : 'transparent',
+            color: activeCat === cat ? 'var(--accent)' : 'var(--text3)',
+            fontWeight: activeCat === cat ? 600 : 400,
+          }}>
+            {cat}
+          </button>
         ))}
       </div>
-      <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:'14px' }} className="col-grid">
-        {filtered.map((col, i) => {
-          const cat = CAT_COLORS[col.category] || CAT_COLORS['Basics']
+
+      {/* ページ情報 */}
+      {filtered.length > 0 && (
+        <div style={{ fontSize:'12px', color:'var(--text3)', marginBottom:'12px' }}>
+          {filtered.length}件中 {(page-1)*ITEMS_PER_PAGE+1}〜{Math.min(page*ITEMS_PER_PAGE, filtered.length)}件表示
+        </div>
+      )}
+
+      {/* Column一覧 */}
+      <div style={{ display:'grid', gridTemplateColumns:'repeat(2, 1fr)', gap:'14px' }} className="col-grid">
+        {pagedItems.filter(Boolean).map((col, i) => {
+          const cat = CAT_COLORS[col.category] || { bg:'rgba(74,158,255,0.1)', color:'#4a9eff', border:'rgba(74,158,255,0.25)' }
           return (
-            <div key={col.id} onClick={() => setActiveCol(col.id)} style={{ background:'var(--bg2)', border:'1px solid var(--border)', borderRadius:'10px', padding:'18px 20px', cursor:'pointer', animation:`fadeUp 0.3s ease ${i*0.05}s both`, transition:'border-color 0.15s, transform 0.15s' }}
+            <div key={col.id} onClick={() => openArticle(col.id)} style={{
+              background:'var(--bg2)', border:'1px solid var(--border)',
+              borderRadius:'10px', padding:'18px 20px', cursor:'pointer',
+              animation:`fadeUp 0.3s ease ${i * 0.05}s both`,
+              transition:'border-color 0.15s, transform 0.15s',
+            }}
               onMouseEnter={e => { e.currentTarget.style.borderColor='rgba(74,158,255,0.3)'; e.currentTarget.style.transform='translateY(-2px)' }}
-              onMouseLeave={e => { e.currentTarget.style.borderColor='var(--border)'; e.currentTarget.style.transform='translateY(0)' }}>
+              onMouseLeave={e => { e.currentTarget.style.borderColor='var(--border)'; e.currentTarget.style.transform='translateY(0)' }}
+            >
               <div style={{ display:'flex', alignItems:'center', gap:'8px', marginBottom:'10px' }}>
                 <span style={{ fontSize:'20px' }}>{col.icon}</span>
-                <span style={{ fontSize:'11px', fontWeight:600, padding:'2px 8px', borderRadius:'12px', background:cat.bg, color:cat.color, border:`1px solid ${cat.border}` }}>{col.category}</span>
-                <span style={{ fontSize:'10px', color:'var(--text3)', marginLeft:'auto', fontFamily:'var(--mono)' }}>{col.date}</span>
+                <span style={{ fontSize:'11px', fontWeight:600, padding:'2px 8px', borderRadius:'12px',
+                  background:cat.bg, color:cat.color, border:`1px solid ${cat.border}` }}>
+                  {col.category}
+                </span>
+                <span style={{ fontSize:'10px', color:'var(--text3)', marginLeft:'auto', fontFamily:'var(--mono)' }}>
+                  {col.date}
+                </span>
               </div>
-              <h2 style={{ fontSize:'13px', fontWeight:700, color:'#e8f0ff', lineHeight:1.5, marginBottom:'8px' }}>{col.title}</h2>
-              <p style={{ fontSize:'12px', color:'var(--text3)', lineHeight:1.7, margin:0, display:'-webkit-box', WebkitLineClamp:3, WebkitBoxOrient:'vertical', overflow:'hidden' }}>{col.summary}</p>
-              <div style={{ marginTop:'12px', fontSize:'11px', color:'var(--accent)', fontWeight:600 }}>Read more →</div>
+              <h2 style={{ fontSize:'13px', fontWeight:700, color:'#e8f0ff', lineHeight:1.5, marginBottom:'8px' }}>
+                {col.title}
+              </h2>
+              <p style={{ fontSize:'12px', color:'var(--text3)', lineHeight:1.7, margin:0,
+                display:'-webkit-box', WebkitLineClamp:3, WebkitBoxOrient:'vertical', overflow:'hidden' }}>
+                {col.summary}
+              </p>
+              <div style={{ marginTop:'12px', fontSize:'11px', color:'var(--accent)', fontWeight:600 }}>
+                続きを読む →
+              </div>
             </div>
           )
         })}
       </div>
-      <style>{`@media (max-width:640px) { .col-grid { grid-template-columns: 1fr !important; } }`}</style>
+
+      {/* ページネーション */}
+      {totalPages > 1 && (
+        <div style={{ display:'flex', justifyContent:'center', alignItems:'center',
+          gap:'8px', marginTop:'28px', flexWrap:'wrap' }}>
+          <button onClick={() => { setPage(p => Math.max(1, p-1)); window.scrollTo(0,0) }}
+            disabled={page === 1}
+            style={{ padding:'6px 14px', borderRadius:'6px', border:'1px solid var(--border)',
+              background: page === 1 ? 'transparent' : 'var(--bg2)',
+              color: page === 1 ? 'var(--text3)' : 'var(--text)',
+              cursor: page === 1 ? 'default' : 'pointer',
+              fontFamily:'var(--font)', fontSize:'12px' }}>
+            ← 前へ
+          </button>
+          {Array.from({ length: totalPages }, (_, i) => i + 1).map(p => (
+            <button key={p} onClick={() => { setPage(p); window.scrollTo(0,0) }}
+              style={{ padding:'6px 12px', borderRadius:'6px', fontSize:'12px',
+                fontFamily:'var(--font)', cursor:'pointer',
+                border: p === page ? '1px solid var(--accent)' : '1px solid var(--border)',
+                background: p === page ? 'rgba(74,158,255,0.15)' : 'var(--bg2)',
+                color: p === page ? 'var(--accent)' : 'var(--text)',
+                fontWeight: p === page ? 700 : 400 }}>
+              {p}
+            </button>
+          ))}
+          <button onClick={() => { setPage(p => Math.min(totalPages, p+1)); window.scrollTo(0,0) }}
+            disabled={page === totalPages}
+            style={{ padding:'6px 14px', borderRadius:'6px', border:'1px solid var(--border)',
+              background: page === totalPages ? 'transparent' : 'var(--bg2)',
+              color: page === totalPages ? 'var(--text3)' : 'var(--text)',
+              cursor: page === totalPages ? 'default' : 'pointer',
+              fontFamily:'var(--font)', fontSize:'12px' }}>
+            次へ →
+          </button>
+        </div>
+      )}
+
+      <style>{`
+        @media (max-width:640px) { .col-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 10px !important; } }
+        @media (max-width:640px) { .col-grid > div { padding: 12px 12px !important; } }
+      `}</style>
     </div>
   )
 }

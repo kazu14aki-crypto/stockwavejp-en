@@ -1,5 +1,5 @@
 /**
- * AuthButton — ヘッダー右側のログイン/ユーザーボタン
+ * AuthButton — ヘッダー右側のLogin/ユーザーボタン
  */
 import { useState } from 'react'
 import { useAuth } from '../hooks/useAuth.jsx'
@@ -16,7 +16,7 @@ export default function AuthButton() {
   if (!isLoggedIn) return (
     <button
       onClick={() => signIn()}
-      title="Googleでログインするとカスタムテーマがどのデバイスでも同期されます"
+      title="GoogleでLoginするとカスタムテーマがどのデバイスでも同期されます"
       style={{
         display:'flex', alignItems:'center', gap:'6px',
         background:'rgba(74,158,255,0.1)', border:'1px solid rgba(74,158,255,0.3)',
@@ -29,11 +29,11 @@ export default function AuthButton() {
       onMouseLeave={e => e.currentTarget.style.background='rgba(74,158,255,0.1)'}
     >
       <GoogleIcon />
-      <span className="auth-btn-label">ログイン</span>
+      <span className="auth-btn-label">Login</span>
     </button>
   )
 
-  // ログイン済み
+  // Login済み
   return (
     <div style={{ position:'relative', flexShrink:0 }}>
       <button
@@ -91,7 +91,7 @@ export default function AuthButton() {
               onMouseEnter={e => e.currentTarget.style.background='rgba(255,83,112,0.08)'}
               onMouseLeave={e => e.currentTarget.style.background='none'}
             >
-              ログアウト
+              Logout
             </button>
           </div>
         </>

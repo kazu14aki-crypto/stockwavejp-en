@@ -9,18 +9,18 @@ export default function Settings({ viewMode, onViewModeChange, colorTheme, onCol
   )
 
   const COLOR_THEMES = [
-    { key:'dark',  label:'🌑 ブラック', desc:'ダークモード（デフォルト）' },
-    { key:'light', label:'☀️ ホワイト', desc:'ライトモード' },
+    { key:'dark',  label:'🌑 ブラック', desc:'Darkモード（デフォルト）' },
+    { key:'light', label:'☀️ ホワイト', desc:'Lightモード' },
   ]
 
   return (
     <div style={{ padding:'28px 32px 48px' }}>
-      <h1 style={{ fontSize:'24px',fontWeight:700,letterSpacing:'-0.02em',color:'var(--text)',marginBottom:'4px' }}>設定</h1>
-      <p style={{ fontSize:'12px',color:'var(--text2)',marginBottom:'28px' }}>表示モードやデザインの設定を変更できます</p>
+      <h1 style={{ fontSize:'24px',fontWeight:700,letterSpacing:'-0.02em',color:'var(--text)',marginBottom:'4px' }}>Settings</h1>
+      <p style={{ fontSize:'12px',color:'var(--text2)',marginBottom:'28px' }}>Display ModeやデザインのSettingsを変更できます</p>
 
-      {/* カラーテーマ */}
+      {/* カラーTheme */}
       <Card>
-        <SLabel>カラーテーマ</SLabel>
+        <SLabel>カラーTheme</SLabel>
         <div style={{ display:'flex',gap:'12px',flexWrap:'wrap' }}>
           {COLOR_THEMES.map(({ key, label, desc }) => (
             <button key={key} onClick={() => onColorThemeChange(key)} style={{
@@ -40,15 +40,15 @@ export default function Settings({ viewMode, onViewModeChange, colorTheme, onCol
           ))}
         </div>
         <p style={{ fontSize:'11px',color:'var(--text3)',marginTop:'12px' }}>
-          ※ テーマはリロードなしで即時反映されます
+          ※ Themeはリロードなしで即時反映されます
         </p>
       </Card>
 
-      {/* 表示モード */}
+      {/* Display Mode */}
       <Card>
-        <SLabel>表示モード</SLabel>
+        <SLabel>Display Mode</SLabel>
         <div style={{ display:'flex',gap:'8px',flexWrap:'wrap' }}>
-          {[{key:'auto',label:'🔄 自動'},{key:'pc',label:'🖥 PC'},{key:'mobile',label:'📱 スマホ'}].map(({key,label})=>(
+          {[{key:'auto',label:'🔄 Auto'},{key:'pc',label:'🖥 PC'},{key:'mobile',label:'📱 Mobile'}].map(({key,label})=>(
             <button key={key} onClick={()=>onViewModeChange(key)} style={{
               padding:'8px 20px',borderRadius:'6px',fontSize:'13px',cursor:'pointer',
               border:`1px solid ${viewMode===key?'var(--accent)':'var(--border)'}`,
@@ -59,7 +59,7 @@ export default function Settings({ viewMode, onViewModeChange, colorTheme, onCol
           ))}
         </div>
         <p style={{ fontSize:'11px',color:'var(--text3)',marginTop:'10px' }}>
-          「自動」はブラウザの画面幅を検知してPC/スマホを自動判定します
+          「Auto」はブラウザの画面幅を検知してPC/MobileをAuto判定します
         </p>
       </Card>
 

@@ -23,7 +23,7 @@ import SiteInfo    from './components/pages/SiteInfo'
 const PAGES = [
   { icon:'🏠', label:'Home',                   component:TopPage       },
   { icon:'📊', label:'Theme List',                component:ThemeList     },
-  { icon:'🔥', label:'テーマヒートマップ',              component:Heatmap       },
+  { icon:'🔥', label:'Heatmap',              component:Heatmap       },
   { icon:'🔍', label:'Theme Detail',              component:ThemeDetail   },
   { icon:'📋', label:'Market Ranking',           component:MarketRank    },
   { icon:'🎨', label:'Custom Theme',             component:CustomTheme   },
@@ -32,41 +32,41 @@ const PAGES_OTHER = [
   { icon:'🏢', label:'About',            component:About,    component:SiteInfo      },
   { icon:'📣', label:'News',            component:News          },
   { icon:'📖', label:'How to Use',              component:HowTo         },
-  { icon:'📝', label:'コラム・解説',        component:Column        },
+  { icon:'📝', label:'Column',        component:Column        },
   { icon:'⚙️', label:'Settings',               component:Settings      },
   { icon:'⚖️', label:'Disclaimer',           component:Disclaimer    },
   { icon:'📜', label:'Terms of Service', component:TermsOfService },
   { icon:'🔒', label:'Privacy Policy', component:PrivacyPolicy },
 ]
 
-// お問い合わせGoogleフォームURL（実際のURLに変更してください）
+// Contact Google Form URL
 const CONTACT_FORM_URL = 'https://forms.gle/XjNypTdmZt265Kib6'
 const ALL_PAGES     = [...PAGES, ...PAGES_OTHER]
 const COLOR_THEME_KEY = 'swjp_color_theme'
 
 function AppInner() {
-  const [currentPage,   setCurrentPage]   = useState('ホーム')
+  const [currentPage,   setCurrentPage]   = useState('Home')
   const [targetArticleId, setTargetArticleId] = useState(null)
   const [targetTheme,     setTargetTheme]     = useState(null)
 
-  // URLハッシュからページ・記事IDを初期化
+  // Initialize page and article ID from URL hash
   useEffect(() => {
     const hash = window.location.hash.replace('#', '')
     if (hash.startsWith('column/')) {
       const articleId = hash.replace('column/', '')
-      setCurrentPage('コラム・解説')
+      setCurrentPage('Column')
       setTargetArticleId(articleId)
     } else if (hash === 'terms') {
-      setCurrentPage('利用規約')
+      setCurrentPage('Terms of Service')
     } else if (hash === 'privacy') {
-      setCurrentPage('プライバシーポリシー')
+      setCurrentPage('Privacy Policy')
     }
-    // ハッシュ変化を監視
+    // Monitor hash changes
     const onHashChange = () => {
       const h = window.location.hash.replace('#', '')
       if (h.startsWith('column/')) {
         const aid = h.replace('column/', '')
-        setCurrentPage('コラム・解説')
+        setCurrentPage('Column')
         setTargetArticleId(aid)
       }
     }
@@ -90,7 +90,7 @@ function AppInner() {
     const check = () => {
       if (viewMode === 'mobile') { setIsMobile(true); return }
       if (viewMode === 'pc')     { setIsMobile(false); return }
-      // iPad Pro横向き(1366px)まで対応するため1280px以下をタブレット扱い
+      // Treat <=1280px as tablet to support iPad Pro landscape
       setIsMobile(window.innerWidth <= 1280)
     }
     check()
@@ -109,35 +109,35 @@ function AppInner() {
     setCurrentPage(label)
     setSidebarOpen(false)
     setTargetArticleId(articleId)
-    // テーマ別詳細の場合はテーマ名を保存
-    if (label === 'テーマ別詳細') {
+    // Save theme name for Theme Detail page
+    if (label === 'Theme Detail') {
       setTargetTheme(articleId || null)
     } else {
       setTargetTheme(null)
     }
-    // URLハッシュを更新（SEO・直接リンク対応）
-    if (label === 'コラム・解説' && articleId) {
+    // Update URL hash for SEO and direct link support
+    if (label === 'Column' && articleId) {
       window.history.replaceState(null, '', `#column/${articleId}`)
-    } else if (label === '利用規約') {
+    } else if (label === 'Terms of Service') {
       window.history.replaceState(null, '', '#terms')
-    } else if (label === 'プライバシーポリシー') {
+    } else if (label === 'Privacy Policy') {
       window.history.replaceState(null, '', '#privacy')
     } else {
       window.history.replaceState(null, '', window.location.pathname)
     }
   }
 
-  const handleLogoClick  = () => { setCurrentPage('ホーム'); setSidebarOpen(false) }
+  const handleLogoClick  = () => { setCurrentPage('Home'); setSidebarOpen(false) }
 
   const pageProps = (() => {
-    if (currentPage === '設定') return { viewMode, onViewModeChange:setViewMode, colorTheme, onColorThemeChange:setColorTheme, isMobile }
-    if (currentPage === 'ホーム') return { onNavigate: handlePageChange, isMobile }
-    if (currentPage === 'コラム・解説') return { initialArticleId: targetArticleId, onNavigate: handlePageChange, isMobile }
-    if (currentPage === 'テーマ一覧') return { onNavigate: handlePageChange, isMobile }
-    if (currentPage === 'テーマ別詳細') return { onNavigate: handlePageChange, initialTheme: targetTheme, isMobile }
-    if (currentPage === 'テーマヒートマップ') return { onNavigate: handlePageChange, isMobile }
-    if (currentPage === '週次レポート') return { onNavigate: handlePageChange, isMobile }
-    if (currentPage === '市場別詳細') return { onNavigate: handlePageChange, isMobile }
+    if (currentPage === 'Settings') return { viewMode, onViewModeChange:setViewMode, colorTheme, onColorThemeChange:setColorTheme, isMobile }
+    if (currentPage === 'Home') return { onNavigate: handlePageChange, isMobile }
+    if (currentPage === 'Column') return { initialArticleId: targetArticleId, onNavigate: handlePageChange, isMobile }
+    if (currentPage === 'Theme List') return { onNavigate: handlePageChange, isMobile }
+    if (currentPage === 'Theme Detail') return { onNavigate: handlePageChange, initialTheme: targetTheme, isMobile }
+    if (currentPage === 'Heatmap') return { onNavigate: handlePageChange, isMobile }
+    if (currentPage === 'Weekly Report') return { onNavigate: handlePageChange, isMobile }
+    if (currentPage === 'Market Ranking') return { onNavigate: handlePageChange, isMobile }
     return { isMobile }
   })()
 
@@ -181,39 +181,39 @@ function AppInner() {
             height:'calc(100vh - var(--header))', flexDirection:'column', gap:'16px', color:'var(--text3)' }}>
             <div style={{ fontSize:'48px' }}>{currentPageObj?.icon}</div>
             <div style={{ fontSize:'18px', fontWeight:600, color:'var(--text2)' }}>{currentPage}</div>
-            <div style={{ fontSize:'13px' }}>このページは準備中です</div>
+            <div style={{ fontSize:'13px' }}>This page is coming soon</div>
           </div>
         )}
 
         <footer style={{ borderTop:'1px solid var(--border)', padding:'16px 24px',
           textAlign:'center', color:'var(--text3)', fontSize:'11px' }}>
           <div style={{ marginBottom:'8px', display:'flex', justifyContent:'center', gap:'20px', flexWrap:'wrap' }}>
-            <button onClick={() => handlePageChange('免責事項')} style={{
+            <button onClick={() => handlePageChange('Disclaimer')} style={{
               background:'none', border:'none', color:'var(--text3)', cursor:'pointer',
               fontSize:'11px', fontFamily:'var(--font)', padding:0,
               textDecoration:'underline', textUnderlineOffset:'2px',
-            }}>免責事項</button>
-            <button onClick={() => handlePageChange('プライバシーポリシー')} style={{
+            }}>Disclaimer</button>
+            <button onClick={() => handlePageChange('Privacy Policy')} style={{
               background:'none', border:'none', color:'var(--text3)', cursor:'pointer',
               fontSize:'11px', fontFamily:'var(--font)', padding:0,
               textDecoration:'underline', textUnderlineOffset:'2px',
-            }}>プライバシーポリシー</button>
-            <button onClick={() => handlePageChange('利用規約')} style={{
+            }}>Privacy Policy</button>
+            <button onClick={() => handlePageChange('Terms of Service')} style={{
               background:'none', border:'none', color:'var(--text3)', cursor:'pointer',
               fontSize:'11px', fontFamily:'var(--font)', padding:0,
               textDecoration:'underline', textUnderlineOffset:'2px',
-            }}>利用規約</button>
+            }}>Terms of Service</button>
             <a href={CONTACT_FORM_URL} target="_blank" rel="noopener noreferrer" style={{
               color:'var(--text3)', fontSize:'11px', fontFamily:'var(--font)',
               textDecoration:'underline', textUnderlineOffset:'2px',
-            }}>お問い合わせ</a>
+            }}>Contact</a>
           </div>
           <div style={{ display:'flex', flexWrap:'wrap', justifyContent:'center', gap:'2px 0', alignItems:'center' }}>
             <span style={{ color:'#e63030', fontWeight:700 }}>Stock</span>
             <span style={{ fontWeight:700, color:'var(--text2)' }}>Wave</span>
             <span style={{ color:'#e63030', fontWeight:700, fontSize:'10px' }}>JP</span>
             <span style={{ whiteSpace:'nowrap' }}>&nbsp;—&nbsp;stockwavejp.com</span>
-            <span style={{ whiteSpace:'nowrap' }}>&nbsp;—&nbsp;投資助言ではありません</span>
+            <span style={{ whiteSpace:'nowrap' }}>&nbsp;—&nbsp;Not financial advice</span>
             <span style={{ whiteSpace:'nowrap' }}>&nbsp;—&nbsp;© 2026</span>
           </div>
         </footer>
@@ -222,7 +222,7 @@ function AppInner() {
   )
 }
 
-// 旧バージョンのLocalStorageキャッシュを自動削除
+// Auto-clear old localStorage cache
 ;(function cleanOldCache() {
   const CURRENT = 'swjp_v3_'
   const OLD_PREFIXES = ['swjp_', 'swjp_v1_', 'swjp_v2_']

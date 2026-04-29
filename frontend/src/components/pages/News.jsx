@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react'
 
-// 手動更新のお知らせリスト（新しい順）
+// 手動更新のNews & Announcementsリスト（新しい順）
 const MANUAL_NEWS = [
   { date:'2026/04/01', title:'コラム8本追加・説明文充実', body:'各ページに説明文とポイントを追加しました。コラムページに親子上場・バフェット銘柄・フィジカルAI・パワー半導体・NISA・光通信・国土強靭化・中東情勢の8本を追加。全20本となりました。' },
   { date:'2026/03/31', title:'カスタムテーマ機能強化', body:'Googleログインによるマルチデバイス同期に対応しました。テーマ一覧・テーマ別詳細からカスタムテーマへの追加ボタンも設置されています。' },
-  { date:'2026/03/28', title:'市場別ランキング→市場別詳細に名称変更', body:'より内容を正確に表す「市場別詳細」に名称を変更しました。また1日・1週間・1ヶ月など期間選択のデフォルトを1日表示に変更しました。' },
+  { date:'2026/03/28', title:'市場別ランキング→市場別詳細に名称変更', body:'よりContentを正確に表す「市場別詳細」に名称を変更しました。また1日・1週間・1ヶ月など期間選択のデフォルトを1日表示に変更しました。' },
   { date:'2026/03/14', title:'React版リリース', body:'StockWaveJP がReact+FastAPIに移行しました。デザイン・モバイル対応が大幅に改善されています。' },
   { date:'2026/03/01', title:'出来高・売買代金ランキング追加', body:'テーマ一覧ページに出来高・売買代金のランキンググラフを追加しました。' },
   { date:'2026/02/15', title:'騰落モメンタム機能追加', body:'先週比・先月比の変化から「加速・失速・転換」テーマを一目で把握できる騰落モメンタムページを追加しました。' },
@@ -33,7 +33,7 @@ export default function News() {
   return (
     <div style={{ padding:'28px 32px 48px' }}>
       <h1 style={{ fontSize:'24px', fontWeight:700, letterSpacing:'-0.02em', color:'#e8f0ff', marginBottom:'4px' }}>
-        お知らせ
+        News & Announcements
       </h1>
       <p style={{ fontSize:'12px', color:'var(--text3)', marginBottom:'28px' }}>
         StockWaveJPの機能追加・変更・修正情報
@@ -79,7 +79,7 @@ export default function News() {
         </div>
       )}
 
-      {/* 手動お知らせ */}
+      {/* 手動News & Announcements */}
       <div style={{ fontSize:'12px', fontWeight:700, color:'var(--text2)',
         letterSpacing:'0.06em', textTransform:'uppercase',
         marginBottom:'10px', display:'flex', alignItems:'center', gap:'8px' }}>
