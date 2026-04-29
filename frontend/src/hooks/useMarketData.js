@@ -12,6 +12,7 @@
  *   heatmap                            期間別ヒートマップ
  *   heatmap_monthly                    月次ヒートマップ
  *   momentum_{1mo/3mo}                 騰落モメンタム
+ *   fund_flow_{period}                 資金フロー（gainers/losers/all）
  *   theme_detail_{テーマ名}_{period}   テーマ別詳細★
  *   seg_{セグメント名}_{period}        市場別銘柄詳細★
  *   market_rank_{period}               市場別ランキング一覧★
@@ -21,8 +22,8 @@ import { useState, useEffect, useCallback } from 'react'
 
 const API          = import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000'
 const DATA_URL     = '/data/market.json'
-const CACHE_PREFIX = 'swjp_v2_'
-const CACHE_TTL    = 3 * 60 * 60 * 1000   // 3時間
+const CACHE_PREFIX = 'swjp_v4_'  // v4: セグメント定義修正によるキャッシュ全リセット
+const CACHE_TTL = 12 * 60 * 60 * 1000  // 12時間
 
 // ── LocalStorage ─────────────────────────────
 function readCache(key) {
@@ -44,7 +45,7 @@ function writeCache(key, data) {
 let _marketJson      = null
 let _marketJsonTs    = 0
 let _fetchingPromise = null
-const MARKET_JSON_TTL = 5 * 60 * 1000  // 5分
+const MARKET_JSON_TTL = 90 * 60 * 1000  // 90分
 
 async function fetchMarketJson() {
   if (_marketJson && Date.now() - _marketJsonTs < MARKET_JSON_TTL) return _marketJson
@@ -78,7 +79,7 @@ function useMarketJsonKey(jsonKey, apiFallback, deps = []) {
       // フォールバック
       if (apiFallback) {
         try {
-          const r    = await fetch(`${API}${apiFallback}`)
+          const r    = await fetch(apiFallback)
           const json = await r.json()
           if (!cancelled) { setData(json); writeCache(jsonKey, json) }
         } catch {}
@@ -144,7 +145,7 @@ export function useThemes(period = '1mo') {
 export function useMacro(period = '1mo') {
   return useMarketJsonKey(
     `macro_${period}`,
-    `/api/macro?period=${period}`,
+    `${API}/api/macro?period=${period}`,
     [period]
   )
 }
@@ -161,7 +162,7 @@ export function useStatus() {
       try {
         const json = await fetchMarketJson()
         if (json.status) {
-          setStatus({ ...json.status, label: json.status.is_open ? '市場オープン中' : '市場クローズ中' })
+          setStatus({ ...json.status, label: json.status.is_open ? '市場オープン中' : '市場クローズ中', updatedAt: json.status.updated_at || null })
           return
         }
       } catch {}
@@ -191,30 +192,63 @@ export function useStatus() {
  * useTrends — テーマ比較グラフ（常にRender）
  */
 export function useTrends(themes, period) {
-  const cacheKey = `trends_${themes}_${period}`
+  // trends_{period}キーからmarket.jsonを優先参照
+  // themes引数は複数テーマのカンマ区切り文字列 or 配列
+  const jsonKey  = `trends_${period}`
+  const theList  = Array.isArray(themes)
+    ? themes
+    : (themes || '').split(',').map(t => t.trim()).filter(Boolean)
+  const themeKey = theList.join(',')
+  const cacheKey = `trends_${themeKey}_${period}`
+
   const [data,       setData]       = useState(() => readCache(cacheKey))
   const [loading,    setLoading]    = useState(!readCache(cacheKey))
   const [refreshing, setRefreshing] = useState(false)
 
   useEffect(() => {
-    if (!themes) return
-    const cached = readCache(cacheKey)
-    if (cached) { setData(cached); setLoading(false) }
-    setRefreshing(true)
-    fetch(`${API}/api/trends?themes=${encodeURIComponent(themes)}&period=${period}`)
-      .then(r => r.json())
-      .then(json => { setData(json); writeCache(cacheKey, json) })
-      .catch(() => {})
-      .finally(() => { setLoading(false); setRefreshing(false) })
-  }, [themes, period])
+    if (!theList.length) { setLoading(false); return }
+    let cancelled = false
+
+    ;(async () => {
+      try {
+        // 1. market.jsonから取得
+        const json      = await fetchMarketJson()
+        const trendsObj = json[jsonKey]?.data || {}
+        // 要求テーマが含まれているか確認
+        const found = theList.some(t => trendsObj[t])
+        if (found) {
+          // 要求テーマのデータのみ返す
+          const result = {}
+          theList.forEach(t => { if (trendsObj[t]) result[t] = trendsObj[t] })
+          if (!cancelled) {
+            setData(result)
+            writeCache(cacheKey, result)
+            setLoading(false)
+            return
+          }
+        }
+      } catch {}
+
+      // 2. フォールバック: Render API
+      try {
+        const url = `${API}/api/trends?themes=${encodeURIComponent(themeKey)}&period=${period}`
+        const r   = await fetch(url)
+        const json = await r.json()
+        if (!cancelled) {
+          setData(json)
+          writeCache(cacheKey, json)
+        }
+      } catch {}
+      if (!cancelled) setLoading(false)
+    })()
+
+    return () => { cancelled = true }
+  }, [themeKey, period])
 
   return { data, loading, refreshing }
 }
 
 
-/**
- * useThemeNames — テーマ名一覧
- */
 export function useThemeNames() {
   const cacheKey = 'theme_names'
   const [names, setNames] = useState(() => {
@@ -246,7 +280,7 @@ export function useThemeNames() {
  * useHeatmap — 期間別ヒートマップ
  */
 export function useHeatmap() {
-  return useMarketJsonKey('heatmap', '/api/heatmap')
+  return useMarketJsonKey('heatmap', `${API}/api/heatmap`)
 }
 
 
@@ -254,7 +288,7 @@ export function useHeatmap() {
  * useMonthlyHeatmap — 月次ヒートマップ ★market.json優先に変更
  */
 export function useMonthlyHeatmap() {
-  return useMarketJsonKey('heatmap_monthly', '/api/heatmap/monthly')
+  return useMarketJsonKey('heatmap_monthly', `${API}/api/heatmap/monthly`)
 }
 
 
@@ -262,11 +296,41 @@ export function useMonthlyHeatmap() {
  * useMomentum — 騰落モメンタム ★market.json優先に変更
  */
 export function useMomentum(period = '1mo') {
-  return useMarketJsonKey(
-    `momentum_${period}`,
-    `/api/momentum?period=${period}`,
-    [period]
-  )
+  const [data,    setData]    = useState(null)
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    let cancelled = false
+    setLoading(true)
+    ;(async () => {
+      // market.jsonを試みる
+      let result = null
+      try {
+        const json = await fetchMarketJson()
+        const raw  = json[`momentum_${period}`]
+        if (raw) {
+          const arr = raw?.data || raw || []
+          // volume_chgが全て0またはnullの場合はAPIにフォールバック
+          const hasVol = Array.isArray(arr) && arr.some(d => d.volume_chg && d.volume_chg !== 0)
+          if (hasVol) result = raw
+        }
+      } catch {}
+
+      // Render APIにフォールバック（volume_chgが取れない場合も含む）
+      if (!result) {
+        try {
+          const r   = await fetch(`${API}/api/momentum?period=${period}`)
+          const j   = await r.json()
+          if (!cancelled) result = j
+        } catch {}
+      }
+
+      if (!cancelled) { setData(result); setLoading(false) }
+    })()
+    return () => { cancelled = true }
+  }, [period])
+
+  return { data, loading }
 }
 
 
@@ -274,36 +338,35 @@ export function useMomentum(period = '1mo') {
  * useSegmentDetail — 市場別銘柄詳細 ★market.json優先に変更（最重要）
  */
 export function useSegmentDetail(segName, period) {
-  const jsonKey = `seg_${segName}_${period}`
-  const [data,    setData]    = useState(() => readCache(jsonKey))
-  const [loading, setLoading] = useState(!readCache(jsonKey))
+  const [data,    setData]    = useState(null)
+  const [loading, setLoading] = useState(false)
 
   useEffect(() => {
     if (!segName) return
     let cancelled = false
-    const cached = readCache(jsonKey)
-    if (cached) { setData(cached); setLoading(false) }
-
+    // セグメント変更時は必ずnullリセット（古いデータ残存防止）
+    setData(null)
+    setLoading(true)
+    const jsonKey = `seg_${segName}_${period}`
     ;(async () => {
+      // market.json を優先（キャッシュは使わず毎回取得）
       try {
         const json   = await fetchMarketJson()
         const result = json[jsonKey]
         if (result && !cancelled) {
-          setData(result); writeCache(jsonKey, result); setLoading(false); return
+          setData(result); setLoading(false); return
         }
       } catch {}
       // フォールバック: Render API
       try {
         const r    = await fetch(`${API}/api/market-rank/${encodeURIComponent(segName)}?period=${period}`)
         const json = await r.json()
-        if (!cancelled) { setData(json); writeCache(jsonKey, json) }
+        if (!cancelled) { setData(json) }
       } catch {}
       if (!cancelled) setLoading(false)
     })()
-
     return () => { cancelled = true }
   }, [segName, period])
-
   return { data, loading }
 }
 
@@ -352,7 +415,51 @@ export function useThemeDetail(themeName, period) {
 export function useMarketRankList(period = '1mo') {
   return useMarketJsonKey(
     `market_rank_${period}`,
-    `/api/market-rank-list?period=${period}`,
+    `${API}/api/market-rank-list?period=${period}`,
     [period]
   )
+}
+
+
+/**
+ * useCustomThemeStats — カスタムテーマの騰落率・出来高をAPIで集計
+ * ThemeList・ThemeDetailでカスタムテーマをノーマルテーマと同列に扱うため
+ */
+export function useCustomThemeStats(tickers, period) {
+  const key = `custom_stats_${(tickers||[]).join(',')}_${period}`
+  const [data,    setData]    = useState(() => readCache(key))
+  const [loading, setLoading] = useState(!readCache(key))
+
+  useEffect(() => {
+    if (!tickers || tickers.length === 0) { setLoading(false); return }
+    let cancelled = false
+    const cached = readCache(key)
+    if (cached) { setData(cached); setLoading(false) }
+
+    ;(async () => {
+      try {
+        const r = await fetch(`${API}/api/custom-theme-stats`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ tickers, period }),
+        })
+        const json = await r.json()
+        if (!cancelled) { setData(json); writeCache(key, json) }
+      } catch {}
+      if (!cancelled) setLoading(false)
+    })()
+
+    return () => { cancelled = true }
+  }, [tickers?.join(','), period])
+
+  return { data, loading }
+}
+
+/**
+ * useFundFlow — 資金フロー ★market.json優先（旧：API直接取得）
+ */
+export function useFundFlow(period) {
+  const jsonKey     = `fund_flow_${period}`
+  const apiFallback = `${API}/api/fund-flow?period=${period}`
+  return useMarketJsonKey(jsonKey, apiFallback, [period])
 }

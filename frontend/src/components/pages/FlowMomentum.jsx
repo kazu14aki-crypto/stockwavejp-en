@@ -1,25 +1,25 @@
 /**
- * FlowMomentum.jsx — Fund Flow＋Momentum統合ページ
+ * FlowMomentum.jsx — 資金フロー＋騰落モメンタム統合ページ
  */
 import { useState, useEffect } from 'react'
-import { useStaleData } from '../../hooks/useStaleData'
 import { useMomentum } from '../../hooks/useMarketData'
 
 const API = import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000'
 const PERIODS = [
-  { label: '1W', value: '5d'  },
-  { label: '1M', value: '1mo' },
-  { label: '3M', value: '3mo' },
-  { label: '6M', value: '6mo' },
-  { label: '1Y',   value: '1y'  },
+  { label: '1日',  value: '1d'  },
+  { label: '1週間', value: '5d'  },
+  { label: '1ヶ月', value: '1mo' },
+  { label: '3ヶ月', value: '3mo' },
+  { label: '6ヶ月', value: '6mo' },
+  { label: '1年',   value: '1y'  },
 ]
-const SORT_KEYS = ['Return (High→Low)', 'Return (Low→High)']
+const SORT_KEYS = ['騰落率（降順）', '騰落率（昇順）']
 const STATE_COLORS = {
-  '🔥Accel':  '#ff4560',
-  '↗Rev↑': '#ff8c42',
-  '→Flat': '#4a6080',
-  '↘Rev↓': '#4a9eff',
-  '❄️Decel':  '#00c48c',
+  '🔥加速':  '#ff4560',
+  '↗転換↑': '#ff8c42',
+  '→横ばい': '#4a6080',
+  '↘転換↓': '#4a9eff',
+  '❄️失速':  '#00c48c',
 }
 
 function Loading() {
@@ -29,12 +29,12 @@ function Loading() {
         <span key={i} style={{ display:'inline-block', width:'6px', height:'6px', borderRadius:'50%',
           background:'var(--accent)', margin:'0 3px', animation:`pulse 1.2s ease-in-out ${d}s infinite`}} />
       ))}
-      <div style={{ marginTop:'12px', fontSize:'12px' }}>Loading......</div>
+      <div style={{ marginTop:'12px', fontSize:'12px' }}>データ取得中...</div>
     </div>
   )
 }
 
-// ── 水平バー（Fund Flow用）──
+// ── 水平バー（資金フロー用）──
 function HBar({ item, maxAbs }) {
   const w = Math.round(Math.abs(item.pct) / maxAbs * 100)
   const c = item.pct >= 0 ? 'var(--red)' : 'var(--green)'
@@ -43,7 +43,7 @@ function HBar({ item, maxAbs }) {
       alignItems:'center', gap:'10px',
       background:'var(--bg2)', border:'1px solid var(--border)',
       borderRadius:'6px', padding:'7px 12px' }}>
-      <span style={{ fontSize:'12px', color:'#c0d0e8', fontWeight:500,
+      <span style={{ fontSize:'12px', color:'var(--text2)', fontWeight:500,
         overflow:'hidden', textOverflow:'ellipsis', whiteSpace:'nowrap' }}>
         {item.theme}
       </span>
@@ -57,38 +57,119 @@ function HBar({ item, maxAbs }) {
   )
 }
 
-export default function FlowMomentum() {
-  const [period,  setPeriod]  = useState('1mo')
-  const [sortKey, setSortKey] = useState('Return (High→Low)')
-  const [tab,     setTab]     = useState('flow')  // 'flow' | 'momentum'
 
-  // Fund Flow
-  const { data: flowData, loading: loadingF } = useStaleData(
-    `${API}/api/fund-flow?period=${period}`,
-    `fundflow_${period}`,
-    null
+// 自動コメント生成
+
+function AutoComment({ lines }) {
+  // 防御的処理: null/undefined/空/文字列に対応
+  let safeLines = lines
+  if (!safeLines) return null
+  if (typeof safeLines === 'string') safeLines = safeLines.split('\n').filter(Boolean)
+  if (!Array.isArray(safeLines) || !safeLines.length) return null
+
+  const rendered = safeLines.map((line, i) => {
+    if (typeof line !== 'string') return null
+    if (line.startsWith('【')) {
+      const e = line.indexOf('】')
+      if (e < 0) return <div key={i} style={{ fontSize:'12px', color:'var(--text2)', lineHeight:'1.8', marginBottom:'4px', paddingLeft:'4px' }}>{line}</div>
+      const h = line.slice(1, e), r = line.slice(e + 1).trim()
+      return (
+        <div key={i} style={{ marginBottom:'10px', marginTop: i > 0 ? '14px' : '0' }}>
+          <div style={{ fontSize:'11px', fontWeight:700, color:'var(--accent)', letterSpacing:'0.04em', marginBottom:'4px', borderLeft:'3px solid var(--accent)', paddingLeft:'8px' }}>{h}</div>
+          {r && <div style={{ fontSize:'12px', color:'var(--text2)', lineHeight:'1.8', paddingLeft:'11px' }}>{r}</div>}
+        </div>
+      )
+    }
+    const icons = ['▲','▼','📊','🔥','❄️','↗','↘','💡','✅','⚠️','📉']
+    if (icons.some(ic => line.startsWith(ic))) {
+      const si = line.indexOf(' '), icon = si > 0 ? line.slice(0, si) : line[0]
+      const text = si > 0 ? line.slice(si + 1) : ''
+      const ci = text.indexOf('：'), label = ci > 0 ? text.slice(0, ci) : null, body = ci > 0 ? text.slice(ci + 1).trim() : text
+      return (
+        <div key={i} style={{ display:'flex', gap:'8px', marginBottom:'7px', paddingLeft:'4px', alignItems:'flex-start' }}>
+          <span style={{ fontSize:'13px', flexShrink:0, marginTop:'1px', lineHeight:1.5 }}>{icon}</span>
+          <div style={{ fontSize:'12px', color:'var(--text2)', lineHeight:'1.8', flex:1 }}>
+            {label && <span style={{ fontWeight:600, color:'var(--text)' }}>{label}：</span>}{body}
+          </div>
+        </div>
+      )
+    }
+    return <div key={i} style={{ fontSize:'12px', color:'var(--text2)', lineHeight:'1.8', marginBottom:'4px', paddingLeft:'4px' }}>{line}</div>
+  }).filter(Boolean)
+
+  return (
+    <div style={{ background:'var(--bg2)', border:'1px solid var(--border)', borderRadius:'10px', padding:'16px 18px', marginBottom:'20px' }}>
+      {rendered}
+    </div>
   )
+}
 
-  // Momentum ★market.json優先（キャッシュ拡大後は即時表示）
+
+function genMomentumComment(momentumData, period) {
+  const data = momentumData?.data || momentumData || []
+  if (!data.length) return null
+  const periodLabel = { '1d':'本日', '5d':'週間', '1mo':'1ヶ月', '3mo':'3ヶ月', '6mo':'6ヶ月', '1y':'1年間' }[period] || period
+
+  const accel   = data.filter(t => t.state?.includes('加速'))
+  const decel   = data.filter(t => t.state?.includes('失速'))
+  const turnUp  = data.filter(t => t.state?.includes('転換↑'))
+  const turnDn  = data.filter(t => t.state?.includes('転換↓'))
+  const flat    = data.filter(t => t.state?.includes('横ばい'))
+  const rising  = data.filter(t => t.pct > 0)
+  const falling = data.filter(t => t.pct < 0)
+  const avg     = data.length ? data.reduce((s,t)=>s+(t.pct||0),0)/data.length : 0
+
+  const lines = []
+
+  lines.push(`【${periodLabel}の騰落モメンタム概況】全${data.length}テーマ中、上昇${rising.length}・下落${falling.length}テーマ。平均騰落率${avg>=0?'+':''}${avg.toFixed(2)}%。モメンタム別では加速${accel.length}・転換↑${turnUp.length}・横ばい${flat.length}・転換↓${turnDn.length}・失速${decel.length}テーマ。`)
+
+  if (accel.length > 0) {
+    const top = accel.slice(0,4).map(t=>t.theme).join('」「')
+    lines.push(`🔥 加速モメンタム（${accel.length}テーマ）：「${top}」など。短中期ともに上昇が加速中。トレンドフォロー戦略が有効で、高値でも追随資金が集まりやすい局面。`)
+  }
+  if (turnUp.length > 0) {
+    const top = turnUp.slice(0,3).map(t=>t.theme).join('」「')
+    lines.push(`↗ 転換↑（${turnUp.length}テーマ）：「${top}」など。下落から上昇への転換初動の可能性。出来高増加を確認できれば底値仕込みのチャンスになりうる。`)
+  }
+  if (flat.length > 0) {
+    const top = flat.slice(0,3).map(t=>t.theme).join('」「')
+    lines.push(`→ 横ばい（${flat.length}テーマ）：「${top}」など。方向感が定まらない状態。ブレイクの方向を見極めてから参入するのが無難。`)
+  }
+  if (turnDn.length > 0) {
+    const top = turnDn.slice(0,3).map(t=>t.theme).join('」「')
+    lines.push(`↘ 転換↓（${turnDn.length}テーマ）：「${top}」など。上昇トレンドが失速し始めたシグナル。利益確定や新規参入の見送りを検討する局面。`)
+  }
+  if (decel.length > 0) {
+    const top = decel.slice(0,4).map(t=>t.theme).join('」「')
+    lines.push(`❄️ 失速モメンタム（${decel.length}テーマ）：「${top}」など。下落が継続・加速中。反転サインが出るまでは慎重姿勢が望ましく、過度な逆張りは禁物。`)
+  }
+
+  lines.push(`💡 活用ポイント：「加速」と「転換↑」の組み合わせが最も強い買いシグナル。「転換↓」と「失速」の組み合わせは売り圧力が継続中のサイン。週次で状態変化を追うことで、トレンド転換のタイミングを先読みできる。`)
+
+  return lines
+}
+
+export default function FlowMomentum() {
+  const [period,  setPeriod]  = useState('1d')
+  const [sortKey, setSortKey] = useState('騰落率（降順）')
+
   const { data: momentumRaw, loading: loadingM } = useMomentum(period)
   const momentumData = momentumRaw?.data || []
 
-  const allItems = flowData?.all ?? []
-  const maxAbs   = allItems.length ? Math.max(...allItems.map(t => Math.abs(t.pct))) : 1
-
   let sorted = [...momentumData]
-  if (sortKey === 'Return (High→Low)') sorted.sort((a, b) => b.pct - a.pct)
-  if (sortKey === 'Return (Low→High)') sorted.sort((a, b) => a.pct - b.pct)
+  if (sortKey === '騰落率（降順）') sorted.sort((a, b) => b.pct - a.pct)
+  if (sortKey === '騰落率（昇順）') sorted.sort((a, b) => a.pct - b.pct)
   const pctColor = v => v >= 0 ? 'var(--red)' : 'var(--green)'
   const pctSign  = v => v >= 0 ? '+' : ''
+  const flowComment = genMomentumComment(momentumData, period)
 
   return (
-    <div style={{ padding:'28px 32px 48px' }}>
-      <h1 style={{ fontSize:'24px', fontWeight:700, letterSpacing:'-0.02em', color:'#e8f0ff', marginBottom:'4px' }}>
-        Fund Flow・Momentum
+    <div style={{ padding:'28px 32px 48px', maxWidth:'1280px', margin:'0 auto' }}>
+      <h1 style={{ fontSize:'24px', fontWeight:700, letterSpacing:'-0.02em', color:'var(--text)', marginBottom:'4px' }}>
+        騰落モメンタム
       </h1>
       <p style={{ fontSize:'12px', color:'var(--text3)', marginBottom:'20px' }}>
-        テーマへの資金集中度とReturnランキングを確認できます。
+        テーマ別の騰落モメンタム（加速・転換・横ばい・失速）を確認できます。
       </p>
 
       {/* コントロール */}
@@ -96,127 +177,59 @@ export default function FlowMomentum() {
         <select value={period} onChange={e => setPeriod(e.target.value)} style={selStyle}>
           {PERIODS.map(p => <option key={p.value} value={p.value}>{p.label}</option>)}
         </select>
-        {tab === 'momentum' && (
-          <select value={sortKey} onChange={e => setSortKey(e.target.value)} style={selStyle}>
-            {SORT_KEYS.map(s => <option key={s} value={s}>{s}</option>)}
-          </select>
-        )}
+        <select value={sortKey} onChange={e => setSortKey(e.target.value)} style={selStyle}>
+          {SORT_KEYS.map(s => <option key={s} value={s}>{s}</option>)}
+        </select>
       </div>
 
-      {/* タブ切替 */}
-      <div style={{ display:'flex', gap:'4px', marginBottom:'24px',
-        background:'var(--bg2)', border:'1px solid var(--border)',
-        borderRadius:'8px', padding:'4px', width:'fit-content' }}>
-        {[['flow','💹 Fund Flow'],['momentum','📡 Momentum']].map(([key, label]) => (
-          <button key={key} onClick={() => setTab(key)} style={{
-            padding:'6px 16px', borderRadius:'6px', fontSize:'12px', fontWeight:600,
-            cursor:'pointer', border:'none', fontFamily:'var(--font)',
-            background: tab === key ? 'var(--accent)' : 'transparent',
-            color: tab === key ? '#fff' : 'var(--text3)',
-            transition:'all 0.15s',
-          }}>
-            {label}
-          </button>
-        ))}
-      </div>
+      {/* 自動コメント */}
+      <AutoComment lines={flowComment} />
 
-      {/* ── Fund Flow ── */}
-      {tab === 'flow' && (
-        loadingF ? <Loading /> : (
-          <>
-            <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:'24px' }} className="flow-grid">
-              <div>
-                <SectionHead title="🔥 資金流入 TOP10" />
-                <div style={{ display:'flex', flexDirection:'column', gap:'4px' }}>
-                  {(flowData?.gainers ?? []).map(item => <HBar key={item.theme} item={item} maxAbs={maxAbs} />)}
-                </div>
-              </div>
-              <div>
-                <SectionHead title="❄️ 資金流出 TOP10" />
-                <div style={{ display:'flex', flexDirection:'column', gap:'4px' }}>
-                  {(flowData?.losers ?? []).map(item => <HBar key={item.theme} item={item} maxAbs={maxAbs} />)}
-                </div>
-              </div>
+      {/* モメンタム一覧 */}
+      {loadingM ? <Loading /> : (
+        <>
+          {/* ヘッダー行 */}
+          <div style={{ ...rowStyle, background:'transparent', border:'none',
+            padding:'4px 16px', marginBottom:'4px' }}>
+            <span style={hdrStyle}>テーマ名</span>
+            <span style={{ ...hdrStyle, textAlign:'right' }}>騰落率</span>
+            <span style={{ ...hdrStyle, textAlign:'right' }}>先週比</span>
+            <span style={{ ...hdrStyle, textAlign:'center' }}>状態</span>
+          </div>
+          {sorted.map((d, i) => (
+            <div key={d.theme} style={{
+              ...rowStyle,
+              animation:`fadeUp 0.3s cubic-bezier(0.22,1,0.36,1) ${i*0.02}s both`,
+            }}
+              onMouseEnter={e => { e.currentTarget.style.background='rgba(74,158,255,0.04)'; e.currentTarget.style.borderColor='rgba(74,158,255,0.18)' }}
+              onMouseLeave={e => { e.currentTarget.style.background='var(--bg2)'; e.currentTarget.style.borderColor='var(--border)' }}
+            >
+              <span style={{ fontSize:'13px', color:'var(--text2)', fontWeight:500 }}>
+                <span style={{ fontSize:'11px', color:'var(--text3)', fontFamily:'var(--mono)', marginRight:'8px' }}>
+                  {String(i+1).padStart(2,'0')}
+                </span>
+                {d.theme}
+              </span>
+              <span style={{ fontFamily:'var(--mono)', fontSize:'14px', fontWeight:700, textAlign:'right', color:pctColor(d.pct) }}>
+                {pctSign(d.pct)}{d.pct?.toFixed(1)}%
+              </span>
+              <span style={{ fontFamily:'var(--mono)', fontSize:'13px', textAlign:'right', color:pctColor(d.week_diff) }}>
+                {pctSign(d.week_diff)}{d.week_diff?.toFixed(1)}pt
+              </span>
+              <span style={{ fontSize:'12px', fontWeight:600, textAlign:'center',
+                color: STATE_COLORS[d.state] || 'var(--text3)', padding:'2px 10px',
+                background:'rgba(128,128,128,0.08)', borderRadius:'20px', whiteSpace:'nowrap' }}>
+                {d.state || '—'}
+              </span>
             </div>
-            <SectionHead title="全テーマ Return一覧" />
-            <div style={{ display:'flex', flexDirection:'column', gap:'4px' }}>
-              {allItems.map(item => <HBar key={item.theme} item={item} maxAbs={maxAbs} />)}
+          ))}
+          {sorted.length === 0 && (
+            <div style={{ textAlign:'center', padding:'40px', color:'var(--text3)', fontSize:'13px' }}>
+              データがありません
             </div>
-          </>
-        )
+          )}
+        </>
       )}
-
-      {/* ── Momentum ── */}
-      {tab === 'momentum' && (
-        loadingM ? <Loading /> : (
-          <>
-            {/* ヘッダー行 */}
-            <div style={{ ...rowStyle, background:'transparent', border:'none',
-              padding:'4px 16px', marginBottom:'4px' }}>
-              <span style={hdrStyle}>Theme Name</span>
-              <span style={{ ...hdrStyle, textAlign:'right' }}>Return</span>
-              <span style={{ ...hdrStyle, textAlign:'right' }}>WoW</span>
-              <span style={{ ...hdrStyle, textAlign:'center' }}>Status</span>
-            </div>
-            {sorted.map((d, i) => (
-              <div key={d.theme} style={{
-                ...rowStyle,
-                animation:`fadeUp 0.3s cubic-bezier(0.22,1,0.36,1) ${i*0.02}s both`,
-              }}
-                onMouseEnter={e => { e.currentTarget.style.background='#0e1e32'; e.currentTarget.style.borderColor='rgba(74,158,255,0.18)' }}
-                onMouseLeave={e => { e.currentTarget.style.background='var(--bg2)'; e.currentTarget.style.borderColor='var(--border)' }}
-              >
-                <span style={{ fontSize:'13px', color:'#c0d0e8', fontWeight:500 }}>
-                  <span style={{ fontSize:'11px', color:'var(--text3)', fontFamily:'var(--mono)', marginRight:'8px' }}>
-                    {String(i+1).padStart(2,'0')}
-                  </span>
-                  {d.theme}
-                </span>
-                <span style={{ fontFamily:'var(--mono)', fontSize:'14px', fontWeight:700, textAlign:'right', color:pctColor(d.pct) }}>
-                  {pctSign(d.pct)}{d.pct.toFixed(1)}%
-                </span>
-                <span style={{ fontFamily:'var(--mono)', fontSize:'13px', textAlign:'right', color:pctColor(d.week_diff) }}>
-                  {pctSign(d.week_diff)}{d.week_diff.toFixed(1)}pt
-                </span>
-                <span style={{ fontSize:'12px', fontWeight:600, textAlign:'center',
-                  color: STATE_COLORS[d.state] ?? 'var(--text2)' }}>
-                  {d.state}
-                </span>
-              </div>
-            ))}
-            <p style={{ fontSize:'11px', color:'var(--text3)', marginTop:'12px' }}>
-              💡 🔥Accel=Return↑&WoW↑ / ❄️Decel=両方↓ / ↗↘=どちらか転換
-            </p>
-          </>
-        )
-      )}
-
-      <style>{`
-        @media (max-width:768px) { .flow-grid { grid-template-columns:1fr !important; } }
-      `}</style>
     </div>
   )
 }
-
-function SectionHead({ title }) {
-  return (
-    <div style={{ display:'flex', alignItems:'center', gap:'12px', margin:'20px 0 10px' }}>
-      <span style={{ fontSize:'11px', fontWeight:600, color:'var(--text2)', letterSpacing:'0.1em', textTransform:'uppercase', whiteSpace:'nowrap' }}>{title}</span>
-      <div style={{ flex:1, height:'1px', background:'var(--border)' }} />
-    </div>
-  )
-}
-
-const selStyle = {
-  background:'var(--bg3)', color:'var(--text)',
-  border:'1px solid rgba(74,120,200,0.2)', borderRadius:'6px',
-  fontFamily:'var(--font)', fontSize:'13px',
-  padding:'6px 12px', cursor:'pointer', outline:'none',
-}
-const rowStyle = {
-  background:'var(--bg2)', border:'1px solid var(--border)',
-  borderRadius:'6px', padding:'8px 12px', marginBottom:'2px',
-  display:'grid', gridTemplateColumns:'1fr 74px 74px 86px',
-  alignItems:'center', gap:'6px', transition:'background 0.12s, border-color 0.12s',
-}
-const hdrStyle = { fontSize:'10px', fontWeight:600, letterSpacing:'0.1em', color:'var(--text3)', textTransform:'uppercase' }

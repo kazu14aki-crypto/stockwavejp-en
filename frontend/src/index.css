@@ -1,20 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=DM+Mono:wght@400;500&family=Noto+Sans+JP:wght@300;400;500;700&display=swap');
+/* Google Fontsはindex.htmlのpreconnect+media="print"で非同期読み込み済み */
+
+html { overflow-x: clip; }
+
 
 /* ── ダーク（デフォルト）── */
 :root,
 [data-theme="dark"] {
-  --bg:      #1a1d24;
-  --bg2:     #22262f;
-  --bg3:     #2a2e38;
-  --border:  rgba(255,255,255,0.08);
-  --text:    #e8eaf0;
-  --text2:   #9aa0b4;
-  --text3:   #5c6478;
-  --red:     #ff5370;
-  --green:   #4caf82;
-  --accent:  #5b9cf6;
+  --bg:      #0F172A;
+  --bg2:     #1E293B;
+  --bg3:     #293548;
+  --border:  rgba(255,255,255,0.09);
+  --text:    #F1F5F9;
+  --text2:   #CBD5E1;
+  --text3:   #94A3B8;
+  --red:     #F87171;
+  --green:   #4ADE80;
+  --accent:  #60A5FA;
   --logo-red:#e63030;
-  --font:    'DM Sans','Noto Sans JP',sans-serif;
+  --font:    'Noto Sans JP',sans-serif;
   --mono:    'DM Mono',monospace;
   --radius:  10px; --sidebar:220px; --header:52px;
 }
@@ -32,25 +35,26 @@
   --green:   #40b878;
   --accent:  #c8b050;
   --logo-red:#e63030;
-  --font:    'DM Sans','Noto Sans JP',sans-serif;
+  --font:    'Noto Sans JP',sans-serif;
   --mono:    'DM Mono',monospace;
   --radius:  10px; --sidebar:220px; --header:52px;
 }
 
-/* ── ホワイト（文字は黒寄りグレー・白文字を完全排除）── */
+/* ── ライト ── */
 [data-theme="light"] {
-  --bg:      #f4f6fa;
-  --bg2:     #ffffff;
-  --bg3:     #eaecf4;
-  --border:  rgba(30,50,100,0.12);
-  --text:    #111827;
-  --text2:   #374151;
-  --text3:   #6b7280;
-  --red:     #b91c1c;
-  --green:   #047857;
-  --accent:  #1d4ed8;
+  color-scheme: light;
+  --bg:      #F8FAFC;
+  --bg2:     #FFFFFF;
+  --bg3:     #F1F5F9;
+  --border:  rgba(15,23,42,0.10);
+  --text:    #0F172A;
+  --text2:   #475569;
+  --text3:   #64748B;
+  --red:     #DC2626;
+  --green:   #16A34A;
+  --accent:  #2563EB;
   --logo-red:#e63030;
-  --font:    'DM Sans','Noto Sans JP',sans-serif;
+  --font:    'Noto Sans JP',sans-serif;
   --mono:    'DM Mono',monospace;
   --radius:  10px; --sidebar:220px; --header:52px;
 }
@@ -100,10 +104,71 @@ body {
   transition: background 0.3s, color 0.3s;
 }
 
-::-webkit-scrollbar { width:5px; height:5px; }
-::-webkit-scrollbar-track { background:transparent; }
-::-webkit-scrollbar-thumb { background:var(--border); border-radius:3px; }
-::-webkit-scrollbar-thumb:hover { background:var(--text3); }
+::-webkit-scrollbar { width:6px; height:10px; }
+::-webkit-scrollbar-track { background:rgba(255,255,255,0.04); border-radius:5px; }
+::-webkit-scrollbar-thumb { background:rgba(255,255,255,0.2); border-radius:5px; }
+::-webkit-scrollbar-thumb:hover { background:rgba(255,255,255,0.4); }
+/* ④ 銘柄表のスクロールバーはさらに大きく */
+.sticky-table::-webkit-scrollbar { height:12px; }
+.sticky-table::-webkit-scrollbar-track { background:rgba(255,255,255,0.06); border-radius:6px; }
+.sticky-table::-webkit-scrollbar-thumb { background:rgba(255,255,255,0.25); border-radius:6px; border:2px solid transparent; }
+.sticky-table::-webkit-scrollbar-thumb:hover { background:rgba(255,255,255,0.5); }
+/* ④ ホワイトテーマ：hardcode白色テキストを上書き */
+[data-theme="light"] h1,
+[data-theme="light"] h2,
+[data-theme="light"] h3 {
+  color: #0F172A !important;
+}
+[data-theme="light"] .page-header-sticky h1 {
+  color: #0F172A !important;
+}
+
+/* ③ ライトテーマ: SVGグラフ軸・ラベルの白文字対策 */
+[data-theme="light"] svg text {
+  fill: #475569 !important;
+}
+/* ③ ヒートマップテーブルセルの白文字は背景色が濃いため例外許可 */
+[data-theme="light"] .heatmap-cell-text {
+  fill: #fff !important;
+}
+/* ③ Settings・HowToページのハードコード#ffffff */
+[data-theme="light"] [data-white-text] {
+  color: #111827 !important;
+}
+/* ③ SVG fill="white" の上書き（グラフのバブルラベル等） */
+[data-theme="light"] svg [fill="white"],
+[data-theme="light"] svg [fill="#fff"],
+[data-theme="light"] svg [fill="#FFF"] {
+  fill: #1a1d24 !important;
+}
+/* ③ CustomTheme期間ボタンの#fff文字 */
+[data-theme="light"] button {
+  color: var(--text);
+}
+/* ③ グラフ内 rgba(255,255,255,0.x) テキストの上書き */
+[data-theme="light"] svg text[fill^="rgba(255,255,255"] {
+  fill: rgba(30,40,80,0.6) !important;
+}
+/* ③ SVGのツールチップ背景(#1a1f2e) */
+[data-theme="light"] rect[fill="#1a1f2e"] {
+  fill: #f4f6fa !important;
+}
+[data-theme="light"] rect[fill="#1a1f2e"] + text {
+  fill: #111827 !important;
+}
+/* ③ Heatmap cellBg色の上文字 */
+[data-theme="light"] td[style*="color: rgb(255, 255, 255)"],
+[data-theme="light"] td[style*="color:#fff"],
+[data-theme="light"] td[style*='color:"#fff"'] {
+  color: #fff !important; /* ヒートマップセルは背景が濃いのでそのまま白 */
+}
+
+
+/* PC向け：コンテンツ最大幅 */
+@media (min-width: 1400px) {
+  .page-content-wide   { max-width: 1300px; margin-left: auto; margin-right: auto; }
+  .page-content-narrow { max-width: 960px;  margin-left: auto; margin-right: auto; }
+}
 
 @keyframes fadeUp {
   from { opacity:0; transform:translateY(12px); }
@@ -150,3 +215,30 @@ body {
   .responsive-grid-3 { grid-template-columns:1fr 1fr !important; }
   .responsive-grid-2 { grid-template-columns:1fr !important; }
 }
+
+/* ③ スマホのみ（〜640px）: スマホ版レイアウト */
+@media (max-width: 640px) {
+  .monthly-chart-grid   { grid-template-columns: 1fr !important; }
+  .mr-bottom-grid       { grid-template-columns: 1fr !important; }
+  .td-bottom-grid       { grid-template-columns: 1fr !important; }
+  .expandable-chart-preview { display: none !important; }
+  .expandable-chart-btn     { display: none !important; }
+  .expandable-chart-mobile  { display: block !important; }
+  .theme-summary-pc         { display: none !important; }
+  .theme-summary-mobile     { display: block !important; }
+  .ct-detail-grid           { grid-template-columns: 1fr !important; }
+  .sticky-table table { font-size: 11px !important; }
+  .sticky-table th, .sticky-table td { padding: 5px 6px !important; }
+  .theme-detail-body { padding: 10px 10px 40px !important; }
+  .top5g             { grid-template-columns: 1fr !important; }
+  .pickup-grid       { grid-template-columns: 1fr !important; }
+}
+@media (max-width: 480px) {
+  .theme-card-grid { grid-template-columns: 1fr 1fr !important; gap: 6px !important; }
+}
+
+
+/* ライトモード: スクロールバーを見やすく */
+[data-theme="light"] ::-webkit-scrollbar-thumb { background: rgba(15,23,42,0.2); }
+[data-theme="light"] ::-webkit-scrollbar-track  { background: rgba(15,23,42,0.05); }
+[data-theme="light"] .sticky-table::-webkit-scrollbar-thumb { background: rgba(15,23,42,0.2); }

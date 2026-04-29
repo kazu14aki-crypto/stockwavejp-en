@@ -1,18 +1,19 @@
 import { useState, useEffect } from 'react'
-const API = import.meta.env.VITE_API_URL || 'http://127.0.0.1:8001'
+
+const API = import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000'
 const PERIODS = [
-  { label: '1 Week',   value: '5d'  },
-  { label: '1 Month',  value: '1mo' },
-  { label: '3 Months', value: '3mo' },
-  { label: '6 Months', value: '6mo' },
-  { label: '1 Year',   value: '1y'  },
+  { label: '1週間', value: '5d' },
+  { label: '1ヶ月', value: '1mo' },
+  { label: '3ヶ月', value: '3mo' },
+  { label: '6ヶ月', value: '6mo' },
+  { label: '1年',   value: '1y'  },
 ]
+
 function HBarChart({ items, color, maxAbs }) {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
       {items.map((item, i) => {
         const w = Math.round(Math.abs(item.pct) / maxAbs * 100)
-        const c = color || (item.pct >= 0 ? 'var(--red)' : 'var(--green)')
         return (
           <div key={item.theme} style={{
             display: 'grid', gridTemplateColumns: '130px 1fr 70px',
@@ -25,9 +26,9 @@ function HBarChart({ items, color, maxAbs }) {
               {item.theme}
             </span>
             <div style={{ height: '6px', background: 'rgba(255,255,255,0.05)', borderRadius: '3px', overflow: 'hidden' }}>
-              <div style={{ height: '100%', width: `${w}%`, background: c, borderRadius: '3px' }} />
+              <div style={{ height: '100%', width: `${w}%`, background: color, borderRadius: '3px' }} />
             </div>
-            <span style={{ fontFamily: 'var(--mono)', fontSize: '13px', fontWeight: 700, textAlign: 'right', color: c }}>
+            <span style={{ fontFamily: 'var(--mono)', fontSize: '13px', fontWeight: 700, textAlign: 'right', color }}>
               {item.pct >= 0 ? '+' : ''}{item.pct.toFixed(1)}%
             </span>
           </div>
@@ -36,6 +37,7 @@ function HBarChart({ items, color, maxAbs }) {
     </div>
   )
 }
+
 function Loading() {
   return (
     <div style={{ textAlign: 'center', padding: '60px', color: 'var(--text3)' }}>
@@ -46,15 +48,17 @@ function Loading() {
           animation: `pulse 1.2s ease-in-out ${d}s infinite`,
         }} />
       ))}
-      <div style={{ marginTop: '12px', fontSize: '12px' }}>Loading data...</div>
+      <div style={{ marginTop: '12px', fontSize: '12px' }}>データ取得中...</div>
     </div>
   )
 }
+
 export default function FundFlow() {
   const [period,  setPeriod]  = useState('1mo')
   const [data,    setData]    = useState(null)
   const [loading, setLoading] = useState(true)
   const [error,   setError]   = useState(null)
+
   useEffect(() => {
     const fetch_ = async () => {
       setLoading(true); setError(null)
@@ -63,59 +67,68 @@ export default function FundFlow() {
         const json = await res.json()
         setData(json)
       } catch {
-        setError('Failed to load data.')
+        setError('データ取得に失敗しました')
       } finally {
         setLoading(false)
       }
     }
     fetch_()
   }, [period])
+
   const allItems = data?.all ?? []
   const maxAbs   = allItems.length ? Math.max(...allItems.map(t => Math.abs(t.pct))) : 1
+
   return (
     <div style={{ padding: '28px 32px 48px' }}>
       <h1 style={{ fontSize: '24px', fontWeight: 700, letterSpacing: '-0.02em', color: '#e8f0ff', marginBottom: '4px' }}>
-        Fund Flow
+        資金フロー
       </h1>
       <p style={{ fontSize: '12px', color: 'var(--text3)', marginBottom: '20px' }}>
-        Compare rising vs falling themes by price change. Identify where capital is flowing in the Japanese market.
+        上昇テーマ vs 下落テーマの騰落幅を比較。どのテーマに資金が集まっているか把握できます。
       </p>
+
       <select value={period} onChange={e => setPeriod(e.target.value)} style={selStyle}>
         {PERIODS.map(p => <option key={p.value} value={p.value}>{p.label}</option>)}
       </select>
+
       {loading ? <Loading /> : error ? (
         <div style={{ color: 'var(--red)', fontSize: '13px', marginTop: '20px' }}>{error}</div>
       ) : (
         <>
+          {/* TOP10 2カラム */}
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px', marginTop: '24px' }} className="flow-grid">
             <div>
               <div style={sectionHead}>
-                <span style={sectionTitle}>🔺 Top Gainers TOP10</span>
+                <span style={sectionTitle}>🔥 資金流入 TOP10</span>
                 <div style={sectionLine} />
               </div>
               <HBarChart items={data?.gainers ?? []} color="var(--red)" maxAbs={maxAbs} />
             </div>
             <div>
               <div style={sectionHead}>
-                <span style={sectionTitle}>🔻 Top Losers TOP10</span>
+                <span style={sectionTitle}>❄️ 資金流出 TOP10</span>
                 <div style={sectionLine} />
               </div>
               <HBarChart items={data?.losers ?? []} color="var(--green)" maxAbs={maxAbs} />
             </div>
           </div>
+
+          {/* 全テーマ */}
           <div style={sectionHead}>
-            <span style={sectionTitle}>All Themes — Price Change Overview</span>
+            <span style={sectionTitle}>全テーマ 騰落率一覧</span>
             <div style={sectionLine} />
           </div>
           <HBarChart items={allItems} color={undefined} maxAbs={maxAbs} />
         </>
       )}
+
       <style>{`
         @media (max-width: 768px) { .flow-grid { grid-template-columns: 1fr !important; } }
       `}</style>
     </div>
   )
 }
+
 const selStyle = {
   background: 'var(--bg3)', color: 'var(--text)',
   border: '1px solid rgba(74,120,200,0.2)', borderRadius: '6px',

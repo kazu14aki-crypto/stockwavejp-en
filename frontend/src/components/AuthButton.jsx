@@ -1,3 +1,6 @@
+/**
+ * AuthButton — ヘッダー右側のログイン/ユーザーボタン
+ */
 import { useState } from 'react'
 import { useAuth } from '../hooks/useAuth.jsx'
 
@@ -6,54 +9,64 @@ export default function AuthButton() {
   const [menuOpen, setMenuOpen] = useState(false)
 
   if (loading) return (
-    <div style={{ width:'28px', height:'28px', borderRadius:'50%', background:'var(--bg3)', flexShrink:0 }} />
+    <div style={{ width:'28px', height:'28px', borderRadius:'50%',
+      background:'var(--bg3)', flexShrink:0 }} />
   )
 
   if (!isLoggedIn) return (
-    <button onClick={() => signIn()}
-      title="Sign in with Google to sync custom themes across devices"
+    <button
+      onClick={() => signIn()}
+      title="Googleでログインするとカスタムテーマがどのデバイスでも同期されます"
       style={{
         display:'flex', alignItems:'center', gap:'6px',
         background:'rgba(74,158,255,0.1)', border:'1px solid rgba(74,158,255,0.3)',
         borderRadius:'6px', color:'var(--accent)', cursor:'pointer',
         fontFamily:'var(--font)', fontSize:'12px', fontWeight:600,
-        padding:'5px 10px', whiteSpace:'nowrap', flexShrink:0, transition:'all 0.15s',
+        padding:'5px 10px', whiteSpace:'nowrap', flexShrink:0,
+        transition:'all 0.15s',
       }}
       onMouseEnter={e => e.currentTarget.style.background='rgba(74,158,255,0.18)'}
       onMouseLeave={e => e.currentTarget.style.background='rgba(74,158,255,0.1)'}
     >
       <GoogleIcon />
-      <span className="auth-btn-label">Sign In</span>
+      <span className="auth-btn-label">ログイン</span>
     </button>
   )
 
+  // ログイン済み
   return (
     <div style={{ position:'relative', flexShrink:0 }}>
-      <button onClick={() => setMenuOpen(o => !o)} style={{
-        display:'flex', alignItems:'center', gap:'6px',
-        background:'transparent', border:'1px solid var(--border)',
-        borderRadius:'20px', cursor:'pointer', padding:'3px 10px 3px 3px', fontFamily:'var(--font)',
-      }}
+      <button
+        onClick={() => setMenuOpen(o => !o)}
+        style={{
+          display:'flex', alignItems:'center', gap:'6px',
+          background:'transparent', border:'1px solid var(--border)',
+          borderRadius:'20px', cursor:'pointer', padding:'3px 10px 3px 3px',
+          fontFamily:'var(--font)', transition:'all 0.15s',
+        }}
         onMouseEnter={e => e.currentTarget.style.borderColor='rgba(74,158,255,0.4)'}
         onMouseLeave={e => e.currentTarget.style.borderColor='var(--border)'}
       >
         {avatarUrl ? (
-          <img src={avatarUrl} alt="" width={22} height={22} style={{ borderRadius:'50%', flexShrink:0 }} />
+          <img src={avatarUrl} alt="" width={22} height={22}
+            style={{ borderRadius:'50%', flexShrink:0 }} />
         ) : (
-          <div style={{ width:22, height:22, borderRadius:'50%', background:'var(--accent)',
-            display:'flex', alignItems:'center', justifyContent:'center',
-            fontSize:'11px', color:'#fff', fontWeight:700 }}>
+          <div style={{ width:22, height:22, borderRadius:'50%',
+            background:'var(--accent)', display:'flex', alignItems:'center',
+            justifyContent:'center', fontSize:'11px', color:'#fff', fontWeight:700 }}>
             {(displayName||'?')[0].toUpperCase()}
           </div>
         )}
         <span className="auth-btn-label" style={{ fontSize:'12px', color:'var(--text2)',
           maxWidth:'80px', overflow:'hidden', textOverflow:'ellipsis', whiteSpace:'nowrap' }}>
-          {displayName?.split(' ')[0] || 'User'}
+          {displayName?.split(' ')[0] || 'ユーザー'}
         </span>
       </button>
+
       {menuOpen && (
         <>
-          <div onClick={() => setMenuOpen(false)} style={{ position:'fixed', inset:0, zIndex:998 }} />
+          <div onClick={() => setMenuOpen(false)}
+            style={{ position:'fixed', inset:0, zIndex:998 }} />
           <div style={{
             position:'absolute', top:'calc(100% + 6px)', right:0,
             background:'var(--bg2)', border:'1px solid var(--border)',
@@ -65,17 +78,20 @@ export default function AuthButton() {
                 overflow:'hidden', textOverflow:'ellipsis', whiteSpace:'nowrap' }}>
                 {displayName}
               </div>
-              <div style={{ fontSize:'10px', color:'var(--text3)', marginTop:'2px' }}>Custom themes syncing</div>
+              <div style={{ fontSize:'10px', color:'var(--text3)', marginTop:'2px' }}>
+                カスタムテーマを同期中
+              </div>
             </div>
             <button onClick={() => { signOut(); setMenuOpen(false) }} style={{
-              width:'100%', textAlign:'left', background:'none', border:'none',
-              padding:'8px 12px', borderRadius:'6px', color:'var(--red)',
-              fontSize:'13px', cursor:'pointer', fontFamily:'var(--font)',
+              width:'100%', textAlign:'left', background:'none',
+              border:'none', padding:'8px 12px', borderRadius:'6px',
+              color:'var(--red)', fontSize:'13px', cursor:'pointer',
+              fontFamily:'var(--font)', transition:'background 0.1s',
             }}
               onMouseEnter={e => e.currentTarget.style.background='rgba(255,83,112,0.08)'}
               onMouseLeave={e => e.currentTarget.style.background='none'}
             >
-              Sign Out
+              ログアウト
             </button>
           </div>
         </>

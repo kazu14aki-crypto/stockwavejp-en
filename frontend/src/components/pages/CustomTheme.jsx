@@ -2,21 +2,25 @@
  * CustomTheme.jsx — Custom Theme管理＋詳細表示＋URLエクスポート
  */
 import { useState, useEffect } from 'react'
+import StockBubbleChart from '../StockBubbleChart'
 import { useCustomThemes, themeToUrl, themeFromUrl } from '../../hooks/useCustomThemes'
 import { useAuth } from '../../hooks/useAuth.jsx'
 
 const API = import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000'
 const PERIODS = [
-  { label:'1W', value:'5d' },
-  { label:'1M', value:'1mo' },
-  { label:'3M', value:'3mo' },
+  { label:'1日',   value:'1d'  },
+  { label:'1週間', value:'5d'  },
+  { label:'1ヶ月', value:'1mo' },
+  { label:'3ヶ月', value:'3mo' },
+  { label:'6ヶ月', value:'6mo' },
+  { label:'1年',   value:'1y'  },
 ]
 
 function formatLarge(n) {
   if (!n) return '0'
-  if (n >= 1e12) return (n/1e12).toFixed(1)+'T'
-  if (n >= 1e8)  return (n/1e8).toFixed(1)+'B'
-  if (n >= 1e4)  return (n/1e4).toFixed(1)+'M'
+  if (n >= 1e12) return (n/1e12).toFixed(1)+'兆'
+  if (n >= 1e8)  return (n/1e8).toFixed(1)+'億'
+  if (n >= 1e4)  return (n/1e4).toFixed(1)+'万'
   return n.toLocaleString()
 }
 
@@ -45,14 +49,14 @@ function ThemeTrendChart({ stocks, period }) {
 
   if (loading) return (
     <div style={{ padding:'20px', textAlign:'center', color:'var(--text3)', fontSize:'12px' }}>
-      グラフLoading......
+      グラフデータ取得中...
     </div>
   )
 
   const names = Object.keys(seriesData)
   if (!names.length) return (
     <div style={{ padding:'20px', textAlign:'center', color:'var(--text3)', fontSize:'12px' }}>
-      グラフNo data
+      グラフデータなし
     </div>
   )
 
@@ -90,7 +94,7 @@ function ThemeTrendChart({ stocks, period }) {
         ))}
         {xLabels.map(({i, date}) => (
           <text key={date} x={xS(i)} y={H-4} textAnchor="middle" fill="var(--text3)" fontSize="8">
-            {date.slice(2,7)}
+            {fmtDate(date)}
           </text>
         ))}
         {names.map((name, ti) => {
@@ -126,10 +130,12 @@ function ThemeTrendChart({ stocks, period }) {
   )
 }
 
-// ──  stocksテーブル ─────────────────────────────────
+// ── 銘柄テーブル ─────────────────────────────────
 function CustomStockTable({ stocks, period, onRemove }) {
   const [details, setDetails] = useState({})
   const [loading, setLoading] = useState(true)
+  const [sortKey, setSortKey] = useState('pct')
+  const [sortAsc, setSortAsc] = useState(false)
 
   useEffect(() => {
     if (!stocks?.length) return
@@ -149,7 +155,7 @@ function CustomStockTable({ stocks, period, onRemove }) {
 
   if (!stocks?.length) return (
     <div style={{ textAlign:'center', padding:'20px', color:'var(--text3)', fontSize:'12px' }}>
-       stocksがありません
+      No stocks added
     </div>
   )
 
@@ -157,23 +163,59 @@ function CustomStockTable({ stocks, period, onRemove }) {
     ? Object.values(details).reduce((s, d) => s + (d.pct ?? 0), 0) / Object.values(details).length
     : null
 
+  const sortBtns = [
+    { key: 'pct',         label: 'Return' },
+    { key: 'volume',      label: 'Volume' },
+    { key: 'trade_value', label: 'Trade Value' },
+  ]
+  const sortedStocks = [...stocks].sort((a, b) => {
+    const va = details[a.ticker]?.[sortKey] ?? 0
+    const vb = details[b.ticker]?.[sortKey] ?? 0
+    return sortAsc ? va - vb : vb - va
+  })
+
   return (
     <div>
       {avg !== null && (
         <div style={{ display:'flex', alignItems:'center', gap:'8px', marginBottom:'10px' }}>
-          <span style={{ fontSize:'12px', color:'var(--text3)' }}>テーマ平均Return</span>
+          <span style={{ fontSize:'12px', color:'var(--text3)' }}>テーマAvg Return</span>
           <span style={{ fontSize:'18px', fontWeight:700, fontFamily:'var(--mono)',
             color: avg >= 0 ? 'var(--red)' : 'var(--green)' }}>
             {avg >= 0 ? '+' : ''}{avg.toFixed(2)}%
           </span>
         </div>
       )}
+      {/* ① ソートボタン */}
+      <div style={{ display:'flex', gap:'6px', alignItems:'center', marginBottom:'8px', flexWrap:'wrap' }}>
+        <span style={{ fontSize:'10px', color:'var(--text3)', fontWeight:600, whiteSpace:'nowrap' }}>Sort by:</span>
+        {sortBtns.map(b => (
+          <button key={b.key} onClick={() => {
+            if (sortKey === b.key) setSortAsc(a => !a)
+            else { setSortKey(b.key); setSortAsc(false) }
+          }} style={{
+            padding:'3px 10px', borderRadius:'5px', fontSize:'11px', fontWeight:600,
+            cursor:'pointer', fontFamily:'var(--font)',
+            background: sortKey === b.key ? 'rgba(74,158,255,0.15)' : 'transparent',
+            border: sortKey === b.key ? '1px solid rgba(74,158,255,0.4)' : '1px solid var(--border)',
+            color: sortKey === b.key ? 'var(--accent)' : 'var(--text3)',
+          }}>
+            {b.label} {sortKey === b.key ? (sortAsc ? '↑' : '↓') : ''}
+          </button>
+        ))}
+        <button onClick={() => setSortAsc(a => !a)} style={{
+          padding:'3px 10px', borderRadius:'5px', fontSize:'11px', fontWeight:600,
+          cursor:'pointer', fontFamily:'var(--font)',
+          background:'transparent', border:'1px solid var(--border)', color:'var(--text3)',
+        }}>
+          {sortAsc ? '↑ Asc' : '↓ Desc'}
+        </button>
+      </div>
       <div style={{ overflowX:'auto' }}>
         <table style={{ borderCollapse:'collapse', fontSize:'12px', fontFamily:'var(--font)', width:'100%', minWidth:'600px' }}>
           <thead>
             <tr style={{ borderBottom:'1px solid var(--border)' }}>
-              {['#',' stocks名','Price','Return','Volume','T.Value','操作'].map(h => (
-                <th key={h} style={{ padding:'6px 10px', textAlign: h===' stocks名'?'left':'right',
+              {['#','Stock Name','株価','Return','Volume','Trade Value','操作'].map(h => (
+                <th key={h} style={{ padding:'6px 10px', textAlign: h==='Stock Name'?'left':'right',
                   fontSize:'10px', fontWeight:600, color:'var(--text3)', textTransform:'uppercase',
                   letterSpacing:'0.06em', whiteSpace:'nowrap', background:'var(--bg3)',
                   ...(h==='#'||h==='操作' ? {textAlign:'center'} : {}) }}>
@@ -183,15 +225,13 @@ function CustomStockTable({ stocks, period, onRemove }) {
             </tr>
           </thead>
           <tbody>
-            {stocks.map((s, i) => {
+            {sortedStocks.map((s, i) => {
               const d = details[s.ticker]
               const pColor = (d?.pct ?? 0) >= 0 ? 'var(--red)' : 'var(--green)'
               const bg = i%2===0 ? 'transparent' : 'rgba(255,255,255,0.02)'
               return (
                 <tr key={s.ticker} style={{ borderBottom:'1px solid rgba(255,255,255,0.04)', background: bg }}>
-                  <td style={{ padding:'8px 10px', textAlign:'center', color:'var(--text3)', fontFamily:'var(--mono)', fontSize:'11px' }}>
-                    {i+1}
-                  </td>
+                  <td style={{ padding:'8px 10px', textAlign:'center', color:'var(--text3)', fontFamily:'var(--mono)', fontSize:'11px' }}>{i+1}</td>
                   <td style={{ padding:'8px 10px', textAlign:'left' }}>
                     <div style={{ fontSize:'10px', color:'var(--text3)', fontFamily:'var(--mono)' }}>{s.ticker.replace('.T','')}</div>
                     <div style={{ fontSize:'13px', fontWeight:600, color:'var(--text)' }}>{s.name}</div>
@@ -227,7 +267,154 @@ function CustomStockTable({ stocks, period, onRemove }) {
   )
 }
 
+// ③ Custom Theme用 Volume・Trade Valueグラフ
+function CustomVolTvChart({ stocks }) {
+  const [volData, setVolData] = useState({})
+  const [mode, setMode] = useState('tv')
+  useEffect(() => {
+    if (!stocks?.length) return
+    fetch('/data/market.json?t=' + Date.now())
+      .then(r => r.json())
+      .then(mj => {
+        const map = {}
+        stocks.forEach(s => {
+          // ティッカー形式の違いを吸収（7203.T → vol_trend内のキーと照合）
+          const keys = Object.keys(mj).filter(k => k.startsWith('vol_trend_'))
+          // Custom Themeのvol_trendはTheme NameベースではないためAPIから取得
+        })
+        setVolData(map)
+      }).catch(() => {})
+  }, [stocks])
+
+  // シンプルな棒グラフ（APIの/api/stock-infoからvolumeとtrade_valueを取得）
+  const [details, setDetails] = useState({})
+  const API_URL = import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000'
+  useEffect(() => {
+    if (!stocks?.length) return
+    Promise.all(stocks.map(s =>
+      fetch(`${API_URL}/api/stock-info/${encodeURIComponent(s.ticker)}`).then(r=>r.json()).catch(()=>null)
+    )).then(results => {
+      const map = {}
+      results.forEach((r,i) => { if(r) map[stocks[i].ticker] = r })
+      setDetails(map)
+    })
+  }, [stocks])
+
+  if (!Object.keys(details).length) return (
+    <div style={{ textAlign:'center', padding:'20px', color:'var(--text3)', fontSize:'12px',
+      background:'var(--bg2)', border:'1px solid var(--border)', borderRadius:'10px' }}>データ取得中...</div>
+  )
+
+  const dataKey = mode === 'tv' ? 'trade_value' : 'volume'
+  const sorted = stocks.map(s => ({
+    ...s, val: details[s.ticker]?.[dataKey] ?? 0, pct: details[s.ticker]?.pct ?? 0
+  })).sort((a,b) => b.val - a.val)
+  const maxV = Math.max(...sorted.map(s => s.val), 1)
+  const fmtL = v => {
+    if (!v) return '0'
+    if (v >= 1e12) return (v/1e12).toFixed(1)+'兆'
+    if (v >= 1e8) return (v/1e8).toFixed(1)+'億'
+    if (v >= 1e4) return (v/1e4).toFixed(1)+'万'
+    return v.toLocaleString()
+  }
+  return (
+    <div style={{ background:'var(--bg2)', border:'1px solid var(--border)', borderRadius:'10px', padding:'12px' }}>
+      <div style={{ display:'flex', gap:'8px', marginBottom:'10px' }}>
+        {[{v:'tv',l:'Trade Value'},{v:'vol',l:'Volume'}].map(m => (
+          <button key={m.v} onClick={() => setMode(m.v)} style={{
+            padding:'4px 12px', borderRadius:'6px', fontSize:'12px', fontWeight:600,
+            cursor:'pointer', fontFamily:'var(--font)',
+            background: mode===m.v?'rgba(74,158,255,0.15)':'transparent',
+            border: mode===m.v?'1px solid rgba(74,158,255,0.4)':'1px solid var(--border)',
+            color: mode===m.v?'var(--accent)':'var(--text3)',
+          }}>{m.l}</button>
+        ))}
+      </div>
+      <div style={{ display:'flex', flexDirection:'column', gap:'5px' }}>
+        {sorted.map(s => {
+          const w = s.val/maxV*100
+          const pCol = s.pct>=0?'var(--red)':'var(--green)'
+          return (
+            <div key={s.ticker} style={{ display:'grid', gridTemplateColumns:'100px 1fr 70px 54px', gap:'6px', alignItems:'center' }}>
+              <span style={{ fontSize:'11px', color:'var(--text2)', overflow:'hidden', textOverflow:'ellipsis', whiteSpace:'nowrap', textAlign:'right' }}>{s.name}</span>
+              <div style={{ height:'12px', background:'rgba(255,255,255,0.04)', borderRadius:'3px', overflow:'hidden' }}>
+                <div style={{ height:'100%', width:`${w}%`, background: mode==='tv'?'#ff8c42':'#378ADD', borderRadius:'3px', opacity:0.85 }}/>
+              </div>
+              <span style={{ fontFamily:'var(--mono)', fontSize:'11px', color:'var(--text2)', textAlign:'right' }}>{fmtL(s.val)}</span>
+              <span style={{ fontFamily:'var(--mono)', fontSize:'11px', fontWeight:700, color:pCol, textAlign:'right' }}>{s.pct>=0?'+':''}{s.pct?.toFixed(1)}%</span>
+            </div>
+          )
+        })}
+      </div>
+    </div>
+  )
+}
+
 // ── メインコンポーネント ────────────────────────
+// 横軸日付フォーマット：日付の重複を避けるためユニーク表示
+function fmtDate(dateStr) {
+  if (!dateStr) return ''
+  // 'YYYY-MM-DD' または 'YYYY/MM/DD' 形式に対応
+  const sep = dateStr.includes('-') ? '-' : '/'
+  const parts = dateStr.split(sep)
+  if (parts.length < 3) return dateStr
+  const y = parts[0].slice(2) // '26'
+  const m = parts[1]          // '03'
+  const d = parts[2]          // '28'
+  return `${y}.${m}/${d}`
+}
+
+
+
+// ── Custom Theme用散布図ラッパー ─────────────────────────────────
+function CustomBubbleScatter({ stocks, period }) {
+  const [details, setDetails] = useState({})
+  const API_LOCAL = import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000'
+
+  useEffect(() => {
+    if (!stocks?.length) return
+    Promise.all(
+      stocks.map(s =>
+        fetch(`${API_LOCAL}/api/stock-info/${encodeURIComponent(s.ticker)}`)
+          .then(r => r.json()).catch(() => null)
+      )
+    ).then(results => {
+      const map = {}
+      results.forEach((r, i) => { if (r) map[stocks[i].ticker] = r })
+      setDetails(map)
+    })
+  }, [stocks, period])
+
+  // StockBubbleChartが期待する形式に変換
+  const enriched = stocks
+    .filter(s => details[s.ticker]?.pct != null)
+    .map(s => ({
+      ticker: s.ticker,
+      name: s.name,
+      pct: details[s.ticker].pct ?? 0,
+      volume_chg: details[s.ticker].volume_chg ?? 0,
+      trade_value: details[s.ticker].trade_value ?? 0,
+    }))
+
+  if (enriched.length < 2) return (
+    <div style={{ textAlign:'center', padding:'24px', color:'var(--text3)', fontSize:'12px',
+      background:'var(--bg2)', border:'1px solid var(--border)', borderRadius:'10px', marginTop:'20px' }}>
+      {stocks.length === 0 ? 'No stocks added' : 'データ取得中...'}
+    </div>
+  )
+
+  return (
+    <div style={{ marginTop:'20px' }}>
+      <div style={{ fontSize:'12px', fontWeight:600, color:'var(--text3)', marginBottom:'8px',
+        display:'flex', alignItems:'center', gap:'8px' }}>
+        <span>📊 資金フロー散布図</span>
+        <div style={{ flex:1, height:'1px', background:'var(--border)' }}/>
+      </div>
+      <StockBubbleChart stocks={enriched} themeName={''} onNavigate={null} />
+    </div>
+  )
+}
+
 export default function CustomTheme() {
   const { themes, saveTheme, deleteTheme, syncing } = useCustomThemes()
   const { isLoggedIn, signIn } = useAuth()
@@ -237,7 +424,7 @@ export default function CustomTheme() {
   const [period,      setPeriod]      = useState('1mo')
   const [urlCopied,   setUrlCopied]   = useState(false)
 
-  // Editフォーム
+  // 編集フォーム
   const [themeName, setThemeName]   = useState('')
   const [stocks,    setStocks]      = useState([])
   const [query,     setQuery]       = useState('')
@@ -273,7 +460,7 @@ export default function CustomTheme() {
     })
   }
 
-  // Edit開始
+  // 編集開始
   const startEdit = (i) => {
     const t = themes[i]
     setEditTarget(i); setThemeName(t.name); setStocks(t.stocks||[])
@@ -299,20 +486,21 @@ export default function CustomTheme() {
         const d = await r.json()
         const jp = (d.results||[]).filter(r => r.ticker?.endsWith('.T'))
         jp.length ? setResults(jp)
-                  : setSearchErr(`「${q}」に一致する stocksが見つかりませんでした（証券コード4桁でも検索できます）`)
+                  : setSearchErr(`「${q}」に一致する銘柄が見つかりませんでした（証券コード4桁でも検索できます）`)
       }
     } catch { setSearchErr('検索に失敗しました') }
     setSearching(false)
   }
   const addStock = (s) => {
     if (stocks.find(x => x.ticker === s.ticker)) { setSearchErr('すでにAdd済みです'); return }
+    if (stocks.length >= 10) { setSearchErr('1テーマあたりの銘柄上限は10個です'); return }
     setStocks(p => [...p, s]); setResults([]); setQuery(''); setSearchErr(''); setExpanded(null)
   }
   const removeStock = (ticker) => setStocks(p => p.filter(s => s.ticker !== ticker))
 
   const handleSave = () => {
     if (!themeName.trim()) { alert('Theme Nameを入力してください'); return }
-    if (!stocks.length)    { alert(' stocksを1つ以上Addしてください'); return }
+    if (!stocks.length)    { alert('銘柄を1つ以上Addしてください'); return }
     saveTheme({ name:themeName.trim(), stocks }, editTarget)
     setMode('list')
   }
@@ -322,37 +510,48 @@ export default function CustomTheme() {
     <div style={{ padding:'28px 24px 48px' }}>
       <div style={{ display:'flex', alignItems:'center', justifyContent:'space-between', marginBottom:'4px' }}>
         <h1 style={{ fontSize:'22px', fontWeight:700, color:'var(--text)' }}>Custom Theme</h1>
-        <button onClick={startCreate} style={btnP}>＋ New</button>
+        <button onClick={startCreate}
+          disabled={themes.length >= 3}
+          style={{ ...btnP, opacity: themes.length >= 3 ? 0.4 : 1,
+            cursor: themes.length >= 3 ? 'not-allowed' : 'pointer' }}>
+          ＋ 新規作成{themes.length >= 3 ? '（上限）' : ''}
+        </button>
       </div>
-      <p style={{ fontSize:'12px', color:'var(--text3)', marginBottom:'16px' }}>
-        Create and track your own themes。 stocks名または4桁証券コードで検索（日本株のみ）。
+      <p style={{ fontSize:'12px', color:'var(--text3)', marginBottom:'8px' }}>
+        独自のCreate Theme・追跡。Stock Nameまたは4桁証券コードで検索（日本株のみ）。
       </p>
-      {/* Sign In誘導バナー */}
+      <div style={{ fontSize:'11px', color: themes.length >= 3 ? 'var(--red)' : 'var(--text3)',
+        marginBottom:'16px', display:'flex', alignItems:'center', gap:'6px' }}>
+        <span style={{ fontWeight:600 }}>📌 作成数: {themes.length} / 3</span>
+        {themes.length >= 3 && <span>（上限に達しました。既存テーマをRemoveしてからAddしてください）</span>}
+        {themes.length < 3 && <span>（最大3テーマまで作成できます）</span>}
+      </div>
+      {/* ログイン誘導バナー */}
       {!isLoggedIn && (
         <div style={{ display:'flex', alignItems:'center', justifyContent:'space-between',
           background:'rgba(74,158,255,0.07)', border:'1px solid rgba(74,158,255,0.2)',
           borderRadius:'8px', padding:'10px 14px', marginBottom:'16px', gap:'12px', flexWrap:'wrap' }}>
           <div>
             <span style={{ fontSize:'12px', color:'var(--text2)' }}>💡 </span>
-            <span style={{ fontSize:'12px', color:'var(--text2)' }}>GoogleSign Inするとどのデバイスでもテーマが同期されます</span>
+            <span style={{ fontSize:'12px', color:'var(--text2)' }}>Googleログインするとどのデバイスでもテーマが同期されます</span>
           </div>
           <button onClick={signIn} style={{ background:'rgba(74,158,255,0.15)',
             border:'1px solid rgba(74,158,255,0.35)', borderRadius:'6px',
             color:'var(--accent)', cursor:'pointer', fontFamily:'var(--font)',
             fontSize:'12px', fontWeight:600, padding:'5px 14px', whiteSpace:'nowrap' }}>
-            Sign in with Google
+            Googleでログイン
           </button>
         </div>
       )}
       {syncing && (
-        <div style={{ fontSize:'11px', color:'var(--text3)', marginBottom:'8px' }}>Syncing......</div>
+        <div style={{ fontSize:'11px', color:'var(--text3)', marginBottom:'8px' }}>同期中...</div>
       )}
       {themes.length === 0 ? (
         <div style={{ background:'var(--bg2)', border:'1px solid var(--border)', borderRadius:'var(--radius)',
           padding:'48px', textAlign:'center' }}>
           <div style={{ fontSize:'36px', marginBottom:'12px' }}>🎨</div>
           <div style={{ fontSize:'14px', color:'var(--text2)', marginBottom:'20px' }}>まだCustom Themeがありません</div>
-          <button onClick={startCreate} style={btnP}>Create your first theme</button>
+          <button onClick={startCreate} style={btnP}>最初のCreate Theme</button>
         </div>
       ) : (
         <div style={{ display:'flex', flexDirection:'column', gap:'8px' }}>
@@ -376,9 +575,9 @@ export default function CustomTheme() {
                   ))}
                 </div>
               </div>
-              <span style={{ fontSize:'12px', color:'var(--text3)', whiteSpace:'nowrap' }}>{(t.stocks||[]).length} stocks</span>
-              <button onClick={e => { e.stopPropagation(); startEdit(i) }} style={btnS}>Edit</button>
-              <button onClick={e => { e.stopPropagation(); window.confirm('Deleteしますか？') && deleteTheme(i) }} style={btnD}>Delete</button>
+              <span style={{ fontSize:'12px', color:'var(--text3)', whiteSpace:'nowrap' }}>{(t.stocks||[]).length}銘柄</span>
+              <button onClick={e => { e.stopPropagation(); startEdit(i) }} style={btnS}>編集</button>
+              <button onClick={e => { e.stopPropagation(); window.confirm('Removeしますか？') && deleteTheme(i) }} style={btnD}>Remove</button>
             </div>
           ))}
         </div>
@@ -403,32 +602,51 @@ export default function CustomTheme() {
               color: period===p.value ? 'var(--accent)' : 'var(--text3)',
             }}>{p.label}</button>
           ))}
-          <button onClick={() => startEdit(activeIndex)} style={btnS}>✏️ Edit</button>
+          <button onClick={() => startEdit(activeIndex)} style={btnS}>✏️ 編集</button>
           <button onClick={copyUrl} style={{ ...btnS, color: urlCopied ? 'var(--green)' : 'var(--text2)' }}>
             {urlCopied ? '✓ コピー済み' : '🔗 URLをコピー'}
           </button>
         </div>
       </div>
 
-      {/* Returnグラフ */}
-      <div style={{ marginBottom:'20px' }}>
-        <div style={{ fontSize:'12px', fontWeight:600, color:'var(--text3)', marginBottom:'8px',
-          display:'flex', alignItems:'center', gap:'8px' }}>
-          <span>📈 構成 stocks Return推移</span>
-          <div style={{ flex:1, height:'1px', background:'var(--border)' }}/>
-        </div>
-        <ThemeTrendChart stocks={activeTheme.stocks} period={period} />
-      </div>
+      {/* ③ 2カラムレイアウト: 左=グラフ群 / 右=銘柄表 */}
+      <div className="ct-detail-grid">
+        {/* 左: グラフ群 */}
+        <div>
+          {/* Returnグラフ */}
+          <div style={{ marginBottom:'16px' }}>
+            <div style={{ fontSize:'12px', fontWeight:600, color:'var(--text3)', marginBottom:'8px',
+              display:'flex', alignItems:'center', gap:'8px' }}>
+              <span>📈 構成銘柄 Return推移</span>
+              <div style={{ flex:1, height:'1px', background:'var(--border)' }}/>
+            </div>
+            <ThemeTrendChart stocks={activeTheme.stocks} period={period} />
+          </div>
 
-      {/*  stocksテーブル */}
-      <div>
-        <div style={{ fontSize:'12px', fontWeight:600, color:'var(--text3)', marginBottom:'8px',
-          display:'flex', alignItems:'center', gap:'8px' }}>
-          <span>📋 構成 stocks 詳細データ（{period === '5d' ? '1W' : period === '1mo' ? '1M' : '3M'}）</span>
-          <div style={{ flex:1, height:'1px', background:'var(--border)' }}/>
+          {/* ③ Volume・Trade Valueグラフ */}
+          <div style={{ marginBottom:'16px' }}>
+            <div style={{ fontSize:'12px', fontWeight:600, color:'var(--text3)', marginBottom:'8px',
+              display:'flex', alignItems:'center', gap:'8px' }}>
+              <span>📊 Volume・Trade Value推移</span>
+              <div style={{ flex:1, height:'1px', background:'var(--border)' }}/>
+            </div>
+            <CustomVolTvChart stocks={activeTheme.stocks} />
+          </div>
+
+          {/* 銘柄別散布図 */}
+          <CustomBubbleScatter stocks={activeTheme.stocks} period={period} />
         </div>
-        <div style={{ background:'var(--bg2)', border:'1px solid var(--border)', borderRadius:'10px', padding:'14px' }}>
-          <CustomStockTable stocks={activeTheme.stocks} period={period} />
+
+        {/* 右: 銘柄表（拡充版） */}
+        <div>
+          <div style={{ fontSize:'12px', fontWeight:600, color:'var(--text3)', marginBottom:'8px',
+            display:'flex', alignItems:'center', gap:'8px' }}>
+            <span>📋 構成銘柄 詳細データ（{activeTheme.stocks.length}/10銘柄）</span>
+            <div style={{ flex:1, height:'1px', background:'var(--border)' }}/>
+          </div>
+          <div style={{ background:'var(--bg2)', border:'1px solid var(--border)', borderRadius:'10px', padding:'14px' }}>
+            <CustomStockTable stocks={activeTheme.stocks} period={period} />
+          </div>
         </div>
       </div>
 
@@ -437,33 +655,44 @@ export default function CustomTheme() {
         border:'1px solid rgba(74,158,255,0.15)', borderRadius:'8px', fontSize:'12px', color:'var(--text3)' }}>
         💡 「URLをコピー」でこのテーマを共有・ブックマークできます。URLにアクセスすると自動でインポートされます。
       </div>
+
+      <style>{`
+        .ct-detail-grid {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 20px;
+        }
+        @media (min-width: 900px) {
+          .ct-detail-grid { grid-template-columns: 1fr 1fr; align-items: start; }
+        }
+      `}</style>
     </div>
   )
 
-  // ── 作成/Editフォーム ──────────────────────
+  // ── 作成/編集フォーム ──────────────────────
   return (
     <div style={{ padding:'28px 24px 48px' }}>
       <div style={{ display:'flex', alignItems:'center', gap:'14px', marginBottom:'24px' }}>
         <button onClick={() => setMode('list')} style={{ background:'none', border:'none',
           color:'var(--text2)', cursor:'pointer', fontSize:'20px', padding:0 }}>←</button>
         <h1 style={{ fontSize:'20px', fontWeight:700, color:'var(--text)' }}>
-          {mode === 'edit' ? 'Edit Theme' : 'New Theme'}
+          {mode === 'edit' ? 'テーマを編集' : '新規テーマ作成'}
         </h1>
       </div>
 
       <div style={{ marginBottom:'20px' }}>
         <label style={lbl}>Theme Name</label>
         <input value={themeName} onChange={e => setThemeName(e.target.value)}
-          placeholder="例：AIロボット、注目 stocks など"
+          placeholder="例：AIロボット、注目銘柄 など"
           style={{ ...inp, width:'100%', maxWidth:'400px' }} />
       </div>
 
       <div style={{ marginBottom:'20px' }}>
-        <label style={lbl}> stocksをAdd</label>
+        <label style={lbl}>Add Stock</label>
         <div style={{ display:'flex', gap:'8px', marginBottom:'6px', flexWrap:'wrap' }}>
           <input value={query} onChange={e => setQuery(e.target.value)}
             onKeyDown={e => e.key==='Enter' && handleSearch()}
-            placeholder=" stocks名（例：トヨタ、ソニー）または証券コード（例：7203）"
+            placeholder="Stock Name（例：トヨタ、ソニー）または証券コード（例：7203）"
             style={{ ...inp, flex:1, minWidth:'200px' }} />
           <button onClick={handleSearch} disabled={searching || !query.trim()}
             style={{ ...btnP, opacity: (!query.trim()||searching) ? 0.5 : 1 }}>
@@ -471,7 +700,7 @@ export default function CustomTheme() {
           </button>
         </div>
         <div style={{ fontSize:'11px', color:'var(--text3)' }}>
-          ※ Japan stocks only
+          ※ 日本株のみ対応
         </div>
 
         {searchErr && (
@@ -528,7 +757,7 @@ export default function CustomTheme() {
 
       {stocks.length > 0 && (
         <div style={{ marginBottom:'24px' }}>
-          <label style={lbl}>Add済み stocks（{stocks.length} stocks）</label>
+          <label style={lbl}>Add済み銘柄（{stocks.length}/10銘柄　※最大10銘柄まで）</label>
           <div style={{ display:'flex', flexDirection:'column', gap:'5px' }}>
             {stocks.map((s, i) => (
               <div key={s.ticker} style={{ display:'flex', alignItems:'center', gap:'10px',
@@ -552,10 +781,10 @@ export default function CustomTheme() {
       <div style={{ display:'flex', gap:'10px' }}>
         <button onClick={handleSave} disabled={!themeName.trim()||!stocks.length}
           style={{ ...btnP, fontSize:'14px', padding:'10px 24px', opacity: (!themeName.trim()||!stocks.length) ? 0.4 : 1 }}>
-          💾 {mode==='edit' ? 'Save Changes' : 'Create Theme'}
+          💾 {mode==='edit' ? '変更をSave' : 'Create Theme'}
         </button>
         <button onClick={() => setMode('list')} style={{ ...btnS, fontSize:'14px', padding:'10px 18px' }}>
-          Cancel
+          キャンセル
         </button>
       </div>
     </div>
