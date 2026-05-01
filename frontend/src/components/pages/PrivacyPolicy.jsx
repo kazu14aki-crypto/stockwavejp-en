@@ -1,16 +1,124 @@
 export default function PrivacyPolicy() {
   const sections = [
-    { title: '1. Basic Policy', body: 'StockWaveJP (hereinafter "the Site") considers the protection of users\' personal information and privacy to be of utmost importance, and complies with the Act on the Protection of Personal Information (Personal Information Protection Act) and other applicable laws.\n\nThis Privacy Policy explains the types of information collected and used by the Site, the purposes of use, management methods, and user rights. By using the Service, you agree to this Policy.' },
-    { title: '2. Information We Collect', body: '【Automatically Collected Information】\n- Access logs (IP address, browser type/version, OS, referrer URL, access date and time)\n- Usage data via cookies and similar technologies\n- Statistical information such as page views, time on site, and behavior flows via Google Analytics\n\n【Information Voluntarily Provided by Users】\n- Email address and display name via Google account authentication (when using the Custom Theme feature)\n- Custom theme names and constituent stock information (stored in browser local storage or Supabase)\n\n【Information Not Collected】\n- Financial information such as credit card numbers or bank account details\n- Personal information that directly identifies individuals such as full name, address, or phone number (except email address during Google login)' },
-    { title: '3. Purposes of Use', body: 'Collected information is used for the following purposes:\n\n- Providing, operating, and improving the Service\n- Providing user authentication and Custom Theme features\n- Analyzing service usage and statistics (Google Analytics)\n- Optimizing ad delivery via Google AdSense and other services\n- Detecting and preventing unauthorized access and misuse\n- Responding to violations of Terms of Service\n- Responding to legally required disclosures\n\nCollected information will not be used for purposes other than those listed above.' },
-    { title: '4. Use of Cookies', body: '【Google Analytics】\nUsed to analyze site usage. Collected data is sent to Google servers and anonymized/aggregated. No personally identifiable information is included. For Google\'s data use, please refer to Google\'s Privacy Policy.\n\n【Google AdSense】\nUsed to deliver personalized ads based on users\' interests. If you do not want third-party ad network cookies, you can opt out on Google\'s ad settings page.\n\n【Supabase (Authentication)】\nUsed to maintain user login status.\n\nCookies can be disabled through browser settings, but some features (such as saving Custom Themes) may not function properly.' },
-    { title: '5. Third-Party Disclosure', body: 'The Site does not provide or disclose collected information to third parties except in the following cases:\n\n- When user consent is obtained\n- When legally required disclosure is necessary (legal requests from courts, investigative agencies, etc.)\n- When necessary to protect life, body, or property, and obtaining consent from the individual is difficult\n- To contractors such as Google Analytics, Google AdSense, and Supabase (minimum necessary information within the scope of intended use)\n\nMain external services used by the Site and their privacy policies:\n- Google LLC: https://policies.google.com/privacy\n- Supabase Inc.: https://supabase.com/privacy' },
-    { title: '6. External Data Transmission', body: 'The Site transmits data externally through the following services:\n\n【Google Analytics (Google LLC)】\nInformation transmitted: Browsing history/behavior logs via cookies (anonymized)\nPurpose: Access analysis and service improvement\n\n【Google AdSense (Google LLC)】\nInformation transmitted: Interest information based on cookies and browsing history\nPurpose: Targeted ad delivery\n\n【Infoway (Data Provider)】\nInformation transmitted: None (the Site receives data via API)\nPurpose: Stock data acquisition' },
-    { title: '7. Data Storage and Security', body: 'The Site implements the following measures to securely manage collected information:\n\n- Encryption of communications via HTTPS (SSL/TLS)\n- Data storage via Supabase (SOC 2 Type II certified)\n- Regular security updates\n\nPlease note that data transmission over the internet carries inherent risks. While the Site makes its best efforts regarding information security, complete security cannot be guaranteed.' },
-    { title: '8. User Rights', body: 'Users of the Site have the following rights:\n\n- The right to request disclosure of personal information held\n- The right to request correction or deletion of personal information\n- The right to request suspension of use of personal information\n- Google Analytics opt-out (using the Google Analytics Opt-out Add-on)\n\nTo exercise these rights, please contact us at the address below. We will respond within a reasonable time.' },
-    { title: '9. Children\'s Privacy', body: 'The services on this Site are intended for users aged 18 and above. Persons under 18 years of age require parental consent to provide personal information. If we become aware that personal information has been provided by a person under 18, we will take appropriate action.' },
-    { title: '10. Changes to This Privacy Policy', body: 'This Policy may be changed without notice due to legal revisions or changes to service content. Significant changes will be announced on the Site. Changes take effect when posted on this page.' },
-    { title: '11. Contact Us', body: 'For inquiries regarding the handling of personal information, please contact us:\n\n- X (formerly Twitter) DM: @StockWaveJP\n- Contact form: accessible at https://stockwavejp-en.com\n\nBusiness hours: Weekdays (irregular). Responses may take several days.' },
+    {
+      title: '1. 基本方針',
+      body: `StockWaveJP（以下「当サイト」）は、ユーザーの個人情報・プライバシーの保護を重要と考え、個人情報の保護に関する法律（個人情報保護法）およびMore関連法令を遵守し、適切に取り扱います。
+
+本Privacy Policyは、当サイトが収集・利用する情報の種類、利用目的、管理方法、ユーザーの権利について説明するものです。本サービスをご利用いただくことで、本ポリシーに同意いただいたものとみなします。`,
+    },
+    {
+      title: '2. 収集する情報',
+      body: `当サイトは以下の情報を収集します。
+
+【Auto的に収集される情報】
+・アクセスログ（IPアドレス、ブラウザの種類・バージョン、OS、リファラーURL、アクセス日時）
+・Cookieおよび類似技術による利用状況データ
+・Google Analytics によるページビュー・滞在時間・行動フロー等の統計情報
+
+【ユーザーが任意で提供する情報】
+・Googleアカウント認証によるメールアドレス・表示名（Custom Theme機能ご利用時）
+・カスタムTheme Name・構成銘柄情報（ブラウザのローカルストレージまたはSupabaseにSave）
+
+【収集しない情報】
+・クレジットカード番号・銀行口座情報等の金融情報
+・氏名・住所・電話番号等の個人を直接特定できる情報（GoogleLogin時のメールアドレスを除く）`,
+    },
+    {
+      title: '3. 情報の利用目的',
+      body: `収集した情報は以下の目的で利用します。
+
+・本サービスの提供・運営・改善
+・ユーザー認証およびCustom Theme機能の提供
+・サービスの利用状況の分析および統計（Google Analytics）
+・Google AdSense等による広告配信の最適化
+・不正アクセス・不正利用の検知・防止
+・Terms of Service違反行為への対応
+・法令に基づく開示への対応
+
+収集した情報は、上記目的以外には利用しません。`,
+    },
+    {
+      title: '4. Cookieの使用',
+      body: `当サイトは以下の目的でCookieを使用します。
+
+【Google Analytics】
+サイトの利用状況を分析するために使用します。収集されたデータはGoogleのサーバーに送信され、匿名化・集計されます。個人を特定する情報は含まれません。Googleのデータ利用については Google のPrivacy Policyをご参照ください。
+
+【Google AdSense】
+ユーザーの興味・関心に合わせたパーソナライズ広告を配信するために使用されます。第三者配信事業者のCookieの使用を希望しない場合は、Google の広告Settingsページにてオプトアウトできます。
+
+【Supabase（認証）】
+ユーザーLogin状態の維持に使用します。
+
+ブラウザのSettingsによりCookieを無効にすることができますが、一部の機能（Custom ThemeSave等）が正常に動作しなくなる場合があります。`,
+    },
+    {
+      title: '5. 第三者への情報提供',
+      body: `当サイトは、以下の場合を除き、収集した情報を第三者に提供・開示しません。
+
+・ユーザーの同意がある場合
+・法令に基づく開示が必要な場合（裁判所・捜査機関等からの法的要請）
+・人の生命・身体・財産の保護のために必要で、本人の同意を得ることが困難な場合
+・Google Analytics・Google AdSense・Supabase等の委託先（利用目的の範囲内で必要最小限の情報を提供）
+
+当サイトが利用する主な外部サービスとそのPrivacy Policy：
+・Google LLC: https://policies.google.com/privacy
+・Supabase Inc.: https://supabase.com/privacy`,
+    },
+    {
+      title: '6. データの外部送信について',
+      body: `当サイトは、以下のサービスを通じてデータを外部に送信します。利用者情報の外部送信に関する規律に基づき開示します。
+
+【Google Analytics（Google LLC）】
+送信情報：Cookieを通じた閲覧履歴・行動ログ（匿名化済み）
+目的：アクセス解析・サービス改善
+
+【Google AdSense（Google LLC）】
+送信情報：Cookie・閲覧履歴に基づく興味関心情報
+目的：ターゲティング広告の配信
+
+【Infoway（データプロバイダー）】
+送信情報：なし（当サイトがAPIを通じてデータを受信）
+目的：株価データの取得`,
+    },
+    {
+      title: '7. データの保管・セキュリティ',
+      body: `当サイトは収集した情報の安全管理のために以下の対策を講じています。
+
+・HTTPS（SSL/TLS）による通信の暗号化
+・Supabase（SOC 2 Type II認証取得）によるデータ保管
+・定期的なセキュリティ更新の実施
+
+ただし、インターネットを通じたデータ送信には固有のリスクが伴うことをご承知おきください。当サイトは情報セキュリティに最善を尽くしますが、完全な安全性を保証するものではありません。`,
+    },
+    {
+      title: '8. ユーザーの権利',
+      body: `当サイトのユーザーは以下の権利を有します。
+
+・保有する個人情報の開示を請求する権利
+・個人情報の訂正・Removeを請求する権利
+・個人情報の利用停止を請求する権利
+・Google Analytics のオプトアウト（Googleアナリティクスオプトアウトアドオンの使用）
+
+これらの権利を行使する場合は、下記Contact先までご連絡ください。合理的な期間内に対応します。`,
+    },
+    {
+      title: '9. 未成年者について',
+      body: `当サイトのサービスは、18歳以上の方を対象としています。18歳未満の方が個人情報を提供する場合は、保護者の同意が必要です。18歳未満の方からの個人情報と認識した場合は、適切に対応します。`,
+    },
+    {
+      title: '10. Privacy Policyの変更',
+      body: `本ポリシーは、法令の改正・サービス内容の変更等により、予告なく変更することがあります。重要な変更については当サイト上でNewsします。変更後のポリシーは本ページに掲載した時点で効力を生じます。`,
+    },
+    {
+      title: '11. Contact',
+      body: `個人情報の取り扱いに関するContactは以下までご連絡ください。
+
+・X（旧Twitter）DM：@StockWaveJP
+・サイト内Contactフォーム：https://stockwavejp-en.com よりアクセス
+
+受付時間：平日（不定期）。返答まで数日かかる場合があります。`,
+    },
   ]
 
   return (
@@ -19,8 +127,9 @@ export default function PrivacyPolicy() {
         Privacy Policy
       </h1>
       <p style={{ fontSize:'12px', color:'var(--text3)', marginBottom:'28px' }}>
-        Established: April 1, 2026　Last Revised: April 29, 2026
+        制定日：2026年4月1日　最終改訂：2026年4月29日
       </p>
+
       {sections.map((s, i) => (
         <div key={i} style={{ marginBottom:'28px' }}>
           <h2 style={{ fontSize:'14px', fontWeight:700, color:'var(--text)', marginBottom:'10px',
@@ -32,6 +141,7 @@ export default function PrivacyPolicy() {
           </div>
         </div>
       ))}
+
       <div style={{ fontSize:'12px', color:'var(--text3)', marginTop:'24px', textAlign:'center' }}>
         © 2026 StockWaveJP. All rights reserved.
       </div>

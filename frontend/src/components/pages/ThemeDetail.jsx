@@ -34,7 +34,7 @@ function TdExpandable({ title, children, style }) {
                 background:'rgba(255,255,255,0.08)', border:'1px solid var(--border)',
                 borderRadius:'6px', color:'var(--text2)', cursor:'pointer', fontSize:'13px',
                 padding:'4px 12px', fontFamily:'var(--font)',
-              }}>✕ 閉じる</button>
+              }}>✕ Close</button>
             </div>
             {children}
           </div>
@@ -66,8 +66,8 @@ const STATE_COLORS = {
 function formatLarge(n) {
   if (!n) return '0'
   if (n>=1e12) return (n/1e12).toFixed(1)+'兆'
-  if (n>=1e8)  return (n/1e8).toFixed(1)+'億'
-  if (n>=1e4)  return (n/1e4).toFixed(1)+'万'
+  if (n>=1e8)  return (n/1e8).toFixed(1)+'B'
+  if (n>=1e4)  return (n/1e4).toFixed(1)+'M'
   return n.toLocaleString()
 }
 
@@ -78,7 +78,7 @@ function Loading() {
         <span key={i} style={{ display:'inline-block', width:'6px', height:'6px', borderRadius:'50%',
           background:'var(--accent)', margin:'0 3px', animation:`pulse 1.2s ease-in-out ${d}s infinite`}}/>
       ))}
-      <div style={{ marginTop:'12px', fontSize:'12px' }}>データ取得中...</div>
+      <div style={{ marginTop:'12px', fontSize:'12px' }}>Loading......</div>
     </div>
   )
 }
@@ -218,8 +218,8 @@ function VolTvChart({ selTheme }) {
   const fmtLarge = (v) => {
     if (v === 0) return '0'
     if (Math.abs(v) >= 1e12) return (v / 1e12).toFixed(1) + '兆'
-    if (Math.abs(v) >= 1e8)  return (v / 1e8).toFixed(1)  + '億'
-    if (Math.abs(v) >= 1e4)  return (v / 1e4).toFixed(1)  + '万'
+    if (Math.abs(v) >= 1e8)  return (v / 1e8).toFixed(1)  + 'B'
+    if (Math.abs(v) >= 1e4)  return (v / 1e4).toFixed(1)  + 'M'
     return v.toLocaleString()
   }
 
@@ -305,8 +305,8 @@ function PickupStocks({ stocks, period }) {
   const fmtL = (v) => {
     if (!v || v === 0) return '-'
     if (v >= 1e12) return (v / 1e12).toFixed(1) + '兆'
-    if (v >= 1e8)  return (v / 1e8).toFixed(1) + '億'
-    if (v >= 1e4)  return (v / 1e4).toFixed(1) + '万'
+    if (v >= 1e8)  return (v / 1e8).toFixed(1) + 'B'
+    if (v >= 1e4)  return (v / 1e4).toFixed(1) + 'M'
     return v.toLocaleString()
   }
 
@@ -334,9 +334,9 @@ function PickupStocks({ stocks, period }) {
 
     const buildReason = () => {
       const parts = []
-      if (pct >= 10)       parts.push('この期間のReturnは+' + pct.toFixed(1) + '%と大幅上昇しており、テーマ全体を牽引する動きを見せています')
-      else if (pct >= 5)   parts.push('この期間のReturnは+' + pct.toFixed(1) + '%と堅調で、テーマ内の上位Gainersです')
-      else if (pct >= 2)   parts.push('+' + pct.toFixed(1) + '%の上昇でテーマ平均を上回っています')
+      if (pct >= 10)       parts.push('この期間のReturnは+' + pct.toFixed(1) + '%と大幅Risingしており、テーマ全体を牽引する動きを見せています')
+      else if (pct >= 5)   parts.push('この期間のReturnは+' + pct.toFixed(1) + '%と堅調で、テーマ内の上位Rising銘柄です')
+      else if (pct >= 2)   parts.push('+' + pct.toFixed(1) + '%のRisingでテーマ平均を上回っています')
       else if (pct > 0)    parts.push('+' + pct.toFixed(1) + '%と小幅ながらプラスを維持しています')
 
       if (volChg >= 50)      parts.push('Volumeが+' + volChg.toFixed(0) + '%と急増しており、機関投資家・外国人投資家の大口資金の流入が強く示唆されます')
@@ -586,7 +586,7 @@ function StockTable({ stocks: rawStocks }) {
                 <th key={h} style={{ ...thStyle, minWidth: h === 'ミニチャート' ? '72px' : '80px',
                   width: h === 'ミニチャート' ? '72px' : undefined }}>{h}</th>
               ))}
-              <th style={{ ...thStyle, minWidth:'60px', background:'var(--bg3)' }}>追加</th>
+              <th style={{ ...thStyle, minWidth:'60px', background:'var(--bg3)' }}>Add</th>
             </tr>
           </thead>
           <tbody>
@@ -632,7 +632,7 @@ function StockTable({ stocks: rawStocks }) {
                   <td style={tdC}>{s.tv_rank}位</td>
                   <td style={tdC}>
                     <button onClick={() => setModalStock({ ticker: s.ticker, name: s.name, price: s.price })}
-                      title="カスタムテーマに追加"
+                      title="Custom ThemeにAdd"
                       style={{ background:'rgba(74,158,255,0.1)', border:'1px solid rgba(74,158,255,0.25)',
                         borderRadius:'4px', color:'var(--accent)', cursor:'pointer', fontSize:'13px',
                         padding:'3px 7px', fontFamily:'var(--font)', lineHeight:1 }}>＋</button>
@@ -679,9 +679,9 @@ const THEME_ARTICLE_MAP = {
   'AI半導体':          'semiconductor-theme',
   'AI人材':            'education-hr-theme',
   'エッジAI':          'physical-ai-edge-ai',
-  'EV・電気自動車':    'ev-green-theme',
+  'EV・電気Auto車':    'ev-green-theme',
   '全固体電池':        'ev-green-theme',
-  '自動運転':          'ev-green-theme',
+  'Auto運転':          'ev-green-theme',
   'ドローン':          'drone-theme',
   '輸送・物流':        'transport-logistics-theme',
   '造船':              'shipbuilding-theme',
@@ -725,7 +725,7 @@ const THEME_ARTICLE_MAP = {
   'リユース・中古品':  'retail-ec-theme',
   '防衛・航空':        'defense-theme',
   '宇宙・衛星':        'space-satellite-theme',
-  'ロボット・自動化':  'robot-automation-theme',
+  'ロボット・Auto化':  'robot-automation-theme',
   'レアアース・資源':  'rare-earth-resources-theme',
   'バフェット銘柄':    'sogo-shosha-analysis',
   'サイバーセキュリティ': 'cybersecurity-theme',
@@ -753,7 +753,7 @@ export default function ThemeDetail({ onNavigate, initialTheme }) {
   const [loadingM,     setLoadingM]     = useState(false)
   const [comparePeriod, setComparePeriod] = useState('1y')
 
-  // テーマ名一覧取得
+  // Theme Name一覧取得
   useEffect(() => {
     fetch('/data/market.json?t=' + Date.now())
       .then(r => r.json())
@@ -888,7 +888,7 @@ export default function ThemeDetail({ onNavigate, initialTheme }) {
 
   const toggleTheme = (t) =>
     setSelThemes(s => s.includes(t) ? s.filter(x => x !== t) : [...s, t])
-  // ⑥ 選択テーマのヒートマップデータ取得
+  // ⑥ 選択テーマのHeatmapデータ取得
   const [themeHeatmap, setThemeHeatmap] = useState(null)
   useEffect(() => {
     if (!selTheme) return
@@ -896,7 +896,7 @@ export default function ThemeDetail({ onNavigate, initialTheme }) {
     ;(async () => {
       try {
         const mj = await fetch('/data/market.json?t=' + Date.now()).then(r => r.json())
-        // heatmap.data[テーマ名] = {"1W": x, "1M": x, "3M": x, "6M": x, "1Y": x}
+        // heatmap.data[Theme Name] = {"1W": x, "1M": x, "3M": x, "6M": x, "1Y": x}
         const hmData = mj['heatmap']?.data
         if (hmData && hmData[selTheme] && !cancelled) {
           setThemeHeatmap(hmData[selTheme])
@@ -919,7 +919,7 @@ export default function ThemeDetail({ onNavigate, initialTheme }) {
     vol_rank: volRankMap.get(s.ticker) ?? s.vol_rank,
     tv_rank:  tvRankMap.get(s.ticker) ?? s.tv_rank,
   }))
-  // 上昇のみ・下落のみでフィルタリング
+  // Risingのみ・Fallingのみでフィルタリング
   const top5   = stocks.filter(s => s.pct > 0).slice(0, 5)
   const bot5   = [...stocks].sort((a, b) => a.pct - b.pct).filter(s => s.pct < 0).slice(0, 5)
   const macroNames = Object.keys(macroData)
@@ -969,7 +969,7 @@ export default function ThemeDetail({ onNavigate, initialTheme }) {
                   {stocks.length}銘柄構成 ／ {PERIODS.find(p => p.value === period)?.label}
                 </span>
                 {THEME_ARTICLE_MAP[selTheme] && onNavigate && (
-                  <button onClick={() => onNavigate('コラム・解説', THEME_ARTICLE_MAP[selTheme])}
+                  <button onClick={() => onNavigate('Column', THEME_ARTICLE_MAP[selTheme])}
                     style={{ padding:'6px 14px', background:'rgba(74,158,255,0.08)',
                       border:'1px solid rgba(74,158,255,0.3)', borderRadius:'6px',
                       color:'var(--accent)', cursor:'pointer', fontSize:'11px',
@@ -981,7 +981,7 @@ export default function ThemeDetail({ onNavigate, initialTheme }) {
               <div className="theme-summary-mobile">
                 <div style={{ display:'flex', alignItems:'center', gap:'8px', marginBottom:'6px' }}>
                   {THEME_ARTICLE_MAP[selTheme] && onNavigate && (
-                    <button onClick={() => onNavigate('コラム・解説', THEME_ARTICLE_MAP[selTheme])}
+                    <button onClick={() => onNavigate('Column', THEME_ARTICLE_MAP[selTheme])}
                       style={{ padding:'4px 10px', flexShrink:0, background:'rgba(74,158,255,0.08)',
                         border:'1px solid rgba(74,158,255,0.3)', borderRadius:'5px',
                         color:'var(--accent)', cursor:'pointer', fontSize:'11px',
@@ -1017,8 +1017,8 @@ export default function ThemeDetail({ onNavigate, initialTheme }) {
 
             {/* TOP5グラフ - 全幅 */}
             <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:'12px', marginBottom:'12px' }} className="top5g">
-              <Top5Bar items={top5} title={`▲ Top 5 Gainers（${stocks.filter(s=>s.pct>0).length}rising）`} colorFn={pctColor} emptyMsg="Gainersなし"/>
-              <Top5Bar items={bot5} title={`▼ Top 5 Decliners（${stocks.filter(s=>s.pct<0).length}declining）`} colorFn={pctColor} emptyMsg="Declinersなし"/>
+              <Top5Bar items={top5} title={`▲ RisingTOP5（${stocks.filter(s=>s.pct>0).length}銘柄Rising）`} colorFn={pctColor} emptyMsg="Rising銘柄なし"/>
+              <Top5Bar items={bot5} title={`▼ FallingTOP5（${stocks.filter(s=>s.pct<0).length}銘柄Falling）`} colorFn={pctColor} emptyMsg="Falling銘柄なし"/>
             </div>
 
             {/* Featured Stocks - 全幅 */}
@@ -1109,7 +1109,7 @@ export default function ThemeDetail({ onNavigate, initialTheme }) {
                   </TdExpandable>
                 )}
 
-                {/* Volume・Trade Valueグラフ（ヒートマップの下） */}
+                {/* Volume・Trade Valueグラフ（Heatmapの下） */}
                 <TdExpandable title="📊 Volume・Trade Value 推移（週次）" style={{ marginTop:'14px' }}>
                   <div style={{ height:'200px' }}>
                     <VolTvChart selTheme={selTheme} />
@@ -1120,7 +1120,7 @@ export default function ThemeDetail({ onNavigate, initialTheme }) {
                 {onNavigate && (
                   <div style={{ display:'flex', gap:'8px', flexWrap:'wrap', marginTop:'14px' }}>
                     {THEME_ARTICLE_MAP[selTheme] && (
-                      <button onClick={() => onNavigate('コラム・解説', THEME_ARTICLE_MAP[selTheme])}
+                      <button onClick={() => onNavigate('Column', THEME_ARTICLE_MAP[selTheme])}
                         style={{ padding:'7px 16px', borderRadius:'6px', fontSize:'12px',
                           background:'rgba(74,158,255,0.08)', border:'1px solid rgba(74,158,255,0.3)',
                           color:'var(--accent)', cursor:'pointer', fontFamily:'var(--font)', fontWeight:600 }}>
@@ -1150,7 +1150,7 @@ export default function ThemeDetail({ onNavigate, initialTheme }) {
             </div>
           </>
         ) : (
-          <div style={{ color:'var(--text3)', fontSize:'13px' }}>Select a themeしてください</div>
+          <div style={{ color:'var(--text3)', fontSize:'13px' }}>Select a theme</div>
         )}
       </div>
       <style>{`

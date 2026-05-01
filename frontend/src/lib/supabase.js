@@ -14,7 +14,7 @@ export const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
   },
 })
 
-// Googleログイン（リダイレクト方式）
+// GoogleLogin（リダイレクト方式）
 export async function signInWithGoogle() {
   const { error } = await supabase.auth.signInWithOAuth({
     provider: 'google',
@@ -25,7 +25,7 @@ export async function signInWithGoogle() {
   if (error) throw error
 }
 
-// ログアウト
+// Logout
 export async function signOut() {
   const { error } = await supabase.auth.signOut()
   if (error) throw error

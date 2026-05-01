@@ -13,7 +13,7 @@ function Loading() {
           animation: `pulse 1.2s ease-in-out ${d}s infinite`,
         }} />
       ))}
-      <div style={{ marginTop: '12px', fontSize: '12px' }}>データ取得中...</div>
+      <div style={{ marginTop: '12px', fontSize: '12px' }}>Loading......</div>
     </div>
   )
 }
@@ -69,7 +69,7 @@ export default function Favorites() {
 
       {/* テーマ選択 */}
       <div style={sHead}>
-        <span style={sTitle}>テーマを選択</span>
+        <span style={sTitle}>Select Theme</span>
         <div style={sLine} />
       </div>
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginBottom: '24px' }}>
@@ -94,7 +94,7 @@ export default function Favorites() {
           color: 'var(--text3)', fontSize: '13px',
         }}>
           <div style={{ fontSize: '32px', marginBottom: '12px' }}>⭐</div>
-          上のボタンからお気に入りテーマを追加してください
+          上のボタンからお気に入りテーマをAddしてください
         </div>
       ) : (
         <>

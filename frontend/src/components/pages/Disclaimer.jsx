@@ -1,13 +1,64 @@
 export default function Disclaimer() {
   const sections = [
-    { title: 'Article 1: Purpose of Information', body: 'StockWaveJP (hereinafter "the Site") is an information service that provides statistical data on theme-based performance rates, trading volume, and trade value in the Japanese equity market, along with column articles.\n\nAll information provided by the Site is offered as reference material for investment decision-making and does not constitute solicitation or recommendation to purchase or sell specific securities, investment products, or trading methods. The Site is not a registered investment advisor under the Financial Instruments and Exchange Act and does not provide any investment advice.' },
-    { title: 'Article 2: Proprietary Aggregation of Data', body: 'The performance rates, trading volumes, and trade values displayed on the Site are calculated using the Site\'s own proprietary logic based on market data of constituent stocks.\n\n- These figures are not affiliated with the Nikkei Stock Average published by Nikkei Inc., TOPIX published by JPX Market Index, Inc., or any other official index.\n- The theme classifications and constituent stocks on the Site are defined independently and differ from classifications used by any public institution or financial organization.' },
-    { title: 'Article 3: Data Sources and Accuracy', body: 'The Site\'s data is based on information automatically obtained from an external data provider (Infoway). While the Site strives for accuracy, errors, delays, or omissions may occur due to the following reasons:\n\n- Failures, specification changes, or delivery delays by the external data provider\n- System maintenance or failures\n- Network failures or other technical factors\n- Delays in data updates due to sudden market fluctuations\n\nData is updated daily and is not real-time. For actual investment decisions, always verify with official data from your securities broker or the Tokyo Stock Exchange.' },
-    { title: 'Article 4: Limitation of Liability', body: 'The Site operator assumes no responsibility whatsoever for any damages (including direct damages, indirect damages, lost profits, or opportunity losses) arising from investment actions taken based on information from the Site.\n\nThis service is provided "as is," and the same applies to damages caused by service interruptions, suspensions, terminations, data errors or omissions, or system failures.' },
-    { title: 'Article 5: Third-Party Services', body: 'The Site uses the following third-party services. Please refer to each company\'s website for their terms of service and privacy policies.\n\n- Google AdSense (advertising service) - Google LLC\n- Google Analytics (access analysis) - Google LLC\n- Supabase (user authentication and data storage) - Supabase Inc.\n- Infoway (stock data delivery)\n\nThe Site operator assumes no responsibility for damages arising from these third-party services.' },
-    { title: 'Article 6: Copyright and Intellectual Property', body: 'Copyrights and intellectual property rights for columns, articles, text, designs, logos, source code, and other content posted on the Site belong to the Site operator or legitimate rights holders.\n\nReproduction, republication, modification, sale, or secondary use beyond personal reference and learning purposes is prohibited without prior written permission.\n\nStock prices, company names, security codes, trademarks, and similar information displayed on the Site are the property of respective exchanges and companies, and the Site does not claim these rights.' },
-    { title: 'Article 7: Changes to This Disclaimer', body: 'The Site may change this disclaimer without notice due to legal revisions, changes to service content, or other circumstances. Changes take effect when posted on the Site. Significant changes will be announced on the Site.' },
-    { title: 'Article 8: Governing Law and Jurisdiction', body: 'This disclaimer shall be interpreted and applied in accordance with the laws of Japan. In the event of a dispute regarding the Site\'s services, the court with jurisdiction over the location of the Site operator shall be the court of first instance with exclusive agreed jurisdiction.' },
+    {
+      title: '第1条 情報の目的',
+      body: `StockWaveJP（以下「当サイト」）は、日本株式市場におけるテーマ別Return・Volume・Trade Value等の統計データおよびコラム記事を提供する情報サービスです。
+
+当サイトが提供するAllの情報は、投資に関する意思決定の参考情報として提供するものであり、特定の銘柄・投資商品・取引手法の購入・売却を勧誘・推奨するものではありません。
+
+当サイトは金融商品取引法（昭和23年法律第25号）に基づく投資助言業者ではなく、いかなる投資助言も行いません。`,
+    },
+    {
+      title: '第2条 データの独自集計について',
+      body: `当サイトで表示されるReturn・Volume・Trade Value等の集計数値は、構成銘柄の市場データをもとに当サイトが独自のロジックで算出したものです。
+
+・これらの数値は、日本経済新聞社が算出・公表する「日経平均株価」、株式会社JPX総研が算出・公表する「TOPIX（東証株価指数）」Moreの公式指数・公式データとは一切関係ありません。
+・当サイトのテーマ分類および構成銘柄は、当サイトが独自に定義したものであり、いかなる公的機関・金融機関の分類とも異なります。`,
+    },
+    {
+      title: '第3条 データソースと精度',
+      body: `当サイトのデータは、外部データプロバイダー（Infoway）からAuto取得した情報に基づいています。当サイトは情報の正確性・完全性・最新性について最善を尽くしますが、以下の事由により誤り・遅延・欠損が生じる場合があります。
+
+・外部データプロバイダーの障害・仕様変更・配信遅延
+・システムメンテナンスまたは障害
+・ネットワーク障害Moreの技術的要因
+・市場の急激な変動に伴うデータ更新の遅延
+
+提供データは日次更新であり、リアルタイムデータではありません。実際の投資判断においては、必ず各証券会社・東京証券取引所等の公式データをご確認ください。`,
+    },
+    {
+      title: '第4条 損害への責任',
+      body: `当サイトの情報を参考にした投資行動によって生じた損害（直接的損害・間接的損害・逸失利益・機会損失を含む一切の損害）について、当サイト運営者は一切の責任を負いません。
+
+本サービスは「現状のまま（As Is）」提供されており、サービスの中断・停止・終了、データの誤謬・欠損、システム障害等による損害についても同様に責任を負いません。`,
+    },
+    {
+      title: '第5条 第三者サービスについて',
+      body: `当サイトは以下の第三者サービスを利用しています。各サービスのTerms of Service・Privacy Policyは各社のウェブサイトをご参照ください。
+
+・Google AdSense（広告配信サービス） - Google LLC
+・Google Analytics（アクセス解析） - Google LLC
+・Supabase（ユーザー認証・データSave） - Supabase Inc.
+・Infoway（株価データ配信） - Infoway
+
+これらの第三者サービスに起因する損害について、当サイト運営者は責任を負いません。`,
+    },
+    {
+      title: '第6条 著作権・知的財産権',
+      body: `当サイトに掲載されているColumn記事・テキスト・デザイン・ロゴ・ソースコードMoreのコンテンツに関する著作権・知的財産権は、当サイト運営者または正当な権利者に帰属します。
+
+個人的な参照・学習目的を超える複製・転載・改変・販売・二次利用は、書面による事前の許可がない限り禁止します。
+
+当サイトが表示する株価・企業名・証券コード・商標等は、各証券取引所・企業の財産であり、当サイトはこれらの権利を主張するものではありません。`,
+    },
+    {
+      title: '第7条 本Disclaimerの変更',
+      body: `当サイトは、法令の改正、サービス内容の変更Moreの事情により、予告なく本Disclaimerを変更することがあります。変更後のDisclaimerは、当サイトに掲載した時点で効力を生じます。重要な変更については、当サイト上でNewsします。`,
+    },
+    {
+      title: '第8条 準拠法・管轄裁判所',
+      body: `本Disclaimerの解釈および適用は、日本国法に準拠します。当サイトのサービスに関して紛争が生じた場合は、当サイト運営者の所在地を管轄する裁判所を第一審の専属的合意管轄裁判所とします。`,
+    },
   ]
 
   return (
@@ -16,12 +67,13 @@ export default function Disclaimer() {
         Disclaimer
       </h1>
       <p style={{ fontSize:'12px', color:'var(--text3)', marginBottom:'8px' }}>
-        Established: April 1, 2026　Last Revised: April 29, 2026
+        制定日：2026年4月1日　最終改訂：2026年4月29日
       </p>
       <div style={{ padding:'12px 16px', background:'rgba(255,193,7,0.07)', border:'1px solid rgba(255,193,7,0.25)',
         borderRadius:'8px', fontSize:'12px', color:'var(--text2)', lineHeight:1.8, marginBottom:'28px' }}>
-        ⚠️ This Site is not a registered investment advisor. All information provided is for reference only. Investment decisions are made at your own risk.
+        ⚠️ 当サイトは投資助言業者ではありません。掲載情報は参考情報であり、投資の最終判断はご自身の責任において行ってください。
       </div>
+
       {sections.map((s, i) => (
         <div key={i} style={{
           background:'var(--bg2)', border:'1px solid var(--border)',
@@ -36,6 +88,7 @@ export default function Disclaimer() {
           </div>
         </div>
       ))}
+
       <div style={{ fontSize:'12px', color:'var(--text3)', marginTop:'24px', textAlign:'center' }}>
         © 2026 StockWaveJP. All rights reserved.
       </div>

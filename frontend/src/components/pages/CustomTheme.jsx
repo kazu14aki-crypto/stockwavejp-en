@@ -19,8 +19,8 @@ const PERIODS = [
 function formatLarge(n) {
   if (!n) return '0'
   if (n >= 1e12) return (n/1e12).toFixed(1)+'兆'
-  if (n >= 1e8)  return (n/1e8).toFixed(1)+'億'
-  if (n >= 1e4)  return (n/1e4).toFixed(1)+'万'
+  if (n >= 1e8)  return (n/1e8).toFixed(1)+'B'
+  if (n >= 1e4)  return (n/1e4).toFixed(1)+'M'
   return n.toLocaleString()
 }
 
@@ -49,7 +49,7 @@ function ThemeTrendChart({ stocks, period }) {
 
   if (loading) return (
     <div style={{ padding:'20px', textAlign:'center', color:'var(--text3)', fontSize:'12px' }}>
-      グラフデータ取得中...
+      グラフLoading......
     </div>
   )
 
@@ -155,7 +155,7 @@ function CustomStockTable({ stocks, period, onRemove }) {
 
   if (!stocks?.length) return (
     <div style={{ textAlign:'center', padding:'20px', color:'var(--text3)', fontSize:'12px' }}>
-      No stocks added
+      No stocks
     </div>
   )
 
@@ -178,7 +178,7 @@ function CustomStockTable({ stocks, period, onRemove }) {
     <div>
       {avg !== null && (
         <div style={{ display:'flex', alignItems:'center', gap:'8px', marginBottom:'10px' }}>
-          <span style={{ fontSize:'12px', color:'var(--text3)' }}>テーマAvg Return</span>
+          <span style={{ fontSize:'12px', color:'var(--text3)' }}>テーマ平均Return</span>
           <span style={{ fontSize:'18px', fontWeight:700, fontFamily:'var(--mono)',
             color: avg >= 0 ? 'var(--red)' : 'var(--green)' }}>
             {avg >= 0 ? '+' : ''}{avg.toFixed(2)}%
@@ -214,8 +214,8 @@ function CustomStockTable({ stocks, period, onRemove }) {
         <table style={{ borderCollapse:'collapse', fontSize:'12px', fontFamily:'var(--font)', width:'100%', minWidth:'600px' }}>
           <thead>
             <tr style={{ borderBottom:'1px solid var(--border)' }}>
-              {['#','Stock Name','株価','Return','Volume','Trade Value','操作'].map(h => (
-                <th key={h} style={{ padding:'6px 10px', textAlign: h==='Stock Name'?'left':'right',
+              {['#','銘柄名','株価','Return','Volume','Trade Value','操作'].map(h => (
+                <th key={h} style={{ padding:'6px 10px', textAlign: h==='銘柄名'?'left':'right',
                   fontSize:'10px', fontWeight:600, color:'var(--text3)', textTransform:'uppercase',
                   letterSpacing:'0.06em', whiteSpace:'nowrap', background:'var(--bg3)',
                   ...(h==='#'||h==='操作' ? {textAlign:'center'} : {}) }}>
@@ -302,7 +302,7 @@ function CustomVolTvChart({ stocks }) {
 
   if (!Object.keys(details).length) return (
     <div style={{ textAlign:'center', padding:'20px', color:'var(--text3)', fontSize:'12px',
-      background:'var(--bg2)', border:'1px solid var(--border)', borderRadius:'10px' }}>データ取得中...</div>
+      background:'var(--bg2)', border:'1px solid var(--border)', borderRadius:'10px' }}>Loading......</div>
   )
 
   const dataKey = mode === 'tv' ? 'trade_value' : 'volume'
@@ -313,8 +313,8 @@ function CustomVolTvChart({ stocks }) {
   const fmtL = v => {
     if (!v) return '0'
     if (v >= 1e12) return (v/1e12).toFixed(1)+'兆'
-    if (v >= 1e8) return (v/1e8).toFixed(1)+'億'
-    if (v >= 1e4) return (v/1e4).toFixed(1)+'万'
+    if (v >= 1e8) return (v/1e8).toFixed(1)+'B'
+    if (v >= 1e4) return (v/1e4).toFixed(1)+'M'
     return v.toLocaleString()
   }
   return (
@@ -399,7 +399,7 @@ function CustomBubbleScatter({ stocks, period }) {
   if (enriched.length < 2) return (
     <div style={{ textAlign:'center', padding:'24px', color:'var(--text3)', fontSize:'12px',
       background:'var(--bg2)', border:'1px solid var(--border)', borderRadius:'10px', marginTop:'20px' }}>
-      {stocks.length === 0 ? 'No stocks added' : 'データ取得中...'}
+      {stocks.length === 0 ? 'No stocks' : 'Loading......'}
     </div>
   )
 
@@ -505,7 +505,7 @@ export default function CustomTheme() {
     setMode('list')
   }
 
-  // ── テーマ一覧 ──────────────────────────────
+  // ── Theme List ──────────────────────────────
   if (mode === 'list') return (
     <div style={{ padding:'28px 24px 48px' }}>
       <div style={{ display:'flex', alignItems:'center', justifyContent:'space-between', marginBottom:'4px' }}>
@@ -518,7 +518,7 @@ export default function CustomTheme() {
         </button>
       </div>
       <p style={{ fontSize:'12px', color:'var(--text3)', marginBottom:'8px' }}>
-        独自のCreate Theme・追跡。Stock Nameまたは4桁証券コードで検索（日本株のみ）。
+        独自のテーマを作成・追跡。銘柄名または4桁証券コードで検索（日本株のみ）。
       </p>
       <div style={{ fontSize:'11px', color: themes.length >= 3 ? 'var(--red)' : 'var(--text3)',
         marginBottom:'16px', display:'flex', alignItems:'center', gap:'6px' }}>
@@ -526,20 +526,20 @@ export default function CustomTheme() {
         {themes.length >= 3 && <span>（上限に達しました。既存テーマをRemoveしてからAddしてください）</span>}
         {themes.length < 3 && <span>（最大3テーマまで作成できます）</span>}
       </div>
-      {/* ログイン誘導バナー */}
+      {/* Login誘導バナー */}
       {!isLoggedIn && (
         <div style={{ display:'flex', alignItems:'center', justifyContent:'space-between',
           background:'rgba(74,158,255,0.07)', border:'1px solid rgba(74,158,255,0.2)',
           borderRadius:'8px', padding:'10px 14px', marginBottom:'16px', gap:'12px', flexWrap:'wrap' }}>
           <div>
             <span style={{ fontSize:'12px', color:'var(--text2)' }}>💡 </span>
-            <span style={{ fontSize:'12px', color:'var(--text2)' }}>Googleログインするとどのデバイスでもテーマが同期されます</span>
+            <span style={{ fontSize:'12px', color:'var(--text2)' }}>GoogleLoginするとどのデバイスでもテーマが同期されます</span>
           </div>
           <button onClick={signIn} style={{ background:'rgba(74,158,255,0.15)',
             border:'1px solid rgba(74,158,255,0.35)', borderRadius:'6px',
             color:'var(--accent)', cursor:'pointer', fontFamily:'var(--font)',
             fontSize:'12px', fontWeight:600, padding:'5px 14px', whiteSpace:'nowrap' }}>
-            Googleでログイン
+            GoogleでLogin
           </button>
         </div>
       )}
@@ -551,7 +551,7 @@ export default function CustomTheme() {
           padding:'48px', textAlign:'center' }}>
           <div style={{ fontSize:'36px', marginBottom:'12px' }}>🎨</div>
           <div style={{ fontSize:'14px', color:'var(--text2)', marginBottom:'20px' }}>まだCustom Themeがありません</div>
-          <button onClick={startCreate} style={btnP}>最初のCreate Theme</button>
+          <button onClick={startCreate} style={btnP}>最初のテーマを作成</button>
         </div>
       ) : (
         <div style={{ display:'flex', flexDirection:'column', gap:'8px' }}>
@@ -653,7 +653,7 @@ export default function CustomTheme() {
       {/* URLエクスポート説明 */}
       <div style={{ marginTop:'20px', padding:'12px 16px', background:'rgba(74,158,255,0.06)',
         border:'1px solid rgba(74,158,255,0.15)', borderRadius:'8px', fontSize:'12px', color:'var(--text3)' }}>
-        💡 「URLをコピー」でこのテーマを共有・ブックマークできます。URLにアクセスすると自動でインポートされます。
+        💡 「URLをコピー」でこのテーマを共有・ブックマークできます。URLにアクセスするとAutoでインポートされます。
       </div>
 
       <style>{`
@@ -692,7 +692,7 @@ export default function CustomTheme() {
         <div style={{ display:'flex', gap:'8px', marginBottom:'6px', flexWrap:'wrap' }}>
           <input value={query} onChange={e => setQuery(e.target.value)}
             onKeyDown={e => e.key==='Enter' && handleSearch()}
-            placeholder="Stock Name（例：トヨタ、ソニー）または証券コード（例：7203）"
+            placeholder="銘柄名（例：トヨタ、ソニー）または証券コード（例：7203）"
             style={{ ...inp, flex:1, minWidth:'200px' }} />
           <button onClick={handleSearch} disabled={searching || !query.trim()}
             style={{ ...btnP, opacity: (!query.trim()||searching) ? 0.5 : 1 }}>
@@ -781,10 +781,10 @@ export default function CustomTheme() {
       <div style={{ display:'flex', gap:'10px' }}>
         <button onClick={handleSave} disabled={!themeName.trim()||!stocks.length}
           style={{ ...btnP, fontSize:'14px', padding:'10px 24px', opacity: (!themeName.trim()||!stocks.length) ? 0.4 : 1 }}>
-          💾 {mode==='edit' ? '変更をSave' : 'Create Theme'}
+          💾 {mode==='edit' ? '変更をSave' : 'テーマを作成'}
         </button>
         <button onClick={() => setMode('list')} style={{ ...btnS, fontSize:'14px', padding:'10px 18px' }}>
-          キャンセル
+          Cancel
         </button>
       </div>
     </div>

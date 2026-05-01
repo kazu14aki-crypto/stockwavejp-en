@@ -13,9 +13,9 @@ const THEME_ARTICLE_MAP = {
   'AI半導体':          'semiconductor-theme',
   'AI人材':            'education-hr-theme',
   'エッジAI':          'physical-ai-edge-ai',
-  'EV・電気自動車':    'ev-green-theme',
+  'EV・電気Auto車':    'ev-green-theme',
   '全固体電池':        'ev-green-theme',
-  '自動運転':          'ev-green-theme',
+  'Auto運転':          'ev-green-theme',
   'ドローン':          'drone-theme',
   '輸送・物流':        'transport-logistics-theme',
   '造船':              'shipbuilding-theme',
@@ -59,7 +59,7 @@ const THEME_ARTICLE_MAP = {
   'リユース・中古品':  'retail-ec-theme',
   '防衛・航空':        'defense-theme',
   '宇宙・衛星':        'space-satellite-theme',
-  'ロボット・自動化':  'robot-automation-theme',
+  'ロボット・Auto化':  'robot-automation-theme',
   'レアアース・資源':  'rare-earth-resources-theme',
   'バフェット銘柄':    'sogo-shosha-analysis',
   'サイバーセキュリティ': 'cybersecurity-theme',
@@ -71,10 +71,10 @@ const THEME_ARTICLE_MAP = {
 }
 import COLUMNS from './columnData'
 
-const CATEGORIES = ['All', 'テーマ', 'Basics', '分析手法', '投資手法', '用語解説', '個別銘柄']
+const CATEGORIES = ['All', 'テーマ', '入門', '分析手法', '投資手法', '用語解説', '個別銘柄']
 
 const CAT_COLORS = {
-  'Basics':       { bg:'rgba(74,158,255,0.1)',  color:'#4a9eff',  border:'rgba(74,158,255,0.25)' },
+  '入門':       { bg:'rgba(74,158,255,0.1)',  color:'#4a9eff',  border:'rgba(74,158,255,0.25)' },
   '半導体':     { bg:'rgba(255,69,96,0.1)',   color:'#ff4560',  border:'rgba(255,69,96,0.25)' },
   'AI・クラウド':{ bg:'rgba(170,119,255,0.1)', color:'#aa77ff', border:'rgba(170,119,255,0.25)' },
   '防衛・宇宙': { bg:'rgba(76,175,130,0.1)',  color:'#4caf82',  border:'rgba(76,175,130,0.25)' },
@@ -107,7 +107,7 @@ const CAT_COLORS = {
   '建設・インフラ':     { bg:'rgba(76,175,130,0.1)',  color:'#4caf82', border:'rgba(76,175,130,0.25)' },
   '輸送・物流':         { bg:'rgba(91,156,246,0.1)',  color:'#5b9cf6', border:'rgba(91,156,246,0.25)' },
   'フィンテック':       { bg:'rgba(170,119,255,0.1)', color:'#aa77ff', border:'rgba(170,119,255,0.25)' },
-  'ロボット・自動化':   { bg:'rgba(255,69,96,0.1)',   color:'#ff4560', border:'rgba(255,69,96,0.25)' },
+  'ロボット・Auto化':   { bg:'rgba(255,69,96,0.1)',   color:'#ff4560', border:'rgba(255,69,96,0.25)' },
   'レアアース・資源':   { bg:'rgba(180,120,80,0.1)',  color:'#b47850', border:'rgba(180,120,80,0.25)' },
   'サイバーセキュリティ':{ bg:'rgba(74,158,255,0.1)', color:'#4a9eff', border:'rgba(74,158,255,0.25)' },
   'ドローン':           { bg:'rgba(6,214,160,0.1)',   color:'#06d6a0', border:'rgba(6,214,160,0.25)' },
@@ -232,7 +232,7 @@ export default function Column({ initialArticleId = null, onNavigate }) {
   const [page,        setPage]        = useState(1)
   const ITEMS_PER_PAGE = 20
 
-  // テーマ一覧・テーマ詳細から特定記事IDで来たときに追従
+  // Theme List・テーマ詳細から特定記事IDで来たときに追従
   useEffect(() => {
     if (initialArticleId) {
       setActiveCol(initialArticleId)
@@ -254,7 +254,7 @@ export default function Column({ initialArticleId = null, onNavigate }) {
   const THEME_CATS = [
     '半導体製造装置','半導体検査装置','半導体材料','メモリ','パワー半導体','次世代半導体',
     '生成AI','AIデータセンター','フィジカルAI','AI半導体','AI人材','エッジAI',
-    'EV・電気自動車','全固体電池','自動運転','ドローン','輸送・物流','造船',
+    'EV・電気Auto車','全固体電池','Auto運転','ドローン','輸送・物流','造船',
     '再生可能エネルギー','太陽光発電','核融合発電','原子力発電','電力会社',
     'LNG','石油','蓄電池','資源（水素・ヘリウム・水）','IOWN','光通信',
     '通信','量子コンピューター','SaaS','ウェアラブル端末','仮想通貨','ネット銀行',
@@ -264,7 +264,7 @@ export default function Column({ initialArticleId = null, onNavigate }) {
     '不動産','建設・インフラ','国土強靭化計画','下水道',
     '食品・飲料','農業・フードテック','小売・EC','観光・ホテル・レジャー',
     'インバウンド','リユース・中古品',
-    '防衛・航空','宇宙・衛星','ロボット・自動化',
+    '防衛・航空','宇宙・衛星','ロボット・Auto化',
     'レアアース・資源','バフェット銘柄',
     'サイバーセキュリティ','警備','脱炭素・ESG',
     '教育・HR・人材','人材派遣','ゲーム・エンタメ',
@@ -303,7 +303,7 @@ export default function Column({ initialArticleId = null, onNavigate }) {
           fontSize:'13px', cursor:'pointer', fontFamily:'var(--font)',
           padding:'0', marginBottom:'20px',
         }}>
-          ← All Articlesに戻る
+          ← コラム一覧に戻る
         </button>
         <span style={{ fontSize:'11px', fontWeight:600, padding:'3px 10px', borderRadius:'20px',
           background:cat.bg, color:cat.color, border:`1px solid ${cat.border}`,
@@ -350,7 +350,7 @@ export default function Column({ initialArticleId = null, onNavigate }) {
                   </div>
                   <div style={{ display:'flex', flexWrap:'wrap', gap:'6px' }}>
                     <button
-                      onClick={() => onNavigate('テーマ別詳細', theme)}
+                      onClick={() => onNavigate('Theme Detail', theme)}
                       style={{ padding:'5px 12px', borderRadius:'5px', fontSize:'11px', fontWeight:600,
                         background:'rgba(170,119,255,0.1)', border:'1px solid rgba(170,119,255,0.3)',
                         color:'#aa77ff', cursor:'pointer', fontFamily:'var(--font)', transition:'all 0.15s',
@@ -387,7 +387,7 @@ export default function Column({ initialArticleId = null, onNavigate }) {
             '半導体材料':'半導体材料','メモリ':'メモリ','パワー半導体':'パワー半導体',
             '次世代半導体':'次世代半導体','生成AI':'生成AI','AIデータセンター':'AIデータセンター',
             'フィジカルAI':'フィジカルAI','AI半導体':'AI半導体','AI人材':'AI人材','エッジAI':'エッジAI',
-            'EV・電気自動車':'EV・電気自動車','全固体電池':'全固体電池','自動運転':'自動運転',
+            'EV・電気Auto車':'EV・電気Auto車','全固体電池':'全固体電池','Auto運転':'Auto運転',
             'ドローン':'ドローン','輸送・物流':'輸送・物流','造船':'造船',
             '再生可能エネルギー':'再生可能エネルギー','太陽光発電':'太陽光発電',
             '核融合発電':'核融合発電','原子力発電':'原子力発電','電力会社':'電力会社',
@@ -405,7 +405,7 @@ export default function Column({ initialArticleId = null, onNavigate }) {
             '食品・飲料':'食品・飲料','農業・フードテック':'農業・フードテック',
             '小売・EC':'小売・EC','観光・ホテル・レジャー':'観光・ホテル・レジャー',
             'インバウンド':'インバウンド','リユース・中古品':'リユース・中古品',
-            '防衛・航空':'防衛・航空','宇宙・衛星':'宇宙・衛星','ロボット・自動化':'ロボット・自動化',
+            '防衛・航空':'防衛・航空','宇宙・衛星':'宇宙・衛星','ロボット・Auto化':'ロボット・Auto化',
             'レアアース・資源':'レアアース・資源','バフェット銘柄':'バフェット銘柄',
             'サイバーセキュリティ':'サイバーセキュリティ','警備':'警備','脱炭素・ESG':'脱炭素・ESG',
             '教育・HR・人材':'教育・HR・人材','人材派遣':'人材派遣','ゲーム・エンタメ':'ゲーム・エンタメ',
@@ -415,7 +415,7 @@ export default function Column({ initialArticleId = null, onNavigate }) {
           return (
             <div style={{ marginTop:'20px', display:'flex', gap:'10px', flexWrap:'wrap' }}>
               <button
-                onClick={() => onNavigate('テーマ別詳細', themeName)}
+                onClick={() => onNavigate('Theme Detail', themeName)}
                 style={{ display:'inline-flex', alignItems:'center', gap:'8px',
                   background:'rgba(74,158,255,0.1)', border:'1px solid rgba(74,158,255,0.3)',
                   borderRadius:'8px', color:'var(--accent)', cursor:'pointer',
@@ -428,7 +428,7 @@ export default function Column({ initialArticleId = null, onNavigate }) {
                 📊 {themeName}テーマのデータを見る
               </button>
               <button
-                onClick={() => onNavigate('テーマ一覧')}
+                onClick={() => onNavigate('Theme List')}
                 style={{ display:'inline-flex', alignItems:'center', gap:'8px',
                   background:'rgba(170,119,255,0.1)', border:'1px solid rgba(170,119,255,0.3)',
                   borderRadius:'8px', color:'#aa77ff', cursor:'pointer',
@@ -438,7 +438,7 @@ export default function Column({ initialArticleId = null, onNavigate }) {
                 onMouseEnter={e => { e.currentTarget.style.background='rgba(170,119,255,0.2)' }}
                 onMouseLeave={e => { e.currentTarget.style.background='rgba(170,119,255,0.1)' }}
               >
-                📈 全テーマ一覧を見る
+                📈 全Theme Listを見る
               </button>
             </div>
           )
@@ -456,7 +456,7 @@ export default function Column({ initialArticleId = null, onNavigate }) {
             onMouseEnter={e => { e.currentTarget.style.borderColor='var(--accent)'; e.currentTarget.style.color='var(--accent)' }}
             onMouseLeave={e => { e.currentTarget.style.borderColor='var(--border)'; e.currentTarget.style.color='var(--text2)' }}
           >
-            ← All Articlesに戻る
+            ← コラム一覧に戻る
           </button>
         </div>
       </div>
@@ -472,11 +472,11 @@ export default function Column({ initialArticleId = null, onNavigate }) {
         テーマ株投資の基礎から各テーマの詳細解説まで、投資判断に役立つ情報を提供します。
       </p>
 
-      {/* キーワード・テーマSearch */}
+      {/* キーワード・テーマ検索 */}
       <div style={{ position:'relative', marginBottom:'12px', maxWidth:'400px' }}>
         <input
           type="text"
-          placeholder="キーワード・テーマ名でSearch..."
+          placeholder="キーワード・Theme Nameで検索..."
           value={searchQuery}
           onChange={e => { setSearchQuery(e.target.value); setPage(1) }}
           style={{
@@ -518,7 +518,7 @@ export default function Column({ initialArticleId = null, onNavigate }) {
         </div>
       )}
 
-      {/* All Articles */}
+      {/* コラム一覧 */}
       <div style={{ display:'grid', gridTemplateColumns:'repeat(2, 1fr)', gap:'14px' }} className="col-grid">
         {pagedItems.filter(Boolean).map((col, i) => {
           const cat = CAT_COLORS[col.category] || { bg:'rgba(74,158,255,0.1)', color:'#4a9eff', border:'rgba(74,158,255,0.25)' }

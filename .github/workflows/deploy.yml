@@ -36,10 +36,10 @@ jobs:
           mkdir -p dist/data
           if [ -f public/data/market.json ]; then
             cp public/data/market.json dist/data/market.json
-            echo "market.json copied: $(wc -c < dist/data/market.json) bytes"
+            echo "market.json: $(wc -c < dist/data/market.json) bytes"
           else
-            echo "WARNING: market.json not found, creating empty placeholder"
-            echo '{"themes_1d":{"period":"1d","themes":[],"summary":{},"updated_at":""},"status":{"updated_at":""}}' > dist/data/market.json
+            echo '{}' > dist/data/market.json
+            echo "WARNING: created empty market.json"
           fi
 
       - name: Deploy to GitHub Pages

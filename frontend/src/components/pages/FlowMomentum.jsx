@@ -13,7 +13,7 @@ const PERIODS = [
   { label: '6ヶ月', value: '6mo' },
   { label: '1年',   value: '1y'  },
 ]
-const SORT_KEYS = ['騰落率（降順）', '騰落率（昇順）']
+const SORT_KEYS = ['Return（Desc）', 'Return（Asc）']
 const STATE_COLORS = {
   '🔥加速':  '#ff4560',
   '↗転換↑': '#ff8c42',
@@ -29,7 +29,7 @@ function Loading() {
         <span key={i} style={{ display:'inline-block', width:'6px', height:'6px', borderRadius:'50%',
           background:'var(--accent)', margin:'0 3px', animation:`pulse 1.2s ease-in-out ${d}s infinite`}} />
       ))}
-      <div style={{ marginTop:'12px', fontSize:'12px' }}>データ取得中...</div>
+      <div style={{ marginTop:'12px', fontSize:'12px' }}>Loading......</div>
     </div>
   )
 }
@@ -58,7 +58,7 @@ function HBar({ item, maxAbs }) {
 }
 
 
-// 自動コメント生成
+// Autoコメント生成
 
 function AutoComment({ lines }) {
   // 防御的処理: null/undefined/空/文字列に対応
@@ -121,15 +121,15 @@ function genMomentumComment(momentumData, period) {
 
   const lines = []
 
-  lines.push(`【${periodLabel}の騰落モメンタム概況】全${data.length}テーマ中、上昇${rising.length}・下落${falling.length}テーマ。平均騰落率${avg>=0?'+':''}${avg.toFixed(2)}%。モメンタム別では加速${accel.length}・転換↑${turnUp.length}・横ばい${flat.length}・転換↓${turnDn.length}・失速${decel.length}テーマ。`)
+  lines.push(`【${periodLabel}の騰落モメンタム概況】全${data.length}テーマ中、Rising${rising.length}・Falling${falling.length}テーマ。平均Return${avg>=0?'+':''}${avg.toFixed(2)}%。モメンタム別では加速${accel.length}・転換↑${turnUp.length}・横ばい${flat.length}・転換↓${turnDn.length}・失速${decel.length}テーマ。`)
 
   if (accel.length > 0) {
     const top = accel.slice(0,4).map(t=>t.theme).join('」「')
-    lines.push(`🔥 加速モメンタム（${accel.length}テーマ）：「${top}」など。短中期ともに上昇が加速中。トレンドフォロー戦略が有効で、高値でも追随資金が集まりやすい局面。`)
+    lines.push(`🔥 加速モメンタム（${accel.length}テーマ）：「${top}」など。短中期ともにRisingが加速中。トレンドフォロー戦略が有効で、高値でも追随資金が集まりやすい局面。`)
   }
   if (turnUp.length > 0) {
     const top = turnUp.slice(0,3).map(t=>t.theme).join('」「')
-    lines.push(`↗ 転換↑（${turnUp.length}テーマ）：「${top}」など。下落から上昇への転換初動の可能性。出来高増加を確認できれば底値仕込みのチャンスになりうる。`)
+    lines.push(`↗ 転換↑（${turnUp.length}テーマ）：「${top}」など。FallingからRisingへの転換初動の可能性。Volume増加を確認できれば底値仕込みのチャンスになりうる。`)
   }
   if (flat.length > 0) {
     const top = flat.slice(0,3).map(t=>t.theme).join('」「')
@@ -137,11 +137,11 @@ function genMomentumComment(momentumData, period) {
   }
   if (turnDn.length > 0) {
     const top = turnDn.slice(0,3).map(t=>t.theme).join('」「')
-    lines.push(`↘ 転換↓（${turnDn.length}テーマ）：「${top}」など。上昇トレンドが失速し始めたシグナル。利益確定や新規参入の見送りを検討する局面。`)
+    lines.push(`↘ 転換↓（${turnDn.length}テーマ）：「${top}」など。Risingトレンドが失速し始めたシグナル。利益確定や新規参入の見送りを検討する局面。`)
   }
   if (decel.length > 0) {
     const top = decel.slice(0,4).map(t=>t.theme).join('」「')
-    lines.push(`❄️ 失速モメンタム（${decel.length}テーマ）：「${top}」など。下落が継続・加速中。反転サインが出るまでは慎重姿勢が望ましく、過度な逆張りは禁物。`)
+    lines.push(`❄️ 失速モメンタム（${decel.length}テーマ）：「${top}」など。Fallingが継続・加速中。反転サインが出るまでは慎重姿勢が望ましく、過度な逆張りは禁物。`)
   }
 
   lines.push(`💡 活用ポイント：「加速」と「転換↑」の組み合わせが最も強い買いシグナル。「転換↓」と「失速」の組み合わせは売り圧力が継続中のサイン。週次で状態変化を追うことで、トレンド転換のタイミングを先読みできる。`)
@@ -151,14 +151,14 @@ function genMomentumComment(momentumData, period) {
 
 export default function FlowMomentum() {
   const [period,  setPeriod]  = useState('1d')
-  const [sortKey, setSortKey] = useState('騰落率（降順）')
+  const [sortKey, setSortKey] = useState('Return（Desc）')
 
   const { data: momentumRaw, loading: loadingM } = useMomentum(period)
   const momentumData = momentumRaw?.data || []
 
   let sorted = [...momentumData]
-  if (sortKey === '騰落率（降順）') sorted.sort((a, b) => b.pct - a.pct)
-  if (sortKey === '騰落率（昇順）') sorted.sort((a, b) => a.pct - b.pct)
+  if (sortKey === 'Return（Desc）') sorted.sort((a, b) => b.pct - a.pct)
+  if (sortKey === 'Return（Asc）') sorted.sort((a, b) => a.pct - b.pct)
   const pctColor = v => v >= 0 ? 'var(--red)' : 'var(--green)'
   const pctSign  = v => v >= 0 ? '+' : ''
   const flowComment = genMomentumComment(momentumData, period)
@@ -182,7 +182,7 @@ export default function FlowMomentum() {
         </select>
       </div>
 
-      {/* 自動コメント */}
+      {/* Autoコメント */}
       <AutoComment lines={flowComment} />
 
       {/* モメンタム一覧 */}
@@ -191,8 +191,8 @@ export default function FlowMomentum() {
           {/* ヘッダー行 */}
           <div style={{ ...rowStyle, background:'transparent', border:'none',
             padding:'4px 16px', marginBottom:'4px' }}>
-            <span style={hdrStyle}>テーマ名</span>
-            <span style={{ ...hdrStyle, textAlign:'right' }}>騰落率</span>
+            <span style={hdrStyle}>Theme Name</span>
+            <span style={{ ...hdrStyle, textAlign:'right' }}>Return</span>
             <span style={{ ...hdrStyle, textAlign:'right' }}>先週比</span>
             <span style={{ ...hdrStyle, textAlign:'center' }}>状態</span>
           </div>

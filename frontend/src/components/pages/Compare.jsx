@@ -24,7 +24,7 @@ function Loading() {
           animation: `pulse 1.2s ease-in-out ${d}s infinite`,
         }} />
       ))}
-      <div style={{ marginTop: '12px', fontSize: '12px' }}>データ取得中...</div>
+      <div style={{ marginTop: '12px', fontSize: '12px' }}>Loading......</div>
     </div>
   )
 }
@@ -165,7 +165,7 @@ export default function Compare() {
         テーマ・マクロ比較
       </h1>
       <p style={{ fontSize: '12px', color: 'var(--text3)', marginBottom: '20px' }}>
-        テーマ騰落率の比較 ＋ マクロ指標との対比
+        テーマReturnの比較 ＋ マクロ指標との対比
       </p>
 
       {/* 期間選択 */}

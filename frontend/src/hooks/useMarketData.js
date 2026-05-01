@@ -7,13 +7,13 @@
  *   3. Renderバックエンド（フォールバック）
  *
  * market.jsonに含まれるキー一覧（キャッシュ拡大後）:
- *   themes_{5d/1mo/3mo/6mo/1y}         テーマ一覧
+ *   themes_{5d/1mo/3mo/6mo/1y}         Theme List
  *   macro_{1mo/1y}                     マクロ指標
- *   heatmap                            期間別ヒートマップ
- *   heatmap_monthly                    月次ヒートマップ
+ *   heatmap                            期間別Heatmap
+ *   heatmap_monthly                    月次Heatmap
  *   momentum_{1mo/3mo}                 騰落モメンタム
  *   fund_flow_{period}                 資金フロー（gainers/losers/all）
- *   theme_detail_{テーマ名}_{period}   テーマ別詳細★
+ *   theme_detail_{Theme Name}_{period}   Theme Detail★
  *   seg_{セグメント名}_{period}        市場別銘柄詳細★
  *   market_rank_{period}               市場別ランキング一覧★
  *   status / theme_names
@@ -99,7 +99,7 @@ function useMarketJsonKey(jsonKey, apiFallback, deps = []) {
 // ════════════════════════════════════════════════════════
 
 /**
- * useThemes — テーマ一覧
+ * useThemes — Theme List
  */
 export function useThemes(period = '1mo') {
   const cacheKey = `themes_${period}`
@@ -162,20 +162,20 @@ export function useStatus() {
       try {
         const json = await fetchMarketJson()
         if (json.status) {
-          setStatus({ ...json.status, label: json.status.is_open ? '市場オープン中' : '市場クローズ中', updatedAt: json.status.updated_at || null })
+          setStatus({ ...json.status, label: json.status.is_open ? 'Market Open' : 'Market Closed', updatedAt: json.status.updated_at || null })
           return
         }
       } catch {}
       try {
         const res  = await fetch(`${API}/api/status`)
         const data = await res.json()
-        setStatus({ ...data, label: data.is_open ? '市場オープン中' : '市場クローズ中' })
+        setStatus({ ...data, label: data.is_open ? 'Market Open' : 'Market Closed' })
       } catch {
         const now = new Date()
         const jst = new Date(now.getTime() + (now.getTimezoneOffset() + 540) * 60000)
         setStatus({
           time: `${String(jst.getHours()).padStart(2,'0')}:${String(jst.getMinutes()).padStart(2,'0')} JST`,
-          is_open: false, label: '接続エラー',
+          is_open: false, label: 'Connection Error',
         })
       }
     }
@@ -277,7 +277,7 @@ export function useThemeNames() {
 
 
 /**
- * useHeatmap — 期間別ヒートマップ
+ * useHeatmap — 期間別Heatmap
  */
 export function useHeatmap() {
   return useMarketJsonKey('heatmap', `${API}/api/heatmap`)
@@ -285,7 +285,7 @@ export function useHeatmap() {
 
 
 /**
- * useMonthlyHeatmap — 月次ヒートマップ ★market.json優先に変更
+ * useMonthlyHeatmap — 月次Heatmap ★market.json優先に変更
  */
 export function useMonthlyHeatmap() {
   return useMarketJsonKey('heatmap_monthly', `${API}/api/heatmap/monthly`)
@@ -372,7 +372,7 @@ export function useSegmentDetail(segName, period) {
 
 
 /**
- * useThemeDetail — テーマ別詳細 ★market.json優先に変更（最重要）
+ * useThemeDetail — Theme Detail ★market.json優先に変更（最重要）
  */
 export function useThemeDetail(themeName, period) {
   const jsonKey = `theme_detail_${themeName}_${period}`
@@ -422,8 +422,8 @@ export function useMarketRankList(period = '1mo') {
 
 
 /**
- * useCustomThemeStats — カスタムテーマの騰落率・出来高をAPIで集計
- * ThemeList・ThemeDetailでカスタムテーマをノーマルテーマと同列に扱うため
+ * useCustomThemeStats — Custom ThemeのReturn・VolumeをAPIで集計
+ * ThemeList・ThemeDetailでCustom Themeをノーマルテーマと同列に扱うため
  */
 export function useCustomThemeStats(tickers, period) {
   const key = `custom_stats_${(tickers||[]).join(',')}_${period}`

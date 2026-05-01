@@ -17,27 +17,29 @@ import Column      from './components/pages/Column'
 import PrivacyPolicy from './components/pages/PrivacyPolicy'
 import TermsOfService from './components/pages/TermsOfService'
 import SiteInfo    from './components/pages/SiteInfo'
+import WeeklyReport from './components/pages/WeeklyReport'
 
 const PAGES = [
   { icon:'🏠', label:'Home',                   component:TopPage       },
-  { icon:'📊', label:'Theme List',              component:ThemeList     },
-  { icon:'🔥', label:'Theme Heatmap',           component:Heatmap       },
-  { icon:'🔍', label:'Theme Detail',            component:ThemeDetail   },
-  { icon:'📋', label:'Market Ranking',          component:MarketRank    },
-  { icon:'🎨', label:'Custom Theme',            component:CustomTheme   },
+  { icon:'📊', label:'Theme List',                component:ThemeList     },
+  { icon:'🔥', label:'Heatmap',              component:Heatmap       },
+  { icon:'🔍', label:'Theme Detail',              component:ThemeDetail   },
+  { icon:'📋', label:'Market Ranking',           component:MarketRank    },
+  { icon:'🎨', label:'Custom Theme',             component:CustomTheme   },
 ]
 const PAGES_OTHER = [
-  { icon:'🏢', label:'About',                  component:SiteInfo      },
-  { icon:'📣', label:'News',                   component:News          },
-  { icon:'📖', label:'How to Use',             component:HowTo         },
-  { icon:'📝', label:'Column',                 component:Column        },
-  { icon:'⚙️', label:'Settings',              component:Settings      },
-  { icon:'⚖️', label:'Disclaimer',            component:Disclaimer    },
-  { icon:'🔒', label:'Privacy Policy',         component:PrivacyPolicy },
-  { icon:'📋', label:'Terms of Service',       component:TermsOfService},
+  { icon:'🏢', label:'About',    component:SiteInfo      },
+  { icon:'📣', label:'News',            component:News          },
+  { icon:'📖', label:'How to Use',              component:HowTo         },
+  { icon:'📰', label:'Weekly Report',          component:WeeklyReport  },
+  { icon:'📝', label:'Column',        component:Column        },
+  { icon:'⚙️', label:'Settings',               component:Settings      },
+  { icon:'⚖️', label:'Disclaimer',           component:Disclaimer    },
+  { icon:'🔒', label:'Privacy Policy', component:PrivacyPolicy },
+  { icon:'📋', label:'Terms of Service',             component:TermsOfService},
 ]
 
-// Contact Google Form URL
+// ContactGoogleフォームURL（実際のURLに変更してください）
 const CONTACT_FORM_URL = 'https://forms.gle/XjNypTdmZt265Kib6'
 const ALL_PAGES     = [...PAGES, ...PAGES_OTHER]
 const COLOR_THEME_KEY = 'swjp_color_theme'
@@ -47,7 +49,7 @@ function AppInner() {
   const [targetArticleId, setTargetArticleId] = useState(null)
   const [targetTheme,     setTargetTheme]     = useState(null)
 
-  // Initialize page and article ID from URL hash
+  // URLハッシュからページ・記事IDを初期化
   useEffect(() => {
     const hash = window.location.hash.replace('#', '')
     if (hash.startsWith('column/')) {
@@ -59,7 +61,7 @@ function AppInner() {
     } else if (hash === 'privacy') {
       setCurrentPage('Privacy Policy')
     }
-    // Monitor hash changes
+    // ハッシュ変化を監視
     const onHashChange = () => {
       const h = window.location.hash.replace('#', '')
       if (h.startsWith('column/')) {
@@ -71,7 +73,6 @@ function AppInner() {
     window.addEventListener('hashchange', onHashChange)
     return () => window.removeEventListener('hashchange', onHashChange)
   }, [])
-
   const [sidebarOpen, setSidebarOpen] = useState(false)
   const [viewMode,    setViewMode]    = useState('auto')
   const [isMobile,    setIsMobile]    = useState(() => typeof window !== 'undefined' && window.innerWidth <= 1280)
@@ -89,7 +90,7 @@ function AppInner() {
     const check = () => {
       if (viewMode === 'mobile') { setIsMobile(true); return }
       if (viewMode === 'pc')     { setIsMobile(false); return }
-      // Treat <=1280px as tablet to support iPad Pro landscape
+      // iPad Pro横向き(1366px)まで対応するため1280px以下をタブレット扱い
       setIsMobile(window.innerWidth <= 1280)
     }
     check()
@@ -104,18 +105,17 @@ function AppInner() {
 
   const currentPageObj = ALL_PAGES.find(p => p.label === currentPage)
   const PageComponent  = currentPageObj?.component
-
   const handlePageChange = (label, articleId = null) => {
     setCurrentPage(label)
     setSidebarOpen(false)
     setTargetArticleId(articleId)
-    // Save theme name for Theme Detail page
+    // Theme Detailの場合はTheme NameをSave
     if (label === 'Theme Detail') {
       setTargetTheme(articleId || null)
     } else {
       setTargetTheme(null)
     }
-    // Update URL hash for SEO and direct link support
+    // URLハッシュを更新（SEO・直接リンク対応）
     if (label === 'Column' && articleId) {
       window.history.replaceState(null, '', `#column/${articleId}`)
     } else if (label === 'Terms of Service') {
@@ -127,7 +127,7 @@ function AppInner() {
     }
   }
 
-  const handleLogoClick = () => { setCurrentPage('Home'); setSidebarOpen(false) }
+  const handleLogoClick  = () => { setCurrentPage('Home'); setSidebarOpen(false) }
 
   const pageProps = (() => {
     if (currentPage === 'Settings') return { viewMode, onViewModeChange:setViewMode, colorTheme, onColorThemeChange:setColorTheme, isMobile }
@@ -135,7 +135,8 @@ function AppInner() {
     if (currentPage === 'Column') return { initialArticleId: targetArticleId, onNavigate: handlePageChange, isMobile }
     if (currentPage === 'Theme List') return { onNavigate: handlePageChange, isMobile }
     if (currentPage === 'Theme Detail') return { onNavigate: handlePageChange, initialTheme: targetTheme, isMobile }
-    if (currentPage === 'Theme Heatmap') return { onNavigate: handlePageChange, isMobile }
+    if (currentPage === 'Heatmap') return { onNavigate: handlePageChange, isMobile }
+    if (currentPage === 'Weekly Report') return { onNavigate: handlePageChange, isMobile }
     if (currentPage === 'Market Ranking') return { onNavigate: handlePageChange, isMobile }
     return { isMobile }
   })()
@@ -221,7 +222,7 @@ function AppInner() {
   )
 }
 
-// Auto-clear old localStorage cache
+// 旧バージョンのLocalStorageキャッシュをAutoRemove
 ;(function cleanOldCache() {
   const CURRENT = 'swjp_v3_'
   const OLD_PREFIXES = ['swjp_', 'swjp_v1_', 'swjp_v2_']

@@ -48,7 +48,7 @@ function Loading() {
           animation: `pulse 1.2s ease-in-out ${d}s infinite`,
         }} />
       ))}
-      <div style={{ marginTop: '12px', fontSize: '12px' }}>データ取得中...</div>
+      <div style={{ marginTop: '12px', fontSize: '12px' }}>Loading......</div>
     </div>
   )
 }
@@ -84,7 +84,7 @@ export default function FundFlow() {
         資金フロー
       </h1>
       <p style={{ fontSize: '12px', color: 'var(--text3)', marginBottom: '20px' }}>
-        上昇テーマ vs 下落テーマの騰落幅を比較。どのテーマに資金が集まっているか把握できます。
+        Risingテーマ vs Fallingテーマの騰落幅を比較。どのテーマに資金が集まっているか把握できます。
       </p>
 
       <select value={period} onChange={e => setPeriod(e.target.value)} style={selStyle}>
@@ -113,9 +113,9 @@ export default function FundFlow() {
             </div>
           </div>
 
-          {/* 全テーマ */}
+          {/* All Themes */}
           <div style={sectionHead}>
-            <span style={sectionTitle}>全テーマ 騰落率一覧</span>
+            <span style={sectionTitle}>All Themes Return一覧</span>
             <div style={sectionLine} />
           </div>
           <HBarChart items={allItems} color={undefined} maxAbs={maxAbs} />

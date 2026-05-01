@@ -1,6 +1,6 @@
 /**
- * useAuth — ログイン状態を管理するフック
- * App全体で共有し、ログインユーザー情報を提供する
+ * useAuth — Login状態を管理するフック
+ * App全体で共有し、Loginユーザー情報を提供する
  */
 import { useState, useEffect, createContext, useContext } from 'react'
 import { supabase, signInWithGoogle, signOut } from '../lib/supabase'
@@ -18,7 +18,7 @@ export function AuthProvider({ children }) {
       setUser(session?.user ?? null)
       setLoading(false)
     })
-    // ログイン状態変化を監視
+    // Login状態変化を監視
     const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
       setUser(session?.user ?? null)
       setLoading(false)

@@ -1,16 +1,16 @@
 /**
- * useCustomThemes — カスタムテーマ管理フック
+ * useCustomThemes — Custom Theme管理フック
  *
- * ログイン済み → Supabase DB に保存（マルチデバイス同期）
- * 未ログイン   → localStorage に保存（従来通り）
+ * Login済み → Supabase DB にSave（マルチデバイス同期）
+ * 未Login   → localStorage にSave（従来通り）
  *
- * 呼び出し側は保存先を意識せずに使える。
+ * 呼び出し側はSave先を意識せずに使える。
  */
 import { useState, useEffect, useCallback } from 'react'
 import { supabase } from '../lib/supabase'
 import { useAuth } from './useAuth.jsx'
 
-// ── localStorage（未ログイン時） ─────────────────
+// ── localStorage（未Login時） ─────────────────
 const LS_KEY = 'swjp_custom_themes_v2'
 
 function lsLoad() {
@@ -21,7 +21,7 @@ function lsSave(themes) {
   window.dispatchEvent(new CustomEvent('swjp_themes_updated'))
 }
 
-// ── Supabase CRUD（ログイン時） ───────────────────
+// ── Supabase CRUD（Login時） ───────────────────
 async function dbLoad(userId) {
   const { data, error } = await supabase
     .from('custom_themes')
@@ -64,7 +64,7 @@ export function useCustomThemes() {
   const [themes,  setThemes]  = useState([])
   const [syncing, setSyncing] = useState(false)
 
-  // テーマ読み込み（ログイン状態が変わるたびに実行）
+  // テーマ読み込み（Login状態が変わるたびに実行）
   useEffect(() => {
     let cancelled = false
     const load = async () => {
@@ -85,7 +85,7 @@ export function useCustomThemes() {
     }
     load()
 
-    // 未ログイン時はlocalStorageの変化も監視
+    // 未Login時はlocalStorageの変化も監視
     if (!isLoggedIn) {
       const handler = () => setThemes(lsLoad())
       window.addEventListener('swjp_themes_updated', handler)
@@ -94,8 +94,15 @@ export function useCustomThemes() {
     return () => { cancelled = true }
   }, [isLoggedIn, user?.id])
 
-  // テーマ保存（作成・編集）
+  // テーマSave（作成・編集）
+  const MAX_THEMES = 3  // 1人あたりの上限
+
   const saveTheme = useCallback(async (theme, editIndex = null) => {
+    // 新規Addの場合は上限チェック
+    if (editIndex === null && themes.length >= MAX_THEMES) {
+      alert(`You can create up to ${MAX_THEMES} Custom Themes.\nPlease remove an existing theme first.`ださい。`)
+      return false
+    }
     if (isLoggedIn && user) {
       // Supabase
       if (editIndex !== null && themes[editIndex]?.id) {
@@ -113,9 +120,10 @@ export function useCustomThemes() {
       setThemes(updated)
       lsSave(updated)
     }
+    return true
   }, [isLoggedIn, user, themes])
 
-  // テーマ削除
+  // テーマRemove
   const deleteTheme = useCallback(async (index) => {
     const target = themes[index]
     if (isLoggedIn && user && target?.id) {
@@ -128,7 +136,7 @@ export function useCustomThemes() {
     }
   }, [isLoggedIn, user, themes])
 
-  // 既存テーマへ銘柄追加
+  // 既存テーマへ銘柄Add
   const addStockToTheme = useCallback(async (themeIndex, stock) => {
     const target = themes[themeIndex]
     if (!target) return
@@ -137,7 +145,7 @@ export function useCustomThemes() {
     await saveTheme(updated, themeIndex)
   }, [themes, saveTheme])
 
-  // 新規テーマを作成して銘柄追加
+  // 新規テーマを作成して銘柄Add
   const createThemeWithStock = useCallback(async (themeName, stock) => {
     if (!themeName.trim()) return
     await saveTheme({ name: themeName.trim(), stocks: [stock] })

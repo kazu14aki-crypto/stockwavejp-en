@@ -4,23 +4,23 @@ const SECTIONS = [
   {
     icon: '📊',
     title: 'Theme List',
-    desc: '67テーマのPerformance Rate・Trading Volume・Trade Valueを一覧比較できるページです。',
+    desc: '67テーマのReturn・Volume・Trade Valueを一覧比較できるページです。',
     items: [
       '上部の期間セレクター（1日/1週間/1ヶ月/3ヶ月/6ヶ月/1年）で表示期間を切り替えられます。',
-      '「全テーマ Performance Rateランキング」はデフォルトで上位4件を表示。「トップ10を表示」「全67テーマを表示」ボタンで拡張できます。',
-      'ページ下部の月次グラフ（Performance Rate・Trading Volume・Trade Value）はPC版ではクリックで拡大表示できます。スマホ版は通常表示です。',
-      '月次グラフはテーマを複数選択して比較できます。テーマバッジをクリックで解除、「＋ テーマを追加する」ボタンで追加できます。',
-      'テーマHeatmap（右下）はPC版でクリック拡大。拡大時に注目ゾーンの説明が表示されます。バブルにカーソルを当てるとテーマ名・Performance Rate・Trading Volume・Trade Valueがツールチップで表示されます。',
+      '「All Themes Returnランキング」はデフォルトで上位4件を表示。「トップ10を表示」「全67テーマを表示」ボタンで拡張できます。',
+      'ページ下部の月次グラフ（Return・Volume・Trade Value）はPC版ではクリックで拡大表示できます。スマホ版は通常表示です。',
+      '月次グラフはテーマを複数選択して比較できます。テーマバッジをクリックで解除、「＋ テーマをAddする」ボタンでAddできます。',
+      'テーマHeatmap（右下）はPC版でクリック拡大。拡大時に注目ゾーンの説明が表示されます。バブルにカーソルを当てるとTheme Name・Return・Volume・Trade Valueがツールチップで表示されます。',
     ]
   },
   {
     icon: '🔥',
     title: 'テーマHeatmap',
-    desc: '67テーマのFund Flowを散布図で可視化するページです。',
+    desc: '67テーマの資金フローを散布図で可視化するページです。',
     items: [
-      'X軸がPerformance Rate（右ほどRising）、Y軸がTrading Volume急増率（上ほどTrading Volume増）、バブルの大きさがTrade Valueを示します。',
-      '右上の「注目ゾーン」はRising＋Trading Volume急増の最強シグナルエリアです。左上は売り圧力、右下は静かなRising、左下は静かなFallingを示します。',
-      'バブルにカーソルを当てるとテーマ名・Performance Rate・Trading Volume急増率・Trade Valueが表示されます。',
+      'X軸がReturn（右ほどRising）、Y軸がVolume急増率（上ほどVolume増）、バブルの大きさがTrade Valueを示します。',
+      '右上の「注目ゾーン」はRising＋Volume急増の最強シグナルエリアです。左上は売り圧力、右下は静かなRising、左下は静かなFallingを示します。',
+      'バブルにカーソルを当てるとTheme Name・Return・Volume急増率・Trade Valueが表示されます。',
       'バブルをクリックするとそのテーマの詳細ページに移動します。',
       '上部のセレクターで期間（1日/1週間/1ヶ月/3ヶ月）を切り替えられます。',
     ]
@@ -28,37 +28,37 @@ const SECTIONS = [
   {
     icon: '🔍',
     title: 'Theme Detail',
-    desc: '個別テーマの構成Stocksを詳細分析するページです。',
+    desc: '個別テーマの構成銘柄を詳細分析するページです。',
     items: [
-      '上部ドロップダウンでテーマを選択。期間も切り替え可能です。',
-      'Rising/FallingTOP5、注目Stocksピックアップ（※リアルタイムではなくdata update timingに依存）が全幅で表示されます。',
-      'ページ下部は2カラム構成（PC版）。左カラムにTrading Volumeグラフ・Stocks別Heatmap・遷移ボタン、右カラムに構成Stocks表が配置されます。',
-      'Stocks表はPerformance Rate・Trading Volume・Trade Valueでソート可能。ヘッダーのボタンで昇順/降順も切り替えられます。',
+      '上部ドロップダウンでSelect Theme。期間も切り替え可能です。',
+      'Rising/FallingTOP5、Featured Stocks（※リアルタイムではなくdata update timingに依存）が全幅で表示されます。',
+      'ページ下部は2カラム構成（PC版）。左カラムにVolumeグラフ・Stock Heatmap・遷移ボタン、右カラムに構成銘柄表が配置されます。',
+      '銘柄表はReturn・Volume・Trade Valueでソート可能。ヘッダーのボタンでAsc/Descも切り替えられます。',
       '表はクリック&ドラッグで横移動できます。上部にもスクロールバーが表示されています。',
       '各グラフはクリックで拡大表示できます。',
-      '「＋」ボタンでStocksをCustom Themeに追加できます。',
+      '「＋」ボタンで銘柄をCustom ThemeにAddできます。',
     ]
   },
   {
     icon: '📋',
     title: 'Market Ranking',
-    desc: '市場区分・業種別セグメントのStocksを比較分析するページです。',
+    desc: '市場区分・業種別セグメントの銘柄を比較分析するページです。',
     items: [
       '上部でセグメント（国内主要株・テクノロジー・金融・プライム市場など）と期間を切り替えられます。',
-      'ページ下部は2カラム構成（PC版）。左カラムにStocks表、右カラムにStocks別Heatmap・Trading Volume/Trade Valueグラフが配置されます。',
-      'Stocks表はドラッグスクロール・ソートボタン対応。上部スクロールバーも表示されています。',
-      'バブルにカーソルを当てるとStocks名・Performance Rate・Trading Volume・Trade Valueが表示されます。',
+      'ページ下部は2カラム構成（PC版）。左カラムに銘柄表、右カラムにStock Heatmap・Volume/Trade Valueグラフが配置されます。',
+      '銘柄表はドラッグスクロール・ソートボタン対応。上部スクロールバーも表示されています。',
+      'バブルにカーソルを当てると銘柄名・Return・Volume・Trade Valueが表示されます。',
     ]
   },
   {
     icon: '🎨',
     title: 'Custom Theme',
-    desc: '自分だけのテーマを作成してStocksを比較追跡できます。',
+    desc: '自分だけのテーマを作成して銘柄を比較追跡できます。',
     items: [
-      '最大3テーマ、1テーマあたり最大10Stocksまで作成できます。',
-      'Stocks名または4桁証券コードでJapan stocksを検索して追加できます。',
-      'Googleログインするとデバイスをまたいでテーマが同期されます。未ログインの場合はブラウザのLocalStorageに保存されます。',
-      'テーマ詳細ではPerformance Rateグラフ・Trading Volumeグラフ・Stocks別Heatmap・構成Stocks表が表示されます（2カラム構成・PC版）。',
+      '最大3テーマ、1テーマあたり最大10銘柄まで作成できます。',
+      '銘柄名または4桁証券コードで日本株を検索してAddできます。',
+      'GoogleLoginするとデバイスをまたいでテーマが同期されます。未Loginの場合はブラウザのLocalStorageにSaveされます。',
+      'テーマ詳細ではReturnグラフ・Volumeグラフ・Stock Heatmap・構成銘柄表が表示されます（2カラム構成・PC版）。',
       '「URLをコピー」でテーマを他のユーザーと共有できます。',
     ]
   },
@@ -68,27 +68,27 @@ const SECTIONS = [
     desc: '毎週末更新のマーケットレポートです。',
     items: [
       'レポートはカード形式で一覧表示されます。クリックするとレポート全文が表示されます。',
-      'レポート内でテーマ名が登場する箇所の近くに「Theme Detail」「コラムを読む」ボタンが表示されます。',
+      'レポート内でTheme Nameが登場する箇所の近くに「Theme Detail」「コラムを読む」ボタンが表示されます。',
       '週間Rising/FallingTOP5テーマのバッジをクリックするとそのテーマの詳細ページに移動できます。',
-      'AIによる自動生成ではなく、市場データをもとに手動作成しています。',
+      'AIによるAuto生成ではなく、市場データをもとに手動作成しています。',
     ]
   },
   {
     icon: '📝',
-    title: 'コラム・解説',
-    desc: '各テーマの詳細解説・関連Stocks分析記事を掲載しています。',
+    title: 'Column',
+    desc: '各テーマの詳細解説・関連銘柄分析記事を掲載しています。',
     items: [
-      '67テーマすべての解説コラムと主要Stocksの個別分析記事があります。',
+      '67テーマAllの解説コラムと主要銘柄の個別分析記事があります。',
       'Theme Detailページからも「関連コラム記事を読む」ボタンで直接移動できます。',
     ]
   },
   {
     icon: '⚙️',
-    title: '設定',
-    desc: 'カラーテーマやグラフ表示モードを変更できます。',
+    title: 'Settings',
+    desc: 'Color ThemeやグラフView Modeを変更できます。',
     items: [
-      'カラーテーマ: ダーク（デフォルト）・ライト（ホワイト）から選択できます。',
-      '一部グラフ要素でカラーテーマ切替時に色が変わらない場合がありますが、順次改善中です。',
+      'Color Theme: Dark（デフォルト）・Light（ホワイト）から選択できます。',
+      '一部グラフ要素でColor Theme切替時に色が変わらない場合がありますが、順次改善中です。',
     ]
   },
 ]
@@ -96,31 +96,31 @@ const SECTIONS = [
 const QA = [
   {
     q: 'データはリアルタイムですか？',
-    a: 'リアルタイムではありません。GitHub Actionsにより1日数回（平日7:00/9:00/12:00/15:30/23:30 UTC）自動更新されます。最新データの反映には最大数時間かかる場合があります。ページ右上の「最終更新」時刻を確認してください。',
+    a: 'リアルタイムではありません。GitHub Actionsにより1日数回（平日7:00/9:00/12:00/15:30/23:30 UTC）Auto更新されます。最新データの反映には最大数時間かかる場合があります。ページ右上の「Last Updated」時刻を確認してください。',
   },
   {
-    q: '注目Stocksピックアップはどのように選ばれていますか？',
-    a: 'Performance Rate・Trading Volume・価格推移・Trade Valueを独自スコアで機械的に集計しています。Data is not real-timedata update timing, so、最新の市場状況と乖離する場合があります。投資判断の参考程度としてご利用ください。',
+    q: 'Featured Stocksはどのように選ばれていますか？',
+    a: 'Return・Volume・価格推移・Trade Valueを独自スコアで機械的に集計しています。リアルタイムデータではなくdata update timingに依存するため、最新の市場状況と乖離する場合があります。投資判断の参考程度としてご利用ください。',
   },
   {
     q: 'Trade Valueの単位は何ですか？',
-    a: '億・兆単位で表示しています（例：2.4兆 = 2.4兆円）。Trading Volumeは株数です。',
+    a: '億・兆単位で表示しています（例：2.4兆 = 2.4兆円）。Volumeは株数です。',
   },
   {
     q: 'Custom Themeはいくつまで作れますか？',
-    a: '最大3テーマ、1テーマあたり最大10Stocksまで作成できます。Googleログインするとデバイス間でデータが同期されます。未ログイン時はブラウザのLocalStorageに保存されるため、ブラウザのデータを削除すると失われます。',
+    a: '最大3テーマ、1テーマあたり最大10銘柄まで作成できます。GoogleLoginするとデバイス間でデータが同期されます。未Login時はブラウザのLocalStorageにSaveされるため、ブラウザのデータをRemoveすると失われます。',
   },
   {
     q: 'テーマHeatmapのゾーン分けはどういう意味ですか？',
-    a: '🔥注目ゾーン（右上）：Rising+Trading Volume急増=最強シグナル / ⚠️売り圧力（左上）：Falling+Trading Volume急増=強い売り / 📈静かなRising（右下）：Rising+Trading Volume少=じわりRising / ❄️静かなFalling（左下）：弱含みだが動意なし',
+    a: '🔥注目ゾーン（右上）：Rising+Volume急増=最強シグナル / ⚠️売り圧力（左上）：Falling+Volume急増=強い売り / 📈静かなRising（右下）：Rising+Volume少=じわりRising / ❄️静かなFalling（左下）：弱含みだが動意なし',
   },
   {
-    q: 'Performance Rateはどのように計算していますか？',
-    a: 'テーマのPerformance Rateはそのテーマに属する構成StocksのPerformance Rateの単純平均値です。個別Stocksは終値ベースで計算しています。',
+    q: 'Returnはどのように計算していますか？',
+    a: 'テーマのReturnはそのテーマに属する構成銘柄のReturnの単純平均値です。個別銘柄は終値ベースで計算しています。',
   },
   {
     q: 'スマホで表が見づらいのですが？',
-    a: 'Stocks表は横スクロール対応です。表を左右にスワイプしてください。PC版ではクリック&ドラッグでも横移動できます。スマホではグラフが自動的に縮小表示されます。',
+    a: '銘柄表は横スクロール対応です。表を左右にスワイプしてください。PC版ではクリック&ドラッグでも横移動できます。スマホではグラフがAuto的に縮小表示されます。',
   },
   {
     q: 'データソースはどこですか？',
@@ -208,7 +208,7 @@ export default function HowTo() {
       <div style={{ padding:'14px 18px', background:'rgba(255,193,7,0.05)',
         border:'1px solid rgba(255,193,7,0.2)', borderRadius:'8px', fontSize:'12px', color:'var(--text3)', lineHeight:1.8 }}>
         ⚠️ <strong style={{ color:'var(--text2)' }}>Disclaimer：</strong>
-        this Siteに掲載されている情報は参考目的のみであり、特定のStocksの売買を推奨するものではありません。
+        当サイトに掲載されている情報は参考目的のみであり、特定の銘柄の売買を推奨するものではありません。
         投資の最終判断はご自身の責任でお願いします。データの正確性・最新性について保証するものではありません。
       </div>
     </div>

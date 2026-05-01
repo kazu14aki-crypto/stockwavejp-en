@@ -16,7 +16,7 @@ export default function AuthButton() {
   if (!isLoggedIn) return (
     <button
       onClick={() => signIn()}
-      title="GoogleでLoginするとカスタムテーマがどのデバイスでも同期されます"
+      title="GoogleでLoginするとCustom Themeがどのデバイスでも同期されます"
       style={{
         display:'flex', alignItems:'center', gap:'6px',
         background:'rgba(74,158,255,0.1)', border:'1px solid rgba(74,158,255,0.3)',
@@ -79,7 +79,7 @@ export default function AuthButton() {
                 {displayName}
               </div>
               <div style={{ fontSize:'10px', color:'var(--text3)', marginTop:'2px' }}>
-                カスタムテーマを同期中
+                Custom Themeを同期中
               </div>
             </div>
             <button onClick={() => { signOut(); setMenuOpen(false) }} style={{

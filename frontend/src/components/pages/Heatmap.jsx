@@ -16,9 +16,9 @@ const THEME_ARTICLE_MAP = {
   'AI半導体':          'semiconductor-theme',
   'AI人材':            'education-hr-theme',
   'エッジAI':          'physical-ai-edge-ai',
-  'EV・電気自動車':    'ev-green-theme',
+  'EV・電気Auto車':    'ev-green-theme',
   '全固体電池':        'ev-green-theme',
-  '自動運転':          'ev-green-theme',
+  'Auto運転':          'ev-green-theme',
   'ドローン':          'drone-theme',
   '輸送・物流':        'transport-logistics-theme',
   '造船':              'shipbuilding-theme',
@@ -62,7 +62,7 @@ const THEME_ARTICLE_MAP = {
   'リユース・中古品':  'retail-ec-theme',
   '防衛・航空':        'defense-theme',
   '宇宙・衛星':        'space-satellite-theme',
-  'ロボット・自動化':  'robot-automation-theme',
+  'ロボット・Auto化':  'robot-automation-theme',
   'レアアース・資源':  'rare-earth-resources-theme',
   'バフェット銘柄':    'sogo-shosha-analysis',
   'サイバーセキュリティ': 'cybersecurity-theme',
@@ -204,7 +204,7 @@ function BubbleScatter({ data, mPeriod, setMPeriod, onNavigate }) {
   if (!data || data.length === 0) {
     return (
       <div style={{ textAlign:'center', padding:'60px', color:'var(--text3)' }}>
-        データを読み込み中...
+        Loading...
       </div>
     )
   }
@@ -217,7 +217,7 @@ function BubbleScatter({ data, mPeriod, setMPeriod, onNavigate }) {
   // ── データ準備 ──────────────────────────────────
   const filtered = data.filter(d => d.pct != null && !isNaN(d.pct))
 
-  // Y軸: volume_chgが有効データ（0以外が1つでもある）なら出来高急増率、なければweek_diff
+  // Y軸: volume_chgが有効データ（0以外が1つでもある）ならVolume急増率、なければweek_diff
   const volChgValues = filtered.map(d => typeof d.volume_chg === 'number' ? d.volume_chg : null)
   const hasRealVolChg = volChgValues.some(v => v !== null && v !== 0)
 
@@ -226,7 +226,7 @@ function BubbleScatter({ data, mPeriod, setMPeriod, onNavigate }) {
     if (typeof d.week_diff === 'number') return d.week_diff
     return 0
   }
-  const yAxisLabel = hasRealVolChg ? '出来高急増率 (%)' : '先週比 (pt)'
+  const yAxisLabel = hasRealVolChg ? 'Volume Surge (%)' : '先週比 (pt)'
 
   // Y軸: trade_valueが有効かどうか
   const tvValues = filtered.map(d => d.trade_value ?? 0)
@@ -274,7 +274,7 @@ function BubbleScatter({ data, mPeriod, setMPeriod, onNavigate }) {
   const xS = v => PL + ((v - xMin) / xRange) * GW
   const yS = v => PT + GH - ((v - yMin) / yRange) * GH
 
-  // 円サイズ（売買代金に比例、最小8・最大40px）
+  // 円サイズ（Trade Valueに比例、最小8・最大40px）
   const rS = tv => {
     if (!tv || tv === 0) return 7
     const ratio = tv / tvMax
@@ -298,10 +298,10 @@ function BubbleScatter({ data, mPeriod, setMPeriod, onNavigate }) {
 
   // ── ゾーン定義（サイトカラーに合わせた暗いトーン）──
   const zones = [
-    { label:'Hot Zone: Rising + High Volume',  x:x0, y:PT,  w:PL+GW-x0, h:y0-PT,    bg:'rgba(255,83,112,0.22)', border:'rgba(255,83,112,0.60)' },
-    { label:'Selling Pressure: Falling + High Volume',    x:PL, y:PT,  w:x0-PL,    h:y0-PT,    bg:'rgba(0,196,140,0.18)',  border:'rgba(0,196,140,0.55)'  },
-    { label:'Quiet Rise: Low Volume',       x:x0, y:y0,  w:PL+GW-x0, h:PT+GH-y0, bg:'rgba(255,140,66,0.15)', border:'rgba(255,140,66,0.50)' },
-    { label:'Quiet Fall',                x:PL, y:y0,  w:x0-PL,    h:PT+GH-y0, bg:'rgba(74,158,255,0.13)', border:'rgba(74,158,255,0.45)' },
+    { label:'注目ゾーン Rising+Volume増',  x:x0, y:PT,  w:PL+GW-x0, h:y0-PT,    bg:'rgba(255,83,112,0.22)', border:'rgba(255,83,112,0.60)' },
+    { label:'売り圧力 Falling+Volume増',    x:PL, y:PT,  w:x0-PL,    h:y0-PT,    bg:'rgba(0,196,140,0.18)',  border:'rgba(0,196,140,0.55)'  },
+    { label:'静かなRising Volume少',       x:x0, y:y0,  w:PL+GW-x0, h:PT+GH-y0, bg:'rgba(255,140,66,0.15)', border:'rgba(255,140,66,0.50)' },
+    { label:'静かなFalling',                x:PL, y:y0,  w:x0-PL,    h:PT+GH-y0, bg:'rgba(74,158,255,0.13)', border:'rgba(74,158,255,0.45)' },
   ]
 
   // 目盛り生成
@@ -315,8 +315,8 @@ function BubbleScatter({ data, mPeriod, setMPeriod, onNavigate }) {
 
   const fmtL = tv => {
     if (!tv) return '-'
-    if (tv >= 1e8) return (tv/1e8).toFixed(0) + '億'
-    if (tv >= 1e4) return (tv/1e4).toFixed(0) + '万'
+    if (tv >= 1e8) return (tv/1e8).toFixed(0) + 'B'
+    if (tv >= 1e4) return (tv/1e4).toFixed(0) + 'M'
     return tv.toLocaleString()
   }
 
@@ -334,17 +334,17 @@ function BubbleScatter({ data, mPeriod, setMPeriod, onNavigate }) {
           ))}
         </select>
         <span style={{ fontSize:'11px', color:'var(--text3)' }}>
-          X軸=Return　Y軸={yAxisLabel}　円サイズ=売買代金
+          X軸=Return　Y軸={yAxisLabel}　円サイズ=Trade Value
         </span>
       </div>
 
       {/* ゾーン説明 */}
       <div className="scatter-zone-desc">
         {[
-          { label:'🔥 注目ゾーン（右上）', desc:'上昇＋出来高急増＝最強シグナル', color:'#ff5370' },
-          { label:'⚠️ 売り圧力（左上）',   desc:'下落＋出来高急増＝強い売り',    color:'#00c48c' },
-          { label:'📈 静かな上昇（右下）',  desc:'上昇＋出来高少＝じわり上昇',    color:'#ff8c42' },
-          { label:'❄️ Quiet Fall（左下）',  desc:'弱含みだが動意なし',             color:'#4a9eff' },
+          { label:'🔥 注目ゾーン（右上）', desc:'Rising＋Volume急増＝最強シグナル', color:'#ff5370' },
+          { label:'⚠️ 売り圧力（左上）',   desc:'Falling＋Volume急増＝強い売り',    color:'#00c48c' },
+          { label:'📈 静かなRising（右下）',  desc:'Rising＋Volume少＝じわりRising',    color:'#ff8c42' },
+          { label:'❄️ 静かなFalling（左下）',  desc:'弱含みだが動意なし',             color:'#4a9eff' },
         ].map(z => (
           <div key={z.label} style={{ display:'flex', alignItems:'center', gap:'5px' }}>
             <div style={{ width:'8px', height:'8px', borderRadius:'50%', background:z.color, flexShrink:0 }} />
@@ -392,8 +392,8 @@ function BubbleScatter({ data, mPeriod, setMPeriod, onNavigate }) {
           {/* ゾーンラベル */}
           <text x={x0+8} y={PT+16} fontSize="11" fill="rgba(255,83,112,0.85)" fontWeight="700">🔥 注目ゾーン</text>
           <text x={PL+6} y={PT+16} fontSize="11" fill="rgba(0,196,140,0.8)" fontWeight="700">⚠️ 売り圧力</text>
-          <text x={x0+8} y={PT+GH-8} fontSize="11" fill="rgba(255,140,66,0.7)" fontWeight="600">📈 静かな上昇</text>
-          <text x={PL+6} y={PT+GH-8} fontSize="11" fill="rgba(74,158,255,0.65)" fontWeight="600">❄️ Quiet Fall</text>
+          <text x={x0+8} y={PT+GH-8} fontSize="11" fill="rgba(255,140,66,0.7)" fontWeight="600">📈 静かなRising</text>
+          <text x={PL+6} y={PT+GH-8} fontSize="11" fill="rgba(74,158,255,0.65)" fontWeight="600">❄️ 静かなFalling</text>
 
           {/* バブル（ホバーされていないものを先に描画） */}
           {filtered
@@ -416,7 +416,7 @@ function BubbleScatter({ data, mPeriod, setMPeriod, onNavigate }) {
                       y: cy - r - 6,
                     })
                   }}
-                  onClick={() => onNavigate && onNavigate('テーマ別詳細', d.theme)}
+                  onClick={() => onNavigate && onNavigate('Theme Detail', d.theme)}
                 >
                   <circle cx={cx} cy={cy} r={r}
                     fill={col} fillOpacity="0.75"
@@ -444,7 +444,7 @@ function BubbleScatter({ data, mPeriod, setMPeriod, onNavigate }) {
               <g key="hovered"
                 style={{ cursor: onNavigate ? 'pointer' : 'default' }}
                 onMouseEnter={() => setHovered(d)}
-                onClick={() => onNavigate && onNavigate('テーマ別詳細', d.theme)}
+                onClick={() => onNavigate && onNavigate('Theme Detail', d.theme)}
               >
                 <circle cx={cx} cy={cy} r={r + 3}
                   fill="none" stroke="white" strokeWidth="2" strokeOpacity="0.8" />
@@ -476,7 +476,7 @@ function BubbleScatter({ data, mPeriod, setMPeriod, onNavigate }) {
                         {(yAxisLabel + ': ') + (getY(d) >= 0 ? '+' : '') + getY(d).toFixed(1) + '%'}
                       </text>
                       <text x={tx+12} y={ty+74} fontSize="12" fill="#8b949e">
-                        {'売買代金: ' + fmtL(d.trade_value)}
+                        {'Trade Value: ' + fmtL(d.trade_value)}
                       </text>
                     </g>
                   )
@@ -494,7 +494,7 @@ function BubbleScatter({ data, mPeriod, setMPeriod, onNavigate }) {
           ))}
           <text x={PL + GW/2} y={H-4}
             textAnchor="middle" fontSize="11" fill="rgba(255,255,255,0.4)">
-            ← 下落　　Return　　上昇 →
+            ← Falling　　Return　　Rising →
           </text>
 
           {/* Y軸ラベル */}
@@ -510,7 +510,7 @@ function BubbleScatter({ data, mPeriod, setMPeriod, onNavigate }) {
             {yAxisLabel}
           </text>
 
-          {/* 凡例（売買代金バブルサイズ） */}
+          {/* 凡例（Trade Valueバブルサイズ） */}
           {[{tv:500e8,l:'5000億'},{tv:100e8,l:'1000億'},{tv:20e8,l:'200億'}].map((item, i) => {
             const r = rS(item.tv)
             const bx = PL + GW + PR - 24
@@ -531,7 +531,7 @@ function BubbleScatter({ data, mPeriod, setMPeriod, onNavigate }) {
           {onNavigate && (
             <text x={PL + GW/2} y={PT - 12}
               textAnchor="middle" fontSize="10" fill="rgba(255,255,255,0.3)">
-              バブルをクリック → テーマ別詳細へ
+              バブルをクリック → Theme Detailへ
             </text>
           )}
         </svg>
@@ -550,7 +550,7 @@ function BubbleScatter({ data, mPeriod, setMPeriod, onNavigate }) {
             borderRadius:'8px' }}>
             <div style={{ fontSize:'11px', fontWeight:600, color:'rgba(220,80,80,0.9)',
               marginBottom:'10px', letterSpacing:'0.08em' }}>
-              🔥 注目ゾーン上位（上昇＋出来高増加）
+              🔥 注目ゾーン上位（Rising＋Volume増加）
             </div>
             <div style={{ display:'flex', flexWrap:'wrap', gap:'8px' }}>
               {hot.map(d => (
@@ -564,10 +564,10 @@ function BubbleScatter({ data, mPeriod, setMPeriod, onNavigate }) {
                     {d.pct >= 0 ? '+' : ''}{d.pct?.toFixed(1)}%
                   </span>
                   <span style={{ fontSize:'11px', fontFamily:'var(--mono)', color:'#ff8c42' }}>
-                    {'出来高' + (d.volume_chg >= 0 ? '+' : '') + d.volume_chg?.toFixed(0) + '%'}
+                    {'Volume' + (d.volume_chg >= 0 ? '+' : '') + d.volume_chg?.toFixed(0) + '%'}
                   </span>
                   {onNavigate && (
-                    <button onClick={() => onNavigate('テーマ別詳細', d.theme)}
+                    <button onClick={() => onNavigate('Theme Detail', d.theme)}
                       style={{ padding:'2px 8px', borderRadius:'4px', fontSize:'10px',
                         background:'rgba(170,119,255,0.1)', border:'1px solid rgba(170,119,255,0.3)',
                         color:'#aa77ff', cursor:'pointer', fontFamily:'var(--font)', fontWeight:600 }}>
@@ -600,7 +600,7 @@ export default function Heatmap({ onNavigate }) {
         67テーマのReturnをテーマHeatmapと騰落モメンタムで多角的に分析できます。
       </p>
 
-      {/* ⑥ タブ削除・散布図を直接表示 */}
+      {/* ⑥ タブRemove・散布図を直接表示 */}
       <BubbleScatter data={momentumData} mPeriod={mPeriod} setMPeriod={setMPeriod} onNavigate={onNavigate} />
 
       <style>{`

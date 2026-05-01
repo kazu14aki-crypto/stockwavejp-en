@@ -16,11 +16,11 @@ export default function Settings({ viewMode, onViewModeChange, colorTheme, onCol
   return (
     <div style={{ padding:'28px 32px 48px' }}>
       <h1 style={{ fontSize:'24px',fontWeight:700,letterSpacing:'-0.02em',color:'var(--text)',marginBottom:'4px' }}>Settings</h1>
-      <p style={{ fontSize:'12px',color:'var(--text2)',marginBottom:'28px' }}>Display ModeやデザインのSettingsを変更できます</p>
+      <p style={{ fontSize:'12px',color:'var(--text2)',marginBottom:'28px' }}>View ModeやデザインのSettingsを変更できます</p>
 
-      {/* カラーTheme */}
+      {/* Color Theme */}
       <Card>
-        <SLabel>カラーTheme</SLabel>
+        <SLabel>Color Theme</SLabel>
         <div style={{ display:'flex',gap:'12px',flexWrap:'wrap' }}>
           {COLOR_THEMES.map(({ key, label, desc }) => (
             <button key={key} onClick={() => onColorThemeChange(key)} style={{
@@ -40,15 +40,15 @@ export default function Settings({ viewMode, onViewModeChange, colorTheme, onCol
           ))}
         </div>
         <p style={{ fontSize:'11px',color:'var(--text3)',marginTop:'12px' }}>
-          ※ Themeはリロードなしで即時反映されます
+          ※ テーマはリロードなしで即時反映されます
         </p>
       </Card>
 
-      {/* Display Mode */}
+      {/* View Mode */}
       <Card>
-        <SLabel>Display Mode</SLabel>
+        <SLabel>View Mode</SLabel>
         <div style={{ display:'flex',gap:'8px',flexWrap:'wrap' }}>
-          {[{key:'auto',label:'🔄 Auto'},{key:'pc',label:'🖥 PC'},{key:'mobile',label:'📱 Mobile'}].map(({key,label})=>(
+          {[{key:'auto',label:'🔄 Auto'},{key:'pc',label:'🖥 PC'},{key:'mobile',label:'📱 スマホ'}].map(({key,label})=>(
             <button key={key} onClick={()=>onViewModeChange(key)} style={{
               padding:'8px 20px',borderRadius:'6px',fontSize:'13px',cursor:'pointer',
               border:`1px solid ${viewMode===key?'var(--accent)':'var(--border)'}`,
@@ -59,7 +59,7 @@ export default function Settings({ viewMode, onViewModeChange, colorTheme, onCol
           ))}
         </div>
         <p style={{ fontSize:'11px',color:'var(--text3)',marginTop:'10px' }}>
-          「Auto」はブラウザの画面幅を検知してPC/MobileをAuto判定します
+          「Auto」はブラウザの画面幅を検知してPC/スマホをAuto判定します
         </p>
       </Card>
 
