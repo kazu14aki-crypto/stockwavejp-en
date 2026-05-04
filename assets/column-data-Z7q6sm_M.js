@@ -1,43 +1,102 @@
-const e=[{id:"nintendo-analysis",themes:["Theme Analysis"],keywords:["stock analysis","Japan stocks","investing"],category:"Stock Analysis",icon:"🎮",title:"Nintendo (7974) Deep Dive: Nintendo Switch 2 and IP Strategy for the Next Growth Stage",date:"2026/04/11",summary:"Nintendo is launching the Switch 2, opening a new hardware cycle. We analyze the IP strategy, Switch 2 prospects, and investment timing.",body:`
-H2: Company Overview
+const e=[{id:"nintendo-analysis",themes:["Theme Analysis"],keywords:["stock analysis","Japan stocks","investing"],category:"Stock Analysis",icon:"🎮",title:"Nintendo (7974) Deep Dive: Nintendo Switch 2 and IP Strategy for the Next Growth Stage",date:"2026/04/11",summary:"Nintendo is launching the Switch 2, opening a new hardware cycle. We analyze the IP strategy, Switch 2 prospects, and investment timing.",body:`H2: Company Overview
 
-Nintendo Co., Ltd. (7974) is Japan's iconic video game company, creator of Mario, Zelda, Pokémon, and dozens of other globally beloved franchises. Nintendo's position as both a hardware and software company allows it to control the entire gaming experience, creating a uniquely powerful platform ecosystem.
+Nintendo Co., Ltd. (7974) is Japan's iconic video game company, creator of Mario, The Legend of Zelda, Pokémon, Animal Crossing, and dozens of other globally beloved franchises. Nintendo's unique position as both a hardware and software company allows it to control the entire gaming experience — from the hardware platform to the games that define it — creating a uniquely powerful ecosystem that competitors have found impossible to replicate.
 
-H2: Nintendo Switch 2 Launch
+H2: The Nintendo Switch 2 Hardware Cycle
 
-The Nintendo Switch 2 represents the beginning of a new hardware cycle. Historical patterns show Nintendo's stock price and earnings typically accelerate significantly in the 12-24 months following a major hardware launch.
+The Nintendo Switch 2 represents the beginning of a critical new hardware cycle. Historical patterns from previous Nintendo hardware launches are highly instructive:
 
-H2: The Software-Centric Model
+- Game Boy to Game Boy Advance (2001): Nintendo stock rose approximately 4x over the following 3 years as the handheld market expanded
+- DS to 3DS era: Software revenue growth led to sustained stock appreciation
+- Wii era: The family gaming revolution drove extraordinary returns
+- Switch (2017): Nintendo stock approximately tripled in the 2 years following launch
 
-Nintendo doesn't compete in raw performance specifications — it competes on unique gameplay experiences. This allows Nintendo to maintain premium pricing and high margins for both hardware and software.
+The current AI-driven memory price increases present a near-term consideration. In the online press conference on February 3, 2026, Nintendo's President Shunsuke Furukawa indicated that the impact of semiconductor memory price increases on fiscal year March 2026 results would not be significant, and that no price increases had been decided at this time.
 
-H2: IP Licensing Expansion
+H2: The Software-Centric Business Model
 
-Nintendo has significantly expanded its IP licensing: The Super Mario Bros. Movie (2023) was a global hit, and Universal Studios' Nintendo theme park areas are expanding globally.
+Nintendo's genius is that it is fundamentally a software company that controls its own hardware. Unlike Sony or Microsoft, who compete in raw performance specifications, Nintendo competes on unique gameplay experiences. This allows Nintendo to:
 
-H2: Editorial Perspective
+1. Maintain premium software pricing ($60-70 per game) long after competitors discount
+2. Generate extraordinary operating margins on software (often 30-40%+ operating margin)
+3. Revive old IP with new experiences (Zelda games consistently generate $1B+ revenue)
+4. Control the timing and pacing of its release slate to maximize financial impact
 
-Current AI demand is driving memory price increases which may somewhat impact Switch 2 manufacturing costs. In the online press conference on February 3, 2026, President Furukawa indicated that the impact on fiscal year March 2026 results would not be significant, and that no price increases had been decided. The stock has fallen to its lowest level since 2023-2024. The Switch launched simultaneously in Japan and the US in March 2017, and over this period Japan has experienced approximately 15% inflation and the US approximately 30% inflation. Considering the increased manufacturing costs, Switch 2 hardware earnings appear low. However, since Nintendo's model is to generate revenue through software rather than hardware, it is more important to focus on the software titles to be announced in the future rather than hardware sales volume.
-    `},{id:"fujikura-analysis",themes:["Theme Analysis"],keywords:["stock analysis","Japan stocks","investing"],category:"Stock Analysis",icon:"💡",title:"Fujikura (5803) Deep Dive: Optical Fiber and AI Power Cables Driving Rapid Growth",date:"2026/04/11",summary:"Fujikura has become one of Japan's most talked-about growth stocks as AI data center demand drives explosive order growth.",body:`
-H2: Company Overview
+Nintendo's first-party software titles have remarkable longevity — Mario Kart 8 Deluxe, released in 2017, remained a top-seller on the original Switch through its entire lifecycle. This "catalog" revenue provides an unusually stable revenue floor for a gaming company.
 
-Fujikura Ltd. (5803) is a comprehensive electrical and electronic wire and cable manufacturer. The AI infrastructure boom has transformed it into a high-growth stock as demand for its optical fiber cables and data center power cables has surged.
+H2: IP Licensing — A Growing Flywheel
 
-H2: The AI Data Center Connection
+Nintendo has significantly expanded its IP licensing strategy:
 
-Fujikura supplies two critical products for AI data centers: optical fiber cables (for high-speed data transmission between servers) and high-voltage power cables (for efficient power distribution). The global buildout of AI computing infrastructure requires both products in massive quantities.
+The Super Mario Bros. Movie (2023) grossed over $1.35 billion worldwide — making it one of the highest-grossing animated films ever. This success validated Nintendo's IP as entertainment beyond gaming and opened the door for more Nintendo cinematic universes.
 
-H2: Order Backlog Surge
+Universal Studios' Nintendo World areas (Osaka, Hollywood, and expanding to Singapore and Orlando) create physical touchpoints with the Nintendo brand for visitors who may not be active gamers. This drives merchandise revenue, brand awareness, and potential new game purchasers.
 
-Fujikura's order backlog has surged to multi-year levels, providing high revenue visibility. Major customers include hyperscalers (Amazon, Microsoft, Google, Meta) and their construction contractors.
+Merchandise, licensing, and theme park revenues are growing from a small base but represent a significant long-term value creation opportunity that is largely separate from the core gaming cycle.
 
-H2: Rising and Falling Factors
+H2: Competitive Position and Risks
 
-Rising: AI data center buildout driving optical fiber demand, 5G network infrastructure, automotive electrification. Falling: Hyperscaler capex cycle slowdown risk, raw material price increases, yen appreciation headwinds.
+Nintendo's main competitive risk is not from Sony or Microsoft (who play a different game), but from mobile gaming (Apple/Google ecosystems) competing for casual gamers' attention. However, Nintendo has demonstrated that dedicated gaming hardware retains its appeal for consumers who want the definitive Nintendo gaming experience.
 
-H2: Editorial Perspective
+The growing cost of game development is a structural challenge — AAA titles now require $200-500M budgets and multi-year development cycles. Nintendo has managed this well by maintaining smaller, more focused development teams with clear creative vision, rather than pursuing the open-world-everything approach that inflates costs at competitors.
 
-Fujikura illustrates how a traditional industrial company can become a growth stock when positioned at the intersection of a major structural theme (AI data center buildout). Monitor quarterly capex announcements from major hyperscalers as leading indicators.
+H2: The Switch is Launched, Over to Software
+
+The Switch launched simultaneously in Japan and the US in March 2017, and over this period Japan has experienced approximately 15% inflation and the US approximately 30% inflation. Considering the increased manufacturing costs, the earnings from Switch 2 hardware sales appear modest. However, since Nintendo's business model is to generate revenue through software rather than hardware, it is more important to focus on the software titles to be announced in the future rather than hardware sales volume. Key franchises to watch: new 3D Mario, Metroid, Pokémon, and entirely new IP that the creative teams have been developing.
+
+H2: StockWaveJP Editorial Perspective
+
+Nintendo's stock has fallen to its lowest level since 2023-2024, creating potential value in the context of the Switch 2 cycle. The stock typically sees meaningful re-rating once the first compelling software titles are announced and pre-order momentum builds. Monitor Nintendo Direct announcement dates and investor events closely, as these are typically significant catalysts for the stock and the broader game & entertainment theme.
+    `},{id:"fujikura-analysis",themes:["Theme Analysis"],keywords:["stock analysis","Japan stocks","investing"],category:"Stock Analysis",icon:"💡",title:"Fujikura (5803) Deep Dive: Optical Fiber and AI Power Cables Driving Rapid Growth",date:"2026/04/11",summary:"Fujikura has become one of Japan's most talked-about growth stocks as AI data center demand drives explosive order growth.",body:`H2: Company Overview
+
+Fujikura Ltd. (5803) is a comprehensive electrical and electronic wire and cable manufacturer that has undergone a remarkable transformation from a traditional industrial company into one of Japan's most talked-about growth stocks. The AI infrastructure boom has fundamentally changed the company's growth trajectory, driving explosive demand for its two core AI-relevant products: optical fiber cables and data center power cables.
+
+H2: The AI Data Center Connection — Two Essential Products
+
+Fujikura supplies two products that are both critical and irreplaceable for AI data center construction:
+
+1. Optical Fiber Cables: Every AI data center requires massive amounts of high-bandwidth, low-latency optical fiber to move data between GPU servers (intra-rack, intra-data-center) and between data centers. A single large-scale AI data center can require millions of meters of optical fiber. Fujikura is one of the world's largest producers of single-mode and multi-mode optical fiber, holding significant market share in the high-performance fiber segments required for AI applications.
+
+2. High-Voltage Power Cables: AI data centers consume enormous amounts of electricity — a large facility may draw 100MW or more, equivalent to a small city. Efficient power transmission from substations to server racks requires specialized high-voltage power cables with advanced thermal management. Fujikura's power cable technology is positioned at exactly this intersection of need.
+
+H2: Order Backlog — The Clearest Indicator of Sustainability
+
+Fujikura's order backlog has surged to multi-year levels, providing exceptional revenue visibility that is unusual for Japanese industrial companies. Major customers include the construction contractors and infrastructure developers working for hyperscalers — Amazon Web Services (AWS), Microsoft Azure, Google Cloud, and Meta — as well as colocation data center operators like Equinix and Digital Realty.
+
+The backlog story is important for investors: it means Fujikura's revenue growth is not dependent on quarterly market sentiment but is contractually committed. This reduces earnings uncertainty significantly compared to most cyclical industrial stocks.
+
+H2: Business Diversification Beyond AI
+
+While AI is the dominant growth driver, Fujikura maintains diversified operations that provide downside protection:
+
+- Automotive wire harnesses: EV adoption increases the electrical content per vehicle, growing Fujikura's addressable market
+- Medical devices: Specialty cables and connectors for medical imaging and minimally invasive surgery
+- Industrial electronics: Specialty cables for factory automation, robotics, and precision instruments
+- 5G infrastructure: Base station connectivity cables continue to generate steady demand
+
+H2: Manufacturing Expansion
+
+Fujikura has announced significant capacity expansion investments in optical fiber manufacturing to meet surging AI-driven demand. These investments involve:
+- Expanding fiber drawing capacity (the bottleneck in optical fiber production)
+- Adding cable assembly capacity at manufacturing facilities
+- Investing in automation to manage quality and labor costs
+
+The capacity expansion investments will suppress near-term free cash flow but are necessary to maintain Fujikura's position as a preferred supplier to major hyperscalers.
+
+H2: Key Risks
+
+1. Hyperscaler capex cycle risk: Major tech companies go through phases of intense investment followed by "digestion" periods where they integrate installed capacity before ordering more. A pause in hyperscaler capex could significantly slow Fujikura's order flow.
+2. Competition: While Fujikura's optical fiber quality is recognized, competitors including Corning (US), Prysmian (Italy), and Chinese producers (YOFC, Hengtong) are all investing in capacity.
+3. Yen appreciation: Fujikura generates significant revenue from export sales denominated in foreign currencies; yen strength reduces yen-denominated revenue.
+4. Raw material costs: Optical fiber requires specialty glass, and power cables require copper — both subject to commodity price volatility.
+
+H2: Valuation Context
+
+Fujikura's stock has re-rated significantly from its pre-AI-boom valuation. The question for investors is whether the current valuation appropriately prices in the multi-year growth opportunity or whether it already reflects several years of growth. The key swing factor is how long the hyperscaler AI infrastructure investment cycle continues — consensus views suggest sustained high spending through at least 2027.
+
+H2: StockWaveJP Editorial Perspective
+
+Fujikura is one of the clearest "AI infrastructure plays" in the Japanese market, alongside Furukawa Electric (5801) and Sumitomo Electric (5802). When hyperscalers announce quarterly capex increases or major data center construction projects, Fujikura's stock and Volume typically respond immediately. Monitor quarterly earnings calls from AWS, Azure, Google, and Meta for forward-looking capex guidance — this is the single most important leading indicator for Fujikura's order trajectory.
     `},{id:"softbank-analysis",themes:["Theme Analysis"],keywords:["stock analysis","Japan stocks","investing"],category:"Stock Analysis",icon:"📱",title:"SoftBank Corp (9434) Deep Dive: Telecom × PayPay × AI Investment Total Digital Enterprise",date:"2026/04/11",summary:"SoftBank Corp is Japan's third-largest telecom operator but has evolved into a comprehensive digital services company.",body:`
 H2: Company Overview
 
@@ -424,66 +483,160 @@ Set loss-cut thresholds before entering positions. A common approach: 10-15% sto
 H2: Editorial Perspective
 
 Check your themes weekly using StockWaveJP. When a theme you hold shows declining Return AND Volume over 2-3 consecutive weeks, it's a signal to review your position.
-    `},{id:"toyota-analysis",themes:["Theme Analysis"],keywords:["stock analysis","Japan stocks","investing"],category:"Stock Analysis",icon:"🚗",title:"Toyota Motor (7203) Deep Dive: EV Strategy, Hybrid Strengths, and 2026 Investment Case",date:"2026/04/05",summary:"Toyota is the world's largest automaker and one of Japan's most important stocks. We analyze its EV transition, financial strength, and 2026 investment case.",body:`
-H2: Company Overview
+    `},{id:"toyota-analysis",themes:["Theme Analysis"],keywords:["stock analysis","Japan stocks","investing"],category:"Stock Analysis",icon:"🚗",title:"Toyota Motor (7203) Deep Dive: EV Strategy, Hybrid Strengths, and 2026 Investment Case",date:"2026/04/05",summary:"Toyota is the world's largest automaker and one of Japan's most important stocks. We analyze its EV transition, financial strength, and 2026 investment case.",body:`H2: Company Overview
 
-Toyota Motor Corporation (7203) is the world's largest automaker by sales volume. It operates across multiple brands (Toyota, Lexus, Hino, Daihatsu) and has a uniquely diversified powertrain strategy spanning hybrids, PHEVs, BEVs, hydrogen fuel cells, and traditional ICE vehicles.
+Toyota Motor Corporation (7203) is the world's largest automaker by sales volume and one of Japan's largest companies by market capitalization. Toyota operates across multiple brands (Toyota, Lexus, Hino, Daihatsu) and has developed what may be the automotive industry's most sophisticated approach to powertrain diversification — maintaining simultaneous capability in hybrid (HV), plug-in hybrid (PHEV), battery electric (BEV), hydrogen fuel cell (FCEV), and traditional internal combustion engine (ICE) vehicles.
 
-H2: Hybrid Strength as a Moat
+H2: The Hybrid Advantage — A Proven Competitive Moat
 
-Toyota's hybrid technology (HV) is arguably its strongest competitive moat. The Prius pioneered modern hybrids in 1997, and Toyota has since sold over 20 million hybrid vehicles globally. In markets where pure EV adoption faces infrastructure challenges, Toyota's hybrid-first strategy is proving correct.
+Toyota's hybrid technology represents arguably its strongest competitive moat. The Prius pioneered modern hybrids in 1997, and Toyota has since sold over 20 million hybrid vehicles globally across all brands. Key competitive advantages:
 
-H2: BEV Transition Progress
+1. Technology lead: Toyota has 25+ years of hybrid system refinement. Its e-THS (Toyota Hybrid System) is widely considered the benchmark for efficiency and reliability.
 
-Toyota has committed to significant acceleration: 10 new BEV models by 2026, significant battery investment, and a 2030 target of 3.5 million BEV sales. The solid-state battery development, if successful, could be transformational.
+2. Manufacturing scale: Toyota produces hybrid components (power control units, motors, battery modules) at massive scale, enabling cost advantages that newer entrants cannot match.
 
-H2: Rising and Falling Factors
+3. Market positioning: In markets where BEV charging infrastructure remains underdeveloped — Southeast Asia, parts of South America, rural America — hybrids represent the most practical and economical path to reduced emissions. Toyota is correctly positioned for these markets.
 
-Rising: Hybrid sales strength globally, Lexus BEV expansion, solid-state battery potential. Falling: BEV transition risk, US-Japan trade tensions (tariff risk), yen appreciation hurting overseas earnings.
+4. Regulatory alignment: Many governments, including Japan and the EU (with synthetic fuels exemptions), are acknowledging that hybrids play an important transitional role in decarbonization. This has reduced the "HV vs. BEV" binary narrative that disadvantaged Toyota's position.
 
-H2: Editorial Perspective
+H2: BEV Transition — Accelerating After a Cautious Start
 
-Toyota is the anchor stock of Japan's automotive theme. When Toyota makes major positive BEV announcements or reports strong quarterly earnings, the entire automotive-adjacent theme tends to rally. Monitor earnings guidance revisions quarterly.
-    `},{id:"sony-analysis",themes:["Theme Analysis"],keywords:["stock analysis","Japan stocks","investing"],category:"Stock Analysis",icon:"🎵",title:"Sony Group (6758) Deep Dive: Gaming, Music, Film, and Sensor Business Analysis",date:"2026/04/05",summary:"Sony has transformed from a consumer electronics company into a diversified entertainment and technology conglomerate. We analyze the unique investment case.",body:`
-H2: Sony's Business Transformation
+Toyota has been criticized for being slower in pure BEV development compared to Tesla and Chinese EV makers. The criticism is not entirely unfair, but the situation has changed significantly:
 
-Sony Group Corporation (6758) has undergone remarkable transformation. From being primarily known as a consumer electronics brand, Sony is now a diversified conglomerate where entertainment (games, music, film) and technology (image sensors) drive the majority of value.
+Toyota has committed to spending ¥5 trillion on BEV-related investments through 2030. Key BEV initiatives include:
+- The bZ series (bZ4X, bZ3 in China, bZ Compact Cruiser)
+- Lexus BEV lineup (RZ, UX 300e) targeting premium segments globally
+- Partnership with Panasonic's Prime Planet Energy & Solutions for battery production
+- Investment in Redwood Materials for battery recycling infrastructure
 
-H2: The PlayStation Ecosystem
+The solid-state battery development (target: prototype in 2027, commercial deployment 2028-2030) is the most significant technology bet. Solid-state batteries promise dramatically higher energy density, faster charging, and improved safety compared to liquid-electrolyte lithium-ion batteries. If Toyota's solid-state program succeeds on its stated timeline, it would be a significant competitive differentiator.
 
-PlayStation is Sony's crown jewel. With over 100 million PS4/PS5 units sold, PlayStation has built one of the world's most valuable gaming platforms. Sony's strategy of building first-party game studios mirrors Netflix's shift to original content.
+H2: Woven City and Smart Mobility
 
-H2: Sony Music and Sony Pictures
+Toyota's Woven City project — a prototype connected city built at the base of Mt. Fuji — represents Toyota's broader vision of mobility as a service. While the financial impact is years away, it signals Toyota's intent to participate in the mobility ecosystem, not just manufacture vehicles.
 
-Sony Music is one of the three major global music labels, generating stable royalty income from an extensive catalog. Sony Pictures has valuable IP including Spider-Man (Marvel licensing).
+H2: Financial Strength and Shareholder Returns
 
-H2: Image Sensor Dominance
+Toyota has an extraordinarily strong balance sheet. Toyota Financial Services (the captive financing arm) generates stable income independent of vehicle sales cycles. Toyota has been increasing dividends and conducting significant share buybacks, reflecting management's commitment to shareholder returns.
 
-Sony Semiconductor Solutions is the global leader in CMOS image sensors, supplying the sensors used in most smartphones (including Apple iPhone) and increasingly in automotive cameras.
+The global operations structure means Toyota is exposed to significant yen/dollar translation effects — yen weakness has been a significant tailwind for earnings in recent years, while yen strengthening would represent a notable headwind.
 
-H2: Editorial Perspective
+H2: Key Risks
 
-Sony is a unique "conglomerate discount" story — each division is worth more than the whole in many analyses. Catalysts include PlayStation active user growth announcements, major game franchise announcements, and new automotive sensor design wins.
-    `},{id:"mitsubishi-ufj-analysis",themes:["Theme Analysis"],keywords:["stock analysis","Japan stocks","investing"],category:"Stock Analysis",icon:"🏦",title:"Mitsubishi UFJ Financial Group (8306) Deep Dive: The Leading Megabank in a Rising Rate Era",date:"2026/04/05",summary:"MUFG is Japan's largest bank and one of the world's largest financial institutions. We analyze how interest rate normalization is transforming its earnings power.",body:`
-H2: Company Overview
+1. US tariff risk: Toyota is the largest Japanese automaker by US sales, and any significant tariff on Japanese vehicles would directly impact profitability.
+2. BEV transition execution risk: If competitor BEV technology (particularly Chinese EVs) improves faster than expected, Toyota's market position in key segments could be challenged.
+3. Quality incidents: The scale of Toyota's global operations means that quality issues, when they occur, can involve large-scale recalls with significant financial and reputational impact.
 
-Mitsubishi UFJ Financial Group (8306), commonly known as MUFG, is Japan's largest and the world's fourth-largest bank by assets. It operates through retail banking, trust banking, securities, and international operations in over 40 countries.
+H2: StockWaveJP Editorial Perspective
 
-H2: Interest Rate Normalization Impact
+Toyota is the anchor stock of Japan's automotive theme. Its stock price has strong correlation with USD/JPY movements (yen weakness = higher earnings in yen terms) and with global automotive demand trends. When Toyota guides earnings higher or announces major BEV investment milestones, the entire automotive-adjacent theme tends to rally. Monitor quarterly earnings guidance revisions carefully — Toyota's guidance is notoriously conservative, and upgrades drive significant stock appreciation.
+    `},{id:"sony-analysis",themes:["Theme Analysis"],keywords:["stock analysis","Japan stocks","investing"],category:"Stock Analysis",icon:"🎵",title:"Sony Group (6758) Deep Dive: Gaming, Music, Film, and Sensor Business Analysis",date:"2026/04/05",summary:"Sony has transformed from a consumer electronics company into a diversified entertainment and technology conglomerate. We analyze the unique investment case.",body:`H2: Company Overview
 
-MUFG's earnings are highly sensitive to interest rate levels. The Bank of Japan's exit from negative interest rate policy in 2024 and subsequent rate normalization has dramatically improved MUFG's net interest margin. Each 25 basis point rate increase adds approximately ¥100-200 billion to MUFG's annual net interest income.
+Sony Group Corporation (6758) has undergone one of the most remarkable corporate transformations in Japanese business history. From being primarily known as a consumer electronics manufacturer (Walkman, Trinitron TVs, PlayStation hardware), Sony has evolved into a global entertainment, technology, and financial services conglomerate where the gaming, music, film, and image sensor businesses collectively drive the vast majority of enterprise value.
 
-H2: Morgan Stanley Partnership
+H2: PlayStation — The Crown Jewel
 
-MUFG's approximately 23% stake in Morgan Stanley provides exposure to US investment banking cycles without the full capital requirements of operating an investment bank independently.
+PlayStation is arguably Sony's most valuable business, consistently generating the highest operating margins and the most strategic importance within the group.
 
-H2: Rising and Falling Factors
+PlayStation 5 has achieved strong adoption, with cumulative sales exceeding 60 million units. More importantly, Sony's strategy of building first-party game studios has fundamentally changed the PlayStation value proposition:
 
-Rising: Bank of Japan interest rate normalization, international business growth, Morgan Stanley earnings contribution. Falling: Global economic recession risks, yen appreciation reducing overseas earnings.
+Key studio acquisitions include Bungie (Destiny franchise), Insomniac Games (Spider-Man, Ratchet & Clank), Naughty Dog (The Last of Us, Uncharted), Guerrilla Games (Horizon), and Santa Monica Studio (God of War). These studios produce exclusive titles that cannot be played anywhere other than PlayStation, creating a differentiated content library similar to Netflix's original programming strategy.
 
-H2: Editorial Perspective
+PlayStation Plus subscription service provides recurring monthly revenue that reduces Sony's dependence on cyclical hardware and software release timing. With tens of millions of active subscribers, this represents a significant annuity revenue stream.
 
-MUFG is the most liquid and widely-held exposure to Japan's interest rate normalization story. When the Bank of Japan signals rate hikes, MUFG's stock typically sees very large Volume spikes.
+The emergence of live service games (multiplayer games where players spend money on in-game items continuously) is an area of strategic focus — successful live service titles can generate revenue for years after launch with minimal incremental development cost.
+
+H2: Sony Music — The Invisible Giant
+
+Sony Music Entertainment (SME) is the world's second-largest music company, managing an extraordinarily valuable catalog that spans every decade of recorded music. Key assets include:
+
+- Streaming royalties: As Spotify, Apple Music, YouTube, and other platforms have grown, Sony Music's catalog generates growing royalty income on music that was recorded decades ago
+- K-Pop: Through HYBE (BTS management company) investment and SM Entertainment, Sony has significant exposure to the global K-Pop phenomenon
+- Publishing: Sony Music Publishing holds rights to songwriting catalogs, providing income separate from the recordings
+- New artist development: Consistent pipeline of new artists across pop, hip-hop, R&B, Latin, and other genres
+
+Music streaming has fundamentally changed the economics of the music industry — from a hit-or-miss album cycle business to a stable, growing royalty annuity. Sony Music is a primary beneficiary of this transformation.
+
+H2: Sony Pictures and the Spider-Man Franchise
+
+Sony Pictures Entertainment is smaller than major studio competitors but holds exceptionally valuable IP:
+
+The Marvel relationship — specifically the Spider-Man licensing agreement with Disney/Marvel — represents one of the most valuable IP arrangements in entertainment. Sony retains theatrical distribution rights to Spider-Man films, which generate not only box office revenue but also licensing income across toys, video games, theme parks, and merchandise.
+
+Anime: Sony's ownership of Crunchyroll (acquired for $1.175 billion from AT&T) positions it as the global leader in anime streaming, with over 10 million paying subscribers and growing rapidly.
+
+H2: Image Sensors — The Essential Technology Inside Every Camera
+
+Sony Semiconductor Solutions (SSS) is the global leader in CMOS image sensors, holding approximately 45-50% market share in the sensors used in smartphones, including a dominant position in Apple iPhone sensors.
+
+The automotive camera opportunity is equally important. Modern vehicles require multiple cameras for lane departure warning, automatic emergency braking, parking assistance, and eventually autonomous driving. Each camera requires an image sensor. As vehicles transition from 4-8 cameras today toward 20+ cameras in autonomous vehicles, Sony's addressable market expands dramatically.
+
+AI-enhanced imaging — where image processing chips perform AI inference in real-time at the sensor level — is an emerging product category where Sony is investing heavily.
+
+H2: Financial Services
+
+Sony Financial Group, including Sony Life Insurance and Sony Bank, provides an additional earnings stream that is largely uncorrelated with the entertainment businesses. This diversification provides some downside protection during cyclical entertainment downturns.
+
+H2: Key Risks
+
+1. Microsoft Gaming: The Xbox Game Pass subscription model and Microsoft's acquisition of Activision Blizzard have strengthened PlayStation's primary competitor significantly.
+2. Streaming competition: Increasing competition for subscribers among Netflix, Disney+, Amazon Prime, and Apple TV+ could reduce Sony Pictures' content licensing power.
+3. Image sensor concentration: Heavy dependence on Apple as a customer creates single-customer concentration risk.
+4. Yen appreciation: Sony generates substantial overseas revenue; strong yen reduces yen-denominated earnings.
+
+H2: StockWaveJP Editorial Perspective
+
+Sony is a unique "conglomerate discount" story where each division would command premium valuations as a standalone business, but the combined entity trades at a discount to the sum of parts. The most powerful catalysts are PlayStation active user and engagement metrics (released quarterly), major game or film franchise announcements, and new automotive sensor design wins. The stock tends to be highly correlated with the broader game & entertainment theme.
+    `},{id:"mitsubishi-ufj-analysis",themes:["Theme Analysis"],keywords:["stock analysis","Japan stocks","investing"],category:"Stock Analysis",icon:"🏦",title:"Mitsubishi UFJ Financial Group (8306) Deep Dive: The Leading Megabank in a Rising Rate Era",date:"2026/04/05",summary:"MUFG is Japan's largest bank and one of the world's largest financial institutions. We analyze how interest rate normalization is transforming its earnings power.",body:`H2: Company Overview
+
+Mitsubishi UFJ Financial Group (MUFG, 8306) is Japan's largest financial institution and one of the five largest banks in the world by total assets. MUFG operates through four primary business segments: Retail Banking (Bank of Tokyo-Mitsubishi UFJ domestic operations), Corporate Banking (large Japanese and multinational corporate clients), Trust Banking (Mitsubishi UFJ Trust and Banking), and International Business (operations in over 50 countries).
+
+H2: The Interest Rate Normalization Story — The Core Investment Thesis
+
+For over two decades, Japan's banking sector operated in an extraordinarily challenging environment — the Bank of Japan maintained negative interest rates from 2016 to 2024, compressing bank net interest margins (NIMs) to near zero. This created a structural headwind that suppressed banking sector profitability for a generation.
+
+The fundamental change began in March 2024 when the Bank of Japan exited negative interest rate policy, and subsequent rate increases have been a transformational positive for MUFG's earnings. The mechanics are straightforward:
+
+Net Interest Margin Expansion: MUFG holds approximately ¥100+ trillion in deposits. When overnight rates rise from -0.1% to 0.25% to 0.5%, the interest earned on loans and government bond holdings rises while deposit rates increase only marginally. Each 25 basis point rate increase is estimated to add approximately ¥100-200 billion to MUFG's annual net interest income. If Japan's short-term rates normalize toward 1-1.5%, the cumulative NIM expansion represents a transformational earnings uplift — potentially the largest earnings catalyst in the bank's modern history.
+
+H2: Morgan Stanley Partnership — A Unique Global Banking Asset
+
+MUFG's approximately 23.4% stake in Morgan Stanley is one of the most strategically valuable relationships in global banking. This partnership, forged during the 2008 Global Financial Crisis, provides MUFG with:
+
+1. Access to global investment banking deal flow and client relationships
+2. Exposure to US capital markets without the full regulatory capital requirements of operating an independent investment bank
+3. Dividend income and capital appreciation from the Morgan Stanley stake
+4. Strategic collaboration across global M&A, equity underwriting, and structured products
+
+Morgan Stanley's performance has been exceptional in recent years, contributing meaningful earnings to MUFG. This position differentiates MUFG from its megabank peers (Sumitomo Mitsui FG and Mizuho FG) who have less significant international investment banking exposure.
+
+H2: Asian Growth Platform
+
+MUFG has built extensive operations across Southeast Asia, holding significant stakes in regional banking institutions:
+- Bank of Ayudhya (Thailand) — 76.88% stake, one of Thailand's largest banks
+- Security Bank (Philippines) — significant minority stake
+- Danamon Bank (Indonesia) — majority stake following recent acquisition
+- VietinBank (Vietnam) — significant minority stake
+
+Southeast Asia's growing middle class, rising financial inclusion, and increasing corporate banking needs represent a compelling long-term growth platform that is separate from the Japan domestic interest rate story.
+
+H2: Corporate Governance and Shareholder Returns
+
+MUFG has been one of the more proactive megabanks in responding to the TSE's push for improved capital efficiency. Key shareholder return initiatives:
+- Progressive dividend growth: MUFG has committed to consistent dividend increases
+- Share buybacks: MUFG has conducted multiple large buyback programs, reducing share count and increasing per-share value
+- Cross-shareholding reduction: MUFG has been systematically unwinding strategic equity holdings, freeing capital for more productive uses
+
+H2: Key Risks
+
+1. Credit quality: If Japan's economy deteriorates, non-performing loan ratios could increase, requiring additional provisions.
+2. Yen appreciation: MUFG generates significant overseas earnings; strong yen reduces yen-denominated profits.
+3. Digital disruption: Fintech companies and neobanks are competing for retail banking customers, particularly among younger demographics.
+4. Rate cycle: If the Bank of Japan pauses or reverses rate normalization due to economic weakness, the core NIM expansion thesis would be delayed.
+
+H2: StockWaveJP Editorial Perspective
+
+MUFG is the most liquid and widely-held exposure to Japan's interest rate normalization story. When the Bank of Japan signals rate hikes or raises rates unexpectedly, MUFG's stock typically sees very large Volume spikes as institutional investors rapidly increase their banking sector allocation. The stock is best monitored around Bank of Japan policy decision meetings, which occur approximately every 6-8 weeks. MUFG's stock also serves as an excellent market sentiment indicator — strong MUFG volume often precedes broader financial theme moves.
     `},{id:"renewable-energy-theme",themes:["Theme Analysis"],keywords:["theme analysis","Japan stocks","investing"],category:"Theme Analysis",icon:"🌞",title:"Renewable Energy Theme Deep Dive: Long-Term Growth and Key Stocks from Decarbonization Policy",date:"2026/04/04",summary:"Japan's decarbonization commitment is driving massive investment in renewable energy. We analyze solar, wind, and grid storage opportunities and key stocks.",body:`
 H2: Japan's Renewable Energy Target
 
@@ -524,26 +677,56 @@ Nintendo (7974), Sony Group (6758), Bandai Namco Holdings (7832), Capcom (9697),
 H2: Editorial Perspective
 
 This theme is highly correlated with Nintendo's product cycle. Monitor Nintendo Direct announcements for major game reveals — these consistently cause Volume surges not just in Nintendo but across the entire gaming theme.
-    `},{id:"banking-finance-theme",themes:["Theme Analysis"],keywords:["theme analysis","Japan stocks","investing"],category:"Theme Analysis",icon:"🏦",title:"Banking & Finance Theme Deep Dive: Background, Current State, and Key Stocks",date:"2026/04/04",summary:"Japan's banking sector is experiencing a structural transformation as interest rates rise from zero. We analyze the impact of rate normalization on banking stocks.",body:`
-H2: The Interest Rate Environment Change
+    `},{id:"banking-finance-theme",themes:["Theme Analysis"],keywords:["theme analysis","Japan stocks","investing"],category:"Theme Analysis",icon:"🏦",title:"Banking & Finance Theme Deep Dive: Background, Current State, and Key Stocks",date:"2026/04/04",summary:"Japan's banking sector is experiencing a structural transformation as interest rates rise from zero. We analyze the impact of rate normalization on banking stocks.",body:`H2: The Interest Rate Normalization — A Structural Shift After 30 Years
 
-Japan's banking sector endured over two decades of ultra-low and negative interest rates. The normalization of interest rates, beginning with the removal of negative rates in 2024, represents a structural positive for bank earnings.
+Japan's banking sector endured one of the longest periods of ultra-low interest rates in modern financial history. The Bank of Japan maintained near-zero policy rates from the late 1990s through 2024, with a brief experiment in negative interest rates from 2016 to 2024. This environment fundamentally compressed bank profitability — the core "borrow short, lend long" business model generates minimal spread when overnight rates are at or below zero.
 
-H2: Net Interest Margin Expansion
+The normalization of interest rates that began in 2024 represents a structural shift, not merely a cyclical change. The Bank of Japan's assessment that Japan has finally achieved sustainable inflation around its 2% target — the first time in three decades — is the foundation for this policy change. The implications for bank earnings are profound and long-lasting.
 
-Banks profit from the spread between lending rates and deposit rates. When interest rates rise from near-zero, this spread widens significantly. Japan's major banks are seeing meaningful earnings improvement from rate normalization.
+H2: How Rising Rates Transform Bank Earnings
 
-H2: Rising and Falling Factors
+Net Interest Margin (NIM) is the primary driver of Japanese bank profitability. NIM = (interest rate on loans and investments) - (interest rate paid on deposits and borrowings).
 
-Rising: Bank of Japan interest rate normalization, loan demand recovery, investment banking fee recovery, international business growth, shareholder return improvements. Falling: Economic recession risks, credit quality deterioration, digital disruption from fintech.
+When overnight rates were at -0.1%, Japanese banks could not earn meaningful spreads. With rates at 0.5% and expected to rise toward 1-1.5%, the dynamics change dramatically:
 
-H2: Key Stocks
+Example calculation for MUFG (simplified):
+- Total assets approximately ¥400 trillion
+- A 50bp rate increase, with 60% passing through to earning assets = ¥400T × 0.6 × 0.5% = ¥1.2 trillion increase in annual interest income
+- Deposit rate increases absorb perhaps 30% of this
+- Net NIM expansion: approximately ¥840 billion incremental annual profit before tax
 
-Mitsubishi UFJ Financial Group (8306), Sumitomo Mitsui Financial Group (8316), and Mizuho Financial Group (8411) are the megabanks.
+This is why the Bank of Japan's rate decisions have such an outsized impact on Japanese bank stocks — each rate decision represents potential hundreds of billions of yen in earnings impact for the three megabanks combined.
 
-H2: Editorial Perspective
+H2: The Three Megabanks — Comparing the Investment Cases
 
-The banking theme is the most direct play on Japan's interest rate normalization story. When the Bank of Japan signals rate hikes, Volume in banking stocks surges significantly. This theme is best entered on policy announcement days.
+MUFG (8306) — The largest, with the most global exposure via its Morgan Stanley stake and Asian banking network. Best positioned to benefit from international rate normalization (both Japan and US rates rising). Morgan Stanley's investment banking revenue adds diversification.
+
+SMFG (8316) — Strong domestic corporate banking franchise. Known for conservative management and consistent shareholder returns. The Sumitomo Group industrial connections provide deep corporate client relationships.
+
+Mizuho FG (8411) — Has undergone significant restructuring and management changes. IT modernization project (one of Japan's largest IT investments) should improve operational efficiency but has been a cost burden. Best positioned for domestic economic recovery.
+
+H2: Regional Banks — Higher Beta, More Structural Risk
+
+Japan's 100+ regional banks face a more complex picture. While they benefit from rate normalization (their business is simpler — take deposits, make loans, earn the spread), they also face:
+
+1. Demographic decline: Japan's rural and non-metropolitan populations are shrinking, reducing the deposit base and loan demand
+2. SME credit quality: Regional banks are heavily exposed to small and medium enterprises (SMEs), which face pressure from wage increases and energy costs
+3. Consolidation pressure: Regulatory encouragement for mergers among regional banks — those that merge can achieve cost synergies
+
+SBI Holdings has been actively encouraging regional bank mergers through its "SBI Neo Financial Services" initiative, creating M&A activity in the sector.
+
+H2: Key Monitoring Metrics
+
+Investors in Japanese banking stocks should monitor:
+1. Bank of Japan policy meetings and Governor Ueda's forward guidance statements
+2. Japan CPI (Consumer Price Index) data — higher inflation supports further rate hikes
+3. USD/JPY exchange rate — megabank overseas earnings are affected by yen movements
+4. Non-performing loan (NPL) ratios — credit quality is the key risk
+5. Dividend announcements and buyback programs — capital return is a significant driver of total return
+
+H2: StockWaveJP Editorial Perspective
+
+The banking-finance theme is the most direct expression of Japan's interest rate normalization investment thesis in the equity market. On Bank of Japan policy meeting days (approximately every 6-8 weeks), banking stocks see their highest Volume of the year. Entering positions shortly before Bank of Japan meetings (when rate hike expectations are high) and monitoring Volume for confirmation is a practical approach. The banking theme tends to outperform in environments where Japanese inflation data surprises to the upside.
     `},{id:"regional-bank-theme",themes:["Theme Analysis"],keywords:["theme analysis","Japan stocks","investing"],category:"Theme Analysis",icon:"🏘️",title:"Regional Bank Theme Deep Dive: Background, Current State, and Key Stocks",date:"2026/04/04",summary:"Japan's 100+ regional banks face structural challenges from population decline while benefiting from interest rate normalization.",body:`
 H2: Overview
 
@@ -1088,26 +1271,61 @@ Mitsubishi Heavy Industries (7011), IHI Corporation (7013), NEC Corporation (670
 H2: Investment Considerations
 
 The defense-space theme has longer investment cycles than most themes — government contracts take years from announcement to revenue recognition. Monitor contract announcements, budget allocation news, and successful test launches as catalysts.
-    `},{id:"optical-communication",themes:["Theme Analysis"],keywords:["theme analysis","Japan stocks","investing"],category:"Theme Analysis",icon:"💡",title:"Optical Communication Theme: Structural Growth from AI and Data Center Demand Surge",date:"2026/03/23",summary:"The AI boom is driving unprecedented demand for optical fiber and optical components. Japanese companies in this space are among the biggest beneficiaries.",body:`
-H2: Overview
+    `},{id:"optical-communication",themes:["Theme Analysis"],keywords:["theme analysis","Japan stocks","investing"],category:"Theme Analysis",icon:"💡",title:"Optical Communication Theme: Structural Growth from AI and Data Center Demand Surge",date:"2026/03/23",summary:"The AI boom is driving unprecedented demand for optical fiber and optical components. Japanese companies in this space are among the biggest beneficiaries.",body:`H2: Overview of the Optical Communication Theme
 
-The optical communication theme covers optical fiber cables, optical transceivers, optical amplifiers, and related networking equipment. AI infrastructure development is driving massive demand for high-capacity, low-latency data transmission.
+The optical communication theme covers optical fiber cables, optical transceivers, wavelength division multiplexers, erbium-doped fiber amplifiers, and related networking components and equipment. The AI infrastructure development supercycle is driving unprecedented demand for high-capacity, low-latency optical data transmission, making optical communication one of the most direct and clearly-benefiting themes from the AI revolution.
 
-H2: Why AI Drives Optical Communication Demand
+H2: Why AI Demands Extraordinary Bandwidth
 
-Training and running large AI models requires moving enormous amounts of data between servers within and between data centers. Optical communication is the only technology that can move data at the speeds and volumes required.
+Understanding why AI drives optical communication demand requires understanding how AI training and inference actually work. Training a large language model like GPT-4 or Claude involves:
 
-H2: Japanese Leaders
+1. Moving training data (text, images, video) from storage to GPU memory — requiring fast, high-bandwidth storage connections
+2. Communicating gradients between thousands of GPU nodes during the backward pass of training — requiring extremely low-latency, high-bandwidth intra-data-center connections
+3. Storing and serving model weights for inference — requiring fast memory interconnects and SSD storage
 
-Fujikura (5803) and Furukawa Electric (5801) are among the world's largest optical fiber cable manufacturers. Sumitomo Electric Industries (5802) is another major player.
+Each new generation of AI models is larger and requires more computational resources. The scaling laws that have governed AI progress suggest this trend will continue. NVIDIA's DGX SuperPOD, Google's TPU Pods, and similar AI supercomputers require optical interconnects that can move data at hundreds of terabits per second within a single facility.
 
-H2: Rising and Falling Factors
+H2: Japan's Leadership — Fujikura and Furukawa Electric
 
-Rising: AI data center construction boom, 5G network buildout, undersea cable projects, upgrade from 400G to 800G/1.6T transceivers. Falling: Hyperscaler capex cycles, competition from new entrants.
+Japan has two global leaders in optical fiber cable manufacturing:
 
-H2: Editorial Perspective
+Fujikura (5803): One of the world's top 3 optical fiber cable manufacturers. Has reported extraordinary order backlog growth driven by AI data center demand. Fujikura's specialty is high-density, space-saving fiber designs that allow data centers to maximize their connectivity capacity per physical space.
 
-The optical communication theme has one of the clearest fundamental stories in Japan equities — AI demand → data center construction → optical fiber demand. Monitor quarterly capex announcements from major hyperscalers as leading indicators.
+Furukawa Electric (5801): The other Japanese global leader. In addition to optical fiber, Furukawa manufactures submarine power cables for offshore wind farms and power transmission lines — giving it diversified infrastructure exposure beyond the AI data center theme.
+
+Sumitomo Electric Industries (5802): Also a major optical fiber producer, with additional exposure to automotive wire harnesses and power cables.
+
+H2: The Generational Upgrade Cycle — From 400G to 800G to 1.6T
+
+Data center networking is undergoing a rapid generational upgrade:
+- Current generation: 400G transceivers (400 Gigabits per second per fiber)
+- Emerging: 800G transceivers (doubling bandwidth)
+- Near future: 1.6T transceivers (quadrupling from 400G)
+
+Each generational upgrade requires not just new transceivers but also upgraded fiber infrastructure, creating replacement demand even at data centers that were built just a few years ago. This "rip and replace" dynamic extends the duration of the upgrade cycle.
+
+H2: Undersea Cables — A Strategic Investment
+
+The global internet runs on a network of undersea fiber optic cables that cross every ocean. The AI era is driving a new wave of undersea cable investment as data volumes between regions surge. Japan's geographic position in the Pacific makes it a critical hub for transpacific and intra-Asian undersea cables.
+
+H2: The Competitive Landscape
+
+The global optical fiber market is an oligopoly with high barriers to entry:
+- Corning (US): The largest global producer
+- Prysmian (Italy): The European leader with extensive undersea cable capability
+- YOFC and Hengtong (China): Large and growing, but primarily serving domestic markets and facing increasing export restrictions
+
+Japanese producers — Fujikura, Furukawa, and Sumitomo — collectively hold significant global market share and benefit from Japan's reputation for precision manufacturing.
+
+H2: Key Risks
+
+1. Hyperscaler capex cycle: Investment phases at major cloud providers are followed by "digestion" periods. A pause would significantly slow optical fiber orders.
+2. Chinese competition: Chinese optical fiber producers have been expanding aggressively and may gain market share in markets outside of Japan and the US.
+3. Technology substitution: While optical fiber has fundamental physical advantages for high-bandwidth transmission, co-packaged optics and other emerging technologies could change the competitive landscape.
+
+H2: StockWaveJP Editorial Perspective
+
+The optical communication theme has one of the clearest fundamental stories in Japan equities: AI demand → data center construction → optical fiber cables. Monitor quarterly capex announcements from AWS, Azure, Google Cloud, and Meta as the primary leading indicator. When hyperscaler capex guidance is raised, Fujikura and Furukawa Electric typically see immediate Volume spikes as institutional investors react.
     `},{id:"national-resilience",themes:["Theme Analysis"],keywords:["theme analysis","Japan stocks","investing"],category:"Theme Analysis",icon:"🏗️",title:"National Resilience Plan: Long-Term Growth from Government Infrastructure Investment",date:"2026/03/22",summary:"Japan's National Resilience Plan allocates trillions of yen to infrastructure investment over multiple years. We analyze the construction and civil engineering stocks that benefit.",body:`
 H2: Overview
 
@@ -1148,38 +1366,47 @@ An upward reversal occurs when a previously declining theme begins showing impro
 H2: Practical Application
 
 Check StockWaveJP's momentum data weekly. Create a watchlist of acceleration themes and monitor them for optimal entry timing on pullbacks. Exit fading themes systematically rather than waiting for reversal confirmation.
-    `},{id:"theme-investing-basics",themes:["Theme List"],keywords:["theme stocks","investing","basics","beginner"],category:"Basics",icon:"📘",title:"What is Theme Investing? How It Differs from Individual Stocks and Index Funds",date:"2026/03/20",summary:'You may have heard news like "semiconductor stocks surge" or "capital floods into AI stocks." This article explains theme investing from the ground up, covering benefits and risks.',body:`
-H2: What is Theme Investing?
+    `},{id:"theme-investing-basics",themes:["Theme List"],keywords:["theme stocks","investing","basics","beginner"],category:"Basics",icon:"📘",title:"What is Theme Investing? How It Differs from Individual Stocks and Index Funds",date:"2026/03/20",summary:'You may have heard news like "semiconductor stocks surge" or "capital floods into AI stocks." This article explains theme investing from the ground up, covering benefits and risks.',body:`H2: What is Theme Investing?
 
-Theme investing groups multiple stocks related to a social trend, technological innovation, or policy change — such as "semiconductors," "AI & cloud," "defense & space," or "inbound tourism" — as a "theme," and analyzes and invests in that theme's overall movement. The goal is to understand the flow of capital across the entire market that is hard to see from individual stock analysis alone.
+Theme investing is an approach where multiple stocks related to a social trend, technological innovation, or policy change — such as "semiconductors," "AI & cloud," "defense & space," or "inbound consumption" — are grouped together as a "theme," and the overall movement of that theme is analyzed and invested in.
 
-For example, with the "semiconductor" theme, by viewing equipment makers, materials companies, design firms, and testing equipment makers as a group, you can grasp the momentum of the entire semiconductor industry at a glance. Even if one company is performing exceptionally well, if the broader industry is in a slump, questions about sustainability remain.
+For example, with the "semiconductor" theme, by viewing semiconductor equipment makers, materials companies, design firms, and testing equipment makers as a group, you can grasp the momentum of the entire semiconductor industry at a glance. Even if one individual company is performing exceptionally well, if the entire industry is in a slump, questions about sustainability remain. Conversely, if the entire theme is thriving, even slightly lagging individual stocks may catch up.
 
 H2: Differences from Individual Stock Investing
 
-The biggest difference from individual stock investing is the breadth of perspective. Individual stock investing involves deeply analyzing one company's earnings, financials, management, and competitive environment. While this allows for highly accurate decisions, it is time-consuming and carries the risk of significant losses from a single company's problems.
+The biggest difference from individual stock investing is the "breadth of perspective." Individual stock investing involves deeply analyzing one company's earnings, financial condition, management, and competitive environment before making a purchase decision. While this allows for highly accurate investment decisions, it is time-consuming, and there is a risk of significant losses due to a single company's problems (misconduct, earnings deterioration).
 
-Theme investing looks at which direction an entire industry is heading and where capital is concentrating. By grasping the big trend that "capital is currently concentrating in semiconductor-related stocks," you can apply this insight to individual stock selection within that theme.
-
-H2: Differences from Index Investing
-
-Index investing (Nikkei 225, TOPIX, S&P 500) invests in the entire market, getting market-average returns. Theme investing focuses on "specific high-growth areas," aiming for above-market returns. On the other hand, the risk increases if that area underperforms the market average.
+Theme investing looks at which direction an entire industry is heading and where capital is concentrating. By grasping the big trend that "capital is currently concentrating in semiconductor-related stocks," you can apply this to individual stock selection within that theme. A risk diversification effect across the entire theme can also be expected.
 
 H2: Understanding the Theme Stock Cycle
 
-Theme stocks have a unique cycle: early attention (catalyst emerges) → heating phase (capital concentration, rapid rise) → cooling phase (catalysts exhausted) → re-evaluation phase (earnings confirmation). The heating phase is triggered by policy announcements, technological innovations, or global events. For example: "ChatGPT launch → AI & cloud theme surges" or "defense spending increase → defense theme surges."
+Theme stocks have a unique cycle: early attention (catalyst emerges) → heating phase (capital concentration, rapid rise) → cooling phase (catalysts exhausted) → re-evaluation phase (earnings confirmation). Understanding this cycle is crucial.
+
+The early attention phase is triggered by policy announcements, technological innovations, global events. For example, "ChatGPT launch → AI & cloud theme surges" or "defense spending increase decision → defense theme surges."
+
+In the heating phase, many investors pay attention, and stock prices rise on "expectations" even without accompanying earnings. A rapid increase in volume and trade value is characteristic.
+
+In the cooling phase, stock prices cannot be sustained by expectations alone, and profit-taking increases. The theme is not over, but the question becomes whether earnings can support the stock price.
 
 H2: Risks of Theme Investing
 
-The biggest risk is stock prices rising on theme expectations alone and then crashing without accompanying earnings. Particularly if you jump in during the heating phase, there is a risk of buying at peak prices. Diversification across multiple themes, setting loss-cut rules, and holding with a long-term perspective are important.
+The biggest risk is "cases where stock prices rise on theme expectations alone and then crash without accompanying earnings." Particularly if you jump in during the heating phase, there is a risk of buying at peak prices. Also, the pace at which themes change is fast, and last year's popular theme may become unpopular this year.
+
+Diversification across multiple themes, setting loss-cut rules, and holding with a long-term perspective are important. StockWaveJP allows you to use a combination of four indicators — Return, Volume, Trade Value, and Momentum — to help judge when a theme is at its peak and when it is declining.
 
 H2: Practical Steps to Start Theme Investing
 
-Start by selecting 1-2 themes you can be genuinely interested in. Develop a habit of reading news related to those themes. Then use StockWaveJP to check the theme's Return and Volume weekly — about once a week is sufficient to start building good habits.
+To start theme investing, the first thing you should do is "select 1-2 themes that you can be interested in." Investing in themes you're not interested in makes it difficult to continuously gather information, and it won't last long.
 
-H2: Using StockWaveJP
+Next, develop a habit of consciously reading news related to that theme. Just by following keywords like "semiconductor," "AI," or "defense" on economic media such as Nikkei, Reuters, and Bloomberg, relevant theme information will naturally accumulate.
 
-StockWaveJP's Theme List shows all 67 themes ranked by Return for your selected period. Start by identifying themes with positive Return across multiple periods (1M, 3M, 6M). Then check Volume and Trade Value — themes where all three indicators are positive represent the strongest investment candidates.
+Then, using tools like StockWaveJP to regularly check (about once a week) how the theme's Return and Volume are actually moving is the first step to success in theme investing.
+
+H2: Using StockWaveJP for Theme Investing
+
+StockWaveJP's Theme List allows you to view Return, Volume, and Trade Value for all 67 themes at a glance, helping you grasp the relative strength between themes. A theme that ranks high in Return while also seeing increasing Volume is most likely experiencing a genuine inflow of capital and deserves the most attention.
+
+On the Theme Heatmap page, you can intuitively grasp by color how each theme has performed over different periods (1 week, 1 month, 3 months, 6 months, 1 year). A "short-term rising, long-term falling" pattern can be interpreted as a reversal signal from a bottom zone; "short-term falling, long-term rising" can be interpreted as a correction sign in a high-price zone.
     `},{id:"shipbuilding-theme",themes:["Theme Analysis"],keywords:["theme analysis","Japan stocks","investing"],category:"Theme Analysis",icon:"🚢",title:"Shipbuilding Theme Deep Dive: Japan's Shipbuilding Revival and Key Stocks",date:"2026/03/19",summary:"Global ship demand is surging. Japan's shipbuilding industry is experiencing a structural renaissance driven by fleet renewal, LNG carriers, and defense orders.",body:`
 H2: Overview
 
@@ -1200,28 +1427,47 @@ Mitsui E&S Holdings (7003), Kawasaki Heavy Industries (7012) maritime division, 
 H2: Editorial Perspective
 
 The current upturn is driven by genuine order backlogs, not speculation, which suggests better sustainability than typical cyclical bounces. Monitor order announcements and steel price trends as key leading indicators.
-    `},{id:"semiconductor-theme",themes:["Theme Analysis"],keywords:["semiconductor","AI","chip","Japan stocks"],category:"Theme Analysis",icon:"⚡",title:"Semiconductor Theme Deep Dive: Structural Growth Driven by AI Demand and Key Stocks",date:"2026/03/18",summary:"The semiconductor theme is one of the most important investment themes for Japan equities. We analyze the AI demand driving structural growth, key stocks, and investment timing.",body:`
-H2: Overview of the Semiconductor Theme
+    `},{id:"semiconductor-theme",themes:["Theme Analysis"],keywords:["semiconductor","AI","chip","Japan stocks"],category:"Theme Analysis",icon:"⚡",title:"Semiconductor Theme Deep Dive: Structural Growth Driven by AI Demand and Key Stocks",date:"2026/03/18",summary:"The semiconductor theme is one of the most important investment themes for Japan equities. We analyze the AI demand driving structural growth, key stocks, and investment timing.",body:`H2: Overview of the Semiconductor Theme
 
-The semiconductor theme covers stocks related to manufacturing equipment, materials, memory, power semiconductors, and next-generation chips. In Japan, world-class companies are concentrated in manufacturing equipment and materials — a major competitive advantage.
+The semiconductor theme covers stocks related to semiconductor manufacturing equipment, materials, memory, power semiconductors, and next-generation chips. In Japan, world-class companies are concentrated in manufacturing equipment and materials — a major competitive advantage for Japan's equity market.
 
-H2: Background and Current Situation
+Japan's semiconductor equipment sector commands roughly 30% of global market share. Tokyo Electron (TEL) dominates in coaters/developers and etching equipment. Lasertec holds a near-monopoly in EUV mask blank inspection equipment essential for the most advanced chips. Advantest is the global leader in semiconductor test equipment. These companies collectively form the backbone of the global semiconductor supply chain.
 
-Semiconductor demand surged with the global AI investment boom triggered by ChatGPT's release in 2022. Data centers require massive amounts of high-end chips, and the manufacturing equipment and materials needed to produce them are in high demand. Japanese companies like Tokyo Electron and Shin-Etsu Chemical are at the forefront.
+H2: The AI Supercycle Driving Demand
 
-H2: Rising and Falling Factors
+Semiconductor demand has entered what analysts call a "supercycle" driven by the global AI investment boom triggered by ChatGPT's release in 2022. The construction of AI data centers requires massive amounts of high-end chips — particularly NVIDIA GPUs, AMD AI accelerators, and custom ASIC chips — and the manufacturing equipment and materials needed to produce them are in extraordinary demand.
 
-Rising factors include: expansion of AI investment (data center construction), geopolitical supply chain restructuring (Japan's strategic position strengthening), government support (Rapidus project, TSMC Kumamoto plant), and memory price recovery.
+Unlike previous semiconductor cycles driven by PC or smartphone upgrades, the AI-driven demand appears more sustained because: (1) every major cloud provider (AWS, Azure, Google, Meta) is spending aggressively on AI infrastructure simultaneously; (2) sovereign governments are investing in national AI capability; and (3) the computing requirements for AI models continue to grow exponentially.
 
-Falling factors include: global economic slowdown, China trade restrictions, capital expenditure cuts by major tech companies, and inventory adjustment phases.
+H2: Japan's Unique Position in the Semiconductor Ecosystem
 
-H2: Key Stocks
+Japan holds critical positions in multiple parts of the semiconductor supply chain:
 
-Major stocks include Tokyo Electron (8035), Advantest (6857), Shin-Etsu Chemical (4063), SUMCO (3436), and Lasertec (6920). Each occupies a different position in the semiconductor supply chain.
+Manufacturing Equipment: Tokyo Electron (8035), Advantest (6857), Lasertec (6920), SCREEN Holdings (7735), Disco (6146) collectively cover etching, cleaning, testing, inspection, and dicing — all essential processes.
+
+Materials: Shin-Etsu Chemical (4063) and SUMCO (3436) supply the silicon wafers that every chip is made from. JSR and Tokyo Ohka Kogyo supply photoresists. Japan commands over 50% of the global market for silicon wafers.
+
+These materials and equipment positions are difficult to replicate, as they involve decades of accumulated know-how, precision engineering, and deep customer relationships.
+
+H2: Geopolitical Tailwinds
+
+The U.S.-China technology rivalry has created unexpected tailwinds for Japanese semiconductor companies. As China is restricted from acquiring U.S. semiconductor technology, allied nations — including Japan — have gained strategic importance in the global semiconductor supply chain.
+
+Japan's TSMC Kumamoto plant, the Rapidus next-generation fab initiative (with IBM technology), and substantial government subsidies demonstrate Japan's commitment to strengthening domestic semiconductor capacity. These investments create a multi-year demand backdrop for Japanese semiconductor equipment and materials companies.
+
+H2: Cycle Management and Investment Timing
+
+Semiconductor stocks are highly cyclical. The best returns come from buying during the trough of the capex cycle and holding through the recovery. Key indicators to monitor:
+- TSMC quarterly capex guidance (the largest customer for Japanese equipment)
+- DRAM and NAND memory spot prices (leading indicator of industry health)
+- Book-to-bill ratios for semiconductor equipment (orders vs. shipments)
+- Data center capex announcements from major hyperscalers
+
+StockWaveJP's Volume trend data for the semiconductor theme is particularly useful — Volume often leads price when institutional investors begin accumulating positions.
 
 H2: StockWaveJP Editorial Perspective
 
-The semiconductor theme is the largest theme in Japan equities by market cap. When AI investment accelerates globally, this theme is most likely to see capital inflows. However, since valuations already reflect high expectations, entries should be timed carefully — look for corrections or periods when Volume surges while the stock price consolidates.
+The semiconductor theme is the largest theme in Japan equities by market capitalization. When AI investment accelerates globally, this theme is most likely to see capital inflows. Entries should be timed carefully — look for corrections or periods when Volume surges while the stock price consolidates. The most powerful entry signals occur when the semiconductor theme shows Rising Return AND expanding Volume simultaneously on StockWaveJP's dashboard.
     `},{id:"ai-cloud-theme",themes:["Theme Analysis"],keywords:["AI","cloud","generative AI","Japan stocks"],category:"Theme Analysis",icon:"🤖",title:"AI & Cloud Theme: Japan's Competitive Landscape and Investment Opportunities in the Generative AI Era",date:"2026/03/16",summary:"The generative AI revolution is transforming business models globally. We analyze the opportunities and risks for Japanese companies in the AI & cloud theme.",body:`
 H2: Overview of the AI & Cloud Theme
 
@@ -1240,28 +1486,60 @@ Falling factors: US-China AI competition intensifying and impacting supply chain
 H2: StockWaveJP Editorial Perspective
 
 The AI & cloud theme is broad and includes many sub-themes. For investment, it is effective to focus on "AI infrastructure" (data centers, networking equipment) and "AI application" (industry-specific AI) separately. Monitor the Volume trend — when data center orders are announced or AI adoption news emerges, Volume in this theme typically surges significantly.
-    `},{id:"defense-theme",themes:["Theme Analysis"],keywords:["defense","aerospace","geopolitics","Japan stocks"],category:"Theme Analysis",icon:"🛡️",title:"Defense & Aerospace Theme: Structural Tailwind from Geopolitical Risk and Defense Spending Expansion",date:"2026/03/14",summary:"Japan's defense spending is set to double to 2% of GDP by 2027. The defense theme is attracting attention as a structural growth theme in Japan equities.",body:`
-H2: Overview of the Defense Theme
+    `},{id:"defense-theme",themes:["Theme Analysis"],keywords:["defense","aerospace","geopolitics","Japan stocks"],category:"Theme Analysis",icon:"🛡️",title:"Defense & Aerospace Theme: Structural Tailwind from Geopolitical Risk and Defense Spending Expansion",date:"2026/03/14",summary:"Japan's defense spending is set to double to 2% of GDP by 2027. The defense theme is attracting attention as a structural growth theme in Japan equities.",body:`H2: The Historic Shift in Japan's Defense Policy
 
-Japan's defense theme covers defense equipment manufacturers, electronics companies with defense divisions, aerospace companies, cybersecurity firms, and related materials suppliers. Japan's decision to double defense spending to 2% of GDP has created a structural growth tailwind.
+Japan's defense spending increase represents one of the most significant shifts in Japanese security policy since the postwar period. The 2022 National Security Strategy, approved by the Kishida Cabinet in December 2022, made several unprecedented commitments:
 
-H2: Policy Background
+1. Defense budget doubling: Japan committed to increasing defense spending from approximately 1% of GDP to 2% of GDP by 2027 — doubling the annual budget from approximately ¥5.4 trillion to ¥10.8 trillion
+2. Five-year plan: A ¥43 trillion total defense investment plan for 2023-2027 was approved
+3. Stand-off capability: For the first time, Japan explicitly approved the development and procurement of "counterstrike capabilities" — long-range missiles capable of striking enemy military bases
+4. Drone and unmanned systems: Major investment in unmanned aerial vehicles (UAVs), uncrewed underwater vehicles (UUVs), and autonomous systems
+5. Cyber defense: Significant investment in offensive and defensive cyber capabilities
 
-Japan approved a five-year defense budget of ¥43 trillion for 2023-2027, representing a historic shift in defense policy. Key areas include stand-off missiles, drones, cyber defense, and space capabilities. Japanese defense contractors like Mitsubishi Heavy Industries (7011), Kawasaki Heavy Industries (7012), and IHI (7013) are primary beneficiaries.
+H2: Key Beneficiary Companies
 
-H2: Rising and Falling Factors
+The companies best positioned to benefit from Japan's defense buildup include:
 
-Rising factors: Japan's defense budget expansion, geopolitical tensions (North Korea, Taiwan Strait), NATO interoperability requirements, cybersecurity investment acceleration, and space defense development.
+Mitsubishi Heavy Industries (7011): Japan's premier defense contractor, producing fighter aircraft (F-2, licensed F-35), destroyers, submarines, and missiles. MHI is the primary contractor for the next-generation fighter aircraft (GCAP, developed jointly with UK and Italy), Japan's most important defense program. The backlog of orders is growing substantially.
 
-Falling factors: Diplomatic resolution of regional conflicts, budget constraints or policy changes, supply chain challenges for advanced components, and longer-than-expected development timelines.
+Kawasaki Heavy Industries (7012): Produces submarines, maritime patrol aircraft (P-1), transport aircraft (C-2), and helicopters. Japan's submarine program is a particular focus — the JMSDF plans to expand submarine fleet size significantly.
 
-H2: Key Stocks
+IHI Corporation (7013): Produces aircraft engines (F100/F110 for fighters) and rocket engines. Key component supplier for multiple defense programs.
 
-Mitsubishi Heavy Industries (7011), Kawasaki Heavy Industries (7012), IHI Corporation (7013), NEC Corporation (6701), and Fujitsu (6702) are among the key stocks.
+NEC Corporation (6701): Japan's leading defense electronics company. Produces radar systems, command-and-control systems, communications equipment, and increasingly cyber defense capabilities.
+
+Fujitsu (6702): Defense IT systems, command networks, and increasingly AI-powered defense applications.
+
+H2: Export Opportunities — A New Market Opens
+
+Japan relaxed its historically strict arms export regulations in 2023, allowing Japan to export defense equipment more broadly. This opens several significant opportunities:
+
+1. Patriot missile replenishment: Japan has agreed to transfer Patriot missiles to the US, which can then be re-exported to allies including Ukraine
+2. GCAP fighter aircraft exports: When developed, the next-generation fighter could be exported to partner nations
+3. Defense electronics: Japanese radar and communications systems are world-class and could find export markets in Southeast Asia and elsewhere
+
+Export revenues, while still developing, represent a potential significant long-term revenue stream for Japanese defense contractors.
+
+H2: Geopolitical Context — A Sustained Tailwind
+
+The geopolitical dynamics that prompted Japan's defense buildup are not temporary:
+
+1. North Korea: Continued ballistic missile testing, including ICBMs, and nuclear program development
+2. China: Military buildup including naval expansion, Taiwan Strait tensions, and assertive behavior in the South China Sea and East China Sea
+3. Russia-Ukraine: The conflict has demonstrated that conventional military capability remains critical, shifting European and Asian defense thinking
+4. US alliance: Japan's alliance with the United States requires burden-sharing, and Japan's allies have welcomed the defense spending increase
+
+These structural factors suggest that Japan's defense investment commitment is durable across political cycles.
+
+H2: Investment Timing Considerations
+
+Defense stocks typically react strongly to geopolitical events — North Korean missile tests, Taiwan Strait incidents, and regional security alerts all cause immediate Volume spikes in defense stocks. However, the long-term fundamental driver is the multi-year defense budget commitment, which is more reliable than geopolitical event trading.
+
+The defense procurement cycle is long — from initial contract to major revenue recognition can take 5-10 years for major systems. This means investors need patience, but also means that once contracts are secured, revenue is highly visible.
 
 H2: StockWaveJP Editorial Perspective
 
-The defense theme in Japan is unique in that it benefits from both domestic policy tailwinds and global geopolitical trends. Unlike many themes that are cyclical, the defense budget increase represents a structural shift. When geopolitical tensions escalate, monitor this theme's Volume for potential entry signals.
+The defense theme in Japan benefits from both domestic policy tailwinds (the once-in-a-generation defense budget doubling) and persistent global geopolitical risks. Unlike many themes that are purely cyclical, the defense budget increase represents a structural shift. When geopolitical tensions escalate, monitor Volume in the defense theme for entry signals — these events often create the best entry points into structurally sound defense positions.
     `},{id:"inbound-theme",themes:["Theme Analysis"],keywords:["inbound","tourism","yen","Japan stocks"],category:"Theme Analysis",icon:"✈️",title:"Inbound Tourism Theme: Consumer Boom from 30+ Million Foreign Visitors",date:"2026/03/12",summary:"Japan's inbound tourism has recovered strongly, with foreign visitor spending reaching record levels. We analyze the investment opportunities in this consumption-driven theme.",body:`
 H2: Overview of the Inbound Theme
 
