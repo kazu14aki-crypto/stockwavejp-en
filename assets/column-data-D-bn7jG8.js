@@ -154,46 +154,96 @@ H2: Risk Factors
 H2: StockWaveJP Editorial Perspective
 
 SoftBank Group is one of the purest expressions of the AI investment theme in Japan's equity market. When AI sentiment is strong (NVIDIA rallying, hyperscaler capex increasing), SoftBank typically outperforms. When semiconductor sentiment weakens, SoftBank underperforms. The stock is best treated as a leveraged bet on the AI theme rather than as a defensive holding. Monitor Arm's quarterly earnings and licensing announcements as the most direct fundamental indicator for SoftBank Group's NAV trajectory.
-    `},{id:"mitsui-mining-analysis",themes:["Theme Analysis"],keywords:["stock analysis","Japan stocks","investing"],category:"Stock Analysis",icon:"⚙️",title:"Mitsui Mining & Smelting (5706) Deep Dive: Copper Foil, Automotive Materials, and Zinc Refining",date:"2026/04/11",summary:"Mitsui Mining & Smelting has transformed from a traditional zinc refiner into a high-tech materials company.",body:`
-H2: Company Overview
+    `},{id:"mitsui-mining-analysis",themes:["Theme Analysis"],keywords:["stock analysis","Japan stocks","investing"],category:"Stock Analysis",icon:"⚙️",title:"Mitsui Mining & Smelting (5706) Deep Dive: Copper Foil, Automotive Materials, and Zinc Refining",date:"2026/04/11",summary:"Mitsui Mining & Smelting has transformed from a traditional zinc refiner into a high-tech materials company.",body:`H2: Company Overview — The Battery Materials Specialist
 
-Mitsui Mining & Smelting Co., Ltd. (5706) has evolved significantly from its origins in zinc refining. Today, its growth drivers include copper foil for electronics, automotive components (catalysts, sensors), and specialty materials for high-tech applications.
+Mitsui Mining & Smelting (5706, known as "Mitsui Kinzoku") is a Japanese non-ferrous metals company with an extraordinary strategic position at the intersection of two of the most powerful investment themes of the decade: the electric vehicle battery revolution and the advanced electronics/semiconductor supply chain.
 
-H2: Copper Foil for Electronics
+H2: The EV Battery Material Opportunity
 
-Mitsui Mining is a world-class producer of electrolytic copper foil, used in printed circuit boards (PCBs) and lithium-ion battery anodes. The company has developed ultra-thin copper foil technology that commands premium pricing.
+The global electric vehicle transition requires enormous quantities of specific metals and compounds. Mitsui Mining's product portfolio positions it at several critical points in the EV battery supply chain:
 
-H2: Battery Materials
+Copper foil for battery anodes: Ultra-thin copper foil (typically 6-8 microns thick, thinner than a human hair) is used as the current collector in lithium-ion battery anodes. Mitsui Mining is one of Japan's leading producers of electrodeposited copper foil, with facilities producing foil for both electronics and battery applications.
 
-Mitsui Mining is developing battery material technologies, particularly for next-generation batteries. Its expertise in material processing and surface treatment positions it well for more advanced battery chemistries.
+The demand math: Each EV battery requires approximately 1-2kg of copper foil depending on battery design. With global EV production projected to reach 30-40 million vehicles annually by 2030 (from approximately 10 million in 2022), copper foil demand growth is extraordinary.
 
-H2: Rising and Falling Factors
+H2: Semiconductor Materials — The Electronics Revenue Base
 
-Rising: EV adoption increasing battery-grade copper foil demand, 5G infrastructure driving PCB copper foil demand. Falling: Commodity price cycles (zinc and copper), competition in copper foil from Korean and Taiwanese makers.
+Beyond batteries, Mitsui Mining has critical positions in semiconductor materials:
 
-H2: Editorial Perspective
+Copper foil for PCBs: Printed circuit board manufacturing requires copper foil for conductor layers. As electronic content per vehicle grows (both in EVs and ICE vehicles for infotainment, ADAS, and EV systems), PCB copper foil demand grows.
 
-Mitsui Mining is a "materials technology" company that benefits from both the EV transition and the broader electronics manufacturing trend. Monitor copper foil capacity announcements and EV battery production scaling news as key catalysts.
-    `},{id:"ajinomoto-analysis",themes:["Theme Analysis"],keywords:["stock analysis","Japan stocks","investing"],category:"Stock Analysis",icon:"🍜",title:"Ajinomoto (2802) Deep Dive: The Global Umami and Amino Acid Giant's Overseas Expansion and High Margins",date:"2026/04/11",summary:"Ajinomoto has transformed from a Japanese food seasoning company into a global amino acid and bioscience company.",body:`
-H2: Company Overview
+Sputtering targets: Mitsui Mining produces copper and other metal sputtering targets used in semiconductor manufacturing (physical vapor deposition processes).
 
-Ajinomoto Co., Inc. (2802) started as a maker of MSG (umami seasoning) but has evolved into a global amino acid company with significant operations in bioscience, healthcare nutrition, and food products.
+Indium tin oxide (ITO): Used in flat panel display electrodes and touchscreens.
 
-H2: ABF (Ajinomoto Build-Up Film)
+H2: Zinc and Lead Smelting — The Traditional Business
 
-Perhaps Ajinomoto's most exciting business for technology investors is ABF (Ajinomoto Build-Up Film), used in advanced semiconductor packaging (particularly for high-performance CPUs and GPUs). ABF demand has surged with AI chip production, and Ajinomoto has near-monopoly supply for certain specifications.
+Mitsui Mining operates zinc smelting facilities producing refined zinc (used in galvanized steel for automotive and construction) and lead (used in automotive batteries). These commodity businesses provide revenue stability but generate modest returns compared to the specialty materials segments.
 
-H2: Overseas Food Business
+The zinc business provides a diversified revenue base that reduces dependence on the EV battery cycle timing.
 
-Ajinomoto has built a strong presence in Southeast Asia (Thailand, Indonesia, Vietnam) where its seasoning and processed food brands are market leaders, generating stable, high-margin revenue.
+H2: Geographic Diversification
 
-H2: Rising and Falling Factors
+Mitsui Mining operates production facilities in Japan and internationally, reducing concentration risk:
 
-Rising: ABF demand from AI semiconductor production surge, Southeast Asian food market growth, healthcare nutrition market expansion. Falling: ABF competition from new entrants, food price competition in developed markets.
+Japan: Flagship Takehara copper foil and Hachinohe zinc smelting operations.
+Malaysia: Copper foil production joint ventures serving Asia's electronics supply chain.
+North America: Exploring battery material supply chain investments to capture IRA (Inflation Reduction Act) benefits for North American EV production.
 
-H2: Editorial Perspective
+H2: Investment Thesis and Key Metrics
 
-Ajinomoto is a rare stock that sits at the intersection of multiple themes — food & beverage (defensive), semiconductor materials (high-growth), and healthcare nutrition (structural growth). ABF-related news is the primary catalyst for the stock's re-rating.
+For investors, the key questions are:
+
+Copper foil capacity expansion: Is Mitsui Mining investing sufficiently in battery-grade copper foil capacity to meet EV demand? Monitor capital expenditure announcements.
+Battery vs. electronics revenue mix: As EV battery demand grows, the revenue mix shift toward higher-value battery applications is the primary growth driver.
+Customer relationships: Key customers include major battery makers (CATL, Panasonic, LG Energy Solution, Samsung SDI). Concentration is a risk; breadth of customer relationships is a quality indicator.
+
+H2: StockWaveJP Editorial Perspective
+
+Mitsui Mining & Smelting is a higher-beta, more specialized exposure to the EV battery theme compared to diversified players like Sumitomo Metal Mining. The stock tends to move strongly with EV adoption data and copper price movements. For investors seeking purer exposure to battery material demand growth with Japanese manufacturing quality credentials, Mitsui Mining deserves close attention alongside the EV & Green theme monitoring on StockWaveJP.
+    `},{id:"ajinomoto-analysis",themes:["Theme Analysis"],keywords:["stock analysis","Japan stocks","investing"],category:"Stock Analysis",icon:"🍜",title:"Ajinomoto (2802) Deep Dive: The Global Umami and Amino Acid Giant's Overseas Expansion and High Margins",date:"2026/04/11",summary:"Ajinomoto has transformed from a Japanese food seasoning company into a global amino acid and bioscience company.",body:`H2: Company Overview — Beyond Umami to Global Healthcare
+
+Ajinomoto Co., Inc. (2802) has undergone one of Japan's most remarkable corporate transformations. Founded in 1909 as the world's first manufacturer of MSG (monosodium glutamate, the flavor-enhancing compound that defines "umami" taste), Ajinomoto has evolved into a global amino acid and nutrition technology company whose fastest-growing segment is not food seasoning but semiconductor materials.
+
+H2: The Semiconductor Materials Breakthrough — ABF
+
+The most important driver of Ajinomoto's growth is Ajinomoto Build-up Film (ABF) — an insulating material used in the production of advanced semiconductor packages.
+
+What is ABF? When a chip is mounted in a package (the structure that connects the chip to a circuit board), layers of insulating material are applied and then laser-drilled to create microscopic holes for electrical connections. ABF is the insulating layer material used for this process in the most advanced chip packages.
+
+Why ABF is critical: ABF is specifically required for FC-BGA (Flip Chip Ball Grid Array) packages — the package type used for high-performance chips including CPUs, GPUs, and AI accelerators. Every high-end processor from AMD (EPYC, Ryzen), Intel (Core, Xeon), NVIDIA (AI GPUs), and Apple (M-series chips) uses ABF.
+
+Market position: Ajinomoto is the world's dominant producer of ABF, holding approximately 30-40% market share in a market where only a handful of companies can produce ABF meeting the stringent specifications of advanced packages.
+
+H2: Why ABF Is an AI Story
+
+AI's impact on ABF demand is disproportionately large:
+
+High-end GPU packaging: NVIDIA's H100 and H200 AI accelerators use advanced FC-BGA packages with multiple ABF layers. The production of tens of thousands of these chips monthly generates significant ABF demand.
+
+Advanced processor proliferation: The AI computing boom is driving strong demand for high-performance CPUs (used in AI training servers alongside GPUs) — all requiring ABF.
+
+Chiplet era: Modern advanced chips increasingly use "chiplet" architectures where multiple chip dies are packaged together. These advanced multi-die packages use more ABF per unit than conventional single-die packages.
+
+H2: Food & Nutrition — The Original Business
+
+Despite the semiconductor materials excitement, Ajinomoto's food and nutrition businesses remain substantial:
+
+Seasonings: Ajinomoto's AJI-NO-MOTO brand MSG and flavor enhancers are market leaders across Southeast Asia, the Americas, and other markets. Brand strength in markets like Thailand, Indonesia, Brazil, and Vietnam provides a stable, growing revenue base.
+
+Processed foods: Gyoza (frozen dumplings), specialty seasonings, and food service products in Japan. Frozen gyoza is one of Japan's most popular convenience foods.
+
+Healthcare nutrition: Amino acid-based medical nutrition products for hospitals, elderly care, and sports nutrition. Growing demand from Japan's aging population.
+
+H2: Amino Acid Technology — The Core Platform
+
+Ajinomoto's original amino acid fermentation technology underlies both its food and semiconductor businesses. The same precision fermentation expertise that produces MSG also enables the company to produce amino acids for pharmaceuticals, animal nutrition, and industrial applications.
+
+This amino acid technology platform is the most defensible aspect of Ajinomoto's business — developed over 115 years and continuously refined.
+
+H2: StockWaveJP Editorial Perspective
+
+Ajinomoto represents a rare "defensive growth" combination: stable food businesses providing earnings floor, with semiconductor materials (ABF) providing growth optionality tied directly to the AI chip supercycle. When semiconductor theme momentum is strong on StockWaveJP, Ajinomoto often participates — despite being classified as a food company. The ABF story is not widely understood by food sector analysts, creating potential for sustained valuation re-rating as ABF revenues grow to become an undeniably significant portion of total earnings.
     `},{id:"furukawa-analysis",themes:["Theme Analysis"],keywords:["stock analysis","Japan stocks","investing"],category:"Stock Analysis",icon:"⚡",title:"Furukawa Electric (5801) Deep Dive: Optical Fiber, Power Cables, and Automotive Components",date:"2026/04/11",summary:"Furukawa Electric is a comprehensive wire and cable manufacturer benefiting from AI data center and EV transition demand.",body:`H2: Furukawa Electric — The Other Optical Fiber Giant
 
 Furukawa Electric (5801) often lives in the shadow of its more famous competitor Fujikura, but represents an equally compelling investment case in Japan's optical fiber and cable industry. Furukawa's strategic positioning across optical fiber, power cables, and automotive wire harnesses provides multiple tailwinds simultaneously.
@@ -300,46 +350,111 @@ The US government's semiconductor export controls on China have created both a n
 H2: StockWaveJP Editorial Perspective
 
 Advantest is the most direct "test and measurement" play on the AI chip supercycle in Japan's equity market. When NVIDIA announces new AI chip generations or raises shipment guidance, Advantest typically rallies immediately as investors price in increased test demand. Monitor quarterly TSMC and HBM producer earnings calls for forward demand signals — these companies' AI production ramp statements directly translate into Advantest order potential.
-    `},{id:"kioxia-analysis",themes:["Theme Analysis"],keywords:["stock analysis","Japan stocks","investing"],category:"Stock Analysis",icon:"💾",title:"Kioxia (285A) Deep Dive: World #2 in NAND Flash Memory and AI Storage Demand",date:"2026/04/11",summary:"Kioxia (formerly Toshiba Memory) is the world's second-largest NAND flash memory maker. We analyze the memory cycle, AI storage demand, and investment case.",body:`
-H2: Company Overview
+    `},{id:"kioxia-analysis",themes:["Theme Analysis"],keywords:["stock analysis","Japan stocks","investing"],category:"Stock Analysis",icon:"💾",title:"Kioxia (285A) Deep Dive: World #2 in NAND Flash Memory and AI Storage Demand",date:"2026/04/11",summary:"Kioxia (formerly Toshiba Memory) is the world's second-largest NAND flash memory maker. We analyze the memory cycle, AI storage demand, and investment case.",body:`H2: Company Overview — The NAND Memory Giant
 
-Kioxia Holdings Corporation (285A) is the world's second-largest manufacturer of NAND flash memory, used in smartphones, SSDs, data centers, and consumer electronics. Originally Toshiba's memory division, it was spun off and renamed Kioxia before completing its Tokyo Stock Exchange IPO.
+Kioxia Holdings Corporation (285A, listed on Tokyo Stock Exchange since October 2024) is the world's second-largest NAND flash memory manufacturer, created from Toshiba's memory semiconductor division. The company was named "Kioxia" (combining Japanese words for "memory" and "value") after its sale by Toshiba to a consortium led by Bain Capital in 2018.
 
-H2: AI Storage Demand
+H2: NAND Flash Memory — The Essential Storage Technology
 
-AI training and inference require massive data storage. Large language models require storage of training data, model weights, and inference output. Data center SSDs are experiencing strong demand growth driven by AI workloads.
+NAND flash memory is the underlying technology in:
+- Solid-state drives (SSDs) in laptops, desktops, and enterprise storage
+- Smartphones (all primary storage)
+- USB drives and memory cards
+- Enterprise and data center storage systems
 
-H2: NAND Memory Market Structure
+Every digital device that stores data almost certainly uses NAND flash somewhere in its supply chain. The market is dominated by six major players: Samsung (Korea, market leader), Kioxia (Japan, #2), SK Hynix (Korea), Western Digital (US, with joint NAND manufacturing with Kioxia), Micron (US), and a small Chinese competitor.
 
-The NAND memory market is an oligopoly dominated by Samsung (Korea), SK Hynix (Korea), Kioxia (Japan, in partnership with Western Digital), Micron (US). This concentrated market structure means supply discipline can significantly impact pricing and profitability.
+H2: AI's Impact on NAND Demand
 
-H2: Rising and Falling Factors
+The AI revolution creates substantial NAND flash demand through multiple channels:
 
-Rising: AI data center storage demand surge, PC replacement cycle, smartphone NAND content increase, memory price recovery. Falling: NAND memory is highly cyclical, Chinese NAND production capacity expansion (YMTC), capital intensity.
+AI model storage: Large language models (LLMs) have enormous parameter files — GPT-4-scale models require hundreds of gigabytes to multiple terabytes of storage. Deploying these models in data centers requires enterprise SSD storage.
 
-H2: Editorial Perspective
+AI training datasets: Training datasets for large AI models can reach petabyte scale. Storing and accessing this data requires massive SSD arrays.
 
-Kioxia is a high-cyclicality stock — semiconductor memory has some of the most extreme boom-bust cycles in the market. It is best owned during the early-to-mid recovery phase of the memory cycle. Monitor memory spot prices and quarterly earnings from Samsung Memory as leading indicators.
-    `},{id:"nittobo-analysis",themes:["Theme Analysis"],keywords:["stock analysis","Japan stocks","investing"],category:"Stock Analysis",icon:"🏗️",title:"Nittobo (3110) Deep Dive: World #4 in Glass Fiber with Unique Position in Acoustic and Building Materials",date:"2026/04/11",summary:"Nittobo is a specialty materials company with a unique position in glass fiber and acoustic materials. We analyze this lower-profile but interesting company.",body:`
-H2: Company Overview
+AI inference hardware: Inference servers (the computers that run trained AI models for users) require fast SSD storage for model caching and result storage.
 
-Nittobo Co., Ltd. (3110) is a comprehensive industrial company with three main businesses: glass fiber products (glass wool insulation, glass fabric), acoustic and functional materials (soundproofing materials, building materials), and information and communication-related products.
+PC refresh cycle: The anticipated "AI PC" upgrade cycle — as consumers replace existing PCs with AI-capable hardware — is expected to be a significant demand driver for NAND in consumer SSDs.
 
-H2: Glass Fiber World Position
+H2: The NAND Cycle — Understanding Volatility
 
-Nittobo is one of the world's top glass fiber manufacturers, particularly in specialty glass fibers for electronics and industrial applications. Glass fiber is used in PCBs (glass/epoxy composite), insulation materials, and filtration systems.
+NAND flash memory is one of the most cyclically volatile industries in technology. The cycle works:
 
-H2: The Renovation and Construction Tailwind
+1. Strong demand → prices rise → profits excellent → all manufacturers expand capacity
+2. New capacity arrives → oversupply → prices collapse → losses
+3. Manufacturers cut investment → supply tightens → cycle repeats
 
-Japan's aging building stock requires extensive renovation, and soundproofing and insulation upgrades are increasingly included. Energy efficiency regulations also drive demand for high-performance insulation materials.
+The cycle has historically been 3-4 years peak-to-peak. Investors must time positions relative to this cycle:
+- Buying during price troughs (when manufacturers are reporting losses) for recovery
+- Avoiding or selling at capacity expansion peaks (when profitability peaks but new capacity is being added)
 
-H2: Rising and Falling Factors
+H2: Kioxia's Technological Position
 
-Rising: Construction renovation demand (aging building stock), electronics glass fiber demand (PCBs), thermal insulation demand (energy efficiency regulations). Falling: Commodity glass fiber competition from China, construction market cyclicality.
+Kioxia pioneered several NAND flash innovations:
 
-H2: Editorial Perspective
+BiCS FLASH (3D NAND): Kioxia was among the pioneers of 3D NAND technology — stacking memory cells vertically to increase capacity without reducing feature size. Current BiCS FLASH technology reaches 218+ layer stacks.
 
-Nittobo is a relatively under-covered small-cap specialty materials company. Its semiconductor materials exposure sometimes causes it to appear in screening for electronics-adjacent themes, while its construction materials business provides domestic economic exposure.
+QLC NAND: Quad-level cell NAND storing 4 bits per cell increases density but reduces write endurance — suitable for read-intensive applications like AI inference.
+
+Joint manufacturing with Western Digital: Kioxia and Western Digital jointly operate NAND manufacturing facilities in Yokkaichi (Mie Prefecture) and Kitakami (Iwate Prefecture, opened 2023) — creating a unique integrated supply chain.
+
+H2: The IPO and Investment Context
+
+Kioxia completed its Tokyo Stock Exchange listing in October 2024 after a delayed IPO process. As a newly listed company, financial disclosures are becoming more transparent and institutional analyst coverage is building.
+
+Key investment considerations:
+- NAND cycle position: Understanding whether the industry is in oversupply or undersupply is the primary investment timing factor
+- AI demand incremental: Assessing how much incremental demand AI applications add to baseline NAND demand
+- Western Digital relationship: The joint manufacturing arrangement creates both cooperation and potential tension with a major competitor
+
+H2: StockWaveJP Editorial Perspective
+
+Kioxia belongs in the Memory theme on StockWaveJP, which also includes SK Hynix ADR and Samsung exposure through ETFs. Monitor the Memory theme's Return and Volume on StockWaveJP alongside NAND spot price indices and major customer earnings calls (Apple for smartphone storage demand, hyperscalers for enterprise SSD demand) to time positions in the NAND cycle.
+    `},{id:"nittobo-analysis",themes:["Theme Analysis"],keywords:["stock analysis","Japan stocks","investing"],category:"Stock Analysis",icon:"🏗️",title:"Nittobo (3110) Deep Dive: World #4 in Glass Fiber with Unique Position in Acoustic and Building Materials",date:"2026/04/11",summary:"Nittobo is a specialty materials company with a unique position in glass fiber and acoustic materials. We analyze this lower-profile but interesting company.",body:`H2: Company Overview — The Specialty Materials Transformer
+
+Nippon Electrical Glass (5214) and Nittobo (3110) represent two distinct types of specialty glass/fiber companies in Japan's materials sector. This analysis focuses on Nittobo (Japan Nitrocellulose) — a company that has transformed from its historical chemical and textile origins into a focused specialty materials company with exposure to semiconductor and electronic packaging demand.
+
+H2: Glass Fiber — The Core Business and Electronics Connection
+
+Nittobo's primary business is glass fiber products. Glass fiber (also called fiberglass) is a material with applications across:
+
+Electronics glass cloth: Woven glass fiber fabric used as the base material for printed circuit boards (PCBs). The glass cloth provides structural support for the copper circuitry of PCBs. Virtually every electronic device — from smartphones to data center servers to automotive electronics — contains PCBs made with glass cloth.
+
+Industrial composites: Chopped glass fiber used in composite materials for construction, automotive, and industrial applications.
+
+The electronics glass cloth business is Nittobo's highest-value segment and the most directly connected to semiconductor and AI infrastructure trends. As data center construction accelerates (driven by AI), the demand for server PCBs — and thus for glass cloth — grows proportionally.
+
+H2: The AI Data Center Connection
+
+Nittobo's business, while not a household name in the AI infrastructure theme, has direct exposure through the PCB supply chain:
+
+Server PCBs: Each server in an AI data center contains multiple PCBs (motherboard, network interface cards, power management boards) all requiring glass cloth.
+GPU PCBs: NVIDIA AI accelerators and their supporting boards require glass cloth.
+High-frequency PCBs: 5G and high-speed data communication applications require specialty glass cloth optimized for high-frequency signal transmission.
+
+As AI data center construction creates extraordinary demand for servers, that demand cascades through the supply chain to PCBs and ultimately to glass cloth — Nittobo's core product.
+
+H2: Historical Transformation
+
+Nittobo's business has undergone significant transformation from its historical industrial origins:
+
+Past: The company was originally in chemicals and textiles, with businesses that are structurally challenged.
+Present: Glass fiber and specialty materials have become the focus, representing the majority of operating profit.
+Future: Further specialization toward high-value electronics glass cloth applications.
+
+This transformation creates some legacy complexity in the financial statements — non-core businesses can obscure the underlying attractiveness of the specialty materials core.
+
+H2: Financial Characteristics
+
+Nittobo exhibits characteristics typical of specialty materials companies:
+
+Stable demand base: PCBs are used in virtually all electronic devices, providing demand stability through economic cycles (though electronics itself is cyclical).
+Capacity expansion cycles: Glass fiber manufacturing requires capital investment to expand capacity. Monitor capex announcements relative to demand forecasts.
+Pricing dynamics: Specialty glass cloth pricing reflects the value-added specifications required for high-frequency PCBs, supporting better margins than commodity glass fiber.
+
+H2: StockWaveJP Editorial Perspective
+
+Nittobo is a "second derivative" AI infrastructure play — less obvious than semiconductor equipment or optical fiber, but with genuine demand linkage through the PCB supply chain. Investors looking for less-crowded exposure to the same AI infrastructure demand driver may find Nittobo interesting. However, the business complexity (multiple segments, historical legacy businesses) requires careful financial analysis. Use StockWaveJP's steel & materials theme data as a rough proxy for when industrial materials stocks are attracting capital inflows.
     `},{id:"inpex-analysis",themes:["Theme Analysis"],keywords:["stock analysis","Japan stocks","investing"],category:"Stock Analysis",icon:"⛽",title:"INPEX (1605) Deep Dive: Japan's Largest Oil & Gas Development Company's Resource Strategy",date:"2026/04/11",summary:"INPEX is Japan's largest upstream energy company. We analyze its energy security role, shareholder returns, and investment case.",body:`H2: Company Overview — Japan's Energy Security Champion
 
 INPEX Corporation (1605) is Japan's largest upstream energy company and plays a critical role in Japan's energy security strategy. Unlike integrated energy companies, INPEX focuses exclusively on exploring, developing, and producing oil and natural gas at field sites globally — upstream activities that directly produce the energy commodities Japan critically needs.
@@ -409,46 +524,105 @@ Capital discipline: Maintaining financial flexibility to avoid the excessive lev
 H2: StockWaveJP Editorial Perspective
 
 INPEX is Japan's most direct listed exposure to global energy markets. When oil and LNG prices rise — typically during Middle Eastern supply disruptions, cold winters increasing heating demand, or global economic recovery phases — INPEX benefits immediately. The stock also serves as a portfolio hedge: investors who own export-oriented manufacturers and inbound tourism stocks may benefit from holding INPEX as a counterbalancing position during yen weakness and energy price spike scenarios.
-    `},{id:"skyperfect-analysis",themes:["Theme Analysis"],keywords:["stock analysis","Japan stocks","investing"],category:"Stock Analysis",icon:"📡",title:"SKY Perfect JSAT Holdings (9412) Deep Dive: Satellite Communications, Broadcasting, and Space Business",date:"2026/04/11",summary:"SKY Perfect JSAT is Japan's leading satellite operator with growing space services ambitions.",body:`
-H2: Company Overview
+    `},{id:"skyperfect-analysis",themes:["Theme Analysis"],keywords:["stock analysis","Japan stocks","investing"],category:"Stock Analysis",icon:"📡",title:"SKY Perfect JSAT Holdings (9412) Deep Dive: Satellite Communications, Broadcasting, and Space Business",date:"2026/04/11",summary:"SKY Perfect JSAT is Japan's leading satellite operator with growing space services ambitions.",body:`H2: Company Overview
 
-SKY Perfect JSAT Holdings, Inc. (9412) operates two core businesses: SKY PerfecTV! (Japan's largest direct-to-home satellite TV platform) and JSAT (satellite communications services). The company is also developing space services businesses.
+SKY Perfect JSAT Holdings (9412) operates Japan's most critical satellite infrastructure, providing communication, broadcasting, and observation services from geostationary orbit. The company is the result of mergers combining SKY PerfecTV (Japan's largest direct broadcast satellite subscription TV service) with JSAT (Japan's primary commercial satellite operator).
 
-H2: Broadcasting Business
+H2: The Business — Two Distinct Revenue Streams
 
-Japan's satellite broadcasting landscape has faced cord-cutting pressures as streaming services attract subscribers. SKY PerfecTV! has responded by focusing on exclusive sports content (J.League football, European football, boxing) and premium programming.
+SKY PerfecTV (Broadcasting): Japan's largest multichannel pay TV satellite platform, offering hundreds of channels to approximately 3.5 million subscribers. The subscriber base has been gradually declining due to internet streaming competition (Netflix, Amazon Prime, Disney+), but ARPU (average revenue per user) remains stable as remaining subscribers tend to be engaged sports and entertainment viewers.
 
-H2: Satellite Communications (JSAT)
+JSAT (Satellite Communication): Commercial satellite capacity leased to: telecommunications companies for broadcast signal distribution, government agencies for secure communications, maritime and aviation connectivity providers, and increasingly defense and national security customers.
 
-JSAT operates a fleet of communication satellites providing connectivity to maritime users, aviation, broadcasting, and increasingly to defense and government clients.
+H2: The Defense and National Security Catalyst
 
-H2: Space Services Development
+Japan's dramatically increased defense spending has created a transformational new demand driver for JSAT:
 
-SKY Perfect JSAT is developing space services: satellite imagery analysis, space situational awareness, and satellite broadband. This positions the company to participate in the growing "space economy."
+Satellite communication for JSDF: Japan's Self-Defense Forces require secure, resilient satellite communication channels — especially for island defense scenarios (protecting the Senkaku/Nansei Islands requires connectivity beyond ground-based fiber or microwave).
 
-H2: Editorial Perspective
+Space Domain Awareness: Japan has been assigned responsibility within the US-Japan alliance for Space Situational Awareness (SSA) — tracking satellites, debris, and other objects in orbit. This requires ground station infrastructure and satellite sensor capability that JSAT is developing.
 
-SKY Perfect JSAT is in transition from a mature broadcasting business to an emerging space services company. The stock typically moves on defense satellite contract announcements and space business development updates.
-    `},{id:"axelspace-analysis",themes:["Theme Analysis"],keywords:["stock analysis","Japan stocks","investing"],category:"Stock Analysis",icon:"🛸",title:"Axelspace and Japan's Small Satellite Revolution: The Frontier of Space Data Business",date:"2026/04/11",summary:"Japan's space startup ecosystem is developing around small satellite constellations and space data services. We analyze the investment opportunities in this emerging sector.",body:`
-H2: The Small Satellite Revolution
+Intelligence and reconnaissance support: While Japan's own reconnaissance satellites are operated by the government, JSAT can provide complementary commercial Earth observation capability and communication relay services.
 
-The space industry is undergoing a fundamental transformation driven by small satellites (smallsats). Smallsats cost dramatically less to build and launch than traditional geostationary satellites, enabling private companies to build satellite constellations for specific applications.
+The defense revenue growth opportunity is meaningful: from a near-zero base, government and defense satellite communication revenues are growing to become a significant proportion of JSAT's revenue mix.
 
-H2: Axelspace: Japan's Smallsat Pioneer
+H2: Low Earth Orbit (LEO) Satellite Strategy
 
-Axelspace Corporation has built Japan's first commercial Earth observation satellite constellation, GRUS. The constellation provides frequent revisit photography of specific locations — valuable for agriculture monitoring, infrastructure tracking, disaster response, and urban planning.
+The global commercial satellite landscape is being transformed by LEO constellations (Starlink, OneWeb, Kuiper). JSAT operates geostationary (GEO) satellites — fundamentally different in capability profile:
 
-H2: Space Data Business Model
+GEO strengths: Continuous coverage, no complex handover between satellites, established infrastructure.
+GEO weaknesses: 600ms+ latency (the speed of light limitation at 36,000km altitude), limited bandwidth for certain applications.
 
-The space data business model is attractive: build satellites once, then sell data repeatedly to multiple customers with high margins. Weather data, Earth observation, and space situational awareness are the main verticals.
+LEO strengths: Low latency (20-40ms), suitable for real-time applications.
+LEO weaknesses: Requires hundreds/thousands of satellites for continuous coverage.
 
-H2: Japan's Broader Space Startup Ecosystem
+JSAT's strategy involves selective partnership with LEO operators while maintaining its GEO strength in broadcast distribution and government communication — applications where GEO's characteristics are acceptable or even preferred.
 
-Beyond Axelspace, Japan has a growing space startup ecosystem: Interstellar Technologies (launch vehicles), Synspective (SAR radar satellites), and others.
+H2: The Subscription Streaming Headwind — Quantifying the Risk
 
-H2: Editorial Perspective
+SKY PerfecTV's subscriber count has declined from a peak of approximately 4 million to approximately 3.5 million as streaming alternatives proliferate. The decline has been gradual (approximately 2-3% annually) rather than catastrophic because:
 
-The Japanese space sector is at an early and exciting stage, but investment opportunities for retail investors are limited to a few listed companies. Monitor government space policy announcements and major customer contract news as catalysts.
+Sports rights retention: Sports broadcasting (particularly J-League soccer, rugby, Formula 1) remains a strong pay TV exclusive content category that streaming services cannot easily replicate.
+
+Older demographic loyalty: Satellite TV subscribers skew older — a demographic that is less likely to switch to streaming and represents a stable, lower-churn customer base.
+
+Bundle promotions: Aggressive bundling with internet and mobile services slows pure pay TV churn.
+
+H2: StockWaveJP Editorial Perspective
+
+SKY Perfect JSAT occupies an interesting investment position: a partially declining legacy business (pay TV) combined with a growing defense and satellite communication business. The key investment thesis is whether government/defense revenue growth can more than offset pay TV subscriber decline. Monitor quarterly earnings for the "Media & Broadcasting" vs. "Satellite & Space" business segment revenue trends — the turning point where space/defense growth exceeds media decline will be the most significant re-rating catalyst.
+    `},{id:"axelspace-analysis",themes:["Theme Analysis"],keywords:["stock analysis","Japan stocks","investing"],category:"Stock Analysis",icon:"🛸",title:"Axelspace and Japan's Small Satellite Revolution: The Frontier of Space Data Business",date:"2026/04/11",summary:"Japan's space startup ecosystem is developing around small satellite constellations and space data services. We analyze the investment opportunities in this emerging sector.",body:`H2: Company Overview — Japan's Commercial Satellite Pioneer
+
+Axelspace Corporation was founded in 2008 by researchers from the University of Tokyo, making it one of Japan's oldest commercial space startups. The company pioneered the concept of small, affordable Earth observation satellites in Japan — at a time when commercial satellite imagery was a government and defense exclusive.
+
+While Axelspace remains privately held, it represents one of Japan's most important space technology success stories and a template for the emerging commercial space economy.
+
+H2: The GRUS Constellation — Japan's First Commercial Earth Observation Constellation
+
+Axelspace operates the GRUS (Greater Unification Satellites) constellation — a growing fleet of small Earth observation satellites providing daily coverage of the entire Earth's surface.
+
+Key specifications: Each GRUS satellite weighs approximately 100kg, carries a medium-resolution optical camera (approximately 2.5 meter resolution), and operates in sun-synchronous Low Earth Orbit at approximately 500km altitude. Each satellite can image a 2,500km-wide swath per orbit.
+
+Coverage: The constellation provides the ability to revisit any location on Earth daily — a revolutionary capability compared to traditional satellites that revisit specific locations every few days at best.
+
+Commercial applications: The daily global coverage is the key commercial differentiator. Applications include:
+- Agricultural monitoring: Tracking crop growth, identifying stress areas, forecasting yields across large farms and entire farming regions
+- Insurance and risk assessment: Post-disaster mapping for flood, fire, and earthquake damage assessment
+- Maritime and port activity: Counting vessels, tracking port congestion, monitoring shipping patterns
+- Infrastructure monitoring: Power line, pipeline, road, and coastal protection inspection
+- Supply chain intelligence: Factory activity, inventory levels, and logistics monitoring
+
+H2: The Commercial Earth Observation Market
+
+Axelspace competes in a global commercial Earth observation market that has been transformed by the commercial satellite revolution:
+
+Market structure: The commercial EO market is growing rapidly as data from satellite imagery becomes increasingly integrated into enterprise decision-making. Major global competitors include Planet Labs (US, the largest constellation), Maxar (US, highest resolution), Airbus Defence & Space (European), and multiple Asian players.
+
+Japan's government market: Japan's government agencies (defense, agriculture, environmental monitoring, disaster response) represent a significant domestic market for commercial satellite imagery. The security implications of domestic satellite capability also create government preference for Japanese providers.
+
+H2: Technology Development Direction
+
+Axelspace's technology roadmap involves:
+
+Improved resolution: Future GRUS generations will offer improved ground resolution — moving from approximately 2.5 meters toward sub-meter capabilities.
+
+Hyperspectral imaging: Cameras that capture dozens of spectral bands beyond visible light, enabling identification of specific materials, plant species, and soil compositions.
+
+AI-powered analysis: Moving from selling raw satellite imagery to selling insights — automated detection of ships, vehicles, construction, and agricultural events.
+
+H2: Investment Angle — Pre-IPO Dynamics
+
+As a private company, Axelspace investment is not directly accessible through public markets. However:
+
+Space-adjacent public companies: SKY Perfect JSAT (9412) and Mitsubishi Electric (6503) are publicly traded companies with commercial satellite involvement.
+
+Watch for IPO: Axelspace has been mentioned as an IPO candidate as the commercial space industry matures. A public listing would provide the most direct investment exposure to Japan's commercial satellite sector.
+
+Government contracts: Monitor Japan's government space budget announcements for commercial Earth observation procurement, which benefits Axelspace.
+
+H2: StockWaveJP Editorial Perspective
+
+The space and satellite theme on StockWaveJP captures the broader universe of satellite-related stocks. As Japan's commercial space industry matures and potential IPOs approach, monitor the space & satellite theme's momentum — sustained positive Return and Volume in this theme may reflect institutional positioning ahead of anticipated commercial space developments. SKY Perfect JSAT remains the most accessible liquid exposure to this theme.
     `},{id:"sogo-shosha-analysis",themes:["Theme Analysis"],keywords:["stock analysis","Japan stocks","investing"],category:"Stock Analysis",icon:"🌏",title:"Japan's Big 5 Trading Companies Complete Analysis: Comparing Mitsubishi, Mitsui, Itochu, Sumitomo, and Marubeni",date:"2026/04/11",summary:"Japan's five major trading companies (sogo shosha) are unique global conglomerates made famous by Warren Buffett's investment. We provide a comprehensive comparative analysis.",body:`H2: What Are Sogo Shosha? Why Warren Buffett Invested
 
 When Warren Buffett announced that Berkshire Hathaway had acquired approximately 5% stakes in Japan's five major trading companies in 2020, the investment community was intrigued. Why would the world's most famous value investor — known for avoiding companies he doesn't understand — invest in Japanese conglomerates with businesses spanning energy, metals, food, finance, and consumer goods across dozens of countries?
@@ -643,26 +817,75 @@ PEG ratio: P/E divided by earnings growth rate. A PEG ratio below 1.5x suggests 
 H2: StockWaveJP Editorial Perspective
 
 Growth stocks tend to outperform during periods of low interest rates and risk-on sentiment, underperform when rates rise (high-duration assets are discounted more heavily). Monitor the overall theme momentum on StockWaveJP — when growth-oriented themes (SaaS, AI, biotech) show strong Volume alongside Return, it often indicates broad institutional buying of growth rather than just momentum chasing.
-    `},{id:"momentum-investing-advanced",themes:["Theme Analysis"],keywords:["strategy","Japan stocks","investing"],category:"Strategy",icon:"📊",title:"Advanced Momentum Investing: Trend-Following Strategies Using Volume and Return",date:"2026/04/05",summary:"Advanced momentum investing goes beyond simple price trends. We explain how to use Volume, Return, and theme-level momentum for more sophisticated entry and exit decisions.",body:`
-H2: Beyond Simple Price Momentum
+    `},{id:"momentum-investing-advanced",themes:["Theme Analysis"],keywords:["strategy","Japan stocks","investing"],category:"Strategy",icon:"📊",title:"Advanced Momentum Investing: Trend-Following Strategies Using Volume and Return",date:"2026/04/05",summary:"Advanced momentum investing goes beyond simple price trends. We explain how to use Volume, Return, and theme-level momentum for more sophisticated entry and exit decisions.",body:`H2: Advanced Momentum Investing — Beyond the Basics
 
-Basic momentum investing follows price trends — buy what has been going up and sell what has been going down. Advanced momentum investing incorporates Volume data, cross-asset confirmation, and theme-level analysis.
+For investors who have mastered the fundamental momentum concepts, this article explores advanced techniques for maximizing returns from Japan's theme momentum framework while rigorously managing the elevated risks that momentum strategies carry.
 
-H2: Volume-Confirmed Momentum
+H2: The Momentum Factor in Academic Literature
 
-The strongest momentum signals occur when price rises AND Volume is expanding. This indicates genuine demand rather than just short-covering or thin-market price moves.
+Return momentum was first documented by Jegadeesh and Titman (1993), who demonstrated that US stocks with strong 6-12 month prior returns significantly outperformed stocks with weak prior returns over the subsequent 6-12 months. This finding has since been replicated across virtually every major equity market globally, including Japan.
 
-H2: Theme-Level vs. Stock-Level Momentum
+Why momentum persists despite being widely known:
+1. Institutional investment horizons: Most institutional investors are evaluated quarterly. A momentum trade that takes 6-12 months to work fully is difficult for quarterly-evaluated managers to maintain.
+2. Career risk asymmetry: Fund managers face greater career risk from holding controversial losing positions than from following momentum — conforming to consensus momentum is "career safe."
+3. Behavioral persistence: Investor psychology (anchoring, herding, confirmation bias) creates self-reinforcing price trends that take time to reverse.
 
-Theme-level momentum is more reliable than individual stock momentum because it averages out company-specific noise. A theme where all constituent stocks are rising with volume expansion is a stronger signal.
+H2: Cross-Sectional vs. Time-Series Momentum
 
-H2: Cross-Timeframe Confirmation
+Two distinct momentum strategies are relevant for theme investors:
 
-Momentum that persists across multiple timeframes (strong in 1W, 1M, AND 3M) is more durable than single-timeframe momentum.
+Cross-sectional momentum (relative strength): Identifies themes that have outperformed other themes over the past 1-3 months and overweights them. The signal is relative — a theme rising 5% when the average theme rises 10% is "weak" cross-sectionally even though it's positive in absolute terms. StockWaveJP's Return ranking directly supports cross-sectional momentum analysis.
 
-H2: Editorial Perspective
+Time-series momentum (trend following): A theme exhibits positive time-series momentum if its own return over the past 1-3 months is positive — regardless of what other themes did. This approach treats each theme independently. Both strategies have merit; combining them (requiring a theme to rank in the top 20% cross-sectionally AND show positive time-series momentum) generates the strongest signals.
 
-Use StockWaveJP's Flow & Momentum page weekly to track which themes show accelerating momentum vs. fading. Build positions gradually in accelerating themes and trim systematically in fading themes.
+H2: Momentum Decay — Understanding the Holding Period
+
+One of the most important empirical findings in momentum research is the decay pattern:
+
+0-1 month: Very short-term momentum often reverses (mean reversion). Don't trade on single-week signals.
+1-12 months: Classic momentum holding period where the effect is strongest.
+12+ months: Momentum begins to reverse as value effects dominate long-term.
+
+For Japan theme investors, this suggests optimal holding periods of 1-6 months for momentum positions — entering when a theme moves into "Accelerating" and exiting when it moves to "Fading" or at the latest 6 months after entry.
+
+H2: Momentum Crash Risk — The Most Important Risk to Manage
+
+The most dangerous feature of momentum strategies is their crash risk. Momentum strategies perform catastrophically in "momentum crashes" — periods when recent losers dramatically outperform recent winners. Historically, these crashes occur:
+
+- During rapid market reversals (market drops sharply then reverses equally sharply)
+- During extreme fear (VIX spikes) followed by relief
+- During policy-driven reversals (central bank pivots, government policy changes)
+- At the peak of broad market bubbles
+
+The 2009 momentum crash (following the financial crisis recovery) saw momentum strategies lose 40%+ in a few months. The lesson: maintain maximum position sizes at 10-15% of portfolio even in the highest-conviction momentum positions, and have explicit rules to reduce all positions when VIX spikes above critical thresholds.
+
+H2: Factor Combination — Momentum + Quality
+
+Pure momentum investing carries the risk of holding "junk" momentum — stocks or themes that have risen primarily due to speculative excess rather than fundamental improvement. Combining momentum with quality filters significantly improves risk-adjusted returns:
+
+Quality filter: Require that accelerating themes contain stocks with positive earnings revision momentum (analysts raising earnings estimates), improving return on equity, or above-average gross margins.
+
+On StockWaveJP, use the Featured Stocks section to verify that the stocks driving theme momentum are high-quality companies with strong Trade Value (institutional participation) rather than speculative small caps.
+
+H2: Macro Regime Awareness
+
+Momentum strategies perform differently across macro regimes:
+
+Risk-on, low volatility (best for momentum): Strong trending environment. Japan themes with positive momentum continue to outperform. Reduce turnover and let winners run.
+
+Rising volatility (momentum caution): Increased reversals. Reduce position sizes and tighten stop-losses.
+
+Recession or high volatility (momentum avoidance): Momentum crashes most common in these environments. Shift toward value or defensive positioning.
+
+H2: StockWaveJP Momentum Implementation Framework
+
+Practical implementation using StockWaveJP:
+
+Weekly scan: Check Flow & Momentum page for theme state changes (Flat → Turning Up, Accelerating → Turning Down).
+Entry rule: Enter when a theme moves to "Turning Up" with above-average Volume. Add at "Accelerating" confirmation.
+Exit rule: Begin reducing when "Turning Down" appears with declining Volume. Full exit at "Fading."
+Stop-loss: Maximum 12% loss from entry price for any single position. No exceptions.
+Portfolio limit: Maximum 3 momentum positions simultaneously, each 5-8% of portfolio.
     `},{id:"technical-analysis-basics",themes:["Theme Analysis"],keywords:["basics","Japan stocks","investing"],category:"Basics",icon:"📉",title:"Technical Analysis Basics: Reading Moving Averages, RSI, and MACD",date:"2026/04/05",summary:"Technical analysis helps you determine optimal entry and exit timing for theme stocks. We explain the key indicators and how to apply them.",body:`H2: Technical Analysis for Japan Theme Stock Investors
 
 Technical analysis uses price and volume history to identify patterns and signals that may indicate future price direction. While StockWaveJP focuses primarily on fundamental theme data (Return, Volume, Trade Value), technical analysis can help with specific entry and exit timing within a theme investing framework.
@@ -730,44 +953,63 @@ This combination — theme fundamentals confirming the direction, individual sto
 H2: StockWaveJP Editorial Perspective
 
 Technical analysis is a tool, not a prophecy. In Japan's equity market, the most reliable technical signals occur when they align with theme-level fundamental data available on StockWaveJP. A bullish reversal candlestick pattern in a "Fading" theme on StockWaveJP should be treated with skepticism. The same pattern in an "Accelerating" theme with expanding Volume is a genuinely actionable signal.
-    `},{id:"stock-terms-glossary",themes:["Theme Analysis"],keywords:["basics","Japan stocks","investing"],category:"Basics",icon:"📖",title:"Japan Stock Investment Glossary: 50 Essential Terms for Beginners",date:"2026/04/05",summary:"A comprehensive glossary of 50 essential terms for investors in Japan equities, covering market structure, financial metrics, and trading terminology.",body:`
-H2: Market Structure Terms
+    `},{id:"stock-terms-glossary",themes:["Theme Analysis"],keywords:["basics","Japan stocks","investing"],category:"Basics",icon:"📖",title:"Japan Stock Investment Glossary: 50 Essential Terms for Beginners",date:"2026/04/05",summary:"A comprehensive glossary of 50 essential terms for investors in Japan equities, covering market structure, financial metrics, and trading terminology.",body:`H2: Essential Stock Market Terms for Japan Equity Investors
 
-TSE (Tokyo Stock Exchange): Japan's primary stock exchange.
-Prime Market: Highest listing standards, primarily large-cap blue-chip companies.
-Standard Market: Mid-tier listing standards.
-Growth Market: For emerging growth companies.
-Nikkei 225: Japan's most famous stock index, tracking 225 major companies.
-TOPIX: Tokyo Stock Price Index, broader market-cap weighted index.
+Understanding the terminology used in Japanese stock market investing is essential for using StockWaveJP effectively and for reading financial news about Japan's equity market. This glossary covers the most important terms.
 
-H2: Trading and Order Terms
+H2: Core Price and Valuation Terms
 
-成行 (Nariyuki): Market order — buy or sell at the current market price.
-指値 (Sashine): Limit order — buy or sell only at a specified price or better.
-大引け (Ohike): Market close at 3:30 PM JST.
-寄り付き (Yoritsuki): Market open at 9:00 AM JST.
+PBR (Price-to-Book Ratio): Compares a company's market capitalization to its book value (assets minus liabilities). PBR of 1.0x means the stock trades exactly at accounting book value. Below 1.0x means the market values the company at less than its accounting net assets — which the TSE has identified as requiring active improvement plans. PBR above 1.0x means investors are paying a premium over book value, typically reflecting expectations of future earnings growth.
 
-H2: Financial Metrics
+PER / P/E Ratio (Price-to-Earnings Ratio): Market capitalization divided by annual net profit. A PER of 15x means investors are paying 15 years of current earnings for one share. Higher PER generally reflects higher growth expectations or higher-quality business characteristics.
 
-PER (Price-to-Earnings Ratio): Market price ÷ earnings per share.
-PBR (Price-to-Book Ratio): Market price ÷ book value per share. Below 1.0x means trading below accounting asset value.
-ROE (Return on Equity): Measures management efficiency.
-配当利回り (Haito Rimawari): Dividend yield.
-自社株買い (Jisha Kabu Kai): Stock buyback.
+ROE (Return on Equity): Net profit divided by shareholders' equity, expressed as percentage. ROE measures how efficiently a company generates profit from the capital shareholders have invested. The TSE and Keidanren (Japan Business Federation) have targeted 8% ROE as a minimum acceptable level for listed Japanese companies — many are still below this threshold, creating governance improvement pressure.
 
-H2: Investment Account Terms
+EPS (Earnings Per Share): Net profit divided by total shares outstanding. Increasing EPS over time (through profit growth or share buybacks) is the primary driver of long-term stock price appreciation.
 
-NISA: Nippon Individual Savings Account — tax-exempt investment account.
-Tokutei Koza (特定口座): Special account where the brokerage handles tax calculations.
+Dividend Yield: Annual dividend per share divided by share price, expressed as percentage. High dividend yields are attractive to income investors. Japan's NISA accounts make high-yield stocks particularly appealing as dividends are received tax-free.
 
-H2: Corporate Events
+H2: Trading Terms
 
-権利確定日 (Kenri Kakutei Bi): Record date for dividends.
-配当落ち (Haito Ochi): Ex-dividend date.
-株主優待 (Kabunushi Yutai): Shareholder perks.
-決算発表 (Kessan Happyo): Earnings announcement.
-上方修正 (Kami Hosei): Upward earnings revision.
-下方修正 (Shimo Hosei): Downward earnings revision.
+Bid-Ask Spread: The difference between the highest price buyers are willing to pay (bid) and the lowest price sellers will accept (ask). Narrow spreads indicate high liquidity; wide spreads indicate illiquidity.
+
+Market Capitalization (時価総額, Jihon-Sougaku): Share price × total shares outstanding. Determines a company's size category: Large-cap (大型株), Mid-cap (中型株), Small-cap (小型株).
+
+Liquidity: How easily a stock can be bought or sold without significantly moving its price. High Trade Value and Volume in StockWaveJP's data indicate high liquidity — important for institutional investors making large trades.
+
+Short Selling (空売り, Karauri): Borrowing shares and selling them, expecting to repurchase them at a lower price for profit. Short interest data (available from TSE) can indicate institutional bearish positioning.
+
+H2: Market Structure Terms Specific to Japan
+
+TSE Prime Market: The highest tier of the Tokyo Stock Exchange, for large companies with substantial market capitalization, liquidity, and governance standards. Companies must maintain 100+ shareholders and ¥10B+ market cap.
+
+TSE Standard Market: The middle tier. Companies that meet most but not all Prime requirements, or smaller companies with solid fundamentals.
+
+TSE Growth Market: The growth company tier, for smaller companies with high growth potential. Listed companies must maintain certain standards but can be pre-profit.
+
+TOPIX (Tokyo Price Index): Japan's primary broad market index, covering all Prime Market companies. Market-cap-weighted, making large companies dominant. Used as benchmark by most institutional investors.
+
+Nikkei 225: Japan's most internationally recognized index, covering 225 selected large companies. Price-weighted (like the Dow Jones), meaning higher-priced stocks have more influence regardless of market cap.
+
+H2: Japan-Specific Investment Concepts
+
+Cross-Shareholding (持ち合い株, Mochiai Kabu): When Company A holds Company B's shares AND Company B holds Company A's shares, creating a mutual ownership relationship. Historically common in Japan to cement business relationships. Now under pressure from TSE governance reforms to be unwound, freeing capital for shareholder returns.
+
+Keiretsu (系列): A group of companies with interlocking business relationships, often centered on a major bank. Mitsubishi Group, Mitsui Group, Sumitomo Group are the most famous keiretsu. Keiretsu relationships influence procurement, financing, and cross-shareholding.
+
+Shareholder Proposals (株主提案, Kabunushi Teian): Formal proposals submitted by shareholders for voting at annual general meetings. Activist shareholders increasingly use shareholder proposals to push for governance improvements, higher dividends, or board changes.
+
+H2: Key Metrics in StockWaveJP
+
+Return (%): Average percentage price change for all theme constituent stocks over the selected period.
+Volume Change (%): Change in trading volume vs. the prior period. Positive = more activity (potential accumulation).
+Trade Value (売買代金): Total monetary value of all trades. Higher values indicate institutional participation.
+Momentum State: StockWaveJP's proprietary trend classification: 🔥 Accelerating, ↗ Turning Up, → Flat, ↘ Turning Down, ❄️ Fading.
+Contribution (%): Individual stock's contribution to theme-level Return. High positive contribution = stock leading the theme higher.
+
+H2: StockWaveJP Editorial Perspective
+
+Mastering this terminology provides the vocabulary needed to read Japanese financial news, analyst reports, and market commentary with full comprehension. The most investment-relevant terms for theme investing are PBR (governance reform trigger), ROE (capital efficiency indicator), Trade Value (institutional participation filter), and Momentum State (trend direction signal). When all four are favorable — low PBR improving, ROE rising, high Trade Value, Accelerating momentum — it represents the strongest combination of fundamental and technical confirmation.
     `},{id:"dividend-investing-guide",themes:["Theme Analysis"],keywords:["strategy","Japan stocks","investing"],category:"Strategy",icon:"💸",title:"High-Dividend Stock Investing: Selecting Dividend Yield and Consecutive Dividend Growth Stocks",date:"2026/04/05",summary:"Japan has many attractive high-dividend stocks. We explain how to evaluate dividend yields, assess sustainability, and build a dividend income portfolio.",body:`H2: Dividend Investing in Japan — The Income Opportunity
 
 Japan's equity market has historically been underappreciated by income investors, but the post-2020 governance reform era has transformed the dividend landscape. Major Japanese companies are now consistently raising dividends, initiating buybacks, and committing to progressive payout policies — creating genuine dividend investment opportunities.
@@ -2584,26 +2826,69 @@ For Japan, the opportunity is not necessarily in the humanoid robot itself (a US
 H2: StockWaveJP Editorial Perspective
 
 The physical AI and edge AI theme is one of the most long-duration investment themes in Japan — relevant across a 5-10+ year horizon. Near-term catalysts include: major physical AI product announcements at CES, NVIDIA GTC, and automotive industry conferences; factory automation capex data from major manufacturers; and humanoid robot demonstration milestones. Monitor the robotics & automation theme alongside the semiconductor theme for correlated moves.
-    `},{id:"japan-theme-investing-guide",themes:["Theme List"],keywords:["beginner","guide","Japan stocks","how to start"],category:"Basics",icon:"🗾",title:"Complete Guide to Japan Theme Investing: From Opening an Account to Selecting Stocks",date:"2026/03/25",summary:"A comprehensive guide for those new to Japan equity theme investing. Covers account opening, theme selection, stock screening, and risk management.",body:`
-H2: Step 1: Opening a Securities Account
+    `},{id:"japan-theme-investing-guide",themes:["Theme List"],keywords:["beginner","guide","Japan stocks","how to start"],category:"Basics",icon:"🗾",title:"Complete Guide to Japan Theme Investing: From Opening an Account to Selecting Stocks",date:"2026/03/25",summary:"A comprehensive guide for those new to Japan equity theme investing. Covers account opening, theme selection, stock screening, and risk management.",body:`H2: Japan Theme Investing — The Complete Beginner's Guide
 
-To invest in Japan equities, you need to open a securities account with a Japanese brokerage. Major online brokers (SBI Securities, Rakuten Securities, Monex Securities) offer English-language services and low commission rates.
+This guide is designed for investors new to Japan's equity market who want to understand how to use StockWaveJP's theme-based approach effectively. Japan's equity market has unique characteristics that make theme investing particularly powerful here.
 
-H2: Step 2: Understanding Japan's Market Structure
+H2: Why Japan's Equity Market Is Different
 
-Japan's equity market is organized under the Tokyo Stock Exchange (TSE), with three main segments: Prime Market (large-cap), Standard Market (mid-cap), and Growth Market (small-cap). Most theme stocks are in the Prime or Growth Markets.
+Japan's equity market has several characteristics that make it distinctly suited to theme investing:
 
-H2: Step 3: Selecting Your Investment Theme
+Policy sensitivity: Japan's stock market is highly responsive to government policy announcements. When the government declares a focus on semiconductors, defense, inbound tourism, or renewable energy — and backs it with substantial spending — the relevant themes move dramatically. This makes policy-driven theme identification particularly valuable in Japan.
 
-Start with 1-2 themes you understand from your daily life or professional background. Personal connection to a theme helps with conviction and staying power.
+Concentrated theme rallies: Japanese institutional investors tend to rotate into themes en masse, creating pronounced, sustained theme moves rather than the more diffuse sector rotations seen in US markets.
 
-H2: Step 4: Using StockWaveJP for Theme Research
+Macroeconomic sensitivity: The yen/dollar exchange rate is one of the most important drivers of Japanese equity performance. Understanding which themes benefit from yen weakness (exporters, inbound tourism) and which are harmed (importers, domestic consumers) is essential.
 
-StockWaveJP's Theme List shows all 67 themes ranked by Return for your selected period. Identify themes with positive Return across multiple periods (1M, 3M, 6M), then check Volume and Trade Value.
+H2: The 5 Most Important Themes to Start With
 
-H2: Step 5: Risk Management
+For beginners, starting with 2-3 themes you understand is better than tracking all 67. Here are the most accessible for new investors:
 
-Never invest more than 20-30% of your portfolio in a single theme. Use a loss-cut discipline (e.g., 10-15% from purchase price) and review your thesis regularly.
+1. Semiconductor Manufacturing Equipment: Tokyo Electron, Lasertec, Advantest. The AI supercycle drives extraordinary demand for chips and the equipment to make them. This theme has the longest and clearest fundamental story.
+
+2. Banking & Finance: MUFG, SMFG, Mizuho. Japan's interest rate normalization is the clearest macro theme. When Bank of Japan raises rates, these stocks benefit directly through improved net interest margins.
+
+3. Defense & Aerospace: Mitsubishi Heavy Industries, Kawasaki Heavy Industries. Japan's defense budget doubling is a government-committed, multi-year spending program. Revenue is contractually certain over years.
+
+4. Inbound Tourism: Oriental Land, hotel operators, duty-free retail. The weak yen and Japan's tourism boom create a direct, visible demand driver that is easy to monitor (monthly visitor statistics).
+
+5. Games & Entertainment: Nintendo, Capcom, Sony (PlayStation). Japan's gaming industry has globally recognized brands with recurring revenue from successful franchises.
+
+H2: Reading StockWaveJP's Data — A Practical Walkthrough
+
+Return (%): The percentage change in average price for all stocks in the theme over the selected period. Positive = rising, negative = falling. For most investment decisions, use the 1-month (1M) or 3-month (3M) period as your primary reference.
+
+Volume Change (%): How much trading volume has changed compared to the prior period. +30% means significantly more shares are being traded — this typically indicates institutional investor activity. Volume leading price is the most reliable momentum signal.
+
+Trade Value: The total monetary value of all trades in the theme. High Trade Value means large institutions (not just retail investors) are actively buying or selling. This is the most important quality indicator for momentum signals.
+
+Momentum State: StockWaveJP's proprietary 5-state classification — 🔥 Accelerating, ↗ Turning Up, → Flat, ↘ Turning Down, ❄️ Fading — based on comparing short-term and medium-term returns. The most actionable entry signal is "Turning Up" with expanding Volume.
+
+H2: Your First Investment Decision Process
+
+Step 1 — Check the Theme List: Every week, look at the Theme List sorted by Return for your chosen period (1M recommended). Note which themes are in the top 10 and bottom 10.
+
+Step 2 — Confirm with Volume: For any theme showing strong Return, check Volume change. If Return is up AND Volume is significantly above average, the signal is much more reliable.
+
+Step 3 — Check the Heatmap: Use the Heatmap page to see if the theme's positive performance is consistent across multiple periods (1W, 1M, 3M all positive is the strongest confirmation).
+
+Step 4 — Read the related Column article: StockWaveJP's column articles provide fundamental context for each theme. Understanding WHY a theme is moving makes you a more confident investor.
+
+Step 5 — Decide on position size: Start small — a 2-3% of portfolio position to learn the theme's behavior before committing to a full position.
+
+H2: Common Beginner Mistakes to Avoid
+
+Chasing peaks: The worst time to buy is after a theme has already risen 30% in a month. Look for early signals, not late confirmation.
+
+Ignoring Volume: Price movement without Volume is unreliable. Always require Volume confirmation before entering.
+
+Over-concentration: Putting more than 20% of your portfolio in a single theme — even your highest-conviction theme — creates unacceptable single-theme risk.
+
+Forgetting correlation: If you own semiconductor equipment AND AI chips AND optical communication, you effectively have a single concentrated bet on AI infrastructure. True diversification requires themes with different drivers.
+
+H2: StockWaveJP Editorial Perspective
+
+The most successful approach for beginners is to start with 2 themes — one cyclical/momentum theme and one structural/defensive theme — monitor them weekly on StockWaveJP, and develop real understanding of what drives each theme before expanding to more positions. Patience and discipline in waiting for strong signal combinations (high Return + expanding Volume + "Turning Up" momentum) dramatically improve outcomes compared to impulsive theme switching.
     `},{id:"power-semiconductor",themes:["Theme Analysis"],keywords:["theme analysis","Japan stocks","investing"],category:"Theme Analysis",icon:"⚡",title:"Power Semiconductors: Japan's Advantage in the EV and Renewable Energy Era",date:"2026/03/25",summary:"Power semiconductors control electrical power in EVs, renewable energy systems, and industrial equipment. Japan has significant competitive advantages in this growing market.",body:`H2: Power Semiconductors — The Hidden Engine of Electrification
 
 Power semiconductors control the flow of electrical energy — they convert, regulate, and switch electrical current in everything from mobile phone chargers to industrial motor drives to electric vehicle drivetrains. As the world electrifies (EVs, renewable energy, industrial automation), power semiconductor demand is growing across every application segment.
@@ -3273,26 +3558,82 @@ When investing in the EV & green theme, consider positioning across three sub-th
 3. Renewable energy infrastructure (longer duration, policy-driven): Companies involved in offshore wind development, grid modernization, and hydrogen infrastructure
 
 The theme tends to respond strongly to: Toyota BEV strategy announcements, government EV subsidy policy changes, and global commodity price movements affecting battery material costs.
-    `},{id:"how-to-read-data",themes:["Theme List"],keywords:["Return","Volume","Trade Value","analysis"],category:"Basics",icon:"📊",title:"How to Read Return, Volume, and Trade Value: 3 Core Indicators for Theme Stock Analysis",date:"2026/03/08",summary:"StockWaveJP tracks Return, Volume, and Trade Value for each theme. This article explains what each indicator means and how to use them together.",body:`
-H2: The Three Core Indicators
+    `},{id:"how-to-read-data",themes:["Theme List"],keywords:["Return","Volume","Trade Value","analysis"],category:"Basics",icon:"📊",title:"How to Read Return, Volume, and Trade Value: 3 Core Indicators for Theme Stock Analysis",date:"2026/03/08",summary:"StockWaveJP tracks Return, Volume, and Trade Value for each theme. This article explains what each indicator means and how to use them together.",body:`H2: How to Read StockWaveJP Data — A Complete Guide
 
-StockWaveJP tracks three core indicators: Return (price change %), Volume (number of shares traded), and Trade Value (monetary value of shares traded). Understanding each indicator and their relationship is fundamental to theme investing.
+StockWaveJP provides four key data metrics for each of Japan's 67 investment themes. Understanding exactly what each metric means — and how to combine them for investment decisions — is essential for getting maximum value from the platform.
 
-H2: Return
+H2: Return (%) — The Foundation Metric
 
-Return measures the price change of the theme's constituent stocks over a selected period (1D, 1W, 1M, 3M, 6M, 1Y). Compare Returns across different periods — a theme with strong 1M Return but weak 1Y Return may be recovering from a longer decline.
+Return is the percentage change in average stock price for all constituent stocks in a theme over the selected time period.
 
-H2: Volume
+Calculation: StockWaveJP calculates the simple average of individual stock Returns within each theme. This equally-weighted approach gives smaller constituent stocks equal weight to larger ones, which can cause differences from market-cap-weighted indices.
 
-Volume measures the number of shares traded. Rising Volume with rising prices is a bullish signal. When Volume surges to 2-3x the average, it often marks important turning points — either the beginning of a sustained move or a capitulation point.
+How to interpret:
+- Positive Return = constituent stocks are, on average, rising during the period
+- Negative Return = constituent stocks are, on average, declining
+- Magnitude matters: +2% is modest; +15% represents meaningful momentum
 
-H2: Trade Value
+Which period to use:
+- 1D: Very noisy. Use only to check today's market movement, not for investment decisions.
+- 1W: Short-term momentum indicator. Useful for identifying rapid rotations.
+- 1M: The primary investment signal. Best balance of signal quality and timeliness.
+- 3M: Medium-term trend confirmation. Use to distinguish sustained trends from short-term spikes.
+- 6M / 1Y: Long-term structural positioning. Use to identify themes that have consistently outperformed.
 
-Trade Value measures the total monetary value of shares traded (Volume × Price). This is often more informative than Volume alone, as it accounts for share price differences between stocks. When Trade Value expands without Volume expanding, it indicates selective institutional buying.
+H2: Volume Change (%) — The Institutional Activity Signal
 
-H2: Using All Three Together
+Volume Change measures how much trading volume has increased or decreased compared to the prior period. It is arguably the most important signal for identifying genuine capital inflows.
 
-The most powerful signal is when a theme shows positive Return, expanding Volume, and growing Trade Value simultaneously. This pattern indicates a theme where capital is genuinely concentrating — the best condition for theme investing entry.
+Why Volume matters more than Return: Anyone can push a stock price up on low volume — a few retail investors buying enthusiastically can move a thin stock 10% without institutional participation. But Volume is much harder to fake: sustained above-average Volume requires many participants buying simultaneously, which is characteristic of institutional accumulation.
+
+Volume Change thresholds to watch:
+- +10-20%: Mild increase in attention. Monitor but not yet actionable.
+- +30-50%: Meaningful Volume expansion. Worth investigation and potential small position initiation.
+- +50-100%: Strong Volume signal. Combined with positive Return, this is a significant momentum signal.
+- +100%+: Extraordinary Volume. This level of activity almost certainly reflects institutional behavior. Investigate urgently.
+
+Warning — Volume without Return: When Volume rises significantly but Return is flat or negative, it may indicate distribution (selling) rather than accumulation. Large sellers moving out of positions create high Volume but downward price pressure.
+
+H2: Trade Value — Filtering for Institutional Participation
+
+Trade Value is the total monetary value of all transactions in a theme (shares × price). While Volume counts shares, Trade Value counts yen — making it sensitive to the price of stocks traded.
+
+Why Trade Value differs from Volume:
+- A theme where 1,000 shares of a ¥10,000 stock trade has higher Trade Value than 10,000 shares of a ¥500 stock trading
+- High Trade Value requires large-cap stocks to be active participants
+- This filters out themes driven purely by small-cap activity, which is less likely to sustain
+
+High Trade Value + High Return + High Volume Change = the highest-quality momentum signal. This triple combination indicates that large-cap stocks in the theme are participating (Trade Value), genuine buying interest exists (Volume Change), and prices are responding (Return).
+
+H2: Momentum State — The Trend Direction Indicator
+
+StockWaveJP's proprietary momentum classification compares short-term Return with medium-term Return to determine the direction and acceleration of a theme's trend:
+
+🔥 Accelerating: Both short-term and medium-term Returns are positive AND improving. The trend is strengthening. This is the optimal entry signal combined with Volume confirmation.
+
+↗ Turning Up: Short-term Return is positive but medium-term may still be recovering. Early reversal from a downtrend. Potentially the best risk-reward entry point — entering before the trend is fully confirmed.
+
+→ Flat: No clear directional signal. Neither short nor medium-term Returns indicate a trend. Wait for clearer signals before committing capital.
+
+↘ Turning Down: Short-term Return is declining even if medium-term is still positive. The trend is weakening. Reduce positions in this theme.
+
+❄️ Fading: Both short-term and medium-term Returns are declining. The trend has clearly reversed. Exit existing positions; do not add.
+
+H2: Combining the Four Metrics — The Decision Matrix
+
+The most reliable investment signals require alignment across multiple metrics:
+
+Strongest Buy Signal: Return +10%+ (1M) + Volume Change +50%+ + Trade Value above average + Momentum: Accelerating. All four metrics confirm. This combination has the highest probability of continuation.
+
+Good Buy Signal: Return +5%+ (1M) + Volume Change +30%+ + Momentum: Turning Up. Not all metrics confirm yet, but early momentum with Volume support.
+
+Neutral: Any combination where signals conflict (e.g., positive Return but declining Volume). Wait for confirmation.
+
+Warning Signal: Any momentum state of "Turning Down" or "Fading" regardless of other metrics. Protect capital.
+
+H2: StockWaveJP Editorial Perspective
+
+The most common mistake new users make is focusing only on Return and ignoring Volume. A theme with +15% Return but flat Volume deserves skepticism. A theme with +8% Return and +80% Volume expansion is far more compelling. Train yourself to always check Volume Change immediately after noting Return — the combination is exponentially more powerful than either metric alone.
     `},{id:"market-cycle",themes:["Theme List"],keywords:["market cycle","fund flow","rotation","timing"],category:"Strategy",icon:"🔄",title:"Market Cycles and Theme Investing: The Art of Reading Capital Rotation",date:"2026/03/06",summary:"Understanding market cycles and sector rotation is key to successful theme investing. Learn how capital flows between themes and how to time entries and exits.",body:`H2: Understanding Market Cycles — The Foundation of Theme Investing
 
 All financial markets move in cycles. Understanding where the market is in its current cycle — and which themes benefit or suffer at each stage — is the foundational skill of successful theme investing.
