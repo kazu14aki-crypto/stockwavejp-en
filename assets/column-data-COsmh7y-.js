@@ -97,26 +97,63 @@ Fujikura's stock has re-rated significantly from its pre-AI-boom valuation. The 
 H2: StockWaveJP Editorial Perspective
 
 Fujikura is one of the clearest "AI infrastructure plays" in the Japanese market, alongside Furukawa Electric (5801) and Sumitomo Electric (5802). When hyperscalers announce quarterly capex increases or major data center construction projects, Fujikura's stock and Volume typically respond immediately. Monitor quarterly earnings calls from AWS, Azure, Google, and Meta for forward-looking capex guidance — this is the single most important leading indicator for Fujikura's order trajectory.
-    `},{id:"softbank-analysis",themes:["Theme Analysis"],keywords:["stock analysis","Japan stocks","investing"],category:"Stock Analysis",icon:"📱",title:"SoftBank Corp (9434) Deep Dive: Telecom × PayPay × AI Investment Total Digital Enterprise",date:"2026/04/11",summary:"SoftBank Corp is Japan's third-largest telecom operator but has evolved into a comprehensive digital services company.",body:`
-H2: Company Overview
+    `},{id:"softbank-analysis",themes:["Theme Analysis"],keywords:["stock analysis","Japan stocks","investing"],category:"Stock Analysis",icon:"📱",title:"SoftBank Corp (9434) Deep Dive: Telecom × PayPay × AI Investment Total Digital Enterprise",date:"2026/04/11",summary:"SoftBank Corp is Japan's third-largest telecom operator but has evolved into a comprehensive digital services company.",body:`H2: SoftBank Group — The Vision Fund Empire and Its Evolution
 
-SoftBank Corp. (9434) is 40.6% owned by SoftBank Group (9984) and is Japan's third-largest mobile operator. Unlike its parent, SoftBank Corp operates actual consumer and enterprise digital services rather than making venture investments.
+SoftBank Group Corp (9984) is one of the world's most complex and controversial investment conglomerates, transformed from a Japanese telecommunications company into a global technology investment vehicle by founder Masayoshi Son's extraordinary ambition and risk appetite.
 
-H2: PayPay Ecosystem
+H2: The Business Model — A Leveraged Bet on Technology
 
-SoftBank Corp is a key shareholder in PayPay Corporation (Japan's leading QR code payment platform with 60+ million registered users) and PayPay Bank. The PayPay ecosystem creates valuable data and customer engagement opportunities.
+SoftBank Group's business model is unique and difficult to value:
 
-H2: AI Business Development
+The Vision Funds: SoftBank manages Vision Fund 1 ($98.6B AUM, raised 2017) and Vision Fund 2 (SoftBank's own capital primarily). These funds have invested in hundreds of technology companies globally, from Uber and DoorDash to ByteDance (TikTok parent) and Arm Holdings.
 
-SoftBank Corp has been aggressively investing in AI services for corporate clients, leveraging its parent company's access to global AI technology investments (Arm Holdings, OpenAI partnerships).
+Arm Holdings (67% owned): SoftBank's most valuable single asset. Arm designs the CPU architecture used in virtually every smartphone globally (Apple, Samsung, Qualcomm all license Arm's designs). The AI chip revolution has created new demand for Arm architecture in data center chips (NVIDIA's Grace CPU, Amazon Graviton). Arm's Nasdaq IPO in September 2023 provided a liquid valuation reference.
 
-H2: Rising and Falling Factors
+SoftBank Corp subsidiary: Japan's third-largest mobile carrier with growing AI enterprise ambitions. PayPay financial ecosystem adds fintech value.
 
-Rising: PayPay ecosystem monetization improvement, enterprise AI service revenue growth, high and growing dividend, 5G service revenue increase. Falling: Mobile price competition, high debt load from spectrum licenses.
+T-Mobile stake: Significant value stake from Sprint/T-Mobile merger.
 
-H2: Editorial Perspective
+H2: The NAV Discount — SoftBank's Persistent Valuation Challenge
 
-SoftBank Corp is best characterized as a "high-yield digital conglomerate" — offering telecom stability with fintech and AI upside. It is particularly attractive for income-oriented investors seeking dividend yield with some growth potential.
+SoftBank Group consistently trades at a significant discount to Net Asset Value (NAV) — the calculated value of its investment portfolio:
+
+At various points, the NAV discount has reached 40-60%, meaning investors effectively get SoftBank's technology portfolio at 40-60 cents on the dollar.
+
+Why the discount persists:
+1. Conglomerate discount: Diversified holding companies typically trade at discounts to their parts
+2. Leverage concern: SoftBank has carried significant debt, increasing perceived risk
+3. Vision Fund mark-to-market uncertainty: Private company valuations are uncertain
+4. Governance complexity: Masayoshi Son's founder control creates corporate governance discount
+
+H2: The Arm AI Opportunity — The Core Investment Thesis
+
+Arm Holdings is the engine that makes SoftBank Group's investment case compelling in the AI era:
+
+CPU Dominance: 95%+ of smartphones worldwide use Arm-licensed CPU designs. This creates an unparalleled royalty stream.
+Data Center Expansion: NVIDIA, Amazon, Google, and Microsoft are all developing data center chips based on Arm architecture. This is a new, fast-growing market.
+Automotive: Cars increasingly use Arm chips for ADAS and infotainment systems.
+IoT: Connected devices proliferating globally run on Arm chips.
+
+As AI computing demand grows exponentially, Arm's royalty streams from AI chip licensees grow proportionally. The company is uniquely positioned as "the Switzerland of the semiconductor industry" — it supplies architecture to competing chip makers who cannot replicate its ecosystem.
+
+H2: Masayoshi Son's AGI Vision
+
+SoftBank's founder has publicly articulated a vision of "artificial superintelligence" (ASI) as the defining technology of the next decade, with profound implications:
+
+- SoftBank has announced plans to invest $100B in the US over 4 years, partially as part of a US-Japan technology partnership
+- The "Stargate" AI infrastructure project with OpenAI, Oracle, and MGX positions SoftBank at the center of US AI infrastructure investment
+- Son's personal conviction that AGI will transform every industry guides SoftBank's investment priorities
+
+H2: Risk Factors
+
+1. Leverage: SoftBank has historically carried significant debt relative to portfolio value. Forced asset sales at inopportune times have occurred.
+2. Masayoshi Son key person risk: SoftBank's strategy is intensely founder-driven. Management succession is a genuine governance concern.
+3. Investment losses: Vision Fund 1 has included significant losers (WeWork, Greensill Capital) alongside winners.
+4. Arm valuation: If semiconductor sector sentiment deteriorates, Arm's market capitalization (and thus SoftBank's NAV) falls significantly.
+
+H2: StockWaveJP Editorial Perspective
+
+SoftBank Group is one of the purest expressions of the AI investment theme in Japan's equity market. When AI sentiment is strong (NVIDIA rallying, hyperscaler capex increasing), SoftBank typically outperforms. When semiconductor sentiment weakens, SoftBank underperforms. The stock is best treated as a leveraged bet on the AI theme rather than as a defensive holding. Monitor Arm's quarterly earnings and licensing announcements as the most direct fundamental indicator for SoftBank Group's NAV trajectory.
     `},{id:"mitsui-mining-analysis",themes:["Theme Analysis"],keywords:["stock analysis","Japan stocks","investing"],category:"Stock Analysis",icon:"⚙️",title:"Mitsui Mining & Smelting (5706) Deep Dive: Copper Foil, Automotive Materials, and Zinc Refining",date:"2026/04/11",summary:"Mitsui Mining & Smelting has transformed from a traditional zinc refiner into a high-tech materials company.",body:`
 H2: Company Overview
 
@@ -157,46 +194,112 @@ Rising: ABF demand from AI semiconductor production surge, Southeast Asian food 
 H2: Editorial Perspective
 
 Ajinomoto is a rare stock that sits at the intersection of multiple themes — food & beverage (defensive), semiconductor materials (high-growth), and healthcare nutrition (structural growth). ABF-related news is the primary catalyst for the stock's re-rating.
-    `},{id:"furukawa-analysis",themes:["Theme Analysis"],keywords:["stock analysis","Japan stocks","investing"],category:"Stock Analysis",icon:"⚡",title:"Furukawa Electric (5801) Deep Dive: Optical Fiber, Power Cables, and Automotive Components",date:"2026/04/11",summary:"Furukawa Electric is a comprehensive wire and cable manufacturer benefiting from AI data center and EV transition demand.",body:`
-H2: Company Overview
+    `},{id:"furukawa-analysis",themes:["Theme Analysis"],keywords:["stock analysis","Japan stocks","investing"],category:"Stock Analysis",icon:"⚡",title:"Furukawa Electric (5801) Deep Dive: Optical Fiber, Power Cables, and Automotive Components",date:"2026/04/11",summary:"Furukawa Electric is a comprehensive wire and cable manufacturer benefiting from AI data center and EV transition demand.",body:`H2: Furukawa Electric — The Other Optical Fiber Giant
 
-Furukawa Electric Co., Ltd. (5801) is one of Japan's largest wire and cable manufacturers, competing directly with Fujikura and Sumitomo Electric. The company has three main businesses: optical/telecommunications, energy/infrastructure (power cables), and automotive components.
+Furukawa Electric (5801) often lives in the shadow of its more famous competitor Fujikura, but represents an equally compelling investment case in Japan's optical fiber and cable industry. Furukawa's strategic positioning across optical fiber, power cables, and automotive wire harnesses provides multiple tailwinds simultaneously.
 
-H2: Optical Fiber Business
+H2: Optical Fiber — The AI Infrastructure Connection
 
-Furukawa Electric is one of the world's leading optical fiber manufacturers, with significant production capacity. Like Fujikura, it is benefiting from the surge in AI data center construction requiring high-capacity optical fiber infrastructure.
+Furukawa's optical fiber cable business is experiencing the same extraordinary demand environment as Fujikura:
 
-H2: Power Infrastructure Business
+Hyperscaler demand: AWS, Azure, Google Cloud, and Meta are all building massive AI data center campuses that require millions of meters of high-performance optical fiber for internal connectivity.
 
-Furukawa Electric supplies submarine power cables for offshore wind farm connections and long-distance transmission lines — a growing market as renewable energy requires new grid infrastructure.
+Undersea cables: The global internet's backbone runs on undersea fiber optic cables. Furukawa has partnerships and contracts in undersea cable systems connecting Japan to the global internet infrastructure.
 
-H2: Comparison with Fujikura
+5G backhaul: 5G base stations require fiber optic connections for backhaul (connecting base stations to the core network). Japan's 5G rollout continues to generate steady cable demand.
 
-Both Furukawa Electric and Fujikura are benefiting from the same AI data center and renewable energy infrastructure trends. Furukawa Electric has somewhat more balanced business across segments, while Fujikura has a higher concentration in optical fiber (making it higher-beta to this specific theme).
+H2: Power Cables — The Energy Transition Driver
 
-H2: Editorial Perspective
+Furukawa's power cable business benefits from multiple energy transition megatrends:
 
-Furukawa Electric and Fujikura often move together in the optical communication theme. Furukawa's more diversified business mix makes it somewhat less volatile than Fujikura — Fujikura offers higher leverage to the pure optical communication theme, while Furukawa offers more diversification.
-    `},{id:"advantest-analysis",themes:["Theme Analysis"],keywords:["stock analysis","Japan stocks","investing"],category:"Stock Analysis",icon:"🔬",title:"Advantest (6857) Deep Dive: World Leader in AI Semiconductor Test Equipment",date:"2026/04/11",summary:"Advantest is the global leader in semiconductor test equipment, particularly for advanced AI chips. We analyze why this seemingly niche company has become a key AI infrastructure play.",body:`
-H2: Company Overview
+Offshore wind submarine power cables: Japan's ambitious offshore wind targets (10GW by 2030, 45GW by 2040) require specialized submarine power cables to transmit electricity from offshore wind farms to shore. These cables are technically demanding and represent high-value contracts.
 
-Advantest Corporation (6857) is the world's leading manufacturer of semiconductor test equipment — the machines that test integrated circuits after fabrication to ensure they function correctly before being shipped. Every advanced AI chip must pass through testing equipment, making Advantest an essential part of the semiconductor value chain.
+Grid modernization: Japan's electricity grid requires upgrading to accommodate renewable energy integration. New transmission lines connecting generation sources (often in remote areas) to consumption centers require large quantities of power cable.
 
-H2: Why Semiconductor Testing is Critical
+EV charging infrastructure: The expansion of EV charging networks requires power cable installation across Japan's highway system, parking facilities, and residential areas.
 
-As chips become more complex (greater transistor density, advanced packaging, higher power requirements), testing becomes more critical and more difficult. Advantest's testing equipment must identify defects with precision across billions of transistors per chip.
+H2: Automotive Wire Harnesses — The EV Transformation
 
-H2: Market Leadership
+Furukawa Electric is a significant automotive wire harness supplier (through its Furukawa Automotive Systems division). This business faces a complex transition:
 
-Advantest holds approximately 50% of the global semiconductor test equipment market (with Teradyne of the US holding most of the rest). This duopolistic market structure provides pricing power and barriers to entry.
+EV opportunity: Electric vehicles require more copper wiring than ICE vehicles — the battery management system, motor controllers, and charging systems all add electrical content. This increases Furukawa's addressable market per vehicle.
 
-H2: AI Chip Test Advantage
+Automotive lightweight: High-voltage EV cables require new design approaches (aluminum cables, optimized routing) that Furukawa is well-positioned to supply.
 
-AI chips (GPUs, AI accelerators, HBM memory) are particularly difficult to test due to their complexity, heat generation, and specialized architectures. Advantest has been developing testing solutions specifically optimized for AI semiconductor requirements.
+H2: Financial Performance and Valuation
 
-H2: Editorial Perspective
+Furukawa Electric has historically traded at more modest valuations than Fujikura, reflecting:
+- Less concentrated focus on the high-growth optical fiber segment
+- Automotive wire harness business has more modest growth than fiber
+- Capital allocation historically less aggressive than peers
 
-Advantest is one of the most direct pure-plays on AI semiconductor demand within Japan equities. Monitor NVIDIA's quarterly earnings and forward guidance — when NVIDIA guides higher GPU production, Advantest's orders tend to follow with a 1-2 quarter lag.
+However, the combination of AI data center demand for fiber AND offshore wind demand for power cables AND EV content growth for automotive cables creates an unusually broad demand tailwind.
+
+H2: Order Backlog and Capacity
+
+Like Fujikura, Furukawa has reported growing order backlogs in optical fiber and submarine power cables. Management has communicated capacity expansion plans to meet demand.
+
+The capacity expansion investment (in fiber drawing capacity and cable manufacturing) will suppress near-term free cash flow but is essential for maintaining relationships with major hyperscaler customers who require multi-year supply commitments.
+
+H2: StockWaveJP Editorial Perspective
+
+Furukawa Electric provides "second derivative" exposure to the AI infrastructure investment theme — when hyperscalers announce capex increases, fiber cable demand flows through to Furukawa. The stock tends to correlate strongly with Fujikura, providing a somewhat redundant exposure if both are held. For investors preferring Furukawa's broader diversification (power cables, automotive), it represents a more balanced — if less concentrated — AI infrastructure play than Fujikura.
+    `},{id:"advantest-analysis",themes:["Theme Analysis"],keywords:["stock analysis","Japan stocks","investing"],category:"Stock Analysis",icon:"🔬",title:"Advantest (6857) Deep Dive: World Leader in AI Semiconductor Test Equipment",date:"2026/04/11",summary:"Advantest is the global leader in semiconductor test equipment, particularly for advanced AI chips. We analyze why this seemingly niche company has become a key AI infrastructure play.",body:`H2: Advantest — The Essential Gatekeeper of AI Chip Quality
+
+Advantest Corporation (6857) occupies one of the most critical and defensible positions in the global semiconductor supply chain: testing every AI chip before it leaves the factory. Without Advantest's test equipment, NVIDIA, AMD, and virtually every other AI chip maker cannot ship products with confidence in their quality and performance specifications.
+
+H2: Why Semiconductor Testing Is Non-Negotiable
+
+Semiconductor manufacturing is an imperfect process. Even with the most precise equipment and processes, some chips emerge with defects — stuck transistors, timing failures, power leakage issues. These defective chips must be identified and discarded before they are incorporated into expensive systems.
+
+For consumer products (smartphones, appliances), a few defects per million chips may be acceptable — the cost of testing can exceed the cost of the occasional defective product.
+
+For AI applications, the stakes are entirely different. An AI accelerator chip worth $10,000-40,000 (like NVIDIA's H100 or H200) cannot have functional defects — the cost of failure in an AI data center is enormous. More critically, modern AI chips contain hundreds of billions of transistors and must operate at extreme speeds with precise timing — testing these chips requires extraordinarily sophisticated test equipment.
+
+H2: Advantest's Technology Leadership
+
+Advantest holds approximately 50% global market share in memory test systems and approximately 25-30% in logic (SoC/processor) test systems. The dominant positions reflect:
+
+Technology sophistication: Testing modern AI chips requires test equipment that can operate at multi-GHz speeds, apply precise power levels, and measure timing at picosecond resolution.
+
+Customer relationship depth: Chip makers design their test protocols years before production begins. Advantest's applications engineers work alongside chip designers to develop appropriate test strategies — creating deep customer relationships and switching costs.
+
+Installed base: Once a chip maker qualifies Advantest test equipment for a specific chip family, switching to a competitor requires expensive requalification processes.
+
+H2: The AI Chip Demand Explosion
+
+NVIDIA's GPU business has been Advantest's most powerful demand driver. Each successive generation of NVIDIA AI chips (A100, H100, H200, B100, GB200) has been:
+- More complex (more transistors, more memory bandwidth)
+- More expensive (higher test cost per chip justified)
+- Produced in higher volumes (more total test hours required)
+
+The combination of higher per-chip test intensity AND higher production volumes AND higher chip prices creates a multiplicative effect on Advantest's revenue.
+
+H2: HBM Memory — A Specific Opportunity
+
+High Bandwidth Memory (HBM) is the specialized memory type used in AI accelerator chips like NVIDIA's H100. HBM requires extraordinarily sophisticated testing due to its 3D stacked architecture (multiple memory dies connected through silicon vias).
+
+SK Hynix, Samsung, and Micron's HBM production has expanded dramatically to serve AI chip demand. Each HBM unit requires extensive testing that Advantest's equipment is specifically designed to provide.
+
+H2: Financial Profile — Quality Business Characteristics
+
+Advantest's financial characteristics are those of a premium business:
+
+Gross margins: Consistently above 50% — reflecting the high value of intellectual property and technological differentiation in test equipment.
+
+Operating margins: Typically 20-30%+, with room for expansion as revenue grows faster than fixed costs.
+
+Capital intensity: Modest — test equipment is manufactured, but the primary cost structure is R&D (engineers developing next-generation test technology).
+
+H2: The Customer Concentration Risk
+
+Advantest's largest customers — TSMC, Samsung, SK Hynix, NVIDIA's foundry partners — are highly concentrated. If NVIDIA's AI chip shipments were to slow significantly due to geopolitical restrictions, demand softness, or competitive disruption, Advantest's revenue would be materially affected.
+
+The US government's semiconductor export controls on China have created both a near-term risk (some China-based test opportunities lost) and a potential long-term benefit (US/Allied chip production accelerating in geopolitically secure locations).
+
+H2: StockWaveJP Editorial Perspective
+
+Advantest is the most direct "test and measurement" play on the AI chip supercycle in Japan's equity market. When NVIDIA announces new AI chip generations or raises shipment guidance, Advantest typically rallies immediately as investors price in increased test demand. Monitor quarterly TSMC and HBM producer earnings calls for forward demand signals — these companies' AI production ramp statements directly translate into Advantest order potential.
     `},{id:"kioxia-analysis",themes:["Theme Analysis"],keywords:["stock analysis","Japan stocks","investing"],category:"Stock Analysis",icon:"💾",title:"Kioxia (285A) Deep Dive: World #2 in NAND Flash Memory and AI Storage Demand",date:"2026/04/11",summary:"Kioxia (formerly Toshiba Memory) is the world's second-largest NAND flash memory maker. We analyze the memory cycle, AI storage demand, and investment case.",body:`
 H2: Company Overview
 
@@ -560,28 +663,73 @@ Momentum that persists across multiple timeframes (strong in 1W, 1M, AND 3M) is 
 H2: Editorial Perspective
 
 Use StockWaveJP's Flow & Momentum page weekly to track which themes show accelerating momentum vs. fading. Build positions gradually in accelerating themes and trim systematically in fading themes.
-    `},{id:"technical-analysis-basics",themes:["Theme Analysis"],keywords:["basics","Japan stocks","investing"],category:"Basics",icon:"📉",title:"Technical Analysis Basics: Reading Moving Averages, RSI, and MACD",date:"2026/04/05",summary:"Technical analysis helps you determine optimal entry and exit timing for theme stocks. We explain the key indicators and how to apply them.",body:`
-H2: What is Technical Analysis?
+    `},{id:"technical-analysis-basics",themes:["Theme Analysis"],keywords:["basics","Japan stocks","investing"],category:"Basics",icon:"📉",title:"Technical Analysis Basics: Reading Moving Averages, RSI, and MACD",date:"2026/04/05",summary:"Technical analysis helps you determine optimal entry and exit timing for theme stocks. We explain the key indicators and how to apply them.",body:`H2: Technical Analysis for Japan Theme Stock Investors
 
-Technical analysis uses historical price and volume data to forecast future price movements. While fundamental analysis asks "is this stock worth buying?", technical analysis asks "is this a good time to buy?"
+Technical analysis uses price and volume history to identify patterns and signals that may indicate future price direction. While StockWaveJP focuses primarily on fundamental theme data (Return, Volume, Trade Value), technical analysis can help with specific entry and exit timing within a theme investing framework.
 
-H2: Moving Averages
+H2: The Most Useful Indicators for Theme Stock Investing
 
-Moving averages smooth out price fluctuations to identify trends. The 25-day, 75-day, and 200-day moving averages are most commonly used in Japan.
+Not all technical indicators are equally useful. For Japan equity theme stocks, the most reliable are:
 
-Golden Cross: Short-term MA crosses above long-term MA = bullish signal. Death Cross: Short-term MA crosses below long-term MA = bearish signal.
+Moving Averages — The Foundation: The 25-day moving average (25MA) and 75-day moving average (75MA) are the most widely watched by Japanese institutional investors (Japanese market convention differs from Western markets that use 50MA and 200MA).
 
-H2: RSI (Relative Strength Index)
+When price is above 25MA (rising) AND 25MA is above 75MA (rising): Strong uptrend — favorable for new positions.
+When price crosses below 25MA with volume: Early warning signal — monitor closely.
+When 25MA crosses below 75MA (golden cross inverted): Trend reversal warning — consider reducing positions.
 
-RSI measures how overbought or oversold a stock is (0-100). Below 30 = oversold (potential buying opportunity), above 70 = overbought (potential reversal risk). RSI divergence (price makes new high but RSI doesn't) is a warning signal.
+Volume Analysis: StockWaveJP provides theme-level volume data that complements individual stock technical analysis. A stock breaking to new highs on high volume is a much stronger signal than the same breakout on average volume.
 
-H2: MACD
+H2: Reading Candlestick Charts — Japan's Contribution to Technical Analysis
 
-MACD measures the relationship between two moving averages. When the MACD line crosses above the signal line, it generates a bullish signal.
+Japan invented candlestick charting approximately 200 years ago in commodity markets. Key patterns relevant for individual stock entries within themes:
 
-H2: Editorial Perspective
+Bullish reversal patterns (buy signals after a decline):
+- Hammer: Small body at top, long lower wick — rejection of lower prices
+- Morning star: Three-candle pattern showing downtrend exhaustion followed by reversal
+- Engulfing bullish: Large up candle completely engulfs previous down candle
 
-Use StockWaveJP's theme momentum data to identify which themes are in acceleration, then use technical analysis on representative theme stocks to time your entry. Technical analysis works best in trending markets.
+Bearish reversal patterns (sell/reduce signals after a rise):
+- Shooting star: Small body at bottom, long upper wick — rejection of higher prices
+- Evening star: Three-candle pattern showing uptrend exhaustion followed by reversal
+- Doji at highs: Indecision after a sustained rise — potential reversal warning
+
+H2: Support and Resistance — Where Price Tends to Pause
+
+Support and resistance levels are price zones where buying or selling interest has historically concentrated:
+
+Previous highs: Former highs often become resistance as investors who bought at lower prices sell when they return to breakeven.
+Previous lows: Former lows often become support as investors who missed the initial decline buy on the retest.
+Round numbers: ¥1,000, ¥5,000, ¥10,000 levels attract attention simply because they are psychologically prominent.
+
+H2: RSI — Identifying Overbought and Oversold Conditions
+
+The Relative Strength Index (RSI) measures momentum on a 0-100 scale:
+- RSI above 70: Overbought — stock may be due for consolidation or pullback
+- RSI below 30: Oversold — stock may be due for bounce or reversal
+- RSI divergence: Price makes new high but RSI doesn't — weakening momentum warning
+
+H2: Volume-Price Relationship — The Key Confirmation Tool
+
+The most important principle in technical analysis for theme investing: volume should confirm price moves.
+
+Rising price + rising volume = genuine buying interest (strong signal)
+Rising price + falling volume = buying interest weakening (caution)
+Falling price + rising volume = selling pressure intense (potential capitulation)
+Falling price + falling volume = sellers not motivated (potential stabilization)
+
+H2: Combining Technical Analysis with StockWaveJP Data
+
+The most powerful approach combines:
+
+1. StockWaveJP theme data: Identify themes with strong Return AND Volume momentum (structural tailwind)
+2. Individual stock technical analysis: Within momentum-positive themes, identify specific stocks with favorable technical setups (uptrend, testing support, RSI not overbought)
+3. Volume confirmation: Confirm entries with above-average volume
+
+This combination — theme fundamentals confirming the direction, individual stock technicals timing the entry — is more reliable than either approach alone.
+
+H2: StockWaveJP Editorial Perspective
+
+Technical analysis is a tool, not a prophecy. In Japan's equity market, the most reliable technical signals occur when they align with theme-level fundamental data available on StockWaveJP. A bullish reversal candlestick pattern in a "Fading" theme on StockWaveJP should be treated with skepticism. The same pattern in an "Accelerating" theme with expanding Volume is a genuinely actionable signal.
     `},{id:"stock-terms-glossary",themes:["Theme Analysis"],keywords:["basics","Japan stocks","investing"],category:"Basics",icon:"📖",title:"Japan Stock Investment Glossary: 50 Essential Terms for Beginners",date:"2026/04/05",summary:"A comprehensive glossary of 50 essential terms for investors in Japan equities, covering market structure, financial metrics, and trading terminology.",body:`
 H2: Market Structure Terms
 
@@ -620,48 +768,129 @@ H2: Corporate Events
 決算発表 (Kessan Happyo): Earnings announcement.
 上方修正 (Kami Hosei): Upward earnings revision.
 下方修正 (Shimo Hosei): Downward earnings revision.
-    `},{id:"dividend-investing-guide",themes:["Theme Analysis"],keywords:["strategy","Japan stocks","investing"],category:"Strategy",icon:"💸",title:"High-Dividend Stock Investing: Selecting Dividend Yield and Consecutive Dividend Growth Stocks",date:"2026/04/05",summary:"Japan has many attractive high-dividend stocks. We explain how to evaluate dividend yields, assess sustainability, and build a dividend income portfolio.",body:`
-H2: Japan's Dividend Investment Environment
+    `},{id:"dividend-investing-guide",themes:["Theme Analysis"],keywords:["strategy","Japan stocks","investing"],category:"Strategy",icon:"💸",title:"High-Dividend Stock Investing: Selecting Dividend Yield and Consecutive Dividend Growth Stocks",date:"2026/04/05",summary:"Japan has many attractive high-dividend stocks. We explain how to evaluate dividend yields, assess sustainability, and build a dividend income portfolio.",body:`H2: Dividend Investing in Japan — The Income Opportunity
 
-Japan has historically had lower dividend payouts than Western markets, but this has been changing dramatically. Corporate governance reform, shareholder pressure, and the TSE's PBR improvement initiatives have driven Japanese companies to substantially increase dividends.
+Japan's equity market has historically been underappreciated by income investors, but the post-2020 governance reform era has transformed the dividend landscape. Major Japanese companies are now consistently raising dividends, initiating buybacks, and committing to progressive payout policies — creating genuine dividend investment opportunities.
 
-H2: Evaluating Dividend Yield
+H2: Japan's Dividend Landscape — The Data
 
-Dividend yield = annual dividend per share ÷ current stock price. Japan's high-dividend stocks typically offer 3-5% yields. Warning: A very high yield (>6%) sometimes signals that the market expects a dividend cut. Always assess dividend sustainability.
+Japan's dividend yield environment compares favorably:
+- TOPIX average dividend yield: approximately 2.0-2.3%
+- US S&P500 average dividend yield: approximately 1.3-1.5%
+- UK FTSE 100 average dividend yield: approximately 3.5-4.0%
 
-H2: Assessing Dividend Sustainability
+While Japan's average is below UK levels, the most interesting opportunity is in specific sectors where yields are significantly higher:
 
-Check: Payout ratio (dividends ÷ net income; below 60% is generally sustainable), free cash flow vs. dividends, balance sheet strength, and earnings stability.
+Banking/finance: Major banks yield 3.5-5.0%, with rising yields as rate normalization improves earnings
+Utilities: Electric power companies yield 3.0-4.5%
+Trading companies (sogo shosha): Major trading companies yield 3.5-5.0%
+Telecommunications: NTT, KDDI, SoftBank yield 3.0-4.5%
 
-H2: NISA and Dividend Investing
+H2: The "Progressive Dividend" Trend
 
-Japan's NISA account is ideal for dividend investing — dividends received in a NISA account are tax-free.
+The most important structural development for Japan dividend investors is the normalization of "progressive dividend" policies — commitments to not reduce the dividend even if earnings temporarily decline. This is a significant cultural shift from Japan's historical "flexible" dividend approach (cutting dividends when earnings fell).
 
-H2: Editorial Perspective
+Companies committing to progressive dividends include: MUFG, SMFG, Mizuho, major trading companies, and many high-quality industrial companies. This policy commitment makes Japanese dividend stocks significantly more reliable as income instruments.
 
-High-dividend stocks tend to outperform during periods of market uncertainty and rising interest rates. When StockWaveJP shows high-dividend theme stocks showing momentum improvement, it often indicates defensive positioning by institutional investors.
-    `},{id:"portfolio-management",themes:["Theme Analysis"],keywords:["strategy","Japan stocks","investing"],category:"Strategy",icon:"📁",title:"Portfolio Management Basics: Diversification, Rebalancing, and Risk Management",date:"2026/04/05",summary:"Effective portfolio management combines theme investing with proper diversification and risk management.",body:`
-H2: Why Portfolio Management Matters
+H2: NISA and Dividend Investing — The Tax-Free Combination
 
-Individual investment decisions matter less than most investors believe — overall portfolio construction determines the majority of long-term returns.
+New NISA (effective 2024) makes dividend investing in Japan even more attractive:
 
-H2: Diversification in Theme Investing
+Dividends received in a NISA account are completely tax-free — in a normal account, dividends are subject to 20.315% withholding tax. For a stock yielding 3%, a NISA holder receives the full 3% while a non-NISA holder receives approximately 2.4% after tax.
 
-Optimal theme diversification for a retail investor typically involves 3-5 themes. Below 3 themes creates excessive concentration risk; above 7-8 themes becomes difficult to monitor effectively.
+This after-tax advantage compounds significantly over a long holding period, making NISA accounts ideal for dividend-focused Japan equity positions.
 
-Diversify across: theme characteristics (cyclical vs. defensive), time horizons (some short-term momentum plays and some structural multi-year themes), and correlation.
+H2: Dividend Aristocrats — Japan's Best Dividend Growth Stocks
 
-H2: Position Sizing
+A Japanese dividend aristocrat is typically defined as a company that has increased (or maintained) its dividend for 10+ consecutive years. In Japan, this record is rarer than in the US (where 25+ consecutive years is the standard) because Japan's dividend history of cutting during down years makes 10-year records genuinely meaningful.
 
-A practical framework: maximum 30% in any single theme, with 3-5 themes forming the core portfolio. Within each theme, focus on the 2-3 highest-conviction stocks.
+Characteristics of Japanese dividend growth stocks:
+- Dominant domestic market position with pricing power
+- Low capital intensity (high free cash flow conversion)
+- International business providing growth to fund dividend increases
+- Management explicitly committed to shareholder return improvement
 
-H2: Loss-Cut Discipline
+H2: Dividend Stocks in the Theme Framework
 
-Set loss-cut thresholds before entering positions. A common approach: 10-15% stop-loss from entry price for momentum positions, wider stops (15-25%) for longer-term structural theme positions.
+StockWaveJP's theme framework helps identify dividend-rich sectors:
 
-H2: Editorial Perspective
+Banking & Finance theme: MUFG, SMFG, Mizuho — all yielding 3-5% with rising dividends driven by rate normalization.
+Sogo Shosha (Buffett stocks theme): All five major trading companies yielding 3.5-5%+ with strong free cash flow coverage.
+Telecommunications theme: NTT, KDDI, SoftBank — reliable dividends with progressive policies.
+Insurance theme: Major non-life insurers yielding 3-5%, boosted by cross-shareholding sales being returned as dividends.
 
-Check your themes weekly using StockWaveJP. When a theme you hold shows declining Return AND Volume over 2-3 consecutive weeks, it's a signal to review your position.
+H2: StockWaveJP Editorial Perspective
+
+For dividend-focused Japan equity investors, NISA account utilization and progressive dividend policy tracking are the most important ongoing activities. When a high-quality dividend stock's theme shows "Accelerating" momentum on StockWaveJP, it often represents an opportunity to build positions that provide both capital appreciation in the near term and sustainable income over the long term. Focus on companies where dividend yield is backed by improving free cash flow, not just high payout ratios.
+    `},{id:"portfolio-management",themes:["Theme Analysis"],keywords:["strategy","Japan stocks","investing"],category:"Strategy",icon:"📁",title:"Portfolio Management Basics: Diversification, Rebalancing, and Risk Management",date:"2026/04/05",summary:"Effective portfolio management combines theme investing with proper diversification and risk management.",body:`H2: Building a Japan Equity Theme Portfolio — Principles and Practice
+
+Successful portfolio management for Japan equity theme investing requires balancing several competing objectives: capturing upward momentum in leading themes, managing downside risk in fading themes, maintaining diversification across uncorrelated exposures, and adapting to changing market conditions. This article provides a practical framework for individual investors.
+
+H2: Core Portfolio Architecture
+
+A practical Japan equity theme portfolio can be structured in three layers:
+
+Layer 1 — Core Structural Holdings (40-60% of portfolio): Long-term structural themes with 5+ year visibility. Examples: semiconductor materials (AI supercycle), banking/finance (interest rate normalization), national resilience/infrastructure, healthcare/aging. These positions are held through volatility and added to on significant dips.
+
+Layer 2 — Momentum Tactical Positions (30-40% of portfolio): Themes showing active momentum (Accelerating or Turning Up on StockWaveJP). These are entered when momentum signals are confirmed and exited when momentum fades. Typical holding period: 1-3 months.
+
+Layer 3 — Speculative/Emerging Positions (10-20% of portfolio): Early-stage themes or individual stocks where the thesis is compelling but unproven. Higher risk, smaller position sizes, strict stop-loss rules.
+
+H2: Position Sizing — The Foundation of Risk Management
+
+Position sizing is arguably more important than stock selection. A winning investment thesis loses money if the position is too small; a losing investment can be survived if the position is properly sized.
+
+Core structural holdings: 5-10% maximum per theme. Even in your highest-conviction themes, over-concentration creates unacceptable single-theme risk.
+
+Momentum tactical positions: 3-7% per theme. These positions are actively managed and may be reduced quickly if momentum reverses.
+
+Speculative positions: 1-3% per theme. High-risk, high-reward positions should be sized to survive total loss without materially impairing the portfolio.
+
+H2: When to Enter — Timing Framework
+
+The best theme entries share specific characteristics:
+
+Return turning positive after a decline: When a theme's Return improves from negative to positive territory with simultaneous Volume expansion, this "turning up" signal often marks the beginning of a sustainable move.
+
+Volume confirmation: Entry should be delayed until Volume confirms the Return improvement. Price moves without Volume expansion are less sustainable.
+
+Multi-period alignment: The strongest entries show improving Return across multiple periods (1W, 1M all positive) rather than just a single-period spike.
+
+Macro confirmation: Check whether the macro environment supports the theme. Example: don't buy export-oriented themes when yen is strengthening sharply.
+
+H2: When to Exit — The Harder Decision
+
+Exits are psychologically more difficult than entries. A disciplined framework:
+
+Stop-loss exits: Pre-determined maximum loss from entry price (10-15% for structural themes, 8-12% for tactical positions). Execute without discretion — exceptions always lead to larger losses.
+
+Momentum reversal exits: When a theme moves from "Accelerating" to "Fading" on StockWaveJP's momentum analysis with Volume declining, reduce or exit tactical positions.
+
+Time exits: If a momentum position hasn't moved in the expected direction within 4-6 weeks, consider exiting — the thesis may be wrong, or timing may be off.
+
+Profit-taking: Scale out of positions at predetermined gain targets (e.g., sell 30% at +15%, another 30% at +25%, hold remainder).
+
+H2: Diversification — Theme Correlation Matters
+
+Theme diversification is meaningless if themes are highly correlated. On StockWaveJP, observe which themes move together:
+
+High correlation group (technology): Semiconductor, AI & cloud, optical communication, power semiconductor all tend to move together — owning all four provides less diversification than it appears.
+
+Lower correlation diversifiers: Banking/finance (interest rate driven), inbound tourism (yen-driven), defense (policy-driven), food & beverage (defensive) tend to move independently of technology themes.
+
+True portfolio diversification requires spreading across different "drivers" — not just different sectors.
+
+H2: Monitoring Cadence — How Often to Review
+
+Weekly: Review StockWaveJP's Theme List and Flow & Momentum page. Note any themes moving from "Flat" to "Turning Up" or from "Accelerating" to "Turning Down" — these transitions require portfolio action.
+
+Monthly: Assess whether core structural thesis for each holding remains intact. Have earnings confirmed the investment case? Have competitive dynamics changed?
+
+Quarterly: Comprehensive portfolio review. Rebalance to target weights. Assess whether Layer 1 themes remain appropriate.
+
+H2: StockWaveJP Editorial Perspective
+
+StockWaveJP is designed precisely for the weekly portfolio monitoring function described above. By checking Return, Volume, and momentum state for all 67 themes weekly, investors can identify necessary portfolio adjustments before they become urgent. The most common mistake in theme portfolio management is holding fading themes too long out of emotional attachment to a thesis — the momentum data provides an objective signal to override this tendency.
     `},{id:"toyota-analysis",themes:["Theme Analysis"],keywords:["stock analysis","Japan stocks","investing"],category:"Stock Analysis",icon:"🚗",title:"Toyota Motor (7203) Deep Dive: EV Strategy, Hybrid Strengths, and 2026 Investment Case",date:"2026/04/05",summary:"Toyota is the world's largest automaker and one of Japan's most important stocks. We analyze its EV transition, financial strength, and 2026 investment case.",body:`H2: Company Overview
 
 Toyota Motor Corporation (7203) is the world's largest automaker by sales volume and one of Japan's largest companies by market capitalization. Toyota operates across multiple brands (Toyota, Lexus, Hino, Daihatsu) and has developed what may be the automotive industry's most sophisticated approach to powertrain diversification — maintaining simultaneous capability in hybrid (HV), plug-in hybrid (PHEV), battery electric (BEV), hydrogen fuel cell (FCEV), and traditional internal combustion engine (ICE) vehicles.
@@ -870,26 +1099,55 @@ Japanese electrical equipment companies including Hitachi, Mitsubishi Electric, 
 H2: StockWaveJP Editorial Perspective
 
 The renewable energy theme in Japan is policy-driven and therefore more predictable than purely market-driven themes. Major catalysts include government GX policy announcements, offshore wind auction results, and energy price movements (high fossil fuel prices make renewable economics more attractive). The theme tends to respond well to global energy price spikes, which highlight Japan's energy vulnerability and accelerate transition policies.
-    `},{id:"game-entertainment-theme",themes:["Theme Analysis"],keywords:["theme analysis","Japan stocks","investing"],category:"Theme Analysis",icon:"🎮",title:"Game & Entertainment Theme Deep Dive: Background, Current State, and Key Stocks",date:"2026/04/04",summary:"Japan's game and entertainment industry has world-class IP and global reach. We analyze the structural drivers, key stocks, and investment timing.",body:`
-H2: Japan's Gaming Powerhouse Status
+    `},{id:"game-entertainment-theme",themes:["Theme Analysis"],keywords:["theme analysis","Japan stocks","investing"],category:"Theme Analysis",icon:"🎮",title:"Game & Entertainment Theme Deep Dive: Background, Current State, and Key Stocks",date:"2026/04/04",summary:"Japan's game and entertainment industry has world-class IP and global reach. We analyze the structural drivers, key stocks, and investment timing.",body:`H2: Japan's Gaming Industry — Global Cultural Export Champion
 
-Japan is home to some of the world's most valuable gaming IP — Nintendo's Mario and Pokémon, Bandai Namco's Gundam, Capcom's Monster Hunter and Resident Evil, Square Enix's Final Fantasy. This IP strength creates durable revenue streams across hardware generations.
+Japan's gaming industry is one of the world's most culturally significant — Japanese game franchises dominate global consciousness in ways that no other Japanese cultural export has achieved. Mario, Pokémon, The Legend of Zelda, Final Fantasy, Monster Hunter, Street Fighter, and dozens of other Japanese game franchises are globally recognized brands with billions of fans worldwide.
 
-H2: Nintendo Switch 2 Impact
+This cultural dominance translates into durable economic value: Japan-origin game IP has proven remarkably long-lived, with franchises generating revenue across generations of hardware platforms.
 
-Nintendo's Switch 2 launch is the most important near-term catalyst for this theme. Historical data shows Nintendo (7974) and its key software partners see significant stock price appreciation in the year following a new console launch.
+H2: The Major Studios — Franchise Value Assessment
 
-H2: Rising and Falling Factors
+Nintendo (7974): The master of gaming IP management. Nintendo's first-party franchises (Mario, Zelda, Pokémon, Animal Crossing, Splatoon) consistently generate the highest-selling games on their platform. The Switch 2 hardware cycle launch creates a multi-year software revenue opportunity. Additionally, Nintendo's IP licensing (Super Mario movie, Universal Studios Nintendo World) generates revenue beyond gaming.
 
-Rising: New console cycle, global gaming market expansion, streaming and subscription model growth, IP licensing and entertainment adaptation (movies, TV). Falling: Competition from Chinese mobile games, game development cost inflation.
+Sony Group — PlayStation Studios: PlayStation's acquisition of major studios (Naughty Dog, Insomniac, Guerrilla, Bungie) has created a content moat for PlayStation. Exclusive titles — The Last of Us, Spider-Man, God of War, Horizon — attract subscribers to PlayStation Plus and drive console sales.
 
-H2: Key Stocks
+Capcom (9697): The most consistently financially excellent Japanese gaming company over the past decade. Capcom's "Million Seller Titles" strategy focuses on titles capable of selling 1 million+ units, abandoning niche games. Monster Hunter Rise, Resident Evil series, and Street Fighter 6 have all been major commercial successes. Capcom's digital sales transition (from physical discs to downloads) has improved gross margins significantly.
 
-Nintendo (7974), Sony Group (6758), Bandai Namco Holdings (7832), Capcom (9697), Square Enix (9684), and KONAMI Group (9766).
+Bandai Namco Holdings (7832): Combines anime IP (Dragon Ball, Naruto, One Piece, Gundam) with game development expertise. The integrated IP platform — where anime drives game awareness and game success boosts anime viewership — creates a unique synergistic business.
 
-H2: Editorial Perspective
+Square Enix (9684): Final Fantasy and Dragon Quest are among gaming's most storied franchises. Square Enix has pursued an aggressive strategy of selling HD game IP and blockchain games that has proved controversial with investors and gamers alike. The jury is still out on whether the strategy is creating value.
 
-This theme is highly correlated with Nintendo's product cycle. Monitor Nintendo Direct announcements for major game reveals — these consistently cause Volume surges not just in Nintendo but across the entire gaming theme.
+H2: The Mobile Gaming Opportunity
+
+Mobile gaming revenues in Japan exceed console gaming revenues, creating a distinct sub-market:
+
+GungHo Online (3765): Puzzle & Dragons remains one of the highest-grossing mobile games ever produced in Japan. The franchise's longevity (launched 2012, still generating significant revenue) demonstrates that strong mobile game IP can sustain for over a decade.
+
+DeNA (2432): Mobile gaming pioneer, though business has diversified into healthcare and other segments. Sports business (working with baseball teams) is a growing segment.
+
+mixi (2121): Monster Strike is another decade-long mobile gaming franchise success. mixi has diversified into sports team ownership and other entertainment.
+
+H2: The Anime Connection — IP Synergies
+
+Japan's anime industry and gaming industry have deep synergies:
+
+Anime properties generate game demand: Demon Slayer, Jujutsu Kaisen, Attack on Titan game releases consistently outperform general market expectations due to anime fandom.
+
+Games generate anime demand: Persona, Fate, and other gaming franchises have spawned successful anime series.
+
+Merchandise multiplication: Both anime and games generate merchandise revenues that multiply the total IP value. Bandai (part of Bandai Namco) dominates the physical merchandise market for anime and game characters.
+
+H2: The Live Service Game Model — Recurring Revenue
+
+The shift from packaged game sales (sell once) to live service games (ongoing player spending on in-game items) has fundamentally changed gaming economics:
+
+High-revenue live service games: Genshin Impact (Chinese, but with massive Japanese player base), Fate/Grand Order (Japanese, by DelightWorks and Aniplex), and others demonstrate that live service games can generate hundreds of millions of dollars annually for years.
+
+The risk: Not all games successfully become live service hits. The market for live service games is intensely competitive and dominated by a few runaway successes.
+
+H2: StockWaveJP Editorial Perspective
+
+The game & entertainment theme responds most strongly to: major game release announcements and sales data, hardware platform sales milestones, and major IP expansion announcements (movies, theme parks, merchandise licensing). During strong risk-on markets, gaming stocks often participate in growth stock rallies. Monitor Nintendo's hardware sales data and Capcom's quarterly "Million Seller" game count as the clearest fundamental indicators for the theme.
     `},{id:"banking-finance-theme",themes:["Theme Analysis"],keywords:["theme analysis","Japan stocks","investing"],category:"Theme Analysis",icon:"🏦",title:"Banking & Finance Theme Deep Dive: Background, Current State, and Key Stocks",date:"2026/04/04",summary:"Japan's banking sector is experiencing a structural transformation as interest rates rise from zero. We analyze the impact of rate normalization on banking stocks.",body:`H2: The Interest Rate Normalization — A Structural Shift After 30 Years
 
 Japan's banking sector endured one of the longest periods of ultra-low interest rates in modern financial history. The Bank of Japan maintained near-zero policy rates from the late 1990s through 2024, with a brief experiment in negative interest rates from 2016 to 2024. This environment fundamentally compressed bank profitability — the core "borrow short, lend long" business model generates minimal spread when overnight rates are at or below zero.
@@ -1048,26 +1306,55 @@ Rising interest rates are actually positive for Japanese life insurers in the me
 H2: StockWaveJP Editorial Perspective
 
 The insurance theme offers an unusual combination of: cross-shareholding unwinding (a multi-year return of capital catalyst), interest rate normalization benefits (investment income improvement), and relative defensive characteristics (non-cyclical insurance demand). The most direct catalyst is announcement of cross-shareholding reduction targets — monitor quarterly earnings calls for updates on unwinding pace and shareholder return plans.
-    `},{id:"real-estate-theme",themes:["Theme Analysis"],keywords:["theme analysis","Japan stocks","investing"],category:"Theme Analysis",icon:"🏠",title:"Real Estate Theme Deep Dive: Background, Current State, and Key Stocks",date:"2026/04/04",summary:"Japan's real estate market is experiencing a renaissance in urban areas, while J-REITs face headwinds from rising interest rates.",body:`
-H2: Two Real Estate Stories
+    `},{id:"real-estate-theme",themes:["Theme Analysis"],keywords:["theme analysis","Japan stocks","investing"],category:"Theme Analysis",icon:"🏠",title:"Real Estate Theme Deep Dive: Background, Current State, and Key Stocks",date:"2026/04/04",summary:"Japan's real estate market is experiencing a renaissance in urban areas, while J-REITs face headwinds from rising interest rates.",body:`H2: Japan's Real Estate Market — Defying the Demographic Narrative
 
-Japan's real estate theme has two distinct stories: 1) Physical real estate developers benefiting from rising property prices in major urban centers (Tokyo, Osaka, Fukuoka), and 2) J-REITs facing headwinds as interest rates rise.
+Conventional wisdom suggests that Japan's shrinking, aging population should create persistent real estate deflation. The data suggests otherwise — particularly for prime urban real estate, where demographic concentration (rural population flowing to cities) and supply constraints are creating genuine price appreciation.
 
-H2: Urban Real Estate Boom
+H2: The Tokyo Premium — Why Urban Real Estate Outperforms
 
-Tokyo's commercial and residential real estate markets are experiencing significant price appreciation driven by: weak yen attracting foreign investors, office demand recovery post-COVID, data center development creating industrial real estate demand.
+Tokyo is the world's largest metropolitan economy and continues to attract domestic and international capital:
 
-H2: Rising and Falling Factors
+Population concentration: Despite Japan's overall population decline, Tokyo's population continues to grow as people migrate from depopulating regional areas. Tokyo, Osaka, Nagoya, and Fukuoka are all experiencing net population inflows.
 
-Rising: Urban property price appreciation, inbound tourism supporting hotel properties, data center demand. Falling: Rising interest rates increasing financing costs (especially negative for J-REITs), population decline in rural areas.
+Supply constraints: Tokyo's zoning, height restrictions, and development regulations constrain the supply of premium office and residential space. The result is persistent undersupply in specific segments despite new construction.
 
-H2: Key Stocks
+International demand: Weak yen has made Japanese real estate attractive to foreign investors. Hong Kong, Singaporean, and North American real estate funds have been active buyers of Tokyo office buildings, hotels, and residential properties.
 
-Mitsui Fudosan (8801), Mitsubishi Estate (8802), Sumitomo Realty & Development (8830) are the major developers. Nippon Building Fund (8951) represents J-REITs.
+H2: J-REITs — The Listed Real Estate Opportunity
 
-H2: Editorial Perspective
+Japan's J-REIT (Japan Real Estate Investment Trust) market provides liquid exposure to Japanese real estate with regular income distributions. Key J-REIT categories:
 
-The real estate theme is bifurcated — developers benefit from rising property prices while J-REITs struggle with rising rates. For pure real estate exposure, developers offer better risk/reward in the current rate environment.
+Office REITs: Nippon Building Fund (8951), Japan Real Estate Investment (8952). Japan's office market faces remote work headwinds (demand uncertainty) but benefits from Tokyo's continued status as Asia's leading financial center.
+
+Logistics REITs: Prologis REIT (3283), GLP REIT (3281), LaSalle Logiport REIT (3466). E-commerce growth drives relentless demand for modern logistics facilities. Logistics REITs have been the best-performing J-REIT category over the past decade.
+
+Residential REITs: Advance Residence Investment (3269), Daiwa House REIT (8984). Stable, lower-yield returns from residential apartment portfolios in major cities.
+
+Hotel REITs: Japan Hotel REIT (8985). Extraordinary inbound tourism has driven dramatic hotel RevPAR (Revenue Per Available Room) growth, making hotel REITs among the highest-returning J-REITs recently.
+
+H2: Developers — The Capital-Intensive End
+
+Japan's major real estate developers engage in the most capital-intensive activities — acquiring land, developing properties, and either retaining for rental income or selling:
+
+Mitsubishi Estate (8802): Japan's most prestigious developer, operating many of Tokyo's premier office buildings including the Marunouchi district (adjacent to Tokyo Station). Mitsubishi Estate's land bank and trophy asset portfolio is irreplaceable.
+
+Mitsui Fudosan (8801): Japan's largest developer by revenue, with diversified exposure across office, retail, residential, logistics, and hospitality. The LaLaport shopping mall chain is one of Japan's most successful retail real estate concepts.
+
+Sumitomo Realty (8830): Known for its Nishi-Shinjuku office cluster and high-quality residential developments. More conservative leverage than peers.
+
+H2: The Interest Rate Risk — The Critical Variable
+
+Japanese real estate is highly sensitive to interest rates:
+
+J-REIT distribution yields: Currently approximately 3.5-5.0%, they compete with rising bond yields as rates normalize. J-REIT valuations tend to decline when interest rates rise (reducing the yield advantage relative to bonds).
+
+Developer financing costs: Real estate development is leverage-intensive. Rising interest rates increase financing costs, reducing development profitability.
+
+Cap rate expansion: As required returns rise with interest rates, asset valuations based on income capitalization tend to decline.
+
+H2: StockWaveJP Editorial Perspective
+
+The real estate theme is most sensitive to Bank of Japan policy decisions. When rate hike concerns increase, J-REITs often underperform significantly. Conversely, when Bank of Japan maintains its accommodative stance, J-REITs can be strong performers. Use StockWaveJP to monitor the real estate theme's momentum relative to banking — when banks outperform real estate, it often signals rate hike expectations building. When real estate outperforms, it suggests rate concerns are fading.
     `},{id:"pharma-bio-theme",themes:["Theme Analysis"],keywords:["theme analysis","Japan stocks","investing"],category:"Theme Analysis",icon:"💊",title:"Pharmaceutical & Biotech Theme Deep Dive: Background, Current State, and Key Stocks",date:"2026/04/04",summary:"Japan's pharmaceutical industry has world-class companies but faces drug pricing pressure. We analyze the biotech revolution and investment opportunities.",body:`H2: Japan's Pharmaceutical Industry — From Domestic Giant to Global Player
 
 Japan's pharmaceutical industry has undergone a dramatic transformation over the past decade. Historically dominated by domestic market focus with relatively modest international presence, a handful of Japanese pharmaceutical companies have emerged as genuine global innovators with blockbuster drugs that compete on the world stage.
@@ -1680,26 +1967,66 @@ Japan's robot makers are all expanding their cobot lineups. The target markets i
 H2: StockWaveJP Editorial Perspective
 
 The robotics & automation theme has both cyclical (tied to manufacturing capital expenditure) and structural (labor shortage + AI integration) components. The best entry points are during manufacturing capex downturns — when robot order volumes decline temporarily but the underlying structural case (labor shortage, AI-enhanced automation) remains intact. Monitor Fanuc's monthly order data (published monthly) as the earliest leading indicator for the theme's near-term direction.
-    `},{id:"rare-earth-resources-theme",themes:["Theme Analysis"],keywords:["theme analysis","Japan stocks","investing"],category:"Theme Analysis",icon:"⛏️",title:"Rare Earth & Resources Theme Deep Dive: Background, Current State, and Key Stocks",date:"2026/04/04",summary:"Critical minerals for the energy transition are becoming strategic assets. Japan is investing in supply chain security and recycling technologies.",body:`
-H2: Critical Minerals for the Energy Transition
+    `},{id:"rare-earth-resources-theme",themes:["Theme Analysis"],keywords:["theme analysis","Japan stocks","investing"],category:"Theme Analysis",icon:"⛏️",title:"Rare Earth & Resources Theme Deep Dive: Background, Current State, and Key Stocks",date:"2026/04/04",summary:"Critical minerals for the energy transition are becoming strategic assets. Japan is investing in supply chain security and recycling technologies.",body:`H2: Rare Earth and Critical Minerals — Japan's Strategic Imperative
 
-The transition to clean energy requires massive quantities of critical minerals: rare earth elements for EV motors and wind turbines, lithium and cobalt for batteries, copper for electrification. China currently dominates production of many of these materials, creating supply chain risks.
+Rare earth elements (REEs) and critical minerals have moved from obscure industrial chemistry to geopolitical headlines. The technologies that will define the 21st century — EV batteries, wind turbines, semiconductor chips, defense electronics, and AI infrastructure — all require specific critical minerals in ways that create genuine supply security concerns.
 
-H2: Japan's Resource Strategy
+H2: Why Rare Earths Are Strategic
 
-Japan has developed a strategic approach: overseas resource investments through trading companies, recycling technologies (urban mining), stockpiling programs, and diplomatic agreements for resource access.
+"Rare earth elements" is a misleading name — they are not particularly rare in the Earth's crust, but they are rarely found in commercially viable concentrations and are expensive to extract and process. The 17 rare earth elements include:
 
-H2: Rising and Falling Factors
+Light REEs (commercially most important): Lanthanum, cerium, neodymium, praseodymium — used in permanent magnets, catalysts, and glass polishing.
+Heavy REEs (strategically most sensitive): Dysprosium, terbium, europium — used in high-performance permanent magnets, phosphors, and defense electronics.
 
-Rising: EV adoption increasing rare earth demand, US-China trade tensions increasing supply chain diversification, battery recycling market emergence. Falling: Chinese export restrictions, price volatility, long development timelines.
+The key issue: China controls approximately 60% of global rare earth mining and approximately 90% of global rare earth processing and refining. This concentration creates supply security vulnerability for any nation dependent on rare earth-containing technology.
 
-H2: Key Stocks
+H2: Japan's Vulnerability and Response
 
-Sumitomo Metal Mining (5713), Mitsui Mining & Smelting (5706), Dowa Holdings (5714), and trading companies with significant resource investments.
+Japan is the world's second-largest consumer of rare earth elements (after China), driven by its dominant electronics and automotive manufacturing industries. Japan learned the severity of this vulnerability when China restricted rare earth exports during the 2010 Senkaku Islands diplomatic dispute.
 
-H2: Editorial Perspective
+Japan's response has been the most systematic of any nation:
 
-The rare earth-resources theme is best approached as a long-term strategic holding rather than a momentum trade. Events that trigger buying include US-China trade tensions, EV sales acceleration, and critical mineral supply disruption news.
+Supply diversification: Japan has invested in REE mining projects in Australia (Lynas Rare Earths), Canada, and Africa, providing alternative supply chains to Chinese sourcing.
+
+Recycling technology: Japan is the world leader in recycling REEs from used electronics and magnets. "Urban mining" recovers REEs from discarded devices, reducing dependence on primary mining.
+
+Substitution research: Japan's universities and companies have invested in REE-free or REE-reduced magnet technology, reducing the quantity required per application.
+
+Strategic reserves: Japan maintains strategic REE stockpiles similar to its oil strategic reserves.
+
+H2: The EV and Renewable Energy Demand Driver
+
+The energy transition is creating extraordinary new demand for specific critical minerals:
+
+Neodymium-iron-boron (NdFeB) magnets: Used in EV motors and wind turbine generators. Each EV requires approximately 1-2kg of NdFeB magnets; each wind turbine requires 200-600kg. As EV and wind capacity grows, REE magnet demand grows proportionally.
+
+Cobalt and nickel: EV battery cathodes require cobalt (reducing but not eliminated) and nickel. Supply is dominated by DRC (Congo) for cobalt and Indonesia for nickel — both creating supply security concerns.
+
+Lithium: EV batteries require lithium. Australia, Chile, and Argentina hold most global reserves; China controls most processing.
+
+H2: Key Japanese Investment Exposures
+
+Sumitomo Metal Mining (5713): Japan's most direct exposure to REE and battery material processing. The company processes rare earth elements and produces high-purity nickel sulfate for EV battery cathodes.
+
+Shin-Etsu Chemical (4063): World-leading NdFeB permanent magnet materials supplier. Shin-Etsu's magnets are used in hard disk drives, speakers, and increasingly EV motors.
+
+TDK (6762): Produces ferrite magnets and increasingly NdFeB magnets for automotive and industrial applications.
+
+DOWA Holdings (5714): Non-ferrous metals including rare metals, with growing battery material recycling operations.
+
+H2: Geopolitical Risk and Investment Opportunity
+
+US-China technology rivalry has elevated critical minerals to national security priority:
+
+US actions: Defense Production Act invoked to support domestic critical mineral supply chains. IRA (Inflation Reduction Act) provides EV tax credits preferentially for vehicles using critical minerals from allied nations.
+
+Japan-US cooperation: The Minerals Security Partnership (MSP) coordinates investment in critical mineral supply chains among aligned nations, providing government support for Japanese investment in overseas mining.
+
+This geopolitical alignment between Japan's supply security needs and US/allied nation policy priorities creates a favorable environment for Japanese critical mineral investments.
+
+H2: StockWaveJP Editorial Perspective
+
+The rare earth and critical minerals theme responds to: EV adoption data (driving magnet demand expectations), US-China trade tensions (creating supply security urgency), and specific mine development milestones. The theme is best monitored alongside the EV & Green theme — when EV adoption data surprises positively, both themes tend to benefit simultaneously.
     `},{id:"cybersecurity-theme",themes:["Theme Analysis"],keywords:["theme analysis","Japan stocks","investing"],category:"Theme Analysis",icon:"🔒",title:"Cybersecurity Theme Deep Dive: Background, Current State, and Key Stocks",date:"2026/04/04",summary:"Cyber threats are escalating globally, and Japan is ramping up cybersecurity spending. We analyze the investment opportunity in this increasingly critical theme.",body:`H2: Japan's Cybersecurity Imperative — A Nation Under Attack
 
 Japan has experienced several high-profile cyberattacks that have elevated national awareness of cybersecurity:
@@ -1860,26 +2187,69 @@ The risk scenario: If the Bank of Japan normalizes interest rates significantly 
 H2: StockWaveJP Editorial Perspective
 
 The tourism and hotel theme is best monitored alongside USD/JPY movements — yen depreciation is bullish for the theme, yen appreciation is bearish. Additional catalysts include Japan government tourism promotion announcements, airline capacity additions (more flights = more visitors), and monthly visitor statistics from the Japan Tourism Agency. When the inbound tourism theme shows strong Return AND Volume on StockWaveJP, it typically reflects institutional investors reacting to favorable yen moves or visitor data surprises.
-    `},{id:"agritech-foodtech-theme",themes:["Theme Analysis"],keywords:["theme analysis","Japan stocks","investing"],category:"Theme Analysis",icon:"🌾",title:"Agritech & Foodtech Theme Deep Dive: Background, Current State, and Key Stocks",date:"2026/04/04",summary:"Japan's agricultural modernization and global food security concerns are creating investment opportunities at the intersection of technology and food production.",body:`
-H2: Overview
+    `},{id:"agritech-foodtech-theme",themes:["Theme Analysis"],keywords:["theme analysis","Japan stocks","investing"],category:"Theme Analysis",icon:"🌾",title:"Agritech & Foodtech Theme Deep Dive: Background, Current State, and Key Stocks",date:"2026/04/04",summary:"Japan's agricultural modernization and global food security concerns are creating investment opportunities at the intersection of technology and food production.",body:`H2: Japan's Agritech Revolution — Feeding an Aging Nation
 
-The agritech and foodtech theme covers precision agriculture, food processing innovation, alternative proteins, food waste reduction, and smart farming technologies.
+Japan's agriculture faces an existential labor crisis. The average age of Japan's farmers exceeds 68 years old, and the number of active farm operators is declining by approximately 4% annually. Within 10-15 years, Japan faces the prospect of insufficient labor to maintain current food production — unless automation and technology dramatically increase per-worker productivity.
 
-H2: Japan's Agricultural Modernization Challenge
+H2: The Scale of the Opportunity
 
-Japan's agricultural sector faces structural challenges: aging farmers (average age over 67), declining cultivated land area, and high production costs. Smart agriculture technologies are being promoted as solutions.
+Japan's food and agriculture market is one of the world's largest in absolute terms. Key statistics:
+- Japan's domestic food market exceeds ¥80 trillion annually
+- Agricultural output of approximately ¥9 trillion per year
+- Japan's food self-sufficiency ratio (caloric basis) has declined to approximately 37% — extraordinary for a major developed economy
+- Government target: raise food self-sufficiency to 45% by 2030
 
-H2: Rising and Falling Factors
+The gap between self-sufficiency ambition and demographic reality creates the structural impetus for agritech investment.
 
-Rising: Government "smart agriculture" promotion policy, drone adoption for crop spraying, vertical farming expansion, alternative protein development. Falling: Long development timelines, farmer adoption challenges, competition from cheaper imported food.
+H2: Agricultural Drones — The Fastest-Scaling Technology
 
-H2: Key Stocks
+Agricultural drones are the most commercially mature agritech application in Japan. The technology has moved from experimental to mainstream:
 
-Kubota Corporation (6326, agricultural machinery with smart agriculture systems) and Iseki & Company (6310, tractors) represent the core exposure.
+- Over 17,000 agricultural drones registered in Japan as of 2023
+- Approximately 25% of all Japan rice paddy area treated by drone (pesticide, fertilizer application)
+- Costs: Drone treatment costs have fallen to ¥2,000-3,000 per 10-acre equivalent — competitive with traditional equipment
 
-H2: Editorial Perspective
+Yamaha Motor's industrial unmanned helicopter division pioneered agricultural drones globally (the R-50 was introduced in 1991). The market has since diversified to include DJI agricultural drones (China) and domestic manufacturers including ACSL.
 
-The agritech-foodtech theme is early-stage in Japan and is best viewed as a long-term structural investment. Catalysts include government policy announcements and global food price spikes.
+H2: Smart Farming — Precision Agriculture at Scale
+
+Precision agriculture uses sensors, data analytics, and connected devices to optimize inputs (fertilizer, pesticides, water) at the individual plant or field zone level:
+
+Soil sensors: Measuring soil moisture, nutrient levels, and pH across a field to optimize fertilization and irrigation.
+Satellite imagery analysis: Monitoring crop health via NDVI (Normalized Difference Vegetation Index) calculated from satellite imagery, identifying stressed areas before visible symptoms appear.
+IoT weather stations: Hyperlocal weather data enabling precise spray timing (avoiding applications before rain) and harvest timing optimization.
+AI crop monitoring: Camera-equipped field robots or drones using AI image recognition to count plants, identify diseases, and estimate yields.
+
+H2: Vertical Farming — Controlled Environment Agriculture
+
+Japan has developed one of the world's most advanced vertical farming (plant factory) industries:
+
+Indoor LED-lit growing facilities produce lettuce, herbs, and other leafy vegetables year-round, regardless of weather, using fraction of the water of field agriculture.
+
+Key players: Spread Co. (largest vegetable factory operator), Mirai Co., and multiple startups. Retail chains and food companies have invested in vertical farms to secure stable supply chains.
+
+The economics of vertical farming remain challenging for most crops (energy costs are high), but technological improvements in LED efficiency and growing protocols are gradually improving unit economics.
+
+H2: Foodtech — Transforming What Japan Eats
+
+Beyond growing food, Japan is innovating in food transformation:
+
+Precision fermentation: Using microorganisms to produce proteins, fats, and other food ingredients with better efficiency and lower environmental impact than traditional animal agriculture.
+Cultivated meat: Growing animal protein from cell cultures without slaughter — several Japanese startups and Nissin Foods are pursuing this.
+Plant-based protein: Traditional Japanese plant proteins (tofu, edamame, natto) are experiencing global demand growth, with Japanese companies well-positioned to capitalize.
+Food waste reduction: AI-powered demand forecasting and dynamic pricing for perishable foods.
+
+H2: Key Investment Themes
+
+The agritech and foodtech theme intersects with several broader investment themes:
+- Labor shortage automation (agricultural robots, drones)
+- AI/data analytics (precision agriculture)
+- Sustainability/ESG (reducing agricultural emissions, food waste)
+- Food security (national self-sufficiency concerns)
+
+H2: StockWaveJP Editorial Perspective
+
+Agritech is a structural theme driven by demographic necessity rather than fashion cycles. The primary publicly traded exposures are through agricultural drone manufacturers (ACSL), agricultural machinery companies (Kubota, which is investing heavily in smart farming), and food technology companies exploring alternative proteins. The theme moves primarily on government agricultural policy announcements and food price inflation episodes.
     `},{id:"education-hr-theme",themes:["Theme Analysis"],keywords:["theme analysis","Japan stocks","investing"],category:"Theme Analysis",icon:"📚",title:"Education, HR & Human Capital Theme Deep Dive: Background, Current State, and Key Stocks",date:"2026/04/04",summary:"Japan's labor shortage and workforce reskilling needs are driving investment in education technology and human resources services.",body:`H2: Japan's Education and Human Capital Revolution
 
 Japan is undergoing one of the most significant transformations in its education and human capital development systems in the postwar period. Three structural forces are driving this change:
@@ -2292,22 +2662,72 @@ The best entry points are typically when:
 H2: StockWaveJP Editorial Perspective
 
 The power semiconductor theme is closely correlated with EV adoption data (global EV sales statistics) and automotive production volumes. When EV sales surprise to the upside in key markets (China, Europe, US), power semiconductor stocks typically rally. Monitor quarterly earnings calls from Rohm and Fuji Electric for SiC order backlog and capacity utilization data — the most reliable leading indicators for the theme's near-term direction.
-    `},{id:"nisa-popular-stocks",themes:["Theme Analysis"],keywords:["market analysis","Japan stocks","investing"],category:"Market Analysis",icon:"📱",title:"NISA Popular Stocks Analysis: Why the Same Stocks Attract Individual Investor Capital",date:"2026/03/24",summary:"Japan's new NISA system has channeled massive capital from individual investors into a specific set of stocks. Understanding this dynamic creates unique investment opportunities.",body:`
-H2: Japan's NISA System
+    `},{id:"nisa-popular-stocks",themes:["Theme Analysis"],keywords:["market analysis","Japan stocks","investing"],category:"Market Analysis",icon:"📱",title:"NISA Popular Stocks Analysis: Why the Same Stocks Attract Individual Investor Capital",date:"2026/03/24",summary:"Japan's new NISA system has channeled massive capital from individual investors into a specific set of stocks. Understanding this dynamic creates unique investment opportunities.",body:`H2: NISA Reform — Japan's Most Important Retail Investor Policy Change
 
-NISA (Nippon Individual Savings Account) is Japan's tax-exempt investment account. The 2024 expanded NISA significantly increased annual contribution limits and extended the tax-free period, triggering massive inflows from Japanese retail investors.
+Japan's "New NISA" (Nippon Individual Savings Account), reformed dramatically in January 2024, represents the most significant change to Japan's retail investing landscape in decades. The reforms transformed a modest tax-advantaged account into a genuinely compelling long-term savings vehicle:
 
-H2: What Stocks Attract NISA Capital?
+Old NISA (pre-2024): Annual investment limit ¥1.2 million (general) or ¥400,000 (tsumitate/accumulation), holding period maximum 5-20 years, lifetime limit not explicitly defined.
 
-NISA-popular stocks tend to have: strong brand recognition, high dividend yields, inclusion in the Nikkei 225, and long track records of dividend payments. Top NISA-popular stocks include Toyota (7203), NTT (9432), KDDI (9433), and Mitsubishi UFJ Financial Group (8306).
+New NISA (from 2024):
+- Annual limit increased to ¥3.6 million (¥2.4M growth + ¥1.2M accumulation)
+- Lifetime limit: ¥18 million per person
+- Holding period: Indefinite (investments can be held permanently within the account)
+- Gains and dividends: Completely tax-free within the account, forever
+- Account reset: Sold assets free up lifetime limit capacity (can reinvest)
 
-H2: Investment Implications
+H2: The Scale of Potential Capital Flows
 
-Understanding NISA flows can create investment opportunities: stocks with strong NISA buying pressure may have persistent valuation support, while stocks that "should" be NISA-popular but aren't yet may re-rate as individual investors discover them.
+The scale of potential NISA-driven capital flows into equities is significant:
 
-H2: Editorial Perspective
+- Japan has approximately 60 million eligible NISA investors
+- Each can invest ¥3.6 million annually tax-free
+- Theoretical maximum: ¥216 trillion per year (far exceeding actual savings rates)
+- Realistic flow: The FSA estimates ¥50-100 trillion in incremental equity investment over the next decade
 
-The NISA effect is a structural change in Japan's equity market. Monitor the Volume trend in high-dividend stocks — when Volume falls below average, it often indicates NISA buying has paused, potentially representing a better entry opportunity.
+This represents genuine structural demand for equities that was previously dormant in low-yield bank deposits (Japan's household financial assets total approximately ¥2,100 trillion, with historically high cash allocations).
+
+H2: What Japanese Retail Investors Are Buying
+
+NISA investment patterns reveal retail investor preferences:
+
+Tsumitate (accumulation) category popular choices:
+1. eMAXIS Slim All Country (domestic and international equity index) — consistently #1 by subscription amount
+2. eMAXIS Slim S&P500 — US stock index, extremely popular
+3. Rakuten S&P500 — Rakuten's competing S&P500 fund
+4. Domestic equity index funds
+
+Growth category popular choices:
+1. Individual Japanese blue-chip stocks (Toyota, Sony, Keyence, etc.)
+2. Dividend-focused Japanese equities (high-yield stocks for long-term income)
+3. JREIT (Japan Real Estate Investment Trusts) for income
+
+H2: Impact on Japan's Equity Market
+
+The NISA reform has created several specific market dynamics:
+
+Domestic demand support: Japanese retail investors buying domestic equity index funds and individual stocks through NISA provides structural buying support for the Nikkei 225 and TOPIX.
+
+Dividend stock premium: High-dividend Japanese stocks have benefited disproportionately from NISA investment as retail investors optimize for tax-free dividend income.
+
+Small-cap attention: Individual stock selection through NISA has directed attention to high-quality smaller companies that institutional investors might overlook.
+
+H2: International Equity Preference — The "Overseas Shift"
+
+A notable trend: Japanese retail investors have demonstrated a strong preference for overseas equity exposure through NISA, particularly US S&P500 index funds. This "overseas shift" (kaigai shifuto) in retail portfolio allocation has been significant enough that it has contributed to ongoing yen selling (retail investors buying foreign-currency funds = selling yen).
+
+H2: Implications for Theme Investing
+
+For theme investors using StockWaveJP:
+
+High-quality domestic equities included in popular NISA strategies (large-cap, high-dividend, technology companies) receive structural buying support from retail flows.
+
+Dividend-heavy themes (banking/finance, infrastructure, utilities) may benefit from NISA-driven dividend stock demand.
+
+Index constituents: Companies included in major indices (Nikkei 225, TOPIX Core30) benefit from consistent index fund buying via NISA accumulation plans.
+
+H2: StockWaveJP Editorial Perspective
+
+NISA reform is a multi-decade structural positive for Japan's equity market. The monthly SBI Securities and Rakuten Securities NISA subscription data provides a real-time view of what retail investors are buying — this is increasingly a meaningful demand signal, particularly for domestic retail-focused equities. Monitor the "kaigai shifuto" trend as a potential yen pressure indicator.
     `},{id:"defense-space-theme",themes:["Theme Analysis"],keywords:["defense","space","satellite","Japan stocks"],category:"Theme Analysis",icon:"🚀",title:"Defense & Space Theme Deep Dive: Long-Term Investment from Defense Spending and Space Development",date:"2026/03/23",summary:"Japan's defense budget expansion and growing space industry create a unique investment theme combining government spending with cutting-edge technology.",body:`H2: Defense and Space — Converging Themes
 
 Japan's defense and space themes have become increasingly intertwined as military satellites, dual-use technologies, and space domain awareness (tracking objects in orbit) become central to national security strategies. This convergence creates a broad investment theme that spans traditional defense contractors, electronics companies, and space startups.
