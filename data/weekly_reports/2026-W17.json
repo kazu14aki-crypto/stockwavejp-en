@@ -1,0 +1,30 @@
+{
+  "week": "2026-W17",
+  "date": "2026/04/25",
+  "title": "Week of Apr 21–25: AI & Semiconductor Themes Lead Broad Rally",
+  "summary": {
+    "rising": 53,
+    "falling": 14,
+    "total": 67,
+    "avg_return": 7.31,
+    "top_theme": "Semiconductor Testing",
+    "top_pct": 30.6,
+    "bot_theme": "Oil & Petroleum",
+    "bot_pct": -8.3
+  },
+  "rising_top5": [
+    {"theme": "Semiconductor Testing", "pct": 30.6},
+    {"theme": "AI Chips", "pct": 27.7},
+    {"theme": "Memory", "pct": 25.5},
+    {"theme": "Power Semiconductors", "pct": 21.2},
+    {"theme": "Physical AI", "pct": 21.1}
+  ],
+  "falling_top5": [
+    {"theme": "Oil & Petroleum", "pct": -8.3},
+    {"theme": "LNG", "pct": -5.8},
+    {"theme": "Electric Utilities", "pct": -5.2},
+    {"theme": "Inbound Tourism", "pct": -3.8},
+    {"theme": "Tourism, Hotels & Leisure", "pct": -3.5}
+  ],
+  "body": "## Market Overview\n\nThe week of April 21–25 saw Japan's equity theme market finish broadly positive, with 53 of 67 themes (79%) posting gains over the 1-month period as of the April 29 data update. The average theme return of +7.31% reflects broad risk-on sentiment driven primarily by AI and semiconductor infrastructure investment themes.\n\n## Top Themes\n\n### Semiconductor Testing (+30.6%) — Theme of the Week\n\nSemiconductor Testing took the top spot with a remarkable +30.6% 1-month return. The catalyst: NVIDIA's continued AI chip production ramp has created extraordinary demand for test equipment, and Advantest (6857) has emerged as a key beneficiary with quarterly results significantly ahead of expectations. Lasertec's EUV mask inspection order strength provided additional support across the broader semiconductor testing theme.\n\n### AI Chips (+27.7%) — Structural AI Demand\n\nAI Chips followed closely at +27.7%, reflecting both domestic demand for AI infrastructure and foreign investor inflows into Japan's most direct AI beneficiaries. The theme encompasses semiconductor companies producing AI-specific chips, AI accelerators, and high-bandwidth memory.\n\n### Memory (+25.5%) — HBM Demand Continues\n\nMemory rounded out the top three with +25.5%. The memory theme has been propelled by HBM (High Bandwidth Memory) demand from AI GPU manufacturers. SK Hynix's strong earnings guidance and continued DRAM/NAND price recovery added to positive sentiment.\n\n## Falling Themes\n\n### Oil & Petroleum (-8.3%) — Energy Rotation Continues\n\nOil & Petroleum saw the largest decline at -8.3% on the 1-month basis. Global crude oil prices have faced headwinds from demand uncertainty and OPEC+ production discussions. INPEX (1605) came under particular pressure as Brent crude oscillated around the $65-75 range.\n\n### LNG (-5.8%) and Electric Utilities (-5.2%)\n\nLNG and Electric Utilities followed with meaningful declines. Rising renewable energy penetration and concerns about long-term fossil fuel demand have weighed on these traditionally defensive themes.\n\n## Volume Analysis\n\nVolume data reveals where institutional capital has been concentrated:\n- **Telecommunications (3.6B shares)**: NTT Group's IOWN optical network strategy continues to attract long-term institutional positioning\n- **IOWN (2.9B)**: A direct play on Japan's next-generation photonic network infrastructure\n- **Buffett Holdings (2.9B)**: Continued buying interest in Japan's five major trading companies\n- **AI Data Centers (2.8B)**: Infrastructure build-out demand remains intense\n\n## Market Outlook for the Coming Week\n\nKey events to monitor:\n- Bank of Japan meeting outcomes and any policy guidance adjustments\n- US technology sector earnings (NVIDIA, Microsoft, Meta) — direct catalysts for Japan's AI themes\n- USD/JPY movements — yen strength would create headwinds for export-oriented semiconductor names\n- Q1 2026 earnings season for Japanese tech companies begins — watch for Advantest, Keyence, and Fanuc guidance\n\n**Strategic positioning**: The AI semiconductor theme shows exceptional momentum (Accelerating state across 1W and 1M periods with volume expansion). Defensive themes (energy, utilities) are showing relative weakness. For investors with Japan equity exposure, overweighting AI semiconductor equipment and underweighting energy appears supported by both momentum and fundamental data."
+}

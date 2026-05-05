@@ -1,0 +1,35 @@
+[
+  {
+    "week": "2026-W17",
+    "date": "2026/04/25",
+    "title": "Week of Apr 21–25: AI & Semiconductor Themes Lead Broad Rally",
+    "rising": 53,
+    "falling": 14,
+    "top_theme": "Semiconductor Testing",
+    "top_pct": 30.6,
+    "bot_theme": "Oil & Petroleum",
+    "bot_pct": -8.3
+  },
+  {
+    "week": "2026-W16",
+    "date": "2026/04/18",
+    "title": "Week of Apr 14–18: Semiconductor Rally Extends; Defensive Themes Lag",
+    "rising": 49,
+    "falling": 18,
+    "top_theme": "Semiconductor Testing",
+    "top_pct": 24.2,
+    "bot_theme": "Oil & Petroleum",
+    "bot_pct": -6.1
+  },
+  {
+    "week": "2026-W15",
+    "date": "2026/04/11",
+    "title": "Week of Apr 7–11: AI Theme Breakout; Defense & Infrastructure Also Shine",
+    "rising": 44,
+    "falling": 23,
+    "top_theme": "AI Chips",
+    "top_pct": 18.9,
+    "bot_theme": "Oil & Petroleum",
+    "bot_pct": -5.4
+  }
+]
