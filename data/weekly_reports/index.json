@@ -1,8 +1,8 @@
 [
   {
-    "week": "2026-W17",
-    "date": "2026/04/25",
-    "title": "Week of Apr 21–25: AI & Semiconductor Themes Lead Broad Rally",
+    "week": "2026-W18",
+    "date": "2026/05/02",
+    "title": "Week of Apr 28 – May 2: Broad Risk-On Rally; AI & Semiconductor Themes Maintain Leadership",
     "rising": 53,
     "falling": 14,
     "top_theme": "Semiconductor Testing",
@@ -11,25 +11,36 @@
     "bot_pct": -8.3
   },
   {
+    "week": "2026-W17",
+    "date": "2026/04/25",
+    "title": "Week of Apr 21–25: AI & Growth Themes Lead as Energy Pulls Back",
+    "rising": 40,
+    "falling": 27,
+    "top_theme": "SaaS",
+    "top_pct": 8.97,
+    "bot_theme": "LNG",
+    "bot_pct": -4.24
+  },
+  {
     "week": "2026-W16",
     "date": "2026/04/18",
-    "title": "Week of Apr 14–18: Semiconductor Rally Extends; Defensive Themes Lag",
-    "rising": 49,
-    "falling": 18,
+    "title": "Week of Apr 14–18: Semiconductor Rally Extends; Energy Themes Under Pressure",
+    "rising": 45,
+    "falling": 22,
     "top_theme": "Semiconductor Testing",
-    "top_pct": 24.2,
+    "top_pct": 12.5,
     "bot_theme": "Oil & Petroleum",
-    "bot_pct": -6.1
+    "bot_pct": -3.8
   },
   {
     "week": "2026-W15",
     "date": "2026/04/11",
-    "title": "Week of Apr 7–11: AI Theme Breakout; Defense & Infrastructure Also Shine",
-    "rising": 44,
-    "falling": 23,
+    "title": "Week of Apr 7–11: AI Breakout; Defensive and Infrastructure Themes Gain",
+    "rising": 42,
+    "falling": 25,
     "top_theme": "AI Chips",
-    "top_pct": 18.9,
+    "top_pct": 10.5,
     "bot_theme": "Oil & Petroleum",
-    "bot_pct": -5.4
+    "bot_pct": -4.1
   }
 ]

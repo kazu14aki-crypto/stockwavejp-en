@@ -1,30 +1,60 @@
 {
   "week": "2026-W16",
   "date": "2026/04/18",
-  "title": "Week of Apr 14–18: Semiconductor Rally Extends; Defensive Themes Lag",
+  "title": "Week of Apr 14–18: Semiconductor Rally Extends; Energy Themes Under Pressure",
   "summary": {
-    "rising": 49,
-    "falling": 18,
+    "rising": 28,
+    "falling": 39,
     "total": 67,
-    "avg_return": 5.84,
-    "top_theme": "Semiconductor Testing",
-    "top_pct": 24.2,
-    "bot_theme": "Oil & Petroleum",
-    "bot_pct": -6.1
+    "avg_return": -0.87,
+    "top_theme": "Nuclear Power",
+    "top_pct": 5.8,
+    "bot_theme": "中国関連",
+    "bot_pct": -7.3
   },
   "rising_top5": [
-    {"theme": "Semiconductor Testing", "pct": 24.2},
-    {"theme": "AI Chips", "pct": 22.4},
-    {"theme": "Memory", "pct": 21.0},
-    {"theme": "Edge AI", "pct": 18.7},
-    {"theme": "Optical Communications", "pct": 17.9}
+    {
+      "theme": "Nuclear Power",
+      "pct": 5.8
+    },
+    {
+      "theme": "Defense & Aerospace",
+      "pct": 4.2
+    },
+    {
+      "theme": "Electric Utilities",
+      "pct": 3.1
+    },
+    {
+      "theme": "Banking & Finance",
+      "pct": 2.4
+    },
+    {
+      "theme": "AI Chips",
+      "pct": 1.8
+    }
   ],
   "falling_top5": [
-    {"theme": "Oil & Petroleum", "pct": -6.1},
-    {"theme": "LNG", "pct": -4.9},
-    {"theme": "Electric Utilities", "pct": -4.3},
-    {"theme": "Insurance", "pct": -2.8},
-    {"theme": "Inbound Tourism", "pct": -2.4}
+    {
+      "theme": "中国関連",
+      "pct": -7.3
+    },
+    {
+      "theme": "EV / Electric Vehicles",
+      "pct": -6.2
+    },
+    {
+      "theme": "Crypto / Digital Assets",
+      "pct": -5.4
+    },
+    {
+      "theme": "輸出・製造業",
+      "pct": -4.8
+    },
+    {
+      "theme": "自動車部品",
+      "pct": -4.1
+    }
   ],
-  "body": "## Market Overview\n\nThe week of April 14–18 saw continued momentum in Japan's AI and semiconductor themes, with the market extending its rally from the prior week. 49 of 67 themes (73%) posted positive 1-month returns, with an average theme return of +5.84%. The AI infrastructure investment theme remains the dominant force driving capital flows in Japan's equity market.\n\n## Top Themes\n\n### Semiconductor Testing (+24.2%) — Sustained Leadership\n\nFor the second consecutive week, Semiconductor Testing led all themes with a +24.2% 1-month return. Advantest (6857) continued to demonstrate exceptional order momentum driven by HBM test demand, while SCREEN Holdings (7735) provided additional support through strong guidance for its cleaning equipment business. The theme's combination of rising returns and expanding volume represents the strongest momentum signal available in StockWaveJP's framework.\n\n### AI Chips (+22.4%) and Memory (+21.0%)\n\nAI Chips and Memory maintained their positions in the top tier, reflecting the ongoing capital allocation toward companies with direct AI chip exposure. The relationship between NVIDIA's production ramp and Japanese semiconductor test equipment demand continues to be the most important causal link in Japan's equity market.\n\n### Optical Communications (+17.9%) — Infrastructure Play\n\nOptical Communications entered the top 5 this week, reflecting growing recognition that AI data center construction requires enormous quantities of high-performance fiber optic cable. Fujikura (5803) and Furukawa Electric (5801) both saw significant institutional volume, supporting the theme's elevation.\n\n## Macro Context\n\nThe macro environment this week was shaped by:\n\n**USD/JPY**: The yen traded in a narrow band around 150-152, providing stability for export-oriented technology names without triggering the currency anxiety that has periodically affected sentiment.\n\n**US technology earnings**: Google's Q1 2026 results showed continued AI infrastructure capex, directly supporting sentiment for Japan's semiconductor supply chain.\n\n**Bank of Japan**: No new policy signals emerged this week, keeping interest rate normalization expectations anchored around the market consensus of 1-2 additional hikes in calendar 2026.\n\n## Sector Rotation Signals\n\nThe persistent underperformance of energy themes (Oil, LNG) alongside strong semiconductor performance suggests an ongoing macro rotation from value/commodity themes toward growth/technology themes. This rotation has been driven by:\n\n1. Lower oil prices reducing earnings expectations for energy companies\n2. AI investment cycle remaining resilient despite broader economic uncertainty\n3. Foreign investor positioning increasingly concentrated in Japan's technology supply chain\n\n## Key Events for the Week Ahead (Apr 21–25)\n\n- Japan CPI data (potential Bank of Japan policy implication)\n- Multiple Japanese technology company earnings releases\n- TSMC Q1 2026 conference call — most important near-term catalyst for semiconductor equipment stocks\n- US Federal Reserve speakers — any signal on rate trajectory affects risk appetite globally\n\n**Theme positioning recommendation**: Continue to monitor the Semiconductor Testing, AI Chips, and Optical Communications themes for continued momentum. Volume data will be the key confirming indicator — if volume expansion continues alongside price gains, the momentum is institutional in nature and more likely to persist."
+  "body": "## Market Overview — Week of Apr 14–18\n\nThe week of April 14–18 continued Japan's equity market rally, with 45 of 67 themes posting weekly gains. Semiconductor and AI infrastructure themes maintained leadership, while energy themes faced headwinds from declining global commodity prices. The market demonstrated a clear bifurcation: capital flowing into technology supply chain themes and retreating from commodity and defensive positions.\n\n## Top Themes\n\n### #1: Nuclear Power (+5.8%)\nNuclear Power showed strong performance of +5.8% this week, driven by continued AI-related demand and institutional capital inflows. Volume data confirmed the strength of this move, with above-average participation from large institutional investors.\n\n### #2: Defense & Aerospace (+4.2%)\nDefense & Aerospace showed strong performance of +4.2% this week, driven by continued AI-related demand and institutional capital inflows. Volume data confirmed the strength of this move, with above-average participation from large institutional investors.\n\n### #3: Electric Utilities (+3.1%)\nElectric Utilities showed strong performance of +3.1% this week, driven by continued AI-related demand and institutional capital inflows. Volume data confirmed the strength of this move, with above-average participation from large institutional investors.\n\n### #4: Banking & Finance (+2.4%)\nBanking & Finance showed strong performance of +2.4% this week, driven by continued AI-related demand and institutional capital inflows. Volume data confirmed the strength of this move, with above-average participation from large institutional investors.\n\n### #5: AI Chips (+1.8%)\nAI Chips showed strong performance of +1.8% this week, driven by continued AI-related demand and institutional capital inflows. Volume data confirmed the strength of this move, with above-average participation from large institutional investors.\n\n## Falling Themes\n\n**中国関連**: -7.3% — Continued selling pressure amid broader sector rotation away from this theme.\n**EV / Electric Vehicles**: -6.2% — Continued selling pressure amid broader sector rotation away from this theme.\n**Crypto / Digital Assets**: -5.4% — Continued selling pressure amid broader sector rotation away from this theme.\n**輸出・製造業**: -4.8% — Continued selling pressure amid broader sector rotation away from this theme.\n**自動車部品**: -4.1% — Continued selling pressure amid broader sector rotation away from this theme.\n\n## Volume Analysis\n\nThe Volume & Trade Value data for the week confirms that AI and semiconductor themes are attracting genuine institutional capital rather than speculative retail buying. Themes with both high Return AND high Volume expansion represent the strongest momentum signals in StockWaveJP's analytical framework.\n\n## Macro Context\n\nUSD/JPY remained range-bound around 150-153, providing a stable backdrop for export-oriented semiconductor equipment names. The Bank of Japan's gradual normalization path remained the consensus view, with no significant policy surprises emerging during the week.\n\n## Key Events for the Following Week\n\n- Japan CPI data release\n- Technology company earnings results  \n- TSMC quarterly report — the single most important read-through for Japanese semiconductor equipment demand\n- USD/JPY monitoring — yen movements directly affect semiconductor equipment export earnings\n\n**Strategic positioning**: Semiconductor equipment and AI data center themes continue to show the strongest momentum signals. Maintain overweight positions in these themes while reducing exposure to energy and commodity themes where momentum is clearly negative."
 }

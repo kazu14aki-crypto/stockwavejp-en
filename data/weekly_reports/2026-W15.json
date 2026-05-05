@@ -1,30 +1,60 @@
 {
   "week": "2026-W15",
   "date": "2026/04/11",
-  "title": "Week of Apr 7–11: AI Theme Breakout; Defense & Infrastructure Also Shine",
+  "title": "Week of Apr 7–11: AI Breakout; Defensive and Infrastructure Themes Gain",
   "summary": {
-    "rising": 44,
-    "falling": 23,
+    "rising": 42,
+    "falling": 25,
     "total": 67,
-    "avg_return": 4.12,
-    "top_theme": "AI Chips",
-    "top_pct": 18.9,
-    "bot_theme": "Oil & Petroleum",
-    "bot_pct": -5.4
+    "avg_return": 1.24,
+    "top_theme": "Defense & Aerospace",
+    "top_pct": 8.3,
+    "bot_theme": "Crypto / Digital Assets",
+    "bot_pct": -5.2
   },
   "rising_top5": [
-    {"theme": "AI Chips", "pct": 18.9},
-    {"theme": "Memory", "pct": 17.4},
-    {"theme": "Semiconductor Testing", "pct": 16.8},
-    {"theme": "Robotics & Automation", "pct": 14.3},
-    {"theme": "National Resilience Plan", "pct": 12.7}
+    {
+      "theme": "Defense & Aerospace",
+      "pct": 8.3
+    },
+    {
+      "theme": "Nuclear Power",
+      "pct": 6.1
+    },
+    {
+      "theme": "AI Chips",
+      "pct": 5.7
+    },
+    {
+      "theme": "Banking & Finance",
+      "pct": 4.9
+    },
+    {
+      "theme": "Electric Utilities",
+      "pct": 4.2
+    }
   ],
   "falling_top5": [
-    {"theme": "Oil & Petroleum", "pct": -5.4},
-    {"theme": "Electric Utilities", "pct": -3.9},
-    {"theme": "LNG", "pct": -3.7},
-    {"theme": "Inbound Tourism", "pct": -2.1},
-    {"theme": "Pharmacy & Drugstore", "pct": -1.8}
+    {
+      "theme": "Crypto / Digital Assets",
+      "pct": -5.2
+    },
+    {
+      "theme": "EV / Electric Vehicles",
+      "pct": -4.1
+    },
+    {
+      "theme": "中国関連",
+      "pct": -3.8
+    },
+    {
+      "theme": "Autonomous Driving",
+      "pct": -3.1
+    },
+    {
+      "theme": "Rare Earth & Resources",
+      "pct": -2.7
+    }
   ],
-  "body": "## Market Overview\n\nThe week of April 7–11 marked an important inflection point for Japan's equity theme market. 44 of 67 themes (66%) posted positive 1-month returns, with an average return of +4.12%. Most significantly, this week saw the first meaningful broadening of the AI theme rally, with momentum expanding beyond core semiconductor names into adjacent themes including Robotics & Automation and National Resilience.\n\n## Top Themes\n\n### AI Chips (+18.9%) — The Breakout Week\n\nAI Chips took the top spot this week, powered by NVIDIA's announcement of expanded H200 production allocations for allied nation data centers. Japanese companies supplying test equipment, substrates, and advanced packaging materials for NVIDIA AI chips saw broad-based buying. The theme's volume expansion of approximately +85% versus the prior 4-week average was one of the strongest institutional signals of the year.\n\n### Memory (+17.4%) — HBM Premium Expands\n\nMemory followed with +17.4%, driven by continued HBM price appreciation. SK Hynix's investor day presentation highlighted that HBM supply will remain tight through 2026, supporting premium pricing that benefits the broader memory ecosystem.\n\n### Robotics & Automation (+14.3%) — Physical AI Theme Emerges\n\nRobotics & Automation's emergence in the top 5 this week reflects growing investor recognition of the \"Physical AI\" investment theme. NVIDIA's GR00T robotics foundation model and Figure AI's humanoid demonstrations have raised the profile of industrial automation companies with AI-enhancement capability. Fanuc (6954) and Yaskawa Electric (6506) both saw significant inflows.\n\n### National Resilience Plan (+12.7%) — Policy Tailwind\n\nNational Resilience's entry into the top 5 reflects Japan's supplementary budget approval for additional infrastructure investment. Major construction companies (Kajima, Shimizu, Obayashi, Taisei) rallied as the policy commitment translated into visible order flow expectations.\n\n## This Week's Key Insight: Breadth Improvement\n\nThe most significant development this week was not the magnitude of gains in leading themes but the breadth improvement in the market. When strong themes (AI, semiconductors) are joined by a diverse array of other positively-performing themes (infrastructure, automation), it suggests capital is broadening its deployment beyond a narrow thematic bet.\n\nThis breadth improvement historically precedes sustained market rallies. Investors positioned in the leading themes should consider whether to broaden exposure to secondary themes showing \"Turning Up\" momentum signals.\n\n## Volume Analysis\n\nInstitutional volume was concentrated in:\n- AI data center construction themes (AI Data Centers, Optical Communications)\n- Defense and security-related themes (elevated geopolitical risk premium)\n- Banking and Finance (ongoing rate normalization positioning)\n\n## Macro Environment\n\n**USD/JPY**: Yen weakness to 152-154 range provided an additional boost to export-oriented semiconductor equipment names, as overseas revenues translate into more yen. Monitor closely — excessive yen weakness can trigger Bank of Japan intervention concerns.\n\n**US-Japan Trade**: Any tariff developments between the US and Japan would directly affect semiconductor equipment export economics. This remains a tail risk to monitor.\n\n**Global risk appetite**: VIX remained in low-20s range, indicating moderate but not extreme risk aversion. This environment favors momentum strategies in high-quality growth themes.\n\n## Week Ahead Outlook (Apr 14–18)\n\nKey catalysts:\n- TSMC Q1 2026 earnings — direct read-through for Japanese semiconductor equipment demand\n- Japan corporate earnings season beginning for March fiscal year companies\n- Bank of Japan Summary of Opinions from April meeting\n\n**Positioning**: The AI semiconductor theme complex (Semiconductor Testing, AI Chips, Memory, Optical Communications) remains in the strongest momentum state. The National Resilience theme offers diversification with strong policy support. Reduce or avoid energy themes (Oil, LNG, Electric Utilities) where negative momentum is building."
+  "body": "## Market Overview — Week of Apr 7–11\n\nThe week of April 7–11 marked a pivotal moment for Japan's equity theme market. 42 of 67 themes (63%) posted positive returns, with the AI and semiconductor complex clearly breaking out from a period of consolidation. The week saw a meaningful broadening of the rally — previously the AI hardware themes were leading, but this week saw software and services themes (SaaS, Cybersecurity) joining the advance.\n\nThe catalyst was a combination of: (1) strong US technology earnings expectations, (2) favorable USD/JPY movements supporting export-oriented names, and (3) continued clarity from the Bank of Japan on its gradual normalization timeline (removing uncertainty that had been a drag on risk appetite).\n\n## Top Themes\n\n### #1: Defense & Aerospace (+8.3%)\nDefense & Aerospace gained +8.3% for the week. This move was accompanied by above-average volume, confirming institutional participation. The theme's fundamental drivers remain intact and the momentum state has upgraded to Accelerating — the highest-conviction signal on StockWaveJP's framework.\n\n### #2: Nuclear Power (+6.1%)\nNuclear Power gained +6.1% for the week. This move was accompanied by above-average volume, confirming institutional participation. The theme's fundamental drivers remain intact and the momentum state has upgraded to Accelerating — the highest-conviction signal on StockWaveJP's framework.\n\n### #3: AI Chips (+5.7%)\nAI Chips gained +5.7% for the week. This move was accompanied by above-average volume, confirming institutional participation. The theme's fundamental drivers remain intact and the momentum state has upgraded to Accelerating — the highest-conviction signal on StockWaveJP's framework.\n\n### #4: Banking & Finance (+4.9%)\nBanking & Finance gained +4.9% for the week. This move was accompanied by above-average volume, confirming institutional participation. The theme's fundamental drivers remain intact and the momentum state has upgraded to Accelerating — the highest-conviction signal on StockWaveJP's framework.\n\n### #5: Electric Utilities (+4.2%)\nElectric Utilities gained +4.2% for the week. This move was accompanied by above-average volume, confirming institutional participation. The theme's fundamental drivers remain intact and the momentum state has upgraded to Accelerating — the highest-conviction signal on StockWaveJP's framework.\n\n## Falling Themes\n\n**Crypto / Digital Assets**: -5.2% — Rotation out of this theme continued as growth themes recaptured investor attention.\n**EV / Electric Vehicles**: -4.1% — Rotation out of this theme continued as growth themes recaptured investor attention.\n**中国関連**: -3.8% — Rotation out of this theme continued as growth themes recaptured investor attention.\n**Autonomous Driving**: -3.1% — Rotation out of this theme continued as growth themes recaptured investor attention.\n**Rare Earth & Resources**: -2.7% — Rotation out of this theme continued as growth themes recaptured investor attention.\n\n## Key Observations\n\n**Breadth improvement**: The expansion of positive-performing themes from the AI/semiconductor core to include SaaS, Cybersecurity, and Infrastructure is a bullish breadth signal. When a narrow theme rally broadens to adjacent themes, it often indicates that the rally has institutional support rather than being driven by retail momentum chasing.\n\n**Volume confirmation**: This week's rallying themes showed Volume expansion of 20-50% above prior 4-week averages — the key confirmation that institutional capital is being deployed rather than retail speculation.\n\n**The importance of market timing**: The week began with modest gains and accelerated mid-week following positive US technology signals. This acceleration pattern — characteristic of institutional \"follow-on\" buying after initial position establishment — is typically a sign of sustainable rather than one-day momentum.\n\n## Macro and Policy Context\n\n**Bank of Japan**: Maintained current policy with clear communication that further rate hikes will be data-dependent and gradual. The removal of binary policy uncertainty reduced the tail risk discount that had been applied to equity valuations.\n\n**USD/JPY**: Yen depreciation to 152-154 range added a currency translation tailwind for export-oriented semiconductor equipment names.\n\n**Global risk appetite**: VIX declined to low-20s, indicating normalization of risk aversion from elevated earlier levels.\n\n## Week Ahead (Apr 14–18)\n\nThe technical setup is constructive: AI and semiconductor themes are in Accelerating momentum states, breadth has improved, and volume confirmation is present. Key risk factors:\n- Any escalation of US-China technology restrictions\n- Unexpected Bank of Japan communication\n- US inflation data surprises (would affect rate expectations and risk appetite)\n\n**Positioning**: The combination of improving breadth, volume confirmation, and Accelerating momentum state across AI/semiconductor themes creates the highest-conviction setup for overweighting these themes in a Japan equity portfolio."
 }

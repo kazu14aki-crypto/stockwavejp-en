@@ -1,30 +1,60 @@
 {
   "week": "2026-W17",
   "date": "2026/04/25",
-  "title": "Week of Apr 21–25: AI & Semiconductor Themes Lead Broad Rally",
+  "title": "Week of Apr 21–25: AI & Growth Themes Lead as Energy Pulls Back",
   "summary": {
-    "rising": 53,
-    "falling": 14,
+    "rising": 40,
+    "falling": 27,
     "total": 67,
-    "avg_return": 7.31,
-    "top_theme": "Semiconductor Testing",
-    "top_pct": 30.6,
-    "bot_theme": "Oil & Petroleum",
-    "bot_pct": -8.3
+    "avg_return": 1.71,
+    "top_theme": "SaaS",
+    "top_pct": 8.97,
+    "bot_theme": "LNG",
+    "bot_pct": -4.24
   },
   "rising_top5": [
-    {"theme": "Semiconductor Testing", "pct": 30.6},
-    {"theme": "AI Chips", "pct": 27.7},
-    {"theme": "Memory", "pct": 25.5},
-    {"theme": "Power Semiconductors", "pct": 21.2},
-    {"theme": "Physical AI", "pct": 21.1}
+    {
+      "theme": "SaaS",
+      "pct": 8.97
+    },
+    {
+      "theme": "Generative AI",
+      "pct": 8.41
+    },
+    {
+      "theme": "Cybersecurity",
+      "pct": 8.09
+    },
+    {
+      "theme": "Edge AI",
+      "pct": 7.08
+    },
+    {
+      "theme": "Telecommunications",
+      "pct": 7.04
+    }
   ],
   "falling_top5": [
-    {"theme": "Oil & Petroleum", "pct": -8.3},
-    {"theme": "LNG", "pct": -5.8},
-    {"theme": "Electric Utilities", "pct": -5.2},
-    {"theme": "Inbound Tourism", "pct": -3.8},
-    {"theme": "Tourism, Hotels & Leisure", "pct": -3.5}
+    {
+      "theme": "LNG",
+      "pct": -4.24
+    },
+    {
+      "theme": "Oil & Petroleum",
+      "pct": -3.83
+    },
+    {
+      "theme": "Shipbuilding",
+      "pct": -2.73
+    },
+    {
+      "theme": "Construction & Infrastructure",
+      "pct": -2.67
+    },
+    {
+      "theme": "National Resilience Plan",
+      "pct": -2.48
+    }
   ],
-  "body": "## Market Overview\n\nThe week of April 21–25 saw Japan's equity theme market finish broadly positive, with 53 of 67 themes (79%) posting gains over the 1-month period as of the April 29 data update. The average theme return of +7.31% reflects broad risk-on sentiment driven primarily by AI and semiconductor infrastructure investment themes.\n\n## Top Themes\n\n### Semiconductor Testing (+30.6%) — Theme of the Week\n\nSemiconductor Testing took the top spot with a remarkable +30.6% 1-month return. The catalyst: NVIDIA's continued AI chip production ramp has created extraordinary demand for test equipment, and Advantest (6857) has emerged as a key beneficiary with quarterly results significantly ahead of expectations. Lasertec's EUV mask inspection order strength provided additional support across the broader semiconductor testing theme.\n\n### AI Chips (+27.7%) — Structural AI Demand\n\nAI Chips followed closely at +27.7%, reflecting both domestic demand for AI infrastructure and foreign investor inflows into Japan's most direct AI beneficiaries. The theme encompasses semiconductor companies producing AI-specific chips, AI accelerators, and high-bandwidth memory.\n\n### Memory (+25.5%) — HBM Demand Continues\n\nMemory rounded out the top three with +25.5%. The memory theme has been propelled by HBM (High Bandwidth Memory) demand from AI GPU manufacturers. SK Hynix's strong earnings guidance and continued DRAM/NAND price recovery added to positive sentiment.\n\n## Falling Themes\n\n### Oil & Petroleum (-8.3%) — Energy Rotation Continues\n\nOil & Petroleum saw the largest decline at -8.3% on the 1-month basis. Global crude oil prices have faced headwinds from demand uncertainty and OPEC+ production discussions. INPEX (1605) came under particular pressure as Brent crude oscillated around the $65-75 range.\n\n### LNG (-5.8%) and Electric Utilities (-5.2%)\n\nLNG and Electric Utilities followed with meaningful declines. Rising renewable energy penetration and concerns about long-term fossil fuel demand have weighed on these traditionally defensive themes.\n\n## Volume Analysis\n\nVolume data reveals where institutional capital has been concentrated:\n- **Telecommunications (3.6B shares)**: NTT Group's IOWN optical network strategy continues to attract long-term institutional positioning\n- **IOWN (2.9B)**: A direct play on Japan's next-generation photonic network infrastructure\n- **Buffett Holdings (2.9B)**: Continued buying interest in Japan's five major trading companies\n- **AI Data Centers (2.8B)**: Infrastructure build-out demand remains intense\n\n## Market Outlook for the Coming Week\n\nKey events to monitor:\n- Bank of Japan meeting outcomes and any policy guidance adjustments\n- US technology sector earnings (NVIDIA, Microsoft, Meta) — direct catalysts for Japan's AI themes\n- USD/JPY movements — yen strength would create headwinds for export-oriented semiconductor names\n- Q1 2026 earnings season for Japanese tech companies begins — watch for Advantest, Keyence, and Fanuc guidance\n\n**Strategic positioning**: The AI semiconductor theme shows exceptional momentum (Accelerating state across 1W and 1M periods with volume expansion). Defensive themes (energy, utilities) are showing relative weakness. For investors with Japan equity exposure, overweighting AI semiconductor equipment and underweighting energy appears supported by both momentum and fundamental data."
+  "body": "## Market Overview — Week of Apr 21–25\n\nThe week of April 21–25 showed Japan's equity theme market returning to a broadly positive footing, with 40 of 67 themes (60%) posting weekly gains. The weekly average theme return of +1.71% marked a clear rebound from the prior week's softness, driven primarily by AI, cloud, and fintech growth themes reclaiming investor attention.\n\nUS market resilience — despite persistent inflation concerns — provided a supportive backdrop as technology earnings expectations rose heading into reporting season. Japan's growth-oriented themes showed strong correlation with US tech sentiment, while energy and infrastructure themes saw capital outflows after their recent period of outperformance.\n\n## Top Themes of the Week\n\n### #1 SaaS (+8.97%) — Theme of the Week\nSaaS took the top spot with an impressive +8.97% weekly gain, accompanied by Volume expansion of +31.1% — a combination that signals genuine institutional capital inflows rather than speculative activity. US SaaS company earnings results triggered sympathy buying across Japanese SaaS-related stocks. The cloud migration demand narrative continues to resonate with institutional investors, particularly for companies targeting SME clients. The 1-month return of +21.4% confirms that a medium-term trend is established — pullbacks toward the 25-day moving average represent potential entry opportunities.\n\n### #2 Generative AI (+8.41%) — Broad Institutional Interest\nGenerative AI followed with +8.41%, with Volume surging +27.4%. Increasing domestic corporate adoption of generative AI tools and major enterprise deployment announcements drove sentiment. The theme's 1-month return of +13.9% and 1-year return of +15.8% demonstrate consistent performance across all time horizons — a characteristic of a structural trend rather than a speculative spike. This is among the widest-beneficiary AI themes in Japan, capturing everything from AI software developers to enterprise service integrators.\n\n### #3 Cybersecurity (+8.09%) — Policy Tailwinds Accelerate\nCybersecurity gained +8.09% with Volume +26.9%, the third consecutive week of above-average volume for this theme. Government cybersecurity investment expansion — driven by Ministry of Defense and FSA policy initiatives — is providing a steady, policy-backed demand narrative. The 1-year return of +17.5% places this theme among Japan's most consistent multi-year performers. As geopolitical tensions and digital threats intensify, cybersecurity retains characteristics of a \"defensive growth\" theme: demand is largely non-cyclical.\n\n### #4 Edge AI (+7.08%) — Physical AI Adoption\nEdge AI advanced +7.08%, reflecting the emerging consensus around \"physical AI\" — artificial intelligence deployed directly in devices, vehicles, and manufacturing equipment rather than centralized in the cloud. Japanese companies including Renesas Electronics and Omron are increasingly cited as direct beneficiaries of edge AI semiconductor demand.\n\n### #5 Telecommunications (+7.04%) — NTT IOWN Momentum\nTelecommunications rounded out the top five with +7.04%. NTT Group's IOWN (Innovative Optical and Wireless Network) vision continues to attract institutional interest, positioning the telecom theme at the intersection of infrastructure and optical communications.\n\n## Falling Themes\n\n### LNG (-4.24%) and Oil & Petroleum (-3.83%)\nEnergy themes extended their recent underperformance. Lower global oil and gas prices, combined with a shift in narrative toward the green transition, continued to weigh on LNG and petroleum stocks. Japanese energy importers face an uncertain demand outlook as the country accelerates its push toward renewable generation.\n\n### Construction & Infrastructure (-2.67%) and National Resilience Plan (-2.48%)\nInfrastructure themes gave back some of their prior week gains. These rotational moves are characteristic of the market environment — when growth themes are in favor, defensive infrastructure investment tends to see relative outflows. The structural demand case (aging infrastructure renewal, government budget commitments) remains intact for patient investors.\n\n## Volume Analysis — Where Institutions Are Active\n\nThe highest-volume themes this week were concentrated in growth/technology:\n- SaaS and Generative AI: Institutional accumulation signals\n- Cybersecurity: Policy-driven volume expansion\n- Edge AI: Early positioning in the Physical AI theme\n\n## Macro Context\n\n**USD/JPY**: The yen remained in the 150-153 range, providing a broadly stable environment. No significant Bank of Japan intervention signals emerged.\n\n**US Federal Reserve**: The Fed maintained its cautious stance. Risk appetite was supported by the absence of hawkish surprises.\n\n**Japan CPI**: Core inflation data supported the Bank of Japan's gradual normalization path, maintaining consensus expectations for 1-2 additional rate hikes in 2026.\n\n## Outlook for the Following Week\n\nKey catalysts to monitor:\n- US technology mega-cap earnings (direct catalyst for AI and semiconductor themes)\n- Japan manufacturing PMI data\n- USD/JPY movements — sustained yen weakness would benefit export-oriented tech names\n- Semiconductor equipment order data from TSMC and Samsung (Japan equipment bellwether)\n\n**Strategic recommendation**: The AI ecosystem themes (SaaS, Generative AI, Cybersecurity, Edge AI) are showing \"Accelerating\" momentum with institutional volume confirmation — the highest-quality signal in StockWaveJP's framework. Reduce exposure to energy themes (LNG, Oil) where momentum is \"Fading\" with declining volume support."
 }

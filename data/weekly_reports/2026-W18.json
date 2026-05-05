@@ -1,0 +1,60 @@
+{
+  "week": "2026-W18",
+  "date": "2026/05/02",
+  "title": "Week of Apr 28 – May 2: Broad Risk-On Rally; AI & Semiconductor Themes Maintain Leadership",
+  "summary": {
+    "rising": 53,
+    "falling": 14,
+    "total": 67,
+    "avg_return": 7.31,
+    "top_theme": "Semiconductor Testing",
+    "top_pct": 30.6,
+    "bot_theme": "Oil & Petroleum",
+    "bot_pct": -8.3
+  },
+  "rising_top5": [
+    {
+      "theme": "Semiconductor Testing",
+      "pct": 30.6
+    },
+    {
+      "theme": "AI Chips",
+      "pct": 27.7
+    },
+    {
+      "theme": "Memory",
+      "pct": 25.5
+    },
+    {
+      "theme": "Power Semiconductors",
+      "pct": 21.2
+    },
+    {
+      "theme": "Physical AI",
+      "pct": 21.1
+    }
+  ],
+  "falling_top5": [
+    {
+      "theme": "Oil & Petroleum",
+      "pct": -8.3
+    },
+    {
+      "theme": "LNG",
+      "pct": -5.8
+    },
+    {
+      "theme": "Electric Utilities",
+      "pct": -5.2
+    },
+    {
+      "theme": "Inbound Tourism",
+      "pct": -3.8
+    },
+    {
+      "theme": "Tourism, Hotels & Leisure",
+      "pct": -3.5
+    }
+  ],
+  "body": "## Market Overview — Week of Apr 28 – May 2\n\nJapan's equity theme market entered the final week of April with broad positive momentum maintained. 53 of 67 themes (79%) showed positive 1-month returns as of the April 29 data update (the most recent available), with a theme average return of +7.31%. This represents one of the strongest broad-based rallies in Japan's theme market in recent months.\n\nThe Golden Week holiday period (May 3–6) will affect Japanese market trading volumes in the coming week, but the fundamental backdrop remains constructive: AI semiconductor demand is accelerating, the Bank of Japan's interest rate normalization is proceeding gradually, and the yen has stabilized in a range supportive of export-oriented technology names.\n\n## Top Themes — 1-Month Performance Leaders\n\n### #1 Semiconductor Testing (+30.6%) — Extraordinary Outperformance\nSemiconductor Testing has delivered +30.6% over the past month — an exceptional return that reflects the extraordinary demand for semiconductor test equipment driven by AI chip production ramps. Advantest (6857) stands out as the primary driver: the company's test equipment is essential for validating NVIDIA AI chips, HBM memory, and advanced smartphone processors.\n\nThe investment case is straightforward: every AI chip — regardless of manufacturer — must be tested before installation in a data center. As AI chip complexity and production volumes both increase, test time per chip increases and unit volumes expand simultaneously. This creates a powerful double-multiplier effect on Advantest's revenue.\n\n**Key risk**: The semiconductor equipment cycle is inherently cyclical. If major chip manufacturers significantly reduce capex, test equipment orders would decline with a 2-3 quarter lag.\n\n### #2 AI Chips (+27.7%) — The Core AI Theme\nAI Chips continues to demonstrate that the AI investment cycle remains in full expansion. The +27.7% monthly return reflects both direct beneficiaries (companies producing AI accelerators and specialized AI chips) and adjacent suppliers (substrate makers, power management IC producers, thermal management specialists).\n\nThe theme benefits from multiple concurrent demand drivers: cloud hyperscalers building AI training infrastructure, enterprises deploying AI inference hardware, and government-sponsored AI computation centers expanding globally.\n\n### #3 Memory (+25.5%) — HBM Cycle at Full Speed\nMemory's +25.5% monthly return is almost entirely attributable to HBM (High Bandwidth Memory) demand for AI GPUs. HBM is packaged directly alongside AI accelerator chips (in the same package), providing bandwidth that standard DRAM cannot deliver. HBM pricing has been rising significantly as SK Hynix, Samsung, and Micron all face production constraints.\n\nJapanese exposure to this theme includes: companies supplying photoresist and specialty chemicals for HBM production (Shin-Etsu Chemical, JSR), test equipment for HBM (Advantest), and substrate materials.\n\n### #4 Power Semiconductors (+21.2%) — EV + AI Crossover\nPower Semiconductors achieved +21.2%, benefiting from two simultaneous demand drivers: EV drivetrain inverters (where SiC power devices are replacing silicon) and AI data center power management (where high-efficiency power conversion is critical at scale). Rohm Semiconductor (6963) and Fuji Electric (6504) are the primary Japanese beneficiaries.\n\n### #5 Physical AI (+21.1%) — The Next AI Wave\nPhysical AI (AI applied to robots, autonomous systems, and manufacturing) showed +21.1%. NVIDIA's GR00T robotics foundation model and the emerging humanoid robot category have elevated investor interest in companies supplying components for AI-enhanced physical systems.\n\n## Falling Themes — Where Capital Is Exiting\n\n### Oil & Petroleum (-8.3%) — Structural Rotation\nOil and petroleum stocks declined -8.3%, the largest monthly decline among all 67 themes. The combination of: (1) lower global crude oil prices, (2) the energy transition narrative discounting long-term fossil fuel demand, and (3) rotation toward growth themes has created sustained selling pressure.\n\nINPEX (1605) and domestic refiners are caught between near-term commodity price weakness and long-term transition concerns. For patient value investors, the dividend yield support and strategic LNG asset position make this an interesting contrarian consideration.\n\n### LNG (-5.8%) and Electric Utilities (-5.2%)\nEnergy supply chain themes face similar pressures to oil. The Japan government's GX (Green Transformation) policy, while creating a multi-decade transition roadmap, also signals the eventual decline of fossil fuel demand — creating long-duration valuation headwinds for these themes.\n\n## Volume Analysis — Institutional Capital Flows\n\nThe 1-month volume data reveals the clearest institutional capital flow patterns:\n\n- **Telecommunications (3.6B shares)**: NTT Group's strategic IOWN investments continue to attract long-term institutional positioning\n- **IOWN (2.9B shares)**: Pure-play photonic network infrastructure — the most technical AI infrastructure theme\n- **Buffett Holdings / Sogo Shosha (2.9B shares)**: Continued buying interest in Japan's trading company complex, driven by ongoing dividend growth and capital return commitments\n\nThe concentration of volume in both high-momentum growth themes AND in value/dividend themes suggests that both momentum and value investment strategies are finding Japan attractive simultaneously — a positive sign for market breadth sustainability.\n\n## Macro Environment — Key Variables\n\n**USD/JPY (¥149.83 as of latest data)**: The yen has stabilized, removing the extreme currency volatility that periodically disrupts Japan equity strategies. At current levels, the yen remains weak enough to provide earnings tailwinds for semiconductor equipment exporters without triggering emergency intervention concerns.\n\n**Bank of Japan Policy**: The Bank of Japan has clearly communicated a gradual normalization path. Market consensus has coalesced around 1-2 additional rate hikes in calendar 2026. This reduces policy uncertainty and supports equity risk appetite.\n\n**US-Japan Technology Partnership**: The bilateral agreement on semiconductor supply chain cooperation provides a structural policy tailwind for Japan's technology themes that is independent of short-term market sentiment.\n\n## Golden Week Holiday Period — What to Watch\n\nJapanese markets are closed May 3–6 for Golden Week. During this period, key developments in US markets (particularly technology earnings and any Federal Reserve communications) will set the tone for Japan's market reopening.\n\nSpecifically monitor:\n- Any major US technology company earnings calls or guidance updates\n- Federal Reserve speaker remarks on inflation and rate trajectory\n- USD/JPY movements during the holiday period\n- Geopolitical developments in East Asia that could affect defense and security themes\n\n## Strategic Portfolio Positioning\n\nThe current market environment calls for a clear thematic framework:\n\n**Overweight (Accelerating momentum + volume confirmation)**:\n- Semiconductor Testing (strongest momentum + highest Trade Value)\n- AI Chips (broad institutional participation)\n- Memory (HBM demand visibility)\n- Power Semiconductors (dual drivers: EV + AI)\n- Optical Communications (AI infrastructure necessity)\n\n**Neutral (monitor for entry)**:\n- Banking & Finance (interest rate normalization story intact but currently flat)\n- Defense & Space (structural tailwind but currently consolidating)\n- Robotics & Automation (Physical AI theme building)\n\n**Underweight / Avoid (Fading momentum)**:\n- Oil & Petroleum (negative momentum + fundamental headwinds)\n- LNG (same dynamic)\n- Electric Utilities (rate sensitivity + energy transition concerns)\n\nThe clearest investment signal from StockWaveJP's analytical framework this week is the combination of Accelerating momentum, above-average Volume, and high Trade Value across the AI semiconductor complex. This triple confirmation is the highest-quality signal the system generates."
+}
