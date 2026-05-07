@@ -42,5 +42,16 @@
     "top_pct": 10.5,
     "bot_theme": "Oil & Petroleum",
     "bot_pct": -4.1
+  },
+  {
+    "week": "2026-W14",
+    "date": "2026/04/04",
+    "title": "Week of Mar 31 – Apr 4: Defense & Resilience Lead; Tech Consolidates",
+    "rising": 38,
+    "falling": 29,
+    "top_theme": "Defense & Aerospace",
+    "top_pct": 9.8,
+    "bot_theme": "Oil & Petroleum",
+    "bot_pct": -5.1
   }
 ]
