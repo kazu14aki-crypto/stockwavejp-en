@@ -1,14 +1,25 @@
 [
   {
+    "week": "2026-W19",
+    "date": "2026/05/08",
+    "title": "Week of May 4–8: Post-Golden Week Surge — Semiconductor Equipment Leads Historic Rally",
+    "rising": 47,
+    "falling": 20,
+    "top_theme": "Semiconductor Equipment",
+    "top_pct": 12.4,
+    "bot_theme": "Oil & Petroleum",
+    "bot_pct": -3.2
+  },
+  {
     "week": "2026-W18",
     "date": "2026/05/01",
-    "title": "Week of Apr 27 – May 1: AI & Semiconductor Rally Continues on Strong Volume",
-    "rising": 53,
-    "falling": 14,
-    "top_theme": "Semiconductor Testing",
-    "top_pct": 30.6,
-    "bot_theme": "Oil & Petroleum",
-    "bot_pct": -8.3
+    "title": "Week of Apr 27 – May 1: AI & Growth Themes Lead as Energy Pulls Back",
+    "rising": 40,
+    "falling": 27,
+    "top_theme": "SaaS",
+    "top_pct": 8.97,
+    "bot_theme": "LNG",
+    "bot_pct": -4.24
   },
   {
     "week": "2026-W17",
@@ -24,34 +35,12 @@
   {
     "week": "2026-W16",
     "date": "2026/04/18",
-    "title": "Week of Apr 14–18: Semiconductor Rally Extends; Energy Themes Under Pressure",
-    "rising": 45,
-    "falling": 22,
+    "title": "Week of Apr 14–18: Semiconductor Rally Extends; Optical Communications Joins Top 5",
+    "rising": 49,
+    "falling": 18,
     "top_theme": "Semiconductor Testing",
-    "top_pct": 12.5,
+    "top_pct": 24.2,
     "bot_theme": "Oil & Petroleum",
-    "bot_pct": -3.8
-  },
-  {
-    "week": "2026-W15",
-    "date": "2026/04/11",
-    "title": "Week of Apr 7–11: AI Breakout; Defensive and Infrastructure Themes Gain",
-    "rising": 42,
-    "falling": 25,
-    "top_theme": "AI Chips",
-    "top_pct": 10.5,
-    "bot_theme": "Oil & Petroleum",
-    "bot_pct": -4.1
-  },
-  {
-    "week": "2026-W14",
-    "date": "2026/04/04",
-    "title": "Week of Mar 31 – Apr 4: Defense & Resilience Lead; Tech Consolidates",
-    "rising": 38,
-    "falling": 29,
-    "top_theme": "Defense & Aerospace",
-    "top_pct": 9.8,
-    "bot_theme": "Oil & Petroleum",
-    "bot_pct": -5.1
+    "bot_pct": -6.1
   }
 ]
