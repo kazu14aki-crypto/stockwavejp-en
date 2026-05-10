@@ -1,57 +1,60 @@
 {
   "week": "2026-W18",
   "date": "2026/05/01",
-  "title": "4/27〜5/1 週次マーケットレポート",
-  "generated_at": "2026/05/01 20:00 JST",
+  "title": "Week of Apr 27 – May 1: AI & SaaS Lead; Energy Themes Continue to Slide",
   "summary": {
-    "avg_pct_1w": 1.71,
-    "rise_count": 40,
-    "fall_count": 27,
-    "total_themes": 67,
-    "top5_themes": [
-      {
-        "theme": "SaaS",
-        "pct": 8.97
-      },
-      {
-        "theme": "生成AI",
-        "pct": 8.41
-      },
-      {
-        "theme": "サイバーセキュリティ",
-        "pct": 8.09
-      },
-      {
-        "theme": "エッジAI",
-        "pct": 7.08
-      },
-      {
-        "theme": "通信",
-        "pct": 7.04
-      }
-    ],
-    "bot5_themes": [
-      {
-        "theme": "LNG",
-        "pct": -4.24
-      },
-      {
-        "theme": "石油",
-        "pct": -3.83
-      },
-      {
-        "theme": "造船",
-        "pct": -2.73
-      },
-      {
-        "theme": "建設・インフラ",
-        "pct": -2.67
-      },
-      {
-        "theme": "国土強靭化計画",
-        "pct": -2.48
-      }
-    ]
+    "rising": 40,
+    "falling": 27,
+    "total": 67,
+    "avg_return": 1.71,
+    "top_theme": "SaaS",
+    "top_pct": 8.97,
+    "bot_theme": "LNG",
+    "bot_pct": -4.24
   },
-  "report": "## 市場概況（4/27〜5/1週）\n\n今週の日本株テーマ市場は、67テーマ中40テーマ（60%）がプラスとなり、テーマ平均騰落率は+1.71%と小幅な回復基調でした。\n\n> **注記**：4/29（昭和の日）は市場休場。今週の営業日は4/27（月）・4/28（火）・4/30（水）・5/1（木）の4日間です。GW前の様子見ムードが漂う中、AI・クラウド系の成長テーマが市場を牽引しました。\n\n---\n\n## 上昇テーマ詳細\n\n### 1位：SaaS（+8.97%）🏆\n\n今週最大の上昇テーマ。出来高も+31.1%と急増しており、機関投資家の本格的な資金流入が確認されています。米国SaaS大手の好決算が国内関連株に波及し、クラウド移行需要の継続性を評価する動きが加速。StockWaveJPのモメンタム判定は「🔥上昇中」。月次+21.4%・年間+15.8%とすべての時間軸で安定した上昇トレンドを示しています。\n\n**注目銘柄ポイント**：国内SaaSで特に出来高拡大が目立つのはマネーフォワード（3994）・フリー（4478）・Sansan（4443）など。エンタープライズ向けDX推進需要の恩恵を受けています。\n\n### 2位：生成AI（+8.41%）\n\n生成AIテーマは+8.41%。出来高前月比+27.4%と拡大しており、国内企業のAI活用推進・大型導入発表が相次いでいます。AIソフトウェア開発企業からシステムインテグレーターまで幅広い銘柄に資金が向かっており、裾野の広がりが特徴的です。\n\n### 3位：サイバーセキュリティ（+8.09%）\n\n3週連続で出来高が平均を超えており、機関投資家の継続的な累積買いが確認されています。経済安全保障法に基づく政府のセキュリティ投資拡大が安定的な需要を生み出しており、景気動向に左右されにくい「守りの成長テーマ」として機関投資家からの評価が高まっています。年間騰落率+17.5%と全テーマ中でも高水準を維持。\n\n### 4位：エッジAI（+7.08%）／5位：通信（+7.04%）\n\nエッジAIは「フィジカルAI」概念の浸透でルネサスエレクトロニクス・オムロンへの資金流入。通信はNTTグループのIOWN戦略が長期投資家の注目を集めています。\n\n---\n\n## 下落テーマ詳細\n\n### LNG（-4.24%）・石油（-3.83%）\n\nエネルギー系テーマは今週も続落。世界的な原油・天然ガス価格の軟調推移に加え、脱炭素ナラティブがバリュエーションへの割引要因となっています。モメンタム判定は「❄️下落中」。新規の買い参入は慎重な姿勢が適切です。\n\n### 造船（-2.73%）・建設・インフラ（-2.67%）・国土強靭化計画（-2.48%）\n\n前週の急騰後の利益確定売りが続いています。政府の防衛費増額・国土強靭化予算の大枠は変わらず、中長期の需要基盤は維持されています。押し目としての観察が合理的です。\n\n---\n\n## 来週（5/7〜）の注目イベント\n\n- **日本企業3月期本決算ラッシュ**：アドバンテスト・東京エレクトロン等の主要半導体関連\n- **米国主要企業決算**：AI関連大手の決算がテーマ相場への直接的な影響をもたらします\n- **ドル円動向**：円高方向への動きは輸出関連テーマの利益確定売りトリガーになりやすい\n- **GW明け（5/7）の値動き**：連休中の海外市場の動向を消化する動きに注意が必要\n\n## 投資戦略まとめ\n\n| テーマ | モメンタム | 方針 |\n|--------|-----------|------|\n| SaaS / 生成AI / サイバーセキュリティ | 🔥上昇中 | 中核保有継続 |\n| エッジAI / 通信 / IOWN | ↗上昇転換 | 押し目エントリー検討 |\n| 銀行・金融 | →横ばい | 中期積立が合理的 |\n| 石油 / LNG | ❄️下落中 | 新規買いは見送り |\n| 造船 / インフラ | ↘下落転換 | 中長期での押し目待ち |\n\n> **免責事項**：本レポートはStockWaveJPのマーケットデータに基づく参考情報です。特定銘柄の売買を推奨するものではありません。投資判断はご自身でお決めください。"
+  "rising_top5": [
+    {
+      "theme": "SaaS",
+      "pct": 8.97
+    },
+    {
+      "theme": "Generative AI",
+      "pct": 8.41
+    },
+    {
+      "theme": "Cybersecurity",
+      "pct": 8.09
+    },
+    {
+      "theme": "Edge AI",
+      "pct": 7.08
+    },
+    {
+      "theme": "Telecommunications",
+      "pct": 7.04
+    }
+  ],
+  "falling_top5": [
+    {
+      "theme": "LNG",
+      "pct": -4.24
+    },
+    {
+      "theme": "Oil & Petroleum",
+      "pct": -3.83
+    },
+    {
+      "theme": "Shipbuilding",
+      "pct": -2.73
+    },
+    {
+      "theme": "Construction & Infrastructure",
+      "pct": -2.67
+    },
+    {
+      "theme": "National Resilience Plan",
+      "pct": -2.48
+    }
+  ],
+  "body": "## Market Overview — Week of Apr 27 – May 1\n\nJapan's equity theme market posted a modest but broad recovery this week. 40 of 67 themes (60%) finished positive, with the weekly theme average of +1.71% indicating cautious optimism ahead of the Golden Week holiday period.\n\n> **Market Calendar Note**: Japanese markets were closed April 29 (Showa Day national holiday). Trading sessions this week: April 27 (Mon), April 28 (Tue), April 30 (Wed), May 1 (Thu) — four sessions only. With major indices approaching resistance ahead of a five-day holiday, institutional investors took a selective approach, concentrating capital into high-conviction growth themes while reducing exposure to cyclical and commodity-linked names.\n\n---\n\n## Top Themes of the Week\n\n### #1 SaaS (+8.97%) — Theme of the Week\n\nSaaS posted the week's largest gain at +8.97%, with Volume expanding +31.1% vs. the prior month average. This combination — rising return + expanding volume — is the highest-conviction buy signal in StockWaveJP's analytical framework, indicating genuine institutional capital inflow rather than speculative retail activity.\n\nUS SaaS mega-cap earnings results triggered sympathy buying across Japanese cloud-related names. The cloud migration demand narrative continues to accelerate, with domestic enterprise clients increasingly committing to multi-year SaaS contracts. Monthly return stands at +21.4%, annual at +15.8% — consistent performance across all time horizons confirms a structural trend. Pre-Golden Week positioning likely amplified the move as institutional investors added to highest-conviction themes before the holiday.\n\n### #2 Generative AI (+8.41%) — Sustained Institutional Allocation\n\nGenerative AI gained +8.41% with Volume up +27.4%. The breadth of participation is notable — not just AI software developers but system integrators, data infrastructure providers, and enterprise AI service companies all participated. Domestic corporate AI adoption announcements accelerated this week, with multiple large Japanese enterprises announcing enterprise-wide generative AI deployments.\n\nMonthly return of +13.9% and annual return of +15.8% across all time horizons signal that the market is treating generative AI as a structural multi-year trend rather than a speculative cycle.\n\n### #3 Cybersecurity (+8.09%) — Policy-Backed Accumulation\n\nCybersecurity posted +8.09% with Volume up +26.9% — the third consecutive week of above-average volume. The consistency of this volume pattern is the key signal: three weeks of institutional-scale buying without volatile price movements suggests patient, deliberate portfolio construction rather than momentum chasing. Japan's Economic Security Act compliance requirements create recurring, non-discretionary technology spending that supports earnings visibility for cybersecurity providers.\n\n### #4 Edge AI (+7.08%) / #5 Telecommunications (+7.04%)\n\nEdge AI gained +7.08% as the \"Physical AI\" thesis gains institutional acceptance — Renesas Electronics and Omron seeing fresh interest as AI inference moves from cloud to device. Telecommunications added +7.04%, with NTT Group's IOWN photonic network strategy continuing to attract long-duration institutional positioning.\n\n---\n\n## Falling Themes\n\n### LNG (-4.24%) and Oil & Petroleum (-3.83%)\n\nEnergy themes extended their declines, with LNG dropping -4.24% and Oil & Petroleum -3.83%. The combination of softer global energy prices, OPEC+ production increase discussions, and the ongoing energy transition narrative creates a persistent headwind. Both themes are showing \"Fading\" momentum state on StockWaveJP — new position entry is not supported by the data.\n\n### Construction & Infrastructure (-2.67%) and National Resilience Plan (-2.48%)\n\nInfrastructure themes gave back some of their prior-week gains through profit-taking. The structural demand case — Japan's aging infrastructure renewal, government budget commitments — remains intact for the medium term. Current positioning: patient accumulation on weakness.\n\n---\n\n## Pre-Golden Week Positioning\n\nThe market's behavior ahead of a five-day holiday reveals institutional conviction. The themes that attracted buying (SaaS, Generative AI, Cybersecurity) share a common characteristic: domestically-driven demand that is insulated from the holiday-period currency and geopolitical volatility that typically affects export-sensitive names.\n\nThis selective positioning — buying domestic growth, avoiding commodity exposure — reflects a rational risk management framework. It also sets up the potential for a strong catch-up rally when markets reopen May 7, if positive catalysts emerge from US markets during the holiday period.\n\n---\n\n## Week Ahead — May 7 (Post-Golden Week Reopening)\n\nMarkets reopen May 7 after a five-day closure (May 3-6). The first session will reflect accumulated overseas developments:\n\n- **NVIDIA and major tech earnings** released during the holiday will set the tone for AI and semiconductor themes\n- **USD/JPY movements** during the holiday — yen strengthening would pressure export-oriented names at reopening\n- **US Federal Reserve communications** — any shift in rate expectations affects global risk appetite\n- **China economic data** — relevant to export-oriented manufacturing themes\n\n**Positioning**: Maintain core positions in SaaS, Generative AI, and Cybersecurity themes showing Accelerating momentum. Reduce or avoid LNG, Oil & Petroleum where both momentum and fundamentals are negative. The Golden Week holiday period creates tactical entry opportunities — monitor for post-holiday sentiment-driven dips in high-quality themes.\n\n> *This report is based on StockWaveJP market data. It does not recommend buying or selling specific stocks. All investment decisions are your own responsibility.*"
 }
