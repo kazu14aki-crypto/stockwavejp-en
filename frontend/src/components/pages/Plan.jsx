@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useAuth }         from '../../hooks/useAuth.jsx'
 import { useSubscription } from '../../hooks/useSubscription.js'
+import UpgradePlanButton   from '../UpgradePlanButton.jsx'
 
 export default function Plan({ onNavigate }) {
   const [isMobile, setIsMobile] = useState(false)
