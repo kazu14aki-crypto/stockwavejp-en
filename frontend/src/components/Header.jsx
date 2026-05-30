@@ -14,7 +14,7 @@ const LogoSvg = () => (
   </svg>
 )
 
-import AuthButton from './AuthButton'
+import AuthButton from './AuthButton.jsx'
 
 export default function Header({ status, onMenuClick, sidebarOpen, viewMode, onViewModeChange, onLogoClick }) {
   return (
@@ -110,6 +110,7 @@ export default function Header({ status, onMenuClick, sidebarOpen, viewMode, onV
       <style>{`
         /* タブレット・スマホ（〜1280px）でハンバーガー表示 */
         @media (max-width: 1280px) {
+        @media (max-width: 900px) {
           .hamburger-btn  { display: flex !important; }
           .status-label   { display: none !important; }
           .status-updated { display: none !important; }
@@ -118,6 +119,9 @@ export default function Header({ status, onMenuClick, sidebarOpen, viewMode, onV
         }
         @media (max-width: 640px) {
           .logo-text .logo-main { font-size: 13px !important; }
+        /* ② タブレット横向き（901px〜1200px）でもハンバーガー維持 */
+        @media (min-width: 901px) and (max-width: 1200px) {
+          .hamburger-btn { display: flex !important; }
         }
         @media (max-width: 400px) {
           .status-area { display: none !important; }

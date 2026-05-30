@@ -13,9 +13,9 @@ const THEME_ARTICLE_MAP = {
   'AI半導体':          'semiconductor-theme',
   'AI人材':            'education-hr-theme',
   'エッジAI':          'physical-ai-edge-ai',
-  'EV・電気Auto車':    'ev-green-theme',
+  'EV・電気自動車':    'ev-green-theme',
   '全固体電池':        'ev-green-theme',
-  'Auto運転':          'ev-green-theme',
+  '自動運転':          'ev-green-theme',
   'ドローン':          'drone-theme',
   '輸送・物流':        'transport-logistics-theme',
   '造船':              'shipbuilding-theme',
@@ -59,7 +59,7 @@ const THEME_ARTICLE_MAP = {
   'リユース・中古品':  'retail-ec-theme',
   '防衛・航空':        'defense-theme',
   '宇宙・衛星':        'space-satellite-theme',
-  'ロボット・Auto化':  'robot-automation-theme',
+  'ロボット・自動化':  'robot-automation-theme',
   'レアアース・資源':  'rare-earth-resources-theme',
   'バフェット銘柄':    'sogo-shosha-analysis',
   'サイバーセキュリティ': 'cybersecurity-theme',
@@ -69,7 +69,7 @@ const THEME_ARTICLE_MAP = {
   '人材派遣':          'education-hr-theme',
   'ゲーム・エンタメ':  'game-entertainment-theme',
 }
-import COLUMNS from './columnData'
+import COLUMNS from './columnData.js'
 
 const CATEGORIES = ['All', 'テーマ', '入門', '分析手法', '投資手法', '用語解説', '個別銘柄']
 
@@ -107,7 +107,7 @@ const CAT_COLORS = {
   '建設・インフラ':     { bg:'rgba(76,175,130,0.1)',  color:'#4caf82', border:'rgba(76,175,130,0.25)' },
   '輸送・物流':         { bg:'rgba(91,156,246,0.1)',  color:'#5b9cf6', border:'rgba(91,156,246,0.25)' },
   'フィンテック':       { bg:'rgba(170,119,255,0.1)', color:'#aa77ff', border:'rgba(170,119,255,0.25)' },
-  'ロボット・Auto化':   { bg:'rgba(255,69,96,0.1)',   color:'#ff4560', border:'rgba(255,69,96,0.25)' },
+  'ロボット・自動化':   { bg:'rgba(255,69,96,0.1)',   color:'#ff4560', border:'rgba(255,69,96,0.25)' },
   'レアアース・資源':   { bg:'rgba(180,120,80,0.1)',  color:'#b47850', border:'rgba(180,120,80,0.25)' },
   'サイバーセキュリティ':{ bg:'rgba(74,158,255,0.1)', color:'#4a9eff', border:'rgba(74,158,255,0.25)' },
   'ドローン':           { bg:'rgba(6,214,160,0.1)',   color:'#06d6a0', border:'rgba(6,214,160,0.25)' },
@@ -254,7 +254,7 @@ export default function Column({ initialArticleId = null, onNavigate }) {
   const THEME_CATS = [
     '半導体製造装置','半導体検査装置','半導体材料','メモリ','パワー半導体','次世代半導体',
     '生成AI','AIデータセンター','フィジカルAI','AI半導体','AI人材','エッジAI',
-    'EV・電気Auto車','全固体電池','Auto運転','ドローン','輸送・物流','造船',
+    'EV・電気自動車','全固体電池','自動運転','ドローン','輸送・物流','造船',
     '再生可能エネルギー','太陽光発電','核融合発電','原子力発電','電力会社',
     'LNG','石油','蓄電池','資源（水素・ヘリウム・水）','IOWN','光通信',
     '通信','量子コンピューター','SaaS','ウェアラブル端末','仮想通貨','ネット銀行',
@@ -264,7 +264,7 @@ export default function Column({ initialArticleId = null, onNavigate }) {
     '不動産','建設・インフラ','国土強靭化計画','下水道',
     '食品・飲料','農業・フードテック','小売・EC','観光・ホテル・レジャー',
     'インバウンド','リユース・中古品',
-    '防衛・航空','宇宙・衛星','ロボット・Auto化',
+    '防衛・航空','宇宙・衛星','ロボット・自動化',
     'レアアース・資源','バフェット銘柄',
     'サイバーセキュリティ','警備','脱炭素・ESG',
     '教育・HR・人材','人材派遣','ゲーム・エンタメ',
@@ -387,7 +387,7 @@ export default function Column({ initialArticleId = null, onNavigate }) {
             '半導体材料':'半導体材料','メモリ':'メモリ','パワー半導体':'パワー半導体',
             '次世代半導体':'次世代半導体','生成AI':'生成AI','AIデータセンター':'AIデータセンター',
             'フィジカルAI':'フィジカルAI','AI半導体':'AI半導体','AI人材':'AI人材','エッジAI':'エッジAI',
-            'EV・電気Auto車':'EV・電気Auto車','全固体電池':'全固体電池','Auto運転':'Auto運転',
+            'EV・電気自動車':'EV・電気自動車','全固体電池':'全固体電池','自動運転':'自動運転',
             'ドローン':'ドローン','輸送・物流':'輸送・物流','造船':'造船',
             '再生可能エネルギー':'再生可能エネルギー','太陽光発電':'太陽光発電',
             '核融合発電':'核融合発電','原子力発電':'原子力発電','電力会社':'電力会社',
@@ -405,7 +405,7 @@ export default function Column({ initialArticleId = null, onNavigate }) {
             '食品・飲料':'食品・飲料','農業・フードテック':'農業・フードテック',
             '小売・EC':'小売・EC','観光・ホテル・レジャー':'観光・ホテル・レジャー',
             'インバウンド':'インバウンド','リユース・中古品':'リユース・中古品',
-            '防衛・航空':'防衛・航空','宇宙・衛星':'宇宙・衛星','ロボット・Auto化':'ロボット・Auto化',
+            '防衛・航空':'防衛・航空','宇宙・衛星':'宇宙・衛星','ロボット・自動化':'ロボット・自動化',
             'レアアース・資源':'レアアース・資源','バフェット銘柄':'バフェット銘柄',
             'サイバーセキュリティ':'サイバーセキュリティ','警備':'警備','脱炭素・ESG':'脱炭素・ESG',
             '教育・HR・人材':'教育・HR・人材','人材派遣':'人材派遣','ゲーム・エンタメ':'ゲーム・エンタメ',
