@@ -3,6 +3,7 @@
  */
 import { useState, useEffect } from 'react'
 import StockBubbleChart from '../StockBubbleChart'
+import { useSubscription } from '../../hooks/useSubscription.jsx'
 import { useCustomThemes, themeToUrl, themeFromUrl } from '../../hooks/useCustomThemes'
 import { useAuth } from '../../hooks/useAuth.jsx'
 
@@ -134,8 +135,6 @@ function ThemeTrendChart({ stocks, period }) {
 function CustomStockTable({ stocks, period, onRemove }) {
   const [details, setDetails] = useState({})
   const [loading, setLoading] = useState(true)
-  const [sortKey, setSortKey] = useState('pct')
-  const [sortAsc, setSortAsc] = useState(false)
 
   useEffect(() => {
     if (!stocks?.length) return
@@ -163,53 +162,17 @@ function CustomStockTable({ stocks, period, onRemove }) {
     ? Object.values(details).reduce((s, d) => s + (d.pct ?? 0), 0) / Object.values(details).length
     : null
 
-  const sortBtns = [
-    { key: 'pct',         label: 'Return' },
-    { key: 'volume',      label: 'Volume' },
-    { key: 'trade_value', label: 'Trade Value' },
-  ]
-  const sortedStocks = [...stocks].sort((a, b) => {
-    const va = details[a.ticker]?.[sortKey] ?? 0
-    const vb = details[b.ticker]?.[sortKey] ?? 0
-    return sortAsc ? va - vb : vb - va
-  })
-
   return (
     <div>
       {avg !== null && (
         <div style={{ display:'flex', alignItems:'center', gap:'8px', marginBottom:'10px' }}>
-          <span style={{ fontSize:'12px', color:'var(--text3)' }}>テーマ平均Return</span>
+          <span style={{ fontSize:'12px', color:'var(--text3)' }}>テーマAvgReturn</span>
           <span style={{ fontSize:'18px', fontWeight:700, fontFamily:'var(--mono)',
             color: avg >= 0 ? 'var(--red)' : 'var(--green)' }}>
             {avg >= 0 ? '+' : ''}{avg.toFixed(2)}%
           </span>
         </div>
       )}
-      {/* ① ソートボタン */}
-      <div style={{ display:'flex', gap:'6px', alignItems:'center', marginBottom:'8px', flexWrap:'wrap' }}>
-        <span style={{ fontSize:'10px', color:'var(--text3)', fontWeight:600, whiteSpace:'nowrap' }}>Sort by:</span>
-        {sortBtns.map(b => (
-          <button key={b.key} onClick={() => {
-            if (sortKey === b.key) setSortAsc(a => !a)
-            else { setSortKey(b.key); setSortAsc(false) }
-          }} style={{
-            padding:'3px 10px', borderRadius:'5px', fontSize:'11px', fontWeight:600,
-            cursor:'pointer', fontFamily:'var(--font)',
-            background: sortKey === b.key ? 'rgba(74,158,255,0.15)' : 'transparent',
-            border: sortKey === b.key ? '1px solid rgba(74,158,255,0.4)' : '1px solid var(--border)',
-            color: sortKey === b.key ? 'var(--accent)' : 'var(--text3)',
-          }}>
-            {b.label} {sortKey === b.key ? (sortAsc ? '↑' : '↓') : ''}
-          </button>
-        ))}
-        <button onClick={() => setSortAsc(a => !a)} style={{
-          padding:'3px 10px', borderRadius:'5px', fontSize:'11px', fontWeight:600,
-          cursor:'pointer', fontFamily:'var(--font)',
-          background:'transparent', border:'1px solid var(--border)', color:'var(--text3)',
-        }}>
-          {sortAsc ? '↑ Asc' : '↓ Desc'}
-        </button>
-      </div>
       <div style={{ overflowX:'auto' }}>
         <table style={{ borderCollapse:'collapse', fontSize:'12px', fontFamily:'var(--font)', width:'100%', minWidth:'600px' }}>
           <thead>
@@ -225,13 +188,15 @@ function CustomStockTable({ stocks, period, onRemove }) {
             </tr>
           </thead>
           <tbody>
-            {sortedStocks.map((s, i) => {
+            {stocks.map((s, i) => {
               const d = details[s.ticker]
               const pColor = (d?.pct ?? 0) >= 0 ? 'var(--red)' : 'var(--green)'
               const bg = i%2===0 ? 'transparent' : 'rgba(255,255,255,0.02)'
               return (
                 <tr key={s.ticker} style={{ borderBottom:'1px solid rgba(255,255,255,0.04)', background: bg }}>
-                  <td style={{ padding:'8px 10px', textAlign:'center', color:'var(--text3)', fontFamily:'var(--mono)', fontSize:'11px' }}>{i+1}</td>
+                  <td style={{ padding:'8px 10px', textAlign:'center', color:'var(--text3)', fontFamily:'var(--mono)', fontSize:'11px' }}>
+                    {i+1}
+                  </td>
                   <td style={{ padding:'8px 10px', textAlign:'left' }}>
                     <div style={{ fontSize:'10px', color:'var(--text3)', fontFamily:'var(--mono)' }}>{s.ticker.replace('.T','')}</div>
                     <div style={{ fontSize:'13px', fontWeight:600, color:'var(--text)' }}>{s.name}</div>
@@ -416,7 +381,8 @@ function CustomBubbleScatter({ stocks, period }) {
 }
 
 export default function CustomTheme() {
-  const { themes, saveTheme, deleteTheme, syncing } = useCustomThemes()
+  const { maxThemes, maxStocks } = useSubscription()
+  const { themes, saveTheme, deleteTheme, syncing } = useCustomThemes({ maxThemes, maxStocks })
   const { isLoggedIn, signIn } = useAuth()
   const [mode,        setMode]        = useState('list')  // 'list'|'detail'|'edit'|'create'
   const [activeIndex, setActiveIndex] = useState(null)
@@ -492,7 +458,7 @@ export default function CustomTheme() {
     setSearching(false)
   }
   const addStock = (s) => {
-    if (stocks.find(x => x.ticker === s.ticker)) { setSearchErr('すでにAdd済みです'); return }
+    if (stocks.find(x => x.ticker === s.ticker)) { setSearchErr('すでに追加済みです'); return }
     if (stocks.length >= 10) { setSearchErr('1テーマあたりの銘柄上限は10個です'); return }
     setStocks(p => [...p, s]); setResults([]); setQuery(''); setSearchErr(''); setExpanded(null)
   }
@@ -500,7 +466,7 @@ export default function CustomTheme() {
 
   const handleSave = () => {
     if (!themeName.trim()) { alert('Theme Nameを入力してください'); return }
-    if (!stocks.length)    { alert('銘柄を1つ以上Addしてください'); return }
+    if (!stocks.length)    { alert('銘柄を1つ以上追加してください'); return }
     saveTheme({ name:themeName.trim(), stocks }, editTarget)
     setMode('list')
   }
@@ -523,8 +489,8 @@ export default function CustomTheme() {
       <div style={{ fontSize:'11px', color: themes.length >= 3 ? 'var(--red)' : 'var(--text3)',
         marginBottom:'16px', display:'flex', alignItems:'center', gap:'6px' }}>
         <span style={{ fontWeight:600 }}>📌 作成数: {themes.length} / 3</span>
-        {themes.length >= 3 && <span>（上限に達しました。既存テーマをRemoveしてからAddしてください）</span>}
-        {themes.length < 3 && <span>（最大3テーマまで作成できます）</span>}
+        {themes.length >= 3 && <span>（上限に達しました。既存テーマを削除してから追加してください）</span>}
+        {themes.length < maxThemes && <span>({maxThemes - themes.length} theme{maxThemes - themes.length !== 1 ? "s" : ""} remaining)</span>}
       </div>
       {/* Login誘導バナー */}
       {!isLoggedIn && (
@@ -577,7 +543,7 @@ export default function CustomTheme() {
               </div>
               <span style={{ fontSize:'12px', color:'var(--text3)', whiteSpace:'nowrap' }}>{(t.stocks||[]).length}銘柄</span>
               <button onClick={e => { e.stopPropagation(); startEdit(i) }} style={btnS}>編集</button>
-              <button onClick={e => { e.stopPropagation(); window.confirm('Removeしますか？') && deleteTheme(i) }} style={btnD}>Remove</button>
+              <button onClick={e => { e.stopPropagation(); window.confirm('削除しますか？') && deleteTheme(i) }} style={btnD}>削除</button>
             </div>
           ))}
         </div>
@@ -653,7 +619,7 @@ export default function CustomTheme() {
       {/* URLエクスポート説明 */}
       <div style={{ marginTop:'20px', padding:'12px 16px', background:'rgba(74,158,255,0.06)',
         border:'1px solid rgba(74,158,255,0.15)', borderRadius:'8px', fontSize:'12px', color:'var(--text3)' }}>
-        💡 「URLをコピー」でこのテーマを共有・ブックマークできます。URLにアクセスするとAutoでインポートされます。
+        💡 「URLをコピー」でこのテーマを共有・ブックマークできます。URLにアクセスすると自動でインポートされます。
       </div>
 
       <style>{`
@@ -740,7 +706,7 @@ export default function CustomTheme() {
                     <span style={{ fontSize:'10px', color:'var(--text3)' }}>
                       {expandedResult===r.ticker ? '▲' : '▼'}
                     </span>
-                    <button onClick={e => { e.stopPropagation(); addStock(r) }} style={btnP}>Add</button>
+                    <button onClick={e => { e.stopPropagation(); addStock(r) }} style={btnP}>追加</button>
                   </div>
                   {expandedResult===r.ticker && (
                     <div style={{ padding:'10px 14px', background:'var(--bg2)',
@@ -757,7 +723,7 @@ export default function CustomTheme() {
 
       {stocks.length > 0 && (
         <div style={{ marginBottom:'24px' }}>
-          <label style={lbl}>Add済み銘柄（{stocks.length}/10銘柄　※最大10銘柄まで）</label>
+          <label style={lbl}>追加済み銘柄（{stocks.length}/10銘柄　※最大10銘柄まで）</label>
           <div style={{ display:'flex', flexDirection:'column', gap:'5px' }}>
             {stocks.map((s, i) => (
               <div key={s.ticker} style={{ display:'flex', alignItems:'center', gap:'10px',
@@ -781,7 +747,7 @@ export default function CustomTheme() {
       <div style={{ display:'flex', gap:'10px' }}>
         <button onClick={handleSave} disabled={!themeName.trim()||!stocks.length}
           style={{ ...btnP, fontSize:'14px', padding:'10px 24px', opacity: (!themeName.trim()||!stocks.length) ? 0.4 : 1 }}>
-          💾 {mode==='edit' ? '変更をSave' : 'テーマを作成'}
+          💾 {mode==='edit' ? '変更を保存' : 'テーマを作成'}
         </button>
         <button onClick={() => setMode('list')} style={{ ...btnS, fontSize:'14px', padding:'10px 18px' }}>
           Cancel
