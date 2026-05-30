@@ -410,7 +410,7 @@ NTT is developing the **IOWN (Innovative Optical and Wireless Network)** — an 
 > **Disclaimer**: This column is for informational purposes only and does not constitute investment advice.
 `,
   },
-]
+
 
   {
     id: 'how-to-read-data',
