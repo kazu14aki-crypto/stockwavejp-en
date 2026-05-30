@@ -10,7 +10,7 @@ export default function Settings({ viewMode, onViewModeChange, colorTheme, onCol
 
   const COLOR_THEMES = [
     { key:'dark',  label:'🌑 ブラック', desc:'ダークモード（デフォルト）' },
-    { key:'light', label:'☀️ ホワイト', desc:'ライトモード' },
+    { key:'light', label:'☀️ ホワイト', desc:'Lightモード' },
   ]
 
   return (
@@ -34,7 +34,7 @@ export default function Settings({ viewMode, onViewModeChange, colorTheme, onCol
               <span style={{ fontSize:'14px', color:'var(--text)', fontWeight:600 }}>{label}</span>
               <span style={{ fontSize:'11px', color:'var(--text2)' }}>{desc}</span>
               {colorTheme===key && (
-                <span style={{ fontSize:'10px',color:'var(--accent)',fontWeight:600,marginTop:'4px' }}>✓ 適用中</span>
+                <span style={{ fontSize:'10px',color:'var(--accent)',fontWeight:600,marginTop:'4px' }}>✓ Active</span>
               )}
             </button>
           ))}

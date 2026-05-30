@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useAuth }         from '../../hooks/useAuth.jsx'
 import { useSubscription } from '../../hooks/useSubscription.js'
-import UpgradePlanButton   from '../UpgradePlanButton.jsx'
 
 export default function Plan({ onNavigate }) {
   const [isMobile, setIsMobile] = useState(false)
@@ -44,7 +43,7 @@ export default function Plan({ onNavigate }) {
     {
       key: 'pro', name: 'Pro', color: '#aa77ff',
       badge: currentPlan === 'pro' ? 'Current Plan' : null,
-      monthly: { price: '¥1,980', label: 'Monthly', perDay: Math.ceil(1980/30) },
+      monthly: { price: '$30',   label: 'Monthly', perDay: null },
       features: [
         'Everything in Standard',
         'Custom Themes: 30 themes / 50 stocks each',
@@ -103,8 +102,8 @@ export default function Plan({ onNavigate }) {
                 <span style={{ fontSize:'26px', fontWeight:800, color:'var(--text)', fontFamily:'var(--mono)' }}>{p.monthly.price}</span>
                 {p.monthly.label !== 'Forever free' && <span style={{ fontSize:'12px', color:'var(--text3)' }}>/mo</span>}
               </div>
-              {p.monthly.perDay && <div style={{ fontSize:'11px', color:p.color, fontWeight:600, marginTop:'4px' }}>~¥{p.monthly.perDay}/day</div>}
-              {p.monthly.label === 'Forever free' && <div style={{ fontSize:'11px', color:'#4a9eff', fontWeight:600, marginTop:'4px' }}>Always free</div>}
+              
+              <div style={{ fontSize:'11px', color:'#4a9eff', fontWeight:600, marginTop:'4px' }}>Free forever</div>
             </div>
             <ul style={{ listStyle:'none', padding:0, margin:0, display:'flex', flexDirection:'column', gap:'6px', marginBottom:'8px' }}>
               {p.features.map((f, i) => (
@@ -113,7 +112,7 @@ export default function Plan({ onNavigate }) {
                 </li>
               ))}
             </ul>
-            {p.key !== 'free' && <UpgradePlanButton priceKey={`${p.key}_monthly`} label={p.name} color={p.color} disabled={false}/>}
+            
           </div>
         ))}
       </div>

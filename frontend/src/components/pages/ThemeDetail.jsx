@@ -106,7 +106,7 @@ function Top5Bar({ items, title, colorFn, emptyMsg }) {
       borderRadius:'8px', padding:'20px', textAlign:'center',
       color:'var(--text3)', fontSize:'12px' }}>
       <div style={{ fontSize:'11px', fontWeight:700, color:'var(--text)', marginBottom:'8px' }}>{title}</div>
-      {emptyMsg || 'データなし'}
+      {emptyMsg || 'No data'}
     </div>
   )
   const maxAbs = Math.max(...items.map(s => Math.abs(s.pct)), 0.01)
@@ -191,7 +191,7 @@ function VolTvChart({ selTheme }) {
     })()
   }, [selTheme])
 
-  if (loading) return <div style={{ textAlign:'center', padding:'40px', color:'var(--text3)', fontSize:'13px' }}>データ読み込み中...</div>
+  if (loading) return <div style={{ textAlign:'center', padding:'40px', color:'var(--text3)', fontSize:'13px' }}>データLoading...</div>
   if (!data || !data.dates || data.dates.length === 0)
     return <div style={{ textAlign:'center', padding:'32px', color:'var(--text3)', fontSize:'12px' }}>推移データがありません（GitHub Actionsの次回実行後に表示されます）</div>
 
@@ -217,7 +217,7 @@ function VolTvChart({ selTheme }) {
   // 目盛り表示
   const fmtLarge = (v) => {
     if (v === 0) return '0'
-    if (Math.abs(v) >= 1e12) return (v / 1e12).toFixed(1) + '兆'
+    if (Math.abs(v) >= 1e12) return (v / 1e12).toFixed(1) + 'T'
     if (Math.abs(v) >= 1e8)  return (v / 1e8).toFixed(1)  + 'B'
     if (Math.abs(v) >= 1e4)  return (v / 1e4).toFixed(1)  + 'M'
     return v.toLocaleString()
@@ -304,7 +304,7 @@ function PickupStocks({ stocks, period }) {
 
   const fmtL = (v) => {
     if (!v || v === 0) return '-'
-    if (v >= 1e12) return (v / 1e12).toFixed(1) + '兆'
+    if (v >= 1e12) return (v / 1e12).toFixed(1) + 'T'
     if (v >= 1e8)  return (v / 1e8).toFixed(1) + 'B'
     if (v >= 1e4)  return (v / 1e4).toFixed(1) + 'M'
     return v.toLocaleString()
@@ -339,10 +339,10 @@ function PickupStocks({ stocks, period }) {
       else if (pct >= 2)   parts.push('+' + pct.toFixed(1) + '%のRisingでテーマAvgを上回っています')
       else if (pct > 0)    parts.push('+' + pct.toFixed(1) + '%と小幅ながらプラスを維持しています')
 
-      if (volChg >= 50)      parts.push('Volumeが+' + volChg.toFixed(0) + '%と急増しており、機関投資家・外国人投資家の大口資金の流入が強く示唆されます')
+      if (volChg >= 50)      parts.push('Volumeが+' + volChg.toFixed(0) + '%と急増しており、機関投資家・外国人投資家の大口資金のInflowが強く示唆されます')
       else if (volChg >= 20) parts.push('Volumeが+' + volChg.toFixed(0) + '%増加しており、市場参加者の注目が高まっています')
 
-      if (sparkAccel > 3)    parts.push('直近の価格推移が後半にかけて加速（後半Avg+' + sparkAccel.toFixed(1) + '%）しており、モメンタムが強まっています')
+      if (sparkAccel > 3)    parts.push('Recent の価格推移が後半にかけて加速（後半Avg+' + sparkAccel.toFixed(1) + '%）しており、モメンタムが強まっています')
       else if (sparkAccel > 1) parts.push('価格推移が後半にかけてやや改善（後半+' + sparkAccel.toFixed(1) + '%）しています')
 
       if (tv >= 5e9)       parts.push('Trade Valueは' + fmtL(tv) + 'と非常に大きく、流動性が高い主力銘柄として積極的に売買されています')
@@ -401,7 +401,7 @@ function PickupStocks({ stocks, period }) {
                   {(s.pct ?? 0) >= 0 ? '+' : ''}{s.pct?.toFixed(1)}%
                 </span>
               </div>
-              {/* 銘柄名（必ず表示） */}
+              {/* Stock Name（必ず表示） */}
               <div style={{ fontSize:'13px', fontWeight:700, color:'var(--text)',
                 lineHeight:1.4 }}>
                 {s.name || s.ticker.replace('.T', '')}
@@ -525,7 +525,7 @@ function StockTable({ stocks: rawStocks }) {
     if (tableRef.current) tableRef.current.style.cursor = 'grab'
   }
 
-  const headers = ['ミニチャート','株価','Return','時価総額','寄与度%','Volume増減','Volume','Volume順位','Trade Value','Trade Value順位']
+  const headers = ['ミニチャート','株価','Return','Market Cap','寄与度%','Volume増減','Volume','Volume順位','Trade Value','Trade Value順位']
 
   // ⑤ ソートボタン定義
   const sortBtns = [
@@ -581,7 +581,7 @@ function StockTable({ stocks: rawStocks }) {
           <thead>
             <tr style={{ borderBottom:'1px solid var(--border)' }}>
               <th className="sticky-col1" style={{ ...thStyle, textAlign:'center', width:'32px', minWidth:'32px', maxWidth:'32px', padding:'8px 4px', background:'var(--bg3)', position:'sticky', left:0, zIndex:3 }}>順</th>
-              <th className="sticky-col2" style={{ ...thStyle, textAlign:'left', minWidth:'120px', background:'var(--bg3)', position:'sticky', left:'32px', zIndex:3 }}>銘柄名</th>
+              <th className="sticky-col2" style={{ ...thStyle, textAlign:'left', minWidth:'120px', background:'var(--bg3)', position:'sticky', left:'32px', zIndex:3 }}>Stock Name</th>
               {headers.map(h => (
                 <th key={h} style={{ ...thStyle, minWidth: h === 'ミニチャート' ? '72px' : '80px',
                   width: h === 'ミニチャート' ? '72px' : undefined }}>{h}</th>
@@ -1102,7 +1102,7 @@ export default function ThemeDetail({ onNavigate, initialTheme }) {
                   )}
                 </TdExpandable>
 
-                {/* ③ Stock Heatmap（散布図）を先に */}
+                {/* ③ Stock Heatmap（Scatter Plot）を先に */}
                 {themeHeatmap && typeof themeHeatmap === 'object' && themeHeatmap['1W'] != null && (
                   <TdExpandable title="🔥 Stock Heatmap">
                     <StockBubbleChart stocks={stocks} themeName={selTheme} onNavigate={onNavigate} />
@@ -1110,7 +1110,7 @@ export default function ThemeDetail({ onNavigate, initialTheme }) {
                 )}
 
                 {/* Volume・Trade Valueグラフ（Heatmapの下） */}
-                <TdExpandable title="📊 Volume・Trade Value 推移（週次）" style={{ marginTop:'14px' }}>
+                <TdExpandable title="📊 Volume・Trade Value 推移（Weekly）" style={{ marginTop:'14px' }}>
                   <div style={{ height:'200px' }}>
                     <VolTvChart selTheme={selTheme} />
                   </div>
@@ -1127,11 +1127,11 @@ export default function ThemeDetail({ onNavigate, initialTheme }) {
                         📖 {selTheme}のコラム記事
                       </button>
                     )}
-                    <button onClick={() => onNavigate('週次レポート')}
+                    <button onClick={() => onNavigate('Weeklyレポート')}
                       style={{ padding:'7px 16px', borderRadius:'6px', fontSize:'12px',
                         background:'rgba(255,140,66,0.08)', border:'1px solid rgba(255,140,66,0.3)',
                         color:'#ff8c42', cursor:'pointer', fontFamily:'var(--font)', fontWeight:600 }}>
-                      📰 週次レポート →
+                      📰 Weeklyレポート →
                     </button>
                   </div>
                 )}

@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import { useThemes, useMacro } from '../../hooks/useMarketData.js'
-import MacroLineChart, { MacroCard, SHead } from '../MacroLineChart.jsx'
+import { useThemes, useMacro } from '../../hooks/useMarketData'
+import MacroLineChart, { MacroCard, SHead } from '../MacroLineChart'
 
 const API = import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000'
 
@@ -75,16 +75,16 @@ const THEME_ARTICLE_MAP = {
 }
 
 const ALL_NEWS = [
-  { date:'2026/04/19', tag:'NEW',    title:'Weekly Report feature added (auto-generated every Friday)' },
-  { date:'2026/04/19', tag:'UPDATE', title:'Custom Themeに資金フロー散布図を追加' },
-  { date:'2026/04/19', tag:'UPDATE', title:'テーマHeatmapの期間別タブを削除・整理' },
-  { date:'2026/04/15', tag:'UPDATE', title:'Market Rankingの銘柄定義を修正・重複解消' },
-  { date:'2026/04/10', tag:'UPDATE', title:'メニュー名「Heatmap」を「テーマHeatmap」に変更' },
-  { date:'2026/04/01', tag:'UPDATE', title:'Added 8 new column articles' },
-  { date:'2026/03/31', tag:'UPDATE', title:'Custom Theme機能強化' },
-  { date:'2026/03/14', tag:'NEW',    title:'React版リリース' },
+  { date:'2026/05/29', tag:'NEW',    title:'MLCC Theme Added & Murata/MLCC Column Articles Published' },
+  { date:'2026/05/29', tag:'NEW',    title:'Weekly Report (May 25-29) Published' },
+  { date:'2026/05/22', tag:'NEW',    title:'Weekly Report (May 18-22) Published' },
+  { date:'2026/05/19', tag:'NEW',    title:'Institutional Holdings Page Added' },
+  { date:'2026/05/18', tag:'UPDATE', title:'Custom Themes: Cost Basis & P&L Tracking Added' },
+  { date:'2026/05/15', tag:'NEW',    title:'Weekly Report (May 11-15) Published' },
+  { date:'2026/05/08', tag:'NEW',    title:'Weekly Report (May 4-8) Published' },
+  { date:'2026/03/14', tag:'NEW',    title:'StockWaveJP React Version Launched' },
 ]
-// Descソート・最新3件
+// 降順ソート・最新3件
 const NEWS_LIST = [...ALL_NEWS].sort((a,b) => b.date.localeCompare(a.date)).slice(0,3)
 const TAG_COLORS = {
   'NEW':    { bg:'rgba(255,83,112,0.15)', color:'var(--red)',    border:'rgba(255,83,112,0.3)' },
@@ -149,10 +149,10 @@ function generateMarketComment(themeData, macro) {
   const avg       = s.avg ?? 0
 
   // 市場全体の状態
-  const mktState = riseCount >= total*0.7 ? '広範なRising相場' :
-                   riseCount >= total*0.55 ? 'Rising優勢の相場' :
-                   fallCount >= total*0.7  ? '広範なFalling相場' :
-                   fallCount >= total*0.55 ? 'Falling優勢の相場' : '方向感の定まらない相場'
+  const mktState = riseCount >= total*0.7 ? '広範な上昇相場' :
+                   riseCount >= total*0.55 ? '上昇優勢の相場' :
+                   fallCount >= total*0.7  ? '広範な下落相場' :
+                   fallCount >= total*0.55 ? '下落優勢の相場' : '方向感の定まらない相場'
 
   const top3 = [...t].sort((a,b)=>b.pct-a.pct).slice(0,3)
   const bot3 = [...t].sort((a,b)=>a.pct-b.pct).slice(0,3)
@@ -174,7 +174,7 @@ function generateMarketComment(themeData, macro) {
   const lines = []
 
   // 全体概況
-  lines.push(`【マーケット概況】現在の日本株テーマ相場は${mktState}です。全${total}テーマ中${riseCount}テーマがRising・${fallCount}テーマがFallingし、テーマAvgReturnは${avg>=0?'+':''}${avg.toFixed(2)}%。${hotThemes.length>0?`+5%超の急騰テーマが${hotThemes.length}個、`:''  }${coldThemes.length>0?`-5%超の急落テーマが${coldThemes.length}個あります。`:''}`)
+  lines.push(`【マーケット概況】現在の日本株Theme相場は${mktState}です。全${total}Theme中${riseCount}Themeが上昇・${fallCount}Themeが下落し、Theme平均Changeは${avg>=0?'+':''}${avg.toFixed(2)}%。${hotThemes.length>0?`+5%超の急騰Themeが${hotThemes.length}個、`:''  }${coldThemes.length>0?`-5%超の急落Themeが${coldThemes.length}個あります。`:''}`)
 
   // マクロ環境
   if (lastNK != null || lastSP != null) {
@@ -184,40 +184,40 @@ function generateMarketComment(themeData, macro) {
       lastSP != null ? `S&P500 ${lastSP>=0?'+':''}${lastSP.toFixed(1)}%` : null,
       lastFX != null ? `ドル円${lastFX>=0?'+':''}${lastFX.toFixed(1)}%` : null,
     ].filter(Boolean).join(' / ')
-    const riskMode = lastSP != null ? (lastSP > 1 ? 'リスクオン（米国株高）でテーマ株にも追い風。' : lastSP < -1 ? 'リスクオフ（米国株安）で地合いは慎重。' : '米国株は横ばい。') : ''
-    lines.push(`【マクロ指標（参照期間）】${macroLine}。${riskMode}${lastFX != null ? (lastFX > 1 ? '円安傾向で輸出・グローバル銘柄に有利な環境。' : lastFX < -1 ? '円高傾向で内需・消費系に資金が向かいやすい局面。' : '') : ''}`)
+    const riskMode = lastSP != null ? (lastSP > 1 ? 'リスクオン（米国株高）でTheme株にも追い風。' : lastSP < -1 ? 'リスクオフ（米国株安）で地合いは慎重。' : '米国株は横ばい。') : ''
+    lines.push(`【マクロ指標（参照Period）】${macroLine}。${riskMode}${lastFX != null ? (lastFX > 1 ? '円安傾向で輸出・グローバル銘柄に有利な環境。' : lastFX < -1 ? '円高傾向で内需・消費系に資金が向かいやすい局面。' : '') : ''}`)
   }
 
-  // Risingテーマ
+  // 上昇Theme
   if (top3.length && top3[0].pct > 0) {
     const upNames = top3.filter(x=>x.pct>0).map(x=>`「${x.theme}」(${x.pct>=0?'+':''}${x.pct.toFixed(1)}%)`).join('、')
-    lines.push(`▲ Risingが目立つテーマ：${upNames}。${volUp.length>0&&top3.some(top=>volUp.some(v=>v.theme===top.theme))?`特に「${top3[0].theme}」はVolumeも急増しており、資金の本格流入が始まっている可能性がある。`:''}`)
+    lines.push(`▲ 上昇が目立つTheme：${upNames}。${volUp.length>0&&top3.some(top=>volUp.some(v=>v.theme===top.theme))?`特に「${top3[0].theme}」はVolumeも急増しており、資金の本格流入が始まっている可能性がある。`:''}`)
   }
 
-  // Fallingテーマ
+  // 下落Theme
   if (bot3.length && bot3[0].pct < 0) {
     const dnNames = bot3.filter(x=>x.pct<0).map(x=>`「${x.theme}」(${x.pct.toFixed(1)}%)`).join('、')
-    lines.push(`▼ Fallingが目立つテーマ：${dnNames}。${coldThemes.length>3?'広範な売り圧力がかかっており、個別テーマの選別が重要。':'Falling幅が大きく過熱感の解消や外部要因が影響している可能性がある。'}`)
+    lines.push(`▼ 下落が目立つTheme：${dnNames}。${coldThemes.length>3?'広範な売り圧力がかかっており、個別Themeの選別が重要。':'下落幅が大きく過熱感の解消や外部要因が影響している可能性がある。'}`)
   }
 
-  // Volume増加テーマ
+  // Volume増加Theme
   if (volUp.length > 0) {
-    lines.push(`📊 Volumeが前期比+20%超で急増しているテーマ：「${volUp.map(x=>x.theme).join('」「')}」。Volume増加は大口資金の動きを先行して示すことが多く、今後の株価動向を見極めるうえで重要なシグナル。`)
+    lines.push(`📊 Volumeが前期比+20%超で急増しているTheme：「${volUp.map(x=>x.theme).join('」「')}」。Volume増加は大口資金の動きを先行して示すことが多く、今後の株価動向を見極めるうえで重要なシグナル。`)
   }
 
-  // Volume急増かつRisingテーマ → 特に注目
+  // Volume急増かつ上昇Theme → 特に注目
   const hotWithVol = hotThemes.filter(h => volUp.some(v => v.theme === h.theme))
   if (hotWithVol.length > 0) {
-    lines.push(`🔥 急騰かつVolume急増テーマ：「${hotWithVol.map(t=>t.theme).join('」「')}」。価格RisingとVolume増加が同時発生しており、強いトレンドの初期段階である可能性が高い。`)
+    lines.push(`🔥 急騰かつVolume急増Theme：「${hotWithVol.map(t=>t.theme).join('」「')}」。価格上昇とVolume増加が同時発生しており、強いトレンドの初期段階である可能性が高い。`)
   }
 
-  // Falling幅が大きいがVolumeも増加（底値模索か）
+  // 下落幅が大きいがVolumeも増加（底値模索か）
   const coldWithVolUp = coldThemes.filter(h => volUp.some(v => v.theme === h.theme))
   if (coldWithVolUp.length > 0) {
-    lines.push(`📉 FallingテーマでもVolume増加：「${coldWithVolUp.map(t=>t.theme).join('」「')}」。売り圧力が強いがVolume増は底値模索の兆しの可能性もある。反転サインを確認してから判断したい。`)
+    lines.push(`📉 下落ThemeでもVolume増加：「${coldWithVolUp.map(t=>t.theme).join('」「')}」。売り圧力が強いがVolume増は底値模索の兆しの可能性もある。反転サインを確認してから判断したい。`)
   }
 
-  lines.push(`💡 本日のポイント：${avg >= 2 ? '全体的に強い相場環境。強気テーマへの集中投資が奏功しやすい局面。' : avg <= -2 ? '全体的に弱い地合い。守備的なテーマ（通信・医薬品等）や現金比率を高める局面。' : '方向感が定まらないため、モメンタムの強いテーマに絞り込み、Volume増加を確認してから参入するのが有効。'}`)
+  lines.push(`💡 本日のポイント：${avg >= 2 ? '全体的に強い相場環境。強気Themeへの集中投資が奏功しやすい局面。' : avg <= -2 ? '全体的に弱い地合い。守備的なTheme（通信・医薬品等）や現金比率を高める局面。' : '方向感が定まらないため、モメンタムの強いThemeに絞り込み、Volume増加を確認してから参入するのが有効。'}`)
 
   return lines
 }
@@ -288,18 +288,18 @@ export default function TopPage({ onNavigate }) {
           <span style={{ color:'var(--logo-red)', fontSize:'13px' }}>JP</span>
         </h1>
         {/* PC:1行 / SP:折り返し */}
-        <p style={{ fontSize:'13px', color:'var(--text)', lineHeight:1.7 }} className="hero-desc">
-          日本株テーマのReturn・Volume・Trade Valueを定期取得し、資金の流れをテーマ別に可視化。期間別テーマHeatmapやMarket Ranking、解説コラムを組み合わせ、より実践的な投資分析をサポートします。
+        <p style={{ fontSize:'11px', color:'var(--text2)', lineHeight:1.7 }} className="hero-desc">
+          日本株ThemeのChange・Volume・Trading Valueを定期取得し、資金の流れをTheme別に可視化。Period別Themeヒートマップや市場別詳細、解説コラムを組み合わせ、より実践的な投資分析をサポートします。
         </p>
       </div>
 
-      {/* News（小見出しのみ・コンパクト） */}
-      <SHead title="📣 News" />
+      {/* お知らせ（小見出しのみ・コンパクト） */}
+      <SHead title="📣 News & Updates" />
       <div style={{ display:'flex', flexDirection:'column', gap:'4px', marginBottom:'4px' }}>
         {NEWS_LIST.map((n,i)=>{
           const tc = TAG_COLORS[n.tag]||TAG_COLORS['INFO']
           return (
-            <div key={i} onClick={() => onNavigate?.('News')}
+            <div key={i} onClick={() => onNavigate?.('お知らせ')}
               style={{
               background:'var(--bg2)', border:'1px solid var(--border)',
               borderRadius:'6px', padding:'7px 12px',
@@ -320,24 +320,24 @@ export default function TopPage({ onNavigate }) {
       </div>
 
       {/* KPIカード */}
-      <SHead title="📊 Market Summary (1 Month)" />
+      <SHead title="📊 マーケットサマリー（1ヶ月）" />
       <div className="responsive-grid-4" style={{ marginBottom:'4px' }}>
-        <KpiCard delay={0.05} loading={loading} label="Risingテーマ"
+        <KpiCard delay={0.05} loading={loading} label="上昇Theme"
           value={<span>{s?s.rise:'-'}<span style={{ fontSize:'14px', color:'var(--text3)', fontWeight:400 }}>{s?` / ${s.total}`:''}</span></span>}
           valueColor="var(--red)"
           arrow={s ? (s.rise > s.fall ? 'up' : s.rise < s.fall ? 'down' : null) : null}
-          sub="All Themes中"/>
-        <KpiCard delay={0.1} loading={loading} label="AvgReturn"
+          sub="全Theme中"/>
+        <KpiCard delay={0.1} loading={loading} label="平均Change"
           value={s?`${s.avg>=0?'+':''}${s.avg?.toFixed(2)}%`:'-'}
           valueColor={s?.avg>=0?'var(--red)':'var(--green)'}
           arrow={s ? (s.avg >= 0 ? 'up' : 'down') : null}
-          sub="Period: 1M"/>
-        <KpiCard delay={0.15} loading={loading} label="Top Inflow"
+          sub="Period:1ヶ月"/>
+        <KpiCard delay={0.15} loading={loading} label="資金流入TOP"
           value={<span>{s?.top?.theme||'-'}</span>}
           valueColor="var(--red)"
           arrow="up"
           sub={s?.top?<span style={{ color:'var(--red)', fontWeight:600 }}>+{s.top.pct.toFixed(1)}%</span>:'-'}/>
-        <KpiCard delay={0.2} loading={loading} label="Top Outflow"
+        <KpiCard delay={0.2} loading={loading} label="資金流出TOP"
           value={<span>{s?.bot?.theme||'-'}</span>}
           valueColor="var(--green)"
           arrow="down"
@@ -357,14 +357,14 @@ export default function TopPage({ onNavigate }) {
           </div>
           <AutoComment lines={generateMarketComment(themes, macro)} />
 
-          {/* 注目テーマ誘導ボタン */}
+          {/* 注目Theme誘導ボタン */}
           {themes?.themes?.length > 0 && onNavigate && (() => {
             const top3 = [...(themes.themes||[])].sort((a,b)=>b.pct-a.pct).slice(0,3)
             return (
               <div style={{ marginTop:'14px' }}>
                 <div style={{ fontSize:'11px', color:'var(--text3)', marginBottom:'10px',
                   fontWeight:600, letterSpacing:'0.08em', textTransform:'uppercase' }}>
-                  🔎 注目テーマ TOP3
+                  🔎 注目Theme TOP3
                 </div>
                 <div style={{ display:'grid', gridTemplateColumns:'repeat(3,1fr)', gap:'10px', marginBottom:'12px' }} className="top3-grid">
                   {top3.map((t, i) => (
@@ -374,7 +374,7 @@ export default function TopPage({ onNavigate }) {
                       borderTop:`3px solid ${i===0?'#ffd166':i===1?'rgba(192,192,192,0.6)':'rgba(205,127,50,0.6)'}`,
                     }}>
                       <div style={{ fontSize:'10px', color:'var(--text3)', marginBottom:'4px', fontWeight:600 }}>
-                        {i===0?'🥇 注目テーマ No.1':i===1?'🥈 注目テーマ No.2':'🥉 注目テーマ No.3'}
+                        {i===0?'🥇 注目Theme No.1':i===1?'🥈 注目Theme No.2':'🥉 注目Theme No.3'}
                       </div>
                       <div style={{ fontSize:'13px', fontWeight:700, color:'var(--text)', marginBottom:'8px' }}>
                         {t.theme}
@@ -385,14 +385,14 @@ export default function TopPage({ onNavigate }) {
                         </span>
                       </div>
                       <div style={{ display:'flex', gap:'6px' }}>
-                        <button onClick={() => onNavigate('Theme Detail', t.theme)}
+                        <button onClick={() => onNavigate('Theme別詳細', t.theme)}
                           style={{ padding:'5px 12px', borderRadius:'5px', fontSize:'11px',
                             background:'rgba(170,119,255,0.1)', border:'1px solid rgba(170,119,255,0.3)',
                             color:'#aa77ff', cursor:'pointer', fontFamily:'var(--font)', fontWeight:600 }}>
-                          📊 Theme Detailへ
+                          📊 Theme詳細へ
                         </button>
                         {THEME_ARTICLE_MAP[t.theme] && (
-                          <button onClick={() => onNavigate('Column', THEME_ARTICLE_MAP[t.theme])}
+                          <button onClick={() => onNavigate('コラム・解説', THEME_ARTICLE_MAP[t.theme])}
                             style={{ padding:'5px 12px', borderRadius:'5px', fontSize:'11px',
                               background:'rgba(74,158,255,0.07)', border:'1px solid rgba(74,158,255,0.2)',
                               color:'var(--accent)', cursor:'pointer', fontFamily:'var(--font)', fontWeight:600 }}>
@@ -403,11 +403,11 @@ export default function TopPage({ onNavigate }) {
                     </div>
                   ))}
                 </div>
-                <button onClick={() => onNavigate('Weekly Report')}
+                <button onClick={() => onNavigate('Weeklyレポート')}
                   style={{ padding:'6px 14px', borderRadius:'6px', fontSize:'11px',
                     background:'rgba(255,140,66,0.1)', border:'1px solid rgba(255,140,66,0.3)',
                     color:'#ff8c42', cursor:'pointer', fontFamily:'var(--font)', fontWeight:600 }}>
-                  📰 Read Latest Weekly Report →
+                  📰 最新Weeklyレポートを読む →
                 </button>
               </div>
             )
@@ -416,7 +416,7 @@ export default function TopPage({ onNavigate }) {
       )}
 
       {/* マーケット指標（ミニカード＋比較グラフ統合）*/}
-      <SHead title="📈 Market Indicators & Comparison (1 Month)" />
+      <SHead title="📈 マーケット指標・比較（1ヶ月）" />
       {loading ? (
         <div style={{ color:'var(--text3)', fontSize:'13px', padding:'12px 0' }}><Dots /></div>
       ) : (

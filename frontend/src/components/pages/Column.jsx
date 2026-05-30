@@ -71,7 +71,7 @@ const THEME_ARTICLE_MAP = {
 }
 import COLUMNS from './columnData.js'
 
-const CATEGORIES = ['All', 'テーマ', '入門', '分析手法', '投資手法', '用語解説', '個別銘柄']
+const CATEGORIES = ['All', 'Theme', '入門', ' min析手法', '投資手法', '用語解説', '個別銘柄']
 
 const CAT_COLORS = {
   '入門':       { bg:'rgba(74,158,255,0.1)',  color:'#4a9eff',  border:'rgba(74,158,255,0.25)' },
@@ -80,7 +80,7 @@ const CAT_COLORS = {
   '防衛・宇宙': { bg:'rgba(76,175,130,0.1)',  color:'#4caf82',  border:'rgba(76,175,130,0.25)' },
   'インバウンド':{ bg:'rgba(255,140,66,0.1)',  color:'#ff8c42',  border:'rgba(255,140,66,0.25)' },
   'EV・脱炭素': { bg:'rgba(6,214,160,0.1)',   color:'#06d6a0',  border:'rgba(6,214,160,0.25)' },
-  '分析手法':   { bg:'rgba(255,214,25,0.1)',  color:'#ffd619',  border:'rgba(255,214,25,0.25)' },
+  ' min析手法':   { bg:'rgba(255,214,25,0.1)',  color:'#ffd619',  border:'rgba(255,214,25,0.25)' },
   '造船':       { bg:'rgba(91,156,246,0.1)',  color:'#5b9cf6',  border:'rgba(91,156,246,0.25)' },
   '親子上場':   { bg:'rgba(255,140,66,0.1)',  color:'#ff8c42',  border:'rgba(255,140,66,0.25)' },
   'バフェット銘柄': { bg:'rgba(255,214,25,0.1)', color:'#ffd619', border:'rgba(255,214,25,0.25)' },
@@ -232,7 +232,7 @@ export default function Column({ initialArticleId = null, onNavigate }) {
   const [page,        setPage]        = useState(1)
   const ITEMS_PER_PAGE = 20
 
-  // Theme List・テーマ詳細から特定記事IDで来たときに追従
+  // Theme List・Theme詳細から特定記事IDで来たときに追従
   useEffect(() => {
     if (initialArticleId) {
       setActiveCol(initialArticleId)
@@ -271,7 +271,7 @@ export default function Column({ initialArticleId = null, onNavigate }) {
   ]
   const _base = activeCat === 'All'
     ? COLUMNS
-    : activeCat === 'テーマ'
+    : activeCat === 'Theme'
     ? COLUMNS.filter(c => THEME_CATS.includes(c.category))
     : COLUMNS.filter(c => c.category === activeCat)
 
@@ -303,7 +303,7 @@ export default function Column({ initialArticleId = null, onNavigate }) {
           fontSize:'13px', cursor:'pointer', fontFamily:'var(--font)',
           padding:'0', marginBottom:'20px',
         }}>
-          ← コラム一覧に戻る
+          ← Back to column list
         </button>
         <span style={{ fontSize:'11px', fontWeight:600, padding:'3px 10px', borderRadius:'20px',
           background:cat.bg, color:cat.color, border:`1px solid ${cat.border}`,
@@ -322,18 +322,18 @@ export default function Column({ initialArticleId = null, onNavigate }) {
         </div>
         <div style={{ background:'rgba(255,140,66,0.07)', border:'1px solid rgba(255,140,66,0.2)',
           borderRadius:'8px', padding:'14px 18px', fontSize:'12px', color:'#e8f0ff', lineHeight:1.8 }}>
-          ⚠️ 本コラムは情報提供を目的としており、特定の銘柄・投資方法を推奨するものではありません。
-          実際の投資判断はご自身の責任において行ってください。
+          ⚠️ 本コラムは情報提供を目的としており、特定 of 銘柄・投資方法を推奨するも of ではありません。
+          実際 of 投資判断はご自身 of 責任において行ってください。
         </div>
 
-        {/* ⑤ 関連テーマセクション（col.themesフィールドベース） */}
+        {/* ⑤ 関連Themeセクション（col.themesフィールドベース） */}
         {col.themes && col.themes.length > 0 && onNavigate && (
           <div style={{ marginTop:'24px', padding:'16px 20px',
             background:'var(--bg2)', border:'1px solid var(--border)',
             borderRadius:'10px' }}>
             <div style={{ fontSize:'11px', fontWeight:600, color:'var(--text3)',
               letterSpacing:'0.08em', textTransform:'uppercase', marginBottom:'10px' }}>
-              🔗 関連テーマ
+              🔗 関連Theme
             </div>
             <p style={{ fontSize:'12px', color:'var(--text2)', lineHeight:1.8, marginBottom:'12px' }}>
               {'Related Themes: ' + col.themes.join('、')}
@@ -358,7 +358,7 @@ export default function Column({ initialArticleId = null, onNavigate }) {
                       onMouseEnter={e => e.currentTarget.style.background='rgba(170,119,255,0.2)'}
                       onMouseLeave={e => e.currentTarget.style.background='rgba(170,119,255,0.1)'}
                     >
-                      📊 テーマ詳細を見る
+                      📊 Theme詳細を見る
                     </button>
                     {THEME_ARTICLE_MAP[theme] && THEME_ARTICLE_MAP[theme] !== col.id && (
                       <button
@@ -380,7 +380,7 @@ export default function Column({ initialArticleId = null, onNavigate }) {
           </div>
         )}
 
-        {/* テーマデータへのリンクボタン */}
+        {/* Themeデータへ of リンクボタン */}
         {(() => {
           const CAT_TO_THEME = {
             '半導体製造装置':'半導体製造装置','半導体検査装置':'半導体検査装置',
@@ -425,7 +425,7 @@ export default function Column({ initialArticleId = null, onNavigate }) {
                 onMouseEnter={e => { e.currentTarget.style.background='rgba(74,158,255,0.2)' }}
                 onMouseLeave={e => { e.currentTarget.style.background='rgba(74,158,255,0.1)' }}
               >
-                📊 {themeName}テーマのデータを見る
+                📊 {themeName}Theme of データを見る
               </button>
               <button
                 onClick={() => onNavigate('Theme List')}
@@ -444,7 +444,7 @@ export default function Column({ initialArticleId = null, onNavigate }) {
           )
         })()}
 
-        {/* 下部の戻るボタン */}
+        {/* 下部 of 戻るボタン */}
         <div style={{ marginTop:'32px', paddingTop:'24px', borderTop:'1px solid var(--border)', textAlign:'center' }}>
           <button onClick={() => closeArticle()} style={{
             display:'inline-flex', alignItems:'center', gap:'8px',
@@ -456,7 +456,7 @@ export default function Column({ initialArticleId = null, onNavigate }) {
             onMouseEnter={e => { e.currentTarget.style.borderColor='var(--accent)'; e.currentTarget.style.color='var(--accent)' }}
             onMouseLeave={e => { e.currentTarget.style.borderColor='var(--border)'; e.currentTarget.style.color='var(--text2)' }}
           >
-            ← コラム一覧に戻る
+            ← Back to column list
           </button>
         </div>
       </div>
@@ -469,14 +469,14 @@ export default function Column({ initialArticleId = null, onNavigate }) {
         Column
       </h1>
       <p style={{ fontSize:'13px', color:'var(--text3)', marginBottom:'24px' }}>
-        テーマ株投資の基礎から各テーマの詳細解説まで、投資判断に役立つ情報を提供します。
+        Theme株投資 of 基礎から各Theme of 詳細解説まで、投資判断に役立つ情報を提供します。
       </p>
 
-      {/* キーワード・テーマ検索 */}
+      {/* キーワード・Theme検索 */}
       <div style={{ position:'relative', marginBottom:'12px', maxWidth:'400px' }}>
         <input
           type="text"
-          placeholder="キーワード・Theme Nameで検索..."
+          placeholder="キーワード・Theme NameでSearch..."
           value={searchQuery}
           onChange={e => { setSearchQuery(e.target.value); setPage(1) }}
           style={{
@@ -511,10 +511,10 @@ export default function Column({ initialArticleId = null, onNavigate }) {
         ))}
       </div>
 
-      {/* ページ情報 */}
+      {/* Page情報 */}
       {filtered.length > 0 && (
         <div style={{ fontSize:'12px', color:'var(--text3)', marginBottom:'12px' }}>
-          {filtered.length}件中 {(page-1)*ITEMS_PER_PAGE+1}〜{Math.min(page*ITEMS_PER_PAGE, filtered.length)}件表示
+          {filtered.length} articles中 {(page-1)*ITEMS_PER_PAGE+1}〜{Math.min(page*ITEMS_PER_PAGE, filtered.length)} articles表示
         </div>
       )}
 
@@ -557,7 +557,7 @@ export default function Column({ initialArticleId = null, onNavigate }) {
         })}
       </div>
 
-      {/* ページネーション */}
+      {/* Pageネーション */}
       {totalPages > 1 && (
         <div style={{ display:'flex', justifyContent:'center', alignItems:'center',
           gap:'8px', marginTop:'28px', flexWrap:'wrap' }}>

@@ -64,7 +64,7 @@ const SECTIONS = [
   },
   {
     icon: '📰',
-    title: '週次レポート',
+    title: 'Weekly Report',
     desc: '毎週末更新のマーケットレポートです。',
     items: [
       'レポートはカード形式で一覧表示されます。クリックするとレポート全文が表示されます。',
@@ -144,7 +144,7 @@ export default function HowTo() {
     <div style={{ padding:'24px 28px 60px', maxWidth:'900px', margin:'0 auto' }}>
       <h1 style={{ fontSize:'22px', fontWeight:700, color:'var(--text)', marginBottom:'6px' }}>📖 How to Use・Q&A</h1>
       <p style={{ fontSize:'13px', color:'var(--text3)', marginBottom:'28px' }}>
-        StockWaveJPの各機能のHow to Useと、よくある質問をまとめています。
+        StockWaveJPの各機能のHow to Useと、FAQをまとめています。
       </p>
 
       {/* 機能ガイド（アコーディオン形式） */}
@@ -182,7 +182,7 @@ export default function HowTo() {
 
       {/* Q&A */}
       <h2 style={{ fontSize:'16px', fontWeight:700, color:'var(--text)', marginBottom:'14px', borderBottom:'1px solid var(--border)', paddingBottom:'6px' }}>
-        ❓ よくある質問
+        ❓ FAQ
       </h2>
       <div style={{ display:'flex', flexDirection:'column', gap:'8px', marginBottom:'32px' }}>
         {QA.map((qa, i) => (

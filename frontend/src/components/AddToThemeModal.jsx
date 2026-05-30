@@ -14,7 +14,7 @@ export default function AddToThemeModal({ stock, onClose }) {
 
   const handleAdd = (idx) => {
     addStockToTheme(idx, stock)
-    setMsg(`「${themes[idx].name}」に追加しました`)
+    setMsg(`「${themes[idx].name}」にAdded successfully`)
     setDone(true)
     setTimeout(onClose, 1200)
   }
@@ -22,7 +22,7 @@ export default function AddToThemeModal({ stock, onClose }) {
   const handleCreate = () => {
     if (!newName.trim()) return
     createThemeWithStock(newName.trim(), stock)
-    setMsg(`「${newName.trim()}」を作成して追加しました`)
+    setMsg(`「${newName.trim()}」を作成してAdded successfully`)
     setDone(true)
     setTimeout(onClose, 1200)
   }
@@ -66,7 +66,7 @@ export default function AddToThemeModal({ stock, onClose }) {
           <>
             {/* タブ */}
             <div style={{ display:'flex', gap:'4px', marginBottom:'14px' }}>
-              {[['select','既存テーマへ追加'],['create','新規テーマを作成']].map(([k,l]) => (
+              {[['select','既存テーマへ追加'],['create','Create new theme']].map(([k,l]) => (
                 <button key={k} onClick={() => setMode(k)} style={{
                   flex:1, padding:'6px', borderRadius:'6px', fontSize:'11px',
                   fontWeight:600, cursor:'pointer', fontFamily:'var(--font)',
@@ -80,7 +80,7 @@ export default function AddToThemeModal({ stock, onClose }) {
             {mode === 'select' ? (
               themes.length === 0 ? (
                 <div style={{ textAlign:'center', padding:'16px', fontSize:'12px', color:'var(--text3)' }}>
-                  Custom Themeがありません。<br/>「新規テーマを作成」から追加できます。
+                  Custom Themeがありません。<br/>「Create new theme」から追加できます。
                 </div>
               ) : (
                 <div style={{ display:'flex', flexDirection:'column', gap:'5px', maxHeight:'200px', overflowY:'auto' }}>

@@ -8,7 +8,7 @@ function Loading() {
         <span key={i} style={{ display:'inline-block', width:'8px', height:'8px', borderRadius:'50%',
           background:'var(--accent)', margin:'0 3px', animation:`pulse 1.2s ease-in-out ${d}s infinite`}}/>
       ))}
-      <div style={{ marginTop:'12px', fontSize:'13px' }}>読み込み中...</div>
+      <div style={{ marginTop:'12px', fontSize:'13px' }}>Loading...</div>
     </div>
   )
 }
@@ -46,7 +46,7 @@ function RenderMd({ text, onNavigate }) {
     } else if (line.trim() === '---') {
       result.push(<hr key={i} style={{ border:'none', borderTop:'1px solid var(--border)', margin:'16px 0' }}/>)
     } else if (line.trim() === '') {
-      // 空行の後にテーマボタンを挿入（h3の後のセクションで）
+      // 空行の後にthemesボタンを挿入（h3の後のセクションで）
       if (currentTheme && i > 0 && lines[i-1].trim() !== '') {
         result.push(<div key={`space-${i}`} style={{ height:'6px' }}/>)
         // 次の行が新しいセクション(##や###)になる前にボタンを挿入
@@ -61,14 +61,14 @@ function RenderMd({ text, onNavigate }) {
                       cursor:'pointer', fontFamily:'var(--font)',
                       background:'rgba(74,158,255,0.1)', border:'1px solid rgba(74,158,255,0.3)',
                       color:'var(--accent)' }}>
-                    📊 {currentTheme}の詳細 →
+                    📊 {currentTheme} Detail →
                   </button>
                   <button onClick={() => onNavigate('Column')}
                     style={{ padding:'5px 14px', borderRadius:'6px', fontSize:'11px', fontWeight:600,
                       cursor:'pointer', fontFamily:'var(--font)',
                       background:'rgba(170,119,255,0.08)', border:'1px solid rgba(170,119,255,0.25)',
                       color:'#aa77ff' }}>
-                    📖 コラムを読む →
+                    📖 Read column →
                   </button>
                 </>
               )}
@@ -112,16 +112,16 @@ function ReportCard({ entry, isActive, onClick }) {
       borderLeft: `4px solid ${col}`,
     }}>
       <div style={{ fontSize:'10px', color:'var(--text3)', marginBottom:'4px', letterSpacing:'0.06em' }}>
-        📰 週次レポート
+        📰 Weekly Report
       </div>
       <div style={{ fontSize:'14px', fontWeight:700, color:'var(--text)', marginBottom:'6px' }}>
-        {weekLabel} 週次レポート
+        {weekLabel} Weekly Report
       </div>
       <div style={{ display:'flex', alignItems:'center', gap:'10px', flexWrap:'wrap' }}>
         <span style={{ fontSize:'18px', fontWeight:800, fontFamily:'var(--mono)', color:col }}>
           {avg >= 0 ? '+' : ''}{avg?.toFixed(2)}%
         </span>
-        <span style={{ fontSize:'10px', color:'var(--text3)' }}>週間テーマAvg</span>
+        <span style={{ fontSize:'10px', color:'var(--text3)' }}>週間themesAvg</span>
         {entry.generated_at && (
           <span style={{ fontSize:'10px', color:'var(--text3)', marginLeft:'auto' }}>
             {entry.generated_at.slice(0, 10)}
@@ -192,14 +192,14 @@ export default function WeeklyReport({ onNavigate }) {
           color:'var(--text2)', cursor:'pointer', fontSize:'12px', padding:'6px 12px',
           fontFamily:'var(--font)',
         }}>
-          ← レポート一覧に戻る
+          ← Back to report list
         </button>
 
         {/* ヘッダー */}
         <div style={{ background:'linear-gradient(135deg,rgba(91,156,246,0.1),rgba(170,119,255,0.08))',
           border:'1px solid var(--border)', borderRadius:'12px', padding:'20px 24px', marginBottom:'16px' }}>
           <div style={{ fontSize:'11px', color:'var(--text3)', marginBottom:'6px', letterSpacing:'0.1em', textTransform:'uppercase' }}>
-            📰 週次マーケットレポート
+            📰 Weekly Market Report
           </div>
           <h1 style={{ fontSize:'18px', fontWeight:700, color:'var(--text)', marginBottom:'8px' }}>
             {report?.title || 'レポートなし'}
@@ -221,11 +221,11 @@ export default function WeeklyReport({ onNavigate }) {
                 </div>
               </div>
               <div style={{ background:'var(--bg2)', borderRadius:'8px', padding:'8px 12px', textAlign:'center' }}>
-                <div style={{ fontSize:'10px', color:'var(--text3)', marginBottom:'3px' }}>Risingテーマ</div>
+                <div style={{ fontSize:'10px', color:'var(--text3)', marginBottom:'3px' }}>Risingthemes</div>
                 <div style={{ fontSize:'17px', fontWeight:700, color:'var(--red)' }}>{summary.rise_count}</div>
               </div>
               <div style={{ background:'var(--bg2)', borderRadius:'8px', padding:'8px 12px', textAlign:'center' }}>
-                <div style={{ fontSize:'10px', color:'var(--text3)', marginBottom:'3px' }}>Fallingテーマ</div>
+                <div style={{ fontSize:'10px', color:'var(--text3)', marginBottom:'3px' }}>Fallingthemes</div>
                 <div style={{ fontSize:'17px', fontWeight:700, color:'var(--green)' }}>{summary.fall_count}</div>
               </div>
             </div>
@@ -234,7 +234,7 @@ export default function WeeklyReport({ onNavigate }) {
           {summary && (
             <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:'10px', marginTop:'14px' }}>
               <div>
-                <div style={{ fontSize:'11px', color:'var(--text3)', marginBottom:'5px', fontWeight:600 }}>🔥 週間TOP5テーマ</div>
+                <div style={{ fontSize:'11px', color:'var(--text3)', marginBottom:'5px', fontWeight:600 }}>🔥 週間TOP5themes</div>
                 {summary.top5_themes?.map((t,i) => (
                   <div key={t.theme} style={{ display:'flex', justifyContent:'space-between', alignItems:'center',
                     fontSize:'11px', marginBottom:'3px', padding:'3px 8px',
@@ -248,7 +248,7 @@ export default function WeeklyReport({ onNavigate }) {
                 ))}
               </div>
               <div>
-                <div style={{ fontSize:'11px', color:'var(--text3)', marginBottom:'5px', fontWeight:600 }}>❄️ 週間BOT5テーマ</div>
+                <div style={{ fontSize:'11px', color:'var(--text3)', marginBottom:'5px', fontWeight:600 }}>❄️ 週間BOT5themes</div>
                 {summary.bot5_themes?.map((t,i) => (
                   <div key={t.theme} style={{ display:'flex', justifyContent:'space-between', alignItems:'center',
                     fontSize:'11px', marginBottom:'3px', padding:'3px 8px',
@@ -266,7 +266,7 @@ export default function WeeklyReport({ onNavigate }) {
 
           {summary?.top5_themes && onNavigate && (
             <div style={{ marginTop:'12px', display:'flex', flexWrap:'wrap', gap:'6px' }}>
-              <span style={{ fontSize:'10px', color:'var(--text3)', alignSelf:'center' }}>注目テーマを確認:</span>
+              <span style={{ fontSize:'10px', color:'var(--text3)', alignSelf:'center' }}>注目themesを確認:</span>
               {summary.top5_themes.slice(0,3).map(t => (
                 <button key={t.theme} onClick={() => onNavigate('Theme Detail', t.theme)}
                   style={{ padding:'4px 10px', borderRadius:'5px', fontSize:'11px', fontFamily:'var(--font)',
@@ -299,7 +299,7 @@ export default function WeeklyReport({ onNavigate }) {
             background:'rgba(74,158,255,0.1)', border:'1px solid rgba(74,158,255,0.3)',
             color:'var(--accent)',
           }}>
-            ← レポート一覧に戻る
+            ← Back to report list
           </button>
         </div>
 
@@ -311,7 +311,7 @@ export default function WeeklyReport({ onNavigate }) {
   // ① カード一覧モード（コラム形式）
   return (
     <div style={{ padding:'20px 24px 80px', maxWidth:'960px', margin:'0 auto' }}>
-      <h1 style={{ fontSize:'20px', fontWeight:700, color:'var(--text)', marginBottom:'4px' }}>📰 週次レポート</h1>
+      <h1 style={{ fontSize:'20px', fontWeight:700, color:'var(--text)', marginBottom:'4px' }}>📰 Weekly Report</h1>
       <p style={{ fontSize:'12px', color:'var(--text3)', marginBottom:'20px' }}>
         毎週末更新予定。各カードをクリックしてレポート全文を確認できます。
       </p>

@@ -1,0 +1,56 @@
+{
+  "week": "2026-W22",
+  "date": "2026/05/29",
+  "title": "May 25–29 Weekly Market Report",
+  "generated_at": "2026/05/29 20:00 JST",
+  "summary": {
+    "avg_pct_1w": 0.82,
+    "rise_count": 35,
+    "fall_count": 32,
+    "top5_themes": [
+      {
+        "theme": "MLCC/Electronic Components",
+        "pct": 9.4
+      },
+      {
+        "theme": "Semiconductor Equipment",
+        "pct": 6.8
+      },
+      {
+        "theme": "Defense & Aerospace",
+        "pct": 5.2
+      },
+      {
+        "theme": "AI Semiconductors",
+        "pct": 4.9
+      },
+      {
+        "theme": "Space & Satellite",
+        "pct": 4.1
+      }
+    ],
+    "bot5_themes": [
+      {
+        "theme": "Oil & Energy",
+        "pct": -4.2
+      },
+      {
+        "theme": "LNG",
+        "pct": -3.8
+      },
+      {
+        "theme": "Electric Utilities",
+        "pct": -2.9
+      },
+      {
+        "theme": "Banking & Finance",
+        "pct": -1.8
+      },
+      {
+        "theme": "Inbound Tourism",
+        "pct": -1.2
+      }
+    ]
+  },
+  "report": "## Market Overview (May 25–29)\n\n35 of 67 themes (52%) posted gains. The average theme change was +0.82%, down from +1.24% the previous week. Rising US long-term yields and dollar strength weighed on sentiment, but MLCC/Electronic Components surged dramatically.\n\nThe Bank of Japan's policy meeting (May 28–29) resulted in no rate change, easing concerns about near-term hikes and providing mild relief for growth stocks.\n\n---\n\n## Top Rising Themes\n\n### 🥇 1st: MLCC/Electronic Components (+9.4%)\n\nThe week's standout theme. Murata Manufacturing (6981) surpassed ¥14T in market cap — a record high — drawing capital into the entire MLCC space. Taiyo Yuden (6976) reported FY2026 Q4 net profit up +535% YoY, adding fuel to the rally.\n\n### 🥈 2nd: Semiconductor Equipment (+6.8%)\n\n3rd consecutive week in the top 5. Tokyo Electron (8035) and Advantest (6857) order backlogs remain at elevated levels, underpinning confidence in sustained AI capex.\n\n### 🥉 3rd: Defense & Aerospace (+5.2%)\n\n3rd consecutive week in the top 5. Specific program names in the supplementary defense budget were reported, driving buying in Mitsubishi Heavy Industries (7011) and Kawasaki Heavy Industries (7012).\n\n### 4th: AI Semiconductors (+4.9%) / 5th: Space & Satellite (+4.1%)\n\nAI infrastructure and national security themes continue to attract capital. Government satellite constellation tender announcements boosted the space sector.\n\n---\n\n## Bottom Themes\n\nOil (-4.2%) and LNG (-3.8%) fell sharply as OPEC+ continued production increases and global demand expectations weakened. Banking & Finance (-1.8%) dipped after the BOJ held rates.\n\n---\n\n## 🎯 Featured Stocks\n\n| Theme | Stock | Ticker | Weekly Change |\n|---|---|---|---|\n| MLCC/Electronic Components | Murata Manufacturing | 6981 | +11.2% |\n| MLCC/Electronic Components | Taiyo Yuden | 6976 | +14.8% |\n| MLCC/Electronic Components | TDK | 6762 | +9.6% |\n| Semiconductor Equipment | Advantest | 6857 | +8.4% |\n| Defense & Aerospace | Mitsubishi Heavy Industries | 7011 | +6.8% |\n\n---\n\n## Next Week (Jun 2–6) Watch Points\n\n- US Non-Farm Payrolls (Jun 6): Strong data could reignite rate hike fears\n- Murata Manufacturing analyst target price revisions\n- Defense supplementary budget — specific program/amount announcements\n\n> **Disclaimer**: This report is for informational purposes only. All investment decisions are your own responsibility."
+}

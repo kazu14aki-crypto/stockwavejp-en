@@ -1,0 +1,60 @@
+{
+  "week": "2026-W16",
+  "date": "2026/04/18",
+  "title": "Week of Apr 14–18: Semiconductor Testing Leads; Optical Communications Joins Top 5",
+  "summary": {
+    "rising": 49,
+    "falling": 18,
+    "total": 67,
+    "avg_return": 5.84,
+    "top_theme": "Semiconductor Testing",
+    "top_pct": 24.2,
+    "bot_theme": "Oil & Petroleum",
+    "bot_pct": -6.1
+  },
+  "rising_top5": [
+    {
+      "theme": "Semiconductor Testing",
+      "pct": 24.2
+    },
+    {
+      "theme": "AI Chips",
+      "pct": 22.4
+    },
+    {
+      "theme": "Memory",
+      "pct": 21.0
+    },
+    {
+      "theme": "Edge AI",
+      "pct": 18.7
+    },
+    {
+      "theme": "Optical Communications",
+      "pct": 17.9
+    }
+  ],
+  "falling_top5": [
+    {
+      "theme": "Oil & Petroleum",
+      "pct": -6.1
+    },
+    {
+      "theme": "LNG",
+      "pct": -4.9
+    },
+    {
+      "theme": "Electric Utilities",
+      "pct": -4.3
+    },
+    {
+      "theme": "Insurance",
+      "pct": -2.8
+    },
+    {
+      "theme": "Inbound Tourism",
+      "pct": -2.4
+    }
+  ],
+  "body": "## Market Overview — Week of Apr 14–18\n\nThe week of April 14–18 delivered another week of broad-based gains for Japan's equity theme market, with 49 of 67 themes (73%) posting positive 1-month returns. The theme average return of +5.84% represents a continuation and consolidation of the powerful AI-driven momentum that has characterized Japan's equity market in the spring of 2026.\n\nThe most significant development this week was the expansion of momentum beyond the core semiconductor hardware names into the broader AI ecosystem — Optical Communications entered the top 5 for the first time, signaling that institutional capital is beginning to allocate to the infrastructure layers that support AI computing, not just the chips themselves. This breadth expansion is a constructive signal for the sustainability of the theme rally.\n\n## Top Themes of the Week\n\n### #1 Semiconductor Testing (+24.2%) — Sustained Dominance\n\nSemiconductor Testing maintained its leadership position for the second consecutive week, posting an impressive +24.2% 1-month return. The fundamental driver remains unchanged: AI chip production at TSMC and Samsung is accelerating, and every chip produced requires extensive testing before installation in AI data centers. Advantest (6857) continues to be the primary driver, with the company's HBM (High Bandwidth Memory) test equipment orders growing strongly as SK Hynix, Samsung, and Micron race to expand HBM production capacity.\n\nA critical data point emerged this week: TSMC's guidance for its Q1 2026 earnings call (scheduled the following week) signaled that AI server demand was tracking above expectations. This guidance, leaked through supply chain channel checks, triggered fresh buying in Advantest and SCREEN Holdings throughout the week.\n\nThe Volume profile of this theme remains compelling: 1-month Volume Change of approximately +85% versus the prior period, with Trade Value concentrated in large institutional block trades rather than retail order flow. This institutional participation signature — large trade sizes, consistent buying on dips — is characteristic of a sustained allocation rather than a speculative momentum trade.\n\n**Investment consideration**: After two weeks of exceptional performance, the Semiconductor Testing theme is showing early signs of near-term overbought conditions on short-term oscillators. Investors with significant positions may consider partial profit-taking, while waiting for the next entry signal (a MACD crossover or RSI returning from above 70) for new positions.\n\n### #2 AI Chips (+22.4%) — Broad Institutional Participation\n\nThe AI Chips theme gained +22.4%, with particularly strong Volume expansion confirming genuine institutional accumulation. Unlike the semiconductor equipment plays, which are leveraged to AI chip manufacturing volume, the AI Chips theme captures companies with direct exposure to AI computing hardware — including specialized AI accelerator chips, high-performance processors for AI training, and the substrate materials used in advanced chip packaging.\n\nTSMC's supply chain partners in Japan (advanced substrate makers, specialty chemical suppliers) were particularly strong this week. The investment community is increasingly recognizing that Japan's role in the AI chip supply chain extends well beyond the much-discussed semiconductor equipment sector.\n\n### #3 Memory (+21.0%) — HBM Price Premium Expands\n\nMemory posted a +21.0% 1-month return, with the key catalyst being continued evidence of HBM supply tightness. HBM (High Bandwidth Memory) is the specialized memory type packaged alongside AI accelerator chips like NVIDIA's H100 and H200. Unlike standard DRAM — which faces persistent oversupply concerns — HBM is characterized by structural undersupply as production requires specialized manufacturing steps and yields are significantly lower than standard memory.\n\nSK Hynix's publicly stated guidance that HBM would remain tight through at least 2026 provided the week's most significant memory-sector catalyst. Japanese companies with exposure to HBM include specialty chemical suppliers for the memory manufacturing process and test equipment makers who handle HBM's complex multi-die testing requirements.\n\n### #4 Edge AI (+18.7%) — Physical AI Narrative Building\n\nThe Edge AI theme gained +18.7%, driven by growing investor recognition of the \"Physical AI\" megatrend — artificial intelligence deployed directly in devices, manufacturing equipment, vehicles, and infrastructure rather than centralized cloud data centers. This is a distinctly Japanese competitive advantage story: Renesas Electronics (6723), which designs microcontrollers for automotive and industrial applications, is emerging as a key beneficiary as AI inference capabilities are built into edge computing platforms.\n\nNVIDIA's announcement of its GR00T robotics foundation model earlier in the year had planted the seed of the Physical AI theme; this week saw that theme begin to attract meaningful institutional capital. When a major thematic narrative gains institutional acceptance, the initial capital flows tend to be followed by much larger allocation waves over the subsequent months.\n\n### #5 Optical Communications (+17.9%) — AI Infrastructure Emerges\n\nThe emergence of Optical Communications in the top 5 is arguably the week's most significant data point from an investment positioning perspective. This is the first week the theme has entered the top 5, suggesting that institutional investors are expanding their AI infrastructure thesis beyond semiconductor equipment to the networking infrastructure that connects AI servers.\n\nFujikura (5803) and Furukawa Electric (5801) were the primary drivers. The rationale is straightforward: building a large-scale AI data center requires not just GPUs and cooling systems, but millions of meters of high-performance optical fiber for intra-data-center connectivity and backhaul. Hyperscaler capex announcements throughout the week — particularly Microsoft's expanded Azure AI infrastructure commitments — directly translate into optical fiber orders.\n\nThe Volume profile for Optical Communications was particularly notable: a 3-week average Volume Surge of +61% combined with strongly rising Return creates one of the most unambiguous \"Accelerating\" momentum signals StockWaveJP's system can generate.\n\n## Falling Themes — Energy Rotation Continues\n\n### Oil & Petroleum (-6.1%) — Structural Headwinds Mount\n\nOil & Petroleum extended its decline to -6.1% on the 1-month basis. The combination of global crude oil price weakness (Brent crude trading in the $65-75 range), rising renewable energy capacity globally, and Japan's domestic GX (Green Transformation) policy all create structural headwinds for domestic petroleum companies.\n\nINPEX (1605) has held up relatively well due to its LNG asset quality and growing CCS (Carbon Capture & Storage) narrative, but smaller petroleum refinery names have been under consistent selling pressure. For investors with existing energy exposure, this week's data supports maintaining defensive position sizing.\n\n### Electric Utilities (-4.3%) — Rate Sensitivity\n\nElectric Utilities declined -4.3% as rising interest rate expectations (driven by Bank of Japan normalization commentary) reduced the relative attractiveness of utility stocks' dividend yield. Utilities with significant renewable energy transition investment — requiring heavy capex — face a particular challenge in a rising rate environment as future cash flows are discounted more heavily.\n\n## Volume Analysis — Institutional Capital Flows\n\nThis week's Volume data reveals clear institutional intent:\n\n**Semiconductor Testing**: Volume +85% vs 4-week average. Block trade size analysis suggests pension fund and foreign institutional rebalancing.\n\n**Optical Communications**: Volume +61% — unusually high for a theme that had not previously broken into top 5 performers. This suggests front-running of anticipated hyperscaler capex announcements.\n\n**Defense & Aerospace**: Consistent, steady accumulation (+28% Volume) without explosive price moves — characteristic of patient institutional positioning for a multi-year policy theme.\n\n## Macro Context — Key Variables\n\n**USD/JPY (¥150-152 range)**: The yen has stabilized in a range that is modestly yen-weak — beneficial for export-oriented semiconductor equipment names without triggering extreme currency concerns.\n\n**TSMC Q1 Earnings Catalyst**: The market is positioning ahead of TSMC's Q1 2026 earnings call scheduled for the following week. TSMC's CoWoS (Chip on Wafer on Substrate) capacity — which uses Japanese substrate materials — is expected to show strong utilization rates, a direct positive read-through for Japanese AI supply chain companies.\n\n**Bank of Japan**: The BoJ's ongoing gradual normalization stance continues to support the banking theme as a structural allocation, while creating incremental headwinds for utilities and J-REITs.\n\n## Week Ahead Outlook (Apr 21-25)\n\nThe week of April 21-25 will be defined by TSMC's Q1 earnings call, which represents the single most important near-term catalyst for Japan's semiconductor and AI themes. Positive guidance — specifically regarding CoWoS and HBM-related services revenue — would be expected to drive fresh buying across the AI supply chain theme complex.\n\n**Key events**:\n- TSMC Q1 2026 earnings call — primary catalyst for semiconductor themes\n- Japan Manufacturing PMI — read-through for industrial automation demand\n- Bank of Japan meeting minutes — policy trajectory confirmation\n- Multiple Japanese technology company earnings releases beginning\n\n**Strategic recommendation**: The AI infrastructure investment thesis (semiconductor equipment → AI chips → memory → optical fiber) continues to broaden. The optimal portfolio position overweights the \"Accelerating\" momentum state themes on StockWaveJP while maintaining modest exposure to the Defense theme as a structural allocation hedge. Monitor Optical Communications closely — a new entrant to the top 5 with strong volume expansion often continues outperforming for 4-8 additional weeks as broader institutional awareness builds."
+}
