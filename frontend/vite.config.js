@@ -3,6 +3,9 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
+  resolve: {
+    extensions: ['.jsx', '.js', '.tsx', '.ts', '.json'],
+  },
   base: '/',
   define: {
     'import.meta.env.VITE_API_URL':           JSON.stringify('https://stockwavejp-en-api.onrender.com'),
