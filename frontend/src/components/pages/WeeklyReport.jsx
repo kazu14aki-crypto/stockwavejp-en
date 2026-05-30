@@ -148,14 +148,20 @@ export default function WeeklyReport({ onNavigate }) {
   const [showReport, setShowReport] = useState(false)
 
   useEffect(() => {
-    fetch('/data/weekly_report.json?t=' + Date.now())
-      .then(r => { if (!r.ok) throw new Error('レポートがありません'); return r.json() })
-      .then(d => { setReport(d); setLoading(false) })
-      .catch(e => { setError(e.message); setLoading(false) })
+    // Fetch index.json and pre-fetch latest report
     fetch('/data/weekly_reports/index.json?t=' + Date.now())
       .then(r => r.ok ? r.json() : [])
-      .then(d => setIndex(d))
-      .catch(() => {})
+      .then(d => {
+        setIndex(d)
+        if (d.length > 0) {
+          fetch(`/data/weekly_reports/${d[0].week}.json?t=${Date.now()}`)
+            .then(r => r.ok ? r.json() : null)
+            .then(rd => { if (rd) setReport(rd) })
+            .catch(() => {})
+        }
+        setLoading(false)
+      })
+      .catch(e => { setError(e.message); setLoading(false) })
   }, [])
 
   const loadArchive = (week) => {
@@ -169,13 +175,10 @@ export default function WeeklyReport({ onNavigate }) {
   }
 
   const loadLatest = () => {
-    setSelWeek(null)
-    setLoading(true)
-    setShowReport(true)
-    fetch('/data/weekly_report.json?t=' + Date.now())
-      .then(r => r.json())
-      .then(d => { setReport(d); setLoading(false) })
-      .catch(() => setLoading(false))
+    // Use loadArchive with the latest week from index
+    if (index.length > 0) {
+      loadArchive(index[0].week)
+    }
   }
 
   if (loading && index.length === 0) return <Loading />

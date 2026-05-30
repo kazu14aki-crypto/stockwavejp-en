@@ -38,39 +38,39 @@ const THEME_ARTICLE_MAP = {
   'Quantum Computing':'ai-cloud-theme',
   'SaaS':              'fintech-theme',
   'Wearables':  'game-entertainment-theme',
-  '仮想通貨':          'fintech-theme',
-  'ネット銀行':        'banking-finance-theme',
+  'Crypto / Virtual Currency':          'fintech-theme',
+  'Digital Banking':        'banking-finance-theme',
   'Steel & Materials':        'steel-materials-theme',
   'Chemicals':              'chemical-theme',
-  '建築資材':          'construction-infra-theme',
-  '塗料':              'chemical-theme',
+  'Building Materials':          'construction-infra-theme',
+  'Paints & Coatings':              'chemical-theme',
   'Pharma & Biotech':    'pharma-bio-theme',
   'Healthcare & Nursing':  'healthcare-nursing-theme',
-  '薬局・ドラッグストア': 'healthcare-nursing-theme',
-  '銀行・金融':        'banking-finance-theme',
-  '地方銀行':          'regional-bank-theme',
+  'Pharmacy / Drug Store': 'healthcare-nursing-theme',
+  'Banking / Finance':        'banking-finance-theme',
+  'Regional Banks':          'regional-bank-theme',
   'Insurance':              'insurance-theme',
   'Fintech':      'fintech-theme',
   'Real Estate':            'real-estate-theme',
   'Construction & Infra':    'construction-infra-theme',
   'National Resilience':    'national-resilience',
-  '下水道':            'construction-infra-theme',
+  'Water Infrastructure':            'construction-infra-theme',
   'Food & Beverage':        'food-beverage-theme',
   'Agritech & Foodtech':'agritech-foodtech-theme',
   'Retail & E-Commerce':          'retail-ec-theme',
-  '観光・ホテル・レジャー': 'tourism-hotel-theme',
-  'インバウンド':      'inbound-theme',
-  'リユース・中古品':  'retail-ec-theme',
+  'Tourism & Hotels': 'tourism-hotel-theme',
+  'Inbound Tourism':      'inbound-theme',
+  'Resale / Second-hand':  'retail-ec-theme',
   'Defense & Aerospace':        'defense-theme',
-  '宇宙・衛星':        'space-satellite-theme',
+  'Space & Satellite':        'space-satellite-theme',
   'Robotics & Automation':  'robot-automation-theme',
   'Rare Earth & Resources':  'rare-earth-resources-theme',
-  'バフェットstocks':    'sogo-shosha-analysis',
-  'サイバーセキュリティ': 'cybersecurity-theme',
-  '警備':              'cybersecurity-theme',
-  '脱炭素・ESG':       'ev-green-theme',
+  'Buffett Picks':    'sogo-shosha-analysis',
+  'Cyber Security': 'cybersecurity-theme',
+  'Security Services':              'cybersecurity-theme',
+  'Decarbonization / ESG':       'ev-green-theme',
   'Education & HR':    'education-hr-theme',
-  '人材派遣':          'education-hr-theme',
+  'Staffing / HR':          'education-hr-theme',
   'Gaming & Entertainment':  'game-entertainment-theme',
 }
 
@@ -84,7 +84,7 @@ const ALL_NEWS = [
   { date:'2026/05/08', tag:'NEW',    title:'Weekly Report (May 4-8) Published' },
   { date:'2026/03/14', tag:'NEW',    title:'StockWaveJP React Version Launched' },
 ]
-// 降順ソート・最新3 items
+// Sort descending, show latest 3 items
 const NEWS_LIST = [...ALL_NEWS].sort((a,b) => b.date.localeCompare(a.date)).slice(0,3)
 const TAG_COLORS = {
   'NEW':    { bg:'rgba(255,83,112,0.15)', color:'var(--red)',    border:'rgba(255,83,112,0.3)' },
@@ -92,9 +92,9 @@ const TAG_COLORS = {
   'INFO':   { bg:'rgba(76,175,130,0.12)', color:'var(--green)',  border:'rgba(76,175,130,0.25)' },
 }
 
-// ── 市場コメント自動生成 ──
+// ── Auto-generate market commentary ──
 function AutoComment({ lines }) {
-  // 防御的処理: null/undefined/空/文字列に対応
+  // Defensive: handle null/undefined/empty/string
   let safeLines = lines
   if (!safeLines) return null
   if (typeof safeLines === 'string') safeLines = safeLines.split('\n').filter(Boolean)
@@ -289,7 +289,7 @@ export default function TopPage({ onNavigate }) {
         </h1>
         {/* PC:1行 / SP:折り返し */}
         <p style={{ fontSize:'11px', color:'var(--text2)', lineHeight:1.7 }} className="hero-desc">
-          日本株ThemeのChange・Volume・Trading Valueを定期取得し、資金の流れをTheme別に可視化。Period別ThemeヒートマップやMarket Ranking、解説コラムを組み合わせ、より実践的な投資 min析をサポートします。
+          Track 67+ Japanese stock themes in real-time. Visualize capital flows by theme, period heatmaps, Market Ranking、解説コラムを組み合わせ、より実践的な投資 min析をサポートします。
         </p>
       </div>
 
@@ -320,18 +320,18 @@ export default function TopPage({ onNavigate }) {
       </div>
 
       {/* KPIカード */}
-      <SHead title="📊 マーケットサマリー（1ヶ月）" />
+      <SHead title="📊 Market Summary (1M)" />
       <div className="responsive-grid-4" style={{ marginBottom:'4px' }}>
         <KpiCard delay={0.05} loading={loading} label="risingTheme"
           value={<span>{s?s.rise:'-'}<span style={{ fontSize:'14px', color:'var(--text3)', fontWeight:400 }}>{s?` / ${s.total}`:''}</span></span>}
           valueColor="var(--red)"
           arrow={s ? (s.rise > s.fall ? 'up' : s.rise < s.fall ? 'down' : null) : null}
           sub="全 themes, "/>
-        <KpiCard delay={0.1} loading={loading} label="平均Change"
+        <KpiCard delay={0.1} loading={loading} label="Avg Change"
           value={s?`${s.avg>=0?'+':''}${s.avg?.toFixed(2)}%`:'-'}
           valueColor={s?.avg>=0?'var(--red)':'var(--green)'}
           arrow={s ? (s.avg >= 0 ? 'up' : 'down') : null}
-          sub="Period:1ヶ月"/>
+          sub="Period: 1M"/>
         <KpiCard delay={0.15} loading={loading} label="capital inflowTOP"
           value={<span>{s?.top?.theme||'-'}</span>}
           valueColor="var(--red)"

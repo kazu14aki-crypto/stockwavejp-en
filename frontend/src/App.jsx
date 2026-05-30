@@ -173,7 +173,7 @@ function AppInner() {
       )}
 
       <Sidebar
-        pages={PAGES} pagesOther={PAGES_OTHER}
+        pages={PAGES} pagesOther={PAGES_OTHER} pagesFooter={PAGES_FOOTER}
         currentPage={currentPage} onPageChange={handlePageChange}
         isOpen={sidebarOpen} isMobile={isMobile}
         onOpen={() => setSidebarOpen(true)}
