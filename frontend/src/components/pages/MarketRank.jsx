@@ -10,7 +10,7 @@ function PickupStocks({ stocks, period }) {
 
   const fmtL = (v) => {
     if (!v || v === 0) return '-'
-    if (v >= 1e12) return (v / 1e12).toFixed(1) + '兆'
+    if (v >= 1e12) return (v / 1e12).toFixed(1) + 'T'
     if (v >= 1e8)  return (v / 1e8).toFixed(1) + 'B'
     if (v >= 1e4)  return (v / 1e4).toFixed(1) + 'M'
     return v.toLocaleString()
@@ -158,7 +158,7 @@ function PickupStocks({ stocks, period }) {
         ⚠️ <strong style={{ color:'var(--text2)' }}>注意：</strong>
         上記ピックアップはReturn・Volume・価格推移・Trade Valueを独自スコアで機械的に集計したものです。
         <strong style={{ color:'var(--text2)' }}>リアルタイムデータではなく</strong>、
-        data update timing（1日数回更新）に依存するため、
+        data update timing（1日数回Update）に依存するため、
         最新の市場状況と乖離する場合があります。
         特定銘柄の購入・売却を推奨するものではなく、
         <strong style={{ color:'var(--text2)' }}>投資の最終判断はご自身の責任でお願いします</strong>。
@@ -180,7 +180,7 @@ function MrVolTvChart({ stocks }) {
   const maxV = Math.max(...sorted.map(s => s[mode==='tv'?'trade_value':'volume']||0), 1)
   const fmtL = v => {
     if (!v) return '0'
-    if (v >= 1e12) return (v/1e12).toFixed(1)+'兆'
+    if (v >= 1e12) return (v/1e12).toFixed(1)+'T'
     if (v >= 1e8) return (v/1e8).toFixed(1)+'B'
     if (v >= 1e4) return (v/1e4).toFixed(1)+'M'
     return v.toLocaleString()
@@ -294,13 +294,13 @@ function MrBubbleChart({ stocks }) {
 }
 
 const PERIODS = [
-  {label:'1日',value:'1d'},{ label:'1週間',value:'5d'},{label:'1ヶ月',value:'1mo'},
-  { label:'3ヶ月',value:'3mo'},{label:'6ヶ月',value:'6mo'},{label:'1年',value:'1y'},
+  {label:'1D',value:'1d'},{ label:'1W',value:'5d'},{label:'1M',value:'1mo'},
+  { label:'3M',value:'3mo'},{label:'6M',value:'6mo'},{label:'1Y',value:'1y'},
 ]
 
 function formatLarge(n) {
   if (!n) return '0'
-  if (n >= 1e12) return (n/1e12).toFixed(1)+'兆'
+  if (n >= 1e12) return (n/1e12).toFixed(1)+'T'
   if (n >= 1e8)  return (n/1e8).toFixed(1)+'B'
   if (n >= 1e4)  return (n/1e4).toFixed(1)+'M'
   return n.toLocaleString()
@@ -323,7 +323,7 @@ function Top5Bar({ items, title, colorFn, emptyMsg }) {
     <div style={{ background:'var(--bg2)', border:'1px solid var(--border)', borderRadius:'8px',
       padding:'12px', textAlign:'center', color:'var(--text3)', fontSize:'12px' }}>
       <div style={{ fontSize:'11px', fontWeight:700, color:'var(--text)', marginBottom:'8px' }}>{title}</div>
-      {emptyMsg || 'データなし'}
+      {emptyMsg || 'No data'}
     </div>
   )
   const maxAbs = Math.max(...items.map(s=>Math.abs(s.pct)), 0.01)
@@ -450,7 +450,7 @@ function StockTable({ stocks: rawStocks, onAddToTheme }) {
   }
   const onMouseUp = () => { isDragging.current = false; if (tableRef.current) tableRef.current.style.cursor = 'grab' }
 
-  const headers = ['ミニチャート','株価','Return','時価総額','寄与度%','Volume増減','Volume','Volume順位','Trade Value','Trade Value順位','Add']
+  const headers = ['ミニチャート','株価','Return','Market Cap','寄与度%','Volume増減','Volume','Volume順位','Trade Value','Trade Value順位','Add']
   const sortBtns = [{key:'pct',label:'Return'},{key:'volume',label:'Volume'},{key:'trade_value',label:'Trade Value'}]
 
   return (
@@ -631,7 +631,7 @@ export default function MarketRank() {
   useEffect(()=>{
     if (!marketData) return
     setSummary(marketData.data)
-    // ①「ETF」グループをmarket.jsonの外でフロント側に追加
+    // ①「ETF」グループをmarket.jsonの外でフロント側にAdd
     const baseGroups = marketData.groups || {}
     const allGroups = {
       ...baseGroups,
@@ -655,7 +655,7 @@ export default function MarketRank() {
     setEtfDetail(null)
     const API_BASE = import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000'
     ;(async () => {
-      // Step1: market.jsonのseg_キーを確認（GitHub Actions実行後に反映）
+      // Step1: market.jsonのseg_キーをConfirm（GitHub Actions実行後に反映）
       try {
         const mj = await fetch('/data/market.json?t=' + Date.now()).then(r=>r.json())
         const key = 'seg_' + activeSeg + '_' + period
@@ -715,7 +715,7 @@ export default function MarketRank() {
   const tvSorted  = [...rawStocks].sort((a,b) => (b.trade_value||0)-(a.trade_value||0))
   const volRankMap = new Map(volSorted.map((s,i) => [s.ticker, i+1]))
   const tvRankMap  = new Map(tvSorted.map((s,i) => [s.ticker, i+1]))
-  // ①国内全般は時価総額Desc、ETFはReturnDesc、MoreはReturnDesc
+  // ①国内全般はMarket CapDesc、ETFはReturnDesc、MoreはReturnDesc
   const mappedStocks = rawStocks.map(s => ({
     ...s,
     vol_rank: volRankMap.get(s.ticker) ?? s.vol_rank,
@@ -746,13 +746,13 @@ export default function MarketRank() {
           borderRadius:'8px', padding:'12px 16px', marginBottom:'16px', fontSize:'12px',
           color:'var(--text)', lineHeight:1.8 }}>
           <span style={{ fontWeight:700, color:'#06d6a0' }}>📋 About This Page:</span>
-          時価総額上位150銘柄・市場区分（プライム・スタンダード・グロース）・ETF（6カテゴリ）ごとに、
-          構成銘柄のReturnランキングと詳細データを確認できます。
+          Market Cap上位150銘柄・市場区分（プライム・Standard・グロース）・ETF（6カテゴリ）ごとに、
+          構成銘柄のReturnランキングと詳細データをConfirmできます。
           上部のタブで「国内主要株」「国内全般」「市場区分」「ETF」を切り替え、各グループ内のセグメントを選択してください。
           <br/>
           <span style={{ fontSize:'11px', color:'var(--text3)' }}>
             💡 活用ポイント：「テクノロジー」セグメントが強い時はTheme Listの「半導体」「AI・クラウド」も
-            チェックしましょう。セグメントとテーマの同時確認で資金の流れをより精度高く把握できます。
+            チェックしましょう。セグメントとテーマの同時Confirmで資金の流れをより精度高く把握できます。
           </span>
         </div>
 

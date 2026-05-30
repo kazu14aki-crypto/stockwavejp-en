@@ -329,7 +329,7 @@ function BubbleScatter({ data, mPeriod, setMPeriod, onNavigate }) {
             border:'1px solid var(--border)', borderRadius:'6px',
             fontFamily:'var(--font)', fontSize:'13px',
             padding:'6px 12px', cursor:'pointer', outline:'none' }}>
-          {[{v:'1d',l:'1日'},{v:'5d',l:'1週間'},{v:'1mo',l:'1ヶ月'},{v:'3mo',l:'3ヶ月'},{v:'6mo',l:'6ヶ月'}].map(p => (
+          {[{v:'1d',l:'1D'},{v:'5d',l:'1W'},{v:'1mo',l:'1M'},{v:'3mo',l:'3M'},{v:'6mo',l:'6M'}].map(p => (
             <option key={p.v} value={p.v}>{p.l}</option>
           ))}
         </select>
@@ -600,7 +600,7 @@ export default function Heatmap({ onNavigate }) {
         67テーマのReturnをテーマHeatmapと騰落モメンタムで多角的に分析できます。
       </p>
 
-      {/* ⑥ タブ削除・散布図を直接表示 */}
+      {/* ⑥ タブDelete・散布図を直接表示 */}
       <BubbleScatter data={momentumData} mPeriod={mPeriod} setMPeriod={setMPeriod} onNavigate={onNavigate} />
 
       <style>{`

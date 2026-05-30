@@ -8,17 +8,17 @@ import { useAuth } from '../../hooks/useAuth.jsx'
 
 const API = import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000'
 const PERIODS = [
-  { label:'1日',   value:'1d'  },
-  { label:'1週間', value:'5d'  },
-  { label:'1ヶ月', value:'1mo' },
-  { label:'3ヶ月', value:'3mo' },
-  { label:'6ヶ月', value:'6mo' },
-  { label:'1年',   value:'1y'  },
+  { label:'1D',   value:'1d'  },
+  { label:'1W', value:'5d'  },
+  { label:'1M', value:'1mo' },
+  { label:'3M', value:'3mo' },
+  { label:'6M', value:'6mo' },
+  { label:'1Y',   value:'1y'  },
 ]
 
 function formatLarge(n) {
   if (!n) return '0'
-  if (n >= 1e12) return (n/1e12).toFixed(1)+'兆'
+  if (n >= 1e12) return (n/1e12).toFixed(1)+'T'
   if (n >= 1e8)  return (n/1e8).toFixed(1)+'B'
   if (n >= 1e4)  return (n/1e4).toFixed(1)+'M'
   return n.toLocaleString()
@@ -56,7 +56,7 @@ function ThemeTrendChart({ stocks, period }) {
   const names = Object.keys(seriesData)
   if (!names.length) return (
     <div style={{ padding:'20px', textAlign:'center', color:'var(--text3)', fontSize:'12px' }}>
-      グラフデータなし
+      グラフNo data
     </div>
   )
 
@@ -276,7 +276,7 @@ function CustomVolTvChart({ stocks }) {
   const maxV = Math.max(...sorted.map(s => s.val), 1)
   const fmtL = v => {
     if (!v) return '0'
-    if (v >= 1e12) return (v/1e12).toFixed(1)+'兆'
+    if (v >= 1e12) return (v/1e12).toFixed(1)+'T'
     if (v >= 1e8) return (v/1e8).toFixed(1)+'B'
     if (v >= 1e4) return (v/1e4).toFixed(1)+'M'
     return v.toLocaleString()
@@ -388,7 +388,7 @@ export default function CustomTheme() {
   const [period,      setPeriod]      = useState('1mo')
   const [urlCopied,   setUrlCopied]   = useState(false)
 
-  // 編集フォーム
+  // Editフォーム
   const [themeName, setThemeName]   = useState('')
   const [stocks,    setStocks]      = useState([])
   const [query,     setQuery]       = useState('')
@@ -424,7 +424,7 @@ export default function CustomTheme() {
     })
   }
 
-  // 編集開始
+  // Edit開始
   const startEdit = (i) => {
     const t = themes[i]
     setEditTarget(i); setThemeName(t.name); setStocks(t.stocks||[])
@@ -435,7 +435,7 @@ export default function CustomTheme() {
     setMode('create'); setResults([]); setQuery(''); setSearchErr(''); setExpanded(null)
   }
 
-  // 検索
+  // Search
   const handleSearch = async () => {
     const q = query.trim(); if (!q) return
     setSearching(true); setSearchErr(''); setResults([]); setExpanded(null)
@@ -450,13 +450,13 @@ export default function CustomTheme() {
         const d = await r.json()
         const jp = (d.results||[]).filter(r => r.ticker?.endsWith('.T'))
         jp.length ? setResults(jp)
-                  : setSearchErr(`「${q}」に一致する銘柄が見つかりませんでした（証券コード4桁でも検索できます）`)
+                  : setSearchErr(`「${q}」に一致する銘柄が見つかりませんでした（証券コード4桁でもSearchできます）`)
       }
-    } catch { setSearchErr('検索に失敗しました') }
+    } catch { setSearchErr('Searchに失敗しました') }
     setSearching(false)
   }
   const addStock = (s) => {
-    if (stocks.find(x => x.ticker === s.ticker)) { setSearchErr('すでに追加済みです'); return }
+    if (stocks.find(x => x.ticker === s.ticker)) { setSearchErr('すでにAdd済みです'); return }
     if (stocks.length >= 10) { setSearchErr('1テーマあたりの銘柄上限は10個です'); return }
     setStocks(p => [...p, s]); setResults([]); setQuery(''); setSearchErr(''); setExpanded(null)
   }
@@ -464,7 +464,7 @@ export default function CustomTheme() {
 
   const handleSave = () => {
     if (!themeName.trim()) { alert('Theme Nameを入力してください'); return }
-    if (!stocks.length)    { alert('銘柄を1つ以上追加してください'); return }
+    if (!stocks.length)    { alert('銘柄を1つ以上Addしてください'); return }
     saveTheme({ name:themeName.trim(), stocks }, editTarget)
     setMode('list')
   }
@@ -482,12 +482,12 @@ export default function CustomTheme() {
         </button>
       </div>
       <p style={{ fontSize:'12px', color:'var(--text3)', marginBottom:'8px' }}>
-        独自のテーマを作成・追跡。銘柄名または4桁証券コードで検索（日本株のみ）。
+        独自のCreate Theme・追跡。銘柄名または4桁証券コードでSearch（日本株のみ）。
       </p>
       <div style={{ fontSize:'11px', color: themes.length >= 3 ? 'var(--red)' : 'var(--text3)',
         marginBottom:'16px', display:'flex', alignItems:'center', gap:'6px' }}>
         <span style={{ fontWeight:600 }}>📌 作成数: {themes.length} / 3</span>
-        {themes.length >= 3 && <span>（上限に達しました。既存テーマを削除してから追加してください）</span>}
+        {themes.length >= 3 && <span>（上限に達しました。既存テーマをDeleteしてからAddしてください）</span>}
         {themes.length < 3 && <span>（最大3テーマまで作成できます）</span>}
       </div>
       {/* Login誘導バナー */}
@@ -508,14 +508,14 @@ export default function CustomTheme() {
         </div>
       )}
       {syncing && (
-        <div style={{ fontSize:'11px', color:'var(--text3)', marginBottom:'8px' }}>同期中...</div>
+        <div style={{ fontSize:'11px', color:'var(--text3)', marginBottom:'8px' }}>Syncing...</div>
       )}
       {themes.length === 0 ? (
         <div style={{ background:'var(--bg2)', border:'1px solid var(--border)', borderRadius:'var(--radius)',
           padding:'48px', textAlign:'center' }}>
           <div style={{ fontSize:'36px', marginBottom:'12px' }}>🎨</div>
           <div style={{ fontSize:'14px', color:'var(--text2)', marginBottom:'20px' }}>まだCustom Themeがありません</div>
-          <button onClick={startCreate} style={btnP}>最初のテーマを作成</button>
+          <button onClick={startCreate} style={btnP}>最初のCreate Theme</button>
         </div>
       ) : (
         <div style={{ display:'flex', flexDirection:'column', gap:'8px' }}>
@@ -540,8 +540,8 @@ export default function CustomTheme() {
                 </div>
               </div>
               <span style={{ fontSize:'12px', color:'var(--text3)', whiteSpace:'nowrap' }}>{(t.stocks||[]).length}銘柄</span>
-              <button onClick={e => { e.stopPropagation(); startEdit(i) }} style={btnS}>編集</button>
-              <button onClick={e => { e.stopPropagation(); window.confirm('削除しますか？') && deleteTheme(i) }} style={btnD}>削除</button>
+              <button onClick={e => { e.stopPropagation(); startEdit(i) }} style={btnS}>Edit</button>
+              <button onClick={e => { e.stopPropagation(); window.confirm('Deleteしますか？') && deleteTheme(i) }} style={btnD}>Delete</button>
             </div>
           ))}
         </div>
@@ -566,7 +566,7 @@ export default function CustomTheme() {
               color: period===p.value ? 'var(--accent)' : 'var(--text3)',
             }}>{p.label}</button>
           ))}
-          <button onClick={() => startEdit(activeIndex)} style={btnS}>✏️ 編集</button>
+          <button onClick={() => startEdit(activeIndex)} style={btnS}>✏️ Edit</button>
           <button onClick={copyUrl} style={{ ...btnS, color: urlCopied ? 'var(--green)' : 'var(--text2)' }}>
             {urlCopied ? '✓ コピー済み' : '🔗 URLをコピー'}
           </button>
@@ -633,14 +633,14 @@ export default function CustomTheme() {
     </div>
   )
 
-  // ── 作成/編集フォーム ──────────────────────
+  // ── 作成/Editフォーム ──────────────────────
   return (
     <div style={{ padding:'28px 24px 48px' }}>
       <div style={{ display:'flex', alignItems:'center', gap:'14px', marginBottom:'24px' }}>
         <button onClick={() => setMode('list')} style={{ background:'none', border:'none',
           color:'var(--text2)', cursor:'pointer', fontSize:'20px', padding:0 }}>←</button>
         <h1 style={{ fontSize:'20px', fontWeight:700, color:'var(--text)' }}>
-          {mode === 'edit' ? 'テーマを編集' : '新規テーマ作成'}
+          {mode === 'edit' ? 'テーマをEdit' : 'New Theme作成'}
         </h1>
       </div>
 
@@ -660,7 +660,7 @@ export default function CustomTheme() {
             style={{ ...inp, flex:1, minWidth:'200px' }} />
           <button onClick={handleSearch} disabled={searching || !query.trim()}
             style={{ ...btnP, opacity: (!query.trim()||searching) ? 0.5 : 1 }}>
-            {searching ? '検索中...' : '🔍 検索'}
+            {searching ? 'Search中...' : '🔍 Search'}
           </button>
         </div>
         <div style={{ fontSize:'11px', color:'var(--text3)' }}>
@@ -704,7 +704,7 @@ export default function CustomTheme() {
                     <span style={{ fontSize:'10px', color:'var(--text3)' }}>
                       {expandedResult===r.ticker ? '▲' : '▼'}
                     </span>
-                    <button onClick={e => { e.stopPropagation(); addStock(r) }} style={btnP}>追加</button>
+                    <button onClick={e => { e.stopPropagation(); addStock(r) }} style={btnP}>Add</button>
                   </div>
                   {expandedResult===r.ticker && (
                     <div style={{ padding:'10px 14px', background:'var(--bg2)',
@@ -721,7 +721,7 @@ export default function CustomTheme() {
 
       {stocks.length > 0 && (
         <div style={{ marginBottom:'24px' }}>
-          <label style={lbl}>追加済み銘柄（{stocks.length}/10銘柄　※最大10銘柄まで）</label>
+          <label style={lbl}>Add済み銘柄（{stocks.length}/10銘柄　※最大10銘柄まで）</label>
           <div style={{ display:'flex', flexDirection:'column', gap:'5px' }}>
             {stocks.map((s, i) => (
               <div key={s.ticker} style={{ display:'flex', alignItems:'center', gap:'10px',
@@ -745,7 +745,7 @@ export default function CustomTheme() {
       <div style={{ display:'flex', gap:'10px' }}>
         <button onClick={handleSave} disabled={!themeName.trim()||!stocks.length}
           style={{ ...btnP, fontSize:'14px', padding:'10px 24px', opacity: (!themeName.trim()||!stocks.length) ? 0.4 : 1 }}>
-          💾 {mode==='edit' ? '変更を保存' : 'テーマを作成'}
+          💾 {mode==='edit' ? '変更をSave' : 'Create Theme'}
         </button>
         <button onClick={() => setMode('list')} style={{ ...btnS, fontSize:'14px', padding:'10px 18px' }}>
           Cancel

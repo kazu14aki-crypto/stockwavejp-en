@@ -32,28 +32,28 @@ export default function Footer() {
           <div>
             <div style={{ fontWeight: 600, color: 'var(--text2)', marginBottom: '8px', fontSize: '11px' }}>法的情報</div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
-              <a href="/#/disclaimer" onClick={e => { e.preventDefault(); window.dispatchEvent(new CustomEvent('navigate', { detail: '免責事項' })) }}
+              <a href="/#/disclaimer" onClick={e => { e.preventDefault(); window.dispatchEvent(new CustomEvent('navigate', { detail: 'Disclaimer' })) }}
                 style={{ color: 'var(--text3)', textDecoration: 'none', cursor: 'pointer' }}
                 onMouseEnter={e => e.target.style.color = 'var(--accent)'}
                 onMouseLeave={e => e.target.style.color = 'var(--text3)'}>
-                免責事項
+                Disclaimer
               </a>
-              <a href="/#/privacy" onClick={e => { e.preventDefault(); window.dispatchEvent(new CustomEvent('navigate', { detail: 'プライバシーポリシー' })) }}
+              <a href="/#/privacy" onClick={e => { e.preventDefault(); window.dispatchEvent(new CustomEvent('navigate', { detail: 'Privacy Policy' })) }}
                 style={{ color: 'var(--text3)', textDecoration: 'none', cursor: 'pointer' }}
                 onMouseEnter={e => e.target.style.color = 'var(--accent)'}
                 onMouseLeave={e => e.target.style.color = 'var(--text3)'}>
-                プライバシーポリシー
+                Privacy Policy
               </a>
             </div>
           </div>
           <div>
             <div style={{ fontWeight: 600, color: 'var(--text2)', marginBottom: '8px', fontSize: '11px' }}>メニュー</div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
-              <a href="/#/" onClick={e => { e.preventDefault(); window.dispatchEvent(new CustomEvent('navigate', { detail: 'ホーム' })) }}
+              <a href="/#/" onClick={e => { e.preventDefault(); window.dispatchEvent(new CustomEvent('navigate', { detail: 'Home' })) }}
                 style={{ color: 'var(--text3)', textDecoration: 'none', cursor: 'pointer' }}
                 onMouseEnter={e => e.target.style.color = 'var(--accent)'}
                 onMouseLeave={e => e.target.style.color = 'var(--text3)'}>
-                ホーム
+                Home
               </a>
               <a href="/#/themes" onClick={e => { e.preventDefault(); window.dispatchEvent(new CustomEvent('navigate', { detail: 'Theme List' })) }}
                 style={{ color: 'var(--text3)', textDecoration: 'none', cursor: 'pointer' }}

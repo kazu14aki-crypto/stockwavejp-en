@@ -46,8 +46,8 @@ function TdExpandable({ title, children, style }) {
 
 const API = import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000'
 const PERIODS = [
-  {label:'1日',value:'1d'},{ label:'1週間',value:'5d'},{label:'1ヶ月',value:'1mo'},
-  { label:'3ヶ月',value:'3mo'},{label:'6ヶ月',value:'6mo'},{label:'1年',value:'1y'},
+  {label:'1D',value:'1d'},{ label:'1W',value:'5d'},{label:'1M',value:'1mo'},
+  { label:'3M',value:'3mo'},{label:'6M',value:'6mo'},{label:'1Y',value:'1y'},
 ]
 
 const COLORS = [
@@ -65,7 +65,7 @@ const STATE_COLORS = {
 
 function formatLarge(n) {
   if (!n) return '0'
-  if (n>=1e12) return (n/1e12).toFixed(1)+'兆'
+  if (n>=1e12) return (n/1e12).toFixed(1)+'T'
   if (n>=1e8)  return (n/1e8).toFixed(1)+'B'
   if (n>=1e4)  return (n/1e4).toFixed(1)+'M'
   return n.toLocaleString()
@@ -106,7 +106,7 @@ function Top5Bar({ items, title, colorFn, emptyMsg }) {
       borderRadius:'8px', padding:'20px', textAlign:'center',
       color:'var(--text3)', fontSize:'12px' }}>
       <div style={{ fontSize:'11px', fontWeight:700, color:'var(--text)', marginBottom:'8px' }}>{title}</div>
-      {emptyMsg || 'データなし'}
+      {emptyMsg || 'No data'}
     </div>
   )
   const maxAbs = Math.max(...items.map(s => Math.abs(s.pct)), 0.01)
@@ -191,7 +191,7 @@ function VolTvChart({ selTheme }) {
     })()
   }, [selTheme])
 
-  if (loading) return <div style={{ textAlign:'center', padding:'40px', color:'var(--text3)', fontSize:'13px' }}>データ読み込み中...</div>
+  if (loading) return <div style={{ textAlign:'center', padding:'40px', color:'var(--text3)', fontSize:'13px' }}>データLoading...</div>
   if (!data || !data.dates || data.dates.length === 0)
     return <div style={{ textAlign:'center', padding:'32px', color:'var(--text3)', fontSize:'12px' }}>推移データがありません（GitHub Actionsの次回実行後に表示されます）</div>
 
@@ -217,7 +217,7 @@ function VolTvChart({ selTheme }) {
   // 目盛り表示
   const fmtLarge = (v) => {
     if (v === 0) return '0'
-    if (Math.abs(v) >= 1e12) return (v / 1e12).toFixed(1) + '兆'
+    if (Math.abs(v) >= 1e12) return (v / 1e12).toFixed(1) + 'T'
     if (Math.abs(v) >= 1e8)  return (v / 1e8).toFixed(1)  + 'B'
     if (Math.abs(v) >= 1e4)  return (v / 1e4).toFixed(1)  + 'M'
     return v.toLocaleString()
@@ -304,7 +304,7 @@ function PickupStocks({ stocks, period }) {
 
   const fmtL = (v) => {
     if (!v || v === 0) return '-'
-    if (v >= 1e12) return (v / 1e12).toFixed(1) + '兆'
+    if (v >= 1e12) return (v / 1e12).toFixed(1) + 'T'
     if (v >= 1e8)  return (v / 1e8).toFixed(1) + 'B'
     if (v >= 1e4)  return (v / 1e4).toFixed(1) + 'M'
     return v.toLocaleString()
@@ -452,7 +452,7 @@ function PickupStocks({ stocks, period }) {
         ⚠️ <strong style={{ color:'var(--text2)' }}>注意：</strong>
         上記ピックアップはReturn・Volume・価格推移・Trade Valueを独自スコアで機械的に集計したものです。
         <strong style={{ color:'var(--text2)' }}>リアルタイムデータではなく</strong>、
-        data update timing（1日数回更新）に依存するため、
+        data update timing（1日数回Update）に依存するため、
         最新の市場状況と乖離する場合があります。
         特定銘柄の購入・売却を推奨するものではなく、
         <strong style={{ color:'var(--text2)' }}>投資の最終判断はご自身の責任でお願いします</strong>。
@@ -525,7 +525,7 @@ function StockTable({ stocks: rawStocks }) {
     if (tableRef.current) tableRef.current.style.cursor = 'grab'
   }
 
-  const headers = ['ミニチャート','株価','Return','時価総額','寄与度%','Volume増減','Volume','Volume順位','Trade Value','Trade Value順位']
+  const headers = ['ミニチャート','株価','Return','Market Cap','寄与度%','Volume増減','Volume','Volume順位','Trade Value','Trade Value順位']
 
   // ⑤ ソートボタン定義
   const sortBtns = [
@@ -586,7 +586,7 @@ function StockTable({ stocks: rawStocks }) {
                 <th key={h} style={{ ...thStyle, minWidth: h === 'ミニチャート' ? '72px' : '80px',
                   width: h === 'ミニチャート' ? '72px' : undefined }}>{h}</th>
               ))}
-              <th style={{ ...thStyle, minWidth:'60px', background:'var(--bg3)' }}>追加</th>
+              <th style={{ ...thStyle, minWidth:'60px', background:'var(--bg3)' }}>Add</th>
             </tr>
           </thead>
           <tbody>
@@ -776,7 +776,7 @@ export default function ThemeDetail({ onNavigate, initialTheme }) {
       .catch(() => {})
   }, [])
 
-  // initialThemeが変わった場合にselThemeを更新
+  // initialThemeが変わった場合にselThemeをUpdate
   useEffect(() => {
     if (initialTheme) setSelTheme(initialTheme)
   }, [initialTheme])
@@ -1127,11 +1127,11 @@ export default function ThemeDetail({ onNavigate, initialTheme }) {
                         📖 {selTheme}のコラム記事
                       </button>
                     )}
-                    <button onClick={() => onNavigate('週次レポート')}
+                    <button onClick={() => onNavigate('Weekly Report')}
                       style={{ padding:'7px 16px', borderRadius:'6px', fontSize:'12px',
                         background:'rgba(255,140,66,0.08)', border:'1px solid rgba(255,140,66,0.3)',
                         color:'#ff8c42', cursor:'pointer', fontFamily:'var(--font)', fontWeight:600 }}>
-                      📰 週次レポート →
+                      📰 Weekly Report →
                     </button>
                   </div>
                 )}

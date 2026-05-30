@@ -76,8 +76,8 @@ const THEME_ARTICLE_MAP = {
 
 const ALL_NEWS = [
   { date:'2026/04/19', tag:'NEW',    title:'Weekly Report feature added (auto-generated every Friday)' },
-  { date:'2026/04/19', tag:'UPDATE', title:'Custom Themeに資金フロー散布図を追加' },
-  { date:'2026/04/19', tag:'UPDATE', title:'テーマHeatmapの期間別タブを削除・整理' },
+  { date:'2026/04/19', tag:'UPDATE', title:'Custom Themeに資金フロー散布図をAdd' },
+  { date:'2026/04/19', tag:'UPDATE', title:'テーマHeatmapの期間別タブをDelete・整理' },
   { date:'2026/04/15', tag:'UPDATE', title:'Market Rankingの銘柄定義を修正・重複解消' },
   { date:'2026/04/10', tag:'UPDATE', title:'メニュー名「Heatmap」を「テーマHeatmap」に変更' },
   { date:'2026/04/01', tag:'UPDATE', title:'Added 8 new column articles' },
@@ -214,10 +214,10 @@ function generateMarketComment(themeData, macro) {
   // Falling幅が大きいがVolumeも増加（底値模索か）
   const coldWithVolUp = coldThemes.filter(h => volUp.some(v => v.theme === h.theme))
   if (coldWithVolUp.length > 0) {
-    lines.push(`📉 FallingテーマでもVolume増加：「${coldWithVolUp.map(t=>t.theme).join('」「')}」。売り圧力が強いがVolume増は底値模索の兆しの可能性もある。反転サインを確認してから判断したい。`)
+    lines.push(`📉 FallingテーマでもVolume増加：「${coldWithVolUp.map(t=>t.theme).join('」「')}」。売り圧力が強いがVolume増は底値模索の兆しの可能性もある。反転サインをConfirmしてから判断したい。`)
   }
 
-  lines.push(`💡 本日のポイント：${avg >= 2 ? '全体的に強い相場環境。強気テーマへの集中投資が奏功しやすい局面。' : avg <= -2 ? '全体的に弱い地合い。守備的なテーマ（通信・医薬品等）や現金比率を高める局面。' : '方向感が定まらないため、モメンタムの強いテーマに絞り込み、Volume増加を確認してから参入するのが有効。'}`)
+  lines.push(`💡 本日のポイント：${avg >= 2 ? '全体的に強い相場環境。強気テーマへの集中投資が奏功しやすい局面。' : avg <= -2 ? '全体的に弱い地合い。守備的なテーマ（通信・医薬品等）や現金比率を高める局面。' : '方向感が定まらないため、モメンタムの強いテーマに絞り込み、Volume増加をConfirmしてから参入するのが有効。'}`)
 
   return lines
 }

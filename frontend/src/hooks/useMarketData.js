@@ -214,7 +214,7 @@ export function useTrends(themes, period) {
         // 1. market.jsonから取得
         const json      = await fetchMarketJson()
         const trendsObj = json[jsonKey]?.data || {}
-        // 要求テーマが含まれているか確認
+        // 要求テーマが含まれているかConfirm
         const found = theList.some(t => trendsObj[t])
         if (found) {
           // 要求テーマのデータのみ返す

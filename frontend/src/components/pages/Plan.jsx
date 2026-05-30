@@ -32,7 +32,7 @@ export default function Plan({ onNavigate }) {
     {
       key: 'standard', name: 'Standard', color: '#ff8c42',
       badge: currentPlan === 'standard' ? 'Current Plan' : null,
-      monthly: { price: '¥980', label: 'Monthly', perDay: Math.ceil(980/30) },
+      monthly: { price: '$20',  label: 'Monthly', perDay: null },
       features: [
         'Everything in Free',
         'Theme Detail — all periods (1D/1W/1M/3M/6M/1Y)',

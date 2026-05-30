@@ -5,17 +5,17 @@ import RefreshIndicator from '../RefreshIndicator.jsx'
 
 const API = import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000'
 const PERIODS = [
-  { label: '1日',  value: '1d'  },
-  { label: '1週間', value: '5d'  },
-  { label: '1ヶ月', value: '1mo' },
-  { label: '3ヶ月', value: '3mo' },
-  { label: '6ヶ月', value: '6mo' },
-  { label: '1年',   value: '1y'  },
+  { label: '1D',  value: '1d'  },
+  { label: '1W', value: '5d'  },
+  { label: '1M', value: '1mo' },
+  { label: '3M', value: '3mo' },
+  { label: '6M', value: '6mo' },
+  { label: '1Y',   value: '1y'  },
 ]
 
 function formatLarge(n) {
   if (!n) return '0'
-  if (n >= 1e12) return (n / 1e12).toFixed(1) + '兆'
+  if (n >= 1e12) return (n / 1e12).toFixed(1) + 'T'
   if (n >= 1e8)  return (n / 1e8).toFixed(1) + 'B'
   if (n >= 1e4)  return (n / 1e4).toFixed(1) + 'M'
   return n.toLocaleString()
@@ -88,7 +88,7 @@ function AutoComment({ lines }) {
 // ③ 自動コメント生成（Theme List）
 function genThemeComment(themes, summary, period, momentum) {
   if (!themes || !themes.length) return null
-  const periodLabel = { '1d':'本日', '5d':'週間', '1mo':'1ヶ月', '3mo':'3ヶ月', '6mo':'6ヶ月', '1y':'1年間' }[period] || period
+  const periodLabel = { '1d':'本日', '5d':'週間', '1mo':'1M', '3mo':'3M', '6mo':'6M', '1y':'1年間' }[period] || period
   const rising  = themes.filter(t => t.pct > 0)
   const falling = themes.filter(t => t.pct < 0)
   const avg     = summary?.avg ?? 0
@@ -299,7 +299,7 @@ function BubbleScatterMini({ onNavigate }) {
   const [hovered, setHovered] = useState(null)
   const { data: momentumRaw } = useMomentum(mPeriod)
   const data = momentumRaw?.data || []
-  if (!data.length) return <div style={{ textAlign:'center', padding:'40px', color:'var(--text3)', fontSize:'12px' }}>データ読み込み中...</div>
+  if (!data.length) return <div style={{ textAlign:'center', padding:'40px', color:'var(--text3)', fontSize:'12px' }}>データLoading...</div>
 
   const filtered = data.filter(d => d.pct != null && !isNaN(d.pct))
   const W=800, H=380, PL=54, PR=24, PT=32, PB=44
@@ -315,7 +315,7 @@ function BubbleScatterMini({ onNavigate }) {
   const yS=v=>PT+GH-((v-yMin)/(yMax-yMin||1))*GH
   const rS=tv=>tv>0?8+(tv/tvMax)*30:6
   const bC=pct=>pct>=8?'#ff2244':pct>=4?'#ff5370':pct>=1.5?'#ff8c42':pct>=0?'#e8a040':pct>=-1.5?'#3db88a':pct>=-4?'#00c48c':'#00a878'
-  const fmtL=tv=>{ if(!tv)return'-'; if(tv>=1e12)return(tv/1e12).toFixed(1)+'兆'; if(tv>=1e8)return(tv/1e8).toFixed(1)+'B'; if(tv>=1e4)return(tv/1e4).toFixed(1)+'M'; return tv.toLocaleString() }
+  const fmtL=tv=>{ if(!tv)return'-'; if(tv>=1e12)return(tv/1e12).toFixed(1)+'T'; if(tv>=1e8)return(tv/1e8).toFixed(1)+'B'; if(tv>=1e4)return(tv/1e4).toFixed(1)+'M'; return tv.toLocaleString() }
   const x0=xS(0), y0=yS(0)
   return (
     <div>
@@ -323,7 +323,7 @@ function BubbleScatterMini({ onNavigate }) {
         <select value={mPeriod} onChange={e=>setMPeriod(e.target.value)} style={{
           background:'var(--bg3)', color:'var(--text)', border:'1px solid var(--border)',
           borderRadius:'6px', fontFamily:'var(--font)', fontSize:'12px', padding:'4px 10px', cursor:'pointer' }}>
-          {[{v:'1d',l:'1日'},{v:'5d',l:'1週間'},{v:'1mo',l:'1ヶ月'},{v:'3mo',l:'3ヶ月'}].map(p=>(
+          {[{v:'1d',l:'1D'},{v:'5d',l:'1W'},{v:'1mo',l:'1M'},{v:'3mo',l:'3M'}].map(p=>(
             <option key={p.v} value={p.v}>{p.l}</option>
           ))}
         </select>
@@ -415,7 +415,7 @@ function HBarChart({ items, valueKey = 'pct', formatFn, colorFn, title, emptyMsg
     <div style={{ background:'var(--bg2)', border:'1px solid var(--border)',
       borderRadius:'var(--radius)', padding:'20px', textAlign:'center',
       color:'var(--text3)', fontSize:'12px' }}>
-      {emptyMsg || 'データなし'}
+      {emptyMsg || 'No data'}
     </div>
   )
 
@@ -501,7 +501,7 @@ function CustomThemeRow({ ct, period, pctColor, rank, volRankMap, tvRankMap }) {
   const pct = data?.pct ?? null
   const fmt = (n) => {
     if (!n && n !== 0) return '—'
-    if (n >= 1e12) return (n/1e12).toFixed(1)+'兆'
+    if (n >= 1e12) return (n/1e12).toFixed(1)+'T'
     if (n >= 1e8)  return (n/1e8).toFixed(1)+'B'
     if (n >= 1e4)  return (n/1e4).toFixed(1)+'M'
     return n.toLocaleString()
@@ -550,7 +550,7 @@ function CustomThemeRow({ ct, period, pctColor, rank, volRankMap, tvRankMap }) {
             </div>
           </>
         ) : (
-          <div style={{ fontSize:'11px', color:'var(--text3)' }}>データなし</div>
+          <div style={{ fontSize:'11px', color:'var(--text3)' }}>No data</div>
         )}
       </div>
     </div>
@@ -566,7 +566,7 @@ function CustomThemeRows({ themes, period, pctColor }) {
         ))}
       </div>
       <div style={{ fontSize:'11px', color:'var(--text3)', marginTop:'8px' }}>
-        💡 詳細データはサイドメニュー「Custom Theme」から確認できます
+        💡 詳細データはサイドメニュー「Custom Theme」からConfirmできます
       </div>
     </>
   )
@@ -577,7 +577,7 @@ function CustomThemeRows({ themes, period, pctColor }) {
 function ThemeCard({ item, rank, maxAbs, valueKey='pct', barColor, pctColor, pctRank, volRank, tvRank, onNavigate, momentumState, momentumPct }) {
   const fmt = (n) => {
     if (!n) return '0'
-    if (n >= 1e12) return (n/1e12).toFixed(1)+'兆'
+    if (n >= 1e12) return (n/1e12).toFixed(1)+'T'
     if (n >= 1e8)  return (n/1e8).toFixed(1)+'B'
     if (n >= 1e4)  return (n/1e4).toFixed(1)+'M'
     return n.toLocaleString()
@@ -661,7 +661,7 @@ function ThemeCard({ item, rank, maxAbs, valueKey='pct', barColor, pctColor, pct
                   borderRadius:'4px', color:'#aa77ff', cursor:'pointer',
                   fontSize:'10px', fontFamily:'var(--font)', fontWeight:600,
                 }}>
-                📊 テーマ詳細を確認
+                📊 テーマ詳細をConfirm
               </button>
             )}
             {THEME_ARTICLE_MAP[item.theme] && onNavigate && (
@@ -813,7 +813,7 @@ function MonthlyThemePicker({ allThemes, selected, setSelected }) {
             cursor:'pointer', fontFamily:'var(--font)', fontWeight:600,
             border:'1px dashed var(--accent)', background:'rgba(74,158,255,0.06)',
             color:'var(--accent)', transition:'all 0.15s' }}>
-          {showPicker ? '▲ Close' : '＋ テーマを追加する'}
+          {showPicker ? '▲ Close' : '＋ テーマをAddする'}
         </button>
         {selected.length > 0 && (
           <button onClick={() => setSelected([])}
@@ -1012,7 +1012,7 @@ function MonthlyVolChart({ volTrendData, allThemeNames, months }) {
 
   const fmtL = v => {
     if (!v) return '0'
-    if (Math.abs(v) >= 1e12) return (v/1e12).toFixed(v%1e12===0?0:1)+'兆'
+    if (Math.abs(v) >= 1e12) return (v/1e12).toFixed(v%1e12===0?0:1)+'T'
     if (Math.abs(v) >= 1e8) return (v/1e8).toFixed(v%1e8===0?0:1)+'B'
     if (Math.abs(v) >= 1e4) return (v/1e4).toFixed(0)+'M'
     return v.toLocaleString()
@@ -1119,7 +1119,7 @@ function MonthlyTVChart({ volTrendData, allThemeNames, months }) {
 
   const fmtL = v => {
     if (!v) return '0'
-    if (Math.abs(v) >= 1e12) return (v/1e12).toFixed(v%1e12===0?0:1)+'兆'
+    if (Math.abs(v) >= 1e12) return (v/1e12).toFixed(v%1e12===0?0:1)+'T'
     if (Math.abs(v) >= 1e8) return (v/1e8).toFixed(v%1e8===0?0:1)+'B'
     if (Math.abs(v) >= 1e4) return (v/1e4).toFixed(0)+'M'
     return v.toLocaleString()
@@ -1262,11 +1262,11 @@ export default function ThemeList({ onNavigate }) {
         <div style={{ background:'rgba(74,158,255,0.05)', border:'1px solid rgba(74,158,255,0.15)',
           borderRadius:'8px', padding:'12px 16px', marginBottom:'12px', fontSize:'13px', color:'var(--text)', lineHeight:1.9 }}>
           日本株の主要67テーマについて、Return・Volume・Trade Valueを一覧で比較できます。
-          期間（1週間〜1年）を切り替えることで、短期的な資金流入テーマと長期トレンドの両方を確認できます。
+          期間（1週間〜1年）を切り替えることで、短期的な資金流入テーマと長期トレンドの両方をConfirmできます。
           <br />
           <span style={{ fontSize:'11px', color:'var(--text2)' }}>
             💡 活用ポイント：「RisingTOP5」に連続して登場するテーマは強いトレンドの可能性があります。
-            Volume・Trade Valueも同時に確認し、資金の本気度を判断しましょう。
+            Volume・Trade Valueも同時にConfirmし、資金の本気度を判断しましょう。
           </span>
         </div>
         <p style={{ fontSize: '12px', color: 'var(--text3)', marginBottom: '20px' }}>
@@ -1339,11 +1339,11 @@ export default function ThemeList({ onNavigate }) {
             <AutoComment lines={themeComment} />
             {onNavigate && (
               <div style={{ textAlign:'right', marginTop:'-4px', marginBottom:'8px' }}>
-                <button onClick={() => onNavigate('週次レポート')}
+                <button onClick={() => onNavigate('Weekly Report')}
                   style={{ padding:'5px 14px', borderRadius:'6px', fontSize:'11px',
                     background:'rgba(255,140,66,0.1)', border:'1px solid rgba(255,140,66,0.3)',
                     color:'#ff8c42', cursor:'pointer', fontFamily:'var(--font)', fontWeight:600 }}>
-                  📰 詳細な週次レポートを読む →
+                  📰 詳細なWeekly Reportを読む →
                 </button>
               </div>
             )}

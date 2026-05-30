@@ -2,11 +2,11 @@ import { useState, useEffect, useRef } from 'react'
 
 const API = import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000'
 const PERIODS = [
-  { label: '1週間', value: '5d' },
-  { label: '1ヶ月', value: '1mo' },
-  { label: '3ヶ月', value: '3mo' },
-  { label: '6ヶ月', value: '6mo' },
-  { label: '1年',   value: '1y'  },
+  { label: '1W', value: '5d' },
+  { label: '1M', value: '1mo' },
+  { label: '3M', value: '3mo' },
+  { label: '6M', value: '6mo' },
+  { label: '1Y',   value: '1y'  },
 ]
 const COLORS = [
   '#ff4560','#ff8c42','#ffd166','#06d6a0','#4a9eff',

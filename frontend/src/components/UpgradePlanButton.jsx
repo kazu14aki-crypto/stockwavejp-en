@@ -9,7 +9,7 @@ export default function UpgradePlanButton({ priceKey, label, color, disabled }) 
 
   if (disabled) return (
     <div style={{ marginTop:'14px', padding:'12px', textAlign:'center', background:'var(--bg3)', borderRadius:'8px', fontSize:'12px', color:'var(--text3)', fontFamily:'var(--font)' }}>
-      近日公開予定
+      Coming soon予定
     </div>
   )
 
