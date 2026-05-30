@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react'
-import StockBubbleChart from '../StockBubbleChart'
-import AddToThemeModal from '../AddToThemeModal'
+import StockBubbleChart from '../StockBubbleChart.jsx'
+import AddToThemeModal from '../AddToThemeModal.jsx'
 
 // Theme Detail用：グラフ全体＋下部ボタンクリックで拡大
 function TdExpandable({ title, children, style }) {

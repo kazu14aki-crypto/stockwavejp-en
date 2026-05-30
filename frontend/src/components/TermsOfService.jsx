@@ -6,7 +6,7 @@ export default function TermsOfService() {
       <h1 style={{ fontSize:'22px', fontWeight:700, color:'var(--text)',
         marginBottom:'6px', letterSpacing:'-0.02em' }}>利用規約</h1>
       <p style={{ fontSize:'12px', color:'var(--text3)', marginBottom:'32px' }}>
-        制定日：2026年4月1日　最終改訂：2026年4月1日
+        制定日：2026年4月1日　最終改訂：2026年4月29日
       </p>
 
       <Section title="第1条（本規約の適用）">
@@ -32,7 +32,7 @@ export default function TermsOfService() {
       </Section>
 
       <Section title="第4条（情報の正確性・完全性・最新性）">
-        <p>当サイトが提供するデータは、外部データプロバイダー（Yahoo Finance等）から自動取得した情報に基づきます。当サイトは情報の正確性・完全性・最新性について最善を尽くしますが、以下の事由により誤り・遅延・欠損が生じる場合があります。</p>
+        <p>当サイトが提供するデータは、外部データプロバイダー（Infoway）から自動取得した情報に基づきます。当サイトは情報の正確性・完全性・最新性について最善を尽くしますが、以下の事由により誤り・遅延・欠損が生じる場合があります。</p>
         <ul style={{paddingLeft:'20px',marginTop:'6px'}}>
           <li>データプロバイダー側の障害・仕様変更・配信遅延</li>
           <li>システムメンテナンスまたは障害</li>

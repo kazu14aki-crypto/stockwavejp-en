@@ -2,7 +2,7 @@
  * FlowMomentum.jsx — 資金フロー＋騰落モメンタム統合ページ
  */
 import { useState, useEffect } from 'react'
-import { useMomentum } from '../../hooks/useMarketData'
+import { useMomentum } from '../../hooks/useMarketData.js'
 
 const API = import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000'
 const PERIODS = [
@@ -58,7 +58,7 @@ function HBar({ item, maxAbs }) {
 }
 
 
-// Autoコメント生成
+// 自動コメント生成
 
 function AutoComment({ lines }) {
   // 防御的処理: null/undefined/空/文字列に対応
@@ -121,7 +121,7 @@ function genMomentumComment(momentumData, period) {
 
   const lines = []
 
-  lines.push(`【${periodLabel}の騰落モメンタム概況】全${data.length}テーマ中、Rising${rising.length}・Falling${falling.length}テーマ。平均Return${avg>=0?'+':''}${avg.toFixed(2)}%。モメンタム別では加速${accel.length}・転換↑${turnUp.length}・横ばい${flat.length}・転換↓${turnDn.length}・失速${decel.length}テーマ。`)
+  lines.push(`【${periodLabel}の騰落モメンタム概況】全${data.length}テーマ中、Rising${rising.length}・Falling${falling.length}テーマ。AvgReturn${avg>=0?'+':''}${avg.toFixed(2)}%。モメンタム別では加速${accel.length}・転換↑${turnUp.length}・横ばい${flat.length}・転換↓${turnDn.length}・失速${decel.length}テーマ。`)
 
   if (accel.length > 0) {
     const top = accel.slice(0,4).map(t=>t.theme).join('」「')
@@ -182,7 +182,7 @@ export default function FlowMomentum() {
         </select>
       </div>
 
-      {/* Autoコメント */}
+      {/* 自動コメント */}
       <AutoComment lines={flowComment} />
 
       {/* モメンタム一覧 */}

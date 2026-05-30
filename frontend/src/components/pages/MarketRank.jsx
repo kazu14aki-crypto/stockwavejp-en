@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react'
-import AddToThemeModal from '../AddToThemeModal'
-import StockBubbleChart from '../StockBubbleChart'
-import { useSegmentDetail, useMarketRankList } from '../../hooks/useMarketData'
+import AddToThemeModal from '../AddToThemeModal.jsx'
+import StockBubbleChart from '../StockBubbleChart.jsx'
+import { useSegmentDetail, useMarketRankList } from '../../hooks/useMarketData.js'
 
 // Volume・Trade Value 棒グラフ（MarketRank用）
 // ── Featured Stocks ──────────────────────────────
@@ -42,13 +42,13 @@ function PickupStocks({ stocks, period }) {
       const parts = []
       if (pct >= 10)       parts.push('この期間のReturnは+' + pct.toFixed(1) + '%と大幅Risingしており、テーマ全体を牽引する動きを見せています')
       else if (pct >= 5)   parts.push('この期間のReturnは+' + pct.toFixed(1) + '%と堅調で、テーマ内の上位Rising銘柄です')
-      else if (pct >= 2)   parts.push('+' + pct.toFixed(1) + '%のRisingでテーマ平均を上回っています')
+      else if (pct >= 2)   parts.push('+' + pct.toFixed(1) + '%のRisingでテーマAvgを上回っています')
       else if (pct > 0)    parts.push('+' + pct.toFixed(1) + '%と小幅ながらプラスを維持しています')
 
       if (volChg >= 50)      parts.push('Volumeが+' + volChg.toFixed(0) + '%と急増しており、機関投資家・外国人投資家の大口資金の流入が強く示唆されます')
       else if (volChg >= 20) parts.push('Volumeが+' + volChg.toFixed(0) + '%増加しており、市場参加者の注目が高まっています')
 
-      if (sparkAccel > 3)    parts.push('直近の価格推移が後半にかけて加速（後半平均+' + sparkAccel.toFixed(1) + '%）しており、モメンタムが強まっています')
+      if (sparkAccel > 3)    parts.push('直近の価格推移が後半にかけて加速（後半Avg+' + sparkAccel.toFixed(1) + '%）しており、モメンタムが強まっています')
       else if (sparkAccel > 1) parts.push('価格推移が後半にかけてやや改善（後半+' + sparkAccel.toFixed(1) + '%）しています')
 
       if (tv >= 5e9)       parts.push('Trade Valueは' + fmtL(tv) + 'と非常に大きく、流動性が高い主力銘柄として積極的に売買されています')
@@ -522,7 +522,7 @@ function StockTable({ stocks: rawStocks, onAddToTheme }) {
                   <td style={tdC}>{s.tv_rank}位</td>
                   <td style={tdC}>
                     <button onClick={() => onAddToTheme && onAddToTheme({ ticker:s.ticker, name:s.name, price:s.price })}
-                      title="Custom ThemeにAdd"
+                      title="Add to Custom Theme"
                       style={{ background:'rgba(74,158,255,0.1)', border:'1px solid rgba(74,158,255,0.25)',
                         borderRadius:'4px', color:'var(--accent)', cursor:'pointer', fontSize:'13px',
                         padding:'3px 7px', fontFamily:'var(--font)', lineHeight:1 }}>＋</button>
@@ -558,7 +558,7 @@ const ETF_GROUPS = {
     '1348': 'MAXIS TOPIX上場投信',
     '1591': 'JPX日経400 ETF',
     '1577': '日本株高配当70 ETF',
-    '1489': '日経平均高配当株50',
+    '1489': '日経Avg高配当株50',
     '1343': 'NEXT FUNDS 東証REIT指数連動型',
     '1597': 'MAXIS Jリート上場投信',
     '1476': 'iシェアーズ・コア Jリート ETF',
@@ -605,8 +605,8 @@ const ETF_GROUPS = {
     '1671': 'WisdomTree WTI 原油',
   },
   'ETF｜レバレッジ・インバース': {
-    '1570': 'NEXT FUNDS 日経平均レバレッジ2倍',
-    '1571': 'NEXT FUNDS 日経平均ダブルインバース',
+    '1570': 'NEXT FUNDS 日経Avgレバレッジ2倍',
+    '1571': 'NEXT FUNDS 日経Avgダブルインバース',
     '1568': 'NEXT FUNDS TOPIX レバレッジ(2倍)',
     '1569': 'NEXT FUNDS TOPIX インバース(-1倍)',
     '1365': '楽天ETF 日経ダブルブル',
@@ -631,7 +631,7 @@ export default function MarketRank() {
   useEffect(()=>{
     if (!marketData) return
     setSummary(marketData.data)
-    // ①「ETF」グループをmarket.jsonの外でフロント側にAdd
+    // ①「ETF」グループをmarket.jsonの外でフロント側に追加
     const baseGroups = marketData.groups || {}
     const allGroups = {
       ...baseGroups,
@@ -746,7 +746,7 @@ export default function MarketRank() {
           borderRadius:'8px', padding:'12px 16px', marginBottom:'16px', fontSize:'12px',
           color:'var(--text)', lineHeight:1.8 }}>
           <span style={{ fontWeight:700, color:'#06d6a0' }}>📋 About This Page:</span>
-          Top 150 stocks by market cap（プライム・スタンダード・グロース）・ETF（6カテゴリ）ごとに、
+          時価総額上位150銘柄・市場区分（プライム・スタンダード・グロース）・ETF（6カテゴリ）ごとに、
           構成銘柄のReturnランキングと詳細データを確認できます。
           上部のタブで「国内主要株」「国内全般」「市場区分」「ETF」を切り替え、各グループ内のセグメントを選択してください。
           <br/>
@@ -803,7 +803,7 @@ export default function MarketRank() {
                   <span style={{ fontSize:'16px', fontWeight:700, color:'var(--text)' }}>{activeSeg ? (activeSeg.split('｜')[1] || activeSeg) : ''}</span>
                   <span style={{ fontSize:'15px', fontFamily:'var(--mono)', fontWeight:700,
                     color:detailAvg>=0?'var(--red)':'var(--green)' }}>
-                    平均 {detailAvg>=0?'+':''}{detailAvg.toFixed(1)}%
+                    Avg {detailAvg>=0?'+':''}{detailAvg.toFixed(1)}%
                   </span>
                   <span style={{ fontSize:'12px', color:'var(--text3)' }}>{stocks.length}銘柄</span>
                 </div>

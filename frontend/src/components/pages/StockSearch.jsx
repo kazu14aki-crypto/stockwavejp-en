@@ -1,5 +1,5 @@
 import { useState, useEffect, useMemo } from 'react'
-import AddToThemeModal from '../AddToThemeModal'
+import AddToThemeModal from '../AddToThemeModal.jsx'
 
 const API = import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000'
 

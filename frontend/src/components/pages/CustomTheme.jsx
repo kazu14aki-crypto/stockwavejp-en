@@ -2,9 +2,9 @@
  * CustomTheme.jsx — Custom Theme管理＋詳細表示＋URLエクスポート
  */
 import { useState, useEffect } from 'react'
-import StockBubbleChart from '../StockBubbleChart'
+import StockBubbleChart from '../StockBubbleChart.jsx'
 import { useSubscription } from '../../hooks/useSubscription.js'
-import { useCustomThemes, themeToUrl, themeFromUrl } from '../../hooks/useCustomThemes'
+import { useCustomThemes, themeToUrl, themeFromUrl } from '../../hooks/useCustomThemes.js'
 import { useAuth } from '../../hooks/useAuth.jsx'
 
 const API = import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000'

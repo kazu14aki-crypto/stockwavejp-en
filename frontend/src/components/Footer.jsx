@@ -32,17 +32,17 @@ export default function Footer() {
           <div>
             <div style={{ fontWeight: 600, color: 'var(--text2)', marginBottom: '8px', fontSize: '11px' }}>法的情報</div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
-              <a href="/#/disclaimer" onClick={e => { e.preventDefault(); window.dispatchEvent(new CustomEvent('navigate', { detail: 'Disclaimer' })) }}
+              <a href="/#/disclaimer" onClick={e => { e.preventDefault(); window.dispatchEvent(new CustomEvent('navigate', { detail: '免責事項' })) }}
                 style={{ color: 'var(--text3)', textDecoration: 'none', cursor: 'pointer' }}
                 onMouseEnter={e => e.target.style.color = 'var(--accent)'}
                 onMouseLeave={e => e.target.style.color = 'var(--text3)'}>
-                Disclaimer
+                免責事項
               </a>
-              <a href="/#/privacy" onClick={e => { e.preventDefault(); window.dispatchEvent(new CustomEvent('navigate', { detail: 'Privacy Policy' })) }}
+              <a href="/#/privacy" onClick={e => { e.preventDefault(); window.dispatchEvent(new CustomEvent('navigate', { detail: 'プライバシーポリシー' })) }}
                 style={{ color: 'var(--text3)', textDecoration: 'none', cursor: 'pointer' }}
                 onMouseEnter={e => e.target.style.color = 'var(--accent)'}
                 onMouseLeave={e => e.target.style.color = 'var(--text3)'}>
-                Privacy Policy
+                プライバシーポリシー
               </a>
             </div>
           </div>
@@ -72,7 +72,7 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* コピーLight */}
+      {/* コピーライト */}
       <div style={{
         maxWidth: '1280px', margin: '16px auto 0',
         paddingTop: '12px', borderTop: '1px solid var(--border)',

@@ -94,7 +94,7 @@ export default function Favorites() {
           color: 'var(--text3)', fontSize: '13px',
         }}>
           <div style={{ fontSize: '32px', marginBottom: '12px' }}>⭐</div>
-          上のボタンからお気に入りテーマをAddしてください
+          上のボタンからお気に入りテーマを追加してください
         </div>
       ) : (
         <>

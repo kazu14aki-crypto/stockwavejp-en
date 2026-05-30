@@ -10,7 +10,7 @@ function StockBubbleChart({ stocks, themeName, onNavigate }) {
   )
   if (filtered.length === 0) return (
     <div style={{ textAlign:'center', padding:'30px', color:'var(--text3)', fontSize:'13px' }}>
-      Loading...
+      Loading data...
     </div>
   )
 
@@ -24,7 +24,7 @@ function StockBubbleChart({ stocks, themeName, onNavigate }) {
 
   const hasVol = volChgs.some(v => v !== 0)
   const yVals  = hasVol ? volChgs : filtered.map(d => d.pct * 0.5)
-  const yLabel = hasVol ? 'Volume Surge (%)' : 'Return x0.5 (Volume data pending)'
+  const yLabel = hasVol ? 'Volume急増率 (%)' : 'Returnの0.5倍（Volumeデータ準備中）'
 
   const rawXMin = Math.min(...pcts), rawXMax = Math.max(...pcts)
   const rawYMin = Math.min(...yVals), rawYMax = Math.max(...yVals)
@@ -68,7 +68,7 @@ function StockBubbleChart({ stocks, themeName, onNavigate }) {
   return (
     <div>
       <div style={{ fontSize:'10px', color:'var(--text3)', marginBottom:'6px' }}>
-        X=Return  Y={yLabel}  Circle=Trade Value  Click bubble for details
+        X軸=Return　Y軸={yLabel}　円サイズ=Trade Value　バブルをクリックで銘柄確認
       </div>
       <div style={{ width:'100%', overflowX:'auto', WebkitOverflowScrolling:'touch' }}>
         <svg viewBox={`0 0 ${W} ${H}`}

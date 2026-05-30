@@ -12,7 +12,7 @@
  *   週次レポートアーカイブ → standard以上
  *   カスタムテーマ分析（AI） → pro のみ
  */
-import { useState, useEffect, createContext, useContext, createElement } from 'react'
+import { useState, useEffect, createContext, useContext } from 'react'
 import { supabase } from '../lib/supabase.js'
 
 // 開発者メールアドレス（全機能解放）
@@ -146,7 +146,7 @@ export function SubscriptionProvider({ children }) {
     }[plan] || 'Free',
   }
 
-  return createElement(SubscriptionContext.Provider, { value }, children)
+  return <SubscriptionContext.Provider value={value}>{children}</SubscriptionContext.Provider>
 }
 
 export function useSubscription() {

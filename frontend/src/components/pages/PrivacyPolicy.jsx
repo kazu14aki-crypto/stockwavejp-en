@@ -1,150 +1,53 @@
 export default function PrivacyPolicy() {
-  const sections = [
-    {
-      title: '1. 基本方針',
-      body: `StockWaveJP（以下「当サイト」）は、ユーザーの個人情報・プライバシーの保護を重要と考え、個人情報の保護に関する法律（個人情報保護法）およびMore関連法令を遵守し、適切に取り扱います。
-
-本Privacy Policyは、当サイトが収集・利用する情報の種類、利用目的、管理方法、ユーザーの権利について説明するものです。本サービスをご利用いただくことで、本ポリシーに同意いただいたものとみなします。`,
-    },
-    {
-      title: '2. 収集する情報',
-      body: `当サイトは以下の情報を収集します。
-
-【Auto的に収集される情報】
-・アクセスログ（IPアドレス、ブラウザの種類・バージョン、OS、リファラーURL、アクセス日時）
-・Cookieおよび類似技術による利用状況データ
-・Google Analytics によるページビュー・滞在時間・行動フロー等の統計情報
-
-【ユーザーが任意で提供する情報】
-・Googleアカウント認証によるメールアドレス・表示名（Custom Theme機能ご利用時）
-・カスタムTheme Name・構成銘柄情報（ブラウザのローカルストレージまたはSupabaseにSave）
-
-【収集しない情報】
-・クレジットカード番号・銀行口座情報等の金融情報
-・氏名・住所・電話番号等の個人を直接特定できる情報（GoogleLogin時のメールアドレスを除く）`,
-    },
-    {
-      title: '3. 情報の利用目的',
-      body: `収集した情報は以下の目的で利用します。
-
-・本サービスの提供・運営・改善
-・ユーザー認証およびCustom Theme機能の提供
-・サービスの利用状況の分析および統計（Google Analytics）
-・Google AdSense等による広告配信の最適化
-・不正アクセス・不正利用の検知・防止
-・Terms of Service違反行為への対応
-・法令に基づく開示への対応
-
-収集した情報は、上記目的以外には利用しません。`,
-    },
-    {
-      title: '4. Cookieの使用',
-      body: `当サイトは以下の目的でCookieを使用します。
-
-【Google Analytics】
-サイトの利用状況を分析するために使用します。収集されたデータはGoogleのサーバーに送信され、匿名化・集計されます。個人を特定する情報は含まれません。Googleのデータ利用については Google のPrivacy Policyをご参照ください。
-
-【Google AdSense】
-ユーザーの興味・関心に合わせたパーソナライズ広告を配信するために使用されます。第三者配信事業者のCookieの使用を希望しない場合は、Google の広告Settingsページにてオプトアウトできます。
-
-【Supabase（認証）】
-ユーザーLogin状態の維持に使用します。
-
-ブラウザのSettingsによりCookieを無効にすることができますが、一部の機能（Custom ThemeSave等）が正常に動作しなくなる場合があります。`,
-    },
-    {
-      title: '5. 第三者への情報提供',
-      body: `当サイトは、以下の場合を除き、収集した情報を第三者に提供・開示しません。
-
-・ユーザーの同意がある場合
-・法令に基づく開示が必要な場合（裁判所・捜査機関等からの法的要請）
-・人の生命・身体・財産の保護のために必要で、本人の同意を得ることが困難な場合
-・Google Analytics・Google AdSense・Supabase等の委託先（利用目的の範囲内で必要最小限の情報を提供）
-
-当サイトが利用する主な外部サービスとそのPrivacy Policy：
-・Google LLC: https://policies.google.com/privacy
-・Supabase Inc.: https://supabase.com/privacy`,
-    },
-    {
-      title: '6. データの外部送信について',
-      body: `当サイトは、以下のサービスを通じてデータを外部に送信します。利用者情報の外部送信に関する規律に基づき開示します。
-
-【Google Analytics（Google LLC）】
-送信情報：Cookieを通じた閲覧履歴・行動ログ（匿名化済み）
-目的：アクセス解析・サービス改善
-
-【Google AdSense（Google LLC）】
-送信情報：Cookie・閲覧履歴に基づく興味関心情報
-目的：ターゲティング広告の配信
-
-【Infoway（データプロバイダー）】
-送信情報：なし（当サイトがAPIを通じてデータを受信）
-目的：株価データの取得`,
-    },
-    {
-      title: '7. データの保管・セキュリティ',
-      body: `当サイトは収集した情報の安全管理のために以下の対策を講じています。
-
-・HTTPS（SSL/TLS）による通信の暗号化
-・Supabase（SOC 2 Type II認証取得）によるデータ保管
-・定期的なセキュリティ更新の実施
-
-ただし、インターネットを通じたデータ送信には固有のリスクが伴うことをご承知おきください。当サイトは情報セキュリティに最善を尽くしますが、完全な安全性を保証するものではありません。`,
-    },
-    {
-      title: '8. ユーザーの権利',
-      body: `当サイトのユーザーは以下の権利を有します。
-
-・保有する個人情報の開示を請求する権利
-・個人情報の訂正・Removeを請求する権利
-・個人情報の利用停止を請求する権利
-・Google Analytics のオプトアウト（Googleアナリティクスオプトアウトアドオンの使用）
-
-これらの権利を行使する場合は、下記Contact先までご連絡ください。合理的な期間内に対応します。`,
-    },
-    {
-      title: '9. 未成年者について',
-      body: `当サイトのサービスは、18歳以上の方を対象としています。18歳未満の方が個人情報を提供する場合は、保護者の同意が必要です。18歳未満の方からの個人情報と認識した場合は、適切に対応します。`,
-    },
-    {
-      title: '10. Privacy Policyの変更',
-      body: `本ポリシーは、法令の改正・サービス内容の変更等により、予告なく変更することがあります。重要な変更については当サイト上でNewsします。変更後のポリシーは本ページに掲載した時点で効力を生じます。`,
-    },
-    {
-      title: '11. Contact',
-      body: `個人情報の取り扱いに関するContactは以下までご連絡ください。
-
-・X（旧Twitter）DM：@StockWaveJP
-・サイト内Contactフォーム：https://stockwavejp-en.com よりアクセス
-
-受付時間：平日（不定期）。返答まで数日かかる場合があります。`,
-    },
-  ]
-
   return (
-    <div style={{ padding:'28px 32px 60px', maxWidth:'800px', margin:'0 auto' }}>
-      <h1 style={{ fontSize:'22px', fontWeight:700, color:'var(--text)', marginBottom:'4px' }}>
-        Privacy Policy
-      </h1>
-      <p style={{ fontSize:'12px', color:'var(--text3)', marginBottom:'28px' }}>
-        制定日：2026年4月1日　最終改訂：2026年4月29日
-      </p>
+    <div style={{ padding:'28px 32px 60px', maxWidth:'760px', margin:'0 auto' }}>
+      <h1 style={{ fontSize:'24px', fontWeight:700, color:'#e8f0ff', marginBottom:'4px' }}>プライバシーポリシー</h1>
+      <p style={{ fontSize:'12px', color:'var(--text3)', marginBottom:'32px' }}>最終更新日：2026年3月26日</p>
 
-      {sections.map((s, i) => (
+      {[
+        {
+          title: '1. 基本方針',
+          body: `StockWaveJP（以下「当サイト」）は、ユーザーの個人情報の取り扱いについて、以下のポリシーを定めます。当サイトは個人情報保護の重要性を認識し、適切な保護に努めます。`,
+        },
+        {
+          title: '2. 収集する情報',
+          body: `当サイトは以下の情報を収集することがあります。\n\n・アクセスログ（IPアドレス、ブラウザ情報、アクセス日時）\n・Googleアナリティクスによる利用状況データ（ページビュー、滞在時間等）\n・ユーザーがカスタムテーマ機能で入力したデータ（ブラウザのローカルストレージに保存）\n\n氏名・メールアドレス等の個人を特定できる情報は収集していません。`,
+        },
+        {
+          title: '3. Cookieの使用',
+          body: `当サイトは、ユーザー体験の向上および利用状況の分析を目的として、Cookieを使用しています。\n\n・Google Analytics：サイトの利用状況を分析するために使用します。収集されたデータは匿名化されており、個人を特定できません。\n・Google AdSense：広告配信の最適化のために使用します。\n\nブラウザの設定によりCookieを無効にすることができますが、一部の機能が正常に動作しなくなる場合があります。`,
+        },
+        {
+          title: '4. 広告について',
+          body: `当サイトは、第三者配信事業者であるGoogleが提供する広告サービス「Google AdSense」を利用しています。Googleを含む第三者配信事業者は、Cookieを使用して、ユーザーが当サイトや他のウェブサイトに過去にアクセスした際の情報に基づいて広告を配信します。\n\nユーザーは、Googleの広告設定でパーソナライズ広告を無効にできます。また、www.aboutads.info にアクセスすることで、第三者配信事業者のCookieを無効にすることも可能です。`,
+        },
+        {
+          title: '5. アクセス解析ツール',
+          body: `当サイトではGoogleアナリティクスを使用しています。Googleアナリティクスはトラフィックデータの収集のためにCookieを使用しています。このトラフィックデータは匿名で収集されており、個人を特定するものではありません。`,
+        },
+        {
+          title: '6. 免責事項',
+          body: `当サイトに掲載されている情報は、信頼できると考えられる情報源に基づいて作成していますが、その正確性・完全性を保証するものではありません。当サイトの情報を参考にして生じたいかなる損害についても、当サイト運営者は一切責任を負いません。`,
+        },
+        {
+          title: '7. プライバシーポリシーの変更',
+          body: `本ポリシーの内容は、法令その他の事情の変化により、予告なく変更することがあります。変更後のポリシーは本ページに掲載した時点で効力を生じます。`,
+        },
+        {
+          title: '8. お問い合わせ',
+          body: `プライバシーポリシーに関するお問い合わせは、X（旧Twitter）のDM（@StockWaveJP）またはサイト内のお問い合わせフォームよりご連絡ください。`,
+        },
+      ].map((s, i) => (
         <div key={i} style={{ marginBottom:'28px' }}>
-          <h2 style={{ fontSize:'14px', fontWeight:700, color:'var(--text)', marginBottom:'10px',
+          <h2 style={{ fontSize:'15px', fontWeight:700, color:'#e8f0ff', marginBottom:'10px',
             borderLeft:'3px solid var(--accent)', paddingLeft:'12px' }}>
             {s.title}
           </h2>
-          <div style={{ fontSize:'13px', color:'var(--text2)', lineHeight:2.0, whiteSpace:'pre-line' }}>
+          <div style={{ fontSize:'13px', color:'var(--text2)', lineHeight:1.9, whiteSpace:'pre-line' }}>
             {s.body}
           </div>
         </div>
       ))}
-
-      <div style={{ fontSize:'12px', color:'var(--text3)', marginTop:'24px', textAlign:'center' }}>
-        © 2026 StockWaveJP. All rights reserved.
-      </div>
     </div>
   )
 }

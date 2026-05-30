@@ -2,12 +2,17 @@ import { useEffect, useState } from 'react'
 
 // 手動更新のNewsリスト（新しい順）
 const MANUAL_NEWS = [
-  { date:'2026/04/01', title:'コラム8本Add・説明文充実', body:'各ページに説明文とポイントをAddしました。コラムページに親子上場・バフェット銘柄・フィジカルAI・パワー半導体・NISA・光通信・国土強靭化・中東情勢の8本をAdd。全20本となりました。' },
-  { date:'2026/03/31', title:'Custom Theme機能強化', body:'GoogleLoginによるマルチデバイス同期に対応しました。Theme List・Theme DetailからCustom ThemeへのAddボタンも設置されています。' },
+  { date:'2026/05/29', title:'MLCC Theme Added + Murata & MLCC Column Articles', body:'New MLCC/Electronic Components theme (14 stocks). Two in-depth columns: Murata Manufacturing analysis and MLCC industry overview.' },
+  { date:'2026/05/29', title:'Weekly Report (May 25-29) Published', body:'MLCC theme led gains (+9.4%). Defense & Aerospace continued its 3-week winning streak.' },
+  { date:'2026/05/22', title:'Weekly Report (May 18-22) Published', body:'Defense & Aerospace topped again (+8.1%). Cyber Security and Next-Gen Semiconductor also strong.' },
+  { date:'2026/05/19', title:'Institutional Holdings Page Added', body:'Major shareholders (5%+ EDINET filings) now searchable by stock or institution name.' },
+  { date:'2026/05/18', title:'Pricing Plans & 30-Day Pro Trial Launched', body:'New Pricing page. All new users get a free 30-day Pro trial upon first login.' },
+  { date:'2026/04/01', title:'コラム8本追加・説明文充実', body:'各ページに説明文とポイントを追加しました。コラムページに親子上場・バフェット銘柄・フィジカルAI・パワー半導体・NISA・光通信・国土強靭化・中東情勢の8本を追加。全20本となりました。' },
+  { date:'2026/03/31', title:'Custom Theme機能強化', body:'GoogleLoginによるマルチデバイス同期に対応しました。Theme List・Theme DetailからCustom Themeへの追加ボタンも設置されています。' },
   { date:'2026/03/28', title:'市場別ランキング→Market Rankingに名称変更', body:'より内容を正確に表す「Market Ranking」に名称を変更しました。また1日・1週間・1ヶ月など期間選択のデフォルトを1日表示に変更しました。' },
   { date:'2026/03/14', title:'React版リリース', body:'StockWaveJP がReact+FastAPIに移行しました。デザイン・モバイル対応が大幅に改善されています。' },
-  { date:'2026/03/01', title:'Volume・Trade ValueランキングAdd', body:'Theme ListページにVolume・Trade ValueのランキンググラフをAddしました。' },
-  { date:'2026/02/15', title:'騰落モメンタム機能Add', body:'先週比・先月比の変化から「加速・失速・転換」テーマを一目で把握できる騰落モメンタムページをAddしました。' },
+  { date:'2026/03/01', title:'Volume・Trade Valueランキング追加', body:'Theme ListページにVolume・Trade Valueのランキンググラフを追加しました。' },
+  { date:'2026/02/15', title:'騰落モメンタムNew Feature', body:'先週比・先月比の変化から「加速・失速・転換」テーマを一目で把握できる騰落モメンタムページを追加しました。' },
 ]
 
 const DATA_URL = '/data/market.json'
@@ -36,10 +41,10 @@ export default function News() {
         News
       </h1>
       <p style={{ fontSize:'12px', color:'var(--text3)', marginBottom:'28px' }}>
-        StockWaveJPの機能Add・変更・修正情報
+        StockWaveJPのNew Feature・変更・修正情報
       </p>
 
-      {/* 銘柄アクション（Auto取得） */}
+      {/* 銘柄アクション（自動取得） */}
       {actions.length > 0 && (
         <div style={{ marginBottom:'24px' }}>
           <div style={{ fontSize:'12px', fontWeight:700, color:'var(--text2)',

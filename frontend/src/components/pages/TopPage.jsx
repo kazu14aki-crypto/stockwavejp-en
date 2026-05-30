@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import { useThemes, useMacro } from '../../hooks/useMarketData'
-import MacroLineChart, { MacroCard, SHead } from '../MacroLineChart'
+import { useThemes, useMacro } from '../../hooks/useMarketData.js'
+import MacroLineChart, { MacroCard, SHead } from '../MacroLineChart.jsx'
 
 const API = import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000'
 
@@ -17,9 +17,9 @@ const THEME_ARTICLE_MAP = {
   'AI半導体':          'semiconductor-theme',
   'AI人材':            'education-hr-theme',
   'エッジAI':          'physical-ai-edge-ai',
-  'EV・電気Auto車':    'ev-green-theme',
+  'EV・電気自動車':    'ev-green-theme',
   '全固体電池':        'ev-green-theme',
-  'Auto運転':          'ev-green-theme',
+  '自動運転':          'ev-green-theme',
   'ドローン':          'drone-theme',
   '輸送・物流':        'transport-logistics-theme',
   '造船':              'shipbuilding-theme',
@@ -63,7 +63,7 @@ const THEME_ARTICLE_MAP = {
   'リユース・中古品':  'retail-ec-theme',
   '防衛・航空':        'defense-theme',
   '宇宙・衛星':        'space-satellite-theme',
-  'ロボット・Auto化':  'robot-automation-theme',
+  'ロボット・自動化':  'robot-automation-theme',
   'レアアース・資源':  'rare-earth-resources-theme',
   'バフェット銘柄':    'sogo-shosha-analysis',
   'サイバーセキュリティ': 'cybersecurity-theme',
@@ -75,12 +75,12 @@ const THEME_ARTICLE_MAP = {
 }
 
 const ALL_NEWS = [
-  { date:'2026/04/19', tag:'NEW',    title:'週次レポート機能Add（毎週金曜Auto生成）' },
-  { date:'2026/04/19', tag:'UPDATE', title:'Custom Themeに資金フロー散布図をAdd' },
-  { date:'2026/04/19', tag:'UPDATE', title:'テーマHeatmapの期間別タブをRemove・整理' },
+  { date:'2026/04/19', tag:'NEW',    title:'Weekly Report feature added (auto-generated every Friday)' },
+  { date:'2026/04/19', tag:'UPDATE', title:'Custom Themeに資金フロー散布図を追加' },
+  { date:'2026/04/19', tag:'UPDATE', title:'テーマHeatmapの期間別タブを削除・整理' },
   { date:'2026/04/15', tag:'UPDATE', title:'Market Rankingの銘柄定義を修正・重複解消' },
   { date:'2026/04/10', tag:'UPDATE', title:'メニュー名「Heatmap」を「テーマHeatmap」に変更' },
-  { date:'2026/04/01', tag:'UPDATE', title:'コラム8本Add・各記事説明文充実' },
+  { date:'2026/04/01', tag:'UPDATE', title:'Added 8 new column articles' },
   { date:'2026/03/31', tag:'UPDATE', title:'Custom Theme機能強化' },
   { date:'2026/03/14', tag:'NEW',    title:'React版リリース' },
 ]
@@ -92,7 +92,7 @@ const TAG_COLORS = {
   'INFO':   { bg:'rgba(76,175,130,0.12)', color:'var(--green)',  border:'rgba(76,175,130,0.25)' },
 }
 
-// ── 市場コメントAuto生成 ──
+// ── 市場コメント自動生成 ──
 function AutoComment({ lines }) {
   // 防御的処理: null/undefined/空/文字列に対応
   let safeLines = lines
@@ -174,7 +174,7 @@ function generateMarketComment(themeData, macro) {
   const lines = []
 
   // 全体概況
-  lines.push(`【マーケット概況】現在の日本株テーマ相場は${mktState}です。全${total}テーマ中${riseCount}テーマがRising・${fallCount}テーマがFallingし、テーマ平均Returnは${avg>=0?'+':''}${avg.toFixed(2)}%。${hotThemes.length>0?`+5%超の急騰テーマが${hotThemes.length}個、`:''  }${coldThemes.length>0?`-5%超の急落テーマが${coldThemes.length}個あります。`:''}`)
+  lines.push(`【マーケット概況】現在の日本株テーマ相場は${mktState}です。全${total}テーマ中${riseCount}テーマがRising・${fallCount}テーマがFallingし、テーマAvgReturnは${avg>=0?'+':''}${avg.toFixed(2)}%。${hotThemes.length>0?`+5%超の急騰テーマが${hotThemes.length}個、`:''  }${coldThemes.length>0?`-5%超の急落テーマが${coldThemes.length}個あります。`:''}`)
 
   // マクロ環境
   if (lastNK != null || lastSP != null) {
@@ -320,31 +320,31 @@ export default function TopPage({ onNavigate }) {
       </div>
 
       {/* KPIカード */}
-      <SHead title="📊 マーケットサマリー（1ヶ月）" />
+      <SHead title="📊 Market Summary (1 Month)" />
       <div className="responsive-grid-4" style={{ marginBottom:'4px' }}>
         <KpiCard delay={0.05} loading={loading} label="Risingテーマ"
           value={<span>{s?s.rise:'-'}<span style={{ fontSize:'14px', color:'var(--text3)', fontWeight:400 }}>{s?` / ${s.total}`:''}</span></span>}
           valueColor="var(--red)"
           arrow={s ? (s.rise > s.fall ? 'up' : s.rise < s.fall ? 'down' : null) : null}
           sub="All Themes中"/>
-        <KpiCard delay={0.1} loading={loading} label="平均Return"
+        <KpiCard delay={0.1} loading={loading} label="AvgReturn"
           value={s?`${s.avg>=0?'+':''}${s.avg?.toFixed(2)}%`:'-'}
           valueColor={s?.avg>=0?'var(--red)':'var(--green)'}
           arrow={s ? (s.avg >= 0 ? 'up' : 'down') : null}
-          sub="期間:1ヶ月"/>
-        <KpiCard delay={0.15} loading={loading} label="資金流入TOP"
+          sub="Period: 1M"/>
+        <KpiCard delay={0.15} loading={loading} label="Top Inflow"
           value={<span>{s?.top?.theme||'-'}</span>}
           valueColor="var(--red)"
           arrow="up"
           sub={s?.top?<span style={{ color:'var(--red)', fontWeight:600 }}>+{s.top.pct.toFixed(1)}%</span>:'-'}/>
-        <KpiCard delay={0.2} loading={loading} label="資金流出TOP"
+        <KpiCard delay={0.2} loading={loading} label="Top Outflow"
           value={<span>{s?.bot?.theme||'-'}</span>}
           valueColor="var(--green)"
           arrow="down"
           sub={s?.bot?<span style={{ color:'var(--green)', fontWeight:600 }}>{s.bot.pct.toFixed(1)}%</span>:'-'}/>
       </div>
 
-      {/* 市場コメントAuto生成 */}
+      {/* 市場コメント自動生成 */}
       {!loading && themes && (
         <div style={{
           background:'rgba(74,158,255,0.05)', border:'1px solid rgba(74,158,255,0.18)',
@@ -353,7 +353,7 @@ export default function TopPage({ onNavigate }) {
         }}>
           <div style={{ fontSize:'10px', fontWeight:700, color:'var(--accent)',
             letterSpacing:'0.1em', textTransform:'uppercase', marginBottom:'6px' }}>
-            📝 本日のマーケットコメント（Auto生成・1ヶ月集計）
+            📝 本日のマーケットコメント（自動生成・1ヶ月集計）
           </div>
           <AutoComment lines={generateMarketComment(themes, macro)} />
 
@@ -389,7 +389,7 @@ export default function TopPage({ onNavigate }) {
                           style={{ padding:'5px 12px', borderRadius:'5px', fontSize:'11px',
                             background:'rgba(170,119,255,0.1)', border:'1px solid rgba(170,119,255,0.3)',
                             color:'#aa77ff', cursor:'pointer', fontFamily:'var(--font)', fontWeight:600 }}>
-                          📊 テーマ詳細へ
+                          📊 Theme Detailへ
                         </button>
                         {THEME_ARTICLE_MAP[t.theme] && (
                           <button onClick={() => onNavigate('Column', THEME_ARTICLE_MAP[t.theme])}
@@ -403,11 +403,11 @@ export default function TopPage({ onNavigate }) {
                     </div>
                   ))}
                 </div>
-                <button onClick={() => onNavigate('週次レポート')}
+                <button onClick={() => onNavigate('Weekly Report')}
                   style={{ padding:'6px 14px', borderRadius:'6px', fontSize:'11px',
                     background:'rgba(255,140,66,0.1)', border:'1px solid rgba(255,140,66,0.3)',
                     color:'#ff8c42', cursor:'pointer', fontFamily:'var(--font)', fontWeight:600 }}>
-                  📰 最新週次レポートを読む →
+                  📰 Read Latest Weekly Report →
                 </button>
               </div>
             )
@@ -416,7 +416,7 @@ export default function TopPage({ onNavigate }) {
       )}
 
       {/* マーケット指標（ミニカード＋比較グラフ統合）*/}
-      <SHead title="📈 マーケット指標・比較（1ヶ月）" />
+      <SHead title="📈 Market Indicators & Comparison (1 Month)" />
       {loading ? (
         <div style={{ color:'var(--text3)', fontSize:'13px', padding:'12px 0' }}><Dots /></div>
       ) : (

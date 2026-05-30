@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useMomentum } from '../../hooks/useMarketData'
+import { useMomentum } from '../../hooks/useMarketData.js'
 
 const API = import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000'
 
@@ -16,9 +16,9 @@ const THEME_ARTICLE_MAP = {
   'AI半導体':          'semiconductor-theme',
   'AI人材':            'education-hr-theme',
   'エッジAI':          'physical-ai-edge-ai',
-  'EV・電気Auto車':    'ev-green-theme',
+  'EV・電気自動車':    'ev-green-theme',
   '全固体電池':        'ev-green-theme',
-  'Auto運転':          'ev-green-theme',
+  '自動運転':          'ev-green-theme',
   'ドローン':          'drone-theme',
   '輸送・物流':        'transport-logistics-theme',
   '造船':              'shipbuilding-theme',
@@ -62,7 +62,7 @@ const THEME_ARTICLE_MAP = {
   'リユース・中古品':  'retail-ec-theme',
   '防衛・航空':        'defense-theme',
   '宇宙・衛星':        'space-satellite-theme',
-  'ロボット・Auto化':  'robot-automation-theme',
+  'ロボット・自動化':  'robot-automation-theme',
   'レアアース・資源':  'rare-earth-resources-theme',
   'バフェット銘柄':    'sogo-shosha-analysis',
   'サイバーセキュリティ': 'cybersecurity-theme',
@@ -204,7 +204,7 @@ function BubbleScatter({ data, mPeriod, setMPeriod, onNavigate }) {
   if (!data || data.length === 0) {
     return (
       <div style={{ textAlign:'center', padding:'60px', color:'var(--text3)' }}>
-        Loading...
+        Loading data...
       </div>
     )
   }
@@ -226,7 +226,7 @@ function BubbleScatter({ data, mPeriod, setMPeriod, onNavigate }) {
     if (typeof d.week_diff === 'number') return d.week_diff
     return 0
   }
-  const yAxisLabel = hasRealVolChg ? 'Volume Surge (%)' : '先週比 (pt)'
+  const yAxisLabel = hasRealVolChg ? 'Volume急増率 (%)' : '先週比 (pt)'
 
   // Y軸: trade_valueが有効かどうか
   const tvValues = filtered.map(d => d.trade_value ?? 0)
@@ -600,7 +600,7 @@ export default function Heatmap({ onNavigate }) {
         67テーマのReturnをテーマHeatmapと騰落モメンタムで多角的に分析できます。
       </p>
 
-      {/* ⑥ タブRemove・散布図を直接表示 */}
+      {/* ⑥ タブ削除・散布図を直接表示 */}
       <BubbleScatter data={momentumData} mPeriod={mPeriod} setMPeriod={setMPeriod} onNavigate={onNavigate} />
 
       <style>{`

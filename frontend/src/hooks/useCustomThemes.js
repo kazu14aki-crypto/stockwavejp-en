@@ -7,7 +7,7 @@
  * 呼び出し側は保存先を意識せずに使える。
  */
 import { useState, useEffect, useCallback } from 'react'
-import { supabase } from '../lib/supabase'
+import { supabase } from '../lib/supabase.js'
 import { useAuth } from './useAuth.jsx'
 
 // ── localStorage（未ログイン時） ─────────────────

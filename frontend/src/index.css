@@ -1,7 +1,8 @@
-/* Google Fontsはindex.htmlのpreconnect+media="print"で非同期読み込み済み */
-
+/* Google FontsはHTMLのpreconnectで非同期読み込み済み */
 html { overflow-x: clip; }
 
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=DM+Mono:wght@400;500&display=swap');
+ed changes
 
 /* ── ダーク（デフォルト）── */
 :root,
@@ -127,7 +128,7 @@ body {
 [data-theme="light"] svg text {
   fill: #475569 !important;
 }
-/* ③ ヒートマップテーブルセルの白文字は背景色が濃いため例外許可 */
+/* ③ Heatmapテーブルセルの白文字は背景色が濃いため例外許可 */
 [data-theme="light"] .heatmap-cell-text {
   fill: #fff !important;
 }
@@ -160,7 +161,7 @@ body {
 [data-theme="light"] td[style*="color: rgb(255, 255, 255)"],
 [data-theme="light"] td[style*="color:#fff"],
 [data-theme="light"] td[style*='color:"#fff"'] {
-  color: #fff !important; /* ヒートマップセルは背景が濃いのでそのまま白 */
+  color: #fff !important; /* Heatmapセルは背景が濃いのでそのまま白 */
 }
 
 

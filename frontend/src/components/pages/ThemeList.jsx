@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import { useThemes, useCustomThemeStats, useMacro, useMomentum, useMonthlyHeatmap } from '../../hooks/useMarketData'
-import { useCustomThemes } from '../../hooks/useCustomThemes'
-import RefreshIndicator from '../RefreshIndicator'
+import { useThemes, useCustomThemeStats, useMacro, useMomentum, useMonthlyHeatmap } from '../../hooks/useMarketData.js'
+import { useCustomThemes } from '../../hooks/useCustomThemes.js'
+import RefreshIndicator from '../RefreshIndicator.jsx'
 
 const API = import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000'
 const PERIODS = [
@@ -85,7 +85,7 @@ function AutoComment({ lines }) {
 }
 
 
-// ③ Autoコメント生成（Theme List）
+// ③ 自動コメント生成（Theme List）
 function genThemeComment(themes, summary, period, momentum) {
   if (!themes || !themes.length) return null
   const periodLabel = { '1d':'本日', '5d':'週間', '1mo':'1ヶ月', '3mo':'3ヶ月', '6mo':'6ヶ月', '1y':'1年間' }[period] || period
@@ -110,7 +110,7 @@ function genThemeComment(themes, summary, period, momentum) {
 
   // 全体相場概況
   const mktTone = avg >= 2 ? '強気' : avg >= 0.5 ? 'やや強気' : avg <= -2 ? '弱気' : avg <= -0.5 ? 'やや弱気' : '中立'
-  lines.push(`【${periodLabel}の全体概況】${periodLabel}の全67テーマを見ると、Rising${rising.length}テーマ・Falling${falling.length}テーマで平均Returnは${avg >= 0 ? '+' : ''}${avg.toFixed(2)}%（${mktTone}）。`)
+  lines.push(`【${periodLabel}の全体概況】${periodLabel}の全67テーマを見ると、Rising${rising.length}テーマ・Falling${falling.length}テーマでAvgReturnは${avg >= 0 ? '+' : ''}${avg.toFixed(2)}%（${mktTone}）。`)
 
   // トップ・ボトム
   lines.push(`最高騰テーマは「${top?.theme}」(${top?.pct >= 0 ? '+' : ''}${top?.pct?.toFixed(2)}%)、最大Fallingテーマは「${bot?.theme}」(${bot?.pct?.toFixed(2)}%)で、その差は${(top?.pct - bot?.pct)?.toFixed(1)}ptと${Math.abs(top?.pct - bot?.pct) > 15 ? 'テーマ間の格差が大きい' : 'テーマ間のばらつきは比較的小さい'}。`)
@@ -163,9 +163,9 @@ const THEME_ARTICLE_MAP = {
   'AI半導体':          'semiconductor-theme',
   'AI人材':            'education-hr-theme',
   'エッジAI':          'physical-ai-edge-ai',
-  'EV・電気Auto車':    'ev-green-theme',
+  'EV・電気自動車':    'ev-green-theme',
   '全固体電池':        'ev-green-theme',
-  'Auto運転':          'ev-green-theme',
+  '自動運転':          'ev-green-theme',
   'ドローン':          'drone-theme',
   '輸送・物流':        'transport-logistics-theme',
   '造船':              'shipbuilding-theme',
@@ -209,7 +209,7 @@ const THEME_ARTICLE_MAP = {
   'リユース・中古品':  'retail-ec-theme',
   '防衛・航空':        'defense-theme',
   '宇宙・衛星':        'space-satellite-theme',
-  'ロボット・Auto化':  'robot-automation-theme',
+  'ロボット・自動化':  'robot-automation-theme',
   'レアアース・資源':  'rare-earth-resources-theme',
   'バフェット銘柄':    'sogo-shosha-analysis',
   'サイバーセキュリティ': 'cybersecurity-theme',
@@ -813,7 +813,7 @@ function MonthlyThemePicker({ allThemes, selected, setSelected }) {
             cursor:'pointer', fontFamily:'var(--font)', fontWeight:600,
             border:'1px dashed var(--accent)', background:'rgba(74,158,255,0.06)',
             color:'var(--accent)', transition:'all 0.15s' }}>
-          {showPicker ? '▲ Close' : '＋ テーマをAddする'}
+          {showPicker ? '▲ Close' : '＋ テーマを追加する'}
         </button>
         {selected.length > 0 && (
           <button onClick={() => setSelected([])}
@@ -871,7 +871,7 @@ function MonthlyLineChart({ data, months, onNavigate }) {
   }, [allThemes.length])
 
   if (!data || !months || months.length === 0) {
-    return <div style={{ textAlign:'center', padding:'40px', color:'var(--text3)' }}>Loading...</div>
+    return <div style={{ textAlign:'center', padding:'40px', color:'var(--text3)' }}>Loading data...</div>
   }
 
   const dispMonths = months.slice(-12)
@@ -964,7 +964,7 @@ function MonthlyLineChart({ data, months, onNavigate }) {
       ) : (
         <div style={{ textAlign:'center', padding:'40px', color:'var(--text3)',
           background:'var(--bg2)', borderRadius:'10px', border:'1px solid var(--border)' }}>
-          上のボタンでSelect a theme
+          上のボタンでSelect Themeしてください
         </div>
       )}
     </div>
@@ -1072,7 +1072,7 @@ function MonthlyVolChart({ volTrendData, allThemeNames, months }) {
       ) : (
         <div style={{ textAlign:'center', padding:'40px', color:'var(--text3)',
           background:'var(--bg2)', borderRadius:'10px', border:'1px solid var(--border)' }}>
-          上のボタンでSelect a theme
+          上のボタンでSelect Themeしてください
         </div>
       )}
     </div>
@@ -1174,7 +1174,7 @@ function MonthlyTVChart({ volTrendData, allThemeNames, months }) {
       ) : (
         <div style={{ textAlign:'center', padding:'40px', color:'var(--text3)',
           background:'var(--bg2)', borderRadius:'10px', border:'1px solid var(--border)' }}>
-          上のボタンでSelect a theme
+          上のボタンでSelect Themeしてください
         </div>
       )}
     </div>
@@ -1289,7 +1289,7 @@ export default function ThemeList({ onNavigate }) {
                 arrow={summary.rise > summary.fall ? 'up' : summary.rise < summary.fall ? 'down' : null}
                 sub={`Falling: ${summary.fall}テーマ`} />
               <KpiCard delay={0.1}
-                label="All Themes平均Return"
+                label="All ThemesAvgReturn"
                 value={`${summary.avg >= 0 ? '+' : ''}${summary.avg?.toFixed(2)}%`}
                 valueColor={summary.avg >= 0 ? 'var(--red)' : 'var(--green)'}
                 arrow={summary.avg >= 0 ? 'up' : 'down'}
@@ -1335,7 +1335,7 @@ export default function ThemeList({ onNavigate }) {
               topColorFn={blueColor} botColorFn={orangeColor}
               valueKey="volume" bot5ValueKey="trade_value" formatFn={true} />
 
-            {/* ③ Autoコメント */}
+            {/* ③ 自動コメント */}
             <AutoComment lines={themeComment} />
             {onNavigate && (
               <div style={{ textAlign:'right', marginTop:'-4px', marginBottom:'8px' }}>

@@ -1,7 +1,7 @@
 export default function About() {
   return (
     <div style={{ padding:'28px 32px 60px', maxWidth:'760px', margin:'0 auto' }}>
-      <h1 style={{ fontSize:'24px', fontWeight:700, color:'var(--text)', marginBottom:'4px' }}>Operator Info</h1>
+      <h1 style={{ fontSize:'24px', fontWeight:700, color:'#e8f0ff', marginBottom:'4px' }}>Operator Info</h1>
       <p style={{ fontSize:'12px', color:'var(--text3)', marginBottom:'32px' }}>StockWaveJP について</p>
 
       <div style={{ background:'var(--bg2)', border:'1px solid var(--border)', borderRadius:'12px', padding:'28px 32px', marginBottom:'24px' }}>
@@ -10,9 +10,8 @@ export default function About() {
             ['サイト名', 'StockWaveJP'],
             ['URL', 'https://stockwavejp-en.com'],
             ['運営開始', '2026年3月'],
-            ['テーマ数', '67テーマ（半導体・AI・防衛・金融・エネルギー・インバウンドほか）'],
-            ['目的', '日本株テーマ別のReturn・Volume・Trade Valueを可視化し、投資判断の参考情報を提供すること'],
-            ['Target Users', '日本株に興味を持つ個人投資家・投資初心者'],
+            ['目的', '日本株テーマ別のReturn・Volume・Trade Valueをリアルタイムで可視化し、投資判断の参考情報を提供すること'],
+              ['Target Users', '日本株に興味を持つ個人投資家・投資初心者'],
           ].map(([label, value], i) => (
             <div key={i} style={{ display:'contents' }}>
               <span style={{ color:'var(--text3)', fontWeight:600, letterSpacing:'0.05em', fontSize:'11px', textTransform:'uppercase', paddingTop:'2px' }}>{label}</span>
@@ -23,15 +22,11 @@ export default function About() {
       </div>
 
       <div style={{ background:'var(--bg2)', border:'1px solid var(--border)', borderRadius:'12px', padding:'24px 28px', marginBottom:'24px' }}>
-        <h2 style={{ fontSize:'15px', fontWeight:700, color:'var(--text)', marginBottom:'14px' }}>サイトについて</h2>
+        <h2 style={{ fontSize:'15px', fontWeight:700, color:'#e8f0ff', marginBottom:'14px' }}>サイトについて</h2>
         <p style={{ fontSize:'13px', color:'var(--text2)', lineHeight:1.9, marginBottom:'12px' }}>
           StockWaveJPは、日本株のテーマ別動向を視覚的に把握するためのダッシュボードです。
-          半導体・AI・防衛・インバウンドなど<strong style={{ color:'var(--accent)' }}>67テーマ・約900銘柄</strong>のReturn・Volume・Trade ValueをAuto集計し、
-          どのテーマに資金が集まっているかを定期更新データで確認できます。
-        </p>
-        <p style={{ fontSize:'13px', color:'var(--text2)', lineHeight:1.9, marginBottom:'12px' }}>
-          Market Rankingでは国内主要株・時価総額別・市場区分（プライム/スタンダード/グロース）・
-          <strong style={{ color:'var(--accent)' }}>ETF（6カテゴリ・53銘柄）</strong>の分析も可能です。
+          半導体・AI・防衛・インバウンドなど67テーマのReturn・Volume・Trade Valueを自動集計し、
+          どのテーマに資金が集まっているかをリアルタイムで確認できます。
         </p>
         <p style={{ fontSize:'13px', color:'var(--text2)', lineHeight:1.9, marginBottom:'0' }}>
           個別銘柄の推奨や投資助言は行っておらず、あくまで「市場全体のテーマの流れを把握する」ための
