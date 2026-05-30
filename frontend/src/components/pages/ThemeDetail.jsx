@@ -336,13 +336,13 @@ function PickupStocks({ stocks, period }) {
       const parts = []
       if (pct >= 10)       parts.push('この期間のReturnは+' + pct.toFixed(1) + '%と大幅Risingしており、テーマ全体を牽引する動きを見せています')
       else if (pct >= 5)   parts.push('この期間のReturnは+' + pct.toFixed(1) + '%と堅調で、テーマ内の上位Rising銘柄です')
-      else if (pct >= 2)   parts.push('+' + pct.toFixed(1) + '%のRisingでテーマ平均を上回っています')
+      else if (pct >= 2)   parts.push('+' + pct.toFixed(1) + '%のRisingでテーマAvgを上回っています')
       else if (pct > 0)    parts.push('+' + pct.toFixed(1) + '%と小幅ながらプラスを維持しています')
 
       if (volChg >= 50)      parts.push('Volumeが+' + volChg.toFixed(0) + '%と急増しており、機関投資家・外国人投資家の大口資金の流入が強く示唆されます')
       else if (volChg >= 20) parts.push('Volumeが+' + volChg.toFixed(0) + '%増加しており、市場参加者の注目が高まっています')
 
-      if (sparkAccel > 3)    parts.push('直近の価格推移が後半にかけて加速（後半平均+' + sparkAccel.toFixed(1) + '%）しており、モメンタムが強まっています')
+      if (sparkAccel > 3)    parts.push('直近の価格推移が後半にかけて加速（後半Avg+' + sparkAccel.toFixed(1) + '%）しており、モメンタムが強まっています')
       else if (sparkAccel > 1) parts.push('価格推移が後半にかけてやや改善（後半+' + sparkAccel.toFixed(1) + '%）しています')
 
       if (tv >= 5e9)       parts.push('Trade Valueは' + fmtL(tv) + 'と非常に大きく、流動性が高い主力銘柄として積極的に売買されています')
@@ -586,7 +586,7 @@ function StockTable({ stocks: rawStocks }) {
                 <th key={h} style={{ ...thStyle, minWidth: h === 'ミニチャート' ? '72px' : '80px',
                   width: h === 'ミニチャート' ? '72px' : undefined }}>{h}</th>
               ))}
-              <th style={{ ...thStyle, minWidth:'60px', background:'var(--bg3)' }}>Add</th>
+              <th style={{ ...thStyle, minWidth:'60px', background:'var(--bg3)' }}>追加</th>
             </tr>
           </thead>
           <tbody>
@@ -632,7 +632,7 @@ function StockTable({ stocks: rawStocks }) {
                   <td style={tdC}>{s.tv_rank}位</td>
                   <td style={tdC}>
                     <button onClick={() => setModalStock({ ticker: s.ticker, name: s.name, price: s.price })}
-                      title="Custom ThemeにAdd"
+                      title="Add to Custom Theme"
                       style={{ background:'rgba(74,158,255,0.1)', border:'1px solid rgba(74,158,255,0.25)',
                         borderRadius:'4px', color:'var(--accent)', cursor:'pointer', fontSize:'13px',
                         padding:'3px 7px', fontFamily:'var(--font)', lineHeight:1 }}>＋</button>
@@ -679,9 +679,9 @@ const THEME_ARTICLE_MAP = {
   'AI半導体':          'semiconductor-theme',
   'AI人材':            'education-hr-theme',
   'エッジAI':          'physical-ai-edge-ai',
-  'EV・電気Auto車':    'ev-green-theme',
+  'EV・電気自動車':    'ev-green-theme',
   '全固体電池':        'ev-green-theme',
-  'Auto運転':          'ev-green-theme',
+  '自動運転':          'ev-green-theme',
   'ドローン':          'drone-theme',
   '輸送・物流':        'transport-logistics-theme',
   '造船':              'shipbuilding-theme',
@@ -725,7 +725,7 @@ const THEME_ARTICLE_MAP = {
   'リユース・中古品':  'retail-ec-theme',
   '防衛・航空':        'defense-theme',
   '宇宙・衛星':        'space-satellite-theme',
-  'ロボット・Auto化':  'robot-automation-theme',
+  'ロボット・自動化':  'robot-automation-theme',
   'レアアース・資源':  'rare-earth-resources-theme',
   'バフェット銘柄':    'sogo-shosha-analysis',
   'サイバーセキュリティ': 'cybersecurity-theme',
@@ -949,7 +949,7 @@ export default function ThemeDetail({ onNavigate, initialTheme }) {
                 <span style={{ fontSize:'18px', fontWeight:700, color:'var(--text)' }}>{selTheme}</span>
                 <span style={{ fontSize:'16px', fontFamily:'var(--mono)', fontWeight:700,
                   color: (detail?.avg ?? 0) >= 0 ? 'var(--red)' : 'var(--green)' }}>
-                  平均 {(detail?.avg ?? 0) >= 0 ? '+' : ''}{detail?.avg?.toFixed(1)}%
+                  Avg {(detail?.avg ?? 0) >= 0 ? '+' : ''}{detail?.avg?.toFixed(1)}%
                 </span>
                 {momentum && (<>
                   <div style={{ width:'1px', height:'20px', background:'var(--border)' }} />
@@ -1150,7 +1150,7 @@ export default function ThemeDetail({ onNavigate, initialTheme }) {
             </div>
           </>
         ) : (
-          <div style={{ color:'var(--text3)', fontSize:'13px' }}>Select a theme</div>
+          <div style={{ color:'var(--text3)', fontSize:'13px' }}>Select Themeしてください</div>
         )}
       </div>
       <style>{`

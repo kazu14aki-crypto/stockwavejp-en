@@ -3,7 +3,7 @@
  */
 import { useState, useEffect } from 'react'
 import StockBubbleChart from '../StockBubbleChart'
-import { useSubscription } from '../../hooks/useSubscription.jsx'
+import { useSubscription } from '../../hooks/useSubscription.js'
 import { useCustomThemes, themeToUrl, themeFromUrl } from '../../hooks/useCustomThemes'
 import { useAuth } from '../../hooks/useAuth.jsx'
 

@@ -18,25 +18,38 @@ import PrivacyPolicy from './components/pages/PrivacyPolicy'
 import TermsOfService from './components/pages/TermsOfService'
 import SiteInfo    from './components/pages/SiteInfo'
 import WeeklyReport from './components/pages/WeeklyReport'
+import StockSearch          from './components/pages/StockSearch'
+import InstitutionalHoldings from './components/pages/InstitutionalHoldings'
+import Plan                  from './components/pages/Plan'
+import LegalNotice           from './components/pages/LegalNotice'
+import PlanGate              from './components/PlanGate'
+import { SubscriptionProvider } from './hooks/useSubscription.js'
 
 const PAGES = [
-  { icon:'🏠', label:'Home',                   component:TopPage       },
-  { icon:'📊', label:'Theme List',                component:ThemeList     },
-  { icon:'🔥', label:'Heatmap',              component:Heatmap       },
-  { icon:'🔍', label:'Theme Detail',              component:ThemeDetail   },
-  { icon:'📋', label:'Market Ranking',           component:MarketRank    },
-  { icon:'🎨', label:'Custom Theme',             component:CustomTheme   },
+  { icon:'🏠', label:'Home',                    component:TopPage              },
+  { icon:'📊', label:'Theme List',              component:ThemeList            },
+  { icon:'🔥', label:'Heatmap',                 component:Heatmap              },
+  { icon:'🔍', label:'Theme Detail',            component:ThemeDetail          },
+  { icon:'📋', label:'Market Ranking',          component:MarketRank           },
+  { icon:'🔎', label:'Stock Search',            component:StockSearch          },
+  { icon:'🎨', label:'Custom Theme',            component:CustomTheme          },
+  { icon:'🏦', label:'Institutional Holdings',  component:InstitutionalHoldings},
+  { icon:'📰', label:'Weekly Report',           component:WeeklyReport         },
+  { icon:'📝', label:'Column',                  component:Column               },
 ]
 const PAGES_OTHER = [
-  { icon:'🏢', label:'About',    component:SiteInfo      },
-  { icon:'📣', label:'News',            component:News          },
-  { icon:'📖', label:'How to Use',              component:HowTo         },
-  { icon:'📰', label:'Weekly Report',          component:WeeklyReport  },
-  { icon:'📝', label:'Column',        component:Column        },
-  { icon:'⚙️', label:'Settings',               component:Settings      },
-  { icon:'⚖️', label:'Disclaimer',           component:Disclaimer    },
-  { icon:'🔒', label:'Privacy Policy', component:PrivacyPolicy },
-  { icon:'📋', label:'Terms of Service',             component:TermsOfService},
+  { icon:'🏢', label:'About',          component:SiteInfo      },
+  { icon:'📣', label:'News',           component:News          },
+  { icon:'📖', label:'How to Use',     component:HowTo         },
+  { icon:'💰', label:'Pricing',        component:Plan          },
+  { icon:'⚙️', label:'Settings',      component:Settings      },
+]
+
+const PAGES_FOOTER = [
+  { icon:'⚖️', label:'Disclaimer',        component:Disclaimer    },
+  { icon:'🔒', label:'Privacy Policy',    component:PrivacyPolicy },
+  { icon:'📋', label:'Terms of Service',  component:TermsOfService},
+  { icon:'🛒', label:'Legal Notice',      component:LegalNotice   },
 ]
 
 // ContactGoogleフォームURL（実際のURLに変更してください）
@@ -108,8 +121,9 @@ function AppInner() {
   const handlePageChange = (label, articleId = null) => {
     setCurrentPage(label)
     setSidebarOpen(false)
+    window.scrollTo({ top: 0, behavior: 'instant' })
     setTargetArticleId(articleId)
-    // Theme Detailの場合はTheme NameをSave
+    // Theme Detailの場合はTheme Nameを保存
     if (label === 'Theme Detail') {
       setTargetTheme(articleId || null)
     } else {
@@ -118,9 +132,9 @@ function AppInner() {
     // URLハッシュを更新（SEO・直接リンク対応）
     if (label === 'Column' && articleId) {
       window.history.replaceState(null, '', `#column/${articleId}`)
-    } else if (label === 'Terms of Service') {
+    } else if (label === '利用規約') {
       window.history.replaceState(null, '', '#terms')
-    } else if (label === 'Privacy Policy') {
+    } else if (label === 'プライバシーポリシー') {
       window.history.replaceState(null, '', '#privacy')
     } else {
       window.history.replaceState(null, '', window.location.pathname)
@@ -175,7 +189,17 @@ function AppInner() {
         background: 'var(--bg)',
       }}>
         {PageComponent ? (
-          <PageComponent {...pageProps} />
+          currentPage === 'Institutional Holdings' ? (
+            <PlanGate feature="institutional" onNavigate={handlePageChange}>
+              <PageComponent {...pageProps} />
+            </PlanGate>
+          ) : currentPage === 'Market Ranking' ? (
+            <PlanGate feature="market_detail" onNavigate={handlePageChange}>
+              <PageComponent {...pageProps} />
+            </PlanGate>
+          ) : (
+            <PageComponent {...pageProps} />
+          )
         ) : (
           <div style={{ display:'flex', alignItems:'center', justifyContent:'center',
             height:'calc(100vh - var(--header))', flexDirection:'column', gap:'16px', color:'var(--text3)' }}>
@@ -222,7 +246,7 @@ function AppInner() {
   )
 }
 
-// 旧バージョンのLocalStorageキャッシュをAutoRemove
+// 旧バージョンのLocalStorageキャッシュを自動削除
 ;(function cleanOldCache() {
   const CURRENT = 'swjp_v3_'
   const OLD_PREFIXES = ['swjp_', 'swjp_v1_', 'swjp_v2_']
@@ -241,7 +265,9 @@ function AppInner() {
 export default function App() {
   return (
     <AuthProvider>
+      <SubscriptionProvider>
       <AppInner />
+    </SubscriptionProvider>
     </AuthProvider>
   )
 }

@@ -1,3 +1,4 @@
+import { useSubscription } from '../../hooks/useSubscription.js'
 import { useState, useEffect } from 'react'
 
 function Loading() {
@@ -120,7 +121,7 @@ function ReportCard({ entry, isActive, onClick }) {
         <span style={{ fontSize:'18px', fontWeight:800, fontFamily:'var(--mono)', color:col }}>
           {avg >= 0 ? '+' : ''}{avg?.toFixed(2)}%
         </span>
-        <span style={{ fontSize:'10px', color:'var(--text3)' }}>週間テーマ平均</span>
+        <span style={{ fontSize:'10px', color:'var(--text3)' }}>週間テーマAvg</span>
         {entry.generated_at && (
           <span style={{ fontSize:'10px', color:'var(--text3)', marginLeft:'auto' }}>
             {entry.generated_at.slice(0, 10)}
@@ -142,6 +143,8 @@ export default function WeeklyReport({ onNavigate }) {
   const [loading,   setLoading]   = useState(true)
   const [error,     setError]     = useState(null)
   const [selWeek,   setSelWeek]   = useState(null)
+  const { isStandard, isDev } = useSubscription()
+  const canViewRecent = isStandard || isDev
   const [showReport, setShowReport] = useState(false)
 
   useEffect(() => {
@@ -211,7 +214,7 @@ export default function WeeklyReport({ onNavigate }) {
           {summary && (
             <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit,minmax(110px,1fr))', gap:'8px', marginTop:'14px' }}>
               <div style={{ background:'var(--bg2)', borderRadius:'8px', padding:'8px 12px', textAlign:'center' }}>
-                <div style={{ fontSize:'10px', color:'var(--text3)', marginBottom:'3px' }}>週間平均</div>
+                <div style={{ fontSize:'10px', color:'var(--text3)', marginBottom:'3px' }}>週間Avg</div>
                 <div style={{ fontSize:'17px', fontWeight:700, fontFamily:'var(--mono)',
                   color: summary.avg_pct_1w >= 0 ? 'var(--red)' : 'var(--green)' }}>
                   {summary.avg_pct_1w >= 0 ? '+' : ''}{summary.avg_pct_1w}%
@@ -332,8 +335,7 @@ export default function WeeklyReport({ onNavigate }) {
               }}
               isActive={i === 0 && !selWeek}
               onClick={() => {
-                if (i === 0) loadLatest()
-                else loadArchive(entry.week)
+                loadArchive(entry.week)
               }}
             />
           ))}
