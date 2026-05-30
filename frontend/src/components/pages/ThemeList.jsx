@@ -3,6 +3,76 @@ import { useThemes, useCustomThemeStats, useMacro, useMomentum, useMonthlyHeatma
 import { useCustomThemes } from '../../hooks/useCustomThemes.js'
 import RefreshIndicator from '../RefreshIndicator.jsx'
 
+// Theme name mapping (Japanese API data → English display)
+const THEME_NAME_EN = {
+  '半導体製造装置': 'Semiconductor Equipment',
+  '半導体検査装置': 'Semiconductor Testing',
+  '半導体材料': 'Semiconductor Materials',
+  'メモリ': 'Memory',
+  'パワー半導体': 'Power Semiconductor',
+  '次世代半導体': 'Next-Gen Semiconductor',
+  '生成AI': 'Generative AI',
+  'AIデータセンター': 'AI Datacenter',
+  'フィジカルAI': 'Physical AI',
+  'AI半導体': 'AI Semiconductor',
+  'エッジAI': 'Edge AI',
+  'EV・電気自動車': 'EV / Electric Vehicles',
+  '全固体電池': 'All-Solid-State Battery',
+  '自動運転': 'Autonomous Driving',
+  'ドローン': 'Drones',
+  '輸送・物流': 'Transport & Logistics',
+  '造船': 'Shipbuilding',
+  '再生可能エネルギー': 'Renewable Energy',
+  '太陽光発電': 'Solar Power',
+  '核融合発電': 'Nuclear Fusion',
+  '原子力発電': 'Nuclear Power',
+  '電力会社': 'Electric Utilities',
+  '石油': 'Oil & Gas',
+  '蓄電池': 'Energy Storage',
+  '光通信': 'Optical Communication',
+  '通信': 'Telecom',
+  '量子コンピューター': 'Quantum Computing',
+  'ウェアラブル端末': 'Wearables',
+  '防衛・航空': 'Defense & Aerospace',
+  '防衛・セキュリティ': 'Defense & Security',
+  '宇宙・衛星': 'Space & Satellite',
+  'サイバーセキュリティ': 'Cyber Security',
+  'インバウンド': 'Inbound Tourism',
+  '観光・ホテル・レジャー': 'Tourism & Hotels',
+  '銀行': 'Banking',
+  '地方銀行': 'Regional Banks',
+  '保険': 'Insurance',
+  '不動産': 'Real Estate',
+  'SaaS': 'SaaS',
+  'DX': 'DX',
+  'MLCC・電子部品': 'MLCC/Electronic Components',
+  'バフェット銘柄': 'Buffett Picks',
+  '親子上場': 'Parent-Child Listing',
+  'フィンテック': 'Fintech',
+  'ロボット・自動化': 'Robotics & Automation',
+  'レアアース・資源': 'Rare Earth & Resources',
+  '医薬品・バイオ': 'Pharma & Biotech',
+  'ヘルスケア・介護': 'Healthcare & Nursing',
+  '建設・インフラ': 'Construction & Infra',
+  '鉄鋼・素材': 'Steel & Materials',
+  '食品・飲料': 'Food & Beverage',
+  '小売・EC': 'Retail & E-Commerce',
+  '化学': 'Chemicals',
+  '農業・フードテック': 'Agritech & Foodtech',
+  '教育・HR・人材': 'Education & HR',
+  'ゲーム・エンタメ': 'Gaming & Entertainment',
+  '国土強靭化計画': 'National Resilience',
+  '資源（水素・ヘリウム・水）': 'Resources (H2/Helium/Water)',
+  '高配当': 'High Dividend',
+  'バリュー': 'Value Stocks',
+  'グロース': 'Growth Stocks',
+  'AI人材': 'AI Talent',
+  '造船・防衛': 'Shipbuilding & Defense',
+}
+
+// Helper to get English theme name
+const enTheme = (jp) => THEME_NAME_EN[jp] || jp
+
 const API = import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000'
 const PERIODS = [
   { label: '1D',  value: '1d'  },
@@ -88,7 +158,7 @@ function AutoComment({ lines }) {
 // ③ 自動コメント生成（Theme List）
 function genThemeComment(themes, summary, period, momentum) {
   if (!themes || !themes.length) return null
-  const periodLabel = { '1d':'Today', '5d':'週間', '1mo':'1ヶ月', '3mo':'3ヶ月', '6mo':'6ヶ月', '1y':'1年間' }[period] || period
+  const periodLabel = { '1d':'Today', '5d':'1W', '1mo':'1M', '3mo':'3M', '6mo':'6M', '1y':'1年間' }[period] || period
   const rising  = themes.filter(t => t.pct > 0)
   const falling = themes.filter(t => t.pct < 0)
   const avg     = summary?.avg ?? 0
@@ -109,8 +179,8 @@ function genThemeComment(themes, summary, period, momentum) {
   const lines = []
 
   // All 体相場概況
-  const mktTone = avg >= 2 ? '強気' : avg >= 0.5 ? 'やや強気' : avg <= -2 ? '弱気' : avg <= -0.5 ? 'やや弱気' : '中立'
-  lines.push(`【${periodLabel}のAll 体概況】${periodLabel}のAll 67テーマを見ると、Rising${rising.length}テーマ・Falling${falling.length}テーマでAvgReturnは${avg >= 0 ? '+' : ''}${avg.toFixed(2)}%（${mktTone}）。`)
+  const mktTone = avg >= 2 ? 'bullish' : avg >= 0.5 ? 'mildly bullish' : avg <= -2 ? 'bearish' : avg <= -0.5 ? 'mildly bearish' : '中立'
+  lines.push(`[${periodLabel} Overview] Looking at all 67 themes, ${rising.length}テーマ・Falling${falling.length}テーマでAvgReturnは${avg >= 0 ? '+' : ''}${avg.toFixed(2)}%（${mktTone}）。`)
 
   // トップ・ボトム
   lines.push(`最高騰テーマは「${top?.theme}」(${top?.pct >= 0 ? '+' : ''}${top?.pct?.toFixed(2)}%)、MaxFallingテーマは「${bot?.theme}」(${bot?.pct?.toFixed(2)}%)で、その差は${(top?.pct - bot?.pct)?.toFixed(1)}ptと${Math.abs(top?.pct - bot?.pct) > 15 ? 'テーマ間の格差が大きい' : 'テーマ間のばらつきは比較的小さい'}。`)
@@ -127,12 +197,12 @@ function genThemeComment(themes, summary, period, momentum) {
 
   // Volume急増
   if (volSurge.length > 0) {
-    lines.push(`📊 Volumeがvs prev+30%超の急増テーマ：「${volSurge.slice(0, 3).join('」「')}」。価格変動に先立つVolume増加は、大口資金の流入を示唆することが多い。`)
+    lines.push(`📊 Volume surging (+30% vs prev): ${volSurge.slice(0, 3).join(', ')}. Price動に先立つVolume増加は、大口資金の流入を示唆することが多い。`)
   }
 
   // モメンタム
   if (accel.length > 0) {
-    lines.push(`🔥 acceleratingモメンタム（短期・中期ともにRisingがaccelerating）：「${accel.slice(0, 4).join('」「')}」。既存トレンドが強まっており、追随資金が流入しやすい局面。`)
+    lines.push(`🔥 Accelerating momentum: ${accel.slice(0, 4).join('」「')}」。既存トレンドが強まっており、追随資金が流入しやすい局面。`)
   }
   if (decel.length > 0) {
     lines.push(`❄️ deceleratingモメンタム（騰勢が鈍化または反転）：「${decel.slice(0, 4).join('」「')}」。天井形成の可能性を示す場合があるが、底値からの反発を見極める必要もある。`)
@@ -315,7 +385,7 @@ function BubbleScatterMini({ onNavigate }) {
   const yS=v=>PT+GH-((v-yMin)/(yMax-yMin||1))*GH
   const rS=tv=>tv>0?8+(tv/tvMax)*30:6
   const bC=pct=>pct>=8?'#ff2244':pct>=4?'#ff5370':pct>=1.5?'#ff8c42':pct>=0?'#e8a040':pct>=-1.5?'#3db88a':pct>=-4?'#00c48c':'#00a878'
-  const fmtL=tv=>{ if(!tv)return'-'; if(tv>=1e12)return(tv/1e12).toFixed(1)+'兆'; if(tv>=1e8)return(tv/1e8).toFixed(1)+'B'; if(tv>=1e4)return(tv/1e4).toFixed(1)+'M'; return tv.toLocaleString() }
+  const fmtL=tv=>{ if(!tv)return'-'; if(tv>=1e12)return(tv/1e12).toFixed(1)+'T'; if(tv>=1e8)return(tv/1e8).toFixed(1)+'B'; if(tv>=1e4)return(tv/1e4).toFixed(1)+'M'; return tv.toLocaleString() }
   const x0=xS(0), y0=yS(0)
   return (
     <div>
@@ -323,7 +393,7 @@ function BubbleScatterMini({ onNavigate }) {
         <select value={mPeriod} onChange={e=>setMPeriod(e.target.value)} style={{
           background:'var(--bg3)', color:'var(--text)', border:'1px solid var(--border)',
           borderRadius:'6px', fontFamily:'var(--font)', fontSize:'12px', padding:'4px 10px', cursor:'pointer' }}>
-          {[{v:'1d',l:'1日'},{v:'5d',l:'1週間'},{v:'1mo',l:'1ヶ月'},{v:'3mo',l:'3ヶ月'}].map(p=>(
+          {[{v:'1d',l:'1D'},{v:'5d',l:'1W'},{v:'1mo',l:'1M'},{v:'3mo',l:'3M'}].map(p=>(
             <option key={p.v} value={p.v}>{p.l}</option>
           ))}
         </select>
@@ -501,7 +571,7 @@ function CustomThemeRow({ ct, period, pctColor, rank, volRankMap, tvRankMap }) {
   const pct = data?.pct ?? null
   const fmt = (n) => {
     if (!n && n !== 0) return '—'
-    if (n >= 1e12) return (n/1e12).toFixed(1)+'兆'
+    if (n >= 1e12) return (n/1e12).toFixed(1)+'T'
     if (n >= 1e8)  return (n/1e8).toFixed(1)+'B'
     if (n >= 1e4)  return (n/1e4).toFixed(1)+'M'
     return n.toLocaleString()
@@ -566,7 +636,7 @@ function CustomThemeRows({ themes, period, pctColor }) {
         ))}
       </div>
       <div style={{ fontSize:'11px', color:'var(--text3)', marginTop:'8px' }}>
-        💡 詳細データはサイドメニュー「Custom Theme」からConfirmできます
+        💡 詳細データはサイドMenu「Custom Theme」からConfirmできます
       </div>
     </>
   )
@@ -577,7 +647,7 @@ function CustomThemeRows({ themes, period, pctColor }) {
 function ThemeCard({ item, rank, maxAbs, valueKey='pct', barColor, pctColor, pctRank, volRank, tvRank, onNavigate, momentumState, momentumPct }) {
   const fmt = (n) => {
     if (!n) return '0'
-    if (n >= 1e12) return (n/1e12).toFixed(1)+'兆'
+    if (n >= 1e12) return (n/1e12).toFixed(1)+'T'
     if (n >= 1e8)  return (n/1e8).toFixed(1)+'B'
     if (n >= 1e4)  return (n/1e4).toFixed(1)+'M'
     return n.toLocaleString()
@@ -1012,7 +1082,7 @@ function MonthlyVolChart({ volTrendData, allThemeNames, months }) {
 
   const fmtL = v => {
     if (!v) return '0'
-    if (Math.abs(v) >= 1e12) return (v/1e12).toFixed(v%1e12===0?0:1)+'兆'
+    if (Math.abs(v) >= 1e12) return (v/1e12).toFixed(v%1e12===0?0:1)+'T'
     if (Math.abs(v) >= 1e8) return (v/1e8).toFixed(v%1e8===0?0:1)+'B'
     if (Math.abs(v) >= 1e4) return (v/1e4).toFixed(0)+'M'
     return v.toLocaleString()
@@ -1119,7 +1189,7 @@ function MonthlyTVChart({ volTrendData, allThemeNames, months }) {
 
   const fmtL = v => {
     if (!v) return '0'
-    if (Math.abs(v) >= 1e12) return (v/1e12).toFixed(v%1e12===0?0:1)+'兆'
+    if (Math.abs(v) >= 1e12) return (v/1e12).toFixed(v%1e12===0?0:1)+'T'
     if (Math.abs(v) >= 1e8) return (v/1e8).toFixed(v%1e8===0?0:1)+'B'
     if (Math.abs(v) >= 1e4) return (v/1e4).toFixed(0)+'M'
     return v.toLocaleString()
@@ -1398,7 +1468,7 @@ export default function ThemeList({ onNavigate }) {
                   {/* テーマHeatmap（BubbleScatter） */}
                   <div className="monthly-chart-cell">
                     <div style={{ fontSize:'13px', fontWeight:700, color:'var(--text)', marginBottom:'8px' }}>🔥 テーマHeatmap</div>
-                    <ExpandableChart title="テーマHeatmap（資金フロー）" showZoneDesc>
+                    <ExpandableChart title="テーマHeatmap（Fund Flow）" showZoneDesc>
                       <BubbleScatterMini onNavigate={onNavigate} />
                     </ExpandableChart>
                   </div>

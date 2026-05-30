@@ -2,11 +2,11 @@ import { useState, useEffect } from 'react'
 
 const API = import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000'
 const PERIODS = [
-  { label: '1週間', value: '5d' },
-  { label: '1ヶ月', value: '1mo' },
-  { label: '3ヶ月', value: '3mo' },
-  { label: '6ヶ月', value: '6mo' },
-  { label: '1年',   value: '1y'  },
+  { label: '1W', value: '5d' },
+  { label: '1M', value: '1mo' },
+  { label: '3M', value: '3mo' },
+  { label: '6M', value: '6mo' },
+  { label: '1Y',   value: '1y'  },
 ]
 
 function HBarChart({ items, color, maxAbs }) {
@@ -81,7 +81,7 @@ export default function FundFlow() {
   return (
     <div style={{ padding: '28px 32px 48px' }}>
       <h1 style={{ fontSize: '24px', fontWeight: 700, letterSpacing: '-0.02em', color: '#e8f0ff', marginBottom: '4px' }}>
-        資金フロー
+        Fund Flow
       </h1>
       <p style={{ fontSize: '12px', color: 'var(--text3)', marginBottom: '20px' }}>
         Risingテーマ vs Fallingテーマの騰落幅を比較。どのテーマに資金が集まっているか把握できます。

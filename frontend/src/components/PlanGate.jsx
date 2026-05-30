@@ -1,7 +1,7 @@
 /**
  * PlanGate — 特定プランのみアクセス可能なコンポーネント
  * 
- * 使い方:
+ * How to Use:
  *   <PlanGate feature="institutional" onNavigate={onNavigate}>
  *     <InstitutionalHoldings ... />
  *   </PlanGate>
@@ -32,7 +32,7 @@ export default function PlanGate({ feature, children, onNavigate }) {
       </h2>
       <p style={{ fontSize:'13px', color:'var(--text3)', lineHeight:1.8, marginBottom:'24px' }}>
         This feature requires <strong style={{ color:'var(--accent)' }}>{info.requiredPlan}</strong>.
-        {!isLoggedIn && <>\nご利用には<strong>Googleログイン</strong>が必要です。</>}
+        {!isLoggedIn && <>\nご利用には<strong>GoogleSign In</strong>。</>}
       </p>
       {!isLoggedIn ? (
         <button onClick={signIn} style={{

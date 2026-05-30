@@ -46,8 +46,8 @@ function TdExpandable({ title, children, style }) {
 
 const API = import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000'
 const PERIODS = [
-  {label:'1日',value:'1d'},{ label:'1週間',value:'5d'},{label:'1ヶ月',value:'1mo'},
-  { label:'3ヶ月',value:'3mo'},{label:'6ヶ月',value:'6mo'},{label:'1年',value:'1y'},
+  {label:'1D',value:'1d'},{ label:'1W',value:'5d'},{label:'1M',value:'1mo'},
+  { label:'3M',value:'3mo'},{label:'6M',value:'6mo'},{label:'1Y',value:'1y'},
 ]
 
 const COLORS = [
@@ -65,7 +65,7 @@ const STATE_COLORS = {
 
 function formatLarge(n) {
   if (!n) return '0'
-  if (n>=1e12) return (n/1e12).toFixed(1)+'兆'
+  if (n>=1e12) return (n/1e12).toFixed(1)+'T'
   if (n>=1e8)  return (n/1e8).toFixed(1)+'B'
   if (n>=1e4)  return (n/1e4).toFixed(1)+'M'
   return n.toLocaleString()
@@ -196,7 +196,7 @@ function VolTvChart({ selTheme }) {
     return <div style={{ textAlign:'center', padding:'32px', color:'var(--text3)', fontSize:'12px' }}>推移データがありません（GitHub Actionsの次回実行後に表示されます）</div>
 
   const { dates, volumes, trade_values } = data
-  // Trade Valueが全て0の場合はvolumesのみ表示
+  // Trade ValueがAll0の場合はvolumesのみ表示
   const hasTV = trade_values.some(v => v > 0)
   const W = 900, H = 300, PL = 72, PR = hasTV ? 72 : 20, PT = 24, PB = 40
   const GW = W - PL - PR, GH = H - PT - PB
@@ -346,7 +346,7 @@ function PickupStocks({ stocks, period }) {
       else if (sparkAccel > 1) parts.push('価格推移が後半にかけてやや改善（後半+' + sparkAccel.toFixed(1) + '%）しています')
 
       if (tv >= 5e9)       parts.push('Trade Valueは' + fmtL(tv) + 'と非常に大きく、流動性が高い主力銘柄として積極的に売買されています')
-      else if (tv >= 1e9)  parts.push('Trade Valueは' + fmtL(tv) + 'と十分な規模があり、積極的な売買が行われています')
+      else if (tv >= 1e9)  parts.push('Trade Valueは' + fmtL(tv) + 'と十 minな規模があり、積極的な売買が行われています')
 
       if (parts.length === 0) parts.push('Return・Volume・価格推移・Trade Valueの総合評価で、このテーマ内での注目度が高い銘柄として選定されました')
       return parts.join('。') + '。'
@@ -452,7 +452,7 @@ function PickupStocks({ stocks, period }) {
         ⚠️ <strong style={{ color:'var(--text2)' }}>注意：</strong>
         上記ピックアップはReturn・Volume・価格推移・Trade Valueを独自スコアで機械的に集計したものです。
         <strong style={{ color:'var(--text2)' }}>リアルタイムデータではなく</strong>、
-        data update timing（1日数回更新）に依存するため、
+        data update timing（1日数回Update）に依存するため、
         最新の市場状況と乖離する場合があります。
         特定銘柄の購入・売却を推奨するものではなく、
         <strong style={{ color:'var(--text2)' }}>投資の最終判断はご自身の責任でお願いします</strong>。
@@ -586,7 +586,7 @@ function StockTable({ stocks: rawStocks }) {
                 <th key={h} style={{ ...thStyle, minWidth: h === 'ミニチャート' ? '72px' : '80px',
                   width: h === 'ミニチャート' ? '72px' : undefined }}>{h}</th>
               ))}
-              <th style={{ ...thStyle, minWidth:'60px', background:'var(--bg3)' }}>追加</th>
+              <th style={{ ...thStyle, minWidth:'60px', background:'var(--bg3)' }}>Add</th>
             </tr>
           </thead>
           <tbody>
@@ -776,7 +776,7 @@ export default function ThemeDetail({ onNavigate, initialTheme }) {
       .catch(() => {})
   }, [])
 
-  // initialThemeが変わった場合にselThemeを更新
+  // initialThemeが変わった場合にselThemeをUpdate
   useEffect(() => {
     if (initialTheme) setSelTheme(initialTheme)
   }, [initialTheme])

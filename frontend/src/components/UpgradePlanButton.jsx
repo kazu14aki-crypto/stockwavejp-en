@@ -30,13 +30,13 @@ export default function UpgradePlanButton({ priceKey, label, color, disabled }) 
       })
       const data = await res.json()
       if (data.url) window.location.href = data.url
-      else throw new Error(data.error || 'エラー')
+      else throw new Error(data.error || 'Error')
     } catch (e) {
       console.error('Checkout error:', e)
       if (e.message?.includes('400') || e.message?.includes('Invalid')) {
-        alert('決済ページの準備中です。Stripe製品ID等の設定完了後に利用可能になります。\n（管理者：Render環境変数を確認してください）')
+        alert('決済ページの準備中です。Stripe製品ID等のSettingsDone後に利用可能になります。\n（管理者：Render環境変数をConfirmしてください）')
       } else {
-        alert('決済ページの読み込みに失敗しました。時間をおいて再試行してください。')
+        alert('決済ページの読み込みに失敗しました。時間をおいてRetryしてください。')
       }
     } finally {
       setLoading(false)
@@ -52,7 +52,7 @@ export default function UpgradePlanButton({ priceKey, label, color, disabled }) 
       cursor: loading ? 'wait' : 'pointer', opacity: loading ? 0.7 : 1,
       transition:'opacity 0.15s',
     }}>
-      {loading ? '読み込み中...' : isLoggedIn ? `${label}に申し込む →` : '🔑 ログインして申し込む'}
+      {loading ? 'Loading...' : isLoggedIn ? `${label}に申し込む →` : '🔑 Sign Inして申し込む'}
     </button>
   )
 }

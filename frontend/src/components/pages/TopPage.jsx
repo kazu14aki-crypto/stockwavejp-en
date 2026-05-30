@@ -84,7 +84,7 @@ const ALL_NEWS = [
   { date:'2026/05/08', tag:'NEW',    title:'Weekly Report (May 4-8) Published' },
   { date:'2026/03/14', tag:'NEW',    title:'StockWaveJP React Version Launched' },
 ]
-// 降順ソート・最新3件
+// 降順ソート・最新3 items
 const NEWS_LIST = [...ALL_NEWS].sort((a,b) => b.date.localeCompare(a.date)).slice(0,3)
 const TAG_COLORS = {
   'NEW':    { bg:'rgba(255,83,112,0.15)', color:'var(--red)',    border:'rgba(255,83,112,0.3)' },
@@ -149,10 +149,10 @@ function generateMarketComment(themeData, macro) {
   const avg       = s.avg ?? 0
 
   // 市場全体の状態
-  const mktState = riseCount >= total*0.7 ? '広範なrising相場' :
-                   riseCount >= total*0.55 ? 'rising優勢の相場' :
-                   fallCount >= total*0.7  ? '広範なfalling相場' :
-                   fallCount >= total*0.55 ? 'falling優勢の相場' : '方向感の定まらない相場'
+  const mktState = riseCount >= total*0.7 ? 'broad rally' :
+                   riseCount >= total*0.55 ? 'mostly rising' :
+                   fallCount >= total*0.7  ? 'broad decline' :
+                   fallCount >= total*0.55 ? 'mostly falling' : 'mixed market'
 
   const top3 = [...t].sort((a,b)=>b.pct-a.pct).slice(0,3)
   const bot3 = [...t].sort((a,b)=>a.pct-b.pct).slice(0,3)
@@ -162,10 +162,10 @@ function generateMarketComment(themeData, macro) {
 
   // マクロ情報
   const macroKeys = macro ? Object.keys(macro) : []
-  const nikkei = macro?.['国内主要株(1321)'] || macro?.['日経225連動型(1321)']
-  const topix  = macro?.['TOPIX連動型上場投信(1306)'] || macro?.['TOPIX指数'] || macro?.['TOPIX連動型(1306)'] || macro?.['1306.T']
+  const nikkei = macro?.['国内主要株(1321)'] || macro?.['Nikkei225 ETF: (1321)']
+  const topix  = macro?.['TOPIX ETF: 上場投信(1306)'] || macro?.['TOPIX指数'] || macro?.['TOPIX ETF: (1306)'] || macro?.['1306.T']
   const sp500  = macro?.['S&P500 ETF(SPY)']
-  const usdjpy = macro?.['ドル円']
+  const usdjpy = macro?.['USD/JPY: ']
   const lastNK = nikkei ? nikkei[nikkei.length-1]?.pct : null
   const lastTP = topix  ? topix[topix.length-1]?.pct  : null
   const lastSP = sp500  ? sp500[sp500.length-1]?.pct  : null
@@ -174,15 +174,15 @@ function generateMarketComment(themeData, macro) {
   const lines = []
 
   // 全体概況
-  lines.push(`【マーケット概況】現在の日本株Theme相場は${mktState}です。全${total}Theme中${riseCount}Themeがrising・${fallCount}Themeがfallingし、Theme平均Changeは${avg>=0?'+':''}${avg.toFixed(2)}%。${hotThemes.length>0?`+5%超のsurgingThemeが${hotThemes.length}個、`:''  }${coldThemes.length>0?`-5%超のplungingThemeが${coldThemes.length}個あります。`:''}`)
+  lines.push(`[Market Overview] Japanese stock theme market: ${mktState}. Total: ${total} themes, ${riseCount}Themeがrising・${fallCount}Themeがfallingし、Theme平均Changeは${avg>=0?'+':''}${avg.toFixed(2)}%。${hotThemes.length>0?`+5%超のsurgingThemeが${hotThemes.length}個、`:''  }${coldThemes.length>0?`-5%超のplungingThemeが${coldThemes.length}個あります。`:''}`)
 
   // マクロ環境
   if (lastNK != null || lastSP != null) {
     const macroLine = [
-      lastNK != null ? `日経225連動型${lastNK>=0?'+':''}${lastNK.toFixed(1)}%` : null,
-      lastTP != null ? `TOPIX連動型${lastTP>=0?'+':''}${lastTP.toFixed(1)}%` : null,
+      lastNK != null ? `Nikkei225 ETF: ${lastNK>=0?'+':''}${lastNK.toFixed(1)}%` : null,
+      lastTP != null ? `TOPIX ETF: ${lastTP>=0?'+':''}${lastTP.toFixed(1)}%` : null,
       lastSP != null ? `S&P500 ${lastSP>=0?'+':''}${lastSP.toFixed(1)}%` : null,
-      lastFX != null ? `ドル円${lastFX>=0?'+':''}${lastFX.toFixed(1)}%` : null,
+      lastFX != null ? `USD/JPY: ${lastFX>=0?'+':''}${lastFX.toFixed(1)}%` : null,
     ].filter(Boolean).join(' / ')
     const riskMode = lastSP != null ? (lastSP > 1 ? 'リスクオン（米国株高）でTheme株にも追い風。' : lastSP < -1 ? 'リスクオフ（米国株安）で地合いは慎重。' : '米国株は横ばい。') : ''
     lines.push(`【マクロ指標（参照Period）】${macroLine}。${riskMode}${lastFX != null ? (lastFX > 1 ? '円安傾向で輸出・グローバルstocksに有利な環境。' : lastFX < -1 ? '円高傾向で内需・消費系に資金が向かいやすい局面。' : '') : ''}`)
@@ -214,10 +214,10 @@ function generateMarketComment(themeData, macro) {
   // falling幅が大きいがVolumeも増加（底値模索か）
   const coldWithVolUp = coldThemes.filter(h => volUp.some(v => v.theme === h.theme))
   if (coldWithVolUp.length > 0) {
-    lines.push(`📉 fallingThemeでもVolume増加：「${coldWithVolUp.map(t=>t.theme).join('」「')}」。売り圧力が強いがVolume増は底値模索の兆しの可能性もある。反転サインを確認してから判断したい。`)
+    lines.push(`📉 fallingThemeでもVolume増加：「${coldWithVolUp.map(t=>t.theme).join('」「')}」。売り圧力が強いがVolume増は底値模索の兆しの可能性もある。反転サインをConfirmしてから判断したい。`)
   }
 
-  lines.push(`💡 Todayのポイント：${avg >= 2 ? '全体的に強い相場環境。強気Themeへの集中投資が奏功しやすい局面。' : avg <= -2 ? '全体的に弱い地合い。守備的なTheme（通信・医薬品等）や現金比率を高める局面。' : '方向感が定まらないため、モメンタムの強いThemeに絞り込み、Volume増加を確認してから参入するのが有効。'}`)
+  lines.push(`💡 Todayのポイント：${avg >= 2 ? '全体的に強い相場環境。強気Themeへの集中投資が奏功しやすい局面。' : avg <= -2 ? '全体的に弱い地合い。守備的なTheme（通信・医薬品等）や現金比率を高める局面。' : '方向感が定まらないため、モメンタムの強いThemeに絞り込み、Volume増加をConfirmしてから参入するのが有効。'}`)
 
   return lines
 }
@@ -289,17 +289,17 @@ export default function TopPage({ onNavigate }) {
         </h1>
         {/* PC:1行 / SP:折り返し */}
         <p style={{ fontSize:'11px', color:'var(--text2)', lineHeight:1.7 }} className="hero-desc">
-          日本株ThemeのChange・Volume・Trading Valueを定期取得し、資金の流れをTheme別に可視化。Period別Themeヒートマップや市場別詳細、解説コラムを組み合わせ、より実践的な投資分析をサポートします。
+          日本株ThemeのChange・Volume・Trading Valueを定期取得し、資金の流れをTheme別に可視化。Period別ThemeヒートマップやMarket Ranking、解説コラムを組み合わせ、より実践的な投資 min析をサポートします。
         </p>
       </div>
 
-      {/* お知らせ（小見出しのみ・コンパクト） */}
+      {/* News（小見出しのみ・コンパクト） */}
       <SHead title="📣 News & Updates" />
       <div style={{ display:'flex', flexDirection:'column', gap:'4px', marginBottom:'4px' }}>
         {NEWS_LIST.map((n,i)=>{
           const tc = TAG_COLORS[n.tag]||TAG_COLORS['INFO']
           return (
-            <div key={i} onClick={() => onNavigate?.('お知らせ')}
+            <div key={i} onClick={() => onNavigate?.('News')}
               style={{
               background:'var(--bg2)', border:'1px solid var(--border)',
               borderRadius:'6px', padding:'7px 12px',
@@ -326,7 +326,7 @@ export default function TopPage({ onNavigate }) {
           value={<span>{s?s.rise:'-'}<span style={{ fontSize:'14px', color:'var(--text3)', fontWeight:400 }}>{s?` / ${s.total}`:''}</span></span>}
           valueColor="var(--red)"
           arrow={s ? (s.rise > s.fall ? 'up' : s.rise < s.fall ? 'down' : null) : null}
-          sub="全Theme中"/>
+          sub="全 themes, "/>
         <KpiCard delay={0.1} loading={loading} label="平均Change"
           value={s?`${s.avg>=0?'+':''}${s.avg?.toFixed(2)}%`:'-'}
           valueColor={s?.avg>=0?'var(--red)':'var(--green)'}
@@ -392,7 +392,7 @@ export default function TopPage({ onNavigate }) {
                           📊 Theme詳細へ
                         </button>
                         {THEME_ARTICLE_MAP[t.theme] && (
-                          <button onClick={() => onNavigate('コラム・解説', THEME_ARTICLE_MAP[t.theme])}
+                          <button onClick={() => onNavigate('Column & Analysis', THEME_ARTICLE_MAP[t.theme])}
                             style={{ padding:'5px 12px', borderRadius:'5px', fontSize:'11px',
                               background:'rgba(74,158,255,0.07)', border:'1px solid rgba(74,158,255,0.2)',
                               color:'var(--accent)', cursor:'pointer', fontFamily:'var(--font)', fontWeight:600 }}>

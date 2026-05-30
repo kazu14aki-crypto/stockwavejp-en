@@ -1,10 +1,10 @@
-/* Google FontsはHTMLのpreconnectで非同期読み込み済み */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;
+
+/* Google Fonts loaded asynchronously via preconnect in HTML */
 html { overflow-x: clip; }
 
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=DM+Mono:wght@400;500&display=swap');
-ed changes
-
-/* ── ダーク（デフォルト）── */
+400;500;700&family=DM+Mono:wght@400;500&display=swap');
+/* ── Dark (Default) ── */
 :root,
 [data-theme="dark"] {
   --bg:      #0F172A;
@@ -23,7 +23,7 @@ ed changes
   --radius:  10px; --sidebar:220px; --header:52px;
 }
 
-/* ── ネイビー（高級感・暗い紺・暗い黄色文字）── */
+/* ── Navy (Dark navy background, yellow text) ── */
 [data-theme="navy"] {
   --bg:      #050c18;
   --bg2:     #081428;
@@ -41,7 +41,7 @@ ed changes
   --radius:  10px; --sidebar:220px; --header:52px;
 }
 
-/* ── ライト ── */
+/* ── Light ── */
 [data-theme="light"] {
   color-scheme: light;
   --bg:      #F8FAFC;
@@ -60,7 +60,7 @@ ed changes
   --radius:  10px; --sidebar:220px; --header:52px;
 }
 
-/* ホワイトテーマ：白文字を強制的に暗くする */
+/* White theme: force dark text */
 [data-theme="light"] {
   color: #111827;
 }

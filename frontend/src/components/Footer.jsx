@@ -47,13 +47,13 @@ export default function Footer() {
             </div>
           </div>
           <div>
-            <div style={{ fontWeight: 600, color: 'var(--text2)', marginBottom: '8px', fontSize: '11px' }}>メニュー</div>
+            <div style={{ fontWeight: 600, color: 'var(--text2)', marginBottom: '8px', fontSize: '11px' }}>Menu</div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
-              <a href="/#/" onClick={e => { e.preventDefault(); window.dispatchEvent(new CustomEvent('navigate', { detail: 'ホーム' })) }}
+              <a href="/#/" onClick={e => { e.preventDefault(); window.dispatchEvent(new CustomEvent('navigate', { detail: 'Home' })) }}
                 style={{ color: 'var(--text3)', textDecoration: 'none', cursor: 'pointer' }}
                 onMouseEnter={e => e.target.style.color = 'var(--accent)'}
                 onMouseLeave={e => e.target.style.color = 'var(--text3)'}>
-                ホーム
+                Home
               </a>
               <a href="/#/themes" onClick={e => { e.preventDefault(); window.dispatchEvent(new CustomEvent('navigate', { detail: 'Theme List' })) }}
                 style={{ color: 'var(--text3)', textDecoration: 'none', cursor: 'pointer' }}

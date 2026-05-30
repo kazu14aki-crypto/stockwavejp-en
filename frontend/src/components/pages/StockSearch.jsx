@@ -172,7 +172,7 @@ export default function StockSearch({ onNavigate }) {
         </>
       )}
 
-      {/* 検索バー */}
+      {/* Searchバー */}
       {!selected && (
         <div style={{ display:'flex', gap:'10px', marginBottom:'16px' }}>
           <input type="text" placeholder="Stock name or ticker (e.g. Toyota, 7203)"
@@ -185,12 +185,12 @@ export default function StockSearch({ onNavigate }) {
             padding:'12px 22px', background:'var(--accent)', color:'#fff',
             border:'none', borderRadius:'10px', cursor:'pointer',
             fontFamily:'var(--font)', fontSize:'14px', fontWeight:700, flexShrink:0 }}>
-            検索
+            Search
           </button>
         </div>
       )}
 
-      {/* 検索前 */}
+      {/* Search前 */}
       {!selected && !searchQ && (
         <div style={{ padding:'40px 20px', textAlign:'center', color:'var(--text3)' }}>
           <div style={{ fontSize:'40px', marginBottom:'12px' }}>🔎</div>
@@ -200,7 +200,7 @@ export default function StockSearch({ onNavigate }) {
         </div>
       )}
 
-      {/* 検索結果 */}
+      {/* Search結果 */}
       {!selected && searchQ && (
         <>
           <div style={{ fontSize:'12px', color:'var(--text3)', marginBottom:'10px' }}>
@@ -297,7 +297,7 @@ export default function StockSearch({ onNavigate }) {
                 + Add to Custom Theme
               </button>
               {colIds.map(cid => (
-                <button key={cid} onClick={() => onNavigate?.('コラム・解説', cid)}
+                <button key={cid} onClick={() => onNavigate?.('Column & Analysis', cid)}
                   style={{ padding:'10px 18px', border:'1px solid rgba(170,119,255,0.3)', borderRadius:'8px',
                     cursor:'pointer', fontFamily:'var(--font)', fontSize:'13px', fontWeight:600,
                     background:'rgba(170,119,255,0.08)', color:'#aa77ff' }}>
@@ -338,7 +338,7 @@ export default function StockSearch({ onNavigate }) {
               </div>
               <div style={{ display:'flex', flexWrap:'wrap', gap:'8px' }}>
                 {s.themes?.map(t => (
-                  <button key={t} onClick={() => onNavigate?.('テーマ別詳細', t)}
+                  <button key={t} onClick={() => onNavigate?.('Theme Detail', t)}
                     style={{ padding:'6px 14px', borderRadius:'20px', cursor:'pointer',
                       background:'rgba(74,158,255,0.08)', border:'1px solid rgba(74,158,255,0.25)',
                       color:'var(--accent)', fontFamily:'var(--font)', fontSize:'12px', fontWeight:600 }}>

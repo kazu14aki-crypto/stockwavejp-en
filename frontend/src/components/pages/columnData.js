@@ -1107,7 +1107,7 @@ NTT is developing the **IOWN (Innovative Optical and Wireless Network)** — an 
     tag: 'Semiconductor',
     title: 'Kioxia (285A): NAND Flash Memory World #2 — AI Storage Demand and the Recovery Cycle',
     date: '2026/04/11',
-    summary: 'Kioxia is the world's second-largest NAND flash manufacturer. We analyze the memory cycle recovery, AI storage demand, and post-IPO investment considerations.',
+    summary: 'Kioxia is the world\'s second-largest NAND flash manufacturer. We analyze the memory cycle recovery, AI storage demand, and post-IPO investment considerations.',
     body: `
 [Full analysis coming soon. This column covers: Kioxia (285A): NAND Flash Memory World #2 — AI Storage Demand and the Recovery Cycle]
 

@@ -12,7 +12,7 @@
  *   heatmap                            期間別Heatmap
  *   heatmap_monthly                    月次Heatmap
  *   momentum_{1mo/3mo}                 騰落モメンタム
- *   fund_flow_{period}                 資金フロー（gainers/losers/all）
+ *   fund_flow_{period}                 Fund Flow（gainers/losers/all）
  *   theme_detail_{Theme Name}_{period}   Theme Detail★
  *   seg_{セグメント名}_{period}        市場別銘柄詳細★
  *   market_rank_{period}               市場別ランキング一覧★
@@ -22,7 +22,7 @@ import { useState, useEffect, useCallback } from 'react'
 
 const API          = import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000'
 const DATA_URL     = '/data/market.json'
-const CACHE_PREFIX = 'swjp_v4_'  // v4: セグメント定義修正によるキャッシュ全リセット
+const CACHE_PREFIX = 'swjp_v4_'  // v4: セグメント定義修正によるキャッシュ全Reset
 const CACHE_TTL = 12 * 60 * 60 * 1000  // 12時間
 
 // ── LocalStorage ─────────────────────────────
@@ -45,7 +45,7 @@ function writeCache(key, data) {
 let _marketJson      = null
 let _marketJsonTs    = 0
 let _fetchingPromise = null
-const MARKET_JSON_TTL = 90 * 60 * 1000  // 90分
+const MARKET_JSON_TTL = 90 * 60 * 1000  // 90 min
 
 async function fetchMarketJson() {
   if (_marketJson && Date.now() - _marketJsonTs < MARKET_JSON_TTL) return _marketJson
@@ -214,7 +214,7 @@ export function useTrends(themes, period) {
         // 1. market.jsonから取得
         const json      = await fetchMarketJson()
         const trendsObj = json[jsonKey]?.data || {}
-        // 要求テーマが含まれているか確認
+        // 要求テーマが含まれているかConfirm
         const found = theList.some(t => trendsObj[t])
         if (found) {
           // 要求テーマのデータのみ返す
@@ -310,7 +310,7 @@ export function useMomentum(period = '1mo') {
         const raw  = json[`momentum_${period}`]
         if (raw) {
           const arr = raw?.data || raw || []
-          // volume_chgが全て0またはnullの場合はAPIにフォールバック
+          // volume_chgがAll0またはnullの場合はAPIにフォールバック
           const hasVol = Array.isArray(arr) && arr.some(d => d.volume_chg && d.volume_chg !== 0)
           if (hasVol) result = raw
         }
@@ -344,7 +344,7 @@ export function useSegmentDetail(segName, period) {
   useEffect(() => {
     if (!segName) return
     let cancelled = false
-    // セグメント変更時は必ずnullリセット（古いデータ残存防止）
+    // セグメント変更時は必ずnullReset（古いデータ残存防止）
     setData(null)
     setLoading(true)
     const jsonKey = `seg_${segName}_${period}`
@@ -456,7 +456,7 @@ export function useCustomThemeStats(tickers, period) {
 }
 
 /**
- * useFundFlow — 資金フロー ★market.json優先（旧：API直接取得）
+ * useFundFlow — Fund Flow ★market.json優先（旧：API直接取得）
  */
 export function useFundFlow(period) {
   const jsonKey     = `fund_flow_${period}`

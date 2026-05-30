@@ -185,7 +185,7 @@ export default function WeeklyReport({ onNavigate }) {
     const { summary } = report || {}
     return (
       <div style={{ padding:'20px 24px 80px', maxWidth:'860px', margin:'0 auto' }}>
-        {/* 戻るボタン */}
+        {/* Backボタン */}
         <button onClick={() => setShowReport(false)} style={{
           display:'flex', alignItems:'center', gap:'6px', marginBottom:'16px',
           background:'transparent', border:'1px solid var(--border)', borderRadius:'6px',
@@ -266,7 +266,7 @@ export default function WeeklyReport({ onNavigate }) {
 
           {summary?.top5_themes && onNavigate && (
             <div style={{ marginTop:'12px', display:'flex', flexWrap:'wrap', gap:'6px' }}>
-              <span style={{ fontSize:'10px', color:'var(--text3)', alignSelf:'center' }}>注目themesを確認:</span>
+              <span style={{ fontSize:'10px', color:'var(--text3)', alignSelf:'center' }}>注目themesをConfirm:</span>
               {summary.top5_themes.slice(0,3).map(t => (
                 <button key={t.theme} onClick={() => onNavigate('Theme Detail', t.theme)}
                   style={{ padding:'4px 10px', borderRadius:'5px', fontSize:'11px', fontFamily:'var(--font)',
@@ -291,7 +291,7 @@ export default function WeeklyReport({ onNavigate }) {
           <strong style={{ color:'var(--text2)' }}>投資の最終判断はご自身の責任でお願いします。</strong>
         </div>
 
-        {/* ④ 最下部に一覧に戻るボタン */}
+        {/* ④ 最下部に一覧にBackボタン */}
         <div style={{ textAlign:'center', marginTop:'24px' }}>
           <button onClick={() => setShowReport(false)} style={{
             padding:'10px 28px', borderRadius:'8px', fontSize:'13px', fontWeight:600,
@@ -313,14 +313,14 @@ export default function WeeklyReport({ onNavigate }) {
     <div style={{ padding:'20px 24px 80px', maxWidth:'960px', margin:'0 auto' }}>
       <h1 style={{ fontSize:'20px', fontWeight:700, color:'var(--text)', marginBottom:'4px' }}>📰 Weekly Report</h1>
       <p style={{ fontSize:'12px', color:'var(--text3)', marginBottom:'20px' }}>
-        毎週末更新予定。各カードをクリックしてレポート全文を確認できます。
+        毎週末Update予定。各カードをクリックしてレポート全文をConfirmできます。
       </p>
 
       {error && index.length === 0 ? (
         <div style={{ textAlign:'center', padding:'40px' }}>
           <div style={{ fontSize:'48px', marginBottom:'16px' }}>📭</div>
           <div style={{ color:'var(--text2)', fontSize:'15px' }}>レポートがまだありません</div>
-          <div style={{ color:'var(--text3)', fontSize:'12px', marginTop:'4px' }}>毎週末 更新予定</div>
+          <div style={{ color:'var(--text3)', fontSize:'12px', marginTop:'4px' }}>毎週末 Update予定</div>
         </div>
       ) : (
         <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fill,minmax(280px,1fr))', gap:'12px' }}>

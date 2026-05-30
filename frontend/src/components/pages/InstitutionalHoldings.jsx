@@ -229,7 +229,7 @@ export default function InstitutionalHoldings() {
       {tab==='issuer' && (
         loading ? <div style={{ textAlign:'center', padding:'40px', color:'var(--text3)' }}>⏳ Loading...</div>
         : allData.length===0 ? <div style={{ padding:'18px', background:'rgba(74,158,255,0.08)', borderRadius:'8px', fontSize:'13px', color:'var(--text2)' }}>📋 Data is being prepared. Updated daily.</div>
-        : !searchQ ? <div style={{ padding:'40px 20px', textAlign:'center', color:'var(--text3)', fontSize:'13px', lineHeight:2 }}><div style={{ fontSize:'32px', marginBottom:'10px' }}>🔍</div><div style={{ fontWeight:600, color:'var(--text2)', marginBottom:'6px' }}>Enter stock name or tickerして検索</div><div style={{ fontSize:'11px' }}>例: トヨタ自動車　7203　ソニーグループ</div></div>
+        : !searchQ ? <div style={{ padding:'40px 20px', textAlign:'center', color:'var(--text3)', fontSize:'13px', lineHeight:2 }}><div style={{ fontSize:'32px', marginBottom:'10px' }}>🔍</div><div style={{ fontWeight:600, color:'var(--text2)', marginBottom:'6px' }}>Enter stock name or tickerしてSearch</div><div style={{ fontSize:'11px' }}>例: トヨタ自動車　7203　ソニーグループ</div></div>
         : (
           <>
             <div style={{ fontSize:'12px', color:'var(--text3)', marginBottom:'12px' }}>「{searchQ}」: {issuerGroups.length}銘柄</div>
@@ -290,7 +290,7 @@ export default function InstitutionalHoldings() {
               <button onClick={()=>setShSearchQ(shQuery)} style={{ padding:'10px 20px', background:'var(--accent)', color:'#fff', border:'none', borderRadius:'8px', cursor:'pointer', fontFamily:'var(--font)', fontSize:'13px', fontWeight:600, flexShrink:0 }}>🔍 Search</button>
             </div>
             <div style={{ fontSize:'11px', color:'var(--text3)' }}>
-              ※ 有価証券 reports書に記載のMajor Shareholders上位10名（5%未満の保有者も含む）。年1〜4回更新。
+              ※ 有価証券 reports書に記載のMajor Shareholders上位10名（5%未満の保有者も含む）。年1〜4回Update。
             </div>
           </div>
           {shData.items ? (
@@ -302,7 +302,7 @@ export default function InstitutionalHoldings() {
               return filtered.length === 0 ? (
                 <div style={{ padding:'40px 20px', textAlign:'center', color:'var(--text3)', fontSize:'13px' }}>
                   <div style={{ fontSize:'32px', marginBottom:'10px' }}>🔍</div>
-                  {shSearchQ ? `「${shSearchQ}」に該当する銘柄が見つかりません` : 'Enter stock name or tickerして検索してください'}
+                  {shSearchQ ? `「${shSearchQ}」に該当するNo stocks found` : 'Enter stock name or tickerしてSearchしてください'}
                 </div>
               ) : (
                 <div style={{ display:'flex', flexDirection:'column', gap:'8px' }}>
@@ -371,7 +371,7 @@ export default function InstitutionalHoldings() {
           {[
             { icon:'📋', title:'大量保有 reports書とは', body:'上場株式の5%超を取得した投資家は、金融商品取引法により5営業日以内に金融庁のEDINETへ reports書を提出する義務があります。' },
             { icon:'📈', title:'How to read ownership ratios', body:'5〜7%：新規注目サイン。7〜10%：強い影響力。10%超：アクティビスト・経営参画の可能性。変更 reports書でIncreasingトレンドが続く場合は積み増し中のサインです。' },
-            { icon:'⚠️', title:'Notes', body:'データは最大5営業日の遅延があります。5%未満の保有は開示されません。投資判断はご自身でお決めください。' },
+            { icon:'⚠️', title:'Notes', body:'データは最大5営業日の遅延があります。5%未満の保有は開示されません。All investment decisions are your own responsibility。' },
           ].map(({icon,title,body}) => (
             <div key={title} style={{ background:'var(--bg2)', border:'1px solid var(--border)', borderRadius:'10px', padding:'16px 20px' }}>
               <h3 style={{ fontSize:'14px', fontWeight:700, color:'var(--text)', marginBottom:'8px' }}>{icon} {title}</h3>

@@ -66,7 +66,7 @@ export default function AddToThemeModal({ stock, onClose }) {
           <>
             {/* タブ */}
             <div style={{ display:'flex', gap:'4px', marginBottom:'14px' }}>
-              {[['select','既存テーマへ追加'],['create','Create new theme']].map(([k,l]) => (
+              {[['select','既存テーマへAdd'],['create','Create new theme']].map(([k,l]) => (
                 <button key={k} onClick={() => setMode(k)} style={{
                   flex:1, padding:'6px', borderRadius:'6px', fontSize:'11px',
                   fontWeight:600, cursor:'pointer', fontFamily:'var(--font)',
@@ -80,7 +80,7 @@ export default function AddToThemeModal({ stock, onClose }) {
             {mode === 'select' ? (
               themes.length === 0 ? (
                 <div style={{ textAlign:'center', padding:'16px', fontSize:'12px', color:'var(--text3)' }}>
-                  Custom Themeがありません。<br/>「Create new theme」から追加できます。
+                  Custom Themeがありません。<br/>「Create new theme」からAddできます。
                 </div>
               ) : (
                 <div style={{ display:'flex', flexDirection:'column', gap:'5px', maxHeight:'200px', overflowY:'auto' }}>
@@ -98,7 +98,7 @@ export default function AddToThemeModal({ stock, onClose }) {
                         onMouseLeave={e => (e.currentTarget.style.borderColor='var(--border)')}>
                         <span style={{ fontSize:'13px', fontWeight:600, color:'var(--text)' }}>{t.name}</span>
                         <span style={{ fontSize:'10px', color: alreadyIn ? 'var(--text3)' : 'var(--accent)', fontWeight:600 }}>
-                          {alreadyIn ? '追加済み' : `＋ 追加（${(t.stocks||[]).length}銘柄）`}
+                          {alreadyIn ? 'Add済み' : `＋ Add（${(t.stocks||[]).length}銘柄）`}
                         </span>
                       </button>
                     )

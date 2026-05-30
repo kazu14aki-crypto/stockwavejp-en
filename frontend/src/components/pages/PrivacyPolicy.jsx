@@ -1,53 +1,30 @@
 export default function PrivacyPolicy() {
+  const s = { padding:'32px 28px 60px', maxWidth:'780px', margin:'0 auto', lineHeight:1.9, fontSize:'13px', color:'var(--text2)' }
+  const h1 = { fontSize:'22px', fontWeight:700, color:'var(--text)', marginBottom:'8px' }
+  const h2 = { fontSize:'14px', fontWeight:700, color:'var(--text)', margin:'24px 0 8px', paddingBottom:'6px', borderBottom:'1px solid var(--border)' }
+  const p  = { marginBottom:'12px' }
   return (
-    <div style={{ padding:'28px 32px 60px', maxWidth:'760px', margin:'0 auto' }}>
-      <h1 style={{ fontSize:'24px', fontWeight:700, color:'#e8f0ff', marginBottom:'4px' }}>プライバシーポリシー</h1>
-      <p style={{ fontSize:'12px', color:'var(--text3)', marginBottom:'32px' }}>最終更新日：2026年3月26日</p>
-
-      {[
-        {
-          title: '1. 基本方針',
-          body: `StockWaveJP（以下「当サイト」）は、ユーザーの個人情報の取り扱いについて、以下のポリシーを定めます。当サイトは個人情報保護の重要性を認識し、適切な保護に努めます。`,
-        },
-        {
-          title: '2. 収集する情報',
-          body: `当サイトは以下の情報を収集することがあります。\n\n・アクセスログ（IPアドレス、ブラウザ情報、アクセス日時）\n・Googleアナリティクスによる利用状況データ（ページビュー、滞在時間等）\n・ユーザーがカスタムテーマ機能で入力したデータ（ブラウザのローカルストレージに保存）\n\n氏名・メールアドレス等の個人を特定できる情報は収集していません。`,
-        },
-        {
-          title: '3. Cookieの使用',
-          body: `当サイトは、ユーザー体験の向上および利用状況の分析を目的として、Cookieを使用しています。\n\n・Google Analytics：サイトの利用状況を分析するために使用します。収集されたデータは匿名化されており、個人を特定できません。\n・Google AdSense：広告配信の最適化のために使用します。\n\nブラウザの設定によりCookieを無効にすることができますが、一部の機能が正常に動作しなくなる場合があります。`,
-        },
-        {
-          title: '4. 広告について',
-          body: `当サイトは、第三者配信事業者であるGoogleが提供する広告サービス「Google AdSense」を利用しています。Googleを含む第三者配信事業者は、Cookieを使用して、ユーザーが当サイトや他のウェブサイトに過去にアクセスした際の情報に基づいて広告を配信します。\n\nユーザーは、Googleの広告設定でパーソナライズ広告を無効にできます。また、www.aboutads.info にアクセスすることで、第三者配信事業者のCookieを無効にすることも可能です。`,
-        },
-        {
-          title: '5. アクセス解析ツール',
-          body: `当サイトではGoogleアナリティクスを使用しています。Googleアナリティクスはトラフィックデータの収集のためにCookieを使用しています。このトラフィックデータは匿名で収集されており、個人を特定するものではありません。`,
-        },
-        {
-          title: '6. 免責事項',
-          body: `当サイトに掲載されている情報は、信頼できると考えられる情報源に基づいて作成していますが、その正確性・完全性を保証するものではありません。当サイトの情報を参考にして生じたいかなる損害についても、当サイト運営者は一切責任を負いません。`,
-        },
-        {
-          title: '7. プライバシーポリシーの変更',
-          body: `本ポリシーの内容は、法令その他の事情の変化により、予告なく変更することがあります。変更後のポリシーは本ページに掲載した時点で効力を生じます。`,
-        },
-        {
-          title: '8. お問い合わせ',
-          body: `プライバシーポリシーに関するお問い合わせは、X（旧Twitter）のDM（@StockWaveJP）またはサイト内のお問い合わせフォームよりご連絡ください。`,
-        },
-      ].map((s, i) => (
-        <div key={i} style={{ marginBottom:'28px' }}>
-          <h2 style={{ fontSize:'15px', fontWeight:700, color:'#e8f0ff', marginBottom:'10px',
-            borderLeft:'3px solid var(--accent)', paddingLeft:'12px' }}>
-            {s.title}
-          </h2>
-          <div style={{ fontSize:'13px', color:'var(--text2)', lineHeight:1.9, whiteSpace:'pre-line' }}>
-            {s.body}
-          </div>
-        </div>
-      ))}
+    <div style={s}>
+      <h1 style={h1}>Privacy Policy</h1>
+      <p style={{ ...p, fontSize:'12px', color:'var(--text3)' }}>Last updated: May 2026</p>
+      <h2 style={h2}>1. Information We Collect</h2>
+      <p style={p}><strong>Account Information:</strong> When you sign in with Google, we receive your email address, name, and profile picture from Google OAuth. We do not receive your Google password.</p>
+      <p style={p}><strong>Usage Data:</strong> We collect anonymized data on how you use the Service (pages visited, features used) to improve the platform.</p>
+      <p style={p}><strong>Custom Themes:</strong> If you create custom watchlists while logged in, this data is stored in our database (Supabase) associated with your account.</p>
+      <h2 style={h2}>2. How We Use Your Information</h2>
+      <p style={p}>We use your information to: (a) provide and improve the Service; (b) manage your subscription; (c) send important service notifications; (d) prevent fraud and abuse.</p>
+      <h2 style={h2}>3. Data Storage</h2>
+      <p style={p}>User data is stored on Supabase (a PostgreSQL-based cloud database). Payment data is processed by Stripe — we never store your credit card information on our servers.</p>
+      <h2 style={h2}>4. Third-Party Services</h2>
+      <p style={p}>We use: Google OAuth (authentication), Supabase (database), Stripe (payments), GitHub Pages (hosting), Render.com (API server), Infoway (market data). Each third party has its own privacy policy.</p>
+      <h2 style={h2}>5. Data Retention</h2>
+      <p style={p}>We retain your data for as long as your account is active. You may request deletion of your account and associated data by contacting us.</p>
+      <h2 style={h2}>6. Your Rights</h2>
+      <p style={p}>You have the right to access, correct, or delete your personal data. Contact us at the email below to exercise these rights.</p>
+      <h2 style={h2}>7. Cookies</h2>
+      <p style={p}>We use essential cookies for authentication and session management. We do not use advertising cookies or sell your data to advertisers.</p>
+      <h2 style={h2}>8. Contact</h2>
+      <p style={p}><a href="mailto:stockwavejp26@gmail.com" style={{ color:'var(--accent)' }}>stockwavejp26@gmail.com</a></p>
     </div>
   )
 }

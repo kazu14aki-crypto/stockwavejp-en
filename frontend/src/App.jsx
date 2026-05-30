@@ -123,18 +123,18 @@ function AppInner() {
     setSidebarOpen(false)
     window.scrollTo({ top: 0, behavior: 'instant' })
     setTargetArticleId(articleId)
-    // Theme Detailの場合はTheme Nameを保存
+    // Theme Detailの場合はTheme NameをSave
     if (label === 'Theme Detail') {
       setTargetTheme(articleId || null)
     } else {
       setTargetTheme(null)
     }
-    // URLハッシュを更新（SEO・直接リンク対応）
+    // URLハッシュをUpdate（SEO・直接リンク対応）
     if (label === 'Column' && articleId) {
       window.history.replaceState(null, '', `#column/${articleId}`)
-    } else if (label === '利用規約') {
+    } else if (label === 'Terms of Service') {
       window.history.replaceState(null, '', '#terms')
-    } else if (label === 'プライバシーポリシー') {
+    } else if (label === 'Privacy Policy') {
       window.history.replaceState(null, '', '#privacy')
     } else {
       window.history.replaceState(null, '', window.location.pathname)
@@ -246,7 +246,7 @@ function AppInner() {
   )
 }
 
-// 旧バージョンのLocalStorageキャッシュを自動削除
+// 旧バージョンのLocalStorageキャッシュを自動Delete
 ;(function cleanOldCache() {
   const CURRENT = 'swjp_v3_'
   const OLD_PREFIXES = ['swjp_', 'swjp_v1_', 'swjp_v2_']

@@ -2,15 +2,15 @@
  * useSubscription — サブスクリプション状態管理
  * 
  * プラン種別:
- *   'free'     → Free（未ログイン or サブスクなし）
+ *   'free'     → Free（未Sign In or サブスクなし）
  *   'standard' → スタンダード（月額¥980 or 年額¥9,800）
  *   'pro'      → プロ（月額¥1,980 or 年額¥19,800）
  *   'dev'      → 開発者（全機能解放）
  *
  * 機能制限:
- *   機関投資家保有 → pro のみ
- *   週次レポートアーカイブ → standard以上
- *   カスタムテーマ分析（AI） → pro のみ
+ *   Institutional Holdings → pro のみ
+ *   Weekly Reportアーカイブ → standard以上
+ *   Custom Theme min析（AI） → pro のみ
  */
 import { useState, useEffect, createContext, useContext } from 'react'
 import { supabase } from '../lib/supabase.js'
@@ -41,17 +41,17 @@ export function SubscriptionProvider({ children }) {
 
         const email = session.user.email
 
-        // 開発者チェック（常に全機能解放）
+        // Developer check（常に全機能解放）
         if (DEV_EMAILS.includes(email)) {
           if (!cancelled) { setPlan('dev'); setLoading(false) }
           return
         }
 
-        // ③ 初回ログインから30日間はProプラン体験版
+        // ③ 初回Sign Inから30日間はProプラン体験版
         const userMeta = session.user.user_metadata || {}
         const firstLoginAt = userMeta.first_login_at
         if (!firstLoginAt) {
-          // 初回ログイン日時を記録
+          // First login日時を記録
           await supabase.auth.updateUser({
             data: { first_login_at: new Date().toISOString() }
           }).catch(() => {})
@@ -99,7 +99,7 @@ export function SubscriptionProvider({ children }) {
 
     checkSubscription()
 
-    // ログイン状態変化を監視
+    // Sign In状態変化を監視
     const { data: { subscription } } = supabase.auth.onAuthStateChange(() => {
       setLoading(true)
       checkSubscription()
@@ -117,7 +117,7 @@ export function SubscriptionProvider({ children }) {
     isStandard: ['standard','pro','pro_trial','dev'].includes(plan),
     isPro:      ['pro','pro_trial','dev'].includes(plan),
     isDev:      plan === 'dev',
-    // 機能アクセス判定
+    // Feature access check
     canAccess: (feature) => {
       const rules = {
         'weekly_archive':      ['standard', 'pro', 'pro_trial', 'dev'],
@@ -127,7 +127,7 @@ export function SubscriptionProvider({ children }) {
         'portfolio_analysis':  ['pro', 'pro_trial', 'dev'],
         // ① 短期期間（1日・1週・1ヶ月・2ヶ月）はStandard以上のみ
         'short_period':        ['standard', 'pro', 'pro_trial', 'dev'],
-        // ① 市場別詳細はStandard以上のみ
+        // ① Market RankingはStandard以上のみ
         'market_detail':       ['standard', 'pro', 'pro_trial', 'dev'],
       }
       return rules[feature]?.includes(plan) ?? true
@@ -138,11 +138,11 @@ export function SubscriptionProvider({ children }) {
       if (['standard', 'pro', 'pro_trial', 'dev'].includes(plan)) return true
       return FREE_PERIODS.includes(period)
     },
-    // ② カスタムテーマ上限
+    // ② Custom Theme上限
     maxThemes: { free:1, standard:5, pro:30, pro_trial:30, dev:999 }[plan] ?? 1,
     maxStocks: { free:10, standard:20, pro:50, pro_trial:50, dev:999 }[plan] ?? 10,
     planLabel: {
-      free:'Free', standard:'スタンダード', pro:'プロ', pro_trial:'プロ体験版（無料）', dev:'開発者'
+      free:'Free', standard:'Standard', pro:'Pro', pro_trial:'Pro Trial (Free)', dev:'Developer'
     }[plan] || 'Free',
   }
 

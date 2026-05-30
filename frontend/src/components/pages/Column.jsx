@@ -1,25 +1,25 @@
 import { useState, useEffect } from 'react'
 
 const THEME_ARTICLE_MAP = {
-  '半導体製造装置':    'semiconductor-theme',
+  'Semiconductor Equipment':    'semiconductor-theme',
   '半導体検査装置':    'semiconductor-theme',
   '半導体材料':        'semiconductor-theme',
   'メモリ':            'semiconductor-theme',
-  'パワー半導体':      'power-semiconductor',
+  'Power Semiconductor':      'power-semiconductor',
   '次世代半導体':      'semiconductor-theme',
-  '生成AI':            'ai-cloud-theme',
+  'Generative AI':            'ai-cloud-theme',
   'AIデータセンター':  'ai-cloud-theme',
-  'フィジカルAI':      'physical-ai-edge-ai',
+  'Physical AI / Edge AI':      'physical-ai-edge-ai',
   'AI半導体':          'semiconductor-theme',
   'AI人材':            'education-hr-theme',
-  'エッジAI':          'physical-ai-edge-ai',
+  'Physical AI / Edge AI':          'physical-ai-edge-ai',
   'EV・電気自動車':    'ev-green-theme',
   '全固体電池':        'ev-green-theme',
   '自動運転':          'ev-green-theme',
   'ドローン':          'drone-theme',
   '輸送・物流':        'transport-logistics-theme',
-  '造船':              'shipbuilding-theme',
-  '再生可能エネルギー':'renewable-energy-theme',
+  'Shipbuilding':              'shipbuilding-theme',
+  'Renewable Energy':'renewable-energy-theme',
   '太陽光発電':        'renewable-energy-theme',
   '核融合発電':        'renewable-energy-theme',
   '原子力発電':        'renewable-energy-theme',
@@ -29,7 +29,7 @@ const THEME_ARTICLE_MAP = {
   '蓄電池':            'ev-green-theme',
   '資源（水素・ヘリウム・水）': 'rare-earth-resources-theme',
   'IOWN':              'optical-communication',
-  '光通信':            'optical-communication',
+  'Optical Communication':            'optical-communication',
   '通信':              'telecom-theme',
   '量子コンピューター':'ai-cloud-theme',
   'SaaS':              'fintech-theme',
@@ -43,7 +43,7 @@ const THEME_ARTICLE_MAP = {
   '医薬品・バイオ':    'pharma-bio-theme',
   'ヘルスケア・介護':  'healthcare-nursing-theme',
   '薬局・ドラッグストア': 'healthcare-nursing-theme',
-  '銀行・金融':        'banking-finance-theme',
+  'Banking/Finance':        'banking-finance-theme',
   '地方銀行':          'regional-bank-theme',
   '保険':              'insurance-theme',
   'フィンテック':      'fintech-theme',
@@ -55,45 +55,45 @@ const THEME_ARTICLE_MAP = {
   '農業・フードテック':'agritech-foodtech-theme',
   '小売・EC':          'retail-ec-theme',
   '観光・ホテル・レジャー': 'tourism-hotel-theme',
-  'インバウンド':      'inbound-theme',
+  'Inbound Tourism':      'inbound-theme',
   'リユース・中古品':  'retail-ec-theme',
-  '防衛・航空':        'defense-theme',
+  'Defense & Aerospace':        'defense-theme',
   '宇宙・衛星':        'space-satellite-theme',
   'ロボット・自動化':  'robot-automation-theme',
   'レアアース・資源':  'rare-earth-resources-theme',
-  'バフェット銘柄':    'sogo-shosha-analysis',
+  'Warren Buffett':    'sogo-shosha-analysis',
   'サイバーセキュリティ': 'cybersecurity-theme',
   '警備':              'cybersecurity-theme',
   '脱炭素・ESG':       'ev-green-theme',
   '教育・HR・人材':    'education-hr-theme',
   '人材派遣':          'education-hr-theme',
-  'ゲーム・エンタメ':  'game-entertainment-theme',
+  'Gaming & Entertainment':  'game-entertainment-theme',
 }
 import COLUMNS from './columnData.js'
 
-const CATEGORIES = ['All', 'Theme', '入門', ' min析手法', '投資手法', '用語解説', '個別銘柄']
+const CATEGORIES = ['All', 'Theme', 'Basics', ' min析手法', 'Strategy', 'Glossary', 'Stock Analysis']
 
 const CAT_COLORS = {
-  '入門':       { bg:'rgba(74,158,255,0.1)',  color:'#4a9eff',  border:'rgba(74,158,255,0.25)' },
-  '半導体':     { bg:'rgba(255,69,96,0.1)',   color:'#ff4560',  border:'rgba(255,69,96,0.25)' },
-  'AI・クラウド':{ bg:'rgba(170,119,255,0.1)', color:'#aa77ff', border:'rgba(170,119,255,0.25)' },
-  '防衛・宇宙': { bg:'rgba(76,175,130,0.1)',  color:'#4caf82',  border:'rgba(76,175,130,0.25)' },
-  'インバウンド':{ bg:'rgba(255,140,66,0.1)',  color:'#ff8c42',  border:'rgba(255,140,66,0.25)' },
-  'EV・脱炭素': { bg:'rgba(6,214,160,0.1)',   color:'#06d6a0',  border:'rgba(6,214,160,0.25)' },
-  ' min析手法':   { bg:'rgba(255,214,25,0.1)',  color:'#ffd619',  border:'rgba(255,214,25,0.25)' },
-  '造船':       { bg:'rgba(91,156,246,0.1)',  color:'#5b9cf6',  border:'rgba(91,156,246,0.25)' },
-  '親子上場':   { bg:'rgba(255,140,66,0.1)',  color:'#ff8c42',  border:'rgba(255,140,66,0.25)' },
-  'バフェット銘柄': { bg:'rgba(255,214,25,0.1)', color:'#ffd619', border:'rgba(255,214,25,0.25)' },
-  'フィジカルAI': { bg:'rgba(170,119,255,0.1)', color:'#aa77ff', border:'rgba(170,119,255,0.25)' },
-  '再生可能エネルギー': { bg:'rgba(6,214,160,0.12)', color:'#06d6a0', border:'rgba(6,214,160,0.3)' },
-  'エッジAI':   { bg:'rgba(170,119,255,0.1)', color:'#aa77ff', border:'rgba(170,119,255,0.25)' },
-  'パワー半導体': { bg:'rgba(255,69,96,0.1)',  color:'#ff4560',  border:'rgba(255,69,96,0.25)' },
+  'Basics':       { bg:'rgba(74,158,255,0.1)',  color:'#4a9eff',  border:'rgba(74,158,255,0.25)' },
+  'Semiconductor':     { bg:'rgba(255,69,96,0.1)',   color:'#ff4560',  border:'rgba(255,69,96,0.25)' },
+  'Generative AI':{ bg:'rgba(170,119,255,0.1)', color:'#aa77ff', border:'rgba(170,119,255,0.25)' },
+  'Defense & Aerospace': { bg:'rgba(76,175,130,0.1)',  color:'#4caf82',  border:'rgba(76,175,130,0.25)' },
+  'Inbound Tourism':{ bg:'rgba(255,140,66,0.1)',  color:'#ff8c42',  border:'rgba(255,140,66,0.25)' },
+  'EV/Green': { bg:'rgba(6,214,160,0.1)',   color:'#06d6a0',  border:'rgba(6,214,160,0.25)' },
+  'Analysis Methods':   { bg:'rgba(255,214,25,0.1)',  color:'#ffd619',  border:'rgba(255,214,25,0.25)' },
+  'Shipbuilding':       { bg:'rgba(91,156,246,0.1)',  color:'#5b9cf6',  border:'rgba(91,156,246,0.25)' },
+  'Corporate Governance':   { bg:'rgba(255,140,66,0.1)',  color:'#ff8c42',  border:'rgba(255,140,66,0.25)' },
+  'Warren Buffett': { bg:'rgba(255,214,25,0.1)', color:'#ffd619', border:'rgba(255,214,25,0.25)' },
+  'Physical AI / Edge AI': { bg:'rgba(170,119,255,0.1)', color:'#aa77ff', border:'rgba(170,119,255,0.25)' },
+  'Renewable Energy': { bg:'rgba(6,214,160,0.12)', color:'#06d6a0', border:'rgba(6,214,160,0.3)' },
+  'Physical AI / Edge AI':   { bg:'rgba(170,119,255,0.1)', color:'#aa77ff', border:'rgba(170,119,255,0.25)' },
+  'Power Semiconductor': { bg:'rgba(255,69,96,0.1)',  color:'#ff4560',  border:'rgba(255,69,96,0.25)' },
   'NISA':       { bg:'rgba(6,214,160,0.1)',   color:'#06d6a0',  border:'rgba(6,214,160,0.25)' },
-  '光通信':     { bg:'rgba(74,158,255,0.1)',  color:'#4a9eff',  border:'rgba(74,158,255,0.25)' },
-  '国土強靭化': { bg:'rgba(76,175,130,0.1)',  color:'#4caf82',  border:'rgba(76,175,130,0.25)' },
-  'イラク':     { bg:'rgba(180,120,80,0.1)',  color:'#b47850',  border:'rgba(180,120,80,0.25)' },
-  'ゲーム・エンタメ':    { bg:'rgba(170,119,255,0.1)', color:'#aa77ff', border:'rgba(170,119,255,0.25)' },
-  '銀行・金融':         { bg:'rgba(74,158,255,0.1)',  color:'#4a9eff', border:'rgba(74,158,255,0.25)' },
+  'Optical Communication':     { bg:'rgba(74,158,255,0.1)',  color:'#4a9eff',  border:'rgba(74,158,255,0.25)' },
+  'National Resilience': { bg:'rgba(76,175,130,0.1)',  color:'#4caf82',  border:'rgba(76,175,130,0.25)' },
+  'Geopolitics':     { bg:'rgba(180,120,80,0.1)',  color:'#b47850',  border:'rgba(180,120,80,0.25)' },
+  'Gaming & Entertainment':    { bg:'rgba(170,119,255,0.1)', color:'#aa77ff', border:'rgba(170,119,255,0.25)' },
+  'Banking/Finance':         { bg:'rgba(74,158,255,0.1)',  color:'#4a9eff', border:'rgba(74,158,255,0.25)' },
   '地方銀行':           { bg:'rgba(74,158,255,0.08)', color:'#4a9eff', border:'rgba(74,158,255,0.2)' },
   '保険':               { bg:'rgba(76,175,130,0.1)',  color:'#4caf82', border:'rgba(76,175,130,0.25)' },
   '不動産':             { bg:'rgba(255,140,66,0.1)',  color:'#ff8c42', border:'rgba(255,140,66,0.25)' },
@@ -115,9 +115,9 @@ const CAT_COLORS = {
   '農業・フードテック': { bg:'rgba(76,175,130,0.1)',  color:'#4caf82', border:'rgba(76,175,130,0.25)' },
   '教育・HR・人材':     { bg:'rgba(170,119,255,0.1)', color:'#aa77ff', border:'rgba(170,119,255,0.25)' },
   '宇宙・衛星':         { bg:'rgba(74,158,255,0.1)',  color:'#4a9eff', border:'rgba(74,158,255,0.25)' },
-  '投資手法':           { bg:'rgba(255,140,66,0.1)',  color:'#ff8c42', border:'rgba(255,140,66,0.25)' },
-  '用語解説':           { bg:'rgba(170,119,255,0.1)', color:'#aa77ff', border:'rgba(170,119,255,0.25)' },
-  '個別銘柄':           { bg:'rgba(255,69,96,0.1)',   color:'#ff4560', border:'rgba(255,69,96,0.25)' },
+  'Strategy':           { bg:'rgba(255,140,66,0.1)',  color:'#ff8c42', border:'rgba(255,140,66,0.25)' },
+  'Glossary':           { bg:'rgba(170,119,255,0.1)', color:'#aa77ff', border:'rgba(170,119,255,0.25)' },
+  'Stock Analysis':           { bg:'rgba(255,69,96,0.1)',   color:'#ff4560', border:'rgba(255,69,96,0.25)' },
 }
 
 // Markdown風テキストを簡易レンダリング
@@ -252,20 +252,20 @@ export default function Column({ initialArticleId = null, onNavigate }) {
   }
 
   const THEME_CATS = [
-    '半導体製造装置','半導体検査装置','半導体材料','メモリ','パワー半導体','次世代半導体',
-    '生成AI','AIデータセンター','フィジカルAI','AI半導体','AI人材','エッジAI',
-    'EV・電気自動車','全固体電池','自動運転','ドローン','輸送・物流','造船',
+    'Semiconductor Equipment','半導体検査装置','半導体材料','メモリ','Power Semiconductor','次世代半導体',
+    'Generative AI','AIデータセンター','Physical AI / Edge AI','AI半導体','AI人材','エッジAI',
+    'EV・電気自動車','全固体電池','自動運転','ドローン','輸送・物流','Shipbuilding',
     '再生可能エネルギー','太陽光発電','核融合発電','原子力発電','電力会社',
-    'LNG','石油','蓄電池','資源（水素・ヘリウム・水）','IOWN','光通信',
+    'LNG','石油','蓄電池','資源（水素・ヘリウム・水）','IOWN','Optical Communication',
     '通信','量子コンピューター','SaaS','ウェアラブル端末','仮想通貨','ネット銀行',
     '鉄鋼・素材','化学','建築資材','塗料',
     '医薬品・バイオ','ヘルスケア・介護','薬局・ドラッグストア',
-    '銀行・金融','地方銀行','保険','フィンテック',
+    'Banking/Finance','地方銀行','保険','フィンテック',
     '不動産','建設・インフラ','国土強靭化計画','下水道',
     '食品・飲料','農業・フードテック','小売・EC','観光・ホテル・レジャー',
-    'インバウンド','リユース・中古品',
-    '防衛・航空','宇宙・衛星','ロボット・自動化',
-    'レアアース・資源','バフェット銘柄',
+    'Inbound Tourism','リユース・中古品',
+    'Defense & Aerospace','宇宙・衛星','ロボット・自動化',
+    'レアアース・資源','Warren Buffett',
     'サイバーセキュリティ','警備','脱炭素・ESG',
     '教育・HR・人材','人材派遣','ゲーム・エンタメ',
   ]
@@ -383,32 +383,32 @@ export default function Column({ initialArticleId = null, onNavigate }) {
         {/* Themeデータへ of リンクボタン */}
         {(() => {
           const CAT_TO_THEME = {
-            '半導体製造装置':'半導体製造装置','半導体検査装置':'半導体検査装置',
-            '半導体材料':'半導体材料','メモリ':'メモリ','パワー半導体':'パワー半導体',
-            '次世代半導体':'次世代半導体','生成AI':'生成AI','AIデータセンター':'AIデータセンター',
-            'フィジカルAI':'フィジカルAI','AI半導体':'AI半導体','AI人材':'AI人材','エッジAI':'エッジAI',
+            'Semiconductor Equipment':'Semiconductor Equipment','半導体検査装置':'半導体検査装置',
+            '半導体材料':'半導体材料','メモリ':'メモリ','Power Semiconductor':'Power Semiconductor',
+            '次世代半導体':'次世代半導体','Generative AI':'Generative AI','AIデータセンター':'AIデータセンター',
+            'Physical AI / Edge AI':'Physical AI / Edge AI','AI半導体':'AI半導体','AI人材':'AI人材','Physical AI / Edge AI':'エッジAI',
             'EV・電気自動車':'EV・電気自動車','全固体電池':'全固体電池','自動運転':'自動運転',
-            'ドローン':'ドローン','輸送・物流':'輸送・物流','造船':'造船',
-            '再生可能エネルギー':'再生可能エネルギー','太陽光発電':'太陽光発電',
+            'ドローン':'ドローン','輸送・物流':'輸送・物流','Shipbuilding':'Shipbuilding',
+            'Renewable Energy':'再生可能エネルギー','太陽光発電':'太陽光発電',
             '核融合発電':'核融合発電','原子力発電':'原子力発電','電力会社':'電力会社',
             'LNG':'LNG','石油':'石油','蓄電池':'蓄電池',
             '資源（水素・ヘリウム・水）':'資源（水素・ヘリウム・水）',
-            'IOWN':'IOWN','光通信':'光通信','通信':'通信',
+            'IOWN':'IOWN','Optical Communication':'Optical Communication','通信':'通信',
             '量子コンピューター':'量子コンピューター','SaaS':'SaaS',
             'ウェアラブル端末':'ウェアラブル端末','仮想通貨':'仮想通貨','ネット銀行':'ネット銀行',
             '鉄鋼・素材':'鉄鋼・素材','化学':'化学','建築資材':'建築資材','塗料':'塗料',
             '医薬品・バイオ':'医薬品・バイオ','ヘルスケア・介護':'ヘルスケア・介護',
             '薬局・ドラッグストア':'薬局・ドラッグストア',
-            '銀行・金融':'銀行・金融','地方銀行':'地方銀行','保険':'保険','フィンテック':'フィンテック',
+            'Banking/Finance':'Banking/Finance','地方銀行':'地方銀行','保険':'保険','フィンテック':'フィンテック',
             '不動産':'不動産','建設・インフラ':'建設・インフラ',
             '国土強靭化計画':'国土強靭化計画','下水道':'下水道',
             '食品・飲料':'食品・飲料','農業・フードテック':'農業・フードテック',
             '小売・EC':'小売・EC','観光・ホテル・レジャー':'観光・ホテル・レジャー',
-            'インバウンド':'インバウンド','リユース・中古品':'リユース・中古品',
-            '防衛・航空':'防衛・航空','宇宙・衛星':'宇宙・衛星','ロボット・自動化':'ロボット・自動化',
-            'レアアース・資源':'レアアース・資源','バフェット銘柄':'バフェット銘柄',
+            'Inbound Tourism':'Inbound Tourism','リユース・中古品':'リユース・中古品',
+            'Defense & Aerospace':'Defense & Aerospace','宇宙・衛星':'宇宙・衛星','ロボット・自動化':'ロボット・自動化',
+            'レアアース・資源':'レアアース・資源','Warren Buffett':'Warren Buffett',
             'サイバーセキュリティ':'サイバーセキュリティ','警備':'警備','脱炭素・ESG':'脱炭素・ESG',
-            '教育・HR・人材':'教育・HR・人材','人材派遣':'人材派遣','ゲーム・エンタメ':'ゲーム・エンタメ',
+            '教育・HR・人材':'教育・HR・人材','人材派遣':'人材派遣','Gaming & Entertainment':'ゲーム・エンタメ',
           }
           const themeName = CAT_TO_THEME[col.category]
           if (!themeName || !onNavigate) return null
@@ -444,7 +444,7 @@ export default function Column({ initialArticleId = null, onNavigate }) {
           )
         })()}
 
-        {/* 下部 of 戻るボタン */}
+        {/* 下部 of Backボタン */}
         <div style={{ marginTop:'32px', paddingTop:'24px', borderTop:'1px solid var(--border)', textAlign:'center' }}>
           <button onClick={() => closeArticle()} style={{
             display:'inline-flex', alignItems:'center', gap:'8px',
@@ -472,11 +472,11 @@ export default function Column({ initialArticleId = null, onNavigate }) {
         Theme株投資 of 基礎から各Theme of 詳細解説まで、投資判断に役立つ情報を提供します。
       </p>
 
-      {/* キーワード・Theme検索 */}
+      {/* keyword・ThemeSearch */}
       <div style={{ position:'relative', marginBottom:'12px', maxWidth:'400px' }}>
         <input
           type="text"
-          placeholder="キーワード・Theme NameでSearch..."
+          placeholder="keyword・Theme NameでSearch..."
           value={searchQuery}
           onChange={e => { setSearchQuery(e.target.value); setPage(1) }}
           style={{
@@ -568,7 +568,7 @@ export default function Column({ initialArticleId = null, onNavigate }) {
               color: page === 1 ? 'var(--text3)' : 'var(--text)',
               cursor: page === 1 ? 'default' : 'pointer',
               fontFamily:'var(--font)', fontSize:'12px' }}>
-            ← 前へ
+            ← Previous
           </button>
           {Array.from({ length: totalPages }, (_, i) => i + 1).map(p => (
             <button key={p} onClick={() => { setPage(p); window.scrollTo(0,0) }}
@@ -588,7 +588,7 @@ export default function Column({ initialArticleId = null, onNavigate }) {
               color: page === totalPages ? 'var(--text3)' : 'var(--text)',
               cursor: page === totalPages ? 'default' : 'pointer',
               fontFamily:'var(--font)', fontSize:'12px' }}>
-            次へ →
+            Next →
           </button>
         </div>
       )}
