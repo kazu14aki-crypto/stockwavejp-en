@@ -1,4 +1,3 @@
-import React from 'react'
 
 // StockWaveJP Column & Analysis Articles (English Edition)
 // Body text for major articles; additional articles translated progressively.
@@ -10,7 +9,7 @@ const COLUMNS = [
     tag: 'Electronic Components',
     title: 'Murata Manufacturing (6981): The Electronic Components Giant That Crossed ¥14T Market Cap',
     date: '2026/05/29',
-    summary: 'Murata Manufacturing hit a record ¥14T market cap in May 2026, surpassing Nintendo to become Kyoto's No.1 company. We analyze the business model, competitive advantages, AI/EV growth drivers, and key risks.',
+    summary: 'Murata Manufacturing hit a record ¥14T market cap in May 2026, surpassing Nintendo to become Kyoto\'s No.1 company. We analyze the business model, competitive advantages, AI/EV growth drivers, and key risks.',
     body: `
 ## What is Murata Manufacturing?
 
@@ -56,7 +55,7 @@ One AI server rack requires 10,000–20,000+ MLCCs — 10–20x more than a smar
     themes: ['MLCC・電子部品'],
     title: 'MLCC Industry Analysis: The Most Critical Component for AI & EV Transformation',
     date: '2026/05/29',
-    summary: 'One AI server uses 10–20x more MLCCs than a smartphone. We analyze the structural shift in MLCC demand, Japan's dominant position, and how to invest in this theme.',
+    summary: 'One AI server uses 10–20x more MLCCs than a smartphone. We analyze the structural shift in MLCC demand, Japan\'s dominant position, and how to invest in this theme.',
     body: `
 ## What is an MLCC?
 
@@ -107,7 +106,7 @@ AI accelerators like NVIDIA H100 consume 300–700W. Stable power delivery requi
     tag: 'Basics',
     title: 'What is Theme Investing? How It Differs from Individual Stocks and Index Funds',
     date: '2026/03/14',
-    summary: 'Theme investing groups stocks by structural trends — AI, defense, EVs, inbound tourism — and tracks their collective momentum. This article explains how to use StockWaveJP's data for theme-based analysis.',
+    summary: 'Theme investing groups stocks by structural trends — AI, defense, EVs, inbound tourism — and tracks their collective momentum. This article explains how to use StockWaveJP\'s data for theme-based analysis.',
     body: `
 ## What is Theme Investing?
 
@@ -154,9 +153,9 @@ StockWaveJP tracks 67+ Japanese stock themes, showing:
     id: 'semiconductor-theme',
     category: 'Theme',
     tag: 'Semiconductor',
-    title: 'Semiconductor Theme: AI Demand, Key Stocks, and Japan's Role in the Global Supply Chain',
+    title: 'Semiconductor Theme: AI Demand, Key Stocks, and Japan\'s Role in the Global Supply Chain',
     date: '2026/04/01',
-    summary: 'Japan's semiconductor equipment manufacturers — Tokyo Electron, Advantest, Lasertec — are at the center of AI-driven chip demand. This article explains the theme structure and investment considerations.',
+    summary: 'Japan\'s semiconductor equipment manufacturers — Tokyo Electron, Advantest, Lasertec — are at the center of AI-driven chip demand. This article explains the theme structure and investment considerations.',
     body: `
 ## Japan's Unique Position in Semiconductors
 
@@ -189,9 +188,9 @@ US restrictions on semiconductor exports to China affect Japanese equipment make
     id: 'defense-theme',
     category: 'Theme',
     tag: 'Defense',
-    title: 'Defense & Space Theme: Japan's Defense Spending Surge and Investment Opportunities',
+    title: 'Defense & Space Theme: Japan\'s Defense Spending Surge and Investment Opportunities',
     date: '2026/04/01',
-    summary: 'Japan's defense budget is on track to double by 2027. Mitsubishi Heavy Industries, Kawasaki Heavy Industries, and IHI are the key beneficiaries. We analyze the structural tailwinds and key stocks.',
+    summary: 'Japan\'s defense budget is on track to double by 2027. Mitsubishi Heavy Industries, Kawasaki Heavy Industries, and IHI are the key beneficiaries. We analyze the structural tailwinds and key stocks.',
     body: `
 ## Japan's Historic Defense Buildup
 
@@ -229,9 +228,9 @@ Unlike AI (which had a correction in 2024–2025), defense spending is driven by
     id: 'ai-cloud-theme',
     category: 'Theme',
     tag: 'AI/Cloud',
-    title: 'AI & Cloud Theme: Japan's Generative AI Investment Wave and Key Players',
+    title: 'AI & Cloud Theme: Japan\'s Generative AI Investment Wave and Key Players',
     date: '2026/04/01',
-    summary: 'SoftBank Group's massive AI investment, Japanese tech companies' LLM development, and the datacenter buildout are driving AI-related themes. We analyze the opportunity and risks.',
+    summary: 'SoftBank Group\'s massive AI investment, Japanese tech companies\' LLM development, and the datacenter buildout are driving AI-related themes. We analyze the opportunity and risks.',
     body: `
 ## Japan's AI Ecosystem
 
@@ -264,9 +263,9 @@ Most Japanese AI investments have not yet generated meaningful revenue. The risk
     id: 'ev-green-theme',
     category: 'Theme',
     tag: 'EV/Green',
-    title: 'EV & Green Theme: Japan's Role in the Electric Vehicle Supply Chain',
+    title: 'EV & Green Theme: Japan\'s Role in the Electric Vehicle Supply Chain',
     date: '2026/04/01',
-    summary: 'Toyota's EV pivot, all-solid-state battery development, and the global EV supply chain create a complex but important investment theme. We analyze Japan's position and key stocks.',
+    summary: 'Toyota\'s EV pivot, all-solid-state battery development, and the global EV supply chain create a complex but important investment theme. We analyze Japan\'s position and key stocks.',
     body: `
 ## Japan and EVs: A Complex Relationship
 
@@ -303,7 +302,7 @@ Japan is also investing in:
     id: 'inbound-theme',
     category: 'Theme',
     tag: 'Inbound Tourism',
-    title: 'Inbound Tourism Theme: Record Visitors and Japan's Consumption Boom',
+    title: 'Inbound Tourism Theme: Record Visitors and Japan\'s Consumption Boom',
     date: '2026/04/01',
     summary: 'Japan welcomed over 35M foreign visitors in 2024. Weak yen and pent-up demand are driving spending at hotels, department stores, and theme parks. We analyze the key stocks and outlook.',
     body: `
@@ -342,7 +341,7 @@ Japan hit a record 35M+ inbound tourists in 2024, driven by:
     id: 'banking-finance-theme',
     category: 'Theme',
     tag: 'Banking/Finance',
-    title: 'Banking & Finance Theme: Japan's Rate Hike Cycle and Bank Profitability',
+    title: 'Banking & Finance Theme: Japan\'s Rate Hike Cycle and Bank Profitability',
     date: '2026/04/01',
     summary: 'After 25 years of near-zero rates, the Bank of Japan is raising rates. This structurally improves net interest margins for Japanese megabanks and regional banks. We analyze the opportunity.',
     body: `
