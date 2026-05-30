@@ -1,17 +1,17 @@
 /**
- * FlowMomentum.jsx — Fund Flow＋騰落モメンタム統合ページ
+ * FlowMomentum.jsx — 資金フロー＋騰落モメンタム統合ページ
  */
 import { useState, useEffect } from 'react'
 import { useMomentum } from '../../hooks/useMarketData.js'
 
 const API = import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000'
 const PERIODS = [
-  { label: '1D',  value: '1d'  },
-  { label: '1W', value: '5d'  },
-  { label: '1M', value: '1mo' },
-  { label: '3M', value: '3mo' },
-  { label: '6M', value: '6mo' },
-  { label: '1Y',   value: '1y'  },
+  { label: '1日',  value: '1d'  },
+  { label: '1週間', value: '5d'  },
+  { label: '1ヶ月', value: '1mo' },
+  { label: '3ヶ月', value: '3mo' },
+  { label: '6ヶ月', value: '6mo' },
+  { label: '1年',   value: '1y'  },
 ]
 const SORT_KEYS = ['Return（Desc）', 'Return（Asc）']
 const STATE_COLORS = {
@@ -34,7 +34,7 @@ function Loading() {
   )
 }
 
-// ── 水平バー（Fund Flow用）──
+// ── 水平バー（資金フロー用）──
 function HBar({ item, maxAbs }) {
   const w = Math.round(Math.abs(item.pct) / maxAbs * 100)
   const c = item.pct >= 0 ? 'var(--red)' : 'var(--green)'
@@ -108,7 +108,7 @@ function AutoComment({ lines }) {
 function genMomentumComment(momentumData, period) {
   const data = momentumData?.data || momentumData || []
   if (!data.length) return null
-  const periodLabel = { '1d':'本日', '5d':'週間', '1mo':'1M', '3mo':'3M', '6mo':'6M', '1y':'1年間' }[period] || period
+  const periodLabel = { '1d':'本日', '5d':'週間', '1mo':'1ヶ月', '3mo':'3ヶ月', '6mo':'6ヶ月', '1y':'1年間' }[period] || period
 
   const accel   = data.filter(t => t.state?.includes('加速'))
   const decel   = data.filter(t => t.state?.includes('失速'))
@@ -129,7 +129,7 @@ function genMomentumComment(momentumData, period) {
   }
   if (turnUp.length > 0) {
     const top = turnUp.slice(0,3).map(t=>t.theme).join('」「')
-    lines.push(`↗ 転換↑（${turnUp.length}テーマ）：「${top}」など。FallingからRisingへの転換初動の可能性。Volume増加をConfirmできれば底値仕込みのチャンスになりうる。`)
+    lines.push(`↗ 転換↑（${turnUp.length}テーマ）：「${top}」など。FallingからRisingへの転換初動の可能性。Volume増加を確認できれば底値仕込みのチャンスになりうる。`)
   }
   if (flat.length > 0) {
     const top = flat.slice(0,3).map(t=>t.theme).join('」「')
@@ -169,7 +169,7 @@ export default function FlowMomentum() {
         騰落モメンタム
       </h1>
       <p style={{ fontSize:'12px', color:'var(--text3)', marginBottom:'20px' }}>
-        テーマ別の騰落モメンタム（加速・転換・横ばい・失速）をConfirmできます。
+        テーマ別の騰落モメンタム（加速・転換・横ばい・失速）を確認できます。
       </p>
 
       {/* コントロール */}

@@ -1,42 +1,46 @@
 [
   {
-    "week": "2026-W22",
-    "date": "2026/05/29",
-    "title": "May 25–29 Weekly Market Report",
-    "avg_pct_1w": 0.82,
-    "rise_count": 35,
-    "fall_count": 32
-  },
-  {
-    "week": "2026-W21",
-    "date": "2026/05/22",
-    "title": "May 18–22 Weekly Market Report",
-    "avg_pct_1w": 1.24,
-    "rise_count": 41,
-    "fall_count": 26
-  },
-  {
-    "week": "2026-W20",
-    "date": "2026/05/15",
-    "title": "May 11–15 Weekly Market Report",
-    "avg_pct_1w": 0.95,
-    "rise_count": 38,
-    "fall_count": 29
-  },
-  {
     "week": "2026-W19",
     "date": "2026/05/08",
-    "title": "May 4–8 Weekly Market Report",
-    "avg_pct_1w": 2.14,
-    "rise_count": 52,
-    "fall_count": 15
+    "title": "Week of May 4–8: Post-Golden Week Surge — Semiconductor Equipment Leads Historic Rally",
+    "rising": 47,
+    "falling": 20,
+    "top_theme": "Semiconductor Equipment",
+    "top_pct": 12.4,
+    "bot_theme": "Oil & Petroleum",
+    "bot_pct": -3.2
   },
   {
     "week": "2026-W18",
     "date": "2026/05/01",
-    "title": "Apr 27–May 1 Weekly Market Report",
-    "avg_pct_1w": 0.43,
-    "rise_count": 33,
-    "fall_count": 34
+    "title": "Week of Apr 27 – May 1: AI & Growth Themes Lead as Energy Pulls Back",
+    "rising": 40,
+    "falling": 27,
+    "top_theme": "SaaS",
+    "top_pct": 8.97,
+    "bot_theme": "LNG",
+    "bot_pct": -4.24
+  },
+  {
+    "week": "2026-W17",
+    "date": "2026/04/25",
+    "title": "Week of Apr 21–25: AI & Growth Themes Lead as Energy Pulls Back",
+    "rising": 40,
+    "falling": 27,
+    "top_theme": "SaaS",
+    "top_pct": 8.97,
+    "bot_theme": "LNG",
+    "bot_pct": -4.24
+  },
+  {
+    "week": "2026-W16",
+    "date": "2026/04/18",
+    "title": "Week of Apr 14–18: Semiconductor Rally Extends; Optical Communications Joins Top 5",
+    "rising": 49,
+    "falling": 18,
+    "top_theme": "Semiconductor Testing",
+    "top_pct": 24.2,
+    "bot_theme": "Oil & Petroleum",
+    "bot_pct": -6.1
   }
 ]

@@ -4,8 +4,8 @@
  * 動作フロー：
  * 1. LocalStorageに前回データがあれば即座に表示（stale=古いデータ）
  * 2. バックグラウンドで最新データをfetch
- * 3. 取得Done後に画面をUpdate
- * 4. 新しいデータをLocalStorageにSave（次回用）
+ * 3. 取得完了後に画面を更新
+ * 4. 新しいデータをLocalStorageに保存（次回用）
  */
 import { useState, useEffect, useRef, useCallback } from 'react'
 

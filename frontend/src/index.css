@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=DM+Mono:wght@400;500&display=swap');
 
-/* Google Fonts loaded asynchronously via preconnect in HTML */
 html { overflow-x: clip; }
 
 /* ── Dark (Default) ── */
@@ -22,7 +21,7 @@ html { overflow-x: clip; }
   --radius:  10px; --sidebar:220px; --header:52px;
 }
 
-/* ── Navy (Dark navy background, yellow text) ── */
+/* ── Navy (dark navy/yellow) ── */
 [data-theme="navy"] {
   --bg:      #050c18;
   --bg2:     #081428;

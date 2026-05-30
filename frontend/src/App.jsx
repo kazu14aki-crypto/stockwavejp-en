@@ -1,29 +1,29 @@
 import { useState, useEffect } from 'react'
-import { useStatus }   from './hooks/useMarketData.js'
-import { AuthProvider } from './hooks/useAuth.jsx'
-import Header      from './components/Header.jsx'
-import Sidebar     from './components/Sidebar.jsx'
-import TopPage     from './components/pages/TopPage.jsx'
-import ThemeList   from './components/pages/ThemeList.jsx'
-import Heatmap     from './components/pages/Heatmap.jsx'
-import MarketRank  from './components/pages/MarketRank.jsx'
-import ThemeDetail from './components/pages/ThemeDetail.jsx'
-import CustomTheme from './components/pages/CustomTheme.jsx'
-import News        from './components/pages/News.jsx'
-import HowTo       from './components/pages/HowTo.jsx'
-import Settings    from './components/pages/Settings.jsx'
-import Disclaimer  from './components/pages/Disclaimer.jsx'
-import Column      from './components/pages/Column.jsx'
-import PrivacyPolicy from './components/pages/PrivacyPolicy.jsx'
-import TermsOfService from './components/pages/TermsOfService.jsx'
-import SiteInfo    from './components/pages/SiteInfo.jsx'
-import WeeklyReport from './components/pages/WeeklyReport.jsx'
-import StockSearch          from './components/pages/StockSearch.jsx'
-import InstitutionalHoldings from './components/pages/InstitutionalHoldings.jsx'
-import Plan                  from './components/pages/Plan.jsx'
-import LegalNotice           from './components/pages/LegalNotice.jsx'
-import PlanGate              from './components/PlanGate.jsx'
+import { useStatus }        from './hooks/useMarketData.js'
+import { AuthProvider }     from './hooks/useAuth.jsx'
 import { SubscriptionProvider } from './hooks/useSubscription.js'
+import PlanGate             from './components/PlanGate.jsx'
+import Header               from './components/Header.jsx'
+import Sidebar              from './components/Sidebar.jsx'
+import TopPage              from './components/pages/TopPage.jsx'
+import ThemeList            from './components/pages/ThemeList.jsx'
+import Heatmap              from './components/pages/Heatmap.jsx'
+import MarketRank           from './components/pages/MarketRank.jsx'
+import ThemeDetail          from './components/pages/ThemeDetail.jsx'
+import StockSearch          from './components/pages/StockSearch.jsx'
+import CustomTheme          from './components/pages/CustomTheme.jsx'
+import InstitutionalHoldings from './components/pages/InstitutionalHoldings.jsx'
+import News                 from './components/pages/News.jsx'
+import HowTo                from './components/pages/HowTo.jsx'
+import WeeklyReport         from './components/pages/WeeklyReport.jsx'
+import Column               from './components/pages/Column.jsx'
+import Settings             from './components/pages/Settings.jsx'
+import Plan                 from './components/pages/Plan.jsx'
+import Disclaimer           from './components/pages/Disclaimer.jsx'
+import PrivacyPolicy        from './components/pages/PrivacyPolicy.jsx'
+import TermsOfService       from './components/pages/TermsOfService.jsx'
+import LegalNotice          from './components/pages/LegalNotice.jsx'
+import SiteInfo             from './components/pages/SiteInfo.jsx'
 
 const PAGES = [
   { icon:'🏠', label:'Home',                    component:TopPage              },
@@ -37,59 +37,36 @@ const PAGES = [
   { icon:'📰', label:'Weekly Report',           component:WeeklyReport         },
   { icon:'📝', label:'Column',                  component:Column               },
 ]
+
 const PAGES_OTHER = [
-  { icon:'🏢', label:'About',          component:SiteInfo      },
-  { icon:'📣', label:'News',           component:News          },
-  { icon:'📖', label:'How to Use',     component:HowTo         },
-  { icon:'💰', label:'Pricing',        component:Plan          },
-  { icon:'⚙️', label:'Settings',      component:Settings      },
+  { icon:'🏢', label:'About',        component:SiteInfo      },
+  { icon:'📣', label:'News',         component:News          },
+  { icon:'📖', label:'How to Use',   component:HowTo         },
+  { icon:'💰', label:'Pricing',      component:Plan          },
+  { icon:'⚙️', label:'Settings',    component:Settings      },
 ]
 
 const PAGES_FOOTER = [
-  { icon:'⚖️', label:'Disclaimer',        component:Disclaimer    },
-  { icon:'🔒', label:'Privacy Policy',    component:PrivacyPolicy },
-  { icon:'📋', label:'Terms of Service',  component:TermsOfService},
-  { icon:'🛒', label:'Legal Notice',      component:LegalNotice   },
+  { icon:'⚖️', label:'Disclaimer',       component:Disclaimer    },
+  { icon:'🔒', label:'Privacy Policy',   component:PrivacyPolicy },
+  { icon:'📋', label:'Terms of Service', component:TermsOfService},
+  { icon:'🛒', label:'Legal Notice',     component:LegalNotice   },
 ]
 
-// ContactGoogleフォームURL（実際のURLに変更してください）
 const CONTACT_FORM_URL = 'https://forms.gle/XjNypTdmZt265Kib6'
-const ALL_PAGES     = [...PAGES, ...PAGES_OTHER]
+const ALL_PAGES = [...PAGES, ...PAGES_OTHER, ...PAGES_FOOTER]
 const COLOR_THEME_KEY = 'swjp_color_theme'
 
 function AppInner() {
-  const [currentPage,   setCurrentPage]   = useState('Home')
+  const [currentPage,     setCurrentPage]     = useState('Home')
   const [targetArticleId, setTargetArticleId] = useState(null)
   const [targetTheme,     setTargetTheme]     = useState(null)
-
-  // URLハッシュからページ・記事IDを初期化
-  useEffect(() => {
-    const hash = window.location.hash.replace('#', '')
-    if (hash.startsWith('column/')) {
-      const articleId = hash.replace('column/', '')
-      setCurrentPage('Column')
-      setTargetArticleId(articleId)
-    } else if (hash === 'terms') {
-      setCurrentPage('Terms of Service')
-    } else if (hash === 'privacy') {
-      setCurrentPage('Privacy Policy')
-    }
-    // ハッシュ変化を監視
-    const onHashChange = () => {
-      const h = window.location.hash.replace('#', '')
-      if (h.startsWith('column/')) {
-        const aid = h.replace('column/', '')
-        setCurrentPage('Column')
-        setTargetArticleId(aid)
-      }
-    }
-    window.addEventListener('hashchange', onHashChange)
-    return () => window.removeEventListener('hashchange', onHashChange)
-  }, [])
-  const [sidebarOpen, setSidebarOpen] = useState(false)
-  const [viewMode,    setViewMode]    = useState('auto')
-  const [isMobile,    setIsMobile]    = useState(() => typeof window !== 'undefined' && window.innerWidth <= 1280)
-  const [colorTheme,  setColorTheme]  = useState(
+  const [sidebarOpen,     setSidebarOpen]     = useState(false)
+  const [viewMode,        setViewMode]        = useState('auto')
+  const [isMobile,        setIsMobile]        = useState(
+    () => typeof window !== 'undefined' && window.innerWidth <= 1280
+  )
+  const [colorTheme, setColorTheme] = useState(
     () => localStorage.getItem(COLOR_THEME_KEY) || 'dark'
   )
   const status = useStatus()
@@ -103,7 +80,6 @@ function AppInner() {
     const check = () => {
       if (viewMode === 'mobile') { setIsMobile(true); return }
       if (viewMode === 'pc')     { setIsMobile(false); return }
-      // iPad Pro横向き(1366px)まで対応するため1280px以下をタブレット扱い
       setIsMobile(window.innerWidth <= 1280)
     }
     check()
@@ -116,43 +92,63 @@ function AppInner() {
     }
   }, [viewMode])
 
+  useEffect(() => {
+    const hash = window.location.hash.replace('#', '')
+    if (hash.startsWith('column/')) {
+      setCurrentPage('Column')
+      setTargetArticleId(hash.replace('column/', ''))
+    } else if (hash === 'terms') {
+      setCurrentPage('Terms of Service')
+    } else if (hash === 'privacy') {
+      setCurrentPage('Privacy Policy')
+    }
+    const onHashChange = () => {
+      const h = window.location.hash.replace('#', '')
+      if (h.startsWith('column/')) {
+        setCurrentPage('Column')
+        setTargetArticleId(h.replace('column/', ''))
+      }
+    }
+    window.addEventListener('hashchange', onHashChange)
+    return () => window.removeEventListener('hashchange', onHashChange)
+  }, [])
+
   const currentPageObj = ALL_PAGES.find(p => p.label === currentPage)
   const PageComponent  = currentPageObj?.component
+
   const handlePageChange = (label, articleId = null) => {
     setCurrentPage(label)
     setSidebarOpen(false)
-    window.scrollTo({ top: 0, behavior: 'instant' })
     setTargetArticleId(articleId)
-    // Theme Detailの場合はTheme NameをSave
+    // Scroll to top on page change
+    window.scrollTo({ top: 0, behavior: 'instant' })
     if (label === 'Theme Detail') {
       setTargetTheme(articleId || null)
     } else {
       setTargetTheme(null)
     }
-    // URLハッシュをUpdate（SEO・直接リンク対応）
     if (label === 'Column' && articleId) {
       window.history.replaceState(null, '', `#column/${articleId}`)
-    } else if (label === 'Terms of Service') {
-      window.history.replaceState(null, '', '#terms')
-    } else if (label === 'Privacy Policy') {
-      window.history.replaceState(null, '', '#privacy')
     } else {
       window.history.replaceState(null, '', window.location.pathname)
     }
   }
 
-  const handleLogoClick  = () => { setCurrentPage('Home'); setSidebarOpen(false) }
+  const handleLogoClick = () => { setCurrentPage('Home'); setSidebarOpen(false) }
 
   const pageProps = (() => {
     if (currentPage === 'Settings') return { viewMode, onViewModeChange:setViewMode, colorTheme, onColorThemeChange:setColorTheme, isMobile }
-    if (currentPage === 'Home') return { onNavigate: handlePageChange, isMobile }
-    if (currentPage === 'Column') return { initialArticleId: targetArticleId, onNavigate: handlePageChange, isMobile }
-    if (currentPage === 'Theme List') return { onNavigate: handlePageChange, isMobile }
+    if (currentPage === 'Home')     return { onNavigate: handlePageChange, isMobile }
+    if (currentPage === 'Column')   return { initialArticleId: targetArticleId, onNavigate: handlePageChange, isMobile }
+    if (currentPage === 'Theme List')   return { onNavigate: handlePageChange, isMobile }
     if (currentPage === 'Theme Detail') return { onNavigate: handlePageChange, initialTheme: targetTheme, isMobile }
-    if (currentPage === 'Heatmap') return { onNavigate: handlePageChange, isMobile }
+    if (currentPage === 'Heatmap')      return { onNavigate: handlePageChange, isMobile }
     if (currentPage === 'Weekly Report') return { onNavigate: handlePageChange, isMobile }
     if (currentPage === 'Market Ranking') return { onNavigate: handlePageChange, isMobile }
-    return { isMobile }
+    if (currentPage === 'Stock Search') return { onNavigate: handlePageChange, isMobile }
+    if (currentPage === 'Custom Theme') return { onNavigate: handlePageChange, isMobile }
+    if (currentPage === 'Institutional Holdings') return { onNavigate: handlePageChange, isMobile }
+    return { onNavigate: handlePageChange, isMobile }
   })()
 
   return (
@@ -173,9 +169,13 @@ function AppInner() {
       )}
 
       <Sidebar
-        pages={PAGES} pagesOther={PAGES_OTHER} pagesFooter={PAGES_FOOTER}
-        currentPage={currentPage} onPageChange={handlePageChange}
-        isOpen={sidebarOpen} isMobile={isMobile}
+        pages={PAGES}
+        pagesOther={PAGES_OTHER}
+        pagesFooter={PAGES_FOOTER}
+        currentPage={currentPage}
+        onPageChange={handlePageChange}
+        isOpen={sidebarOpen}
+        isMobile={isMobile}
         onOpen={() => setSidebarOpen(true)}
         onClose={() => setSidebarOpen(false)}
         contactUrl={CONTACT_FORM_URL}
@@ -211,28 +211,20 @@ function AppInner() {
 
         <footer style={{ borderTop:'1px solid var(--border)', padding:'16px 24px',
           textAlign:'center', color:'var(--text3)', fontSize:'11px' }}>
-          <div style={{ marginBottom:'8px', display:'flex', justifyContent:'center', gap:'20px', flexWrap:'wrap' }}>
-            <button onClick={() => handlePageChange('Disclaimer')} style={{
-              background:'none', border:'none', color:'var(--text3)', cursor:'pointer',
-              fontSize:'11px', fontFamily:'var(--font)', padding:0,
-              textDecoration:'underline', textUnderlineOffset:'2px',
-            }}>Disclaimer</button>
-            <button onClick={() => handlePageChange('Privacy Policy')} style={{
-              background:'none', border:'none', color:'var(--text3)', cursor:'pointer',
-              fontSize:'11px', fontFamily:'var(--font)', padding:0,
-              textDecoration:'underline', textUnderlineOffset:'2px',
-            }}>Privacy Policy</button>
-            <button onClick={() => handlePageChange('Terms of Service')} style={{
-              background:'none', border:'none', color:'var(--text3)', cursor:'pointer',
-              fontSize:'11px', fontFamily:'var(--font)', padding:0,
-              textDecoration:'underline', textUnderlineOffset:'2px',
-            }}>Terms of Service</button>
+          <div style={{ marginBottom:'8px', display:'flex', justifyContent:'center', gap:'16px', flexWrap:'wrap' }}>
+            {['Disclaimer','Privacy Policy','Terms of Service','Legal Notice'].map(p => (
+              <button key={p} onClick={() => handlePageChange(p)} style={{
+                background:'none', border:'none', color:'var(--text3)', cursor:'pointer',
+                fontSize:'11px', fontFamily:'var(--font)', padding:0,
+                textDecoration:'underline', textUnderlineOffset:'2px',
+              }}>{p}</button>
+            ))}
             <a href={CONTACT_FORM_URL} target="_blank" rel="noopener noreferrer" style={{
               color:'var(--text3)', fontSize:'11px', fontFamily:'var(--font)',
               textDecoration:'underline', textUnderlineOffset:'2px',
             }}>Contact</a>
           </div>
-          <div style={{ display:'flex', flexWrap:'wrap', justifyContent:'center', gap:'2px 0', alignItems:'center' }}>
+          <div style={{ display:'flex', flexWrap:'wrap', justifyContent:'center', gap:'2px', fontSize:'11px', color:'var(--text3)' }}>
             <span style={{ color:'#e63030', fontWeight:700 }}>Stock</span>
             <span style={{ fontWeight:700, color:'var(--text2)' }}>Wave</span>
             <span style={{ color:'#e63030', fontWeight:700, fontSize:'10px' }}>JP</span>
@@ -246,7 +238,6 @@ function AppInner() {
   )
 }
 
-// 旧バージョンのLocalStorageキャッシュを自動Delete
 ;(function cleanOldCache() {
   const CURRENT = 'swjp_v3_'
   const OLD_PREFIXES = ['swjp_', 'swjp_v1_', 'swjp_v2_']
@@ -255,9 +246,7 @@ function AppInner() {
     keys.forEach(k => {
       const isOld = OLD_PREFIXES.some(p => k.startsWith(p))
       const isCurrent = k.startsWith(CURRENT)
-      if (isOld && !isCurrent) {
-        localStorage.removeItem(k)
-      }
+      if (isOld && !isCurrent) localStorage.removeItem(k)
     })
   } catch {}
 })()
@@ -266,8 +255,8 @@ export default function App() {
   return (
     <AuthProvider>
       <SubscriptionProvider>
-      <AppInner />
-    </SubscriptionProvider>
+        <AppInner />
+      </SubscriptionProvider>
     </AuthProvider>
   )
 }

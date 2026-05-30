@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
-// ── 銘柄版Bubble Chart（テーマ詳細・Custom Theme共通） ──────────────────
-// ── 銘柄版Bubble Chart（テーマ詳細用） ─────────────────────────────
+// ── 銘柄版バブルチャート（テーマ詳細・Custom Theme共通） ──────────────────
+// ── 銘柄版バブルチャート（テーマ詳細用） ─────────────────────────────
 function StockBubbleChart({ stocks, themeName, onNavigate }) {
   const [hovered, setHovered] = useState(null)
 
@@ -68,7 +68,7 @@ function StockBubbleChart({ stocks, themeName, onNavigate }) {
   return (
     <div>
       <div style={{ fontSize:'10px', color:'var(--text3)', marginBottom:'6px' }}>
-        X軸=Return　Y軸={yLabel}　円サイズ=Trade Value　バブルをクリックで銘柄Confirm
+        X軸=Return　Y軸={yLabel}　円サイズ=Trade Value　バブルをクリックで銘柄確認
       </div>
       <div style={{ width:'100%', overflowX:'auto', WebkitOverflowScrolling:'touch' }}>
         <svg viewBox={`0 0 ${W} ${H}`}

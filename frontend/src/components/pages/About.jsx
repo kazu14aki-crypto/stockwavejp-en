@@ -26,7 +26,7 @@ export default function About() {
         <p style={{ fontSize:'13px', color:'var(--text2)', lineHeight:1.9, marginBottom:'12px' }}>
           StockWaveJPは、日本株のテーマ別動向を視覚的に把握するためのダッシュボードです。
           半導体・AI・防衛・インバウンドなど67テーマのReturn・Volume・Trade Valueを自動集計し、
-          どのテーマに資金が集まっているかをリアルタイムでConfirmできます。
+          どのテーマに資金が集まっているかをリアルタイムで確認できます。
         </p>
         <p style={{ fontSize:'13px', color:'var(--text2)', lineHeight:1.9, marginBottom:'0' }}>
           個別銘柄の推奨や投資助言は行っておらず、あくまで「市場全体のテーマの流れを把握する」ための

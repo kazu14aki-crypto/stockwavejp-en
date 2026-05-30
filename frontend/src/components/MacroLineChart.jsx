@@ -1,4 +1,4 @@
-// MacroLineChart.jsx — Home・Market Rankingで共通使用するマクロ指標グラフ
+// MacroLineChart.jsx — ホーム・Market Rankingで共通使用するマクロ指標グラフ
 import { useState } from 'react'
 
 export const MACRO_COLORS = ['#ff4560','#ff8c42','#ffd166','#06d6a0','#4a9eff','#aa77ff']

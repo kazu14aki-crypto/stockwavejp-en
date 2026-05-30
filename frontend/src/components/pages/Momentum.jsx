@@ -3,11 +3,11 @@ import { useState, useEffect } from 'react'
 const API = import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000'
 
 const PERIODS = [
-  { label: '1W', value: '5d' },
-  { label: '1M', value: '1mo' },
-  { label: '3M', value: '3mo' },
-  { label: '6M', value: '6mo' },
-  { label: '1Y',   value: '1y'  },
+  { label: '1週間', value: '5d' },
+  { label: '1ヶ月', value: '1mo' },
+  { label: '3ヶ月', value: '3mo' },
+  { label: '6ヶ月', value: '6mo' },
+  { label: '1年',   value: '1y'  },
 ]
 
 const SORT_KEYS = ['Return（Desc）', '先週比変化（Desc）', '先月比変化（Desc）']
@@ -66,7 +66,7 @@ export default function Momentum() {
   if (sortKey === '先週比変化（Desc）')   sorted.sort((a,b) => b.week_diff - a.week_diff)
   if (sortKey === '先月比変化（Desc）')   sorted.sort((a,b) => b.month_diff - a.month_diff)
 
-  // Filter
+  // フィルター
   if (filter.length > 0) sorted = sorted.filter(d => filter.includes(d.state))
 
   const toggleFilter = (s) =>
@@ -94,7 +94,7 @@ export default function Momentum() {
         </select>
       </div>
 
-      {/* 状態Filter */}
+      {/* 状態フィルター */}
       <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap', marginBottom: '20px' }}>
         {STATES.map(s => (
           <button key={s} onClick={() => toggleFilter(s)} style={{
@@ -171,7 +171,7 @@ export default function Momentum() {
           ))}
 
           <p style={{ fontSize: '11px', color: 'var(--text3)', marginTop: '16px' }}>
-            💡 Return=選択期間の変化率 / 先週比・先月比=1週間・1ヶ月との差 min / 🔥加速=両方↑ / ❄️失速=両方↓
+            💡 Return=選択期間の変化率 / 先週比・先月比=1週間・1ヶ月との差分 / 🔥加速=両方↑ / ❄️失速=両方↓
           </p>
         </>
       )}

@@ -28,10 +28,10 @@ export default function Favorites() {
   const [loading,     setLoading]     = useState(false)
 
   const PERIODS = [
-    { label: '1W', value: '5d' },
-    { label: '1M', value: '1mo' },
-    { label: '3M', value: '3mo' },
-    { label: '1Y',   value: '1y'  },
+    { label: '1週間', value: '5d' },
+    { label: '1ヶ月', value: '1mo' },
+    { label: '3ヶ月', value: '3mo' },
+    { label: '1年',   value: '1y'  },
   ]
 
   useEffect(() => {
@@ -94,12 +94,12 @@ export default function Favorites() {
           color: 'var(--text3)', fontSize: '13px',
         }}>
           <div style={{ fontSize: '32px', marginBottom: '12px' }}>⭐</div>
-          上のボタンからお気に入りテーマをAddしてください
+          上のボタンからお気に入りテーマを追加してください
         </div>
       ) : (
         <>
           <div style={sHead}>
-            <span style={sTitle}>お気に入りテーマ ({favorites.length} items)</span>
+            <span style={sTitle}>お気に入りテーマ ({favorites.length}件)</span>
             <div style={sLine} />
             <select value={period} onChange={e => setPeriod(e.target.value)} style={selStyle}>
               {PERIODS.map(p => <option key={p.value} value={p.value}>{p.label}</option>)}
