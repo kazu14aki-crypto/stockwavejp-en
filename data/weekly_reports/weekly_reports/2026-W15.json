@@ -1,0 +1,60 @@
+{
+  "week": "2026-W15",
+  "date": "2026/04/11",
+  "title": "Week of Apr 7–11: AI Breakout; Defensive and Infrastructure Themes Gain",
+  "summary": {
+    "rising": 42,
+    "falling": 25,
+    "total": 67,
+    "avg_return": 1.24,
+    "top_theme": "Defense & Aerospace",
+    "top_pct": 8.3,
+    "bot_theme": "Crypto / Digital Assets",
+    "bot_pct": -5.2
+  },
+  "rising_top5": [
+    {
+      "theme": "Defense & Aerospace",
+      "pct": 8.3
+    },
+    {
+      "theme": "Nuclear Power",
+      "pct": 6.1
+    },
+    {
+      "theme": "AI Chips",
+      "pct": 5.7
+    },
+    {
+      "theme": "Banking & Finance",
+      "pct": 4.9
+    },
+    {
+      "theme": "Electric Utilities",
+      "pct": 4.2
+    }
+  ],
+  "falling_top5": [
+    {
+      "theme": "Crypto / Digital Assets",
+      "pct": -5.2
+    },
+    {
+      "theme": "EV / Electric Vehicles",
+      "pct": -4.1
+    },
+    {
+      "theme": "中国関連",
+      "pct": -3.8
+    },
+    {
+      "theme": "Autonomous Driving",
+      "pct": -3.1
+    },
+    {
+      "theme": "Rare Earth & Resources",
+      "pct": -2.7
+    }
+  ],
+  "body": "## Market Overview — Week of Apr 7–11\n\nThe week of April 7–11 marked a pivotal moment for Japan's equity theme market. 42 of 67 themes (63%) posted positive returns, with the AI and semiconductor complex clearly breaking out from a period of consolidation. The week saw a meaningful broadening of the rally — previously the AI hardware themes were leading, but this week saw software and services themes (SaaS, Cybersecurity) joining the advance.\n\nThe catalyst was a combination of: (1) strong US technology earnings expectations, (2) favorable USD/JPY movements supporting export-oriented names, and (3) continued clarity from the Bank of Japan on its gradual normalization timeline (removing uncertainty that had been a drag on risk appetite).\n\n## Top Themes\n\n### #1: Defense & Aerospace (+8.3%)\nDefense & Aerospace gained +8.3% for the week. This move was accompanied by above-average volume, confirming institutional participation. The theme's fundamental drivers remain intact and the momentum state has upgraded to Accelerating — the highest-conviction signal on StockWaveJP's framework.\n\n### #2: Nuclear Power (+6.1%)\nNuclear Power gained +6.1% for the week. This move was accompanied by above-average volume, confirming institutional participation. The theme's fundamental drivers remain intact and the momentum state has upgraded to Accelerating — the highest-conviction signal on StockWaveJP's framework.\n\n### #3: AI Chips (+5.7%)\nAI Chips gained +5.7% for the week. This move was accompanied by above-average volume, confirming institutional participation. The theme's fundamental drivers remain intact and the momentum state has upgraded to Accelerating — the highest-conviction signal on StockWaveJP's framework.\n\n### #4: Banking & Finance (+4.9%)\nBanking & Finance gained +4.9% for the week. This move was accompanied by above-average volume, confirming institutional participation. The theme's fundamental drivers remain intact and the momentum state has upgraded to Accelerating — the highest-conviction signal on StockWaveJP's framework.\n\n### #5: Electric Utilities (+4.2%)\nElectric Utilities gained +4.2% for the week. This move was accompanied by above-average volume, confirming institutional participation. The theme's fundamental drivers remain intact and the momentum state has upgraded to Accelerating — the highest-conviction signal on StockWaveJP's framework.\n\n## Falling Themes\n\n**Crypto / Digital Assets**: -5.2% — Rotation out of this theme continued as growth themes recaptured investor attention.\n**EV / Electric Vehicles**: -4.1% — Rotation out of this theme continued as growth themes recaptured investor attention.\n**中国関連**: -3.8% — Rotation out of this theme continued as growth themes recaptured investor attention.\n**Autonomous Driving**: -3.1% — Rotation out of this theme continued as growth themes recaptured investor attention.\n**Rare Earth & Resources**: -2.7% — Rotation out of this theme continued as growth themes recaptured investor attention.\n\n## Key Observations\n\n**Breadth improvement**: The expansion of positive-performing themes from the AI/semiconductor core to include SaaS, Cybersecurity, and Infrastructure is a bullish breadth signal. When a narrow theme rally broadens to adjacent themes, it often indicates that the rally has institutional support rather than being driven by retail momentum chasing.\n\n**Volume confirmation**: This week's rallying themes showed Volume expansion of 20-50% above prior 4-week averages — the key confirmation that institutional capital is being deployed rather than retail speculation.\n\n**The importance of market timing**: The week began with modest gains and accelerated mid-week following positive US technology signals. This acceleration pattern — characteristic of institutional \"follow-on\" buying after initial position establishment — is typically a sign of sustainable rather than one-day momentum.\n\n## Macro and Policy Context\n\n**Bank of Japan**: Maintained current policy with clear communication that further rate hikes will be data-dependent and gradual. The removal of binary policy uncertainty reduced the tail risk discount that had been applied to equity valuations.\n\n**USD/JPY**: Yen depreciation to 152-154 range added a currency translation tailwind for export-oriented semiconductor equipment names.\n\n**Global risk appetite**: VIX declined to low-20s, indicating normalization of risk aversion from elevated earlier levels.\n\n## Week Ahead (Apr 14–18)\n\nThe technical setup is constructive: AI and semiconductor themes are in Accelerating momentum states, breadth has improved, and volume confirmation is present. Key risk factors:\n- Any escalation of US-China technology restrictions\n- Unexpected Bank of Japan communication\n- US inflation data surprises (would affect rate expectations and risk appetite)\n\n**Positioning**: The combination of improving breadth, volume confirmation, and Accelerating momentum state across AI/semiconductor themes creates the highest-conviction setup for overweighting these themes in a Japan equity portfolio."
+}
