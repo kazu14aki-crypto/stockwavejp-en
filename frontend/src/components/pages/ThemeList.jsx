@@ -110,7 +110,7 @@ function genThemeComment(themes, summary, period, momentum) {
 
   // 全体相場概況
   const mktTone = avg >= 2 ? 'Bullish' : avg >= 0.5 ? 'Mildly Bullish' : avg <= -2 ? 'Bearish' : avg <= -0.5 ? 'やや弱気' : '中立'
-  lines.push(`[${periodLabel} Overview] Across all 67 themes: Rising ${rising.length}, Falling${falling.length}テーマでAvgReturnは${avg >= 0 ? '+' : ''}${avg.toFixed(2)}%（${mktTone}）。`)
+  lines.push(`[${periodLabel} Overview] Across all 67 themes: Rising ${rising.length}, Falling ${falling.length} (avg return ${avg >= 0 ? '+' : ''}${avg.toFixed(2)}% — ${mktTone}).`)
 
   // トップ・ボトム
   lines.push(`Top Rising: '${top?.theme}' (${top?.pct >= 0 ? '+' : ''}${top?.pct?.toFixed(2)}%), Top Falling: '${bot?.theme}' (${bot?.pct?.toFixed(2)}%). Spread: ${(top?.pct - bot?.pct)?.toFixed(1)}pt — ${Math.abs(top?.pct - bot?.pct) > 15 ? 'large theme dispersion' : 'relatively small dispersion'}.`)
@@ -127,15 +127,15 @@ function genThemeComment(themes, summary, period, momentum) {
 
   // Volume急増
   if (volSurge.length > 0) {
-    lines.push(`📊 Volume surging 30%+: ${volSurge.slice(0, 3).join(', ')}. Rising volume ahead of price moves signals institutional accumulation.`)、大口資金の流入を示唆することが多い。`)
+    lines.push(`📊 Volume surging 30%+: ${volSurge.slice(0, 3).join(', ')}. Rising volume often leads price — signals potential institutional accumulation.`)
   }
 
   // Momentum
   if (accel.length > 0) {
-    lines.push(`🔥 Accelerating Momentum: ${accel.slice(0, 4).join(', ')}. Existing trend strengthening — high-priority monitoring.`)り、追随資金が流入しやすい局面。`)
+    lines.push(`🔥 Accelerating Momentum: ${accel.slice(0, 4).join(', ')}. Existing trend strengthening — high-priority monitoring target.`)
   }
   if (decel.length > 0) {
-    lines.push(`❄️ Stalling Momentum: ${decel.slice(0, 4).join(', ')}. May signal a top — but can also be a temporary pause before resumption.`)底値からの反発を見極める必要もある。`)
+    lines.push(`❄️ Stalling Momentum: ${decel.slice(0, 4).join(', ')}. May signal a top — but can also be a temporary pause. Watch for reversal confirmation.`)
   }
 
   // 総合判断

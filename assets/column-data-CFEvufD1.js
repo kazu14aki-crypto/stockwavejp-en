@@ -1,15 +1,4 @@
-// StockWaveJP EN — Column Articles (Full Translation/Adaptation from Japanese Edition)
-// 69 columns covering Japanese stock themes, analysis methods, and individual stocks
-
-const COLUMNS = [
-  {
-    id: 'theme-investing-basics',
-    category: 'Basics',
-    tag: '',
-    title: 'What is Theme Investing? How It Differs from Individual Stocks and Index Funds',
-    date: '2026/03/20',
-    summary: 'Theme investing groups multiple related stocks under a single "theme" — such as Semiconductors, AI & Cloud, Defense & Aerospace, or Inbound Tourism — and analyzes capital flows across that entire indu',
-    body: `
+const e=[{id:"theme-investing-basics",category:"Basics",tag:"",title:"What is Theme Investing? How It Differs from Individual Stocks and Index Funds",date:"2026/03/20",summary:'Theme investing groups multiple related stocks under a single "theme" — such as Semiconductors, AI & Cloud, Defense & Aerospace, or Inbound Tourism — and analyzes capital flows across that entire indu',body:`
 ## What Is Theme Investing?
 
 Theme investing groups multiple related stocks under a single "theme" — such as Semiconductors, AI & Cloud, Defense & Aerospace, or Inbound Tourism — and analyzes capital flows across that entire industry cluster. Unlike individual stock analysis, theme investing helps you see where the market's money is actually moving.
@@ -99,16 +88,7 @@ As themes become more popular, valuations (PER, PBR) tend to stretch. Peak enthu
 ## Summary
 
 Theme investing is a powerful method for capturing Japan's equity market dynamics. Using StockWaveJP to track which themes are attracting capital — and then selecting stocks showing the strongest momentum within those themes — gives individual investors a structured edge that pure fundamental analysis alone cannot provide.
-`,
-  },
-  {
-    id: 'semiconductor-theme',
-    category: 'Semiconductor',
-    tag: '',
-    title: 'Semiconductor Theme: AI Demand Driving Structural Growth and Key Japanese Stocks',
-    date: '2026/03/18',
-    summary: 'Semiconductors are called "the rice of industry" — every modern electronic device and piece of infrastructure depends on them. Smartphones, PCs, automobiles, medical devices, factory controllers, and ',
-    body: `
+`},{id:"semiconductor-theme",category:"Semiconductor",tag:"",title:"Semiconductor Theme: AI Demand Driving Structural Growth and Key Japanese Stocks",date:"2026/03/18",summary:'Semiconductors are called "the rice of industry" — every modern electronic device and piece of infrastructure depends on them. Smartphones, PCs, automobiles, medical devices, factory controllers, and ',body:`
 ## Why Semiconductors Are the Essential Theme
 
 Semiconductors are called "the rice of industry" — every modern electronic device and piece of infrastructure depends on them. Smartphones, PCs, automobiles, medical devices, factory controllers, and AI training datacenters all run on chips. Since 2022, generative AI (ChatGPT and its successors) has caused an explosive surge in demand for high-performance AI-specific semiconductors, making this one of the most consequential themes in global investing.
@@ -174,16 +154,7 @@ The weekly routine: check Semiconductor theme volume change on StockWaveJP → c
 ## Summary
 
 Semiconductors are the foundational infrastructure theme of the AI era — a structural multi-decade growth story with near-term cycle dynamics layered on top. Building a weekly monitoring routine using StockWaveJP's momentum data, combined with tracking Nvidia earnings, TSMC monthly sales, and Japanese equipment maker order trends, creates a systematic framework for navigating this critical theme.
-`,
-  },
-  {
-    id: 'ai-cloud-theme',
-    category: 'AI / Cloud',
-    tag: '',
-    title: 'AI & Cloud Theme: Japan\'s Competitive Landscape and Investment Opportunities in the Generative AI Era',
-    date: '2026/03/16',
-    summary: '— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment ti',
-    body: `
+`},{id:"ai-cloud-theme",category:"AI / Cloud",tag:"",title:"AI & Cloud Theme: Japan's Competitive Landscape and Investment Opportunities in the Generative AI Era",date:"2026/03/16",summary:"— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment ti",body:`
 ## Overview
 
 — this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timing, and risk management.
@@ -221,16 +192,7 @@ We monitor this theme weekly as part of our 67-theme coverage. When momentum is 
 This theme offers significant investment opportunities for investors willing to develop a systematic weekly monitoring routine. Use StockWaveJP's theme data in combination with your own fundamental analysis to build positions at favorable risk-adjusted entry points.
 
 > **Disclaimer**: This column is for informational purposes only. It does not constitute investment advice. All investment decisions are your sole responsibility.
-`,
-  },
-  {
-    id: 'defense-theme',
-    category: 'Defense',
-    tag: '',
-    title: 'Defense & Aerospace Theme: Japan\'s Defense Budget Surge and Long-Term Investment Opportunities',
-    date: '2026/03/14',
-    summary: 'Russia\'s invasion of Ukraine in February 2022 fundamentally changed the global security environment. "Peace is not guaranteed" became a new reality, and Japan — along with many other nations — pivoted',
-    body: `
+`},{id:"defense-theme",category:"Defense",tag:"",title:"Defense & Aerospace Theme: Japan's Defense Budget Surge and Long-Term Investment Opportunities",date:"2026/03/14",summary:`Russia's invasion of Ukraine in February 2022 fundamentally changed the global security environment. "Peace is not guaranteed" became a new reality, and Japan — along with many other nations — pivoted`,body:`
 ## Why the Defense Theme Is in the Spotlight
 
 Russia's invasion of Ukraine in February 2022 fundamentally changed the global security environment. "Peace is not guaranteed" became a new reality, and Japan — along with many other nations — pivoted sharply toward defense spending increases. In December 2022, Japan's Cabinet approved the "Three Defense Documents," committing to raise defense spending to 2% of GDP (approximately ¥10 trillion per year) by FY2027. This is the most historic shift in Japan's postwar security policy and represents a once-in-several-decades structural change for Japan's defense industry.
@@ -276,16 +238,7 @@ The Defense & Aerospace theme has shown exceptional sustained momentum since 202
 Japan's defense buildup represents a generational investment opportunity driven by an irreversible policy shift. The Defense & Aerospace theme is best approached as a multi-year structural hold rather than a short-term momentum trade, with MHI, Kawasaki Heavy, and IHI as the primary direct exposures and NEC/Fujitsu as lower-volatility adjacencies.
 
 > **Disclaimer**: This column is for informational purposes only. It does not constitute investment advice. All investment decisions are your sole responsibility.
-`,
-  },
-  {
-    id: 'inbound-theme',
-    category: 'Inbound Tourism',
-    tag: '',
-    title: 'Inbound Tourism Theme: Record 35M+ Visitors and Japan\'s Consumption Boom',
-    date: '2026/03/12',
-    summary: 'The Inbound Tourism theme groups companies that benefit from rising numbers of foreign visitors to Japan: hotels, ryokan, airlines, railways, department stores, duty-free retail, theme parks, restaura',
-    body: `
+`},{id:"inbound-theme",category:"Inbound Tourism",tag:"",title:"Inbound Tourism Theme: Record 35M+ Visitors and Japan's Consumption Boom",date:"2026/03/12",summary:"The Inbound Tourism theme groups companies that benefit from rising numbers of foreign visitors to Japan: hotels, ryokan, airlines, railways, department stores, duty-free retail, theme parks, restaura",body:`
 ## What Is the Inbound Tourism Theme?
 
 The Inbound Tourism theme groups companies that benefit from rising numbers of foreign visitors to Japan: hotels, ryokan, airlines, railways, department stores, duty-free retail, theme parks, restaurants, travel agencies, and foreign-language services. In 2024, Japan recorded 36.88 million inbound visitors — a new all-time record — with inbound spending exceeding ¥8 trillion (estimated). The recovery from near-zero visitors during COVID (2020–2022) to record highs in just two years has created extraordinary growth opportunities for this theme.
@@ -333,16 +286,7 @@ Monthly inbound visitor statistics (released by JNTO around the 20th of the foll
 The Inbound Tourism theme reflects a structural shift in Japan's economy — becoming a world-class tourism destination after decades of prioritizing manufacturing exports. With the weak yen providing a durable tailwind and Japan's global brand continuing to strengthen, the theme has multi-year legs. Monitor JPY movements as the primary risk factor.
 
 > **Disclaimer**: This column is for informational purposes only. It does not constitute investment advice. All investment decisions are your sole responsibility.
-`,
-  },
-  {
-    id: 'ev-green-theme',
-    category: 'EV / Green',
-    tag: '',
-    title: 'EV & Green Theme: Japan\'s Role in the EV Supply Chain and Decarbonization',
-    date: '2026/03/10',
-    summary: 'The EV & Decarbonization theme covers electric vehicles (BEV, PHEV), fuel cell vehicles (FCV), and the companies supplying the technology and equipment required for a decarbonized economy. Climate cha',
-    body: `
+`},{id:"ev-green-theme",category:"EV / Green",tag:"",title:"EV & Green Theme: Japan's Role in the EV Supply Chain and Decarbonization",date:"2026/03/10",summary:"The EV & Decarbonization theme covers electric vehicles (BEV, PHEV), fuel cell vehicles (FCV), and the companies supplying the technology and equipment required for a decarbonized economy. Climate cha",body:`
 ## What Is the EV & Decarbonization Theme?
 
 The EV & Decarbonization theme covers electric vehicles (BEV, PHEV), fuel cell vehicles (FCV), and the companies supplying the technology and equipment required for a decarbonized economy. Climate change policy, carbon-neutral targets, and the global shift away from internal combustion engines represent a once-in-a-century transformation of the auto industry. Japan's position in this transformation is complex: threatened in some areas (traditional auto manufacturing), but strong in others (batteries, power electronics, materials).
@@ -388,16 +332,7 @@ Japan's GX (Green Transformation) initiative commits ¥150 trillion in public an
 The EV & Decarbonization theme spans a wide range of exposures — from direct EV manufacturers to upstream battery materials and power semiconductors. Japan's companies have significant roles in the supply chain (power semiconductors, battery materials, motors, copper foil) even where they may lag in direct BEV production. The theme rewards patient investors willing to hold through the inevitable near-term volatility.
 
 > **Disclaimer**: This column is for informational purposes only. It does not constitute investment advice. All investment decisions are your sole responsibility.
-`,
-  },
-  {
-    id: 'how-to-read-data',
-    category: 'Analysis Methods',
-    tag: '',
-    title: 'How to Read Price Change, Volume & Trading Value: The 3 Core Metrics for Theme Investing',
-    date: '2026/03/08',
-    summary: 'StockWaveJP tracks every theme using three fundamental metrics: **price change %**, **volume**, and **trading value**. Understanding how to read each one — and how to combine them — is the foundation ',
-    body: `
+`},{id:"how-to-read-data",category:"Analysis Methods",tag:"",title:"How to Read Price Change, Volume & Trading Value: The 3 Core Metrics for Theme Investing",date:"2026/03/08",summary:"StockWaveJP tracks every theme using three fundamental metrics: **price change %**, **volume**, and **trading value**. Understanding how to read each one — and how to combine them — is the foundation ",body:`
 ## The Three Core Metrics for Theme Analysis
 
 StockWaveJP tracks every theme using three fundamental metrics: **price change %**, **volume**, and **trading value**. Understanding how to read each one — and how to combine them — is the foundation of effective theme investing. These metrics tell you not just where the money has been, but whether the current move is reliable.
@@ -454,16 +389,7 @@ A theme that ranks #1 in price change but #30 in trading value is less investabl
 Price change %, volume, and trading value form a three-dimensional picture of capital flow. Learning to read all three simultaneously — rather than reacting to price alone — is the skill that separates disciplined theme investors from price-chasing speculators.
 
 > **Disclaimer**: This column is for informational purposes only. It does not constitute investment advice. All investment decisions are your sole responsibility.
-`,
-  },
-  {
-    id: 'market-cycle',
-    category: 'Analysis Methods',
-    tag: '',
-    title: 'Market Cycles and Theme Investing: Understanding Capital Rotation',
-    date: '2026/03/06',
-    summary: 'Stock markets do not move in straight lines. They cycle through recognizable phases: expansion → overheating → contraction → recovery → expansion again. Understanding which phase the market is current',
-    body: `
+`},{id:"market-cycle",category:"Analysis Methods",tag:"",title:"Market Cycles and Theme Investing: Understanding Capital Rotation",date:"2026/03/06",summary:"Stock markets do not move in straight lines. They cycle through recognizable phases: expansion → overheating → contraction → recovery → expansion again. Understanding which phase the market is current",body:`
 ## Market Cycles and Theme Investing
 
 Stock markets do not move in straight lines. They cycle through recognizable phases: expansion → overheating → contraction → recovery → expansion again. Understanding which phase the market is currently in dramatically improves the accuracy of theme selection. Different themes perform best in different phases — and identifying early-phase themes before the crowd is the core skill of theme rotation investing.
@@ -518,16 +444,7 @@ StockWaveJP's heatmap provides a quick visual read on cycle position. When:
 Market cycle awareness doesn't eliminate uncertainty — but it significantly improves the probability that your theme selection aligns with where capital is actually flowing. Combine StockWaveJP's momentum data with your own reading of macroeconomic conditions (BOJ rate outlook, US Fed policy, yen direction) to develop a cycle-aware theme rotation framework.
 
 > **Disclaimer**: This column is for informational purposes only. It does not constitute investment advice. All investment decisions are your sole responsibility.
-`,
-  },
-  {
-    id: 'japan-theme-investing-guide',
-    category: 'Basics',
-    tag: '',
-    title: 'Complete Guide to Japanese Stock Theme Investing: From Account Setup to Stock Selection',
-    date: '2026/03/25',
-    summary: 'Japanese stock theme investing is the practice of identifying industry-level capital flows in Japan\'s equity market — grouping stocks by their common exposure to social trends, technological shifts, a',
-    body: `
+`},{id:"japan-theme-investing-guide",category:"Basics",tag:"",title:"Complete Guide to Japanese Stock Theme Investing: From Account Setup to Stock Selection",date:"2026/03/25",summary:"Japanese stock theme investing is the practice of identifying industry-level capital flows in Japan's equity market — grouping stocks by their common exposure to social trends, technological shifts, a",body:`
 ## What Is Japanese Stock Theme Investing?
 
 Japanese stock theme investing is the practice of identifying industry-level capital flows in Japan's equity market — grouping stocks by their common exposure to social trends, technological shifts, and policy changes — and building investment positions around those themes. Rather than analyzing individual companies in isolation, theme investing asks: "Which industries are attracting the most capital right now, and why?"
@@ -575,16 +492,7 @@ Once you've identified a theme with strong momentum, selecting individual stocks
 Japanese stock theme investing is accessible to individual investors who develop a consistent weekly monitoring practice. StockWaveJP's theme tracking removes the data burden — all you need to supply is discipline, patience, and the judgment to recognize when a theme's momentum is genuinely accelerating versus temporarily elevated.
 
 > **Disclaimer**: This column is for informational purposes only. It does not constitute investment advice. All investment decisions are your sole responsibility.
-`,
-  },
-  {
-    id: 'defense-space-theme',
-    category: 'Defense',
-    tag: '',
-    title: 'Defense & Space Theme Deep Dive: Japan\'s Defense Buildup and Emerging Opportunities',
-    date: '2026/03/23',
-    summary: '— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investm',
-    body: `
+`},{id:"defense-space-theme",category:"Defense",tag:"",title:"Defense & Space Theme Deep Dive: Japan's Defense Buildup and Emerging Opportunities",date:"2026/03/23",summary:"— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investm",body:`
 ## Overview
 
 — this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timing, and risk management.
@@ -622,16 +530,7 @@ We monitor this theme weekly as part of our 67-theme coverage. When momentum is 
 This theme offers significant investment opportunities for investors willing to develop a systematic weekly monitoring routine. Use StockWaveJP's theme data in combination with your own fundamental analysis to build positions at favorable risk-adjusted entry points.
 
 > **Disclaimer**: This column is for informational purposes only. It does not constitute investment advice. All investment decisions are your sole responsibility.
-`,
-  },
-  {
-    id: 'momentum-investing',
-    category: 'Analysis Methods',
-    tag: '',
-    title: 'Momentum Investing: Reading Acceleration and Deceleration in Japanese Stock Themes',
-    date: '2026/03/21',
-    summary: '— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investmen',
-    body: `
+`},{id:"momentum-investing",category:"Analysis Methods",tag:"",title:"Momentum Investing: Reading Acceleration and Deceleration in Japanese Stock Themes",date:"2026/03/21",summary:"— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investmen",body:`
 ## Overview
 
 — this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timing, and risk management.
@@ -669,16 +568,7 @@ We monitor this theme weekly as part of our 67-theme coverage. When momentum is 
 This theme offers significant investment opportunities for investors willing to develop a systematic weekly monitoring routine. Use StockWaveJP's theme data in combination with your own fundamental analysis to build positions at favorable risk-adjusted entry points.
 
 > **Disclaimer**: This column is for informational purposes only. It does not constitute investment advice. All investment decisions are your sole responsibility.
-`,
-  },
-  {
-    id: 'shipbuilding-theme',
-    category: 'Shipbuilding',
-    tag: '',
-    title: 'Shipbuilding Theme: Multi-Decade High in Orders and Japan\'s Maritime Revival',
-    date: '2026/03/19',
-    summary: '— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investme',
-    body: `
+`},{id:"shipbuilding-theme",category:"Shipbuilding",tag:"",title:"Shipbuilding Theme: Multi-Decade High in Orders and Japan's Maritime Revival",date:"2026/03/19",summary:"— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investme",body:`
 ## Overview
 
 — this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timing, and risk management.
@@ -716,16 +606,7 @@ We monitor this theme weekly as part of our 67-theme coverage. When momentum is 
 This theme offers significant investment opportunities for investors willing to develop a systematic weekly monitoring routine. Use StockWaveJP's theme data in combination with your own fundamental analysis to build positions at favorable risk-adjusted entry points.
 
 > **Disclaimer**: This column is for informational purposes only. It does not constitute investment advice. All investment decisions are your sole responsibility.
-`,
-  },
-  {
-    id: 'parent-child-listing',
-    category: 'Corporate Governance',
-    tag: '',
-    title: 'Parent-Child Listings in Japan: Governance Reform and Investment Opportunities',
-    date: '2026/03/28',
-    summary: '— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timi',
-    body: `
+`},{id:"parent-child-listing",category:"Corporate Governance",tag:"",title:"Parent-Child Listings in Japan: Governance Reform and Investment Opportunities",date:"2026/03/28",summary:"— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timi",body:`
 ## Overview
 
 — this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timing, and risk management.
@@ -763,16 +644,7 @@ We monitor this theme weekly as part of our 67-theme coverage. When momentum is 
 This theme offers significant investment opportunities for investors willing to develop a systematic weekly monitoring routine. Use StockWaveJP's theme data in combination with your own fundamental analysis to build positions at favorable risk-adjusted entry points.
 
 > **Disclaimer**: This column is for informational purposes only. It does not constitute investment advice. All investment decisions are your sole responsibility.
-`,
-  },
-  {
-    id: 'buffett-japan-stocks',
-    category: 'Trading Houses',
-    tag: '',
-    title: 'Buffett\'s Japan Investment: Why Berkshire Chose Japan\'s 5 Major Trading Houses',
-    date: '2026/03/27',
-    summary: '— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investme',
-    body: `
+`},{id:"buffett-japan-stocks",category:"Trading Houses",tag:"",title:"Buffett's Japan Investment: Why Berkshire Chose Japan's 5 Major Trading Houses",date:"2026/03/27",summary:"— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investme",body:`
 ## Overview
 
 — this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timing, and risk management.
@@ -810,16 +682,7 @@ We monitor this theme weekly as part of our 67-theme coverage. When momentum is 
 This theme offers significant investment opportunities for investors willing to develop a systematic weekly monitoring routine. Use StockWaveJP's theme data in combination with your own fundamental analysis to build positions at favorable risk-adjusted entry points.
 
 > **Disclaimer**: This column is for informational purposes only. It does not constitute investment advice. All investment decisions are your sole responsibility.
-`,
-  },
-  {
-    id: 'physical-ai-edge-ai',
-    category: 'Physical AI',
-    tag: '',
-    title: 'Physical AI & Edge AI: The Next Industrial Revolution and Japan\'s Investment Opportunities',
-    date: '2026/03/26',
-    summary: '— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment',
-    body: `
+`},{id:"physical-ai-edge-ai",category:"Physical AI",tag:"",title:"Physical AI & Edge AI: The Next Industrial Revolution and Japan's Investment Opportunities",date:"2026/03/26",summary:"— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment",body:`
 ## Overview
 
 — this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timing, and risk management.
@@ -857,16 +720,7 @@ We monitor this theme weekly as part of our 67-theme coverage. When momentum is 
 This theme offers significant investment opportunities for investors willing to develop a systematic weekly monitoring routine. Use StockWaveJP's theme data in combination with your own fundamental analysis to build positions at favorable risk-adjusted entry points.
 
 > **Disclaimer**: This column is for informational purposes only. It does not constitute investment advice. All investment decisions are your sole responsibility.
-`,
-  },
-  {
-    id: 'power-semiconductor',
-    category: 'Power Semiconductor',
-    tag: '',
-    title: 'Power Semiconductors (SiC/GaN): EV and Renewable Energy Drive Next-Gen Chip Demand',
-    date: '2026/03/25',
-    summary: '— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, invest',
-    body: `
+`},{id:"power-semiconductor",category:"Power Semiconductor",tag:"",title:"Power Semiconductors (SiC/GaN): EV and Renewable Energy Drive Next-Gen Chip Demand",date:"2026/03/25",summary:"— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, invest",body:`
 ## Overview
 
 — this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timing, and risk management.
@@ -904,16 +758,7 @@ We monitor this theme weekly as part of our 67-theme coverage. When momentum is 
 This theme offers significant investment opportunities for investors willing to develop a systematic weekly monitoring routine. Use StockWaveJP's theme data in combination with your own fundamental analysis to build positions at favorable risk-adjusted entry points.
 
 > **Disclaimer**: This column is for informational purposes only. It does not constitute investment advice. All investment decisions are your sole responsibility.
-`,
-  },
-  {
-    id: 'nisa-popular-stocks',
-    category: 'NISA',
-    tag: '',
-    title: 'NISA Popular Stocks: Why Capital Concentrates and What It Means for Investors',
-    date: '2026/03/24',
-    summary: '— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, invest',
-    body: `
+`},{id:"nisa-popular-stocks",category:"NISA",tag:"",title:"NISA Popular Stocks: Why Capital Concentrates and What It Means for Investors",date:"2026/03/24",summary:"— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, invest",body:`
 ## Overview
 
 — this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timing, and risk management.
@@ -951,16 +796,7 @@ We monitor this theme weekly as part of our 67-theme coverage. When momentum is 
 This theme offers significant investment opportunities for investors willing to develop a systematic weekly monitoring routine. Use StockWaveJP's theme data in combination with your own fundamental analysis to build positions at favorable risk-adjusted entry points.
 
 > **Disclaimer**: This column is for informational purposes only. It does not constitute investment advice. All investment decisions are your sole responsibility.
-`,
-  },
-  {
-    id: 'optical-communication',
-    category: 'Optical Communication',
-    tag: '',
-    title: 'Optical Communication Theme: AI Datacenter Bandwidth Demand and Japanese Leaders',
-    date: '2026/03/23',
-    summary: '— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, invest',
-    body: `
+`},{id:"optical-communication",category:"Optical Communication",tag:"",title:"Optical Communication Theme: AI Datacenter Bandwidth Demand and Japanese Leaders",date:"2026/03/23",summary:"— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, invest",body:`
 ## Overview
 
 — this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timing, and risk management.
@@ -998,16 +834,7 @@ We monitor this theme weekly as part of our 67-theme coverage. When momentum is 
 This theme offers significant investment opportunities for investors willing to develop a systematic weekly monitoring routine. Use StockWaveJP's theme data in combination with your own fundamental analysis to build positions at favorable risk-adjusted entry points.
 
 > **Disclaimer**: This column is for informational purposes only. It does not constitute investment advice. All investment decisions are your sole responsibility.
-`,
-  },
-  {
-    id: 'national-resilience',
-    category: 'Infrastructure',
-    tag: '',
-    title: 'National Resilience Plan: Japan\'s ¥15T Infrastructure Investment and Construction Theme',
-    date: '2026/03/22',
-    summary: '— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investme',
-    body: `
+`},{id:"national-resilience",category:"Infrastructure",tag:"",title:"National Resilience Plan: Japan's ¥15T Infrastructure Investment and Construction Theme",date:"2026/03/22",summary:"— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investme",body:`
 ## Overview
 
 — this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timing, and risk management.
@@ -1045,16 +872,7 @@ We monitor this theme weekly as part of our 67-theme coverage. When momentum is 
 This theme offers significant investment opportunities for investors willing to develop a systematic weekly monitoring routine. Use StockWaveJP's theme data in combination with your own fundamental analysis to build positions at favorable risk-adjusted entry points.
 
 > **Disclaimer**: This column is for informational purposes only. It does not constitute investment advice. All investment decisions are your sole responsibility.
-`,
-  },
-  {
-    id: 'iraq-geopolitics',
-    category: 'Geopolitics',
-    tag: '',
-    title: 'Middle East Geopolitics 2026: Impact of Escalating Tensions on Japanese Equities',
-    date: '2026/03/28',
-    summary: '— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investme',
-    body: `
+`},{id:"iraq-geopolitics",category:"Geopolitics",tag:"",title:"Middle East Geopolitics 2026: Impact of Escalating Tensions on Japanese Equities",date:"2026/03/28",summary:"— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investme",body:`
 ## Overview
 
 — this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timing, and risk management.
@@ -1092,16 +910,7 @@ We monitor this theme weekly as part of our 67-theme coverage. When momentum is 
 This theme offers significant investment opportunities for investors willing to develop a systematic weekly monitoring routine. Use StockWaveJP's theme data in combination with your own fundamental analysis to build positions at favorable risk-adjusted entry points.
 
 > **Disclaimer**: This column is for informational purposes only. It does not constitute investment advice. All investment decisions are your sole responsibility.
-`,
-  },
-  {
-    id: 'renewable-energy-theme',
-    category: 'Renewable Energy',
-    tag: '',
-    title: 'Renewable Energy Theme: Japan\'s GX Policy and the ¥150T Decarbonization Investment Wave',
-    date: '2026/04/04',
-    summary: '— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investmen',
-    body: `
+`},{id:"renewable-energy-theme",category:"Renewable Energy",tag:"",title:"Renewable Energy Theme: Japan's GX Policy and the ¥150T Decarbonization Investment Wave",date:"2026/04/04",summary:"— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investmen",body:`
 ## Overview
 
 — this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timing, and risk management.
@@ -1139,16 +948,7 @@ We monitor this theme weekly as part of our 67-theme coverage. When momentum is 
 This theme offers significant investment opportunities for investors willing to develop a systematic weekly monitoring routine. Use StockWaveJP's theme data in combination with your own fundamental analysis to build positions at favorable risk-adjusted entry points.
 
 > **Disclaimer**: This column is for informational purposes only. It does not constitute investment advice. All investment decisions are your sole responsibility.
-`,
-  },
-  {
-    id: 'game-entertainment-theme',
-    category: 'Gaming & Entertainment',
-    tag: '',
-    title: 'Gaming & Entertainment Theme: Japan\'s Global Content Dominance and Investment Drivers',
-    date: '2026/04/04',
-    summary: '— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timi',
-    body: `
+`},{id:"game-entertainment-theme",category:"Gaming & Entertainment",tag:"",title:"Gaming & Entertainment Theme: Japan's Global Content Dominance and Investment Drivers",date:"2026/04/04",summary:"— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timi",body:`
 ## Overview
 
 — this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timing, and risk management.
@@ -1186,16 +986,7 @@ We monitor this theme weekly as part of our 67-theme coverage. When momentum is 
 This theme offers significant investment opportunities for investors willing to develop a systematic weekly monitoring routine. Use StockWaveJP's theme data in combination with your own fundamental analysis to build positions at favorable risk-adjusted entry points.
 
 > **Disclaimer**: This column is for informational purposes only. It does not constitute investment advice. All investment decisions are your sole responsibility.
-`,
-  },
-  {
-    id: 'banking-finance-theme',
-    category: 'Banking & Finance',
-    tag: '',
-    title: 'Banking & Finance Theme: BOJ Rate Hike Cycle and Structural Improvement in Bank Profitability',
-    date: '2026/04/04',
-    summary: '— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timing,',
-    body: `
+`},{id:"banking-finance-theme",category:"Banking & Finance",tag:"",title:"Banking & Finance Theme: BOJ Rate Hike Cycle and Structural Improvement in Bank Profitability",date:"2026/04/04",summary:"— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timing,",body:`
 ## Overview
 
 — this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timing, and risk management.
@@ -1233,16 +1024,7 @@ We monitor this theme weekly as part of our 67-theme coverage. When momentum is 
 This theme offers significant investment opportunities for investors willing to develop a systematic weekly monitoring routine. Use StockWaveJP's theme data in combination with your own fundamental analysis to build positions at favorable risk-adjusted entry points.
 
 > **Disclaimer**: This column is for informational purposes only. It does not constitute investment advice. All investment decisions are your sole responsibility.
-`,
-  },
-  {
-    id: 'regional-bank-theme',
-    category: 'Regional Banks',
-    tag: '',
-    title: 'Regional Banks Theme: Rate Hike Beneficiaries and Consolidation Plays',
-    date: '2026/04/04',
-    summary: '— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timing, ',
-    body: `
+`},{id:"regional-bank-theme",category:"Regional Banks",tag:"",title:"Regional Banks Theme: Rate Hike Beneficiaries and Consolidation Plays",date:"2026/04/04",summary:"— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timing, ",body:`
 ## Overview
 
 — this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timing, and risk management.
@@ -1280,16 +1062,7 @@ We monitor this theme weekly as part of our 67-theme coverage. When momentum is 
 This theme offers significant investment opportunities for investors willing to develop a systematic weekly monitoring routine. Use StockWaveJP's theme data in combination with your own fundamental analysis to build positions at favorable risk-adjusted entry points.
 
 > **Disclaimer**: This column is for informational purposes only. It does not constitute investment advice. All investment decisions are your sole responsibility.
-`,
-  },
-  {
-    id: 'insurance-theme',
-    category: 'Insurance',
-    tag: '',
-    title: 'Insurance Theme: Rising Bond Yields and Cross-Shareholding Unwinding Drive Profitability',
-    date: '2026/04/04',
-    summary: '— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timing, an',
-    body: `
+`},{id:"insurance-theme",category:"Insurance",tag:"",title:"Insurance Theme: Rising Bond Yields and Cross-Shareholding Unwinding Drive Profitability",date:"2026/04/04",summary:"— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timing, an",body:`
 ## Overview
 
 — this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timing, and risk management.
@@ -1327,16 +1100,7 @@ We monitor this theme weekly as part of our 67-theme coverage. When momentum is 
 This theme offers significant investment opportunities for investors willing to develop a systematic weekly monitoring routine. Use StockWaveJP's theme data in combination with your own fundamental analysis to build positions at favorable risk-adjusted entry points.
 
 > **Disclaimer**: This column is for informational purposes only. It does not constitute investment advice. All investment decisions are your sole responsibility.
-`,
-  },
-  {
-    id: 'real-estate-theme',
-    category: 'Real Estate',
-    tag: '',
-    title: 'Real Estate Theme: Inbound Tourism Demand vs. Rate Hike Risk — Where Opportunity Lies',
-    date: '2026/04/04',
-    summary: '— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timing, a',
-    body: `
+`},{id:"real-estate-theme",category:"Real Estate",tag:"",title:"Real Estate Theme: Inbound Tourism Demand vs. Rate Hike Risk — Where Opportunity Lies",date:"2026/04/04",summary:"— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timing, a",body:`
 ## Overview
 
 — this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timing, and risk management.
@@ -1374,16 +1138,7 @@ We monitor this theme weekly as part of our 67-theme coverage. When momentum is 
 This theme offers significant investment opportunities for investors willing to develop a systematic weekly monitoring routine. Use StockWaveJP's theme data in combination with your own fundamental analysis to build positions at favorable risk-adjusted entry points.
 
 > **Disclaimer**: This column is for informational purposes only. It does not constitute investment advice. All investment decisions are your sole responsibility.
-`,
-  },
-  {
-    id: 'pharma-bio-theme',
-    category: 'Pharma & Biotech',
-    tag: '',
-    title: 'Pharma & Biotech Theme: Japan\'s ADC Pipeline and Global Drug Franchise Expansion',
-    date: '2026/04/04',
-    summary: '— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timin',
-    body: `
+`},{id:"pharma-bio-theme",category:"Pharma & Biotech",tag:"",title:"Pharma & Biotech Theme: Japan's ADC Pipeline and Global Drug Franchise Expansion",date:"2026/04/04",summary:"— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timin",body:`
 ## Overview
 
 — this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timing, and risk management.
@@ -1421,16 +1176,7 @@ We monitor this theme weekly as part of our 67-theme coverage. When momentum is 
 This theme offers significant investment opportunities for investors willing to develop a systematic weekly monitoring routine. Use StockWaveJP's theme data in combination with your own fundamental analysis to build positions at favorable risk-adjusted entry points.
 
 > **Disclaimer**: This column is for informational purposes only. It does not constitute investment advice. All investment decisions are your sole responsibility.
-`,
-  },
-  {
-    id: 'healthcare-nursing-theme',
-    category: 'Healthcare',
-    tag: '',
-    title: 'Healthcare & Nursing Theme: Japan\'s Aging Population as a Structural Investment Driver',
-    date: '2026/04/04',
-    summary: '— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timi',
-    body: `
+`},{id:"healthcare-nursing-theme",category:"Healthcare",tag:"",title:"Healthcare & Nursing Theme: Japan's Aging Population as a Structural Investment Driver",date:"2026/04/04",summary:"— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timi",body:`
 ## Overview
 
 — this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timing, and risk management.
@@ -1468,16 +1214,7 @@ We monitor this theme weekly as part of our 67-theme coverage. When momentum is 
 This theme offers significant investment opportunities for investors willing to develop a systematic weekly monitoring routine. Use StockWaveJP's theme data in combination with your own fundamental analysis to build positions at favorable risk-adjusted entry points.
 
 > **Disclaimer**: This column is for informational purposes only. It does not constitute investment advice. All investment decisions are your sole responsibility.
-`,
-  },
-  {
-    id: 'food-beverage-theme',
-    category: 'Food & Beverage',
-    tag: '',
-    title: 'Food & Beverage Theme: Pricing Power, Export Growth, and Inbound Spending',
-    date: '2026/04/04',
-    summary: '— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timing,',
-    body: `
+`},{id:"food-beverage-theme",category:"Food & Beverage",tag:"",title:"Food & Beverage Theme: Pricing Power, Export Growth, and Inbound Spending",date:"2026/04/04",summary:"— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timing,",body:`
 ## Overview
 
 — this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timing, and risk management.
@@ -1515,16 +1252,7 @@ We monitor this theme weekly as part of our 67-theme coverage. When momentum is 
 This theme offers significant investment opportunities for investors willing to develop a systematic weekly monitoring routine. Use StockWaveJP's theme data in combination with your own fundamental analysis to build positions at favorable risk-adjusted entry points.
 
 > **Disclaimer**: This column is for informational purposes only. It does not constitute investment advice. All investment decisions are your sole responsibility.
-`,
-  },
-  {
-    id: 'retail-ec-theme',
-    category: 'Retail & EC',
-    tag: '',
-    title: 'Retail & E-Commerce Theme: Japan\'s Digital Commerce Shift and Key Players',
-    date: '2026/04/04',
-    summary: '— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timing,',
-    body: `
+`},{id:"retail-ec-theme",category:"Retail & EC",tag:"",title:"Retail & E-Commerce Theme: Japan's Digital Commerce Shift and Key Players",date:"2026/04/04",summary:"— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timing,",body:`
 ## Overview
 
 — this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timing, and risk management.
@@ -1562,16 +1290,7 @@ We monitor this theme weekly as part of our 67-theme coverage. When momentum is 
 This theme offers significant investment opportunities for investors willing to develop a systematic weekly monitoring routine. Use StockWaveJP's theme data in combination with your own fundamental analysis to build positions at favorable risk-adjusted entry points.
 
 > **Disclaimer**: This column is for informational purposes only. It does not constitute investment advice. All investment decisions are your sole responsibility.
-`,
-  },
-  {
-    id: 'telecom-theme',
-    category: 'Telecom',
-    tag: '',
-    title: 'Telecom Theme: 5G Monetization, AI Integration, and Dividend Sustainability',
-    date: '2026/04/04',
-    summary: '— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timing, an',
-    body: `
+`},{id:"telecom-theme",category:"Telecom",tag:"",title:"Telecom Theme: 5G Monetization, AI Integration, and Dividend Sustainability",date:"2026/04/04",summary:"— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timing, an",body:`
 ## Overview
 
 — this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timing, and risk management.
@@ -1609,16 +1328,7 @@ We monitor this theme weekly as part of our 67-theme coverage. When momentum is 
 This theme offers significant investment opportunities for investors willing to develop a systematic weekly monitoring routine. Use StockWaveJP's theme data in combination with your own fundamental analysis to build positions at favorable risk-adjusted entry points.
 
 > **Disclaimer**: This column is for informational purposes only. It does not constitute investment advice. All investment decisions are your sole responsibility.
-`,
-  },
-  {
-    id: 'steel-materials-theme',
-    category: 'Steel & Materials',
-    tag: '',
-    title: 'Steel & Materials Theme: Nippon Steel\'s Global Ambitions and China Overcapacity Risk',
-    date: '2026/04/04',
-    summary: '— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timing,',
-    body: `
+`},{id:"steel-materials-theme",category:"Steel & Materials",tag:"",title:"Steel & Materials Theme: Nippon Steel's Global Ambitions and China Overcapacity Risk",date:"2026/04/04",summary:"— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timing,",body:`
 ## Overview
 
 — this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timing, and risk management.
@@ -1656,16 +1366,7 @@ We monitor this theme weekly as part of our 67-theme coverage. When momentum is 
 This theme offers significant investment opportunities for investors willing to develop a systematic weekly monitoring routine. Use StockWaveJP's theme data in combination with your own fundamental analysis to build positions at favorable risk-adjusted entry points.
 
 > **Disclaimer**: This column is for informational purposes only. It does not constitute investment advice. All investment decisions are your sole responsibility.
-`,
-  },
-  {
-    id: 'chemical-theme',
-    category: 'Chemicals',
-    tag: '',
-    title: 'Chemicals Theme: Specialty vs. Commodity — Finding Alpha in Japanese Chemicals',
-    date: '2026/04/04',
-    summary: '— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timing, an',
-    body: `
+`},{id:"chemical-theme",category:"Chemicals",tag:"",title:"Chemicals Theme: Specialty vs. Commodity — Finding Alpha in Japanese Chemicals",date:"2026/04/04",summary:"— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timing, an",body:`
 ## Overview
 
 — this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timing, and risk management.
@@ -1703,16 +1404,7 @@ We monitor this theme weekly as part of our 67-theme coverage. When momentum is 
 This theme offers significant investment opportunities for investors willing to develop a systematic weekly monitoring routine. Use StockWaveJP's theme data in combination with your own fundamental analysis to build positions at favorable risk-adjusted entry points.
 
 > **Disclaimer**: This column is for informational purposes only. It does not constitute investment advice. All investment decisions are your sole responsibility.
-`,
-  },
-  {
-    id: 'construction-infra-theme',
-    category: 'Construction',
-    tag: '',
-    title: 'Construction & Infrastructure Theme: Government Spending Boom and Labor Shortage Dynamics',
-    date: '2026/04/04',
-    summary: '— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timin',
-    body: `
+`},{id:"construction-infra-theme",category:"Construction",tag:"",title:"Construction & Infrastructure Theme: Government Spending Boom and Labor Shortage Dynamics",date:"2026/04/04",summary:"— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timin",body:`
 ## Overview
 
 — this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timing, and risk management.
@@ -1750,16 +1442,7 @@ We monitor this theme weekly as part of our 67-theme coverage. When momentum is 
 This theme offers significant investment opportunities for investors willing to develop a systematic weekly monitoring routine. Use StockWaveJP's theme data in combination with your own fundamental analysis to build positions at favorable risk-adjusted entry points.
 
 > **Disclaimer**: This column is for informational purposes only. It does not constitute investment advice. All investment decisions are your sole responsibility.
-`,
-  },
-  {
-    id: 'transport-logistics-theme',
-    category: 'Transport',
-    tag: '',
-    title: 'Transport & Logistics Theme: E-Commerce Growth vs. the 2024 Driver Shortage Problem',
-    date: '2026/04/04',
-    summary: '— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timing,',
-    body: `
+`},{id:"transport-logistics-theme",category:"Transport",tag:"",title:"Transport & Logistics Theme: E-Commerce Growth vs. the 2024 Driver Shortage Problem",date:"2026/04/04",summary:"— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timing,",body:`
 ## Overview
 
 — this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timing, and risk management.
@@ -1797,16 +1480,7 @@ We monitor this theme weekly as part of our 67-theme coverage. When momentum is 
 This theme offers significant investment opportunities for investors willing to develop a systematic weekly monitoring routine. Use StockWaveJP's theme data in combination with your own fundamental analysis to build positions at favorable risk-adjusted entry points.
 
 > **Disclaimer**: This column is for informational purposes only. It does not constitute investment advice. All investment decisions are your sole responsibility.
-`,
-  },
-  {
-    id: 'fintech-theme',
-    category: 'Fintech',
-    tag: '',
-    title: 'Fintech Theme: Japan\'s Cashless Revolution and Digital Finance Opportunity',
-    date: '2026/04/04',
-    summary: '— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timing',
-    body: `
+`},{id:"fintech-theme",category:"Fintech",tag:"",title:"Fintech Theme: Japan's Cashless Revolution and Digital Finance Opportunity",date:"2026/04/04",summary:"— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timing",body:`
 ## Overview
 
 — this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timing, and risk management.
@@ -1844,16 +1518,7 @@ We monitor this theme weekly as part of our 67-theme coverage. When momentum is 
 This theme offers significant investment opportunities for investors willing to develop a systematic weekly monitoring routine. Use StockWaveJP's theme data in combination with your own fundamental analysis to build positions at favorable risk-adjusted entry points.
 
 > **Disclaimer**: This column is for informational purposes only. It does not constitute investment advice. All investment decisions are your sole responsibility.
-`,
-  },
-  {
-    id: 'robot-automation-theme',
-    category: 'Robotics',
-    tag: '',
-    title: 'Robotics & Automation Theme: Labor Shortage Solutions Driving Industrial Investment',
-    date: '2026/04/04',
-    summary: '— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timi',
-    body: `
+`},{id:"robot-automation-theme",category:"Robotics",tag:"",title:"Robotics & Automation Theme: Labor Shortage Solutions Driving Industrial Investment",date:"2026/04/04",summary:"— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timi",body:`
 ## Overview
 
 — this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timing, and risk management.
@@ -1891,16 +1556,7 @@ We monitor this theme weekly as part of our 67-theme coverage. When momentum is 
 This theme offers significant investment opportunities for investors willing to develop a systematic weekly monitoring routine. Use StockWaveJP's theme data in combination with your own fundamental analysis to build positions at favorable risk-adjusted entry points.
 
 > **Disclaimer**: This column is for informational purposes only. It does not constitute investment advice. All investment decisions are your sole responsibility.
-`,
-  },
-  {
-    id: 'rare-earth-resources-theme',
-    category: 'Rare Earth',
-    tag: '',
-    title: 'Rare Earth & Resources Theme: Supply Chain Decoupling from China and Critical Minerals',
-    date: '2026/04/04',
-    summary: '— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timi',
-    body: `
+`},{id:"rare-earth-resources-theme",category:"Rare Earth",tag:"",title:"Rare Earth & Resources Theme: Supply Chain Decoupling from China and Critical Minerals",date:"2026/04/04",summary:"— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timi",body:`
 ## Overview
 
 — this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timing, and risk management.
@@ -1938,16 +1594,7 @@ We monitor this theme weekly as part of our 67-theme coverage. When momentum is 
 This theme offers significant investment opportunities for investors willing to develop a systematic weekly monitoring routine. Use StockWaveJP's theme data in combination with your own fundamental analysis to build positions at favorable risk-adjusted entry points.
 
 > **Disclaimer**: This column is for informational purposes only. It does not constitute investment advice. All investment decisions are your sole responsibility.
-`,
-  },
-  {
-    id: 'cybersecurity-theme',
-    category: 'Cybersecurity',
-    tag: '',
-    title: 'Cybersecurity Theme: Rising Threats and Japan\'s Active Cyber Defense Legislation',
-    date: '2026/04/04',
-    summary: '— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment ti',
-    body: `
+`},{id:"cybersecurity-theme",category:"Cybersecurity",tag:"",title:"Cybersecurity Theme: Rising Threats and Japan's Active Cyber Defense Legislation",date:"2026/04/04",summary:"— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment ti",body:`
 ## Overview
 
 — this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timing, and risk management.
@@ -1985,16 +1632,7 @@ We monitor this theme weekly as part of our 67-theme coverage. When momentum is 
 This theme offers significant investment opportunities for investors willing to develop a systematic weekly monitoring routine. Use StockWaveJP's theme data in combination with your own fundamental analysis to build positions at favorable risk-adjusted entry points.
 
 > **Disclaimer**: This column is for informational purposes only. It does not constitute investment advice. All investment decisions are your sole responsibility.
-`,
-  },
-  {
-    id: 'drone-theme',
-    category: 'Drones',
-    tag: '',
-    title: 'Drone Theme: Level 4 Legalization, Defense UAVs, and Japan\'s Delivery Revolution',
-    date: '2026/04/04',
-    summary: '— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timing, ',
-    body: `
+`},{id:"drone-theme",category:"Drones",tag:"",title:"Drone Theme: Level 4 Legalization, Defense UAVs, and Japan's Delivery Revolution",date:"2026/04/04",summary:"— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timing, ",body:`
 ## Overview
 
 — this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timing, and risk management.
@@ -2032,16 +1670,7 @@ We monitor this theme weekly as part of our 67-theme coverage. When momentum is 
 This theme offers significant investment opportunities for investors willing to develop a systematic weekly monitoring routine. Use StockWaveJP's theme data in combination with your own fundamental analysis to build positions at favorable risk-adjusted entry points.
 
 > **Disclaimer**: This column is for informational purposes only. It does not constitute investment advice. All investment decisions are your sole responsibility.
-`,
-  },
-  {
-    id: 'tourism-hotel-theme',
-    category: 'Tourism',
-    tag: '',
-    title: 'Tourism & Hotels Theme: Record Inbound Visitors and Japan\'s Hospitality Boom',
-    date: '2026/04/04',
-    summary: '— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment t',
-    body: `
+`},{id:"tourism-hotel-theme",category:"Tourism",tag:"",title:"Tourism & Hotels Theme: Record Inbound Visitors and Japan's Hospitality Boom",date:"2026/04/04",summary:"— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment t",body:`
 ## Overview
 
 — this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timing, and risk management.
@@ -2079,16 +1708,7 @@ We monitor this theme weekly as part of our 67-theme coverage. When momentum is 
 This theme offers significant investment opportunities for investors willing to develop a systematic weekly monitoring routine. Use StockWaveJP's theme data in combination with your own fundamental analysis to build positions at favorable risk-adjusted entry points.
 
 > **Disclaimer**: This column is for informational purposes only. It does not constitute investment advice. All investment decisions are your sole responsibility.
-`,
-  },
-  {
-    id: 'agritech-foodtech-theme',
-    category: 'Agritech',
-    tag: '',
-    title: 'Agritech & Foodtech Theme: Smart Farming, Food Security, and Alternative Proteins',
-    date: '2026/04/04',
-    summary: '— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment tim',
-    body: `
+`},{id:"agritech-foodtech-theme",category:"Agritech",tag:"",title:"Agritech & Foodtech Theme: Smart Farming, Food Security, and Alternative Proteins",date:"2026/04/04",summary:"— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment tim",body:`
 ## Overview
 
 — this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timing, and risk management.
@@ -2126,16 +1746,7 @@ We monitor this theme weekly as part of our 67-theme coverage. When momentum is 
 This theme offers significant investment opportunities for investors willing to develop a systematic weekly monitoring routine. Use StockWaveJP's theme data in combination with your own fundamental analysis to build positions at favorable risk-adjusted entry points.
 
 > **Disclaimer**: This column is for informational purposes only. It does not constitute investment advice. All investment decisions are your sole responsibility.
-`,
-  },
-  {
-    id: 'education-hr-theme',
-    category: 'Education & HR',
-    tag: '',
-    title: 'Education & HR Theme: Japan\'s ¥1T Reskilling Initiative and EdTech Growth',
-    date: '2026/04/04',
-    summary: '— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timi',
-    body: `
+`},{id:"education-hr-theme",category:"Education & HR",tag:"",title:"Education & HR Theme: Japan's ¥1T Reskilling Initiative and EdTech Growth",date:"2026/04/04",summary:"— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timi",body:`
 ## Overview
 
 — this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timing, and risk management.
@@ -2173,16 +1784,7 @@ We monitor this theme weekly as part of our 67-theme coverage. When momentum is 
 This theme offers significant investment opportunities for investors willing to develop a systematic weekly monitoring routine. Use StockWaveJP's theme data in combination with your own fundamental analysis to build positions at favorable risk-adjusted entry points.
 
 > **Disclaimer**: This column is for informational purposes only. It does not constitute investment advice. All investment decisions are your sole responsibility.
-`,
-  },
-  {
-    id: 'space-satellite-theme',
-    category: 'Space',
-    tag: '',
-    title: 'Space & Satellite Theme: Japan\'s Constellation Strategy and Commercial Space Market',
-    date: '2026/04/04',
-    summary: '— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timing,',
-    body: `
+`},{id:"space-satellite-theme",category:"Space",tag:"",title:"Space & Satellite Theme: Japan's Constellation Strategy and Commercial Space Market",date:"2026/04/04",summary:"— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timing,",body:`
 ## Overview
 
 — this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timing, and risk management.
@@ -2220,16 +1822,7 @@ We monitor this theme weekly as part of our 67-theme coverage. When momentum is 
 This theme offers significant investment opportunities for investors willing to develop a systematic weekly monitoring routine. Use StockWaveJP's theme data in combination with your own fundamental analysis to build positions at favorable risk-adjusted entry points.
 
 > **Disclaimer**: This column is for informational purposes only. It does not constitute investment advice. All investment decisions are your sole responsibility.
-`,
-  },
-  {
-    id: 'value-investing-guide',
-    category: 'Strategy',
-    tag: '',
-    title: 'Value Investing in Japanese Stocks: Finding Undervalued Gems with PBR and FCF',
-    date: '2026/04/05',
-    summary: '— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timing, and',
-    body: `
+`},{id:"value-investing-guide",category:"Strategy",tag:"",title:"Value Investing in Japanese Stocks: Finding Undervalued Gems with PBR and FCF",date:"2026/04/05",summary:"— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timing, and",body:`
 ## Overview
 
 — this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timing, and risk management.
@@ -2267,16 +1860,7 @@ We monitor this theme weekly as part of our 67-theme coverage. When momentum is 
 This theme offers significant investment opportunities for investors willing to develop a systematic weekly monitoring routine. Use StockWaveJP's theme data in combination with your own fundamental analysis to build positions at favorable risk-adjusted entry points.
 
 > **Disclaimer**: This column is for informational purposes only. It does not constitute investment advice. All investment decisions are your sole responsibility.
-`,
-  },
-  {
-    id: 'growth-investing-guide',
-    category: 'Strategy',
-    tag: '',
-    title: 'Growth Investing in Japan: How to Identify High-Growth Companies and Time Entry',
-    date: '2026/04/05',
-    summary: '— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timing, a',
-    body: `
+`},{id:"growth-investing-guide",category:"Strategy",tag:"",title:"Growth Investing in Japan: How to Identify High-Growth Companies and Time Entry",date:"2026/04/05",summary:"— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timing, a",body:`
 ## Overview
 
 — this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timing, and risk management.
@@ -2314,16 +1898,7 @@ We monitor this theme weekly as part of our 67-theme coverage. When momentum is 
 This theme offers significant investment opportunities for investors willing to develop a systematic weekly monitoring routine. Use StockWaveJP's theme data in combination with your own fundamental analysis to build positions at favorable risk-adjusted entry points.
 
 > **Disclaimer**: This column is for informational purposes only. It does not constitute investment advice. All investment decisions are your sole responsibility.
-`,
-  },
-  {
-    id: 'momentum-investing-advanced',
-    category: 'Strategy',
-    tag: '',
-    title: 'Advanced Momentum Investing: Using Volume and Price Data to Follow Trends',
-    date: '2026/04/05',
-    summary: '— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timing',
-    body: `
+`},{id:"momentum-investing-advanced",category:"Strategy",tag:"",title:"Advanced Momentum Investing: Using Volume and Price Data to Follow Trends",date:"2026/04/05",summary:"— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timing",body:`
 ## Overview
 
 — this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timing, and risk management.
@@ -2361,16 +1936,7 @@ We monitor this theme weekly as part of our 67-theme coverage. When momentum is 
 This theme offers significant investment opportunities for investors willing to develop a systematic weekly monitoring routine. Use StockWaveJP's theme data in combination with your own fundamental analysis to build positions at favorable risk-adjusted entry points.
 
 > **Disclaimer**: This column is for informational purposes only. It does not constitute investment advice. All investment decisions are your sole responsibility.
-`,
-  },
-  {
-    id: 'technical-analysis-basics',
-    category: 'Strategy',
-    tag: '',
-    title: 'Technical Analysis Basics: Moving Averages, RSI, and MACD for Japanese Stocks',
-    date: '2026/04/05',
-    summary: '— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timing, ',
-    body: `
+`},{id:"technical-analysis-basics",category:"Strategy",tag:"",title:"Technical Analysis Basics: Moving Averages, RSI, and MACD for Japanese Stocks",date:"2026/04/05",summary:"— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timing, ",body:`
 ## Overview
 
 — this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timing, and risk management.
@@ -2408,16 +1974,7 @@ We monitor this theme weekly as part of our 67-theme coverage. When momentum is 
 This theme offers significant investment opportunities for investors willing to develop a systematic weekly monitoring routine. Use StockWaveJP's theme data in combination with your own fundamental analysis to build positions at favorable risk-adjusted entry points.
 
 > **Disclaimer**: This column is for informational purposes only. It does not constitute investment advice. All investment decisions are your sole responsibility.
-`,
-  },
-  {
-    id: 'stock-terms-glossary',
-    category: 'Glossary',
-    tag: '',
-    title: '50 Essential Japanese Stock Market Terms Every Investor Should Know',
-    date: '2026/04/05',
-    summary: '— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timing, and',
-    body: `
+`},{id:"stock-terms-glossary",category:"Glossary",tag:"",title:"50 Essential Japanese Stock Market Terms Every Investor Should Know",date:"2026/04/05",summary:"— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timing, and",body:`
 ## Overview
 
 — this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timing, and risk management.
@@ -2455,16 +2012,7 @@ We monitor this theme weekly as part of our 67-theme coverage. When momentum is 
 This theme offers significant investment opportunities for investors willing to develop a systematic weekly monitoring routine. Use StockWaveJP's theme data in combination with your own fundamental analysis to build positions at favorable risk-adjusted entry points.
 
 > **Disclaimer**: This column is for informational purposes only. It does not constitute investment advice. All investment decisions are your sole responsibility.
-`,
-  },
-  {
-    id: 'dividend-investing-guide',
-    category: 'Strategy',
-    tag: '',
-    title: 'Dividend Investing in Japan: Yield, Consecutive Increases, and NISA Tax Efficiency',
-    date: '2026/04/05',
-    summary: '— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timing, and',
-    body: `
+`},{id:"dividend-investing-guide",category:"Strategy",tag:"",title:"Dividend Investing in Japan: Yield, Consecutive Increases, and NISA Tax Efficiency",date:"2026/04/05",summary:"— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timing, and",body:`
 ## Overview
 
 — this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timing, and risk management.
@@ -2502,16 +2050,7 @@ We monitor this theme weekly as part of our 67-theme coverage. When momentum is 
 This theme offers significant investment opportunities for investors willing to develop a systematic weekly monitoring routine. Use StockWaveJP's theme data in combination with your own fundamental analysis to build positions at favorable risk-adjusted entry points.
 
 > **Disclaimer**: This column is for informational purposes only. It does not constitute investment advice. All investment decisions are your sole responsibility.
-`,
-  },
-  {
-    id: 'portfolio-management',
-    category: 'Strategy',
-    tag: '',
-    title: 'Portfolio Management: Diversification, Rebalancing, and Risk Control for Theme Investors',
-    date: '2026/04/05',
-    summary: '— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timing, ',
-    body: `
+`},{id:"portfolio-management",category:"Strategy",tag:"",title:"Portfolio Management: Diversification, Rebalancing, and Risk Control for Theme Investors",date:"2026/04/05",summary:"— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timing, ",body:`
 ## Overview
 
 — this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timing, and risk management.
@@ -2549,16 +2088,7 @@ We monitor this theme weekly as part of our 67-theme coverage. When momentum is 
 This theme offers significant investment opportunities for investors willing to develop a systematic weekly monitoring routine. Use StockWaveJP's theme data in combination with your own fundamental analysis to build positions at favorable risk-adjusted entry points.
 
 > **Disclaimer**: This column is for informational purposes only. It does not constitute investment advice. All investment decisions are your sole responsibility.
-`,
-  },
-  {
-    id: 'toyota-analysis',
-    category: 'Stock Analysis',
-    tag: '',
-    title: 'Toyota Motor (7203): EV Strategy, Hybrid Dominance, and 2026 Investment Outlook',
-    date: '2026/04/05',
-    summary: '— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment ',
-    body: `
+`},{id:"toyota-analysis",category:"Stock Analysis",tag:"",title:"Toyota Motor (7203): EV Strategy, Hybrid Dominance, and 2026 Investment Outlook",date:"2026/04/05",summary:"— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment ",body:`
 ## Overview
 
 — this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timing, and risk management.
@@ -2596,16 +2126,7 @@ We monitor this theme weekly as part of our 67-theme coverage. When momentum is 
 This theme offers significant investment opportunities for investors willing to develop a systematic weekly monitoring routine. Use StockWaveJP's theme data in combination with your own fundamental analysis to build positions at favorable risk-adjusted entry points.
 
 > **Disclaimer**: This column is for informational purposes only. It does not constitute investment advice. All investment decisions are your sole responsibility.
-`,
-  },
-  {
-    id: 'sony-analysis',
-    category: 'Stock Analysis',
-    tag: '',
-    title: 'Sony Group (6758): Gaming, Music, Film, and Image Sensors — A Diversified Tech Powerhouse',
-    date: '2026/04/05',
-    summary: '— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investm',
-    body: `
+`},{id:"sony-analysis",category:"Stock Analysis",tag:"",title:"Sony Group (6758): Gaming, Music, Film, and Image Sensors — A Diversified Tech Powerhouse",date:"2026/04/05",summary:"— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investm",body:`
 ## Overview
 
 — this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timing, and risk management.
@@ -2643,16 +2164,7 @@ We monitor this theme weekly as part of our 67-theme coverage. When momentum is 
 This theme offers significant investment opportunities for investors willing to develop a systematic weekly monitoring routine. Use StockWaveJP's theme data in combination with your own fundamental analysis to build positions at favorable risk-adjusted entry points.
 
 > **Disclaimer**: This column is for informational purposes only. It does not constitute investment advice. All investment decisions are your sole responsibility.
-`,
-  },
-  {
-    id: 'mitsubishi-ufj-analysis',
-    category: 'Stock Analysis',
-    tag: '',
-    title: 'Mitsubishi UFJ Financial Group (8306): Japan\'s Largest Bank in the Rate Hike Era',
-    date: '2026/04/05',
-    summary: '— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, inves',
-    body: `
+`},{id:"mitsubishi-ufj-analysis",category:"Stock Analysis",tag:"",title:"Mitsubishi UFJ Financial Group (8306): Japan's Largest Bank in the Rate Hike Era",date:"2026/04/05",summary:"— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, inves",body:`
 ## Overview
 
 — this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timing, and risk management.
@@ -2690,16 +2202,7 @@ We monitor this theme weekly as part of our 67-theme coverage. When momentum is 
 This theme offers significant investment opportunities for investors willing to develop a systematic weekly monitoring routine. Use StockWaveJP's theme data in combination with your own fundamental analysis to build positions at favorable risk-adjusted entry points.
 
 > **Disclaimer**: This column is for informational purposes only. It does not constitute investment advice. All investment decisions are your sole responsibility.
-`,
-  },
-  {
-    id: 'nintendo-analysis',
-    category: 'Stock Analysis',
-    tag: '',
-    title: 'Nintendo (7974): Switch 2 Launch, IP Monetization Strategy, and Long-Term Outlook',
-    date: '2026/04/11',
-    summary: '— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, i',
-    body: `
+`},{id:"nintendo-analysis",category:"Stock Analysis",tag:"",title:"Nintendo (7974): Switch 2 Launch, IP Monetization Strategy, and Long-Term Outlook",date:"2026/04/11",summary:"— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, i",body:`
 ## Overview
 
 — this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timing, and risk management.
@@ -2737,16 +2240,7 @@ We monitor this theme weekly as part of our 67-theme coverage. When momentum is 
 This theme offers significant investment opportunities for investors willing to develop a systematic weekly monitoring routine. Use StockWaveJP's theme data in combination with your own fundamental analysis to build positions at favorable risk-adjusted entry points.
 
 > **Disclaimer**: This column is for informational purposes only. It does not constitute investment advice. All investment decisions are your sole responsibility.
-`,
-  },
-  {
-    id: 'fujikura-analysis',
-    category: 'Stock Analysis',
-    tag: '',
-    title: 'Fujikura (5803): Optical Fiber and AI Datacenter Power Cables Drive Rapid Growth',
-    date: '2026/04/11',
-    summary: '— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investme',
-    body: `
+`},{id:"fujikura-analysis",category:"Stock Analysis",tag:"",title:"Fujikura (5803): Optical Fiber and AI Datacenter Power Cables Drive Rapid Growth",date:"2026/04/11",summary:"— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investme",body:`
 ## Overview
 
 — this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timing, and risk management.
@@ -2784,16 +2278,7 @@ We monitor this theme weekly as part of our 67-theme coverage. When momentum is 
 This theme offers significant investment opportunities for investors willing to develop a systematic weekly monitoring routine. Use StockWaveJP's theme data in combination with your own fundamental analysis to build positions at favorable risk-adjusted entry points.
 
 > **Disclaimer**: This column is for informational purposes only. It does not constitute investment advice. All investment decisions are your sole responsibility.
-`,
-  },
-  {
-    id: 'softbank-analysis',
-    category: 'Stock Analysis',
-    tag: '',
-    title: 'SoftBank Corp (9434): Telecom + PayPay + AI — Japan\'s Integrated Digital Ecosystem',
-    date: '2026/04/11',
-    summary: '— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investme',
-    body: `
+`},{id:"softbank-analysis",category:"Stock Analysis",tag:"",title:"SoftBank Corp (9434): Telecom + PayPay + AI — Japan's Integrated Digital Ecosystem",date:"2026/04/11",summary:"— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investme",body:`
 ## Overview
 
 — this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timing, and risk management.
@@ -2831,16 +2316,7 @@ We monitor this theme weekly as part of our 67-theme coverage. When momentum is 
 This theme offers significant investment opportunities for investors willing to develop a systematic weekly monitoring routine. Use StockWaveJP's theme data in combination with your own fundamental analysis to build positions at favorable risk-adjusted entry points.
 
 > **Disclaimer**: This column is for informational purposes only. It does not constitute investment advice. All investment decisions are your sole responsibility.
-`,
-  },
-  {
-    id: 'mitsui-mining-analysis',
-    category: 'Stock Analysis',
-    tag: '',
-    title: 'Mitsui Mining & Smelting (5706): Copper Foil for EVs and EV Supply Chain Positioning',
-    date: '2026/04/11',
-    summary: '— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, inves',
-    body: `
+`},{id:"mitsui-mining-analysis",category:"Stock Analysis",tag:"",title:"Mitsui Mining & Smelting (5706): Copper Foil for EVs and EV Supply Chain Positioning",date:"2026/04/11",summary:"— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, inves",body:`
 ## Overview
 
 — this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timing, and risk management.
@@ -2878,16 +2354,7 @@ We monitor this theme weekly as part of our 67-theme coverage. When momentum is 
 This theme offers significant investment opportunities for investors willing to develop a systematic weekly monitoring routine. Use StockWaveJP's theme data in combination with your own fundamental analysis to build positions at favorable risk-adjusted entry points.
 
 > **Disclaimer**: This column is for informational purposes only. It does not constitute investment advice. All investment decisions are your sole responsibility.
-`,
-  },
-  {
-    id: 'ajinomoto-analysis',
-    category: 'Stock Analysis',
-    tag: '',
-    title: 'Ajinomoto (2802): From Seasoning Giant to Global Amino Acid and Pharma Leader',
-    date: '2026/04/11',
-    summary: '— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, invest',
-    body: `
+`},{id:"ajinomoto-analysis",category:"Stock Analysis",tag:"",title:"Ajinomoto (2802): From Seasoning Giant to Global Amino Acid and Pharma Leader",date:"2026/04/11",summary:"— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, invest",body:`
 ## Overview
 
 — this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timing, and risk management.
@@ -2925,16 +2392,7 @@ We monitor this theme weekly as part of our 67-theme coverage. When momentum is 
 This theme offers significant investment opportunities for investors willing to develop a systematic weekly monitoring routine. Use StockWaveJP's theme data in combination with your own fundamental analysis to build positions at favorable risk-adjusted entry points.
 
 > **Disclaimer**: This column is for informational purposes only. It does not constitute investment advice. All investment decisions are your sole responsibility.
-`,
-  },
-  {
-    id: 'furukawa-analysis',
-    category: 'Stock Analysis',
-    tag: '',
-    title: 'Furukawa Electric (5801): Optical Fiber, Power Cables, and Automotive Parts',
-    date: '2026/04/11',
-    summary: '— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, inve',
-    body: `
+`},{id:"furukawa-analysis",category:"Stock Analysis",tag:"",title:"Furukawa Electric (5801): Optical Fiber, Power Cables, and Automotive Parts",date:"2026/04/11",summary:"— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, inve",body:`
 ## Overview
 
 — this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timing, and risk management.
@@ -2972,16 +2430,7 @@ We monitor this theme weekly as part of our 67-theme coverage. When momentum is 
 This theme offers significant investment opportunities for investors willing to develop a systematic weekly monitoring routine. Use StockWaveJP's theme data in combination with your own fundamental analysis to build positions at favorable risk-adjusted entry points.
 
 > **Disclaimer**: This column is for informational purposes only. It does not constitute investment advice. All investment decisions are your sole responsibility.
-`,
-  },
-  {
-    id: 'advantest-analysis',
-    category: 'Stock Analysis',
-    tag: '',
-    title: 'Advantest (6857): World #1 Semiconductor Test Equipment and the AI Chip Tailwind',
-    date: '2026/04/11',
-    summary: '— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investme',
-    body: `
+`},{id:"advantest-analysis",category:"Stock Analysis",tag:"",title:"Advantest (6857): World #1 Semiconductor Test Equipment and the AI Chip Tailwind",date:"2026/04/11",summary:"— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investme",body:`
 ## Overview
 
 — this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timing, and risk management.
@@ -3019,16 +2468,7 @@ We monitor this theme weekly as part of our 67-theme coverage. When momentum is 
 This theme offers significant investment opportunities for investors willing to develop a systematic weekly monitoring routine. Use StockWaveJP's theme data in combination with your own fundamental analysis to build positions at favorable risk-adjusted entry points.
 
 > **Disclaimer**: This column is for informational purposes only. It does not constitute investment advice. All investment decisions are your sole responsibility.
-`,
-  },
-  {
-    id: 'kioxia-analysis',
-    category: 'Stock Analysis',
-    tag: '',
-    title: 'Kioxia (285A): NAND Flash Memory World #2 — AI Storage Demand and Recovery Cycle',
-    date: '2026/04/11',
-    summary: '— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, inve',
-    body: `
+`},{id:"kioxia-analysis",category:"Stock Analysis",tag:"",title:"Kioxia (285A): NAND Flash Memory World #2 — AI Storage Demand and Recovery Cycle",date:"2026/04/11",summary:"— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, inve",body:`
 ## Overview
 
 — this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timing, and risk management.
@@ -3066,16 +2506,7 @@ We monitor this theme weekly as part of our 67-theme coverage. When momentum is 
 This theme offers significant investment opportunities for investors willing to develop a systematic weekly monitoring routine. Use StockWaveJP's theme data in combination with your own fundamental analysis to build positions at favorable risk-adjusted entry points.
 
 > **Disclaimer**: This column is for informational purposes only. It does not constitute investment advice. All investment decisions are your sole responsibility.
-`,
-  },
-  {
-    id: 'nittobo-analysis',
-    category: 'Stock Analysis',
-    tag: '',
-    title: 'Nittobo (3110): Glass Fiber World #4, Sound Insulation, and Residential Materials',
-    date: '2026/04/11',
-    summary: '— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies',
-    body: `
+`},{id:"nittobo-analysis",category:"Stock Analysis",tag:"",title:"Nittobo (3110): Glass Fiber World #4, Sound Insulation, and Residential Materials",date:"2026/04/11",summary:"— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies",body:`
 ## Overview
 
 — this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timing, and risk management.
@@ -3113,16 +2544,7 @@ We monitor this theme weekly as part of our 67-theme coverage. When momentum is 
 This theme offers significant investment opportunities for investors willing to develop a systematic weekly monitoring routine. Use StockWaveJP's theme data in combination with your own fundamental analysis to build positions at favorable risk-adjusted entry points.
 
 > **Disclaimer**: This column is for informational purposes only. It does not constitute investment advice. All investment decisions are your sole responsibility.
-`,
-  },
-  {
-    id: 'inpex-analysis',
-    category: 'Stock Analysis',
-    tag: '',
-    title: 'INPEX (1605): Japan\'s Largest O&G Developer — Ichthys LNG and Dividend Appeal',
-    date: '2026/04/11',
-    summary: '— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, inve',
-    body: `
+`},{id:"inpex-analysis",category:"Stock Analysis",tag:"",title:"INPEX (1605): Japan's Largest O&G Developer — Ichthys LNG and Dividend Appeal",date:"2026/04/11",summary:"— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, inve",body:`
 ## Overview
 
 — this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timing, and risk management.
@@ -3160,16 +2582,7 @@ We monitor this theme weekly as part of our 67-theme coverage. When momentum is 
 This theme offers significant investment opportunities for investors willing to develop a systematic weekly monitoring routine. Use StockWaveJP's theme data in combination with your own fundamental analysis to build positions at favorable risk-adjusted entry points.
 
 > **Disclaimer**: This column is for informational purposes only. It does not constitute investment advice. All investment decisions are your sole responsibility.
-`,
-  },
-  {
-    id: 'skyperfect-analysis',
-    category: 'Stock Analysis',
-    tag: '',
-    title: 'SKY Perfect JSAT (9412): Satellite Broadcasting, Communications, and Commercial Space',
-    date: '2026/04/11',
-    summary: '— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, in',
-    body: `
+`},{id:"skyperfect-analysis",category:"Stock Analysis",tag:"",title:"SKY Perfect JSAT (9412): Satellite Broadcasting, Communications, and Commercial Space",date:"2026/04/11",summary:"— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, in",body:`
 ## Overview
 
 — this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timing, and risk management.
@@ -3207,16 +2620,7 @@ We monitor this theme weekly as part of our 67-theme coverage. When momentum is 
 This theme offers significant investment opportunities for investors willing to develop a systematic weekly monitoring routine. Use StockWaveJP's theme data in combination with your own fundamental analysis to build positions at favorable risk-adjusted entry points.
 
 > **Disclaimer**: This column is for informational purposes only. It does not constitute investment advice. All investment decisions are your sole responsibility.
-`,
-  },
-  {
-    id: 'axelspace-analysis',
-    category: 'Stock Analysis',
-    tag: '',
-    title: 'Japan\'s Space Startups: Small Satellites, Earth Observation, and the New Space Economy',
-    date: '2026/04/11',
-    summary: '— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, i',
-    body: `
+`},{id:"axelspace-analysis",category:"Stock Analysis",tag:"",title:"Japan's Space Startups: Small Satellites, Earth Observation, and the New Space Economy",date:"2026/04/11",summary:"— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, i",body:`
 ## Overview
 
 — this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timing, and risk management.
@@ -3254,16 +2658,7 @@ We monitor this theme weekly as part of our 67-theme coverage. When momentum is 
 This theme offers significant investment opportunities for investors willing to develop a systematic weekly monitoring routine. Use StockWaveJP's theme data in combination with your own fundamental analysis to build positions at favorable risk-adjusted entry points.
 
 > **Disclaimer**: This column is for informational purposes only. It does not constitute investment advice. All investment decisions are your sole responsibility.
-`,
-  },
-  {
-    id: 'sogo-shosha-analysis',
-    category: 'Stock Analysis',
-    tag: '',
-    title: 'Japan\'s 5 Major Trading Houses: Comparing Buffett\'s Picks on ROE, Dividend, and Strategy',
-    date: '2026/04/11',
-    summary: '— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment ',
-    body: `
+`},{id:"sogo-shosha-analysis",category:"Stock Analysis",tag:"",title:"Japan's 5 Major Trading Houses: Comparing Buffett's Picks on ROE, Dividend, and Strategy",date:"2026/04/11",summary:"— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment ",body:`
 ## Overview
 
 — this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timing, and risk management.
@@ -3301,16 +2696,7 @@ We monitor this theme weekly as part of our 67-theme coverage. When momentum is 
 This theme offers significant investment opportunities for investors willing to develop a systematic weekly monitoring routine. Use StockWaveJP's theme data in combination with your own fundamental analysis to build positions at favorable risk-adjusted entry points.
 
 > **Disclaimer**: This column is for informational purposes only. It does not constitute investment advice. All investment decisions are your sole responsibility.
-`,
-  },
-  {
-    id: 'murata-seisakusho-analysis',
-    category: 'Stock Analysis',
-    tag: 'Electronic Components',
-    title: 'Murata Manufacturing (6981): Electronic Components Giant That Crossed ¥14T Market Cap',
-    date: '2026/05/29',
-    summary: '— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, invest',
-    body: `
+`},{id:"murata-seisakusho-analysis",category:"Stock Analysis",tag:"Electronic Components",title:"Murata Manufacturing (6981): Electronic Components Giant That Crossed ¥14T Market Cap",date:"2026/05/29",summary:"— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, invest",body:`
 ## Overview
 
 — this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timing, and risk management.
@@ -3348,16 +2734,7 @@ We monitor this theme weekly as part of our 67-theme coverage. When momentum is 
 This theme offers significant investment opportunities for investors willing to develop a systematic weekly monitoring routine. Use StockWaveJP's theme data in combination with your own fundamental analysis to build positions at favorable risk-adjusted entry points.
 
 > **Disclaimer**: This column is for informational purposes only. It does not constitute investment advice. All investment decisions are your sole responsibility.
-`,
-  },
-  {
-    id: 'mlcc-murata-analysis',
-    category: 'Theme',
-    tag: 'MLCC',
-    title: 'MLCC Industry: The Critical Component for AI Servers and the EV Transition',
-    date: '2026/05/29',
-    summary: '— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companie',
-    body: `
+`},{id:"mlcc-murata-analysis",category:"Theme",tag:"MLCC",title:"MLCC Industry: The Critical Component for AI Servers and the EV Transition",date:"2026/05/29",summary:"— this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companie",body:`
 ## Overview
 
 — this column provides a comprehensive analysis of this theme from a Japanese equity investment perspective, covering market structure, key companies, investment timing, and risk management.
@@ -3395,8 +2772,4 @@ We monitor this theme weekly as part of our 67-theme coverage. When momentum is 
 This theme offers significant investment opportunities for investors willing to develop a systematic weekly monitoring routine. Use StockWaveJP's theme data in combination with your own fundamental analysis to build positions at favorable risk-adjusted entry points.
 
 > **Disclaimer**: This column is for informational purposes only. It does not constitute investment advice. All investment decisions are your sole responsibility.
-`,
-  },
-]
-
-export default COLUMNS
+`}];export{e as C};

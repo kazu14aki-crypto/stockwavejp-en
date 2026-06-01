@@ -174,7 +174,7 @@ function generateMarketComment(themeData, macro) {
   const lines = []
 
   // 全体概況
-  lines.push(`[Market Overview] Current Japanese theme market: ${mktState}. ${riseCount} Rising / ${fallCount}テーマがFallingし、テーマAvgReturnは${avg>=0?'+':''}${avg.toFixed(2)}%。${hotThemes.length>0?`+5%超の急騰テーマが${hotThemes.length}個、`:''  }${coldThemes.length>0?`-5%超の急落テーマが${coldThemes.length}個あります。`:''}`)
+  lines.push(`[Market Overview] Current Japanese theme market: ${mktState}. ${riseCount} Rising / ${fallCount} Falling (avg return ${avg>=0?'+':''}${avg.toFixed(2)}%). ${hotThemes.length>0?`${hotThemes.length} theme(s) surged 5%+. `:``}${coldThemes.length>0?`${coldThemes.length} theme(s) fell 5%+.`:``}`)
 
   // マクロ環境
   if (lastNK != null || lastSP != null) {
@@ -184,37 +184,37 @@ function generateMarketComment(themeData, macro) {
       lastSP != null ? `S&P500 ${lastSP>=0?'+':''}${lastSP.toFixed(1)}%` : null,
       lastFX != null ? `USD/JPY ${lastFX>=0?'+':''}${lastFX.toFixed(1)}%` : null,
     ].filter(Boolean).join(' / ')
-    const riskMode = lastSP != null ? (lastSP > 1 ? 'Risk-on (US stocks rising) — tailwind for theme stocks. ' : lastSP < -1 ? 'リスクオフ（米国株安）で地合いは慎重。' : '米国株は横ばい。') : ''
-    lines.push(`[Macro Indicators] ${macroLine}. ${riskMode}${lastFX != null ? (lastFX > 1 ? 'JPY weakening — tailwind for exporters. ' : lastFX < -1 ? 'JPY strengthening — headwind for exporters. ' : '') : ''}`)・グローバル銘柄に有利な環境。' : lastFX < -1 ? '円高傾向で内需・消費系に資金が向かいやすい局面。' : '') : ''}`)
+    const riskMode = lastSP != null ? (lastSP > 1 ? 'Risk-on (US stocks rising) — tailwind for theme stocks. ' : lastSP < -1 ? 'Risk-off (US stocks falling) — cautious tone. ' : 'US stocks flat. ') : ''
+    lines.push(`[Macro Indicators] ${macroLine}. ${riskMode}${lastFX != null ? (lastFX > 1 ? 'JPY weakening — tailwind for exporters. ' : lastFX < -1 ? 'JPY strengthening — headwind for exporters. ' : '') : ''}`)
   }
 
   // Risingテーマ
   if (top3.length && top3[0].pct > 0) {
     const upNames = top3.filter(x=>x.pct>0).map(x=>`「${x.theme}」(${x.pct>=0?'+':''}${x.pct.toFixed(1)}%)`).join('、')
-    lines.push(`▲ Notable Rising themes: ${upNames}. ${volUp.length>0&&top3.some(top=>volUp.some(v=>v.theme===top.theme))?`特に「${top3[0].theme}」はVolumeも急増しており、資金の本格流入が始まっている可能性がある。`:''}`)
+    lines.push(`▲ Notable Rising themes: ${upNames}. ${volUp.length>0&&top3.some(top=>volUp.some(v=>v.theme===top.theme))?`'${top3[0].theme}' is also seeing volume surge — institutional inflow may be starting.`:''}`)
   }
 
   // Fallingテーマ
   if (bot3.length && bot3[0].pct < 0) {
     const dnNames = bot3.filter(x=>x.pct<0).map(x=>`「${x.theme}」(${x.pct.toFixed(1)}%)`).join('、')
-    lines.push(`▼ Notable Falling themes: ${dnNames}. ${coldThemes.length>3?'Broad selling pressure — selective theme approach recommended. '':'Falling幅が大きく過熱感の解消や外部要因が影響している可能性がある。'}`)
+    lines.push(`▼ Notable Falling themes: ${dnNames}. ${coldThemes.length>3?'Broad selling pressure — selective theme approach recommended.':'Sharp decline — overheating correction or external headwinds likely.'}`)
   }
 
   // Volume増加テーマ
   if (volUp.length > 0) {
-    lines.push(`📊 Volume surging 20%+: ${volUp.map(x=>x.theme).join(', ')}. Rising volume signals potential institutional buying ahead of price moves.`)金の動きを先行して示すことが多く、今後の株価動向を見極めるうえで重要なシグナル。`)
+    lines.push(`📊 Volume surging 20%+: ${volUp.map(x=>x.theme).join(', ')}. Rising volume often leads price moves — a key signal for tracking potential breakouts.`)
   }
 
   // Volume急増かつRisingテーマ → 特に注目
   const hotWithVol = hotThemes.filter(h => volUp.some(v => v.theme === h.theme))
   if (hotWithVol.length > 0) {
-    lines.push(`🔥 Surging + Volume spike: ${hotWithVol.map(t=>t.theme).join(', ')}. Price rise + volume surge = strongest bullish signal.`)が同時発生しており、強いトレンドの初期段階である可能性が高い。`)
+    lines.push(`🔥 Surging + Volume spike: ${hotWithVol.map(t=>t.theme).join(', ')}. Price rise + volume surge simultaneously — possible early stage of a strong trend.`)
   }
 
   // Falling幅が大きいがVolumeも増加（底値模索か）
   const coldWithVolUp = coldThemes.filter(h => volUp.some(v => v.theme === h.theme))
   if (coldWithVolUp.length > 0) {
-    lines.push(`📉 Falling themes with rising volume: ${coldWithVolUp.map(t=>t.theme).join(', ')}. Heavy selling but volume suggests potential capitulation/reversal watch.`)olume増は底値模索の兆しの可能性もある。反転サインを確認してから判断したい。`)
+    lines.push(`📉 Falling themes with rising volume: ${coldWithVolUp.map(t=>t.theme).join(', ')}. Heavy selling with rising volume — possible capitulation. Watch for reversal signals before acting.`)
   }
 
   lines.push(`💡 Today's point: ${avg >= 2 ? 'Strong broad environment — concentration in bullish themes tends to work well.' : avg <= -2 ? 'Weak broad market — defensive themes are preferable. Consider reducing risk exposure.' : 'Mixed environment — selective theme approach and risk management are key.'}`)
