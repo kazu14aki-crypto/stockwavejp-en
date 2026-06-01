@@ -113,16 +113,16 @@ function genThemeComment(themes, summary, period, momentum) {
   lines.push(`[${periodLabel} Overview] Across all 67 themes: Rising ${rising.length}, Falling${falling.length}テーマでAvgReturnは${avg >= 0 ? '+' : ''}${avg.toFixed(2)}%（${mktTone}）。`)
 
   // トップ・ボトム
-  lines.push(`Top Rising theme: '${top?.theme}' (${top?.pct >= 0 ? '+' : ''}${top?.pct?.toFixed(2)}%), Top Falling: 'Fallingテーマは「${bot?.theme}」(${bot?.pct?.toFixed(2)}%)で、その差は${(top?.pct - bot?.pct)?.toFixed(1)}ptと${Math.abs(top?.pct - bot?.pct) > 15 ? 'テーマ間の格差が大きい' : 'テーマ間のばらつきは比較的小さい'}。`)
+  lines.push(`Top Rising: '${top?.theme}' (${top?.pct >= 0 ? '+' : ''}${top?.pct?.toFixed(2)}%), Top Falling: '${bot?.theme}' (${bot?.pct?.toFixed(2)}%). Spread: ${(top?.pct - bot?.pct)?.toFixed(1)}pt — ${Math.abs(top?.pct - bot?.pct) > 15 ? 'large theme dispersion' : 'relatively small dispersion'}.`)
 
   // 急騰テーマ
   if (hotThemes.length > 0) {
-    lines.push(`▲ Surging 5%+: ${hotThemes.slice(0, 3).join(', ')}${hotThemes.length > 3 ? ' and more' : ''}. Strong momentum — consider monitoring for entry.`)${hotThemes.length}テーマ` : ''}。強いトレンドが継続しており、資金集中が進んでいる可能性がある。`)
+    lines.push(`▲ Surging 5%+: ${hotThemes.slice(0, 3).join(', ')}${hotThemes.length > 3 ? ` and ${hotThemes.length - 3} more` : ''}. Strong momentum — capital concentrating, consider monitoring for entry.`)
   }
 
   // 急落テーマ
   if (coldThemes.length > 0) {
-    lines.push(`▼ Falling 5%+: ${coldThemes.slice(0, 3).join(', ')}${coldThemes.length > 3 ? `など${coldThemes.length}テーマ` : ''}。過熱感の解消か、外部環境の悪化が影響している可能性がある。`)
+    lines.push(`▼ Falling 5%+: ${coldThemes.slice(0, 3).join(', ')}${coldThemes.length > 3 ? ` and ${coldThemes.length - 3} more` : ''}. Overheating correction or external headwinds may be weighing.`)
   }
 
   // Volume急増
@@ -143,7 +143,7 @@ function genThemeComment(themes, summary, period, momentum) {
   const sentiment = netBias > 10 ? 'Broad buying dominance — risk-on mood across the market.' :
                     netBias < -10 ? 'Broad selling dominance — risk-off trend. Capital concentrating in defensive sectors.' :
                     'Mixed Rising/Falling — selective theme approach is key in this environment.'
-  lines.push(`💡 Summary: ${sentiment}${hotThemes.length > 0 && coldThemes.length > 0 ? ` Notably, '${hotThemes[0]}」と「${coldThemes[0]}」の間に明確な強弱格差が生じており、テーマ選択の重要性が高まっている。` : ''}`)
+  lines.push(`💡 Summary: ${sentiment}${hotThemes.length > 0 && coldThemes.length > 0 ? ` Clear divergence between '${hotThemes[0]}' (rising) and '${coldThemes[0]}' (falling) — theme selection is increasingly important.` : ''}`)
 
   return lines
 }

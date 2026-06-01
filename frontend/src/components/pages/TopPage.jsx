@@ -76,13 +76,13 @@ const THEME_ARTICLE_MAP = {
 
 const ALL_NEWS = [
   { date:'2026/04/19', tag:'NEW',    title:'Weekly Report feature added (auto-generated every Friday)' },
-  { date:'2026/04/19', tag:'UPDATE', title:'Custom Themeに資金フロー散布図を追加' },
-  { date:'2026/04/19', tag:'UPDATE', title:'Theme Heatmapの期間別タブを削除・整理' },
-  { date:'2026/04/15', tag:'UPDATE', title:'Market Rankingの銘柄定義を修正・重複解消' },
-  { date:'2026/04/10', tag:'UPDATE', title:'メニュー名「Heatmap」を「Theme Heatmap」に変更' },
+  { date:'2026/04/19', tag:'UPDATE', title:'Added capital flow scatter chart to Custom Theme' },
+  { date:'2026/04/19', tag:'UPDATE', title:'Removed period tabs from Theme Heatmap' },
+  { date:'2026/04/15', tag:'UPDATE', title:'Fixed stock definitions in Market Ranking' },
+  { date:'2026/04/10', tag:'UPDATE', title:'Renamed menu item to Theme Heatmap' },
   { date:'2026/04/01', tag:'UPDATE', title:'Added 8 new column articles' },
-  { date:'2026/03/31', tag:'UPDATE', title:'Custom Theme機能強化' },
-  { date:'2026/03/14', tag:'NEW',    title:'React版リリース' },
+  { date:'2026/03/31', tag:'UPDATE', title:'Enhanced Custom Theme features' },
+  { date:'2026/03/14', tag:'NEW',    title:'React version released' },
 ]
 // Descソート・最新3件
 const NEWS_LIST = [...ALL_NEWS].sort((a,b) => b.date.localeCompare(a.date)).slice(0,3)
@@ -165,7 +165,7 @@ function generateMarketComment(themeData, macro) {
   const nikkei = macro?.['Nikkei225ETF(1321)'] || macro?.['国内主要株(1321)'] || macro?.['日経225連動型(1321)']
   const topix  = macro?.['TOPIXetf(1306)'] || macro?.['TOPIX連動型上場投信(1306)'] || macro?.['TOPIX指数'] || macro?.['TOPIX連動型(1306)'] || macro?.['1306.T']
   const sp500  = macro?.['S&P500 ETF(SPY)']
-  const usdjpy = macro?.['ドル円']
+  const usdjpy = macro?.['USD/JPY'] || macro?.['ドル円']
   const lastNK = nikkei ? nikkei[nikkei.length-1]?.pct : null
   const lastTP = topix  ? topix[topix.length-1]?.pct  : null
   const lastSP = sp500  ? sp500[sp500.length-1]?.pct  : null
@@ -217,7 +217,7 @@ function generateMarketComment(themeData, macro) {
     lines.push(`📉 Falling themes with rising volume: ${coldWithVolUp.map(t=>t.theme).join(', ')}. Heavy selling but volume suggests potential capitulation/reversal watch.`)olume増は底値模索の兆しの可能性もある。反転サインを確認してから判断したい。`)
   }
 
-  lines.push(`💡 本日のポイント：${avg >= 2 ? '全体的に強い相場環境。強気テーマへの集中投資が奏功しやすい局面。' : avg <= -2 ? '全体的に弱い地合い。守備的なテーマ（通信・医薬品等）や現金比率を高める局面。' : '方向感が定まらないため、モメンタムの強いテーマに絞り込み、Volume増加を確認してから参入するのが有効。'}`)
+  lines.push(`💡 Today's point: ${avg >= 2 ? 'Strong broad environment — concentration in bullish themes tends to work well.' : avg <= -2 ? 'Weak broad market — defensive themes are preferable. Consider reducing risk exposure.' : 'Mixed environment — selective theme approach and risk management are key.'}`)
 
   return lines
 }
@@ -289,7 +289,7 @@ export default function TopPage({ onNavigate }) {
         </h1>
         {/* PC:1行 / SP:折り返し */}
         <p style={{ fontSize:'13px', color:'var(--text)', lineHeight:1.7 }} className="hero-desc">
-          日本株テーマのReturn・Volume・Trade Valueを定期取得し、資金の流れをテーマ別に可視化。期間別Theme HeatmapやMarket Ranking、解説コラムを組み合わせ、より実践的な投資分析をサポートします。
+          Track Return, Volume, and Trading Value across Japanese stock themes. Visualize capital flows by theme using period-based Heatmaps, Market Rankings, and Analysis Columns.ラムを組み合わせ、より実践的な投資分析をサポートします。
         </p>
       </div>
 
