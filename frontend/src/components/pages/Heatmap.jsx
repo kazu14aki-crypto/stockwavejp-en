@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useMomentum } from '../../hooks/useMarketData.js'
+import { useMomentum } from '../../hooks/useMarketData'
 
 const API = import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000'
 
@@ -74,11 +74,11 @@ const THEME_ARTICLE_MAP = {
 }
 
 const STATE_COLORS = {
-  '🔥加速':  '#ff4560',
-  '↗転換↑': '#ff8c42',
-  '→横ばい': 'var(--text3)',
-  '↘転換↓': '#4a9eff',
-  '❄️失速':  '#00c48c',
+  '🔥 Accel':  '#ff4560',
+  '↗ Rev.↑': '#ff8c42',
+  '→ Flat': 'var(--text3)',
+  '↘ Rev.↓': '#4a9eff',
+  '❄️ Stall':  '#00c48c',
 }
 
 const selStyle = {
@@ -226,7 +226,7 @@ function BubbleScatter({ data, mPeriod, setMPeriod, onNavigate }) {
     if (typeof d.week_diff === 'number') return d.week_diff
     return 0
   }
-  const yAxisLabel = hasRealVolChg ? 'Volume急増率 (%)' : '先週比 (pt)'
+  const yAxisLabel = hasRealVolChg ? 'Vol. Change Rate (%)' : 'vs Last Week (pt)'
 
   // Y軸: trade_valueが有効かどうか
   const tvValues = filtered.map(d => d.trade_value ?? 0)
@@ -259,10 +259,10 @@ function BubbleScatter({ data, mPeriod, setMPeriod, onNavigate }) {
         background:'var(--bg2)', borderRadius:'10px', border:'1px solid var(--border)' }}>
         <div style={{ fontSize:'24px', marginBottom:'12px' }}>📊</div>
         <div style={{ fontSize:'13px', marginBottom:'6px', color:'var(--text2)' }}>
-          散布図データを準備中です
+          Preparing chart data...
         </div>
         <div style={{ fontSize:'11px' }}>
-          GitHub Actions「Fetch Market Data」を手動実行すると表示されます
+          Run GitHub Actions 'Fetch Market Data' to populate
         </div>
       </div>
     )
@@ -334,17 +334,17 @@ function BubbleScatter({ data, mPeriod, setMPeriod, onNavigate }) {
           ))}
         </select>
         <span style={{ fontSize:'11px', color:'var(--text3)' }}>
-          X軸=Return　Y軸={yAxisLabel}　円サイズ=Trade Value
+          X=Return  Y={yAxisLabel}  Bubble=Trade Value
         </span>
       </div>
 
       {/* ゾーン説明 */}
       <div className="scatter-zone-desc">
         {[
-          { label:'🔥 注目ゾーン（右上）', desc:'Rising＋Volume急増＝最強シグナル', color:'#ff5370' },
-          { label:'⚠️ 売り圧力（左上）',   desc:'Falling＋Volume急増＝強い売り',    color:'#00c48c' },
-          { label:'📈 静かなRising（右下）',  desc:'Rising＋Volume少＝じわりRising',    color:'#ff8c42' },
-          { label:'❄️ 静かなFalling（左下）',  desc:'弱含みだが動意なし',             color:'#4a9eff' },
+          { label:'🔥 Hot Zone (top-right)', desc:'Rising + Vol.Surge = Strongest Signal', color:'#ff5370' },
+          { label:'⚠️ Sell Pressure (top-left)',   desc:'Falling + Vol.Surge = Strong Selling',    color:'#00c48c' },
+          { label:'📈 Quiet Rising (bottom-right)',  desc:'Rising + Low Vol. = Gradual Rise',    color:'#ff8c42' },
+          { label:'❄️ Quiet Falling (bottom-left)',  desc:'Weak but low conviction',             color:'#4a9eff' },
         ].map(z => (
           <div key={z.label} style={{ display:'flex', alignItems:'center', gap:'5px' }}>
             <div style={{ width:'8px', height:'8px', borderRadius:'50%', background:z.color, flexShrink:0 }} />
@@ -390,9 +390,9 @@ function BubbleScatter({ data, mPeriod, setMPeriod, onNavigate }) {
             stroke="rgba(255,255,255,0.35)" strokeWidth="1.5" strokeDasharray="5,3" />
 
           {/* ゾーンラベル */}
-          <text x={x0+8} y={PT+16} fontSize="11" fill="rgba(255,83,112,0.85)" fontWeight="700">🔥 注目ゾーン</text>
-          <text x={PL+6} y={PT+16} fontSize="11" fill="rgba(0,196,140,0.8)" fontWeight="700">⚠️ 売り圧力</text>
-          <text x={x0+8} y={PT+GH-8} fontSize="11" fill="rgba(255,140,66,0.7)" fontWeight="600">📈 静かなRising</text>
+          <text x={x0+8} y={PT+16} fontSize="11" fill="rgba(255,83,112,0.85)" fontWeight="700">🔥 Hotーン</text>
+          <text x={PL+6} y={PT+16} fontSize="11" fill="rgba(0,196,140,0.8)" fontWeight="700">⚠️ Sell</text>
+          <text x={x0+8} y={PT+GH-8} fontSize="11" fill="rgba(255,140,66,0.7)" fontWeight="600">📈 Quiet↑なRising</text>
           <text x={PL+6} y={PT+GH-8} fontSize="11" fill="rgba(74,158,255,0.65)" fontWeight="600">❄️ 静かなFalling</text>
 
           {/* バブル（ホバーされていないものを先に描画） */}
@@ -511,7 +511,7 @@ function BubbleScatter({ data, mPeriod, setMPeriod, onNavigate }) {
           </text>
 
           {/* 凡例（Trade Valueバブルサイズ） */}
-          {[{tv:500e8,l:'5000億'},{tv:100e8,l:'1000億'},{tv:20e8,l:'200億'}].map((item, i) => {
+          {[{tv:500e8,l:'¥500B'},{tv:100e8,l:'¥100B'},{tv:20e8,l:'¥20B'}].map((item, i) => {
             const r = rS(item.tv)
             const bx = PL + GW + PR - 24
             const by = PT + 20 + i * 44
@@ -531,7 +531,7 @@ function BubbleScatter({ data, mPeriod, setMPeriod, onNavigate }) {
           {onNavigate && (
             <text x={PL + GW/2} y={PT - 12}
               textAnchor="middle" fontSize="10" fill="rgba(255,255,255,0.3)">
-              バブルをクリック → Theme Detailへ
+              Click bubble → Theme Detail
             </text>
           )}
         </svg>
@@ -550,7 +550,7 @@ function BubbleScatter({ data, mPeriod, setMPeriod, onNavigate }) {
             borderRadius:'8px' }}>
             <div style={{ fontSize:'11px', fontWeight:600, color:'rgba(220,80,80,0.9)',
               marginBottom:'10px', letterSpacing:'0.08em' }}>
-              🔥 注目ゾーン上位（Rising＋Volume増加）
+              🔥 Hot Zone Leaders (Rising + Volume↑)
             </div>
             <div style={{ display:'flex', flexWrap:'wrap', gap:'8px' }}>
               {hot.map(d => (
@@ -571,7 +571,7 @@ function BubbleScatter({ data, mPeriod, setMPeriod, onNavigate }) {
                       style={{ padding:'2px 8px', borderRadius:'4px', fontSize:'10px',
                         background:'rgba(170,119,255,0.1)', border:'1px solid rgba(170,119,255,0.3)',
                         color:'#aa77ff', cursor:'pointer', fontFamily:'var(--font)', fontWeight:600 }}>
-                      詳細 →
+                      Detail →
                     </button>
                   )}
                 </div>
@@ -594,13 +594,13 @@ export default function Heatmap({ onNavigate }) {
   return (
     <div style={{ padding:'20px 24px 48px', maxWidth:'1280px', margin:'0 auto' }}>
       <h1 style={{ fontSize:'22px', fontWeight:700, color:'var(--text)', marginBottom:'4px' }}>
-        テーマHeatmap
+        Theme Heatmap
       </h1>
       <p style={{ fontSize:'12px', color:'var(--text3)', marginBottom:'16px' }}>
-        67テーマのReturnをテーマHeatmapと騰落モメンタムで多角的に分析できます。
+        67テーマのReturnをTheme Heatmapと騰落モメンタムで多角的に分析できます。
       </p>
 
-      {/* ⑥ タブDelete・散布図を直接表示 */}
+      {/* ⑥ タブ削除・散布図を直接表示 */}
       <BubbleScatter data={momentumData} mPeriod={mPeriod} setMPeriod={setMPeriod} onNavigate={onNavigate} />
 
       <style>{`

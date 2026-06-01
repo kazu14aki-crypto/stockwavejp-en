@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react'
-import AddToThemeModal from '../AddToThemeModal.jsx'
-import StockBubbleChart from '../StockBubbleChart.jsx'
-import { useSegmentDetail, useMarketRankList } from '../../hooks/useMarketData.js'
+import AddToThemeModal from '../AddToThemeModal'
+import StockBubbleChart from '../StockBubbleChart'
+import { useSegmentDetail, useMarketRankList } from '../../hooks/useMarketData'
 
 // Volume・Trade Value 棒グラフ（MarketRank用）
 // ── Featured Stocks ──────────────────────────────
@@ -40,21 +40,21 @@ function PickupStocks({ stocks, period }) {
 
     const buildReason = () => {
       const parts = []
-      if (pct >= 10)       parts.push('この期間のReturnは+' + pct.toFixed(1) + '%と大幅Risingしており、テーマ全体を牽引する動きを見せています')
-      else if (pct >= 5)   parts.push('この期間のReturnは+' + pct.toFixed(1) + '%と堅調で、テーマ内の上位Rising銘柄です')
-      else if (pct >= 2)   parts.push('+' + pct.toFixed(1) + '%のRisingでテーマAvgを上回っています')
-      else if (pct > 0)    parts.push('+' + pct.toFixed(1) + '%と小幅ながらプラスを維持しています')
+      if (pct >= 10)       parts.push('This period Return +' + pct.toFixed(1) + '% — strongly rising, leading the them引する動きを見せています')
+      else if (pct >= 5)   parts.push('Return +' + pct.toFixed(1) + '% — solid performance in the top tier of this themす')
+      else if (pct >= 2)   parts.push('+' + pct.toFixed(1) + '% — above theme average')
+      else if (pct > 0)    parts.push('+' + pct.toFixed(1) + '% — marginally positive')
 
-      if (volChg >= 50)      parts.push('Volumeが+' + volChg.toFixed(0) + '%と急増しており、機関投資家・外国人投資家の大口資金の流入が強く示唆されます')
-      else if (volChg >= 20) parts.push('Volumeが+' + volChg.toFixed(0) + '%増加しており、市場参加者の注目が高まっています')
+      if (volChg >= 50)      parts.push('Volume surged +' + volChg.toFixed(0) + '% — signals institutional/foreign invest大口資金の流入が強く示唆されます')
+      else if (volChg >= 20) parts.push('Volume +' + volChg.toFixed(0) + '% — growing market participant interestます')
 
-      if (sparkAccel > 3)    parts.push('直近の価格推移が後半にかけて加速（後半Avg+' + sparkAccel.toFixed(1) + '%）しており、モメンタムが強まっています')
-      else if (sparkAccel > 1) parts.push('価格推移が後半にかけてやや改善（後半+' + sparkAccel.toFixed(1) + '%）しています')
+      if (sparkAccel > 3)    parts.push('Price accelerating in the latter half (+' + sparkAccel.toFixed(1) + '% back-half avgており、モメンタムが強まっています')
+      else if (sparkAccel > 1) parts.push('Price slightly improving in latter half (+' + sparkAccel.toFixed(1) + '% back-halfます')
 
-      if (tv >= 5e9)       parts.push('Trade Valueは' + fmtL(tv) + 'と非常に大きく、流動性が高い主力銘柄として積極的に売買されています')
-      else if (tv >= 1e9)  parts.push('Trade Valueは' + fmtL(tv) + 'と十分な規模があり、積極的な売買が行われています')
+      if (tv >= 5e9)       parts.push('Trading Value ' + fmtL(tv) + ' — high liquidity blue-chip with active institutional tradinています')
+      else if (tv >= 1e9)  parts.push('Trading Value ' + fmtL(tv) + ' — adequate liquidity with active trading')
 
-      if (parts.length === 0) parts.push('Return・Volume・価格推移・Trade Valueの総合評価で、このテーマ内での注目度が高い銘柄として選定されました')
+      if (parts.length === 0) parts.push('Return・Volume・価格推移・Trade Valueの総合評価で、このテーマ内でのScoreが高い銘柄として選定されました')
       return parts.join('。') + '。'
     }
 
@@ -80,7 +80,7 @@ function PickupStocks({ stocks, period }) {
           <div style={{ flex:1, height:'1px', background:'var(--border)' }} />
         </div>
         <span style={{ fontSize:'10px', color:'var(--text3)', display:'block', paddingLeft:'2px' }}>
-          Return・Volume・勢い・Trade Valueを総合スコアで機械的に集計した参考情報です
+          Scores are auto-calculated from Return, Volume, momentum, and Trading Value.
         </span>
       </div>
       <div style={{ display:'grid', gridTemplateColumns:'repeat(3,1fr)', gap:'10px' }}
@@ -126,11 +126,11 @@ function PickupStocks({ stocks, period }) {
                   <span>{'Trade Value ' + fmtL(s.trade_value)}</span>
                 )}
               </div>
-              {/* 注目度スコア */}
+              {/* Scoreスコア */}
               <div style={{ display:'flex', alignItems:'center', gap:'6px' }}>
                 <span style={{ fontSize:'9px', color:'var(--text3)', fontWeight:600,
                   textTransform:'uppercase', letterSpacing:'0.06em', flexShrink:0 }}>
-                  注目度
+                  Score
                 </span>
                 <span style={{ fontSize:'15px', fontWeight:800, fontFamily:'var(--mono)',
                   color:scoreColor, lineHeight:1 }}>
@@ -156,12 +156,12 @@ function PickupStocks({ stocks, period }) {
         border:'1px solid rgba(255,193,7,0.15)', fontSize:'10px',
         color:'var(--text3)', lineHeight:1.8 }}>
         ⚠️ <strong style={{ color:'var(--text2)' }}>注意：</strong>
-        上記ピックアップはReturn・Volume・価格推移・Trade Valueを独自スコアで機械的に集計したものです。
-        <strong style={{ color:'var(--text2)' }}>リアルタイムデータではなく</strong>、
-        data update timing（1日数回Update）に依存するため、
-        最新の市場状況と乖離する場合があります。
-        特定銘柄の購入・売却を推奨するものではなく、
-        <strong style={{ color:'var(--text2)' }}>投資の最終判断はご自身の責任でお願いします</strong>。
+        Rankings above are auto-calculated from Return, Volume, price trend, and Trading Value.
+        <strong style={{ color:'var(--text2)' }}>Not real-time data</strong>;
+        results depend on data update timing (several times per day).
+        Results may differ from the latest market conditions.
+        This is not a recommendation to buy or sell any security.
+        <strong style={{ color:'var(--text2)' }}>All investment decisions are your sole responsibility</strong>.
       </div>
     </div>
   )
@@ -225,7 +225,7 @@ function MrVolTvChart({ stocks }) {
         borderRadius:'6px', border:'1px solid var(--border)',
         background:'rgba(74,158,255,0.06)', color:'var(--accent)',
         fontSize:'11px', fontWeight:600, cursor:'pointer', fontFamily:'var(--font)',
-      }}>🔍 クリックで拡大</button>
+      }}>🔍 Click to expand</button>
       {expanded && (
         <div onClick={()=>setExpanded(false)} style={{
           position:'fixed', inset:0, background:'rgba(0,0,0,0.75)', zIndex:2000,
@@ -236,7 +236,7 @@ function MrVolTvChart({ stocks }) {
             padding:'20px', width:'min(92vw,900px)', maxHeight:'90vh', overflowY:'auto',
           }}>
             <div style={{ display:'flex', justifyContent:'space-between', alignItems:'center', marginBottom:'14px' }}>
-              <span style={{ fontSize:'14px', fontWeight:700, color:'var(--text)' }}>Volume・Trade Valueランキング（拡大）</span>
+              <span style={{ fontSize:'14px', fontWeight:700, color:'var(--text)' }}>Volume & Trading Value Raンキング（拡大）</span>
               <button onClick={()=>setExpanded(false)} style={{
                 background:'rgba(255,255,255,0.08)', border:'1px solid var(--border)',
                 borderRadius:'6px', color:'var(--text2)', cursor:'pointer', fontSize:'13px', padding:'4px 12px', fontFamily:'var(--font)',
@@ -268,7 +268,7 @@ function MrBubbleChart({ stocks }) {
         borderRadius:'6px', border:'1px solid var(--border)',
         background:'rgba(74,158,255,0.06)', color:'var(--accent)',
         fontSize:'11px', fontWeight:600, cursor:'pointer', fontFamily:'var(--font)',
-      }}>🔍 クリックで拡大</button>
+      }}>🔍 Click to expand</button>
       {expanded && (
         <div onClick={()=>setExpanded(false)} style={{
           position:'fixed', inset:0, background:'rgba(0,0,0,0.75)', zIndex:2000,
@@ -279,7 +279,7 @@ function MrBubbleChart({ stocks }) {
             padding:'20px', width:'min(92vw,1000px)', maxHeight:'90vh', overflowY:'auto',
           }}>
             <div style={{ display:'flex', justifyContent:'space-between', alignItems:'center', marginBottom:'14px' }}>
-              <span style={{ fontSize:'14px', fontWeight:700, color:'var(--text)' }}>Stock Heatmap（拡大）</span>
+              <span style={{ fontSize:'14px', fontWeight:700, color:'var(--text)' }}>Stock Heatmap (expanded)</span>
               <button onClick={()=>setExpanded(false)} style={{
                 background:'rgba(255,255,255,0.08)', border:'1px solid var(--border)',
                 borderRadius:'6px', color:'var(--text2)', cursor:'pointer', fontSize:'13px', padding:'4px 12px', fontFamily:'var(--font)',
@@ -450,7 +450,7 @@ function StockTable({ stocks: rawStocks, onAddToTheme }) {
   }
   const onMouseUp = () => { isDragging.current = false; if (tableRef.current) tableRef.current.style.cursor = 'grab' }
 
-  const headers = ['ミニチャート','株価','Return','Market Cap','寄与度%','Volume増減','Volume','Volume順位','Trade Value','Trade Value順位','Add']
+  const headers = ['ミニチャート','株価','Return','時価総額','Contrib.%','Volume増減','Volume','Volume順位','Trade Value','Trade Value順位','Add']
   const sortBtns = [{key:'pct',label:'Return'},{key:'volume',label:'Volume'},{key:'trade_value',label:'Trade Value'}]
 
   return (
@@ -512,14 +512,14 @@ function StockTable({ stocks: rawStocks, onAddToTheme }) {
                   <td style={{ ...tdR, color:pColor, fontWeight:700, fontFamily:'var(--mono)' }}>{s.pct>=0?'+':''}{s.pct?.toFixed(1)}%</td>
                   <td style={{ ...tdR, fontFamily:'var(--mono)', color:'var(--text2)' }}>{s.market_cap > 0 ? formatLarge(s.market_cap) : '-'}</td>
                   <td style={{ ...tdR, fontFamily:'var(--mono)', color:(s.contribution??0)>=0.5?'#ff5370':(s.contribution??0)>=0.1?'#ff8c42':(s.contribution??0)>-0.1?'var(--text2)':'#4a9eff' }}
-                    title="寄与度">
+                    title="Contrib.">
                     {s.contribution != null ? (s.contribution>=0?'+':'')+s.contribution.toFixed(2)+'%' : '-'}
                   </td>
                   <td style={{ ...tdR, color:s.volume_chg>=0?'var(--red)':'var(--green)', fontFamily:'var(--mono)' }}>{s.volume_chg>=0?'+':''}{s.volume_chg?.toFixed(1)}%</td>
                   <td style={{ ...tdR, fontFamily:'var(--mono)', color:'var(--text2)' }}>{formatLarge(s.volume)}</td>
-                  <td style={tdC}>{s.vol_rank}位</td>
+                  <td style={tdC}>{s.vol_rank}</td>
                   <td style={{ ...tdR, fontFamily:'var(--mono)', color:'var(--text2)' }}>{formatLarge(s.trade_value)}</td>
-                  <td style={tdC}>{s.tv_rank}位</td>
+                  <td style={tdC}>{s.tv_rank}</td>
                   <td style={tdC}>
                     <button onClick={() => onAddToTheme && onAddToTheme({ ticker:s.ticker, name:s.name, price:s.price })}
                       title="Add to Custom Theme"
@@ -619,7 +619,7 @@ export default function MarketRank() {
   const [period,      setPeriod]      = useState('1mo')
   const [summary,     setSummary]     = useState(null)
   const [groups,      setGroups]      = useState({})
-  const [activeGroup, setActiveGroup] = useState('国内主要株')
+  const [activeGroup, setActiveGroup] = useState('Major Stocks')
   const [activeSeg,   setActiveSeg]   = useState(null)
   const [detail,      setDetail]      = useState(null)
   // ETF専用状態
@@ -631,14 +631,14 @@ export default function MarketRank() {
   useEffect(()=>{
     if (!marketData) return
     setSummary(marketData.data)
-    // ①「ETF」グループをmarket.jsonの外でフロント側にAdd
+    // ①「ETF」グループをmarket.jsonの外でフロント側に追加
     const baseGroups = marketData.groups || {}
     const allGroups = {
       ...baseGroups,
       'ETF': Object.keys(ETF_GROUPS),
     }
     setGroups(allGroups)
-    const firstSeg = (baseGroups['国内主要株'] || Object.values(baseGroups)[0] || [])[0]
+    const firstSeg = (baseGroups['Major Stocks'] || Object.values(baseGroups)[0] || [])[0]
     if (firstSeg && !activeSeg) setActiveSeg(firstSeg)
   },[marketData])
 
@@ -655,7 +655,7 @@ export default function MarketRank() {
     setEtfDetail(null)
     const API_BASE = import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000'
     ;(async () => {
-      // Step1: market.jsonのseg_キーをConfirm（GitHub Actions実行後に反映）
+      // Step1: market.jsonのseg_キーを確認（GitHub Actions実行後に反映）
       try {
         const mj = await fetch('/data/market.json?t=' + Date.now()).then(r=>r.json())
         const key = 'seg_' + activeSeg + '_' + period
@@ -715,13 +715,13 @@ export default function MarketRank() {
   const tvSorted  = [...rawStocks].sort((a,b) => (b.trade_value||0)-(a.trade_value||0))
   const volRankMap = new Map(volSorted.map((s,i) => [s.ticker, i+1]))
   const tvRankMap  = new Map(tvSorted.map((s,i) => [s.ticker, i+1]))
-  // ①国内全般はMarket CapDesc、ETFはReturnDesc、MoreはReturnDesc
+  // ①国内全般は時価総額Desc、ETFはReturnDesc、MoreはReturnDesc
   const mappedStocks = rawStocks.map(s => ({
     ...s,
     vol_rank: volRankMap.get(s.ticker) ?? s.vol_rank,
     tv_rank:  tvRankMap.get(s.ticker)  ?? s.tv_rank,
   }))
-  const stocks = activeGroup === '国内全般'
+  const stocks = activeGroup === 'Domestic All'
     ? [...mappedStocks].sort((a,b) => (b.market_cap||0) - (a.market_cap||0))
     : [...mappedStocks].sort((a,b) => b.pct - a.pct)
   const detailAvg = currentDetail?.avg ?? 0
@@ -746,13 +746,13 @@ export default function MarketRank() {
           borderRadius:'8px', padding:'12px 16px', marginBottom:'16px', fontSize:'12px',
           color:'var(--text)', lineHeight:1.8 }}>
           <span style={{ fontWeight:700, color:'#06d6a0' }}>📋 About This Page:</span>
-          Market Cap上位150銘柄・市場区分（プライム・Standard・グロース）・ETF（6カテゴリ）ごとに、
-          構成銘柄のReturnランキングと詳細データをConfirmできます。
-          上部のタブで「国内主要株」「国内全般」「市場区分」「ETF」を切り替え、各グループ内のセグメントを選択してください。
+          For Top 150 by Market Cap, Market Segments (Prime/Standard/Growth), and ETFs (6 categories):
+          View constituent stock Return rankings and detailed data.
+          Use the tabs above to switch between 'Major Stocks', 'Domestic All', 'Market Segment', and 'ETF', then select a segment.
           <br/>
           <span style={{ fontSize:'11px', color:'var(--text3)' }}>
-            💡 活用ポイント：「テクノロジー」セグメントが強い時はTheme Listの「半導体」「AI・クラウド」も
-            チェックしましょう。セグメントとテーマの同時Confirmで資金の流れをより精度高く把握できます。
+            💡 活用ポイント：When the 'Technology' segment is strong, also check Semiconductor and AI/Cloud themes in the Theme List.
+            Combining segment and theme tracking gives a more accurate picture of capital flows.
           </span>
         </div>
 
@@ -805,12 +805,12 @@ export default function MarketRank() {
                     color:detailAvg>=0?'var(--red)':'var(--green)' }}>
                     Avg {detailAvg>=0?'+':''}{detailAvg.toFixed(1)}%
                   </span>
-                  <span style={{ fontSize:'12px', color:'var(--text3)' }}>{stocks.length}銘柄</span>
+                  <span style={{ fontSize:'12px', color:'var(--text3)' }}>{stocks.length} stocks</span>
                 </div>
 
                 <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:'16px', marginBottom:'20px' }} className="top5g">
-                  <Top5Bar items={top5} title={`▲ RisingTOP5（${stocks.filter(s=>s.pct>0).length}銘柄Rising）`} colorFn={pctColor} emptyMsg="Rising銘柄なし"/>
-                  <Top5Bar items={bot5} title={`▼ FallingTOP5（${stocks.filter(s=>s.pct<0).length}銘柄Falling）`} colorFn={pctColor} emptyMsg="Falling銘柄なし"/>
+                  <Top5Bar items={top5} title={`▲ Rising TOP5 (${stocks.filter(s=>s.pct>0).length} Rising)`} colorFn={pctColor} emptyMsg="Rising銘柄なし"/>
+                  <Top5Bar items={bot5} title={`▼ Falling TOP5 (${stocks.filter(s=>s.pct<0).length} Falling)`} colorFn={pctColor} emptyMsg="Falling銘柄なし"/>
                 </div>
 
                 {/* ③ Featured Stocks */}
@@ -821,7 +821,7 @@ export default function MarketRank() {
                   {/* 左: Volumeグラフ → Heatmap */}
                   <div>
                     <div style={{ fontSize:'13px', fontWeight:700, color:'var(--text)', marginBottom:'10px' }}>
-                      📊 Volume・Trade Valueランキング（上位15銘柄）
+                      📊 Volume & Trading Value (Top 15)
                     </div>
                     <MrVolTvChart stocks={stocks} />
                     <div style={{ fontSize:'13px', fontWeight:700, color:'var(--text)', margin:'20px 0 10px' }}>

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import { useThemes, useCustomThemeStats, useMacro, useMomentum, useMonthlyHeatmap } from '../../hooks/useMarketData.js'
-import { useCustomThemes } from '../../hooks/useCustomThemes.js'
-import RefreshIndicator from '../RefreshIndicator.jsx'
+import { useThemes, useCustomThemeStats, useMacro, useMomentum, useMonthlyHeatmap } from '../../hooks/useMarketData'
+import { useCustomThemes } from '../../hooks/useCustomThemes'
+import RefreshIndicator from '../RefreshIndicator'
 
 const API = import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000'
 const PERIODS = [
@@ -88,7 +88,7 @@ function AutoComment({ lines }) {
 // ③ 自動コメント生成（Theme List）
 function genThemeComment(themes, summary, period, momentum) {
   if (!themes || !themes.length) return null
-  const periodLabel = { '1d':'本日', '5d':'週間', '1mo':'1M', '3mo':'3M', '6mo':'6M', '1y':'1年間' }[period] || period
+  const periodLabel = { '1d':'Today', '5d':'1W', '1mo':'1M', '3mo':'3M', '6mo':'6M', '1y':'1Y' }[period] || period
   const rising  = themes.filter(t => t.pct > 0)
   const falling = themes.filter(t => t.pct < 0)
   const avg     = summary?.avg ?? 0
@@ -102,48 +102,48 @@ function genThemeComment(themes, summary, period, momentum) {
   // Volume急増テーマ（前期比+30%以上）
   const volSurge = themes.filter(t => (t.volume_chg || 0) >= 30).map(t => t.theme)
 
-  // モメンタム（加速・失速）
-  const accel = momentum?.filter(t => t.state?.includes('加速')).map(t => t.theme) || []
-  const decel = momentum?.filter(t => t.state?.includes('失速')).map(t => t.theme) || []
+  // Momentum（加速・失速）
+  const accel = momentum?.filter(t => t.state?.includes('加速') || t.state?.includes('Accel')).map(t => t.theme) || []
+  const decel = momentum?.filter(t => t.state?.includes('失速') || t.state?.includes('Stall')).map(t => t.theme) || []
 
   const lines = []
 
   // 全体相場概況
-  const mktTone = avg >= 2 ? '強気' : avg >= 0.5 ? 'やや強気' : avg <= -2 ? '弱気' : avg <= -0.5 ? 'やや弱気' : '中立'
-  lines.push(`【${periodLabel}の全体概況】${periodLabel}の全67テーマを見ると、Rising${rising.length}テーマ・Falling${falling.length}テーマでAvgReturnは${avg >= 0 ? '+' : ''}${avg.toFixed(2)}%（${mktTone}）。`)
+  const mktTone = avg >= 2 ? 'Bullish' : avg >= 0.5 ? 'Mildly Bullish' : avg <= -2 ? 'Bearish' : avg <= -0.5 ? 'やや弱気' : '中立'
+  lines.push(`[${periodLabel} Overview] Across all 67 themes: Rising ${rising.length}, Falling${falling.length}テーマでAvgReturnは${avg >= 0 ? '+' : ''}${avg.toFixed(2)}%（${mktTone}）。`)
 
   // トップ・ボトム
-  lines.push(`最高騰テーマは「${top?.theme}」(${top?.pct >= 0 ? '+' : ''}${top?.pct?.toFixed(2)}%)、最大Fallingテーマは「${bot?.theme}」(${bot?.pct?.toFixed(2)}%)で、その差は${(top?.pct - bot?.pct)?.toFixed(1)}ptと${Math.abs(top?.pct - bot?.pct) > 15 ? 'テーマ間の格差が大きい' : 'テーマ間のばらつきは比較的小さい'}。`)
+  lines.push(`Top Rising theme: '${top?.theme}' (${top?.pct >= 0 ? '+' : ''}${top?.pct?.toFixed(2)}%), Top Falling: 'Fallingテーマは「${bot?.theme}」(${bot?.pct?.toFixed(2)}%)で、その差は${(top?.pct - bot?.pct)?.toFixed(1)}ptと${Math.abs(top?.pct - bot?.pct) > 15 ? 'テーマ間の格差が大きい' : 'テーマ間のばらつきは比較的小さい'}。`)
 
   // 急騰テーマ
   if (hotThemes.length > 0) {
-    lines.push(`▲ +5%超の急騰テーマ：「${hotThemes.slice(0, 3).join('」「')}」${hotThemes.length > 3 ? `など${hotThemes.length}テーマ` : ''}。強いトレンドが継続しており、資金集中が進んでいる可能性がある。`)
+    lines.push(`▲ Surging 5%+: ${hotThemes.slice(0, 3).join(', ')}${hotThemes.length > 3 ? ' and more' : ''}. Strong momentum — consider monitoring for entry.`)${hotThemes.length}テーマ` : ''}。強いトレンドが継続しており、資金集中が進んでいる可能性がある。`)
   }
 
   // 急落テーマ
   if (coldThemes.length > 0) {
-    lines.push(`▼ -5%超のFallingテーマ：「${coldThemes.slice(0, 3).join('」「')}」${coldThemes.length > 3 ? `など${coldThemes.length}テーマ` : ''}。過熱感の解消か、外部環境の悪化が影響している可能性がある。`)
+    lines.push(`▼ Falling 5%+: ${coldThemes.slice(0, 3).join(', ')}${coldThemes.length > 3 ? `など${coldThemes.length}テーマ` : ''}。過熱感の解消か、外部環境の悪化が影響している可能性がある。`)
   }
 
   // Volume急増
   if (volSurge.length > 0) {
-    lines.push(`📊 Volumeが前期比+30%超の急増テーマ：「${volSurge.slice(0, 3).join('」「')}」。価格変動に先立つVolume増加は、大口資金の流入を示唆することが多い。`)
+    lines.push(`📊 Volume surging 30%+: ${volSurge.slice(0, 3).join(', ')}. Rising volume ahead of price moves signals institutional accumulation.`)、大口資金の流入を示唆することが多い。`)
   }
 
-  // モメンタム
+  // Momentum
   if (accel.length > 0) {
-    lines.push(`🔥 加速モメンタム（短期・中期ともにRisingが加速）：「${accel.slice(0, 4).join('」「')}」。既存トレンドが強まっており、追随資金が流入しやすい局面。`)
+    lines.push(`🔥 Accelerating Momentum: ${accel.slice(0, 4).join(', ')}. Existing trend strengthening — high-priority monitoring.`)り、追随資金が流入しやすい局面。`)
   }
   if (decel.length > 0) {
-    lines.push(`❄️ 失速モメンタム（騰勢が鈍化または反転）：「${decel.slice(0, 4).join('」「')}」。天井形成の可能性を示す場合があるが、底値からの反発を見極める必要もある。`)
+    lines.push(`❄️ Stalling Momentum: ${decel.slice(0, 4).join(', ')}. May signal a top — but can also be a temporary pause before resumption.`)底値からの反発を見極める必要もある。`)
   }
 
   // 総合判断
   const netBias = rising.length - falling.length
-  const sentiment = netBias > 10 ? '広範な買い優勢で市場全体にリスクオンムードが漂う。' :
-                    netBias < -10 ? '広範な売り優勢でリスクオフ傾向が強い。特定セクターへの集中も見られる。' :
-                    'Rising・Fallingがまちまちで、個別テーマの選別が重要な局面。'
-  lines.push(`💡 総合：${sentiment}${hotThemes.length > 0 && coldThemes.length > 0 ? `一方で「${hotThemes[0]}」と「${coldThemes[0]}」の間に明確な強弱格差が生じており、テーマ選択の重要性が高まっている。` : ''}`)
+  const sentiment = netBias > 10 ? 'Broad buying dominance — risk-on mood across the market.' :
+                    netBias < -10 ? 'Broad selling dominance — risk-off trend. Capital concentrating in defensive sectors.' :
+                    'Mixed Rising/Falling — selective theme approach is key in this environment.'
+  lines.push(`💡 Summary: ${sentiment}${hotThemes.length > 0 && coldThemes.length > 0 ? ` Notably, '${hotThemes[0]}」と「${coldThemes[0]}」の間に明確な強弱格差が生じており、テーマ選択の重要性が高まっている。` : ''}`)
 
   return lines
 }
@@ -222,10 +222,10 @@ const THEME_ARTICLE_MAP = {
 
 // Heatmapゾーン説明（拡大時に表示）
 const ZONE_DESCS = [
-  { label:'🔥 注目ゾーン（右上）', desc:'Rising＋Volume急増＝最強シグナル', color:'#ff5370' },
-  { label:'⚠️ 売り圧力（左上）',   desc:'Falling＋Volume急増＝強い売り',    color:'#00c48c' },
-  { label:'📈 静かなRising（右下）',  desc:'Rising＋Volume少＝じわりRising',    color:'#ff8c42' },
-  { label:'❄️ 静かなFalling（左下）',  desc:'弱含みだが動意なし',             color:'#4a9eff' },
+  { label:'🔥 Hot Zone (top-right)', desc:'Rising + Vol.Surge = Strongest Signal', color:'#ff5370' },
+  { label:'⚠️ Sell Pressure (top-left)',   desc:'Falling + Vol.Surge = Strong Selling',    color:'#00c48c' },
+  { label:'📈 Quiet Rising (bottom-right)',  desc:'Rising + Low Vol. = Gradual Rise',    color:'#ff8c42' },
+  { label:'❄️ Quiet Falling (bottom-left)',  desc:'Weak but low conviction',             color:'#4a9eff' },
 ]
 
 function ExpandableChart({ title, children, showZoneDesc = false }) {
@@ -241,7 +241,7 @@ function ExpandableChart({ title, children, showZoneDesc = false }) {
         </div>
         {/* PC版: クリックで拡大ボタン（グラフ下部） */}
         <button className="expandable-chart-btn" onClick={() => setExpanded(true)}>
-          🔍 クリックで拡大
+          🔍 Click to expand
         </button>
         {/* スマホ版: 通常表示 */}
         <div className="expandable-chart-mobile">
@@ -327,7 +327,7 @@ function BubbleScatterMini({ onNavigate }) {
             <option key={p.v} value={p.v}>{p.l}</option>
           ))}
         </select>
-        <span style={{ fontSize:'10px', color:'var(--text3)' }}>X=Return Y=Volume急増率 円=Trade Value</span>
+        <span style={{ fontSize:'10px', color:'var(--text3)' }}>X=Return Y=Vol.Chg% Bubble=Trd.Val</span>
       </div>
       <div style={{ width:'100%', overflowX:'auto' }} onMouseLeave={()=>setHovered(null)}>
         <svg viewBox={`0 0 ${W} ${H}`} style={{ width:'100%', minWidth:'320px', display:'block',
@@ -529,7 +529,7 @@ function CustomThemeRow({ ct, period, pctColor, rank, volRankMap, tvRankMap }) {
           {ct.name}
         </div>
         {loading ? (
-          <div style={{ fontSize:'11px', color:'var(--text3)' }}>取得中...</div>
+          <div style={{ fontSize:'11px', color:'var(--text3)' }}>Loading...</div>
         ) : pct !== null ? (
           <>
             <div style={{ fontSize:'15px', fontWeight:700, color:col, fontFamily:'var(--mono)', lineHeight:1.2 }}>
@@ -566,7 +566,7 @@ function CustomThemeRows({ themes, period, pctColor }) {
         ))}
       </div>
       <div style={{ fontSize:'11px', color:'var(--text3)', marginTop:'8px' }}>
-        💡 詳細データはサイドメニュー「Custom Theme」からConfirmできます
+        💡 Full data available in 'Custom Theme' from the sidebar
       </div>
     </>
   )
@@ -622,7 +622,7 @@ function ThemeCard({ item, rank, maxAbs, valueKey='pct', barColor, pctColor, pct
             {item.theme}
           </span>
           {valueKey === 'pct' && momentumState && (() => {
-            const stateColors = { '🔥加速':'#ff4560','↗転換↑':'#ff8c42','→横ばい':'var(--text3)','↘転換↓':'#4a9eff','❄️失速':'#4a9eff' }
+            const stateColors = { '🔥 Accel':'#ff4560','↗ Rev.↑':'#ff8c42','→ Flat':'var(--text3)','↘ Rev.↓':'#4a9eff','❄️ Stall':'#4a9eff' }
             const sc = stateColors[momentumState] || 'var(--text3)'
             return (
               <span style={{ fontSize:'8px', fontWeight:700, color:sc, flexShrink:0,
@@ -661,7 +661,7 @@ function ThemeCard({ item, rank, maxAbs, valueKey='pct', barColor, pctColor, pct
                   borderRadius:'4px', color:'#aa77ff', cursor:'pointer',
                   fontSize:'10px', fontFamily:'var(--font)', fontWeight:600,
                 }}>
-                📊 テーマ詳細をConfirm
+                📊 Theme Detail
               </button>
             )}
             {THEME_ARTICLE_MAP[item.theme] && onNavigate && (
@@ -672,7 +672,7 @@ function ThemeCard({ item, rank, maxAbs, valueKey='pct', barColor, pctColor, pct
                   borderRadius:'4px', color:'var(--accent)', cursor:'pointer',
                   fontSize:'10px', fontFamily:'var(--font)', fontWeight:600,
                 }}>
-                📖 関連コラムを読む
+                📖 Read Column
               </button>
             )}
           </>
@@ -752,21 +752,21 @@ function ThemeCardGrid({ items, pctColor, valueKey='pct', barColor, pctRankMap, 
           padding:'7px 18px', borderRadius:'6px', fontSize:'12px', fontWeight:600,
           cursor:'pointer', fontFamily:'var(--font)',
           background:'rgba(255,255,255,0.05)', border:'1px solid var(--border)', color:'var(--text3)',
-        }}>▲ トップ4に戻す</button>
+        }}>▲ Top 4</button>
       )}
       {displayMode !== 'top10' && items.length > DEFAULT_LIMIT && (
         <button onClick={() => setDisplayMode('top10')} style={{
           padding:'7px 18px', borderRadius:'6px', fontSize:'12px', fontWeight:600,
           cursor:'pointer', fontFamily:'var(--font)',
           background:'rgba(74,158,255,0.13)', border:'1px solid rgba(74,158,255,0.3)', color:'var(--accent)',
-        }}>トップ10を表示</button>
+        }}>Top 10</button>
       )}
       {displayMode !== 'all' && items.length > TOP10_LIMIT && (
         <button onClick={() => setDisplayMode('all')} style={{
           padding:'7px 18px', borderRadius:'6px', fontSize:'12px', fontWeight:600,
           cursor:'pointer', fontFamily:'var(--font)',
           background:'rgba(255,140,66,0.08)', border:'1px solid rgba(255,140,66,0.3)', color:'#ff8c42',
-        }}>全{items.length}テーマを表示</button>
+        }}>All {items.length} themes</button>
       )}
     </div>
     </>
@@ -813,7 +813,7 @@ function MonthlyThemePicker({ allThemes, selected, setSelected }) {
             cursor:'pointer', fontFamily:'var(--font)', fontWeight:600,
             border:'1px dashed var(--accent)', background:'rgba(74,158,255,0.06)',
             color:'var(--accent)', transition:'all 0.15s' }}>
-          {showPicker ? '▲ Close' : '＋ テーマをAddする'}
+          {showPicker ? '▲ Close' : '+ Add Theme'}
         </button>
         {selected.length > 0 && (
           <button onClick={() => setSelected([])}
@@ -821,7 +821,7 @@ function MonthlyThemePicker({ allThemes, selected, setSelected }) {
               cursor:'pointer', fontFamily:'var(--font)',
               border:'1px solid var(--border)', background:'transparent',
               color:'var(--text3)', transition:'all 0.15s' }}>
-            All解除
+            Clear All
           </button>
         )}
       </div>
@@ -833,7 +833,7 @@ function MonthlyThemePicker({ allThemes, selected, setSelected }) {
         }}>
           <div style={{ fontSize:'10px', color:'var(--text3)', marginBottom:'8px',
             letterSpacing:'0.06em', textTransform:'uppercase', fontWeight:600 }}>
-            Select Theme（複数可）
+            Select Theme (multi)
           </div>
           <div style={{ display:'flex', flexWrap:'wrap', gap:'5px' }}>
             {allThemes.map((t) => {
@@ -964,7 +964,7 @@ function MonthlyLineChart({ data, months, onNavigate }) {
       ) : (
         <div style={{ textAlign:'center', padding:'40px', color:'var(--text3)',
           background:'var(--bg2)', borderRadius:'10px', border:'1px solid var(--border)' }}>
-          上のボタンでSelect Themeしてください
+          Use the buttons above to select themes
         </div>
       )}
     </div>
@@ -1072,7 +1072,7 @@ function MonthlyVolChart({ volTrendData, allThemeNames, months }) {
       ) : (
         <div style={{ textAlign:'center', padding:'40px', color:'var(--text3)',
           background:'var(--bg2)', borderRadius:'10px', border:'1px solid var(--border)' }}>
-          上のボタンでSelect Themeしてください
+          Use the buttons above to select themes
         </div>
       )}
     </div>
@@ -1174,12 +1174,86 @@ function MonthlyTVChart({ volTrendData, allThemeNames, months }) {
       ) : (
         <div style={{ textAlign:'center', padding:'40px', color:'var(--text3)',
           background:'var(--bg2)', borderRadius:'10px', border:'1px solid var(--border)' }}>
-          上のボタンでSelect Themeしてください
+          Use the buttons above to select themes
         </div>
       )}
     </div>
   )
 }
+
+
+const THEME_NAME_EN = {
+  "半導体製造装置": "Semiconductor Equipment",
+  "半導体材料": "Semiconductor Materials",
+  "半導体検査装置": "Semiconductor Testing",
+  "メモリ": "Memory",
+  "パワー半導体": "Power Semiconductor",
+  "次世代半導体": "Next-Gen Semiconductor",
+  "生成AI": "Generative AI",
+  "AIデータセンター": "AI Datacenter",
+  "フィジカルAI": "Physical AI",
+  "AI半導体": "AI Semiconductor",
+  "AI人材": "AI Talent",
+  "エッジAI": "Edge AI",
+  "EV・電気自動車": "EV / Electric Vehicles",
+  "全固体電池": "All-Solid-State Battery",
+  "自動運転": "Autonomous Driving",
+  "ドローン": "Drones",
+  "輸送・物流": "Transport & Logistics",
+  "造船": "Shipbuilding",
+  "再生可能エネルギー": "Renewable Energy",
+  "太陽光発電": "Solar Power",
+  "核融合発電": "Nuclear Fusion",
+  "原子力発電": "Nuclear Power",
+  "電力会社": "Electric Utilities",
+  "石油": "Oil & Gas",
+  "蓄電池": "Energy Storage",
+  "資源（水素・ヘリウム・水）": "Resources (H2/He/H2O)",
+  "IOWN": "IOWN (NTT Photonics)",
+  "光通信": "Optical Communication",
+  "通信": "Telecom",
+  "量子コンピューター": "Quantum Computing",
+  "SaaS": "SaaS",
+  "ウェアラブル端末": "Wearables",
+  "仮想通貨": "Crypto / Virtual Currency",
+  "ネット銀行": "Digital Banking",
+  "鉄鋼・素材": "Steel & Materials",
+  "化学": "Chemicals",
+  "建築資材": "Building Materials",
+  "塗料": "Paints & Coatings",
+  "医薬品・バイオ": "Pharma & Biotech",
+  "ヘルスケア・介護": "Healthcare & Nursing",
+  "薬局・ドラッグストア": "Pharmacy / Drug Store",
+  "銀行・金融": "Banking / Finance",
+  "地方銀行": "Regional Banks",
+  "保険": "Insurance",
+  "フィンテック": "Fintech",
+  "不動産": "Real Estate",
+  "建設・インフラ": "Construction & Infra",
+  "国土強靭化計画": "National Resilience",
+  "下水道": "Water Infrastructure",
+  "食品・飲料": "Food & Beverage",
+  "農業・フードテック": "Agritech & Foodtech",
+  "小売・EC": "Retail & E-Commerce",
+  "観光・ホテル・レジャー": "Tourism & Hotels",
+  "インバウンド": "Inbound Tourism",
+  "リユース・中古品": "Resale / Second-hand",
+  "防衛・航空": "Defense & Aerospace",
+  "宇宙・衛星": "Space & Satellite",
+  "ロボット・自動化": "Robotics & Automation",
+  "レアアース・資源": "Rare Earth & Resources",
+  "バフェットstocks": "Buffett Picks",
+  "バフェット銘柄": "Buffett Picks",
+  "サイバーセキュリティ": "Cybersecurity",
+  "警備": "Security Services",
+  "脱炭素・ESG": "Decarbonization / ESG",
+  "教育・HR・人材": "Education & HR",
+  "人材派遣": "Staffing / HR",
+  "ゲーム・エンタメ": "Gaming & Entertainment",
+  "MLCC・電子部品": "MLCC/Electronic Components",
+  "親子上場": "Parent-Child Listing"
+};
+const tn = (name) => THEME_NAME_EN[name] || name;
 
 export default function ThemeList({ onNavigate }) {
   const [period, setPeriod] = useState('1mo')
@@ -1261,16 +1335,16 @@ export default function ThemeList({ onNavigate }) {
         {/* 説明文 */}
         <div style={{ background:'rgba(74,158,255,0.05)', border:'1px solid rgba(74,158,255,0.15)',
           borderRadius:'8px', padding:'12px 16px', marginBottom:'12px', fontSize:'13px', color:'var(--text)', lineHeight:1.9 }}>
-          日本株の主要67テーマについて、Return・Volume・Trade Valueを一覧で比較できます。
-          期間（1週間〜1年）を切り替えることで、短期的な資金流入テーマと長期トレンドの両方をConfirmできます。
+          Compare Return, Volume, and Trading Value across Japan's 67 major stock themes.
+          Switch periods (1W to 1Y) to track both short-term capital inflows and long-term trends.
           <br />
           <span style={{ fontSize:'11px', color:'var(--text2)' }}>
-            💡 活用ポイント：「RisingTOP5」に連続して登場するテーマは強いトレンドの可能性があります。
-            Volume・Trade Valueも同時にConfirmし、資金の本気度を判断しましょう。
+            💡 活用ポイント：Themes appearing repeatedly in 'Rising TOP5' may indicate strong trends.
+            Always cross-check Volume and Trading Value to gauge conviction behind price moves.
           </span>
         </div>
         <p style={{ fontSize: '12px', color: 'var(--text3)', marginBottom: '20px' }}>
-          日本株テーマ別のReturn・資金動向 — {periodLabel}
+          Japan Stock Themes — Return & Capital Flow — {periodLabel}
         </p>
 
         {loading ? <Loading /> : error ? (
@@ -1283,52 +1357,52 @@ export default function ThemeList({ onNavigate }) {
             {/* KPIカード */}
             <div className="responsive-grid-6" style={{ marginBottom: '8px' }}>
               <KpiCard delay={0.05}
-                label="Risingテーマ"
+                label="Rising Themes"
                 value={<span>{summary.rise}<span style={{ fontSize: '16px', color: 'var(--text2)', fontWeight: 400 }}> / {summary.total}</span></span>}
                 valueColor="var(--red)"
                 arrow={summary.rise > summary.fall ? 'up' : summary.rise < summary.fall ? 'down' : null}
-                sub={`Falling: ${summary.fall}テーマ`} />
+                sub={`Falling: ${summary.fall} themes`} />
               <KpiCard delay={0.1}
                 label="All ThemesAvgReturn"
                 value={`${summary.avg >= 0 ? '+' : ''}${summary.avg?.toFixed(2)}%`}
                 valueColor={summary.avg >= 0 ? 'var(--red)' : 'var(--green)'}
                 arrow={summary.avg >= 0 ? 'up' : 'down'}
-                sub={`期間: ${periodLabel}`} />
+                sub={`Period: ${periodLabel}`} />
               <KpiCard delay={0.15}
-                label="資金流入 TOP"
+                label="Inflow TOP"
                 value={<span style={{ fontSize: '17px', color: 'var(--red)', fontWeight: 700 }}>{summary.top?.theme}</span>}
                 arrow="up"
                 sub={<span style={{ color: 'var(--red)', fontWeight: 600 }}>+{summary.top?.pct?.toFixed(1)}%</span>} />
               <KpiCard delay={0.2}
-                label="資金流出 TOP"
+                label="Outflow TOP"
                 value={<span style={{ fontSize: '17px', color: 'var(--green)', fontWeight: 700 }}>{summary.bot?.theme}</span>}
                 arrow="down"
                 sub={<span style={{ color: 'var(--green)', fontWeight: 600 }}>{summary.bot?.pct?.toFixed(1)}%</span>} />
               <KpiCard delay={0.25}
-                label="日経225連動型(1321)"
+                label="Nikkei 225 ETF (1321)"
                 value={pct1321 !== null ? `${pct1321 >= 0 ? '+' : ''}${pct1321.toFixed(2)}%` : '-'}
                 valueColor={pct1321 === null ? 'var(--text3)' : pct1321 >= 0 ? 'var(--red)' : 'var(--green)'}
                 arrow={pct1321 === null ? null : pct1321 >= 0 ? 'up' : 'down'}
-                sub={`期間: ${periodLabel}`} />
+                sub={`Period: ${periodLabel}`} />
               <KpiCard delay={0.3}
-                label="TOPIX連動型(1306)"
+                label="TOPIX ETF (1306)"
                 value={pct1306 !== null ? `${pct1306 >= 0 ? '+' : ''}${pct1306.toFixed(2)}%` : '-'}
                 valueColor={pct1306 === null ? 'var(--text3)' : pct1306 >= 0 ? 'var(--red)' : 'var(--green)'}
                 arrow={pct1306 === null ? null : pct1306 >= 0 ? 'up' : 'down'}
-                sub="参照: 1ヶ月" />
+                sub="Ref: 1M" />
             </div>
 
-            {/* 騰落ランキング TOP5 */}
-            <SectionHead title="📈 騰落ランキング TOP5" />
+            {/* 騰落Ranking TOP5 */}
+            <SectionHead title="📈 Return Ranking TOP5" />
             <Top5Pair
               top5={risingTop5} bot5={fallingTop5}
-              topTitle={`▲ Risingテーマ TOP5（${themes.filter(t=>t.pct>0).length}テーマRising）`}
-              botTitle={`▼ Fallingテーマ TOP5（${themes.filter(t=>t.pct<0).length}テーマFalling）`}
+              topTitle={`▲ Rising Themes TOP5 (${themes.filter(t=>t.pct>0).length} Rising)`}
+              botTitle={`▼ Falling Themes TOP5 (${themes.filter(t=>t.pct<0).length} Falling)`}
               topColorFn={pctColor} botColorFn={pctColor}
               valueKey="pct" />
 
             {/* Volume・Trade Value TOP5 */}
-            <SectionHead title="💹 Volume・Trade Value TOP5" />
+            <SectionHead title="💹 Volume & Trading Value TOP5" />
             <Top5Pair
               top5={byVol.slice(0, 5)} bot5={byTV.slice(0, 5)}
               topTitle="🔢 Volume TOP5" botTitle="💴 Trade Value TOP5"
@@ -1343,30 +1417,30 @@ export default function ThemeList({ onNavigate }) {
                   style={{ padding:'5px 14px', borderRadius:'6px', fontSize:'11px',
                     background:'rgba(255,140,66,0.1)', border:'1px solid rgba(255,140,66,0.3)',
                     color:'#ff8c42', cursor:'pointer', fontFamily:'var(--font)', fontWeight:600 }}>
-                  📰 詳細なWeekly Reportを読む →
+                  📰 Read Weekly Report →
                 </button>
               </div>
             )}
 
-            {/* All Themes Returnランキング（カードグリッド） */}
-            <SectionHead title="📊 All Themes Returnランキング" />
+            {/* All Themes ReturnRanking（カードグリッド） */}
+            <SectionHead title="📊 All Themes ReturnRanking" />
             <ThemeCardGrid items={themes} pctColor={pctColor} valueKey="pct" pctRankMap={pctRankMap} volRankMap={volRankMap} tvRankMap={tvRankMap} onNavigate={onNavigate} momentumMap={momentumMap} />
 
 
             {/* マイCustom Theme（Returnつき） */}
             {customThemes.length > 0 && (
               <>
-                <SectionHead title="🎨 マイCustom Theme" />
+                <SectionHead title="🎨 My Custom Themes" />
                 <CustomThemeRows themes={customThemes} period={period} pctColor={pctColor} />
               </>
             )}
 
-            {/* All Themes Volumeランキング（カードグリッド） */}
-            <SectionHead title="🔢 All Themes Volumeランキング" />
+            {/* All Themes VolumeRanking（カードグリッド） */}
+            <SectionHead title="🔢 All Themes VolumeRanking" />
             <ThemeCardGrid items={byVol} pctColor={pctColor} valueKey="volume" barColor="#378ADD" pctRankMap={pctRankMap} volRankMap={volRankMap} tvRankMap={tvRankMap} onNavigate={onNavigate} />
 
-            {/* All Themes Trade Valueランキング（カードグリッド） */}
-            <SectionHead title="💴 All Themes Trade Valueランキング" />
+            {/* All Themes Trade ValueRanking（カードグリッド） */}
+            <SectionHead title="💴 All Themes Trade ValueRanking" />
             <ThemeCardGrid items={byTV} pctColor={pctColor} valueKey="trade_value" barColor="#ff8c42" pctRankMap={pctRankMap} volRankMap={volRankMap} tvRankMap={tvRankMap} onNavigate={onNavigate} />
 
             {/* 📅 月次グラフ ＋ Heatmap: PC版2×2グリッド */}
@@ -1376,29 +1450,29 @@ export default function ThemeList({ onNavigate }) {
                 <div className="monthly-chart-grid">
                   {/* 月次Return */}
                   <div className="monthly-chart-cell">
-                    <div style={{ fontSize:'13px', fontWeight:700, color:'var(--text)', marginBottom:'8px' }}>📅 月次テーマ別Return推移</div>
-                    <ExpandableChart title="月次テーマ別Return推移">
+                    <div style={{ fontSize:'13px', fontWeight:700, color:'var(--text)', marginBottom:'8px' }}>📅 Monthly Theme Return Trend</div>
+                    <ExpandableChart title="Monthly Theme Return Trend">
                       <MonthlyLineChart data={monthlyData} months={months} onNavigate={onNavigate} />
                     </ExpandableChart>
                   </div>
                   {/* 月次Volume */}
                   <div className="monthly-chart-cell">
-                    <div style={{ fontSize:'13px', fontWeight:700, color:'var(--text)', marginBottom:'8px' }}>📊 月次テーマ別Volume推移</div>
-                    <ExpandableChart title="月次テーマ別Volume推移">
+                    <div style={{ fontSize:'13px', fontWeight:700, color:'var(--text)', marginBottom:'8px' }}>📊 Monthly Theme Volume Trend</div>
+                    <ExpandableChart title="Monthly Theme Volume Trend">
                       <MonthlyVolChart volTrendData={volTrendData} allThemeNames={allThemeNames} months={months} />
                     </ExpandableChart>
                   </div>
                   {/* 月次Trade Value */}
                   <div className="monthly-chart-cell">
-                    <div style={{ fontSize:'13px', fontWeight:700, color:'var(--text)', marginBottom:'8px' }}>💴 月次テーマ別Trade Value推移</div>
-                    <ExpandableChart title="月次テーマ別Trade Value推移">
+                    <div style={{ fontSize:'13px', fontWeight:700, color:'var(--text)', marginBottom:'8px' }}>💴 Monthly Theme Trading Value Trend</div>
+                    <ExpandableChart title="Monthly Theme Trading Value Trend">
                       <MonthlyTVChart volTrendData={volTrendData} allThemeNames={allThemeNames} months={months} />
                     </ExpandableChart>
                   </div>
-                  {/* テーマHeatmap（BubbleScatter） */}
+                  {/* Theme Heatmap（BubbleScatter） */}
                   <div className="monthly-chart-cell">
-                    <div style={{ fontSize:'13px', fontWeight:700, color:'var(--text)', marginBottom:'8px' }}>🔥 テーマHeatmap</div>
-                    <ExpandableChart title="テーマHeatmap（資金フロー）" showZoneDesc>
+                    <div style={{ fontSize:'13px', fontWeight:700, color:'var(--text)', marginBottom:'8px' }}>🔥 Theme Heatmap</div>
+                    <ExpandableChart title="Theme Heatmap（資金フロー）" showZoneDesc>
                       <BubbleScatterMini onNavigate={onNavigate} />
                     </ExpandableChart>
                   </div>

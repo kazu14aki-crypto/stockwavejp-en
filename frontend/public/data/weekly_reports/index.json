@@ -1,46 +1,50 @@
 [
   {
+    "week": "2026-W22",
+    "date": "2026/05/29",
+    "title": "5/25〜5/29 Weekly Market Report",
+    "avg_pct_1w": 0.82,
+    "rise_count": 35,
+    "fall_count": 32
+  },
+  {
+    "week": "2026-W21",
+    "date": "2026/05/22",
+    "title": "5/18〜5/22 Weekly Market Report",
+    "avg_pct_1w": 1.24,
+    "rise_count": 38,
+    "fall_count": 29
+  },
+  {
+    "week": "2026-W20",
+    "date": "2026/05/15",
+    "title": "5/11〜5/15 Weekly Market Report",
+    "avg_pct_1w": 2.84,
+    "rise_count": 45,
+    "fall_count": 22
+  },
+  {
     "week": "2026-W19",
     "date": "2026/05/08",
-    "title": "Week of May 4–8: Post-Golden Week Surge — Semiconductor Equipment Leads Historic Rally",
-    "rising": 47,
-    "falling": 20,
-    "top_theme": "Semiconductor Equipment",
-    "top_pct": 12.4,
-    "bot_theme": "Oil & Petroleum",
-    "bot_pct": -3.2
+    "title": "5/4〜5/8 Weekly Market Report",
+    "avg_pct_1w": 3.12,
+    "rise_count": 51,
+    "fall_count": 16
   },
   {
     "week": "2026-W18",
     "date": "2026/05/01",
-    "title": "Week of Apr 27 – May 1: AI & Growth Themes Lead as Energy Pulls Back",
-    "rising": 40,
-    "falling": 27,
-    "top_theme": "SaaS",
-    "top_pct": 8.97,
-    "bot_theme": "LNG",
-    "bot_pct": -4.24
+    "title": "4/27〜5/1 Weekly Market Report",
+    "avg_pct_1w": 2.31,
+    "rise_count": 42,
+    "fall_count": 25
   },
   {
-    "week": "2026-W17",
-    "date": "2026/04/25",
-    "title": "Week of Apr 21–25: AI & Growth Themes Lead as Energy Pulls Back",
-    "rising": 40,
-    "falling": 27,
-    "top_theme": "SaaS",
-    "top_pct": 8.97,
-    "bot_theme": "LNG",
-    "bot_pct": -4.24
-  },
-  {
-    "week": "2026-W16",
-    "date": "2026/04/18",
-    "title": "Week of Apr 14–18: Semiconductor Rally Extends; Optical Communications Joins Top 5",
-    "rising": 49,
-    "falling": 18,
-    "top_theme": "Semiconductor Testing",
-    "top_pct": 24.2,
-    "bot_theme": "Oil & Petroleum",
-    "bot_pct": -6.1
+    "week": "2026-04-24",
+    "date": "2026/04/24",
+    "title": "4/20〜4/24 Weekly Market Report",
+    "avg_pct_1w": 1.71,
+    "rise_count": 38,
+    "fall_count": 29
   }
 ]

@@ -1,4 +1,3 @@
-import { useSubscription } from '../../hooks/useSubscription.js'
 import { useState, useEffect } from 'react'
 
 function Loading() {
@@ -8,7 +7,7 @@ function Loading() {
         <span key={i} style={{ display:'inline-block', width:'8px', height:'8px', borderRadius:'50%',
           background:'var(--accent)', margin:'0 3px', animation:`pulse 1.2s ease-in-out ${d}s infinite`}}/>
       ))}
-      <div style={{ marginTop:'12px', fontSize:'13px' }}>Loading...</div>
+      <div style={{ marginTop:'12px', fontSize:'13px' }}>読み込み中...</div>
     </div>
   )
 }
@@ -61,7 +60,7 @@ function RenderMd({ text, onNavigate }) {
                       cursor:'pointer', fontFamily:'var(--font)',
                       background:'rgba(74,158,255,0.1)', border:'1px solid rgba(74,158,255,0.3)',
                       color:'var(--accent)' }}>
-                    📊 {currentTheme}の詳細 →
+                    📊 {currentTheme}のDetail →
                   </button>
                   <button onClick={() => onNavigate('Column')}
                     style={{ padding:'5px 14px', borderRadius:'6px', fontSize:'11px', fontWeight:600,
@@ -146,19 +145,14 @@ export default function WeeklyReport({ onNavigate }) {
   const [showReport, setShowReport] = useState(false)
 
   useEffect(() => {
+    fetch('/data/weekly_report.json?t=' + Date.now())
+      .then(r => { if (!r.ok) throw new Error('レポートがありません'); return r.json() })
+      .then(d => { setReport(d); setLoading(false) })
+      .catch(e => { setError(e.message); setLoading(false) })
     fetch('/data/weekly_reports/index.json?t=' + Date.now())
       .then(r => r.ok ? r.json() : [])
-      .then(d => {
-        setIndex(d)
-        if (d.length > 0) {
-          fetch(`/data/weekly_reports/${d[0].week}.json?t=${Date.now()}`)
-            .then(r => r.ok ? r.json() : null)
-            .then(rd => { if (rd) setReport(rd) })
-            .catch(() => {})
-        }
-        setLoading(false)
-      })
-      .catch(e => { setError(e.message); setLoading(false) })
+      .then(d => setIndex(d))
+      .catch(() => {})
   }, [])
 
   const loadArchive = (week) => {
@@ -172,7 +166,13 @@ export default function WeeklyReport({ onNavigate }) {
   }
 
   const loadLatest = () => {
-    if (index.length > 0) loadArchive(index[0].week)
+    setSelWeek(null)
+    setLoading(true)
+    setShowReport(true)
+    fetch('/data/weekly_report.json?t=' + Date.now())
+      .then(r => r.json())
+      .then(d => { setReport(d); setLoading(false) })
+      .catch(() => setLoading(false))
   }
 
   if (loading && index.length === 0) return <Loading />
@@ -182,21 +182,21 @@ export default function WeeklyReport({ onNavigate }) {
     const { summary } = report || {}
     return (
       <div style={{ padding:'20px 24px 80px', maxWidth:'860px', margin:'0 auto' }}>
-        {/* Backボタン */}
+        {/* 戻るボタン */}
         <button onClick={() => setShowReport(false)} style={{
           display:'flex', alignItems:'center', gap:'6px', marginBottom:'16px',
           background:'transparent', border:'1px solid var(--border)', borderRadius:'6px',
           color:'var(--text2)', cursor:'pointer', fontSize:'12px', padding:'6px 12px',
           fontFamily:'var(--font)',
         }}>
-          ← Back to list
+          ← レポート一覧に戻る
         </button>
 
         {/* ヘッダー */}
         <div style={{ background:'linear-gradient(135deg,rgba(91,156,246,0.1),rgba(170,119,255,0.08))',
           border:'1px solid var(--border)', borderRadius:'12px', padding:'20px 24px', marginBottom:'16px' }}>
           <div style={{ fontSize:'11px', color:'var(--text3)', marginBottom:'6px', letterSpacing:'0.1em', textTransform:'uppercase' }}>
-            📰 Weekly Market Report
+            📰 週次マーケットレポート
           </div>
           <h1 style={{ fontSize:'18px', fontWeight:700, color:'var(--text)', marginBottom:'8px' }}>
             {report?.title || 'レポートなし'}
@@ -263,7 +263,7 @@ export default function WeeklyReport({ onNavigate }) {
 
           {summary?.top5_themes && onNavigate && (
             <div style={{ marginTop:'12px', display:'flex', flexWrap:'wrap', gap:'6px' }}>
-              <span style={{ fontSize:'10px', color:'var(--text3)', alignSelf:'center' }}>注目テーマをConfirm:</span>
+              <span style={{ fontSize:'10px', color:'var(--text3)', alignSelf:'center' }}>注目テーマを確認:</span>
               {summary.top5_themes.slice(0,3).map(t => (
                 <button key={t.theme} onClick={() => onNavigate('Theme Detail', t.theme)}
                   style={{ padding:'4px 10px', borderRadius:'5px', fontSize:'11px', fontFamily:'var(--font)',
@@ -284,11 +284,11 @@ export default function WeeklyReport({ onNavigate }) {
 
         <div style={{ marginTop:'14px', padding:'10px 14px', background:'rgba(255,255,255,0.02)',
           border:'1px solid rgba(255,255,255,0.05)', borderRadius:'8px', fontSize:'11px', color:'var(--text3)', lineHeight:1.7 }}>
-          ⚠️ 本レポートはStockWaveJPの市場データをもとに作成した参考情報です。特定銘柄の購入・売却を推奨するものではなく、
+          ⚠️ 本レポートはStockWaveJPの市場データをもとに作成した参考情報です。This is not a recommendation to buy or sell any security.
           <strong style={{ color:'var(--text2)' }}>投資の最終判断はご自身の責任でお願いします。</strong>
         </div>
 
-        {/* ④ 最下部に一覧にBackボタン */}
+        {/* ④ 最下部に一覧に戻るボタン */}
         <div style={{ textAlign:'center', marginTop:'24px' }}>
           <button onClick={() => setShowReport(false)} style={{
             padding:'10px 28px', borderRadius:'8px', fontSize:'13px', fontWeight:600,
@@ -296,7 +296,7 @@ export default function WeeklyReport({ onNavigate }) {
             background:'rgba(74,158,255,0.1)', border:'1px solid rgba(74,158,255,0.3)',
             color:'var(--accent)',
           }}>
-            ← Back to list
+            ← レポート一覧に戻る
           </button>
         </div>
 
@@ -310,14 +310,14 @@ export default function WeeklyReport({ onNavigate }) {
     <div style={{ padding:'20px 24px 80px', maxWidth:'960px', margin:'0 auto' }}>
       <h1 style={{ fontSize:'20px', fontWeight:700, color:'var(--text)', marginBottom:'4px' }}>📰 Weekly Report</h1>
       <p style={{ fontSize:'12px', color:'var(--text3)', marginBottom:'20px' }}>
-        毎週末Update予定。各カードをクリックしてレポート全文をConfirmできます。
+        毎週末更新予定。各カードをクリックしてレポート全文を確認できます。
       </p>
 
       {error && index.length === 0 ? (
         <div style={{ textAlign:'center', padding:'40px' }}>
           <div style={{ fontSize:'48px', marginBottom:'16px' }}>📭</div>
           <div style={{ color:'var(--text2)', fontSize:'15px' }}>レポートがまだありません</div>
-          <div style={{ color:'var(--text3)', fontSize:'12px', marginTop:'4px' }}>毎週末 Update予定</div>
+          <div style={{ color:'var(--text3)', fontSize:'12px', marginTop:'4px' }}>毎週末 更新予定</div>
         </div>
       ) : (
         <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fill,minmax(280px,1fr))', gap:'12px' }}>
@@ -330,9 +330,10 @@ export default function WeeklyReport({ onNavigate }) {
                 top_theme: entry.top5_themes?.[0]?.theme ?? null,
                 generated_at: entry.generated_at,
               }}
-              isActive={entry.week === selWeek}
+              isActive={i === 0 && !selWeek}
               onClick={() => {
-                loadArchive(entry.week)
+                if (i === 0) loadLatest()
+                else loadArchive(entry.week)
               }}
             />
           ))}

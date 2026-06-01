@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react'
-import StockBubbleChart from '../StockBubbleChart.jsx'
-import AddToThemeModal from '../AddToThemeModal.jsx'
+import StockBubbleChart from '../StockBubbleChart'
+import AddToThemeModal from '../AddToThemeModal'
 
 // Theme Detail用：グラフ全体＋下部ボタンクリックで拡大
 function TdExpandable({ title, children, style }) {
@@ -17,7 +17,7 @@ function TdExpandable({ title, children, style }) {
         borderRadius:'6px', border:'1px solid var(--border)',
         background:'rgba(74,158,255,0.06)', color:'var(--accent)',
         fontSize:'11px', fontWeight:600, cursor:'pointer', fontFamily:'var(--font)',
-      }}>🔍 クリックで拡大</button>
+      }}>🔍 Click to expand</button>
       {expanded && (
         <div onClick={() => setExpanded(false)} style={{
           position:'fixed', inset:0, background:'rgba(0,0,0,0.75)', zIndex:2000,
@@ -56,11 +56,11 @@ const COLORS = [
 ]
 
 const STATE_COLORS = {
-  '🔥加速':  '#ff4560',
-  '↗転換↑': '#ff8c42',
-  '→横ばい': '#4a6080',
-  '↘転換↓': '#4a9eff',
-  '❄️失速':  '#00c48c',
+  '🔥 Accel':  '#ff4560',
+  '↗ Rev.↑': '#ff8c42',
+  '→ Flat': '#4a6080',
+  '↘ Rev.↓': '#4a9eff',
+  '❄️ Stall':  '#00c48c',
 }
 
 function formatLarge(n) {
@@ -191,7 +191,7 @@ function VolTvChart({ selTheme }) {
     })()
   }, [selTheme])
 
-  if (loading) return <div style={{ textAlign:'center', padding:'40px', color:'var(--text3)', fontSize:'13px' }}>データLoading...</div>
+  if (loading) return <div style={{ textAlign:'center', padding:'40px', color:'var(--text3)', fontSize:'13px' }}>データ読み込み中...</div>
   if (!data || !data.dates || data.dates.length === 0)
     return <div style={{ textAlign:'center', padding:'32px', color:'var(--text3)', fontSize:'12px' }}>推移データがありません（GitHub Actionsの次回実行後に表示されます）</div>
 
@@ -231,7 +231,7 @@ function VolTvChart({ selTheme }) {
   let lastMonth = null
   dates.forEach((d, i) => {
     const m = d.slice(0, 7)
-    if (m !== lastMonth) { xLabels.push({ i, label: d.slice(5, 7) + '月' }); lastMonth = m }
+    if (m !== lastMonth) { xLabels.push({ i, label: d.slice(5, 7) + ' '}) ; lastMonth = m }
   })
 
   // 縦棒の幅
@@ -289,9 +289,9 @@ function VolTvChart({ selTheme }) {
 
         {/* 凡例 */}
         <circle cx={PL + 10} cy={PT - 5} r="4" fill="#4a9eff" />
-        <text x={PL + 18} y={PT - 1} fontSize="9" fill="#4a9eff">Volume（折れ線・左軸）</text>
+        <text x={PL + 18} y={PT - 1} fontSize="9" fill="#4a9eff">Volume (line/left axis)</text>
         <rect x={PL + 140} y={PT - 10} width="10" height="8" fill="rgba(255,140,66,0.6)" rx="1" />
-        {hasTV && <text x={PL + 154} y={PT - 1} fontSize="9" fill="#ff8c42">Trade Value（棒グラフ・右軸）</text>}
+        {hasTV && <text x={PL + 154} y={PT - 1} fontSize="9" fill="#ff8c42">Trd.Val (bar/right axis)</text>}
       </svg>
     </div>
   )
@@ -334,21 +334,21 @@ function PickupStocks({ stocks, period }) {
 
     const buildReason = () => {
       const parts = []
-      if (pct >= 10)       parts.push('この期間のReturnは+' + pct.toFixed(1) + '%と大幅Risingしており、テーマ全体を牽引する動きを見せています')
-      else if (pct >= 5)   parts.push('この期間のReturnは+' + pct.toFixed(1) + '%と堅調で、テーマ内の上位Rising銘柄です')
-      else if (pct >= 2)   parts.push('+' + pct.toFixed(1) + '%のRisingでテーマAvgを上回っています')
-      else if (pct > 0)    parts.push('+' + pct.toFixed(1) + '%と小幅ながらプラスを維持しています')
+      if (pct >= 10)       parts.push('This period Return +' + pct.toFixed(1) + '% — strongly rising, leading the them引する動きを見せています')
+      else if (pct >= 5)   parts.push('Return +' + pct.toFixed(1) + '% — solid performance in the top tier of this themす')
+      else if (pct >= 2)   parts.push('+' + pct.toFixed(1) + '% — above theme average')
+      else if (pct > 0)    parts.push('+' + pct.toFixed(1) + '% — marginally positive')
 
-      if (volChg >= 50)      parts.push('Volumeが+' + volChg.toFixed(0) + '%と急増しており、機関投資家・外国人投資家の大口資金の流入が強く示唆されます')
-      else if (volChg >= 20) parts.push('Volumeが+' + volChg.toFixed(0) + '%増加しており、市場参加者の注目が高まっています')
+      if (volChg >= 50)      parts.push('Volume surged +' + volChg.toFixed(0) + '% — signals institutional/foreign invest大口資金の流入が強く示唆されます')
+      else if (volChg >= 20) parts.push('Volume +' + volChg.toFixed(0) + '% — growing market participant interestます')
 
-      if (sparkAccel > 3)    parts.push('直近の価格推移が後半にかけて加速（後半Avg+' + sparkAccel.toFixed(1) + '%）しており、モメンタムが強まっています')
-      else if (sparkAccel > 1) parts.push('価格推移が後半にかけてやや改善（後半+' + sparkAccel.toFixed(1) + '%）しています')
+      if (sparkAccel > 3)    parts.push('Price accelerating in the latter half (+' + sparkAccel.toFixed(1) + '% back-half avgており、モメンタムが強まっています')
+      else if (sparkAccel > 1) parts.push('Price slightly improving in latter half (+' + sparkAccel.toFixed(1) + '% back-halfます')
 
-      if (tv >= 5e9)       parts.push('Trade Valueは' + fmtL(tv) + 'と非常に大きく、流動性が高い主力銘柄として積極的に売買されています')
-      else if (tv >= 1e9)  parts.push('Trade Valueは' + fmtL(tv) + 'と十分な規模があり、積極的な売買が行われています')
+      if (tv >= 5e9)       parts.push('Trading Value ' + fmtL(tv) + ' — high liquidity blue-chip with active institutional tradinています')
+      else if (tv >= 1e9)  parts.push('Trading Value ' + fmtL(tv) + ' — adequate liquidity with active trading')
 
-      if (parts.length === 0) parts.push('Return・Volume・価格推移・Trade Valueの総合評価で、このテーマ内での注目度が高い銘柄として選定されました')
+      if (parts.length === 0) parts.push('Return・Volume・価格推移・Trade Valueの総合評価で、このテーマ内でのScoreが高い銘柄として選定されました')
       return parts.join('。') + '。'
     }
 
@@ -374,7 +374,7 @@ function PickupStocks({ stocks, period }) {
           <div style={{ flex:1, height:'1px', background:'var(--border)' }} />
         </div>
         <span style={{ fontSize:'10px', color:'var(--text3)', display:'block', paddingLeft:'2px' }}>
-          Return・Volume・勢い・Trade Valueを総合スコアで機械的に集計した参考情報です
+          Scores are auto-calculated from Return, Volume, momentum, and Trading Value.
         </span>
       </div>
       <div style={{ display:'grid', gridTemplateColumns:'repeat(3,1fr)', gap:'10px' }}
@@ -420,11 +420,11 @@ function PickupStocks({ stocks, period }) {
                   <span>{'Trade Value ' + fmtL(s.trade_value)}</span>
                 )}
               </div>
-              {/* 注目度スコア */}
+              {/* Scoreスコア */}
               <div style={{ display:'flex', alignItems:'center', gap:'6px' }}>
                 <span style={{ fontSize:'9px', color:'var(--text3)', fontWeight:600,
                   textTransform:'uppercase', letterSpacing:'0.06em', flexShrink:0 }}>
-                  注目度
+                  Score
                 </span>
                 <span style={{ fontSize:'15px', fontWeight:800, fontFamily:'var(--mono)',
                   color:scoreColor, lineHeight:1 }}>
@@ -450,12 +450,12 @@ function PickupStocks({ stocks, period }) {
         border:'1px solid rgba(255,193,7,0.15)', fontSize:'10px',
         color:'var(--text3)', lineHeight:1.8 }}>
         ⚠️ <strong style={{ color:'var(--text2)' }}>注意：</strong>
-        上記ピックアップはReturn・Volume・価格推移・Trade Valueを独自スコアで機械的に集計したものです。
-        <strong style={{ color:'var(--text2)' }}>リアルタイムデータではなく</strong>、
-        data update timing（1日数回Update）に依存するため、
-        最新の市場状況と乖離する場合があります。
-        特定銘柄の購入・売却を推奨するものではなく、
-        <strong style={{ color:'var(--text2)' }}>投資の最終判断はご自身の責任でお願いします</strong>。
+        Rankings above are auto-calculated from Return, Volume, price trend, and Trading Value.
+        <strong style={{ color:'var(--text2)' }}>Not real-time data</strong>;
+        results depend on data update timing (several times per day).
+        Results may differ from the latest market conditions.
+        This is not a recommendation to buy or sell any security.
+        <strong style={{ color:'var(--text2)' }}>All investment decisions are your sole responsibility</strong>.
       </div>
     </div>
   )
@@ -525,7 +525,7 @@ function StockTable({ stocks: rawStocks }) {
     if (tableRef.current) tableRef.current.style.cursor = 'grab'
   }
 
-  const headers = ['ミニチャート','株価','Return','Market Cap','寄与度%','Volume増減','Volume','Volume順位','Trade Value','Trade Value順位']
+  const headers = ['ミニチャート','株価','Return','時価総額','Contrib.%','Volume増減','Volume','Volume順位','Trade Value','Trade Value順位']
 
   // ⑤ ソートボタン定義
   const sortBtns = [
@@ -586,7 +586,7 @@ function StockTable({ stocks: rawStocks }) {
                 <th key={h} style={{ ...thStyle, minWidth: h === 'ミニチャート' ? '72px' : '80px',
                   width: h === 'ミニチャート' ? '72px' : undefined }}>{h}</th>
               ))}
-              <th style={{ ...thStyle, minWidth:'60px', background:'var(--bg3)' }}>Add</th>
+              <th style={{ ...thStyle, minWidth:'60px', background:'var(--bg3)' }}>追加</th>
             </tr>
           </thead>
           <tbody>
@@ -622,14 +622,14 @@ function StockTable({ stocks: rawStocks }) {
                     (s.contribution ?? 0) >= 70 ? '#ff5370' :
                     (s.contribution ?? 0) >= 40 ? '#ff8c42' :
                     (s.contribution ?? 0) >= 0  ? 'var(--text2)' : '#4a9eff' }}
-                    title="寄与度: この銘柄がテーマReturnに貢献した割合（%）">
+                    title="Contrib.: この銘柄がテーマReturnに貢献した割合（%）">
                     {s.contribution != null ? (s.contribution >= 0 ? '+' : '') + s.contribution.toFixed(2) + '%' : '-'}
                   </td>
                   <td style={{ ...tdR, color:s.volume_chg>=0?'var(--red)':'var(--green)', fontFamily:'var(--mono)' }}>{s.volume_chg>=0?'+':''}{s.volume_chg?.toFixed(1)}%</td>
                   <td style={{ ...tdR, fontFamily:'var(--mono)', color:'var(--text2)' }}>{formatLarge(s.volume)}</td>
-                  <td style={tdC}>{s.vol_rank}位</td>
+                  <td style={tdC}>{s.vol_rank}</td>
                   <td style={{ ...tdR, fontFamily:'var(--mono)', color:'var(--text2)' }}>{formatLarge(s.trade_value)}</td>
-                  <td style={tdC}>{s.tv_rank}位</td>
+                  <td style={tdC}>{s.tv_rank}</td>
                   <td style={tdC}>
                     <button onClick={() => setModalStock({ ticker: s.ticker, name: s.name, price: s.price })}
                       title="Add to Custom Theme"
@@ -776,7 +776,7 @@ export default function ThemeDetail({ onNavigate, initialTheme }) {
       .catch(() => {})
   }, [])
 
-  // initialThemeが変わった場合にselThemeをUpdate
+  // initialThemeが変わった場合にselThemeを更新
   useEffect(() => {
     if (initialTheme) setSelTheme(initialTheme)
   }, [initialTheme])
@@ -953,7 +953,7 @@ export default function ThemeDetail({ onNavigate, initialTheme }) {
                 </span>
                 {momentum && (<>
                   <div style={{ width:'1px', height:'20px', background:'var(--border)' }} />
-                  <span style={{ fontSize:'12px', color:'var(--text3)' }}>先月比</span>
+                  <span style={{ fontSize:'12px', color:'var(--text3)' }}>vs Last Mo.</span>
                   <span style={{ fontSize:'13px', fontFamily:'var(--mono)', fontWeight:600,
                     color: momentum.month_diff >= 0 ? 'var(--red)' : 'var(--green)' }}>
                     {momentum.month_diff >= 0 ? '+' : ''}{momentum.month_diff?.toFixed(1)}pt
@@ -966,7 +966,7 @@ export default function ThemeDetail({ onNavigate, initialTheme }) {
                   </span>
                 </>)}
                 <span style={{ fontSize:'11px', color:'var(--text3)', marginLeft:'auto' }}>
-                  {stocks.length}銘柄構成 ／ {PERIODS.find(p => p.value === period)?.label}
+                  {stocks.length} stocks / {PERIODS.find(p => p.value === period)?.label}
                 </span>
                 {THEME_ARTICLE_MAP[selTheme] && onNavigate && (
                   <button onClick={() => onNavigate('Column', THEME_ARTICLE_MAP[selTheme])}
@@ -974,7 +974,7 @@ export default function ThemeDetail({ onNavigate, initialTheme }) {
                       border:'1px solid rgba(74,158,255,0.3)', borderRadius:'6px',
                       color:'var(--accent)', cursor:'pointer', fontSize:'11px',
                       fontFamily:'var(--font)', fontWeight:600, whiteSpace:'nowrap' }}>
-                    📖 解説記事を読む
+                    📖 Read Analysis
                   </button>
                 )}
               </div>
@@ -985,7 +985,7 @@ export default function ThemeDetail({ onNavigate, initialTheme }) {
                       style={{ padding:'4px 10px', flexShrink:0, background:'rgba(74,158,255,0.08)',
                         border:'1px solid rgba(74,158,255,0.3)', borderRadius:'5px',
                         color:'var(--accent)', cursor:'pointer', fontSize:'11px',
-                        fontFamily:'var(--font)', fontWeight:600 }}>📖 解説記事</button>
+                        fontFamily:'var(--font)', fontWeight:600 }}>📖 Analysis</button>
                   )}
                   <span style={{ fontSize:'15px', fontWeight:700, color:'var(--text)',
                     flex:1, overflow:'hidden', textOverflow:'ellipsis', whiteSpace:'nowrap' }}>{selTheme}</span>
@@ -996,7 +996,7 @@ export default function ThemeDetail({ onNavigate, initialTheme }) {
                 </div>
                 <div style={{ display:'flex', alignItems:'center', gap:'6px', flexWrap:'wrap' }}>
                   {momentum && (<>
-                    <span style={{ fontSize:'10px', color:'var(--text3)' }}>先月比</span>
+                    <span style={{ fontSize:'10px', color:'var(--text3)' }}>vs Last Mo.</span>
                     <span style={{ fontSize:'11px', fontFamily:'var(--mono)', fontWeight:600,
                       color: momentum.month_diff >= 0 ? 'var(--red)' : 'var(--green)' }}>
                       {momentum.month_diff >= 0 ? '+' : ''}{momentum.month_diff?.toFixed(1)}pt
@@ -1009,7 +1009,7 @@ export default function ThemeDetail({ onNavigate, initialTheme }) {
                     </span>
                   </>)}
                   <span style={{ fontSize:'10px', color:'var(--text3)' }}>
-                    {stocks.length}銘柄 ／ {PERIODS.find(p => p.value === period)?.label}
+                    {stocks.length} stocks / {PERIODS.find(p => p.value === period)?.label}
                   </span>
                 </div>
               </div>
@@ -1017,8 +1017,8 @@ export default function ThemeDetail({ onNavigate, initialTheme }) {
 
             {/* TOP5グラフ - 全幅 */}
             <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:'12px', marginBottom:'12px' }} className="top5g">
-              <Top5Bar items={top5} title={`▲ RisingTOP5（${stocks.filter(s=>s.pct>0).length}銘柄Rising）`} colorFn={pctColor} emptyMsg="Rising銘柄なし"/>
-              <Top5Bar items={bot5} title={`▼ FallingTOP5（${stocks.filter(s=>s.pct<0).length}銘柄Falling）`} colorFn={pctColor} emptyMsg="Falling銘柄なし"/>
+              <Top5Bar items={top5} title={`▲ Rising TOP5 (${stocks.filter(s=>s.pct>0).length} Rising)`} colorFn={pctColor} emptyMsg="Rising銘柄なし"/>
+              <Top5Bar items={bot5} title={`▼ Falling TOP5 (${stocks.filter(s=>s.pct<0).length} Falling)`} colorFn={pctColor} emptyMsg="Falling銘柄なし"/>
             </div>
 
             {/* Featured Stocks - 全幅 */}
@@ -1097,7 +1097,7 @@ export default function ThemeDetail({ onNavigate, initialTheme }) {
                   })() : (
                     <div style={{ textAlign:'center', padding:'24px', color:'var(--text3)', fontSize:'12px',
                       background:'var(--bg2)', borderRadius:'10px', border:'1px solid var(--border)' }}>
-                      データ準備中（GitHub Actions実行後に表示）
+                      Data loading (available after GitHub Actions run)
                     </div>
                   )}
                 </TdExpandable>
@@ -1124,7 +1124,7 @@ export default function ThemeDetail({ onNavigate, initialTheme }) {
                         style={{ padding:'7px 16px', borderRadius:'6px', fontSize:'12px',
                           background:'rgba(74,158,255,0.08)', border:'1px solid rgba(74,158,255,0.3)',
                           color:'var(--accent)', cursor:'pointer', fontFamily:'var(--font)', fontWeight:600 }}>
-                        📖 {selTheme}のコラム記事
+                        📖 {selTheme} Column
                       </button>
                     )}
                     <button onClick={() => onNavigate('Weekly Report')}
@@ -1141,7 +1141,7 @@ export default function ThemeDetail({ onNavigate, initialTheme }) {
               <div className="td-right">
                 <div style={{ fontSize:'11px', fontWeight:600, letterSpacing:'0.1em', color:'var(--text3)',
                   textTransform:'uppercase', marginBottom:'8px' }}>
-                  Constituent Stocks <span style={{ fontSize:'10px', fontWeight:400 }}>← 横にスワイプ</span>
+                  Constituent Stocks <span style={{ fontSize:'10px', fontWeight:400 }}>← Swipe</span>
                 </div>
                 <div style={{ background:'var(--bg2)', border:'1px solid var(--border)', borderRadius:'var(--radius)', overflow:'hidden' }}>
                   <StockTable stocks={stocks}/>
@@ -1150,7 +1150,7 @@ export default function ThemeDetail({ onNavigate, initialTheme }) {
             </div>
           </>
         ) : (
-          <div style={{ color:'var(--text3)', fontSize:'13px' }}>Select Themeしてください</div>
+          <div style={{ color:'var(--text3)', fontSize:'13px' }}>Please select a theme</div>
         )}
       </div>
       <style>{`
