@@ -1,3 +1,4 @@
+import { tn } from '../../utils/themeNames'
 import { useState, useEffect } from 'react'
 
 const THEME_ARTICLE_MAP = {

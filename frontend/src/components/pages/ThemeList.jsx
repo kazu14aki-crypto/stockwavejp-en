@@ -1,3 +1,4 @@
+import { tn, THEME_NAME_EN } from '../../utils/themeNames'
 import React, { useState, useEffect } from 'react'
 import { useThemes, useCustomThemeStats, useMacro, useMomentum, useMonthlyHeatmap } from '../../hooks/useMarketData'
 import { useCustomThemes } from '../../hooks/useCustomThemes'
@@ -113,7 +114,7 @@ function genThemeComment(themes, summary, period, momentum) {
   lines.push(`[${periodLabel} Overview] Across all 67 themes: Rising ${rising.length}, Falling ${falling.length} (avg return ${avg >= 0 ? '+' : ''}${avg.toFixed(2)}% — ${mktTone}).`)
 
   // トップ・ボトム
-  lines.push(`Top Rising: '${top?.theme}' (${top?.pct >= 0 ? '+' : ''}${top?.pct?.toFixed(2)}%), Top Falling: '${bot?.theme}' (${bot?.pct?.toFixed(2)}%). Spread: ${(top?.pct - bot?.pct)?.toFixed(1)}pt — ${Math.abs(top?.pct - bot?.pct) > 15 ? 'large theme dispersion' : 'relatively small dispersion'}.`)
+  lines.push(`Top Rising: '${tn(top?.theme)}' (${top?.pct >= 0 ? '+' : ''}${top?.pct?.toFixed(2)}%), Top Falling: '${tn(bot?.theme)}' (${bot?.pct?.toFixed(2)}%). Spread: ${(top?.pct - bot?.pct)?.toFixed(1)}pt — ${Math.abs(top?.pct - bot?.pct) > 15 ? 'large theme dispersion' : 'relatively small dispersion'}.`)
 
   // 急騰テーマ
   if (hotThemes.length > 0) {
@@ -143,7 +144,7 @@ function genThemeComment(themes, summary, period, momentum) {
   const sentiment = netBias > 10 ? 'Broad buying dominance — risk-on mood across the market.' :
                     netBias < -10 ? 'Broad selling dominance — risk-off trend. Capital concentrating in defensive sectors.' :
                     'Mixed Rising/Falling — selective theme approach is key in this environment.'
-  lines.push(`💡 Summary: ${sentiment}${hotThemes.length > 0 && coldThemes.length > 0 ? ` Clear divergence between '${hotThemes[0]}' (rising) and '${coldThemes[0]}' (falling) — theme selection is increasingly important.` : ''}`)
+  lines.push(`💡 Summary: ${sentiment}${hotThemes.length > 0 && coldThemes.length > 0 ? ` Clear divergence between '${tn(hotThemes[0])}' (rising) and '${tn(coldThemes[0])}' (falling) — theme selection is increasingly important.` : ''}`)
 
   return lines
 }
@@ -454,7 +455,7 @@ function HBarChart({ items, valueKey = 'pct', formatFn, colorFn, title, emptyMsg
                 overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap',
                 textAlign: 'right',
               }}>
-                {item.theme || item.name}
+                {tn(item.theme || item.name)}
               </span>
               {/* バー */}
               <div style={{ height: '14px', background: 'rgba(255,255,255,0.04)', borderRadius: '3px', overflow: 'hidden', position: 'relative' }}>
@@ -526,7 +527,7 @@ function CustomThemeRow({ ct, period, pctColor, rank, volRankMap, tvRankMap }) {
       <div style={{ flex:1, minWidth:0 }}>
         <div style={{ fontSize:'11px', fontWeight:600, color:'#c8a8ff',
           overflow:'hidden', textOverflow:'ellipsis', whiteSpace:'nowrap', marginBottom:'3px' }}>
-          {ct.name}
+          {tn(ct.name)}
         </div>
         {loading ? (
           <div style={{ fontSize:'11px', color:'var(--text3)' }}>Loading...</div>
@@ -1180,81 +1181,6 @@ function MonthlyTVChart({ volTrendData, allThemeNames, months }) {
     </div>
   )
 }
-
-
-const THEME_NAME_EN = {
-  "半導体製造装置": "Semiconductor Equipment",
-  "半導体材料": "Semiconductor Materials",
-  "半導体検査装置": "Semiconductor Testing",
-  "メモリ": "Memory",
-  "パワー半導体": "Power Semiconductor",
-  "次世代半導体": "Next-Gen Semiconductor",
-  "生成AI": "Generative AI",
-  "AIデータセンター": "AI Datacenter",
-  "フィジカルAI": "Physical AI",
-  "AI半導体": "AI Semiconductor",
-  "AI人材": "AI Talent",
-  "エッジAI": "Edge AI",
-  "EV・電気自動車": "EV / Electric Vehicles",
-  "全固体電池": "All-Solid-State Battery",
-  "自動運転": "Autonomous Driving",
-  "ドローン": "Drones",
-  "輸送・物流": "Transport & Logistics",
-  "造船": "Shipbuilding",
-  "再生可能エネルギー": "Renewable Energy",
-  "太陽光発電": "Solar Power",
-  "核融合発電": "Nuclear Fusion",
-  "原子力発電": "Nuclear Power",
-  "電力会社": "Electric Utilities",
-  "石油": "Oil & Gas",
-  "蓄電池": "Energy Storage",
-  "資源（水素・ヘリウム・水）": "Resources (H2/He/H2O)",
-  "IOWN": "IOWN (NTT Photonics)",
-  "光通信": "Optical Communication",
-  "通信": "Telecom",
-  "量子コンピューター": "Quantum Computing",
-  "SaaS": "SaaS",
-  "ウェアラブル端末": "Wearables",
-  "仮想通貨": "Crypto / Virtual Currency",
-  "ネット銀行": "Digital Banking",
-  "鉄鋼・素材": "Steel & Materials",
-  "化学": "Chemicals",
-  "建築資材": "Building Materials",
-  "塗料": "Paints & Coatings",
-  "医薬品・バイオ": "Pharma & Biotech",
-  "ヘルスケア・介護": "Healthcare & Nursing",
-  "薬局・ドラッグストア": "Pharmacy / Drug Store",
-  "銀行・金融": "Banking / Finance",
-  "地方銀行": "Regional Banks",
-  "保険": "Insurance",
-  "フィンテック": "Fintech",
-  "不動産": "Real Estate",
-  "建設・インフラ": "Construction & Infra",
-  "国土強靭化計画": "National Resilience",
-  "下水道": "Water Infrastructure",
-  "食品・飲料": "Food & Beverage",
-  "農業・フードテック": "Agritech & Foodtech",
-  "小売・EC": "Retail & E-Commerce",
-  "観光・ホテル・レジャー": "Tourism & Hotels",
-  "インバウンド": "Inbound Tourism",
-  "リユース・中古品": "Resale / Second-hand",
-  "防衛・航空": "Defense & Aerospace",
-  "宇宙・衛星": "Space & Satellite",
-  "ロボット・自動化": "Robotics & Automation",
-  "レアアース・資源": "Rare Earth & Resources",
-  "バフェットstocks": "Buffett Picks",
-  "バフェット銘柄": "Buffett Picks",
-  "サイバーセキュリティ": "Cybersecurity",
-  "警備": "Security Services",
-  "脱炭素・ESG": "Decarbonization / ESG",
-  "教育・HR・人材": "Education & HR",
-  "人材派遣": "Staffing / HR",
-  "ゲーム・エンタメ": "Gaming & Entertainment",
-  "MLCC・電子部品": "MLCC/Electronic Components",
-  "親子上場": "Parent-Child Listing"
-};
-const tn = (name) => THEME_NAME_EN[name] || name;
-
 export default function ThemeList({ onNavigate }) {
   const [period, setPeriod] = useState('1mo')
   const { data: monthlyRaw } = useMonthlyHeatmap()

@@ -1,3 +1,4 @@
+import { tn } from '../../utils/themeNames'
 import React, { useState } from 'react'
 import { useMomentum } from '../../hooks/useMarketData'
 

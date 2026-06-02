@@ -1,3 +1,4 @@
+import { tn } from '../../utils/themeNames'
 import { useState } from 'react'
 import { useThemes, useMacro } from '../../hooks/useMarketData'
 import MacroLineChart, { MacroCard, SHead } from '../MacroLineChart'
@@ -190,13 +191,13 @@ function generateMarketComment(themeData, macro) {
 
   // Risingテーマ
   if (top3.length && top3[0].pct > 0) {
-    const upNames = top3.filter(x=>x.pct>0).map(x=>`「${x.theme}」(${x.pct>=0?'+':''}${x.pct.toFixed(1)}%)`).join('、')
-    lines.push(`▲ Notable Rising themes: ${upNames}. ${volUp.length>0&&top3.some(top=>volUp.some(v=>v.theme===top.theme))?`'${top3[0].theme}' is also seeing volume surge — institutional inflow may be starting.`:''}`)
+    const upNames = top3.filter(x=>x.pct>0).map(x=>`「${tn(x.theme)}」(${x.pct>=0?'+':''}${x.pct.toFixed(1)}%)`).join('、')
+    lines.push(`▲ Notable Rising themes: ${upNames}. ${volUp.length>0&&top3.some(top=>volUp.some(v=>v.theme===top.theme))?`'${tn(top3[0].theme)}' is also seeing volume surge — institutional inflow may be starting.`:''}`)
   }
 
   // Fallingテーマ
   if (bot3.length && bot3[0].pct < 0) {
-    const dnNames = bot3.filter(x=>x.pct<0).map(x=>`「${x.theme}」(${x.pct.toFixed(1)}%)`).join('、')
+    const dnNames = bot3.filter(x=>x.pct<0).map(x=>`「${tn(x.theme)}」(${x.pct.toFixed(1)}%)`).join('、')
     lines.push(`▼ Notable Falling themes: ${dnNames}. ${coldThemes.length>3?'Broad selling pressure — selective theme approach recommended.':'Sharp decline — overheating correction or external headwinds likely.'}`)
   }
 

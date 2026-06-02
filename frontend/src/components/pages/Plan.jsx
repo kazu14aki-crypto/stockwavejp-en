@@ -15,14 +15,14 @@ export default function Plan({ onNavigate }) {
     return () => window.removeEventListener('resize', check)
   }, [])
 
-  const perDay = (monthly) => Math.ceil(monthly / 30)
+  const perDay = (monthly) => monthly / 30
 
   const PLANS = [
     {
       key: 'free',
       name: 'Free', color: '#4a9eff',
       badge: currentPlan === 'free' ? 'Current Plan' : null,
-      monthly: { price: '¥0', label: 'Forever Free', perDay: null },
+      monthly: { price: '$0', label: 'Forever Free', perDay: null },
       yearly:  null,
       features: [
         '67 themes real-time data',
@@ -38,7 +38,7 @@ export default function Plan({ onNavigate }) {
       key: 'standard',
       name: 'Standard', color: '#ff8c42',
       badge: currentPlan === 'standard' ? 'Current Plan' : null,
-      monthly: { price: '¥980',  label: 'Monthly', perDay: perDay(980)  },
+      monthly: { price: '$20',  label: 'Monthly', perDay: perDay(20)  },
       yearly:  null,  // Annual plan temporarily paused
       features: [
         'All Free Plan Features',
@@ -52,7 +52,7 @@ export default function Plan({ onNavigate }) {
       key: 'pro',
       name: 'Pro', color: '#aa77ff',
       badge: currentPlan === 'pro' ? 'Current Plan' : null,
-      monthly: { price: '¥1,980', label: 'Monthly', perDay: perDay(1980) },
+      monthly: { price: '$30', label: 'Monthly', perDay: perDay(30) },
       yearly:  null,  // Annual plan temporarily paused
       features: [
         'All Standard Plan Features',
@@ -90,7 +90,7 @@ export default function Plan({ onNavigate }) {
           border:'1px solid rgba(170,119,255,0.3)', borderRadius:'10px',
           fontSize:'13px', color:'#aa77ff', marginBottom:'16px', lineHeight:1.7 }}>
           🎉 You are on a <strong>Pro Plan free trial</strong>.<br/>
-          <span style={{ fontSize:'11px', color:'var(--text2)' }}>For 30 days from your first login, all FeaturesをFreeでTrialいただけます。期間終了後は自動的にFree Planになります。</span>
+          <span style={{ fontSize:'11px', color:'var(--text2)' }}>For 14 days from your first login, all FeaturesをFreeでTrialいただけます。期間終了後は自動的にFree Planになります。</span>
         </div>
       )}
       <p style={{ fontSize:'12px', color:'var(--text3)', marginBottom:'24px', lineHeight:1.7 }}>
@@ -122,7 +122,7 @@ export default function Plan({ onNavigate }) {
                 <span style={{ fontSize:'26px', fontWeight:800, color:'var(--text)', fontFamily:'var(--mono)' }}>{p.monthly.price}</span>
                 {p.monthly.label !== 'Forever Free' && <span style={{ fontSize:'12px', color:'var(--text3)' }}>/月</span>}
               </div>
-              {p.monthly.perDay && <div style={{ fontSize:'11px', color:p.color, fontWeight:600, marginTop:'4px' }}>一 daysあたり約{p.monthly.perDay} JPY！</div>}
+              {p.monthly.perDay && <div style={{ fontSize:'11px', color:p.color, fontWeight:600, marginTop:'4px' }}>一 daysあたり約${p.monthly.perDay.toFixed(2)}/day JPY！</div>}
               {p.monthly.label === 'Forever Free' && <div style={{ fontSize:'11px', color:'#4a9eff', fontWeight:600, marginTop:'4px' }}>ずっとFree</div>}
             </div>
 
@@ -195,7 +195,7 @@ export default function Plan({ onNavigate }) {
           ⚠️ Important Note on Subscribing During Free Trial
         </div>
         <div style={{ fontSize:'12px', color:'var(--text2)', lineHeight:1.8 }}>
-          If you subscribe during the free trial period (30 days from first login),
+          If you subscribe during the free trial period (14 days from first login),
           <strong>the free trial ends and paid subscription begins immediately</strong>.<br/>
           Your plan will be shown in Settings under "Current Plan". You can cancel from there.<br/>
           After cancellation, you can continue using the service <strong>until the end of your billing period</strong>.
