@@ -20,6 +20,7 @@ import PrivacyPolicy from './components/pages/PrivacyPolicy'
 import TermsOfService from './components/pages/TermsOfService'
 import SiteInfo    from './components/pages/SiteInfo'
 import WeeklyReport from './components/pages/WeeklyReport'
+import Plan         from './components/pages/Plan'
 import InstitutionalHoldings from './components/pages/InstitutionalHoldings'
 
 const PAGES = [
