@@ -46,15 +46,15 @@ function PickupStocks({ stocks, period }) {
       else if (pct > 0)    parts.push('+' + pct.toFixed(1) + '% — marginally positive')
 
       if (volChg >= 50)      parts.push('Volume surged +' + volChg.toFixed(0) + '% — signals institutional/foreign invest大口資金の流入が強く示唆されます')
-      else if (volChg >= 20) parts.push('Volume +' + volChg.toFixed(0) + '% — growing market participant interestます')
+      else if (volChg >= 20) parts.push('Volume +' + volChg.toFixed(0) + '% — growing market participant interest.')
 
-      if (sparkAccel > 3)    parts.push('Price accelerating in the latter half (+' + sparkAccel.toFixed(1) + '% back-half avgており、モメンタムが強まっています')
+      if (sparkAccel > 3)    parts.push('Price accelerating in the latter half (+' + sparkAccel.toFixed(1) + '% back-half avg) — momentum strengthening.')
       else if (sparkAccel > 1) parts.push('Price slightly improving in latter half (+' + sparkAccel.toFixed(1) + '% back-halfます')
 
-      if (tv >= 5e9)       parts.push('Trading Value ' + fmtL(tv) + ' — high liquidity blue-chip with active institutional tradinています')
+      if (tv >= 5e9)       parts.push('Trading Value ' + fmtL(tv) + ' — high liquidity with active institutional trading.')
       else if (tv >= 1e9)  parts.push('Trading Value ' + fmtL(tv) + ' — adequate liquidity with active trading')
 
-      if (parts.length === 0) parts.push('Return・Volume・価格推移・Trade Valueの総合評価で、このテーマ内でのScoreが高い銘柄として選定されました')
+      if (parts.length === 0) parts.push('High composite score (Return, Volume, price trend, Trading Value) — notable stock in this segment.')
       return parts.join('。') + '。'
     }
 
@@ -155,7 +155,7 @@ function PickupStocks({ stocks, period }) {
         background:'rgba(255,193,7,0.05)', borderRadius:'5px',
         border:'1px solid rgba(255,193,7,0.15)', fontSize:'10px',
         color:'var(--text3)', lineHeight:1.8 }}>
-        ⚠️ <strong style={{ color:'var(--text2)' }}>注意：</strong>
+        ⚠️ <strong style={{ color:'var(--text2)' }}>Note:</strong>
         Rankings above are auto-calculated from Return, Volume, price trend, and Trading Value.
         <strong style={{ color:'var(--text2)' }}>Not real-time data</strong>;
         results depend on data update timing (several times per day).

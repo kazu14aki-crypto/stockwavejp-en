@@ -179,7 +179,7 @@ function VolTvChart({ selTheme }) {
       // 1. market.json から取得
       try {
         const mj = await fetch('/data/market.json?t=' + Date.now()).then(r => r.json())
-        const d = mj[`vol_trend_${selTheme}`]
+        const d = mj[`vol_trend_${tn(selTheme)}`]
         if (d && d.dates && d.dates.length > 0) { setData(d); setLoading(false); return }
       } catch {}
       // 2. Render API にフォールバック
@@ -334,21 +334,21 @@ function PickupStocks({ stocks, period }) {
 
     const buildReason = () => {
       const parts = []
-      if (pct >= 10)       parts.push('This period Return +' + pct.toFixed(1) + '% — strongly rising, leading the them引する動きを見せています')
-      else if (pct >= 5)   parts.push('Return +' + pct.toFixed(1) + '% — solid performance in the top tier of this themす')
+      if (pct >= 10)       parts.push('This period Return +' + pct.toFixed(1) + '% — strongly rising, leading the theme.')
+      else if (pct >= 5)   parts.push('Return +' + pct.toFixed(1) + '% — solid performance in the top tier of this theme.')
       else if (pct >= 2)   parts.push('+' + pct.toFixed(1) + '% — above theme average')
       else if (pct > 0)    parts.push('+' + pct.toFixed(1) + '% — marginally positive')
 
-      if (volChg >= 50)      parts.push('Volume surged +' + volChg.toFixed(0) + '% — signals institutional/foreign invest大口資金の流入が強く示唆されます')
-      else if (volChg >= 20) parts.push('Volume +' + volChg.toFixed(0) + '% — growing market participant interestます')
+      if (volChg >= 50)      parts.push('Volume surged +' + volChg.toFixed(0) + '% — signals institutional/foreign inflows.')
+      else if (volChg >= 20) parts.push('Volume +' + volChg.toFixed(0) + '% — growing market participant interest.')
 
-      if (sparkAccel > 3)    parts.push('Price accelerating in the latter half (+' + sparkAccel.toFixed(1) + '% back-half avgており、モメンタムが強まっています')
-      else if (sparkAccel > 1) parts.push('Price slightly improving in latter half (+' + sparkAccel.toFixed(1) + '% back-halfます')
+      if (sparkAccel > 3)    parts.push('Price accelerating in the latter half (+' + sparkAccel.toFixed(1) + '% back-half avg) — strengthening momentum.')
+      else if (sparkAccel > 1) parts.push('Price slightly improving in latter half (+' + sparkAccel.toFixed(1) + '% back-half avg).')
 
-      if (tv >= 5e9)       parts.push('Trading Value ' + fmtL(tv) + ' — high liquidity blue-chip with active institutional tradinています')
+      if (tv >= 5e9)       parts.push('Trading Value ' + fmtL(tv) + ' — high liquidity blue-chip with active institutional trading.')
       else if (tv >= 1e9)  parts.push('Trading Value ' + fmtL(tv) + ' — adequate liquidity with active trading')
 
-      if (parts.length === 0) parts.push('Return・Volume・価格推移・Trade Valueの総合評価で、このテーマ内でのScoreが高い銘柄として選定されました')
+      if (parts.length === 0) parts.push('High composite score (Return, Volume, price trend, Trading Value) — notable stock within this theme.')
       return parts.join('。') + '。'
     }
 
@@ -449,7 +449,7 @@ function PickupStocks({ stocks, period }) {
         background:'rgba(255,193,7,0.05)', borderRadius:'5px',
         border:'1px solid rgba(255,193,7,0.15)', fontSize:'10px',
         color:'var(--text3)', lineHeight:1.8 }}>
-        ⚠️ <strong style={{ color:'var(--text2)' }}>注意：</strong>
+        ⚠️ <strong style={{ color:'var(--text2)' }}>Note:</strong>
         Rankings above are auto-calculated from Return, Volume, price trend, and Trading Value.
         <strong style={{ color:'var(--text2)' }}>Not real-time data</strong>;
         results depend on data update timing (several times per day).
@@ -525,7 +525,7 @@ function StockTable({ stocks: rawStocks }) {
     if (tableRef.current) tableRef.current.style.cursor = 'grab'
   }
 
-  const headers = ['ミニチャート','株価','Return','時価総額','Contrib.%','Volume増減','Volume','Volume順位','Trade Value','Trade Value順位']
+  const headers = ['Chart','Price','Return','Mkt.Cap','Contrib.%','Vol.Chg','Volume','Vol.Rank','Trade Value','Trade Value順位']
 
   // ⑤ ソートボタン定義
   const sortBtns = [
@@ -583,10 +583,10 @@ function StockTable({ stocks: rawStocks }) {
               <th className="sticky-col1" style={{ ...thStyle, textAlign:'center', width:'32px', minWidth:'32px', maxWidth:'32px', padding:'8px 4px', background:'var(--bg3)', position:'sticky', left:0, zIndex:3 }}>順</th>
               <th className="sticky-col2" style={{ ...thStyle, textAlign:'left', minWidth:'120px', background:'var(--bg3)', position:'sticky', left:'32px', zIndex:3 }}>銘柄名</th>
               {headers.map(h => (
-                <th key={h} style={{ ...thStyle, minWidth: h === 'ミニチャート' ? '72px' : '80px',
-                  width: h === 'ミニチャート' ? '72px' : undefined }}>{h}</th>
+                <th key={h} style={{ ...thStyle, minWidth: h === 'Chart' ? '72px' : '80px',
+                  width: h === 'Chart' ? '72px' : undefined }}>{h}</th>
               ))}
-              <th style={{ ...thStyle, minWidth:'60px', background:'var(--bg3)' }}>追加</th>
+              <th style={{ ...thStyle, minWidth:'60px', background:'var(--bg3)' }}>Add</th>
             </tr>
           </thead>
           <tbody>
@@ -622,7 +622,7 @@ function StockTable({ stocks: rawStocks }) {
                     (s.contribution ?? 0) >= 70 ? '#ff5370' :
                     (s.contribution ?? 0) >= 40 ? '#ff8c42' :
                     (s.contribution ?? 0) >= 0  ? 'var(--text2)' : '#4a9eff' }}
-                    title="Contrib.: この銘柄がテーマReturnに貢献した割合（%）">
+                    title="Contrib.: % contribution to theme Return">
                     {s.contribution != null ? (s.contribution >= 0 ? '+' : '') + s.contribution.toFixed(2) + '%' : '-'}
                   </td>
                   <td style={{ ...tdR, color:s.volume_chg>=0?'var(--red)':'var(--green)', fontFamily:'var(--mono)' }}>{s.volume_chg>=0?'+':''}{s.volume_chg?.toFixed(1)}%</td>
@@ -735,6 +735,79 @@ const THEME_ARTICLE_MAP = {
   '人材派遣':          'education-hr-theme',
 }
 
+const THEME_NAME_EN = {
+  '半導体製造装置': 'Semiconductor Equipment',
+  '半導体材料': 'Semiconductor Materials',
+  '半導体検査装置': 'Semiconductor Testing',
+  'メモリ': 'Memory',
+  'パワー半導体': 'Power Semiconductor',
+  '次世代半導体': 'Next-Gen Semiconductor',
+  '生成AI': 'Generative AI',
+  'AIデータセンター': 'AI Datacenter',
+  'フィジカルAI': 'Physical AI',
+  'AI半導体': 'AI Semiconductor',
+  'AI人材': 'AI Talent',
+  'エッジAI': 'Edge AI',
+  'EV・電気自動車': 'EV / Electric Vehicles',
+  '全固体電池': 'All-Solid-State Battery',
+  '自動運転': 'Autonomous Driving',
+  'ドローン': 'Drones',
+  '輸送・物流': 'Transport & Logistics',
+  '造船': 'Shipbuilding',
+  '再生可能エネルギー': 'Renewable Energy',
+  '太陽光発電': 'Solar Power',
+  '核融合発電': 'Nuclear Fusion',
+  '原子力発電': 'Nuclear Power',
+  '電力会社': 'Electric Utilities',
+  '石油': 'Oil & Gas',
+  'LNG': 'LNG',
+  '蓄電池': 'Energy Storage',
+  '資源（水素・ヘリウム・水）': 'Resources (H2/He/H2O)',
+  'IOWN': 'IOWN',
+  '光通信': 'Optical Communication',
+  '通信': 'Telecom',
+  '量子コンピューター': 'Quantum Computing',
+  'SaaS': 'SaaS',
+  'ウェアラブル端末': 'Wearables',
+  '仮想通貨': 'Crypto',
+  'ネット銀行': 'Digital Banking',
+  '鉄鋼・素材': 'Steel & Materials',
+  '化学': 'Chemicals',
+  '建築資材': 'Building Materials',
+  '塗料': 'Paints',
+  '医薬品・バイオ': 'Pharma & Biotech',
+  'ヘルスケア・介護': 'Healthcare & Nursing',
+  '薬局・ドラッグストア': 'Pharmacy / Drug Store',
+  '銀行・金融': 'Banking / Finance',
+  '地方銀行': 'Regional Banks',
+  '保険': 'Insurance',
+  'フィンテック': 'Fintech',
+  '不動産': 'Real Estate',
+  '建設・インフラ': 'Construction & Infra',
+  '国土強靭化計画': 'National Resilience',
+  '下水道': 'Water Infrastructure',
+  '食品・飲料': 'Food & Beverage',
+  '農業・フードテック': 'Agritech & Foodtech',
+  '小売・EC': 'Retail & E-Commerce',
+  '観光・ホテル・レジャー': 'Tourism & Hotels',
+  'インバウンド': 'Inbound Tourism',
+  'リユース・中古品': 'Resale / Second-hand',
+  '防衛・航空': 'Defense & Aerospace',
+  '宇宙・衛星': 'Space & Satellite',
+  'ロボット・自動化': 'Robotics & Automation',
+  'レアアース・資源': 'Rare Earth & Resources',
+  'バフェット銘柄': 'Buffett Picks',
+  'サイバーセキュリティ': 'Cybersecurity',
+  '警備': 'Security Services',
+  '脱炭素・ESG': 'Decarbonization / ESG',
+  '教育・HR・人材': 'Education & HR',
+  '人材派遣': 'Staffing / HR',
+  'ゲーム・エンタメ': 'Gaming & Entertainment',
+  'MLCC・電子部品': 'MLCC / Electronic Components',
+  '親子上場': 'Parent-Child Listing',
+}
+const tn = (name) => THEME_NAME_EN[name] || name
+
 export default function ThemeDetail({ onNavigate, initialTheme }) {
   const [period,      setPeriod]      = useState('1mo')
   const [themeNames,  setThemeNames]  = useState([])
@@ -797,7 +870,7 @@ export default function ThemeDetail({ onNavigate, initialTheme }) {
       try {
         // market.jsonから取得を試みる
         const mj = await fetch('/data/market.json?t=' + Date.now()).then(r => r.json())
-        const detailKey = `theme_detail_${selTheme}_${period}`
+        const detailKey = `theme_detail_${tn(selTheme)}_${period}`
         const momentumKey = `momentum_1mo`
         const detailData  = mj[detailKey]
         const momentumData = mj[momentumKey]?.data || []
@@ -814,7 +887,7 @@ export default function ThemeDetail({ onNavigate, initialTheme }) {
       // 1moでのフォールバック（1dがmarket.jsonにない場合）
       try {
         const mj2 = await fetch('/data/market.json?t=' + Date.now()).then(r => r.json())
-        const fallbackKey = `theme_detail_${selTheme}_1mo`
+        const fallbackKey = `theme_detail_${tn(selTheme)}_1mo`
         const fallbackData = mj2[fallbackKey]
         const momentumData2 = mj2['momentum_1mo']?.data || []
         if (fallbackData) {
@@ -929,7 +1002,7 @@ export default function ThemeDetail({ onNavigate, initialTheme }) {
       {/* 固定ヘッダー */}
       <div className="page-header-sticky" style={{ flexWrap:'wrap', gap:'6px' }}>
         <h1 style={{ fontSize:'16px', fontWeight:700, color:'var(--text)', whiteSpace:'nowrap', flexShrink:0 }}>Theme Detail</h1>
-        <select value={selTheme} onChange={e => setSelTheme(e.target.value)} style={{ ...selStyle, maxWidth:'160px', flex:'1 1 120px' }}>
+        <select value={tn(selTheme)} onChange={e => setSelTheme(e.target.value)} style={{ ...selStyle, maxWidth:'160px', flex:'1 1 120px' }}>
           {themeNames.map(t => <option key={t} value={t}>{t}</option>)}
         </select>
         <select value={period} onChange={e => setPeriod(e.target.value)} style={{ ...selStyle, flexShrink:0 }}>
@@ -946,7 +1019,7 @@ export default function ThemeDetail({ onNavigate, initialTheme }) {
             <div className="theme-summary-card" style={{ background:'var(--bg2)', border:'1px solid var(--border)',
               borderRadius:'10px', padding:'12px 16px', marginBottom:'12px' }}>
               <div className="theme-summary-pc" style={{ display:'flex', alignItems:'center', gap:'12px', flexWrap:'wrap' }}>
-                <span style={{ fontSize:'18px', fontWeight:700, color:'var(--text)' }}>{selTheme}</span>
+                <span style={{ fontSize:'18px', fontWeight:700, color:'var(--text)' }}>{tn(selTheme)}</span>
                 <span style={{ fontSize:'16px', fontFamily:'var(--mono)', fontWeight:700,
                   color: (detail?.avg ?? 0) >= 0 ? 'var(--red)' : 'var(--green)' }}>
                   Avg {(detail?.avg ?? 0) >= 0 ? '+' : ''}{detail?.avg?.toFixed(1)}%
@@ -988,7 +1061,7 @@ export default function ThemeDetail({ onNavigate, initialTheme }) {
                         fontFamily:'var(--font)', fontWeight:600 }}>📖 Analysis</button>
                   )}
                   <span style={{ fontSize:'15px', fontWeight:700, color:'var(--text)',
-                    flex:1, overflow:'hidden', textOverflow:'ellipsis', whiteSpace:'nowrap' }}>{selTheme}</span>
+                    flex:1, overflow:'hidden', textOverflow:'ellipsis', whiteSpace:'nowrap' }}>{tn(selTheme)}</span>
                   <span style={{ fontSize:'16px', fontFamily:'var(--mono)', fontWeight:700, flexShrink:0,
                     color: (detail?.avg ?? 0) >= 0 ? 'var(--red)' : 'var(--green)' }}>
                     {(detail?.avg ?? 0) >= 0 ? '+' : ''}{detail?.avg?.toFixed(1)}%
@@ -1031,7 +1104,7 @@ export default function ThemeDetail({ onNavigate, initialTheme }) {
               <div className="td-left">
 
                 {/* ⑤ Returnグラフ（heatmapデータで棒グラフ）*/}
-                <TdExpandable title={`📈 ${selTheme} Return（期間別）`}>
+                <TdExpandable title={`📈 ${tn(selTheme)} Return (by period)`}>
                   {themeHeatmap && typeof themeHeatmap === 'object' ? (() => {
                     const periods6 = [
                       {k:'1d', label:'1D', v: detail?.avg ?? null},
@@ -1105,14 +1178,14 @@ export default function ThemeDetail({ onNavigate, initialTheme }) {
                 {/* ③ Stock Heatmap（散布図）を先に */}
                 {themeHeatmap && typeof themeHeatmap === 'object' && themeHeatmap['1W'] != null && (
                   <TdExpandable title="🔥 Stock Heatmap">
-                    <StockBubbleChart stocks={stocks} themeName={selTheme} onNavigate={onNavigate} />
+                    <StockBubbleChart stocks={stocks} themeName={tn(selTheme)} onNavigate={onNavigate} />
                   </TdExpandable>
                 )}
 
                 {/* Volume・Trade Valueグラフ（Heatmapの下） */}
-                <TdExpandable title="📊 Volume・Trade Value 推移（週次）" style={{ marginTop:'14px' }}>
+                <TdExpandable title="📊 Volume & Trading Value Trend (weekly)" style={{ marginTop:'14px' }}>
                   <div style={{ height:'200px' }}>
-                    <VolTvChart selTheme={selTheme} />
+                    <VolTvChart selTheme={tn(selTheme)} />
                   </div>
                 </TdExpandable>
 
@@ -1124,7 +1197,7 @@ export default function ThemeDetail({ onNavigate, initialTheme }) {
                         style={{ padding:'7px 16px', borderRadius:'6px', fontSize:'12px',
                           background:'rgba(74,158,255,0.08)', border:'1px solid rgba(74,158,255,0.3)',
                           color:'var(--accent)', cursor:'pointer', fontFamily:'var(--font)', fontWeight:600 }}>
-                        📖 {selTheme} Column
+                        📖 {tn(selTheme)} Column
                       </button>
                     )}
                     <button onClick={() => onNavigate('Weekly Report')}
@@ -1156,7 +1229,7 @@ export default function ThemeDetail({ onNavigate, initialTheme }) {
       <style>{`
         .theme-summary-pc     { display: flex; }
         .theme-summary-mobile { display: none; }
-        /* ④ 下部2カラム: 左=グラフ / 右=銘柄表 */
+        /* Bottom 2-column: left=charts / right=stock table */
         .td-bottom-grid {
           display: grid !important;
           grid-template-columns: 1fr !important;

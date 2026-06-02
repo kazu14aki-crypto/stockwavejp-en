@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useStatus }   from './hooks/useMarketData'
 import { AuthProvider }        from './hooks/useAuth.jsx'
+import PlanGate           from './components/PlanGate'
 import { SubscriptionProvider } from './hooks/useSubscription.jsx'
 import Header      from './components/Header'
 import Sidebar     from './components/Sidebar'
@@ -36,6 +37,7 @@ const PAGES_OTHER = [
   { icon:'🏢', label:'About',               component:SiteInfo              },
   { icon:'📣', label:'News',                component:News                  },
   { icon:'📖', label:'How to Use',          component:HowTo                 },
+  { icon:'💰', label:'Plan & Pricing',      component:Plan                  },
   { icon:'⚙️', label:'Settings',           component:Settings              },
 ]
 

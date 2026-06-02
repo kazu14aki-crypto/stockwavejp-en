@@ -298,10 +298,10 @@ function BubbleScatter({ data, mPeriod, setMPeriod, onNavigate }) {
 
   // ── ゾーン定義（サイトカラーに合わせた暗いトーン）──
   const zones = [
-    { label:'注目ゾーン Rising+Volume増',  x:x0, y:PT,  w:PL+GW-x0, h:y0-PT,    bg:'rgba(255,83,112,0.22)', border:'rgba(255,83,112,0.60)' },
-    { label:'売り圧力 Falling+Volume増',    x:PL, y:PT,  w:x0-PL,    h:y0-PT,    bg:'rgba(0,196,140,0.18)',  border:'rgba(0,196,140,0.55)'  },
-    { label:'静かなRising Volume少',       x:x0, y:y0,  w:PL+GW-x0, h:PT+GH-y0, bg:'rgba(255,140,66,0.15)', border:'rgba(255,140,66,0.50)' },
-    { label:'静かなFalling',                x:PL, y:y0,  w:x0-PL,    h:PT+GH-y0, bg:'rgba(74,158,255,0.13)', border:'rgba(74,158,255,0.45)' },
+    { label:'Hotーン Rising+Volume増',  x:x0, y:PT,  w:PL+GW-x0, h:y0-PT,    bg:'rgba(255,83,112,0.22)', border:'rgba(255,83,112,0.60)' },
+    { label:'Sell Falling+Volume増',    x:PL, y:PT,  w:x0-PL,    h:y0-PT,    bg:'rgba(0,196,140,0.18)',  border:'rgba(0,196,140,0.55)'  },
+    { label:'Quiet↑ Volume少',       x:x0, y:y0,  w:PL+GW-x0, h:PT+GH-y0, bg:'rgba(255,140,66,0.15)', border:'rgba(255,140,66,0.50)' },
+    { label:'Quiet Falling',                x:PL, y:y0,  w:x0-PL,    h:PT+GH-y0, bg:'rgba(74,158,255,0.13)', border:'rgba(74,158,255,0.45)' },
   ]
 
   // 目盛り生成
@@ -537,7 +537,7 @@ function BubbleScatter({ data, mPeriod, setMPeriod, onNavigate }) {
         </svg>
       </div>
 
-      {/* 上位テーマリスト（注目ゾーン） */}
+      {/* 上位テーマリスト（Hotーン） */}
       {(() => {
         const hot = filtered
           .filter(d => d.pct > 0 && (d.volume_chg ?? 0) > 0)
@@ -597,14 +597,14 @@ export default function Heatmap({ onNavigate }) {
         Theme Heatmap
       </h1>
       <p style={{ fontSize:'12px', color:'var(--text3)', marginBottom:'16px' }}>
-        67テーマのReturnをTheme Heatmapと騰落モメンタムで多角的に分析できます。
+        Analyze Return, Volume, and Momentum across 67 themes with the Theme Heatmap.
       </p>
 
       {/* ⑥ タブ削除・散布図を直接表示 */}
       <BubbleScatter data={momentumData} mPeriod={mPeriod} setMPeriod={setMPeriod} onNavigate={onNavigate} />
 
       <style>{`
-        /* ⑥ PC版：注目ゾーン説明を横並び4列 */
+        /* ⑥ PC版：Hotーン説明を横並び4列 */
         .scatter-zone-desc {
           display: grid;
           grid-template-columns: repeat(4, 1fr);

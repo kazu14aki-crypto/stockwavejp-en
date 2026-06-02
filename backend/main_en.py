@@ -14,7 +14,7 @@ from themes_en import (
 )
 from data import (
     fetch_theme_results, fetch_theme_trend, fetch_momentum_data,
-    fetch_heatmap_data, fetch_monthly_heatmap, fetch_macro_data,
+    fetch_heatmap_data, fetch_heatmap_monthly, fetch_macro_data,
     fetch_market_segments, fetch_segment_detail, fetch_theme_detail,
     MARKET_SEGMENTS, SEGMENT_GROUPS, warmup_cache_extended,
 )
@@ -178,7 +178,7 @@ def get_heatmap():
 
 @app.get("/api/heatmap/monthly")
 def get_monthly_heatmap():
-    data_ja, months = fetch_monthly_heatmap(DEFAULT_THEMES)
+    data_ja, months = fetch_heatmap_monthly(DEFAULT_THEMES)
     data_en = {translate_theme(k): v for k, v in data_ja.items()}
     return {"data": data_en, "months": months}
 
