@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react'
+import { useSubscription } from '../hooks/useSubscription.jsx'
 
 export default function Sidebar({ pages, pagesOther, currentPage, onPageChange, isOpen, isMobile, onOpen, onClose, contactUrl }) {
   const touchStartX = useRef(null)
@@ -28,7 +29,7 @@ export default function Sidebar({ pages, pagesOther, currentPage, onPageChange, 
     }
   }, [isMobile, isOpen, onOpen, onClose])
 
-  // スマホ時は画面幅の75%（最小240px・最大280px）、PCは固定220px
+  // Mobile: 75% of screen width (min 240px, max 280px), Desktop: fixed 220px
   const sidebarWidth = isMobile ? 'min(280px, 75vw)' : 'var(--sidebar)'
 
   const sidebarStyle = {
@@ -51,10 +52,20 @@ export default function Sidebar({ pages, pagesOther, currentPage, onPageChange, 
     WebkitOverflowScrolling: 'touch',
   }
 
-  const NavBtn = ({ icon, label, locked }) => {
+  const { canAccess } = useSubscription()
+
+  // (see JP version)
+  const LOCKED_PAGES = {
+    'Market Ranking':         !canAccess('market_detail'),
+    'Institutional Holdings': !canAccess('institutional'),
+  }
+
+  const NavBtn = ({ icon, label }) => {
     const isActive = currentPage === label
+    const isLocked = LOCKED_PAGES[label] ?? false
     return (
       <button onClick={() => onPageChange(label)} style={{
+        // Mobile: increase height for easier tapping (min 44px = Apple HIG)
         padding: isMobile ? '11px 10px' : '7px 10px',
         minHeight: isMobile ? '44px' : 'auto',
         fontSize: '12px',
@@ -74,8 +85,10 @@ export default function Sidebar({ pages, pagesOther, currentPage, onPageChange, 
       >
         <span style={{ fontSize:'13px', opacity:0.75, flexShrink:0, width:'18px', textAlign:'center' }}>{icon}</span>
         <span style={{ whiteSpace:'nowrap', overflow:'hidden', textOverflow:'ellipsis', flex:1 }}>{label}</span>
-        {locked && (
-          <span style={{ fontSize:'10px', color:'#aa77ff', opacity:0.8, flexShrink:0, marginLeft:'2px' }} title="Pro plan required">🔒</span>
+        {isLocked && (
+          <span style={{ fontSize:'10px', color:'rgba(255,200,50,0.8)', flexShrink:0, marginLeft:'2px' }}>
+            🔒
+          </span>
         )}
       </button>
     )
@@ -90,9 +103,9 @@ export default function Sidebar({ pages, pagesOther, currentPage, onPageChange, 
   return (
     <nav style={sidebarStyle}>
       <SLabel>MENU</SLabel>
-      {pages.map(({ icon, label, locked }) => <NavBtn key={label} icon={icon} label={label} locked={locked} />)}
+      {pages.map(({ icon, label }) => <NavBtn key={label} icon={icon} label={label} />)}
       <SLabel>OTHER</SLabel>
-      {pagesOther.map(({ icon, label, locked }) => <NavBtn key={label} icon={icon} label={label} locked={locked} />)}
+      {pagesOther.map(({ icon, label }) => <NavBtn key={label} icon={icon} label={label} />)}
       {contactUrl && (
         <a href={contactUrl} target="_blank" rel="noopener noreferrer" style={{
           display:'flex', alignItems:'center', gap:'8px',

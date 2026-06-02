@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useStatus }   from './hooks/useMarketData'
-import { AuthProvider } from './hooks/useAuth.jsx'
+import { AuthProvider }        from './hooks/useAuth.jsx'
+import { SubscriptionProvider } from './hooks/useSubscription.jsx'
 import Header      from './components/Header'
 import Sidebar     from './components/Sidebar'
 import TopPage     from './components/pages/TopPage'
@@ -18,38 +19,44 @@ import PrivacyPolicy from './components/pages/PrivacyPolicy'
 import TermsOfService from './components/pages/TermsOfService'
 import SiteInfo    from './components/pages/SiteInfo'
 import WeeklyReport from './components/pages/WeeklyReport'
+import InstitutionalHoldings from './components/pages/InstitutionalHoldings'
 
 const PAGES = [
-  { icon:'🏠', label:'Home',             component:TopPage    },
-  { icon:'📊', label:'Theme List',       component:ThemeList  },
-  { icon:'🔥', label:'Heatmap',          component:Heatmap    },
-  { icon:'🔍', label:'Theme Detail',     component:ThemeDetail},
-  { icon:'📋', label:'Market Ranking',   component:MarketRank },
-  { icon:'🎨', label:'Custom Theme',     component:CustomTheme},
+  { icon:'🏠', label:'Home',                 component:TopPage               },
+  { icon:'📊', label:'Theme List',           component:ThemeList             },
+  { icon:'🔥', label:'Heatmap',              component:Heatmap               },
+  { icon:'🔍', label:'Theme Detail',         component:ThemeDetail           },
+  { icon:'📋', label:'Market Ranking',       component:MarketRank            },
+  { icon:'🎨', label:'Custom Theme',         component:CustomTheme           },
+  { icon:'🏦', label:'Institutional Holdings', component:InstitutionalHoldings, locked:true },
+  { icon:'📰', label:'Weekly Report',        component:WeeklyReport          },
+  { icon:'📝', label:'Column',               component:Column                },
 ]
 const PAGES_OTHER = [
-  { icon:'🏢', label:'About',    component:SiteInfo      },
-  { icon:'📣', label:'News',            component:News          },
-  { icon:'📖', label:'How to Use',              component:HowTo         },
-  { icon:'📰', label:'Weekly Report',          component:WeeklyReport  },
-  { icon:'📝', label:'Column',        component:Column        },
-  { icon:'⚙️', label:'Settings',               component:Settings      },
-  { icon:'⚖️', label:'Disclaimer',           component:Disclaimer    },
-  { icon:'🔒', label:'Privacy Policy', component:PrivacyPolicy },
-  { icon:'📋', label:'Terms of Service',             component:TermsOfService},
+  { icon:'🏢', label:'About',               component:SiteInfo              },
+  { icon:'📣', label:'News',                component:News                  },
+  { icon:'📖', label:'How to Use',          component:HowTo                 },
+  { icon:'⚙️', label:'Settings',           component:Settings              },
 ]
 
-// ContactGoogleフォームURL（実際のURLに変更してください）
+const PAGES_FOOTER = [
+  { icon:'⚖️', label:'Disclaimer',          component:Disclaimer            },
+  { icon:'🔒', label:'Privacy Policy',      component:PrivacyPolicy         },
+  { icon:'📋', label:'Terms of Service',    component:TermsOfService        },
+]
+
+// Contact form URL
 const CONTACT_FORM_URL = 'https://forms.gle/XjNypTdmZt265Kib6'
-const ALL_PAGES     = [...PAGES, ...PAGES_OTHER]
+const ALL_PAGES = [...PAGES, ...PAGES_OTHER, ...PAGES_FOOTER]
 const COLOR_THEME_KEY = 'swjp_color_theme'
+const COLOR_DIR_KEY   = 'sw_color_dir'
 
 function AppInner() {
   const [currentPage,   setCurrentPage]   = useState('Home')
   const [targetArticleId, setTargetArticleId] = useState(null)
   const [targetTheme,     setTargetTheme]     = useState(null)
 
-  // URLハッシュからページ・記事IDを初期化
+  // (translated)
   useEffect(() => {
     const hash = window.location.hash.replace('#', '')
     if (hash.startsWith('column/')) {
@@ -61,7 +68,7 @@ function AppInner() {
     } else if (hash === 'privacy') {
       setCurrentPage('Privacy Policy')
     }
-    // ハッシュ変化を監視
+    // (translated)
     const onHashChange = () => {
       const h = window.location.hash.replace('#', '')
       if (h.startsWith('column/')) {
@@ -76,21 +83,39 @@ function AppInner() {
   const [sidebarOpen, setSidebarOpen] = useState(false)
   const [viewMode,    setViewMode]    = useState('auto')
   const [isMobile,    setIsMobile]    = useState(() => typeof window !== 'undefined' && window.innerWidth <= 1280)
+  const [colorDir,    setColorDir]    = useState(
+    () => localStorage.getItem(COLOR_DIR_KEY) || 'jp'
+  )
   const [colorTheme,  setColorTheme]  = useState(
     () => localStorage.getItem(COLOR_THEME_KEY) || 'dark'
   )
   const status = useStatus()
 
+
+  // (translated)
+  useEffect(() => {
+    localStorage.setItem(COLOR_DIR_KEY, colorDir)
+    const root = document.documentElement
+    if (colorDir === 'us') {
+      root.style.setProperty('--red',   '#1a9a50')  // US style: green=rising
+      root.style.setProperty('--green', '#e63030')  // US style: red=falling
+    } else {
+      root.style.setProperty('--red',   '')          // Japan style: reset to default
+      root.style.setProperty('--green', '')
+    }
+  }, [colorDir])
+
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', colorTheme)
     localStorage.setItem(COLOR_THEME_KEY, colorTheme)
+    // (translated)
   }, [colorTheme])
 
   useEffect(() => {
     const check = () => {
       if (viewMode === 'mobile') { setIsMobile(true); return }
       if (viewMode === 'pc')     { setIsMobile(false); return }
-      // iPad Pro横向き(1366px)まで対応するため1280px以下をタブレット扱い
+      // (translated)
       setIsMobile(window.innerWidth <= 1280)
     }
     check()
@@ -109,18 +134,20 @@ function AppInner() {
     setCurrentPage(label)
     setSidebarOpen(false)
     setTargetArticleId(articleId)
-    // Theme Detailの場合はTheme Nameを保存
+    // (translated)
+    window.scrollTo({ top: 0, behavior: 'instant' })
+    // (translated)
     if (label === 'Theme Detail') {
       setTargetTheme(articleId || null)
     } else {
       setTargetTheme(null)
     }
-    // URLハッシュを更新（SEO・直接リンク対応）
+    // (translated)
     if (label === 'Column' && articleId) {
       window.history.replaceState(null, '', `#column/${articleId}`)
-    } else if (label === '利用規約') {
+    } else if (label === 'Terms of Service') {
       window.history.replaceState(null, '', '#terms')
-    } else if (label === 'プライバシーポリシー') {
+    } else if (label === 'Privacy Policy') {
       window.history.replaceState(null, '', '#privacy')
     } else {
       window.history.replaceState(null, '', window.location.pathname)
@@ -130,7 +157,7 @@ function AppInner() {
   const handleLogoClick  = () => { setCurrentPage('Home'); setSidebarOpen(false) }
 
   const pageProps = (() => {
-    if (currentPage === 'Settings') return { viewMode, onViewModeChange:setViewMode, colorTheme, onColorThemeChange:setColorTheme, isMobile }
+    if (currentPage === 'Settings') return { viewMode, onViewModeChange:setViewMode, colorTheme, onColorThemeChange:setColorTheme, colorDir, onColorDirChange:setColorDir, isMobile }
     if (currentPage === 'Home') return { onNavigate: handlePageChange, isMobile }
     if (currentPage === 'Column') return { initialArticleId: targetArticleId, onNavigate: handlePageChange, isMobile }
     if (currentPage === 'Theme List') return { onNavigate: handlePageChange, isMobile }
@@ -175,7 +202,17 @@ function AppInner() {
         background: 'var(--bg)',
       }}>
         {PageComponent ? (
-          <PageComponent {...pageProps} />
+          currentPage === 'Institutional Holdings' ? (
+            <PlanGate feature="institutional" onNavigate={handlePageChange}>
+              <PageComponent {...pageProps} />
+            </PlanGate>
+          ) : currentPage === 'Market Ranking' ? (
+            <PlanGate feature="market_detail" onNavigate={handlePageChange}>
+              <PageComponent {...pageProps} />
+            </PlanGate>
+          ) : (
+            <PageComponent {...pageProps} />
+          )
         ) : (
           <div style={{ display:'flex', alignItems:'center', justifyContent:'center',
             height:'calc(100vh - var(--header))', flexDirection:'column', gap:'16px', color:'var(--text3)' }}>
@@ -212,8 +249,8 @@ function AppInner() {
             <span style={{ color:'#e63030', fontWeight:700 }}>Stock</span>
             <span style={{ fontWeight:700, color:'var(--text2)' }}>Wave</span>
             <span style={{ color:'#e63030', fontWeight:700, fontSize:'10px' }}>JP</span>
-            <span style={{ whiteSpace:'nowrap' }}>&nbsp;—&nbsp;stockwavejp-en.com</span>
-            <span style={{ whiteSpace:'nowrap' }}>&nbsp;—&nbsp;Not financial advice</span>
+            <span style={{ whiteSpace:'nowrap' }}>&nbsp;—&nbsp;stockwavejp.com</span>
+            <span style={{ whiteSpace:'nowrap' }}>&nbsp;—&nbsp;Not investment advice</span>
             <span style={{ whiteSpace:'nowrap' }}>&nbsp;—&nbsp;© 2026</span>
           </div>
         </footer>
@@ -222,7 +259,7 @@ function AppInner() {
   )
 }
 
-// 旧バージョンのLocalStorageキャッシュを自動削除
+// (translated)
 ;(function cleanOldCache() {
   const CURRENT = 'swjp_v3_'
   const OLD_PREFIXES = ['swjp_', 'swjp_v1_', 'swjp_v2_']
@@ -241,7 +278,9 @@ function AppInner() {
 export default function App() {
   return (
     <AuthProvider>
+      <SubscriptionProvider>
       <AppInner />
+    </SubscriptionProvider>
     </AuthProvider>
   )
 }

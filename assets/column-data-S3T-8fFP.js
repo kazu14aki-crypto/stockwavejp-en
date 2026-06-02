@@ -1,15 +1,4 @@
-// StockWaveJP EN — Column Articles (69 articles, full English)
-// Generated from original Japanese edition with full English translation
-
-const COLUMNS = [
-  {
-    id: 'theme-investing-basics',
-    category: 'Basics',
-    tag: '',
-    title: 'What is Theme Investing? How It Differs from Individual Stocks and Index Funds',
-    date: '2026/03/20',
-    summary: 'Theme investing groups multiple related stocks under a single "theme" — such as Semiconductors, AI & Cloud, Defense & Aerospace, or Inbound Tourism — and analyzes capital flows across that entire indu',
-    body: `
+const e=[{id:"theme-investing-basics",category:"Basics",tag:"",title:"What is Theme Investing? How It Differs from Individual Stocks and Index Funds",date:"2026/03/20",summary:'Theme investing groups multiple related stocks under a single "theme" — such as Semiconductors, AI & Cloud, Defense & Aerospace, or Inbound Tourism — and analyzes capital flows across that entire indu',body:`
 ## What Is Theme Investing?
 
 Theme investing groups multiple related stocks under a single "theme" — such as Semiconductors, AI & Cloud, Defense & Aerospace, or Inbound Tourism — and analyzes capital flows across that entire industry cluster. Unlike individual stock analysis, theme investing helps you see where the market's money is actually moving.
@@ -99,16 +88,7 @@ As themes become more popular, valuations (PER, PBR) tend to stretch. Peak enthu
 ## Summary
 
 Theme investing is a powerful method for capturing Japan's equity market dynamics. Using StockWaveJP to track which themes are attracting capital — and then selecting stocks showing the strongest momentum within those themes — gives individual investors a structured edge that pure fundamental analysis alone cannot provide.
-`,
-  },
-  {
-    id: 'semiconductor-theme',
-    category: '半導体製造装置',
-    tag: '',
-    title: 'Semiconductor Theme: AI Demand Driving Structural Growth and Key Japanese Stocks',
-    date: '2026/03/18',
-    summary: 'Semiconductors are called "the rice of industry" — every modern electronic device and piece of infrastructure depends on them. Smartphones, PCs, automobiles, medical devices, factory controllers, and ',
-    body: `
+`},{id:"semiconductor-theme",category:"半導体製造装置",tag:"",title:"Semiconductor Theme: AI Demand Driving Structural Growth and Key Japanese Stocks",date:"2026/03/18",summary:'Semiconductors are called "the rice of industry" — every modern electronic device and piece of infrastructure depends on them. Smartphones, PCs, automobiles, medical devices, factory controllers, and ',body:`
 ## Why Semiconductors Are the Essential Theme
 
 Semiconductors are called "the rice of industry" — every modern electronic device and piece of infrastructure depends on them. Smartphones, PCs, automobiles, medical devices, factory controllers, and AI training datacenters all run on chips. Since 2022, generative AI (ChatGPT and its successors) has caused an explosive surge in demand for high-performance AI-specific semiconductors, making this one of the most consequential themes in global investing.
@@ -174,16 +154,7 @@ The weekly routine: check Semiconductor theme volume change on StockWaveJP → c
 ## Summary
 
 Semiconductors are the foundational infrastructure theme of the AI era — a structural multi-decade growth story with near-term cycle dynamics layered on top. Building a weekly monitoring routine using StockWaveJP's momentum data, combined with tracking Nvidia earnings, TSMC monthly sales, and Japanese equipment maker order trends, creates a systematic framework for navigating this critical theme.
-`,
-  },
-  {
-    id: 'ai-cloud-theme',
-    category: '生成AI',
-    tag: '',
-    title: 'AI & Cloud Theme: Japan\'s Competitive Landscape and Investment Opportunities in the Generative AI Era',
-    date: '2026/03/16',
-    summary: 'AI and cloud computing are the twin pillars of today\'s digital economy. Since ChatGPT launched in November 2022, generative AI has spread rapidly across enterprise, government, and consumer applicatio',
-    body: `
+`},{id:"ai-cloud-theme",category:"生成AI",tag:"",title:"AI & Cloud Theme: Japan's Competitive Landscape and Investment Opportunities in the Generative AI Era",date:"2026/03/16",summary:"AI and cloud computing are the twin pillars of today's digital economy. Since ChatGPT launched in November 2022, generative AI has spread rapidly across enterprise, government, and consumer applicatio",body:`
 ## Overview: AI & Cloud in Japan
 
 AI and cloud computing are the twin pillars of today's digital economy. Since ChatGPT launched in November 2022, generative AI has spread rapidly across enterprise, government, and consumer applications. In Japan, government AI strategy, corporate digital transformation (DX), and accelerating cloud migration are all creating investment opportunities in AI and cloud-related companies.
@@ -244,16 +215,7 @@ Japan's enterprise cloud penetration (~35% in 2024) significantly lags the US (~
 
 **Export control risk**: Nvidia chip export restrictions could slow Japan's AI infrastructure build — monitor US Commerce Department rule changes. **AI ROI risk**: If enterprise AI fails to deliver projected productivity gains, corporate budgets could be cut — watch for "AI initiative restructuring" announcements as early warning signals. **Rate sensitivity**: AI/cloud stocks trade at elevated PER multiples and are sensitive to rate increases.
 
-> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`,
-  },
-  {
-    id: 'defense-theme',
-    category: '防衛・航空',
-    tag: '',
-    title: 'Defense & Aerospace Theme: Japan\'s Defense Budget Surge and Long-Term Investment Opportunities',
-    date: '2026/03/14',
-    summary: 'Russia\'s invasion of Ukraine in February 2022 fundamentally changed the global security environment. "Peace is not guaranteed" became a new reality, and Japan — along with many other nations — pivoted',
-    body: `
+> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"defense-theme",category:"防衛・航空",tag:"",title:"Defense & Aerospace Theme: Japan's Defense Budget Surge and Long-Term Investment Opportunities",date:"2026/03/14",summary:`Russia's invasion of Ukraine in February 2022 fundamentally changed the global security environment. "Peace is not guaranteed" became a new reality, and Japan — along with many other nations — pivoted`,body:`
 ## Why the Defense Theme Is in the Spotlight
 
 Russia's invasion of Ukraine in February 2022 fundamentally changed the global security environment. "Peace is not guaranteed" became a new reality, and Japan — along with many other nations — pivoted sharply toward defense spending increases. In December 2022, Japan's Cabinet approved the "Three Defense Documents," committing to raise defense spending to 2% of GDP (approximately ¥10 trillion per year) by FY2027. This is the most historic shift in Japan's postwar security policy and represents a once-in-several-decades structural change for Japan's defense industry.
@@ -331,16 +293,7 @@ The Defense theme has clear structural foundations for medium to long-term inves
 
 The most valuable habit: reviewing all 67 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
 
-> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`,
-  },
-  {
-    id: 'inbound-theme',
-    category: 'インバウンド',
-    tag: '',
-    title: 'Inbound Tourism Theme: Record 35M+ Visitors and Japan\'s Consumption Boom',
-    date: '2026/03/12',
-    summary: 'The Inbound Tourism theme groups companies that benefit from rising numbers of foreign visitors to Japan: hotels, ryokan, airlines, railways, department stores, duty-free retail, theme parks, restaura',
-    body: `
+> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"inbound-theme",category:"インバウンド",tag:"",title:"Inbound Tourism Theme: Record 35M+ Visitors and Japan's Consumption Boom",date:"2026/03/12",summary:"The Inbound Tourism theme groups companies that benefit from rising numbers of foreign visitors to Japan: hotels, ryokan, airlines, railways, department stores, duty-free retail, theme parks, restaura",body:`
 ## What Is the Inbound Tourism Theme?
 
 The Inbound Tourism theme groups companies that benefit from rising numbers of foreign visitors to Japan: hotels, ryokan, airlines, railways, department stores, duty-free retail, theme parks, restaurants, travel agencies, and foreign-language services. In 2024, Japan recorded 36.88 million inbound visitors — a new all-time record — with inbound spending exceeding ¥8 trillion (estimated). The recovery from near-zero visitors during COVID (2020–2022) to record highs in just two years has created extraordinary growth opportunities for this theme.
@@ -420,16 +373,7 @@ The Inbound theme has clear structural foundations for medium to long-term inves
 
 The most valuable habit: reviewing all 67 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
 
-> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`,
-  },
-  {
-    id: 'ev-green-theme',
-    category: 'EV・脱炭素',
-    tag: '',
-    title: 'EV & Green Theme: Japan\'s Role in the EV Supply Chain and Decarbonization',
-    date: '2026/03/10',
-    summary: 'The EV & Decarbonization theme covers electric vehicles (BEV, PHEV), fuel cell vehicles (FCV), and the companies supplying the technology and equipment required for a decarbonized economy. Climate cha',
-    body: `
+> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"ev-green-theme",category:"EV・脱炭素",tag:"",title:"EV & Green Theme: Japan's Role in the EV Supply Chain and Decarbonization",date:"2026/03/10",summary:"The EV & Decarbonization theme covers electric vehicles (BEV, PHEV), fuel cell vehicles (FCV), and the companies supplying the technology and equipment required for a decarbonized economy. Climate cha",body:`
 ## What Is the EV & Decarbonization Theme?
 
 The EV & Decarbonization theme covers electric vehicles (BEV, PHEV), fuel cell vehicles (FCV), and the companies supplying the technology and equipment required for a decarbonized economy. Climate change policy, carbon-neutral targets, and the global shift away from internal combustion engines represent a once-in-a-century transformation of the auto industry. Japan's position in this transformation is complex: threatened in some areas (traditional auto manufacturing), but strong in others (batteries, power electronics, materials).
@@ -507,16 +451,7 @@ The Ev Green theme has clear structural foundations for medium to long-term inve
 
 The most valuable habit: reviewing all 67 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
 
-> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`,
-  },
-  {
-    id: 'how-to-read-data',
-    category: 'Analysis Methods',
-    tag: '',
-    title: 'How to Read Price Change, Volume & Trading Value: The 3 Core Metrics for Theme Investing',
-    date: '2026/03/08',
-    summary: 'StockWaveJP tracks every theme using three fundamental metrics: **price change %**, **volume**, and **trading value**. Understanding how to read each one — and how to combine them — is the foundation ',
-    body: `
+> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"how-to-read-data",category:"Analysis Methods",tag:"",title:"How to Read Price Change, Volume & Trading Value: The 3 Core Metrics for Theme Investing",date:"2026/03/08",summary:"StockWaveJP tracks every theme using three fundamental metrics: **price change %**, **volume**, and **trading value**. Understanding how to read each one — and how to combine them — is the foundation ",body:`
 ## The Three Core Metrics for Theme Analysis
 
 StockWaveJP tracks every theme using three fundamental metrics: **price change %**, **volume**, and **trading value**. Understanding how to read each one — and how to combine them — is the foundation of effective theme investing. These metrics tell you not just where the money has been, but whether the current move is reliable.
@@ -605,16 +540,7 @@ The How To Read Data theme has clear structural foundations for medium to long-t
 
 The most valuable habit: reviewing all 67 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
 
-> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`,
-  },
-  {
-    id: 'market-cycle',
-    category: 'Analysis Methods',
-    tag: '',
-    title: 'Market Cycles and Theme Investing: Understanding Capital Rotation',
-    date: '2026/03/06',
-    summary: 'Stock markets do not move in straight lines. They cycle through recognizable phases: expansion → overheating → contraction → recovery → expansion again. Understanding which phase the market is current',
-    body: `
+> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"market-cycle",category:"Analysis Methods",tag:"",title:"Market Cycles and Theme Investing: Understanding Capital Rotation",date:"2026/03/06",summary:"Stock markets do not move in straight lines. They cycle through recognizable phases: expansion → overheating → contraction → recovery → expansion again. Understanding which phase the market is current",body:`
 ## Market Cycles and Theme Investing
 
 Stock markets do not move in straight lines. They cycle through recognizable phases: expansion → overheating → contraction → recovery → expansion again. Understanding which phase the market is currently in dramatically improves the accuracy of theme selection. Different themes perform best in different phases — and identifying early-phase themes before the crowd is the core skill of theme rotation investing.
@@ -701,16 +627,7 @@ The Market Cycle theme has clear structural foundations for medium to long-term 
 
 The most valuable habit: reviewing all 67 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
 
-> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`,
-  },
-  {
-    id: 'japan-theme-investing-guide',
-    category: 'Basics',
-    tag: '',
-    title: 'Complete Guide to Japanese Stock Theme Investing: From Account Setup to Stock Selection',
-    date: '2026/03/25',
-    summary: 'Japanese stock theme investing is the practice of identifying industry-level capital flows in Japan\'s equity market — grouping stocks by their common exposure to social trends, technological shifts, a',
-    body: `
+> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"japan-theme-investing-guide",category:"Basics",tag:"",title:"Complete Guide to Japanese Stock Theme Investing: From Account Setup to Stock Selection",date:"2026/03/25",summary:"Japanese stock theme investing is the practice of identifying industry-level capital flows in Japan's equity market — grouping stocks by their common exposure to social trends, technological shifts, a",body:`
 ## What Is Japanese Stock Theme Investing?
 
 Japanese stock theme investing is the practice of identifying industry-level capital flows in Japan's equity market — grouping stocks by their common exposure to social trends, technological shifts, and policy changes — and building investment positions around those themes. Rather than analyzing individual companies in isolation, theme investing asks: "Which industries are attracting the most capital right now, and why?"
@@ -790,16 +707,7 @@ The Japan  Investing Guide theme has clear structural foundations for medium to 
 
 The most valuable habit: reviewing all 67 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
 
-> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`,
-  },
-  {
-    id: 'defense-space-theme',
-    category: '防衛・航空',
-    tag: '',
-    title: 'Defense & Space Theme Deep Dive: Japan\'s Defense Buildup and Emerging Opportunities',
-    date: '2026/03/23',
-    summary: 'Russia\'s invasion of Ukraine in February 2022 rapidly elevated global security awareness. Japan responded in December 2022 by approving the "Three Security Documents" — committing to raise defense spe',
-    body: `
+> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"defense-space-theme",category:"防衛・航空",tag:"",title:"Defense & Space Theme Deep Dive: Japan's Defense Buildup and Emerging Opportunities",date:"2026/03/23",summary:`Russia's invasion of Ukraine in February 2022 rapidly elevated global security awareness. Japan responded in December 2022 by approving the "Three Security Documents" — committing to raise defense spe`,body:`
 ## Historical Background: Japan's Defense Policy Transformation
 
 Russia's invasion of Ukraine in February 2022 rapidly elevated global security awareness. Japan responded in December 2022 by approving the "Three Security Documents" — committing to raise defense spending to 2% of GDP (approximately ¥10 trillion annually) by FY2027. This represents Japan's most significant security policy shift since the postwar constitution.
@@ -858,16 +766,7 @@ Many institutional investors exclude defense stocks from ESG portfolios — crea
 
 Defense budget expansion is a multi-year structural program (FY2027 target). Unlike AI themes that cycle in months, defense has policy visibility measured in years. Treat positions as 2–5 year holds rather than momentum trades.
 
-> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`,
-  },
-  {
-    id: 'momentum-investing',
-    category: 'Analysis Methods',
-    tag: '',
-    title: 'Momentum Investing: Reading Acceleration and Deceleration in Japanese Stock Themes',
-    date: '2026/03/21',
-    summary: 'Momentum refers to the tendency of assets that have recently risen to continue rising, and those that have fallen to continue falling. This "momentum effect" is statistically well-documented in academ',
-    body: `
+> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"momentum-investing",category:"Analysis Methods",tag:"",title:"Momentum Investing: Reading Acceleration and Deceleration in Japanese Stock Themes",date:"2026/03/21",summary:'Momentum refers to the tendency of assets that have recently risen to continue rising, and those that have fallen to continue falling. This "momentum effect" is statistically well-documented in academ',body:`
 ## What Is Momentum in Stock Markets?
 
 Momentum refers to the tendency of assets that have recently risen to continue rising, and those that have fallen to continue falling. This "momentum effect" is statistically well-documented in academic research since Jegadeesh and Titman (1993) and has been confirmed across global markets, asset classes, and time periods.
@@ -949,16 +848,7 @@ The Momentum Investing theme has clear structural foundations for medium to long
 
 The most valuable habit: reviewing all 67 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
 
-> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`,
-  },
-  {
-    id: 'shipbuilding-theme',
-    category: '造船',
-    tag: '',
-    title: 'Shipbuilding Theme: Multi-Decade High in Orders and Japan\'s Maritime Revival',
-    date: '2026/03/19',
-    summary: 'Japan\'s shipbuilding industry suffered decades of decline as Chinese and Korean competitors undercut on price, forcing Japanese yards to consolidate and downsize. Since 2024, multiple structural tailw',
-    body: `
+> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"shipbuilding-theme",category:"造船",tag:"",title:"Shipbuilding Theme: Multi-Decade High in Orders and Japan's Maritime Revival",date:"2026/03/19",summary:"Japan's shipbuilding industry suffered decades of decline as Chinese and Korean competitors undercut on price, forcing Japanese yards to consolidate and downsize. Since 2024, multiple structural tailw",body:`
 ## Why Shipbuilding Is Back in Focus
 
 Japan's shipbuilding industry suffered decades of decline as Chinese and Korean competitors undercut on price, forcing Japanese yards to consolidate and downsize. Since 2024, multiple structural tailwinds have converged, putting this theme back on investors' radar.
@@ -1013,16 +903,7 @@ Japan's defense expansion includes naval vessel procurement (destroyers, submari
 
 Shipbuilding is famously cyclical — the 2008–2016 downcycle lasted nearly a decade. The current upcycle is supported by structural demand (fleet renewal, energy transition, defense), but investors should set clear exit criteria. Monitor newbuild price trends: when prices peak and begin declining, the cycle is turning.
 
-> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`,
-  },
-  {
-    id: 'parent-child-listing',
-    category: '親子上場',
-    tag: '',
-    title: 'Parent-Child Listings in Japan: Governance Reform and Investment Opportunities',
-    date: '2026/03/28',
-    summary: 'A parent-child listing occurs when a parent company (controlling over 50% of shares) and its subsidiary are simultaneously listed on the stock exchange. Japan has over 300 such parent-child listed pai',
-    body: `
+> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"parent-child-listing",category:"親子上場",tag:"",title:"Parent-Child Listings in Japan: Governance Reform and Investment Opportunities",date:"2026/03/28",summary:"A parent-child listing occurs when a parent company (controlling over 50% of shares) and its subsidiary are simultaneously listed on the stock exchange. Japan has over 300 such parent-child listed pai",body:`
 ## What Is the Parent-Child Listing Problem?
 
 A parent-child listing occurs when a parent company (controlling over 50% of shares) and its subsidiary are simultaneously listed on the stock exchange. Japan has over 300 such parent-child listed pairs — far more than in Western markets, where this structure is uncommon due to governance concerns.
@@ -1080,16 +961,7 @@ Several major Japanese corporate groups have been actively resolving parent-chil
 
 The FSA's increasingly strict interpretation of the "fairness" standard for related-party transactions has added regulatory pressure to accelerate resolution.
 
-> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`,
-  },
-  {
-    id: 'buffett-japan-stocks',
-    category: 'バフェット銘柄',
-    tag: '',
-    title: 'Buffett\'s Japan Investment: Why Berkshire Chose Japan\'s 5 Major Trading Houses',
-    date: '2026/03/27',
-    summary: 'In August 2020, Berkshire Hathaway announced it had acquired approximately 5% stakes in each of Japan\'s five major trading houses: Mitsubishi Corporation, Mitsui & Co., Sumitomo Corporation, Itochu Co',
-    body: `
+> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"buffett-japan-stocks",category:"バフェット銘柄",tag:"",title:"Buffett's Japan Investment: Why Berkshire Chose Japan's 5 Major Trading Houses",date:"2026/03/27",summary:"In August 2020, Berkshire Hathaway announced it had acquired approximately 5% stakes in each of Japan's five major trading houses: Mitsubishi Corporation, Mitsui & Co., Sumitomo Corporation, Itochu Co",body:`
 ## Warren Buffett's Japan Investment
 
 In August 2020, Berkshire Hathaway announced it had acquired approximately 5% stakes in each of Japan's five major trading houses: Mitsubishi Corporation, Mitsui & Co., Sumitomo Corporation, Itochu Corporation, and Marubeni. The announcement sent shockwaves through Japan's equity market and prompted global institutional investors to re-examine Japanese equities.
@@ -1159,16 +1031,7 @@ The primary risk to trading house investments is a synchronized global commodity
 
 The current cycle: commodity prices are supported by energy transition demand (copper, lithium, nickel for EVs) and LNG demand, partially offsetting the risk of traditional commodity weakness.
 
-> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`,
-  },
-  {
-    id: 'physical-ai-edge-ai',
-    category: 'フィジカルAI',
-    tag: '',
-    title: 'Physical AI & Edge AI: The Next Industrial Revolution and Japan\'s Investment Opportunities',
-    date: '2026/03/26',
-    summary: '**Physical AI** refers to AI systems that act directly on the physical world — not just processing data in datacenters, but embedded in factory robots, autonomous vehicles, agricultural drones, and me',
-    body: `
+> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"physical-ai-edge-ai",category:"フィジカルAI",tag:"",title:"Physical AI & Edge AI: The Next Industrial Revolution and Japan's Investment Opportunities",date:"2026/03/26",summary:"**Physical AI** refers to AI systems that act directly on the physical world — not just processing data in datacenters, but embedded in factory robots, autonomous vehicles, agricultural drones, and me",body:`
 ## What Are Physical AI and Edge AI?
 
 **Physical AI** refers to AI systems that act directly on the physical world — not just processing data in datacenters, but embedded in factory robots, autonomous vehicles, agricultural drones, and medical devices. Nvidia CEO Jensen Huang prominently coined this concept at CES 2025, calling it "the next wave of AI."
@@ -1239,16 +1102,7 @@ Edge AI requires power-efficient inference chips — not power-hungry training G
 
 Physical AI is a 3–7 year structural theme. Unlike pure software AI (which can scale instantly), physical AI deployment requires hardware iteration cycles, safety validation, and gradual adoption in regulated environments. This means the investment should be approached with a longer time horizon than typical momentum themes.
 
-> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`,
-  },
-  {
-    id: 'power-semiconductor',
-    category: 'パワー半導体',
-    tag: '',
-    title: 'Power Semiconductors (SiC/GaN): EV and Renewable Energy Drive Next-Gen Chip Demand',
-    date: '2026/03/25',
-    summary: 'Power semiconductors control, convert, and regulate electrical power in virtually every device that uses electricity. Unlike logic semiconductors (CPUs, memory) that process information, power semicon',
-    body: `
+> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"power-semiconductor",category:"パワー半導体",tag:"",title:"Power Semiconductors (SiC/GaN): EV and Renewable Energy Drive Next-Gen Chip Demand",date:"2026/03/25",summary:"Power semiconductors control, convert, and regulate electrical power in virtually every device that uses electricity. Unlike logic semiconductors (CPUs, memory) that process information, power semicon",body:`
 ## What Are Power Semiconductors?
 
 Power semiconductors control, convert, and regulate electrical power in virtually every device that uses electricity. Unlike logic semiconductors (CPUs, memory) that process information, power semiconductors process electrical energy — switching currents, converting voltages, and controlling motors.
@@ -1321,16 +1175,7 @@ Power semiconductor stocks are closely correlated with EV sales data. When globa
 
 Monitor: Monthly EV sales data from major markets (China, US, Europe) and quarterly guidance from major automotive OEMs on EV production ramp timelines.
 
-> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`,
-  },
-  {
-    id: 'nisa-popular-stocks',
-    category: 'NISA',
-    tag: '',
-    title: 'NISA Popular Stocks: Why Capital Concentrates and What It Means for Investors',
-    date: '2026/03/24',
-    summary: 'Japan\'s NISA (Nippon Individual Savings Account) is a tax-exempt investment account that eliminates the 20.315% capital gains and dividend tax on qualifying investments. The reformed new NISA (introdu',
-    body: `
+> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"nisa-popular-stocks",category:"NISA",tag:"",title:"NISA Popular Stocks: Why Capital Concentrates and What It Means for Investors",date:"2026/03/24",summary:"Japan's NISA (Nippon Individual Savings Account) is a tax-exempt investment account that eliminates the 20.315% capital gains and dividend tax on qualifying investments. The reformed new NISA (introdu",body:`
 ## What Are NISA Popular Stocks?
 
 Japan's NISA (Nippon Individual Savings Account) is a tax-exempt investment account that eliminates the 20.315% capital gains and dividend tax on qualifying investments. The reformed new NISA (introduced January 2024) significantly expanded annual limits (¥3.6M) and removed the previous holding period limit, making it a powerful vehicle for long-term equity investment.
@@ -1392,16 +1237,7 @@ The Nisa Popular Stocks theme has clear structural foundations for medium to lon
 
 The most valuable habit: reviewing all 67 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
 
-> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`,
-  },
-  {
-    id: 'optical-communication',
-    category: '光通信',
-    tag: '',
-    title: 'Optical Communication Theme: AI Datacenter Bandwidth Demand and Japanese Leaders',
-    date: '2026/03/23',
-    summary: 'The optical communication theme covers companies that manufacture optical fiber cables, optical transceivers, optical amplifiers, photonic integrated circuits (PICs), and related components used in te',
-    body: `
+> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"optical-communication",category:"光通信",tag:"",title:"Optical Communication Theme: AI Datacenter Bandwidth Demand and Japanese Leaders",date:"2026/03/23",summary:"The optical communication theme covers companies that manufacture optical fiber cables, optical transceivers, optical amplifiers, photonic integrated circuits (PICs), and related components used in te",body:`
 ## What Is the Optical Communication Theme?
 
 The optical communication theme covers companies that manufacture optical fiber cables, optical transceivers, optical amplifiers, photonic integrated circuits (PICs), and related components used in telecommunications infrastructure and datacenter interconnects.
@@ -1480,16 +1316,7 @@ The IOWN opportunity could fundamentally change NTT's growth profile — transfo
 - **Hyperscaler capex announcements** (Google, Microsoft, Meta, Amazon): Large capex increases directly increase optical component demand
 - **IOWN commercialization milestones**: Each NTT announcement on IOWN deployment timing re-rates the optical theme
 
-> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`,
-  },
-  {
-    id: 'national-resilience',
-    category: '国土強靭化計画',
-    tag: '',
-    title: 'National Resilience Plan: Japan\'s ¥15T Infrastructure Investment and Construction Theme',
-    date: '2026/03/22',
-    summary: 'Japan\'s National Resilience (Kokudo Kyojinka) plan is the government\'s long-term program to strengthen and upgrade physical infrastructure against natural disasters, aging-related deterioration, and n',
-    body: `
+> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"national-resilience",category:"国土強靭化計画",tag:"",title:"National Resilience Plan: Japan's ¥15T Infrastructure Investment and Construction Theme",date:"2026/03/22",summary:"Japan's National Resilience (Kokudo Kyojinka) plan is the government's long-term program to strengthen and upgrade physical infrastructure against natural disasters, aging-related deterioration, and n",body:`
 ## What Is Japan's National Resilience Plan?
 
 Japan's National Resilience (Kokudo Kyojinka) plan is the government's long-term program to strengthen and upgrade physical infrastructure against natural disasters, aging-related deterioration, and national security threats. The legal framework was established in 2013, and a 5-year accelerated plan (2021–2025) committed approximately ¥15 trillion in public investment.
@@ -1549,16 +1376,7 @@ Japan's construction labor shortage — exacerbated by the 2024 overtime restric
 
 This is a somewhat paradoxical situation: the labor shortage that limits capacity is simultaneously improving profitability for companies that can access labor. Companies with proprietary labor pools (in-house skilled workers, preferred subcontractor relationships) have a significant competitive advantage.
 
-> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`,
-  },
-  {
-    id: 'iraq-geopolitics',
-    category: 'イラク',
-    tag: '',
-    title: 'Middle East Geopolitics 2026: Impact of Escalating Tensions on Japanese Equities',
-    date: '2026/03/28',
-    summary: 'Japan imports approximately 90%+ of its crude oil from the Middle East — among the highest dependency rates of any major economy. Any escalation of Middle East conflict that threatens tanker routes th',
-    body: `
+> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"iraq-geopolitics",category:"イラク",tag:"",title:"Middle East Geopolitics 2026: Impact of Escalating Tensions on Japanese Equities",date:"2026/03/28",summary:"Japan imports approximately 90%+ of its crude oil from the Middle East — among the highest dependency rates of any major economy. Any escalation of Middle East conflict that threatens tanker routes th",body:`
 ## Middle East Geopolitics and Japan's Oil Dependency
 
 Japan imports approximately 90%+ of its crude oil from the Middle East — among the highest dependency rates of any major economy. Any escalation of Middle East conflict that threatens tanker routes through the Strait of Hormuz or disrupts production in Iraq, Saudi Arabia, or the UAE has direct implications for Japan's energy security and corporate cost structures.
@@ -1622,16 +1440,7 @@ The Iraq Geopolitics theme has clear structural foundations for medium to long-t
 
 The most valuable habit: reviewing all 67 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
 
-> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`,
-  },
-  {
-    id: 'renewable-energy-theme',
-    category: '再生可能エネルギー',
-    tag: '',
-    title: 'Renewable Energy Theme: Japan\'s GX Policy and the ¥150T Decarbonization Investment Wave',
-    date: '2026/04/04',
-    summary: 'Japan\'s Renewable Energy theme covers solar power, offshore and onshore wind, energy storage, green hydrogen, and related infrastructure companies. The Japanese government has committed to carbon neut',
-    body: `
+> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"renewable-energy-theme",category:"再生可能エネルギー",tag:"",title:"Renewable Energy Theme: Japan's GX Policy and the ¥150T Decarbonization Investment Wave",date:"2026/04/04",summary:"Japan's Renewable Energy theme covers solar power, offshore and onshore wind, energy storage, green hydrogen, and related infrastructure companies. The Japanese government has committed to carbon neut",body:`
 ## What Is the Renewable Energy Theme?
 
 Japan's Renewable Energy theme covers solar power, offshore and onshore wind, energy storage, green hydrogen, and related infrastructure companies. The Japanese government has committed to carbon neutrality by 2050 and a 46% reduction in greenhouse gas emissions by FY2030 (vs. 2013 levels). The GX (Green Transformation) initiative commits ¥150 trillion in public and private investment over 10 years to achieve this.
@@ -1699,16 +1508,7 @@ The Renewable Energy theme has clear structural foundations for medium to long-t
 
 The most valuable habit: reviewing all 67 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
 
-> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`,
-  },
-  {
-    id: 'game-entertainment-theme',
-    category: 'ゲーム・エンタメ',
-    tag: '',
-    title: 'Gaming & Entertainment Theme: Japan\'s Global Content Dominance and Investment Drivers',
-    date: '2026/04/04',
-    summary: 'Japan\'s Gaming & Entertainment theme includes console game hardware and software, mobile gaming, anime, music, film, and esports. Japan is a global content powerhouse — Nintendo, Sony, Capcom, Sega, K',
-    body: `
+> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"game-entertainment-theme",category:"ゲーム・エンタメ",tag:"",title:"Gaming & Entertainment Theme: Japan's Global Content Dominance and Investment Drivers",date:"2026/04/04",summary:"Japan's Gaming & Entertainment theme includes console game hardware and software, mobile gaming, anime, music, film, and esports. Japan is a global content powerhouse — Nintendo, Sony, Capcom, Sega, K",body:`
 ## What Is the Gaming & Entertainment Theme?
 
 Japan's Gaming & Entertainment theme includes console game hardware and software, mobile gaming, anime, music, film, and esports. Japan is a global content powerhouse — Nintendo, Sony, Capcom, Sega, Konami, Bandai Namco, Toei Animation, and Sony Music collectively dominate their respective global market segments.
@@ -1766,16 +1566,7 @@ The Game Entertainment theme has clear structural foundations for medium to long
 
 The most valuable habit: reviewing all 67 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
 
-> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`,
-  },
-  {
-    id: 'banking-finance-theme',
-    category: '銀行・金融',
-    tag: '',
-    title: 'Banking & Finance Theme: BOJ Rate Hike Cycle and Structural Improvement in Bank Profitability',
-    date: '2026/04/04',
-    summary: 'Japan\'s Banking & Finance theme covers the three megabanks — MUFG (8306), SMFG (8316), and Mizuho FG (8411) — along with regional banks, securities companies, and other financial institutions. After m',
-    body: `
+> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"banking-finance-theme",category:"銀行・金融",tag:"",title:"Banking & Finance Theme: BOJ Rate Hike Cycle and Structural Improvement in Bank Profitability",date:"2026/04/04",summary:"Japan's Banking & Finance theme covers the three megabanks — MUFG (8306), SMFG (8316), and Mizuho FG (8411) — along with regional banks, securities companies, and other financial institutions. After m",body:`
 ## What Is the Banking & Finance Theme?
 
 Japan's Banking & Finance theme covers the three megabanks — MUFG (8306), SMFG (8316), and Mizuho FG (8411) — along with regional banks, securities companies, and other financial institutions. After more than a decade of near-zero interest rates under Bank of Japan (BOJ) policy, the normalization of monetary policy since 2024 has fundamentally changed the earnings dynamics of Japan's banking sector.
@@ -1841,16 +1632,7 @@ In years when Morgan Stanley performs well (active capital markets), MUFG's earn
 
 For investors who want maximum leverage to BOJ rate normalization with minimal complexity, regional banks are the purer trade.
 
-> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`,
-  },
-  {
-    id: 'regional-bank-theme',
-    category: '地方銀行',
-    tag: '',
-    title: 'Regional Banks Theme: Rate Hike Beneficiaries and Consolidation Plays',
-    date: '2026/04/04',
-    summary: 'Regional banks serve Japan\'s prefectural economies — providing lending to SMEs, housing loans, agricultural credit, and public sector finance. There are over 100 regional banks (Tier 1 and Tier 2) ope',
-    body: `
+> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"regional-bank-theme",category:"地方銀行",tag:"",title:"Regional Banks Theme: Rate Hike Beneficiaries and Consolidation Plays",date:"2026/04/04",summary:"Regional banks serve Japan's prefectural economies — providing lending to SMEs, housing loans, agricultural credit, and public sector finance. There are over 100 regional banks (Tier 1 and Tier 2) ope",body:`
 ## What Is the Regional Bank Theme?
 
 Regional banks serve Japan's prefectural economies — providing lending to SMEs, housing loans, agricultural credit, and public sector finance. There are over 100 regional banks (Tier 1 and Tier 2) operating primarily within their home prefecture, in contrast to megabanks with national and international presence.
@@ -1912,16 +1694,7 @@ The Regional Bank theme has clear structural foundations for medium to long-term
 
 The most valuable habit: reviewing all 67 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
 
-> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`,
-  },
-  {
-    id: 'insurance-theme',
-    category: '保険',
-    tag: '',
-    title: 'Insurance Theme: Rising Bond Yields and Cross-Shareholding Unwinding Drive Profitability',
-    date: '2026/04/04',
-    summary: 'Japan\'s insurance theme covers the three major non-life (property & casualty) insurance groups — Tokio Marine Holdings (8766), MS&AD Insurance (8725), and SOMPO Holdings (8630) — as well as major life',
-    body: `
+> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"insurance-theme",category:"保険",tag:"",title:"Insurance Theme: Rising Bond Yields and Cross-Shareholding Unwinding Drive Profitability",date:"2026/04/04",summary:"Japan's insurance theme covers the three major non-life (property & casualty) insurance groups — Tokio Marine Holdings (8766), MS&AD Insurance (8725), and SOMPO Holdings (8630) — as well as major life",body:`
 ## What Is the Insurance Theme?
 
 Japan's insurance theme covers the three major non-life (property & casualty) insurance groups — Tokio Marine Holdings (8766), MS&AD Insurance (8725), and SOMPO Holdings (8630) — as well as major life insurers like Dai-ichi Life Holdings (8750).
@@ -1984,16 +1757,7 @@ The Insurance theme has clear structural foundations for medium to long-term inv
 
 The most valuable habit: reviewing all 67 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
 
-> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`,
-  },
-  {
-    id: 'real-estate-theme',
-    category: '不動産',
-    tag: '',
-    title: 'Real Estate Theme: Inbound Tourism Demand vs. Rate Hike Risk — Where Opportunity Lies',
-    date: '2026/04/04',
-    summary: 'Japan\'s real estate theme covers commercial developers (offices, retail, logistics), residential developers (condominiums, housing), hotel operators, and J-REITs (Japanese Real Estate Investment Trust',
-    body: `
+> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"real-estate-theme",category:"不動産",tag:"",title:"Real Estate Theme: Inbound Tourism Demand vs. Rate Hike Risk — Where Opportunity Lies",date:"2026/04/04",summary:"Japan's real estate theme covers commercial developers (offices, retail, logistics), residential developers (condominiums, housing), hotel operators, and J-REITs (Japanese Real Estate Investment Trust",body:`
 ## What Is the Real Estate Theme?
 
 Japan's real estate theme covers commercial developers (offices, retail, logistics), residential developers (condominiums, housing), hotel operators, and J-REITs (Japanese Real Estate Investment Trusts). The theme is currently experiencing a complex combination of structural tailwinds and headwinds.
@@ -2059,16 +1823,7 @@ The Real Estate theme has clear structural foundations for medium to long-term i
 
 The most valuable habit: reviewing all 67 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
 
-> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`,
-  },
-  {
-    id: 'pharma-bio-theme',
-    category: '医薬品・バイオ',
-    tag: '',
-    title: 'Pharma & Biotech Theme: Japan\'s ADC Pipeline and Global Drug Franchise Expansion',
-    date: '2026/04/04',
-    summary: 'Japan\'s pharmaceutical and biotech theme covers prescription drug developers (Takeda, Daiichi Sankyo, Astellas, Eisai), generic drug makers, and biotech companies developing next-generation biologics.',
-    body: `
+> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"pharma-bio-theme",category:"医薬品・バイオ",tag:"",title:"Pharma & Biotech Theme: Japan's ADC Pipeline and Global Drug Franchise Expansion",date:"2026/04/04",summary:"Japan's pharmaceutical and biotech theme covers prescription drug developers (Takeda, Daiichi Sankyo, Astellas, Eisai), generic drug makers, and biotech companies developing next-generation biologics.",body:`
 ## What Is the Pharma & Biotech Theme?
 
 Japan's pharmaceutical and biotech theme covers prescription drug developers (Takeda, Daiichi Sankyo, Astellas, Eisai), generic drug makers, and biotech companies developing next-generation biologics. Japan has the world's third-largest pharmaceutical market and is home to several global-scale drug franchises.
@@ -2128,16 +1883,7 @@ The Pharma Bio theme has clear structural foundations for medium to long-term in
 
 The most valuable habit: reviewing all 67 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
 
-> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`,
-  },
-  {
-    id: 'healthcare-nursing-theme',
-    category: 'ヘルスケア・介護',
-    tag: '',
-    title: 'Healthcare & Nursing Theme: Japan\'s Aging Population as a Structural Investment Driver',
-    date: '2026/04/04',
-    summary: 'Japan is the world\'s most aged society — 29%+ of the population is 65 or older, and the 2025 "super-aging milestone" (the entire baby boomer generation passing 75) has now been crossed. This demograph',
-    body: `
+> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"healthcare-nursing-theme",category:"ヘルスケア・介護",tag:"",title:"Healthcare & Nursing Theme: Japan's Aging Population as a Structural Investment Driver",date:"2026/04/04",summary:`Japan is the world's most aged society — 29%+ of the population is 65 or older, and the 2025 "super-aging milestone" (the entire baby boomer generation passing 75) has now been crossed. This demograph`,body:`
 ## What Is the Healthcare & Nursing Theme?
 
 Japan is the world's most aged society — 29%+ of the population is 65 or older, and the 2025 "super-aging milestone" (the entire baby boomer generation passing 75) has now been crossed. This demographic reality creates structural, recession-resistant demand for healthcare services, medical devices, nursing care, and digital health.
@@ -2195,16 +1941,7 @@ The Healthcare Nursing theme has clear structural foundations for medium to long
 
 The most valuable habit: reviewing all 67 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
 
-> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`,
-  },
-  {
-    id: 'food-beverage-theme',
-    category: '食品・飲料',
-    tag: '',
-    title: 'Food & Beverage Theme: Pricing Power, Export Growth, and Inbound Spending',
-    date: '2026/04/04',
-    summary: 'Japan\'s food and beverage companies produce seasonings, processed foods, instant foods, confectionery, soft drinks, alcoholic beverages, dairy, and meat products. The sector is traditionally defensive',
-    body: `
+> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"food-beverage-theme",category:"食品・飲料",tag:"",title:"Food & Beverage Theme: Pricing Power, Export Growth, and Inbound Spending",date:"2026/04/04",summary:"Japan's food and beverage companies produce seasonings, processed foods, instant foods, confectionery, soft drinks, alcoholic beverages, dairy, and meat products. The sector is traditionally defensive",body:`
 ## What Is the Food & Beverage Theme?
 
 Japan's food and beverage companies produce seasonings, processed foods, instant foods, confectionery, soft drinks, alcoholic beverages, dairy, and meat products. The sector is traditionally defensive — food demand is non-discretionary and relatively immune to economic cycles. Japan's food companies are also increasingly successful international exporters and acquirers.
@@ -2264,16 +2001,7 @@ The Food Beverage theme has clear structural foundations for medium to long-term
 
 The most valuable habit: reviewing all 67 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
 
-> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`,
-  },
-  {
-    id: 'retail-ec-theme',
-    category: '小売・EC',
-    tag: '',
-    title: 'Retail & E-Commerce Theme: Japan\'s Digital Commerce Shift and Key Players',
-    date: '2026/04/04',
-    summary: 'Japan\'s retail landscape spans supermarkets, convenience stores (CVS), drug stores, department stores, specialty retail, and e-commerce platforms. Japan\'s total retail market is approximately ¥140 tri',
-    body: `
+> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"retail-ec-theme",category:"小売・EC",tag:"",title:"Retail & E-Commerce Theme: Japan's Digital Commerce Shift and Key Players",date:"2026/04/04",summary:"Japan's retail landscape spans supermarkets, convenience stores (CVS), drug stores, department stores, specialty retail, and e-commerce platforms. Japan's total retail market is approximately ¥140 tri",body:`
 ## What Is the Retail & E-Commerce Theme?
 
 Japan's retail landscape spans supermarkets, convenience stores (CVS), drug stores, department stores, specialty retail, and e-commerce platforms. Japan's total retail market is approximately ¥140 trillion, with e-commerce penetration around 10% — significantly below the US (15%+) and China (30%+), suggesting meaningful runway for further digital commerce growth.
@@ -2334,16 +2062,7 @@ The Retail Ec theme has clear structural foundations for medium to long-term inv
 
 The most valuable habit: reviewing all 67 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
 
-> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`,
-  },
-  {
-    id: 'telecom-theme',
-    category: '通信',
-    tag: '',
-    title: 'Telecom Theme: 5G Monetization, AI Integration, and Dividend Sustainability',
-    date: '2026/04/04',
-    summary: 'Japan\'s telecom theme centers on the three mobile carriers — NTT (9432), KDDI (9433), and SoftBank Corp (9434) — plus emerging player Rakuten Mobile (Rakuten Group, 4755). The theme is traditionally c',
-    body: `
+> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"telecom-theme",category:"通信",tag:"",title:"Telecom Theme: 5G Monetization, AI Integration, and Dividend Sustainability",date:"2026/04/04",summary:"Japan's telecom theme centers on the three mobile carriers — NTT (9432), KDDI (9433), and SoftBank Corp (9434) — plus emerging player Rakuten Mobile (Rakuten Group, 4755). The theme is traditionally c",body:`
 ## What Is the Telecom Theme?
 
 Japan's telecom theme centers on the three mobile carriers — NTT (9432), KDDI (9433), and SoftBank Corp (9434) — plus emerging player Rakuten Mobile (Rakuten Group, 4755). The theme is traditionally classified as defensive: telecoms generate stable, recurring revenue and pay consistent dividends. The 5G rollout and AI infrastructure demands are adding growth dimensions to this traditionally low-volatility sector.
@@ -2403,16 +2122,7 @@ The Telecom theme has clear structural foundations for medium to long-term inves
 
 The most valuable habit: reviewing all 67 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
 
-> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`,
-  },
-  {
-    id: 'steel-materials-theme',
-    category: '鉄鋼・素材',
-    tag: '',
-    title: 'Steel & Materials Theme: Nippon Steel\'s Global Ambitions and China Overcapacity Risk',
-    date: '2026/04/04',
-    summary: 'Japan\'s Steel & Materials theme covers steel manufacturers (Nippon Steel, JFE Steel, Kobe Steel), non-ferrous metals, glass, cement, textiles, and paper/pulp. These are the foundational industrial mat',
-    body: `
+> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"steel-materials-theme",category:"鉄鋼・素材",tag:"",title:"Steel & Materials Theme: Nippon Steel's Global Ambitions and China Overcapacity Risk",date:"2026/04/04",summary:"Japan's Steel & Materials theme covers steel manufacturers (Nippon Steel, JFE Steel, Kobe Steel), non-ferrous metals, glass, cement, textiles, and paper/pulp. These are the foundational industrial mat",body:`
 ## What Is the Steel & Materials Theme?
 
 Japan's Steel & Materials theme covers steel manufacturers (Nippon Steel, JFE Steel, Kobe Steel), non-ferrous metals, glass, cement, textiles, and paper/pulp. These are the foundational industrial materials that underpin manufacturing, construction, and energy infrastructure. The theme is cyclical — closely tied to global manufacturing activity and domestic construction.
@@ -2470,16 +2180,7 @@ The Steel Materials theme has clear structural foundations for medium to long-te
 
 The most valuable habit: reviewing all 67 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
 
-> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`,
-  },
-  {
-    id: 'chemical-theme',
-    category: '化学',
-    tag: '',
-    title: 'Chemicals Theme: Specialty vs. Commodity — Finding Alpha in Japanese Chemicals',
-    date: '2026/04/04',
-    summary: 'Japan\'s chemicals sector spans commodity petrochemicals (ethylene, polypropylene) to high-value specialty chemicals for semiconductors, displays, batteries, and coatings. Japan\'s competitive strength ',
-    body: `
+> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"chemical-theme",category:"化学",tag:"",title:"Chemicals Theme: Specialty vs. Commodity — Finding Alpha in Japanese Chemicals",date:"2026/04/04",summary:"Japan's chemicals sector spans commodity petrochemicals (ethylene, polypropylene) to high-value specialty chemicals for semiconductors, displays, batteries, and coatings. Japan's competitive strength ",body:`
 ## What Is the Chemicals Theme?
 
 Japan's chemicals sector spans commodity petrochemicals (ethylene, polypropylene) to high-value specialty chemicals for semiconductors, displays, batteries, and coatings. Japan's competitive strength lies overwhelmingly in **specialty chemicals** — niche, high-tech products where Japanese companies hold near-monopoly positions in global supply chains.
@@ -2548,16 +2249,7 @@ The Chemical theme has clear structural foundations for medium to long-term inve
 
 The most valuable habit: reviewing all 67 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
 
-> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`,
-  },
-  {
-    id: 'construction-infra-theme',
-    category: '建設・インフラ',
-    tag: '',
-    title: 'Construction & Infrastructure Theme: Government Spending Boom and Labor Shortage Dynamics',
-    date: '2026/04/04',
-    summary: 'Japan\'s Construction & Infrastructure theme covers general contractors (ゼネコン), civil engineering specialists, building materials companies, and infrastructure maintenance firms. The theme is experienc',
-    body: `
+> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"construction-infra-theme",category:"建設・インフラ",tag:"",title:"Construction & Infrastructure Theme: Government Spending Boom and Labor Shortage Dynamics",date:"2026/04/04",summary:"Japan's Construction & Infrastructure theme covers general contractors (ゼネコン), civil engineering specialists, building materials companies, and infrastructure maintenance firms. The theme is experienc",body:`
 ## What Is the Construction & Infrastructure Theme?
 
 Japan's Construction & Infrastructure theme covers general contractors (ゼネコン), civil engineering specialists, building materials companies, and infrastructure maintenance firms. The theme is experiencing an exceptional period of demand: national resilience infrastructure investment, semiconductor fab construction, offshore wind development, and urban redevelopment are all happening simultaneously.
@@ -2619,16 +2311,7 @@ The Construction Infra theme has clear structural foundations for medium to long
 
 The most valuable habit: reviewing all 67 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
 
-> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`,
-  },
-  {
-    id: 'transport-logistics-theme',
-    category: '輸送・物流',
-    tag: '',
-    title: 'Transport & Logistics Theme: E-Commerce Growth vs. the 2024 Driver Shortage Problem',
-    date: '2026/04/04',
-    summary: 'Japan\'s Transport & Logistics theme spans container shipping (NYK Line 9101, MOL 9104, Kawasaki Kisen 9107), bulk carriers, LNG tankers, airlines (JAL, ANA), trucking, parcel delivery, and freight for',
-    body: `
+> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"transport-logistics-theme",category:"輸送・物流",tag:"",title:"Transport & Logistics Theme: E-Commerce Growth vs. the 2024 Driver Shortage Problem",date:"2026/04/04",summary:"Japan's Transport & Logistics theme spans container shipping (NYK Line 9101, MOL 9104, Kawasaki Kisen 9107), bulk carriers, LNG tankers, airlines (JAL, ANA), trucking, parcel delivery, and freight for",body:`
 ## What Is the Transport & Logistics Theme?
 
 Japan's Transport & Logistics theme spans container shipping (NYK Line 9101, MOL 9104, Kawasaki Kisen 9107), bulk carriers, LNG tankers, airlines (JAL, ANA), trucking, parcel delivery, and freight forwarding. The theme is highly sensitive to global trade volumes, fuel costs, and geopolitical disruptions to shipping lanes.
@@ -2686,16 +2369,7 @@ The Transport Logistics theme has clear structural foundations for medium to lon
 
 The most valuable habit: reviewing all 67 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
 
-> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`,
-  },
-  {
-    id: 'fintech-theme',
-    category: 'フィンテック',
-    tag: '',
-    title: 'Fintech Theme: Japan\'s Cashless Revolution and Digital Finance Opportunity',
-    date: '2026/04/04',
-    summary: 'Japan\'s Fintech theme covers smartphone payments (QR code and NFC), digital banking, B2B accounting SaaS, BNPL (Buy Now Pay Later), robo-advisors, crypto assets, and insurtech. Japan has been transfor',
-    body: `
+> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"fintech-theme",category:"フィンテック",tag:"",title:"Fintech Theme: Japan's Cashless Revolution and Digital Finance Opportunity",date:"2026/04/04",summary:"Japan's Fintech theme covers smartphone payments (QR code and NFC), digital banking, B2B accounting SaaS, BNPL (Buy Now Pay Later), robo-advisors, crypto assets, and insurtech. Japan has been transfor",body:`
 ## What Is the Fintech Theme?
 
 Japan's Fintech theme covers smartphone payments (QR code and NFC), digital banking, B2B accounting SaaS, BNPL (Buy Now Pay Later), robo-advisors, crypto assets, and insurtech. Japan has been transforming from a cash-dominant society to a cashless economy at an accelerating pace — government policy, COVID-driven behavioral changes, and the proliferation of payment apps have driven cashless payment penetration from 20% in 2018 to over 40% by 2023.
@@ -2761,16 +2435,7 @@ The inbound tourism boom (36.88M visitors in 2024) is a tailwind for cross-borde
 
 The primary risk to Japan's domestic fintech companies is increasing competition from global platforms (Stripe for B2B payments, Wise for international transfers, Revolut for consumer banking). Japan's regulatory environment has historically protected domestic players, but as regulations modernize (under the FSA's digital finance reform program), competition may intensify.
 
-> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`,
-  },
-  {
-    id: 'robot-automation-theme',
-    category: 'ロボット・自動化',
-    tag: '',
-    title: 'Robotics & Automation Theme: Labor Shortage Solutions Driving Industrial Investment',
-    date: '2026/04/04',
-    summary: 'Japan\'s Robotics & Automation theme covers industrial robot manufacturers, automation system integrators, collaborative robots (cobots), machine vision companies, and autonomous mobile robots (AMR). J',
-    body: `
+> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"robot-automation-theme",category:"ロボット・自動化",tag:"",title:"Robotics & Automation Theme: Labor Shortage Solutions Driving Industrial Investment",date:"2026/04/04",summary:"Japan's Robotics & Automation theme covers industrial robot manufacturers, automation system integrators, collaborative robots (cobots), machine vision companies, and autonomous mobile robots (AMR). J",body:`
 ## What Is the Robotics & Automation Theme?
 
 Japan's Robotics & Automation theme covers industrial robot manufacturers, automation system integrators, collaborative robots (cobots), machine vision companies, and autonomous mobile robots (AMR). Japan is the world's largest exporter of industrial robots and home to the global leaders: Fanuc (6954), Yaskawa Electric (6506), Kawasaki Heavy (7012 — robotics division), and Nachi-Fujikoshi.
@@ -2832,16 +2497,7 @@ The Robot Automation theme has clear structural foundations for medium to long-t
 
 The most valuable habit: reviewing all 67 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
 
-> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`,
-  },
-  {
-    id: 'rare-earth-resources-theme',
-    category: 'レアアース・資源',
-    tag: '',
-    title: 'Rare Earth & Resources Theme: Supply Chain Decoupling from China and Critical Minerals',
-    date: '2026/04/04',
-    summary: 'Japan\'s Rare Earth & Resources theme covers companies involved in the exploration, mining, refining, and trading of lithium, cobalt, nickel, rare earth elements (neodymium, dysprosium, etc.), and conv',
-    body: `
+> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"rare-earth-resources-theme",category:"レアアース・資源",tag:"",title:"Rare Earth & Resources Theme: Supply Chain Decoupling from China and Critical Minerals",date:"2026/04/04",summary:"Japan's Rare Earth & Resources theme covers companies involved in the exploration, mining, refining, and trading of lithium, cobalt, nickel, rare earth elements (neodymium, dysprosium, etc.), and conv",body:`
 ## What Is the Rare Earth & Resources Theme?
 
 Japan's Rare Earth & Resources theme covers companies involved in the exploration, mining, refining, and trading of lithium, cobalt, nickel, rare earth elements (neodymium, dysprosium, etc.), and conventional resources (crude oil, LNG, copper, iron ore). Resource security has become a top priority in Japanese industrial policy as the EV transition and AI semiconductor buildout dramatically increase demand for critical minerals.
@@ -2905,16 +2561,7 @@ The Rare Earth Resources theme has clear structural foundations for medium to lo
 
 The most valuable habit: reviewing all 67 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
 
-> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`,
-  },
-  {
-    id: 'cybersecurity-theme',
-    category: 'サイバーセキュリティ',
-    tag: '',
-    title: 'Cybersecurity Theme: Rising Threats and Japan\'s Active Cyber Defense Legislation',
-    date: '2026/04/04',
-    summary: 'Japan\'s Cybersecurity theme covers companies providing security software, managed security services (MSSP), consulting, endpoint protection, network security, and zero-trust infrastructure. After high',
-    body: `
+> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"cybersecurity-theme",category:"サイバーセキュリティ",tag:"",title:"Cybersecurity Theme: Rising Threats and Japan's Active Cyber Defense Legislation",date:"2026/04/04",summary:"Japan's Cybersecurity theme covers companies providing security software, managed security services (MSSP), consulting, endpoint protection, network security, and zero-trust infrastructure. After high",body:`
 ## What Is the Cybersecurity Theme?
 
 Japan's Cybersecurity theme covers companies providing security software, managed security services (MSSP), consulting, endpoint protection, network security, and zero-trust infrastructure. After high-profile breaches at Japanese hospitals, ports, government agencies, and corporations in 2023–2025, cybersecurity has become a non-negotiable budget line item for Japanese organizations.
@@ -2978,16 +2625,7 @@ Japan's Active Cyber Defense (ACD) framework authorizes the government to take p
 
 Implementation requires substantial investment in offensive and defensive cyber capabilities, intelligence sharing systems, and rapid response infrastructure — all procured from domestic vendors with security clearances (primarily NEC and Fujitsu, with Mitsubishi Electric in defense-specific systems).
 
-> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`,
-  },
-  {
-    id: 'drone-theme',
-    category: 'ドローン',
-    tag: '',
-    title: 'Drone Theme: Level 4 Legalization, Defense UAVs, and Japan\'s Delivery Revolution',
-    date: '2026/04/04',
-    summary: 'Japan\'s Drone theme covers unmanned aerial vehicles (UAVs) used in agriculture, logistics, infrastructure inspection, photography, and defense. The December 2023 "Level 4" regulatory change — permitti',
-    body: `
+> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"drone-theme",category:"ドローン",tag:"",title:"Drone Theme: Level 4 Legalization, Defense UAVs, and Japan's Delivery Revolution",date:"2026/04/04",summary:`Japan's Drone theme covers unmanned aerial vehicles (UAVs) used in agriculture, logistics, infrastructure inspection, photography, and defense. The December 2023 "Level 4" regulatory change — permitti`,body:`
 ## What Is the Drone Theme?
 
 Japan's Drone theme covers unmanned aerial vehicles (UAVs) used in agriculture, logistics, infrastructure inspection, photography, and defense. The December 2023 "Level 4" regulatory change — permitting autonomous commercial drone operations over populated areas without human visual observers — was the pivotal catalyst that opened Japan's commercial drone market to full-scale deployment.
@@ -3055,16 +2693,7 @@ The Drone theme has clear structural foundations for medium to long-term investo
 
 The most valuable habit: reviewing all 67 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
 
-> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`,
-  },
-  {
-    id: 'tourism-hotel-theme',
-    category: '観光・ホテル・レジャー',
-    tag: '',
-    title: 'Tourism & Hotels Theme: Record Inbound Visitors and Japan\'s Hospitality Boom',
-    date: '2026/04/04',
-    summary: 'Japan\'s Tourism & Hotels theme covers hotels, ryokan (traditional inns), airlines, railways, department stores, duty-free retail, theme parks, and leisure facilities that benefit from both domestic an',
-    body: `
+> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"tourism-hotel-theme",category:"観光・ホテル・レジャー",tag:"",title:"Tourism & Hotels Theme: Record Inbound Visitors and Japan's Hospitality Boom",date:"2026/04/04",summary:"Japan's Tourism & Hotels theme covers hotels, ryokan (traditional inns), airlines, railways, department stores, duty-free retail, theme parks, and leisure facilities that benefit from both domestic an",body:`
 ## What Is the Tourism & Hotels Theme?
 
 Japan's Tourism & Hotels theme covers hotels, ryokan (traditional inns), airlines, railways, department stores, duty-free retail, theme parks, and leisure facilities that benefit from both domestic and inbound tourism. Japan recorded 36.88 million inbound visitors in 2024 — a new all-time record — with inbound consumption exceeding ¥8 trillion.
@@ -3128,16 +2757,7 @@ The Tourism Hotel theme has clear structural foundations for medium to long-term
 
 The most valuable habit: reviewing all 67 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
 
-> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`,
-  },
-  {
-    id: 'agritech-foodtech-theme',
-    category: '農業・フードテック',
-    tag: '',
-    title: 'Agritech & Foodtech Theme: Smart Farming, Food Security, and Alternative Proteins',
-    date: '2026/04/04',
-    summary: 'Japan\'s Agritech & Foodtech theme covers smart farming technologies (IoT, drones, AI-powered crop management), plant factories (vertical farming), alternative proteins (plant-based meat, cultivated me',
-    body: `
+> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"agritech-foodtech-theme",category:"農業・フードテック",tag:"",title:"Agritech & Foodtech Theme: Smart Farming, Food Security, and Alternative Proteins",date:"2026/04/04",summary:"Japan's Agritech & Foodtech theme covers smart farming technologies (IoT, drones, AI-powered crop management), plant factories (vertical farming), alternative proteins (plant-based meat, cultivated me",body:`
 ## What Is the Agritech & Foodtech Theme?
 
 Japan's Agritech & Foodtech theme covers smart farming technologies (IoT, drones, AI-powered crop management), plant factories (vertical farming), alternative proteins (plant-based meat, cultivated meat, insect protein), agricultural machinery, and food security infrastructure. The convergence of Japan's aging farm population, food self-sufficiency concerns, and global food security challenges creates significant investment opportunity.
@@ -3197,16 +2817,7 @@ The Agritech Foodtech theme has clear structural foundations for medium to long-
 
 The most valuable habit: reviewing all 67 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
 
-> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`,
-  },
-  {
-    id: 'education-hr-theme',
-    category: '教育・HR・人材',
-    tag: '',
-    title: 'Education & HR Theme: Japan\'s ¥1T Reskilling Initiative and EdTech Growth',
-    date: '2026/04/04',
-    summary: 'Japan\'s Education & HR theme covers cram schools (juku), prep schools, e-learning (EdTech), language schools, staffing agencies, HR technology (ATS, HRIS, payroll SaaS), and recruitment media. Two opp',
-    body: `
+> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"education-hr-theme",category:"教育・HR・人材",tag:"",title:"Education & HR Theme: Japan's ¥1T Reskilling Initiative and EdTech Growth",date:"2026/04/04",summary:"Japan's Education & HR theme covers cram schools (juku), prep schools, e-learning (EdTech), language schools, staffing agencies, HR technology (ATS, HRIS, payroll SaaS), and recruitment media. Two opp",body:`
 ## What Is the Education & HR Theme?
 
 Japan's Education & HR theme covers cram schools (juku), prep schools, e-learning (EdTech), language schools, staffing agencies, HR technology (ATS, HRIS, payroll SaaS), and recruitment media. Two opposing forces simultaneously shape the theme: **shrinking domestic student population** (challenging traditional education businesses) and **exploding labor shortage** (driving unprecedented demand for HR services and reskilling).
@@ -3272,16 +2883,7 @@ The Education Hr theme has clear structural foundations for medium to long-term 
 
 The most valuable habit: reviewing all 67 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
 
-> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`,
-  },
-  {
-    id: 'space-satellite-theme',
-    category: '宇宙・衛星',
-    tag: '',
-    title: 'Space & Satellite Theme: Japan\'s Constellation Strategy and Commercial Space Market',
-    date: '2026/04/04',
-    summary: 'Japan\'s Space & Satellite theme covers rocket launch services, satellite manufacturing, Earth observation satellites, satellite communications, space situational awareness (SSA), and lunar/deep space ',
-    body: `
+> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"space-satellite-theme",category:"宇宙・衛星",tag:"",title:"Space & Satellite Theme: Japan's Constellation Strategy and Commercial Space Market",date:"2026/04/04",summary:"Japan's Space & Satellite theme covers rocket launch services, satellite manufacturing, Earth observation satellites, satellite communications, space situational awareness (SSA), and lunar/deep space ",body:`
 ## What Is the Space & Satellite Theme?
 
 Japan's Space & Satellite theme covers rocket launch services, satellite manufacturing, Earth observation satellites, satellite communications, space situational awareness (SSA), and lunar/deep space exploration. The Japanese government has designated the 2020s–2030s as the critical period for establishing Japan's commercial space industry, supporting it through the ¥1 trillion Space Strategy Fund.
@@ -3352,16 +2954,7 @@ The Space Satellite theme has clear structural foundations for medium to long-te
 
 The most valuable habit: reviewing all 67 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
 
-> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`,
-  },
-  {
-    id: 'value-investing-guide',
-    category: 'Strategy',
-    tag: '',
-    title: 'Value Investing in Japanese Stocks: Finding Undervalued Gems with PBR and FCF',
-    date: '2026/04/05',
-    summary: 'Value investing is the practice of buying stocks whose market price is significantly below their intrinsic value — the true economic worth of the business. Pioneered by Benjamin Graham (Security Analy',
-    body: `
+> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"value-investing-guide",category:"Strategy",tag:"",title:"Value Investing in Japanese Stocks: Finding Undervalued Gems with PBR and FCF",date:"2026/04/05",summary:"Value investing is the practice of buying stocks whose market price is significantly below their intrinsic value — the true economic worth of the business. Pioneered by Benjamin Graham (Security Analy",body:`
 ## What Is Value Investing?
 
 Value investing is the practice of buying stocks whose market price is significantly below their intrinsic value — the true economic worth of the business. Pioneered by Benjamin Graham (Security Analysis, 1934) and refined by Warren Buffett, value investing is based on a simple premise: markets are often irrational in the short term but tend toward fair value over the long term.
@@ -3429,16 +3022,7 @@ The Value Investing Guide theme has clear structural foundations for medium to l
 
 The most valuable habit: reviewing all 67 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
 
-> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`,
-  },
-  {
-    id: 'growth-investing-guide',
-    category: 'Strategy',
-    tag: '',
-    title: 'Growth Investing in Japan: How to Identify High-Growth Companies and Time Entry',
-    date: '2026/04/05',
-    summary: 'Growth investing identifies companies whose earnings, revenue, and market share are growing significantly faster than the broad market — and invests in them even when current valuations appear expensi',
-    body: `
+> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"growth-investing-guide",category:"Strategy",tag:"",title:"Growth Investing in Japan: How to Identify High-Growth Companies and Time Entry",date:"2026/04/05",summary:"Growth investing identifies companies whose earnings, revenue, and market share are growing significantly faster than the broad market — and invests in them even when current valuations appear expensi",body:`
 ## What Is Growth Investing?
 
 Growth investing identifies companies whose earnings, revenue, and market share are growing significantly faster than the broad market — and invests in them even when current valuations appear expensive, on the belief that future growth will justify today's price.
@@ -3504,16 +3088,7 @@ The Growth Investing Guide theme has clear structural foundations for medium to 
 
 The most valuable habit: reviewing all 67 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
 
-> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`,
-  },
-  {
-    id: 'momentum-investing-advanced',
-    category: 'Strategy',
-    tag: '',
-    title: 'Advanced Momentum Investing: Using Volume and Price Data to Follow Trends',
-    date: '2026/04/05',
-    summary: 'Momentum investing exploits the empirically documented tendency for recent outperforming assets to continue outperforming over the next 3–12 months. Jegadeesh and Titman (1993) provided the first rigo',
-    body: `
+> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"momentum-investing-advanced",category:"Strategy",tag:"",title:"Advanced Momentum Investing: Using Volume and Price Data to Follow Trends",date:"2026/04/05",summary:"Momentum investing exploits the empirically documented tendency for recent outperforming assets to continue outperforming over the next 3–12 months. Jegadeesh and Titman (1993) provided the first rigo",body:`
 ## What Is Momentum Investing?
 
 Momentum investing exploits the empirically documented tendency for recent outperforming assets to continue outperforming over the next 3–12 months. Jegadeesh and Titman (1993) provided the first rigorous academic documentation of this effect in US equities; subsequent research has confirmed it across global markets, asset classes, and time periods.
@@ -3589,16 +3164,7 @@ The Momentum Investing Advanced theme has clear structural foundations for mediu
 
 The most valuable habit: reviewing all 67 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
 
-> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`,
-  },
-  {
-    id: 'technical-analysis-basics',
-    category: 'Strategy',
-    tag: '',
-    title: 'Technical Analysis Basics: Moving Averages, RSI, and MACD for Japanese Stocks',
-    date: '2026/04/05',
-    summary: 'Technical analysis uses historical price and volume data — displayed as charts — to identify patterns and signals that help predict future price movements and time buy/sell decisions. It operates on t',
-    body: `
+> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"technical-analysis-basics",category:"Strategy",tag:"",title:"Technical Analysis Basics: Moving Averages, RSI, and MACD for Japanese Stocks",date:"2026/04/05",summary:"Technical analysis uses historical price and volume data — displayed as charts — to identify patterns and signals that help predict future price movements and time buy/sell decisions. It operates on t",body:`
 ## What Is Technical Analysis?
 
 Technical analysis uses historical price and volume data — displayed as charts — to identify patterns and signals that help predict future price movements and time buy/sell decisions. It operates on three premises: (1) all information is reflected in prices; (2) prices trend; (3) history tends to repeat.
@@ -3675,16 +3241,7 @@ The Technical  Basics theme has clear structural foundations for medium to long-
 
 The most valuable habit: reviewing all 67 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
 
-> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`,
-  },
-  {
-    id: 'stock-terms-glossary',
-    category: '用語解説',
-    tag: '',
-    title: '50 Essential Japanese Stock Market Terms Every Investor Should Know',
-    date: '2026/04/05',
-    summary: 'Stock market terminology can be a barrier for new investors — financial news, brokerage research, and company filings are dense with specialized vocabulary. This glossary covers the 50 most important ',
-    body: `
+> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"stock-terms-glossary",category:"用語解説",tag:"",title:"50 Essential Japanese Stock Market Terms Every Investor Should Know",date:"2026/04/05",summary:"Stock market terminology can be a barrier for new investors — financial news, brokerage research, and company filings are dense with specialized vocabulary. This glossary covers the 50 most important ",body:`
 ## Why Understanding Key Terms Matters
 
 Stock market terminology can be a barrier for new investors — financial news, brokerage research, and company filings are dense with specialized vocabulary. This glossary covers the 50 most important terms for understanding Japanese equity markets and StockWaveJP's data.
@@ -3766,16 +3323,7 @@ The Stock Terms Glossary theme has clear structural foundations for medium to lo
 
 The most valuable habit: reviewing all 67 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
 
-> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`,
-  },
-  {
-    id: 'dividend-investing-guide',
-    category: 'Strategy',
-    tag: '',
-    title: 'Dividend Investing in Japan: Yield, Consecutive Increases, and NISA Tax Efficiency',
-    date: '2026/04/05',
-    summary: 'Dividend investing focuses on stocks that pay regular cash dividends — building a portfolio that generates stable income ("cash flow") regardless of stock price movements. With Japan\'s new NISA (intro',
-    body: `
+> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"dividend-investing-guide",category:"Strategy",tag:"",title:"Dividend Investing in Japan: Yield, Consecutive Increases, and NISA Tax Efficiency",date:"2026/04/05",summary:`Dividend investing focuses on stocks that pay regular cash dividends — building a portfolio that generates stable income ("cash flow") regardless of stock price movements. With Japan's new NISA (intro`,body:`
 ## What Is Dividend Investing?
 
 Dividend investing focuses on stocks that pay regular cash dividends — building a portfolio that generates stable income ("cash flow") regardless of stock price movements. With Japan's new NISA (introduced 2024) eliminating dividend withholding tax on NISA account holdings, the effective yield of Japanese high-dividend stocks has become meaningfully higher for individual investors.
@@ -3844,16 +3392,7 @@ The Dividend Investing Guide theme has clear structural foundations for medium t
 
 The most valuable habit: reviewing all 67 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
 
-> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`,
-  },
-  {
-    id: 'portfolio-management',
-    category: 'Strategy',
-    tag: '',
-    title: 'Portfolio Management: Diversification, Rebalancing, and Risk Control for Theme Investors',
-    date: '2026/04/05',
-    summary: 'Portfolio management is the systematic process of building, monitoring, and adjusting a collection of investments to achieve risk-adjusted return goals. The foundation is diversification — spreading i',
-    body: `
+> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"portfolio-management",category:"Strategy",tag:"",title:"Portfolio Management: Diversification, Rebalancing, and Risk Control for Theme Investors",date:"2026/04/05",summary:"Portfolio management is the systematic process of building, monitoring, and adjusting a collection of investments to achieve risk-adjusted return goals. The foundation is diversification — spreading i",body:`
 ## What Is Portfolio Management?
 
 Portfolio management is the systematic process of building, monitoring, and adjusting a collection of investments to achieve risk-adjusted return goals. The foundation is diversification — spreading investments across uncorrelated assets to reduce the impact of any single investment failing.
@@ -3929,16 +3468,7 @@ The Portfolio Management theme has clear structural foundations for medium to lo
 
 The most valuable habit: reviewing all 67 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
 
-> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`,
-  },
-  {
-    id: 'toyota-analysis',
-    category: 'Stock Analysis',
-    tag: '',
-    title: 'Toyota Motor (7203): EV Strategy, Hybrid Dominance, and 2026 Investment Outlook',
-    date: '2026/04/05',
-    summary: 'Toyota Motor (7203) is Japan\'s largest company by market cap (reaching ¥50T at its peak) and the world\'s largest automaker by volume for three consecutive years, selling approximately 10.3 million veh',
-    body: `
+> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"toyota-analysis",category:"Stock Analysis",tag:"",title:"Toyota Motor (7203): EV Strategy, Hybrid Dominance, and 2026 Investment Outlook",date:"2026/04/05",summary:"Toyota Motor (7203) is Japan's largest company by market cap (reaching ¥50T at its peak) and the world's largest automaker by volume for three consecutive years, selling approximately 10.3 million veh",body:`
 ## What Kind of Company Is Toyota Motor?
 
 Toyota Motor (7203) is Japan's largest company by market cap (reaching ¥50T at its peak) and the world's largest automaker by volume for three consecutive years, selling approximately 10.3 million vehicles globally in 2024. Toyota's portfolio includes the Toyota and Lexus brands, plus majority control of Daihatsu and Hino Motors. Net sales exceeded ¥46 trillion in FY2024 — Japan's highest of any corporation.
@@ -4004,16 +3534,7 @@ The Toyota theme has clear structural foundations for medium to long-term invest
 
 The most valuable habit: reviewing all 67 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
 
-> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`,
-  },
-  {
-    id: 'sony-analysis',
-    category: 'Stock Analysis',
-    tag: '',
-    title: 'Sony Group (6758): Gaming, Music, Film, and Image Sensors — A Diversified Tech Powerhouse',
-    date: '2026/04/05',
-    summary: 'Sony Group (6758) has transformed from a consumer electronics manufacturer into a diversified entertainment and technology company. Today\'s Sony operates in gaming (PlayStation), music (Sony Music Ent',
-    body: `
+> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"sony-analysis",category:"Stock Analysis",tag:"",title:"Sony Group (6758): Gaming, Music, Film, and Image Sensors — A Diversified Tech Powerhouse",date:"2026/04/05",summary:"Sony Group (6758) has transformed from a consumer electronics manufacturer into a diversified entertainment and technology company. Today's Sony operates in gaming (PlayStation), music (Sony Music Ent",body:`
 ## What Kind of Company Is Sony Group?
 
 Sony Group (6758) has transformed from a consumer electronics manufacturer into a diversified entertainment and technology company. Today's Sony operates in gaming (PlayStation), music (Sony Music Entertainment — world #2 music company), film/anime (Sony Pictures, Columbia, Crunchyroll), image sensors (world #1 CMOS image sensor), and financial services. The consumer electronics heritage is much diminished; the new Sony is a high-margin content and technology company.
@@ -4077,16 +3598,7 @@ The Sony theme has clear structural foundations for medium to long-term investor
 
 The most valuable habit: reviewing all 67 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
 
-> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`,
-  },
-  {
-    id: 'mitsubishi-ufj-analysis',
-    category: 'Stock Analysis',
-    tag: '',
-    title: 'Mitsubishi UFJ Financial Group (8306): Japan\'s Largest Bank in the Rate Hike Era',
-    date: '2026/04/05',
-    summary: 'Mitsubishi UFJ Financial Group (MUFG, 8306) is Japan\'s largest bank and one of the world\'s largest financial institutions by total assets (approximately ¥400 trillion). MUFG\'s businesses include Mitsu',
-    body: `
+> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"mitsubishi-ufj-analysis",category:"Stock Analysis",tag:"",title:"Mitsubishi UFJ Financial Group (8306): Japan's Largest Bank in the Rate Hike Era",date:"2026/04/05",summary:"Mitsubishi UFJ Financial Group (MUFG, 8306) is Japan's largest bank and one of the world's largest financial institutions by total assets (approximately ¥400 trillion). MUFG's businesses include Mitsu",body:`
 ## What Kind of Company Is MUFG?
 
 Mitsubishi UFJ Financial Group (MUFG, 8306) is Japan's largest bank and one of the world's largest financial institutions by total assets (approximately ¥400 trillion). MUFG's businesses include Mitsubishi UFJ Bank, Mitsubishi UFJ Trust, MUFG Securities, and consumer finance company ACOM. International investments include a 23.5% stake in Morgan Stanley and majority control of Bank of Danamon (Indonesia).
@@ -4151,16 +3663,7 @@ The Mitsubishi Ufj theme has clear structural foundations for medium to long-ter
 
 The most valuable habit: reviewing all 67 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
 
-> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`,
-  },
-  {
-    id: 'nintendo-analysis',
-    category: 'Stock Analysis',
-    tag: '',
-    title: 'Nintendo (7974): Switch 2 Launch, IP Monetization Strategy, and Long-Term Outlook',
-    date: '2026/04/11',
-    summary: 'Nintendo (7974) was founded in 1889 as a playing card manufacturer and entered the video game business in 1977. Today it is Japan\'s most globally recognized gaming company, creator of Mario, Zelda, Po',
-    body: `
+> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"nintendo-analysis",category:"Stock Analysis",tag:"",title:"Nintendo (7974): Switch 2 Launch, IP Monetization Strategy, and Long-Term Outlook",date:"2026/04/11",summary:"Nintendo (7974) was founded in 1889 as a playing card manufacturer and entered the video game business in 1977. Today it is Japan's most globally recognized gaming company, creator of Mario, Zelda, Po",body:`
 ## What Kind of Company Is Nintendo?
 
 Nintendo (7974) was founded in 1889 as a playing card manufacturer and entered the video game business in 1977. Today it is Japan's most globally recognized gaming company, creator of Mario, Zelda, Pokemon, Donkey Kong, and dozens of other iconic franchises. Nintendo's market cap has exceeded ¥15 trillion at peak; its workforce of approximately 7,000 people generates some of the highest revenue-per-employee of any entertainment company.
@@ -4226,16 +3729,7 @@ The Nintendo theme has clear structural foundations for medium to long-term inve
 
 The most valuable habit: reviewing all 67 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
 
-> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`,
-  },
-  {
-    id: 'fujikura-analysis',
-    category: 'Stock Analysis',
-    tag: '',
-    title: 'Fujikura (5803): Optical Fiber and AI Datacenter Power Cables Drive Rapid Growth',
-    date: '2026/04/11',
-    summary: 'Fujikura (5803) is a comprehensive cable manufacturer founded in 1885, operating across optical fiber cables, power cables, automotive wire harnesses, and flexible printed circuits (FPC). Revenue is a',
-    body: `
+> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"fujikura-analysis",category:"Stock Analysis",tag:"",title:"Fujikura (5803): Optical Fiber and AI Datacenter Power Cables Drive Rapid Growth",date:"2026/04/11",summary:"Fujikura (5803) is a comprehensive cable manufacturer founded in 1885, operating across optical fiber cables, power cables, automotive wire harnesses, and flexible printed circuits (FPC). Revenue is a",body:`
 ## What Kind of Company Is Fujikura?
 
 Fujikura (5803) is a comprehensive cable manufacturer founded in 1885, operating across optical fiber cables, power cables, automotive wire harnesses, and flexible printed circuits (FPC). Revenue is approximately ¥800 billion (FY2024), headquartered in Koto, Tokyo. Together with Furukawa Electric (5801) and Sumitomo Electric (5802), Fujikura forms Japan's "electric cable triumvirate."
@@ -4297,16 +3791,7 @@ The Fujikura theme has clear structural foundations for medium to long-term inve
 
 The most valuable habit: reviewing all 67 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
 
-> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`,
-  },
-  {
-    id: 'softbank-analysis',
-    category: 'Stock Analysis',
-    tag: '',
-    title: 'SoftBank Corp (9434): Telecom + PayPay + AI — Japan\'s Integrated Digital Ecosystem',
-    date: '2026/04/11',
-    summary: 'SoftBank Corp (9434) — listed separately from SoftBank Group (9984) — is Japan\'s third-largest mobile carrier and a comprehensive digital services company. Core businesses: mobile communications (Soft',
-    body: `
+> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"softbank-analysis",category:"Stock Analysis",tag:"",title:"SoftBank Corp (9434): Telecom + PayPay + AI — Japan's Integrated Digital Ecosystem",date:"2026/04/11",summary:"SoftBank Corp (9434) — listed separately from SoftBank Group (9984) — is Japan's third-largest mobile carrier and a comprehensive digital services company. Core businesses: mobile communications (Soft",body:`
 ## What Kind of Company Is SoftBank Corp (9434)?
 
 SoftBank Corp (9434) — listed separately from SoftBank Group (9984) — is Japan's third-largest mobile carrier and a comprehensive digital services company. Core businesses: mobile communications (SoftBank, Y!mobile, LINEMO brands), broadband internet, PayPay digital payments, LINEYahoo, and enterprise IT/AI services. Revenue approximately ¥6 trillion (FY2024), ~18,000 employees.
@@ -4377,16 +3862,7 @@ The Softbank theme has clear structural foundations for medium to long-term inve
 
 The most valuable habit: reviewing all 67 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
 
-> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`,
-  },
-  {
-    id: 'mitsui-mining-analysis',
-    category: 'Stock Analysis',
-    tag: '',
-    title: 'Mitsui Mining & Smelting (5706): Copper Foil for EVs and EV Supply Chain Positioning',
-    date: '2026/04/11',
-    summary: 'Mitsui Mining & Smelting (5706, "Mitsui Kinzoku") is a non-ferrous metals company within the Mitsui Group, specializing in zinc smelting, copper foil, electronic materials, and automotive parts materi',
-    body: `
+> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"mitsui-mining-analysis",category:"Stock Analysis",tag:"",title:"Mitsui Mining & Smelting (5706): Copper Foil for EVs and EV Supply Chain Positioning",date:"2026/04/11",summary:'Mitsui Mining & Smelting (5706, "Mitsui Kinzoku") is a non-ferrous metals company within the Mitsui Group, specializing in zinc smelting, copper foil, electronic materials, and automotive parts materi',body:`
 ## What Kind of Company Is Mitsui Mining & Smelting?
 
 Mitsui Mining & Smelting (5706, "Mitsui Kinzoku") is a non-ferrous metals company within the Mitsui Group, specializing in zinc smelting, copper foil, electronic materials, and automotive parts materials. Revenue approximately ¥600 billion (FY2024), headquartered in Shinagawa, Tokyo. Though relatively small by market cap, Mitsui Kinzoku's products are critical components in the digital and EV revolution.
@@ -4448,16 +3924,7 @@ The Mitsui Mining theme has clear structural foundations for medium to long-term
 
 The most valuable habit: reviewing all 67 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
 
-> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`,
-  },
-  {
-    id: 'ajinomoto-analysis',
-    category: 'Stock Analysis',
-    tag: '',
-    title: 'Ajinomoto (2802): From Seasoning Giant to Global Amino Acid and Pharma Leader',
-    date: '2026/04/11',
-    summary: 'Ajinomoto (2802) was founded in 1909 and sells its signature MSG seasoning (AJI-NO-MOTO) in 130+ countries. Revenue approximately ¥1.4 trillion (FY2024), with overseas sales exceeding 55% of total — a',
-    body: `
+> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"ajinomoto-analysis",category:"Stock Analysis",tag:"",title:"Ajinomoto (2802): From Seasoning Giant to Global Amino Acid and Pharma Leader",date:"2026/04/11",summary:"Ajinomoto (2802) was founded in 1909 and sells its signature MSG seasoning (AJI-NO-MOTO) in 130+ countries. Revenue approximately ¥1.4 trillion (FY2024), with overseas sales exceeding 55% of total — a",body:`
 ## What Kind of Company Is Ajinomoto?
 
 Ajinomoto (2802) was founded in 1909 and sells its signature MSG seasoning (AJI-NO-MOTO) in 130+ countries. Revenue approximately ¥1.4 trillion (FY2024), with overseas sales exceeding 55% of total — an unusually high international proportion for a Japanese food company. "Umami" (the fifth basic taste, discovered by Ajinomoto founder Kikunae Ikeda) is now globally recognized, providing Ajinomoto's brand with uniquely deep cultural roots.
@@ -4517,16 +3984,7 @@ The Ajinomoto theme has clear structural foundations for medium to long-term inv
 
 The most valuable habit: reviewing all 67 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
 
-> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`,
-  },
-  {
-    id: 'furukawa-analysis',
-    category: 'Stock Analysis',
-    tag: '',
-    title: 'Furukawa Electric (5801): Optical Fiber, Power Cables, and Automotive Parts',
-    date: '2026/04/11',
-    summary: 'Furukawa Electric (5801, "Furukawa Denki") was founded in 1884 and is the oldest member of Japan\'s electric cable triumvirate (with Fujikura 5803 and Sumitomo Electric 5802). Primary businesses: optic',
-    body: `
+> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"furukawa-analysis",category:"Stock Analysis",tag:"",title:"Furukawa Electric (5801): Optical Fiber, Power Cables, and Automotive Parts",date:"2026/04/11",summary:`Furukawa Electric (5801, "Furukawa Denki") was founded in 1884 and is the oldest member of Japan's electric cable triumvirate (with Fujikura 5803 and Sumitomo Electric 5802). Primary businesses: optic`,body:`
 ## What Kind of Company Is Furukawa Electric?
 
 Furukawa Electric (5801, "Furukawa Denki") was founded in 1884 and is the oldest member of Japan's electric cable triumvirate (with Fujikura 5803 and Sumitomo Electric 5802). Primary businesses: optical fiber and cables, power cables, automotive wire harnesses, copper products, and functional materials. Revenue approximately ¥800–900 billion (FY2024), headquartered in Chiyoda, Tokyo.
@@ -4584,16 +4042,7 @@ The Furukawa theme has clear structural foundations for medium to long-term inve
 
 The most valuable habit: reviewing all 67 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
 
-> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`,
-  },
-  {
-    id: 'advantest-analysis',
-    category: 'Stock Analysis',
-    tag: '',
-    title: 'Advantest (6857): World #1 Semiconductor Test Equipment and the AI Chip Tailwind',
-    date: '2026/04/11',
-    summary: 'Advantest (6857) designs and manufactures semiconductor test equipment (ATE — Automatic Test Equipment) — the machines that verify whether chips function correctly after fabrication. Founded in 1954, ',
-    body: `
+> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"advantest-analysis",category:"Stock Analysis",tag:"",title:"Advantest (6857): World #1 Semiconductor Test Equipment and the AI Chip Tailwind",date:"2026/04/11",summary:"Advantest (6857) designs and manufactures semiconductor test equipment (ATE — Automatic Test Equipment) — the machines that verify whether chips function correctly after fabrication. Founded in 1954, ",body:`
 ## What Kind of Company Is Advantest?
 
 Advantest (6857) designs and manufactures semiconductor test equipment (ATE — Automatic Test Equipment) — the machines that verify whether chips function correctly after fabrication. Founded in 1954, headquartered in Shinjuku, Tokyo. Revenue approximately ¥500–600 billion (FY2024), Nikkei 225 constituent. Advantest holds 50%+ global market share in the ATE market for logic semiconductors and memory chips.
@@ -4655,16 +4104,7 @@ The Advantest theme has clear structural foundations for medium to long-term inv
 
 The most valuable habit: reviewing all 67 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
 
-> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`,
-  },
-  {
-    id: 'kioxia-analysis',
-    category: 'Stock Analysis',
-    tag: '',
-    title: 'Kioxia (285A): NAND Flash Memory World #2 — AI Storage Demand and Recovery Cycle',
-    date: '2026/04/11',
-    summary: 'Kioxia Holdings (285A) is the world\'s second-largest NAND flash memory manufacturer, spun out from Toshiba\'s semiconductor division in 2019 (when Toshiba Memory was renamed Kioxia) and relisted on TSE',
-    body: `
+> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"kioxia-analysis",category:"Stock Analysis",tag:"",title:"Kioxia (285A): NAND Flash Memory World #2 — AI Storage Demand and Recovery Cycle",date:"2026/04/11",summary:"Kioxia Holdings (285A) is the world's second-largest NAND flash memory manufacturer, spun out from Toshiba's semiconductor division in 2019 (when Toshiba Memory was renamed Kioxia) and relisted on TSE",body:`
 ## What Kind of Company Is Kioxia?
 
 Kioxia Holdings (285A) is the world's second-largest NAND flash memory manufacturer, spun out from Toshiba's semiconductor division in 2019 (when Toshiba Memory was renamed Kioxia) and relisted on TSE Prime in December 2024. Revenue approximately ¥1.5 trillion (FY2024).
@@ -4726,16 +4166,7 @@ The Kioxia theme has clear structural foundations for medium to long-term invest
 
 The most valuable habit: reviewing all 67 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
 
-> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`,
-  },
-  {
-    id: 'nittobo-analysis',
-    category: 'Stock Analysis',
-    tag: '',
-    title: 'Nittobo (3110): Glass Fiber World #4, Sound Insulation, and Residential Materials',
-    date: '2026/04/11',
-    summary: 'Nittobo (Nitto Boseki, 3110) is a glass fiber and functional materials company founded in 1923. Revenue approximately ¥150 billion (FY2024), headquartered in Chiyoda, Tokyo. Nittobo is Japan\'s largest',
-    body: `
+> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"nittobo-analysis",category:"Stock Analysis",tag:"",title:"Nittobo (3110): Glass Fiber World #4, Sound Insulation, and Residential Materials",date:"2026/04/11",summary:"Nittobo (Nitto Boseki, 3110) is a glass fiber and functional materials company founded in 1923. Revenue approximately ¥150 billion (FY2024), headquartered in Chiyoda, Tokyo. Nittobo is Japan's largest",body:`
 ## What Kind of Company Is Nittobo?
 
 Nittobo (Nitto Boseki, 3110) is a glass fiber and functional materials company founded in 1923. Revenue approximately ¥150 billion (FY2024), headquartered in Chiyoda, Tokyo. Nittobo is Japan's largest glass fiber manufacturer and the world's 4th-largest glass fiber producer. Despite its relatively small size, Nittobo holds critical positions in several high-tech material supply chains.
@@ -4795,16 +4226,7 @@ The Nittobo theme has clear structural foundations for medium to long-term inves
 
 The most valuable habit: reviewing all 67 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
 
-> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`,
-  },
-  {
-    id: 'inpex-analysis',
-    category: 'Stock Analysis',
-    tag: '',
-    title: 'INPEX (1605): Japan\'s Largest O&G Developer — Ichthys LNG and Dividend Appeal',
-    date: '2026/04/11',
-    summary: 'INPEX Corporation (1605) is Japan\'s largest oil and gas exploration & production (E&P) company, operating upstream assets in over 20 countries. Revenue approximately ¥1.5 trillion (FY2024), headquarte',
-    body: `
+> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"inpex-analysis",category:"Stock Analysis",tag:"",title:"INPEX (1605): Japan's Largest O&G Developer — Ichthys LNG and Dividend Appeal",date:"2026/04/11",summary:"INPEX Corporation (1605) is Japan's largest oil and gas exploration & production (E&P) company, operating upstream assets in over 20 countries. Revenue approximately ¥1.5 trillion (FY2024), headquarte",body:`
 ## What Kind of Company Is INPEX?
 
 INPEX Corporation (1605) is Japan's largest oil and gas exploration & production (E&P) company, operating upstream assets in over 20 countries. Revenue approximately ¥1.5 trillion (FY2024), headquartered in Minato, Tokyo. INPEX is primarily a "pure upstream" company — it finds, develops, and produces oil and gas but does not operate refineries or retail gas stations (unlike ENEOS, which is downstream-focused).
@@ -4866,16 +4288,7 @@ The Inpex theme has clear structural foundations for medium to long-term investo
 
 The most valuable habit: reviewing all 67 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
 
-> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`,
-  },
-  {
-    id: 'skyperfect-analysis',
-    category: 'Stock Analysis',
-    tag: '',
-    title: 'SKY Perfect JSAT (9412): Satellite Broadcasting, Communications, and Commercial Space',
-    date: '2026/04/11',
-    summary: 'SKY Perfect JSAT Holdings (9412) is Japan\'s largest satellite broadcasting and communications company, formed by the 2007 merger of SkyPerfect (pay-TV) and JSAT (commercial satellite operator). Revenu',
-    body: `
+> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"skyperfect-analysis",category:"Stock Analysis",tag:"",title:"SKY Perfect JSAT (9412): Satellite Broadcasting, Communications, and Commercial Space",date:"2026/04/11",summary:"SKY Perfect JSAT Holdings (9412) is Japan's largest satellite broadcasting and communications company, formed by the 2007 merger of SkyPerfect (pay-TV) and JSAT (commercial satellite operator). Revenu",body:`
 ## What Kind of Company Is SKY Perfect JSAT?
 
 SKY Perfect JSAT Holdings (9412) is Japan's largest satellite broadcasting and communications company, formed by the 2007 merger of SkyPerfect (pay-TV) and JSAT (commercial satellite operator). Revenue approximately ¥90 billion (FY2024), TSE Prime listed.
@@ -4937,16 +4350,7 @@ The Skyperfect theme has clear structural foundations for medium to long-term in
 
 The most valuable habit: reviewing all 67 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
 
-> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`,
-  },
-  {
-    id: 'axelspace-analysis',
-    category: 'Stock Analysis',
-    tag: '',
-    title: 'Japan\'s Space Startups: Small Satellites, Earth Observation, and the New Space Economy',
-    date: '2026/04/11',
-    summary: 'Axelspace Holdings (166A, TSE Growth) is Japan\'s leading small satellite Earth observation company, founded in 2008 by University of Tokyo satellite engineering researchers. Axelspace builds, launches',
-    body: `
+> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"axelspace-analysis",category:"Stock Analysis",tag:"",title:"Japan's Space Startups: Small Satellites, Earth Observation, and the New Space Economy",date:"2026/04/11",summary:"Axelspace Holdings (166A, TSE Growth) is Japan's leading small satellite Earth observation company, founded in 2008 by University of Tokyo satellite engineering researchers. Axelspace builds, launches",body:`
 ## What Kind of Company Is Axelspace?
 
 Axelspace Holdings (166A, TSE Growth) is Japan's leading small satellite Earth observation company, founded in 2008 by University of Tokyo satellite engineering researchers. Axelspace builds, launches, and operates small Earth observation satellites, then sells the data collected to commercial and government customers. Vision: "Space for Everyone" — making satellite data accessible to a broad range of users.
@@ -5019,16 +4423,7 @@ The Axelspace theme has clear structural foundations for medium to long-term inv
 
 The most valuable habit: reviewing all 67 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
 
-> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`,
-  },
-  {
-    id: 'sogo-shosha-analysis',
-    category: 'Stock Analysis',
-    tag: '',
-    title: 'Japan\'s 5 Major Trading Houses: Comparing Buffett\'s Picks on ROE, Dividend, and Strategy',
-    date: '2026/04/11',
-    summary: 'Japan\'s "Sogo Shosha" (general trading houses) are uniquely Japanese enterprises with no direct Western equivalent. Originally commodity and product trading intermediaries, today\'s five major trading ',
-    body: `
+> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"sogo-shosha-analysis",category:"Stock Analysis",tag:"",title:"Japan's 5 Major Trading Houses: Comparing Buffett's Picks on ROE, Dividend, and Strategy",date:"2026/04/11",summary:`Japan's "Sogo Shosha" (general trading houses) are uniquely Japanese enterprises with no direct Western equivalent. Originally commodity and product trading intermediaries, today's five major trading `,body:`
 ## What Is Japan's Sogo Shosha Business Model?
 
 Japan's "Sogo Shosha" (general trading houses) are uniquely Japanese enterprises with no direct Western equivalent. Originally commodity and product trading intermediaries, today's five major trading houses are diversified investment conglomerates — holding significant equity stakes in hundreds of companies across resources, manufacturing, food, finance, real estate, and technology globally.
@@ -5098,16 +4493,7 @@ The Sogo Shosha theme has clear structural foundations for medium to long-term i
 
 The most valuable habit: reviewing all 67 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
 
-> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`,
-  },
-  {
-    id: 'murata-seisakusho-analysis',
-    category: 'Stock Analysis',
-    tag: '電子部品',
-    title: 'Murata Manufacturing (6981): Electronic Components Giant That Crossed ¥14T Market Cap',
-    date: '2026/05/29',
-    summary: 'Murata Manufacturing (6981) is the world\'s largest manufacturer of MLCC (Multi-Layer Ceramic Capacitors) and a global leader in electronic components. Founded in 1944 in Nagaokakyo, Kyoto. In FY2026 (',
-    body: `
+> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"murata-seisakusho-analysis",category:"Stock Analysis",tag:"電子部品",title:"Murata Manufacturing (6981): Electronic Components Giant That Crossed ¥14T Market Cap",date:"2026/05/29",summary:"Murata Manufacturing (6981) is the world's largest manufacturer of MLCC (Multi-Layer Ceramic Capacitors) and a global leader in electronic components. Founded in 1944 in Nagaokakyo, Kyoto. In FY2026 (",body:`
 ## What Kind of Company Is Murata Manufacturing?
 
 Murata Manufacturing (6981) is the world's largest manufacturer of MLCC (Multi-Layer Ceramic Capacitors) and a global leader in electronic components. Founded in 1944 in Nagaokakyo, Kyoto. In FY2026 (March 2026), Murata reported record net sales of ¥1.83 trillion (+5% YoY) and its market cap briefly exceeded ¥14 trillion — surpassing Nintendo (7974) to become Kyoto's largest company by market cap.
@@ -5176,16 +4562,7 @@ The Murata Seisakusho theme has clear structural foundations for medium to long-
 
 The most valuable habit: reviewing all 67 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
 
-> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`,
-  },
-  {
-    id: 'mlcc-murata-analysis',
-    category: 'Theme',
-    tag: 'MLCC・電子部品',
-    title: 'MLCC Industry: The Critical Component for AI Servers and the EV Transition',
-    date: '2026/05/29',
-    summary: 'MLCC stands for Multi-Layer Ceramic Capacitor — one of the most critical and widely used passive electronic components. A capacitor stores electrical charge and releases it rapidly, performing essenti',
-    body: `
+> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"mlcc-murata-analysis",category:"Theme",tag:"MLCC・電子部品",title:"MLCC Industry: The Critical Component for AI Servers and the EV Transition",date:"2026/05/29",summary:"MLCC stands for Multi-Layer Ceramic Capacitor — one of the most critical and widely used passive electronic components. A capacitor stores electrical charge and releases it rapidly, performing essenti",body:`
 ## What Is MLCC? The Critical Component for AI and EVs
 
 MLCC stands for Multi-Layer Ceramic Capacitor — one of the most critical and widely used passive electronic components. A capacitor stores electrical charge and releases it rapidly, performing essential functions in every electronic circuit: smoothing power supply fluctuations, filtering noise, coupling signals between circuit stages, and timing applications.
@@ -5266,8 +4643,4 @@ The Mlcc Murata theme has clear structural foundations for medium to long-term i
 
 The most valuable habit: reviewing all 67 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
 
-> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`,
-  },
-]
-
-export default COLUMNS
+> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`}];export{e as C};
