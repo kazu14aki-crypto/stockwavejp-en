@@ -1,5 +1,4 @@
 import { useEffect, useRef } from 'react'
-import { useSubscription } from '../hooks/useSubscription.js'
 
 export default function Sidebar({ pages, pagesOther, currentPage, onPageChange, isOpen, isMobile, onOpen, onClose, contactUrl }) {
   const touchStartX = useRef(null)
@@ -52,18 +51,10 @@ export default function Sidebar({ pages, pagesOther, currentPage, onPageChange, 
     WebkitOverflowScrolling: 'touch',
   }
 
-  const { canAccess } = useSubscription()
-  const LOCKED_PAGES = {
-    'Market Ranking':          !canAccess('market_detail'),
-    'Institutional Holdings':  !canAccess('institutional'),
-  }
-
-  const NavBtn = ({ icon, label }) => {
-    const isLocked = LOCKED_PAGES[label] ?? false
+  const NavBtn = ({ icon, label, locked }) => {
     const isActive = currentPage === label
     return (
       <button onClick={() => onPageChange(label)} style={{
-        // スマホ: タップしやすいよう縦幅を大きく（最低44px = Apple HIG推奨）
         padding: isMobile ? '11px 10px' : '7px 10px',
         minHeight: isMobile ? '44px' : 'auto',
         fontSize: '12px',
@@ -83,6 +74,9 @@ export default function Sidebar({ pages, pagesOther, currentPage, onPageChange, 
       >
         <span style={{ fontSize:'13px', opacity:0.75, flexShrink:0, width:'18px', textAlign:'center' }}>{icon}</span>
         <span style={{ whiteSpace:'nowrap', overflow:'hidden', textOverflow:'ellipsis', flex:1 }}>{label}</span>
+        {locked && (
+          <span style={{ fontSize:'10px', color:'#aa77ff', opacity:0.8, flexShrink:0, marginLeft:'2px' }} title="Pro plan required">🔒</span>
+        )}
       </button>
     )
   }
@@ -96,9 +90,9 @@ export default function Sidebar({ pages, pagesOther, currentPage, onPageChange, 
   return (
     <nav style={sidebarStyle}>
       <SLabel>MENU</SLabel>
-      {pages.map(({ icon, label }) => <NavBtn key={label} icon={icon} label={label} />)}
+      {pages.map(({ icon, label, locked }) => <NavBtn key={label} icon={icon} label={label} locked={locked} />)}
       <SLabel>OTHER</SLabel>
-      {pagesOther.map(({ icon, label }) => <NavBtn key={label} icon={icon} label={label} />)}
+      {pagesOther.map(({ icon, label, locked }) => <NavBtn key={label} icon={icon} label={label} locked={locked} />)}
       {contactUrl && (
         <a href={contactUrl} target="_blank" rel="noopener noreferrer" style={{
           display:'flex', alignItems:'center', gap:'8px',
