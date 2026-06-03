@@ -426,7 +426,7 @@ function BubbleScatter({ data, mPeriod, setMPeriod, onNavigate }) {
                     <text x={cx} y={cy+3} textAnchor="middle"
                       fontSize={Math.min(10, r * 0.55)} fill="white"
                       fontWeight="600" style={{ pointerEvents:'none' }}>
-                      {d.theme.length > 6 ? d.theme.slice(0, 6) + '…' : d.theme}
+                      {tn(d.theme).length > 8 ? tn(d.theme).slice(0, 8) + '…' : tn(d.theme)}
                     </text>
                   )}
                 </g>
@@ -455,7 +455,7 @@ function BubbleScatter({ data, mPeriod, setMPeriod, onNavigate }) {
                 <text x={cx} y={cy+4} textAnchor="middle"
                   fontSize="10" fill="white" fontWeight="700"
                   style={{ pointerEvents:'none' }}>
-                  {d.theme.length > 8 ? d.theme.slice(0,8)+'…' : d.theme}
+                  {tn(d.theme).length > 10 ? tn(d.theme).slice(0,10)+'…' : tn(d.theme)}
                 </text>
 
                 {/* ⑥ ツールチップ（大きく表示） */}
@@ -468,7 +468,7 @@ function BubbleScatter({ data, mPeriod, setMPeriod, onNavigate }) {
                       <rect x={tx} y={ty} width={TW} height={TH}
                         rx="8" fill="#1a1f2e" stroke="rgba(255,255,255,0.25)" strokeWidth="1.2" />
                       <text x={tx+12} y={ty+20} fontSize="13" fill="#e8f0ff" fontWeight="700">
-                        {d.theme}
+                        {tn(d.theme)}
                       </text>
                       <text x={tx+12} y={ty+38} fontSize="12" fill={bColor(d.pct)}>
                         {'Return: ' + (d.pct >= 0 ? '+' : '') + (d.pct?.toFixed(2) ?? '-') + '%'}
@@ -560,7 +560,7 @@ function BubbleScatter({ data, mPeriod, setMPeriod, onNavigate }) {
                   borderRadius:'6px', padding:'6px 12px',
                   display:'flex', alignItems:'center', gap:'8px',
                 }}>
-                  <span style={{ fontSize:'12px', fontWeight:700, color:'var(--text)' }}>{d.theme}</span>
+                  <span style={{ fontSize:'12px', fontWeight:700, color:'var(--text)' }}>{tn(d.theme)}</span>
                   <span style={{ fontSize:'11px', fontFamily:'var(--mono)', color:'#ff5370', fontWeight:700 }}>
                     {d.pct >= 0 ? '+' : ''}{d.pct?.toFixed(1)}%
                   </span>

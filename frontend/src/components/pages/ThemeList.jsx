@@ -799,7 +799,7 @@ function MonthlyThemePicker({ allThemes, selected, setSelected }) {
               fontWeight:600, border:'1.5px solid ' + col,
               background: col + '22', color: col,
             }}>
-              {t}
+              {tn(t)}
               <button onClick={() => toggleTheme(t)}
                 style={{ background:'none', border:'none', cursor:'pointer',
                   color: col, fontSize:'12px', lineHeight:1, padding:'0 2px',
@@ -850,7 +850,7 @@ function MonthlyThemePicker({ allThemes, selected, setSelected }) {
                     color: isOn ? col : 'var(--text3)',
                     transition:'all 0.12s',
                   }}>
-                  {isOn ? '✓ ' : ''}{t}
+                  {isOn ? '✓ ' : ''}{tn(t)}
                 </button>
               )
             })}
@@ -955,7 +955,7 @@ function MonthlyLineChart({ data, months, onNavigate }) {
                 <g key={t}>
                   <rect x={PL + si * 160} y={PT - 22} width="12" height="12" rx="2" fill={col} opacity="0.85" />
                   <text x={PL + si * 160 + 16} y={PT - 12} fontSize="10" fill="rgba(255,255,255,0.75)">
-                    {t.length > 12 ? t.slice(0, 12) + '…' : t}
+                    {tn(t).length > 14 ? tn(t).slice(0, 14) + '…' : tn(t)}
                   </text>
                 </g>
               )
@@ -984,7 +984,7 @@ function MonthlyVolChart({ volTrendData, allThemeNames, months }) {
   // 週次→月次変換
   const monthlyByTheme = {}
   allThemeNames.forEach(t => {
-    const d = volTrendData[`vol_trend_${t}`]
+    const d = volTrendData[`vol_trend_${tn(t)}`]
     if (!d?.dates) return
     const monthly = {}
     d.dates.forEach((date, i) => {
@@ -1063,7 +1063,7 @@ function MonthlyVolChart({ volTrendData, allThemeNames, months }) {
                 <g key={t}>
                   <rect x={PL+si*160} y={PT-22} width="12" height="12" rx="2" fill={col} opacity="0.85"/>
                   <text x={PL+si*160+16} y={PT-12} fontSize="10" fill="rgba(255,255,255,0.75)">
-                    {t.length > 12 ? t.slice(0,12)+'…' : t}
+                    {tn(t).length > 12 ? tn(t).slice(0,12)+'…' : tn(t)}
                   </text>
                 </g>
               )
@@ -1091,7 +1091,7 @@ function MonthlyTVChart({ volTrendData, allThemeNames, months }) {
 
   const tvByTheme = {}
   allThemeNames.forEach(t => {
-    const d = volTrendData[`vol_trend_${t}`]
+    const d = volTrendData[`vol_trend_${tn(t)}`]
     if (!d?.dates) return
     const monthly = {}
     d.dates.forEach((date, i) => {
@@ -1165,7 +1165,7 @@ function MonthlyTVChart({ volTrendData, allThemeNames, months }) {
                 <g key={t}>
                   <rect x={PL+si*160} y={PT-22} width="12" height="12" rx="2" fill={col} opacity="0.85"/>
                   <text x={PL+si*160+16} y={PT-12} fontSize="10" fill="rgba(255,255,255,0.75)">
-                    {t.length > 12 ? t.slice(0,12)+'…' : t}
+                    {tn(t).length > 12 ? tn(t).slice(0,12)+'…' : tn(t)}
                   </text>
                 </g>
               )
