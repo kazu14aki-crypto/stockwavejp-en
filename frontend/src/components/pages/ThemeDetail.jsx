@@ -1,3 +1,4 @@
+import { tn, THEME_NAME_EN } from '../../utils/themeNames'
 import React, { useState, useEffect, useRef } from 'react'
 import StockBubbleChart from '../StockBubbleChart'
 import AddToThemeModal from '../AddToThemeModal'
@@ -931,7 +932,7 @@ export default function ThemeDetail({ onNavigate, initialTheme }) {
       <div className="page-header-sticky" style={{ flexWrap:'wrap', gap:'6px' }}>
         <h1 style={{ fontSize:'16px', fontWeight:700, color:'var(--text)', whiteSpace:'nowrap', flexShrink:0 }}>Theme Detail</h1>
         <select value={tn(selTheme)} onChange={e => setSelTheme(e.target.value)} style={{ ...selStyle, maxWidth:'160px', flex:'1 1 120px' }}>
-          {themeNames.map(t => <option key={t} value={t}>{t}</option>)}
+          {themeNames.map(t => <option key={t} value={t}>{tn(t)}</option>)}
         </select>
         <select value={period} onChange={e => setPeriod(e.target.value)} style={{ ...selStyle, flexShrink:0 }}>
           {PERIODS.map(p => <option key={p.value} value={p.value}>{p.label}</option>)}
