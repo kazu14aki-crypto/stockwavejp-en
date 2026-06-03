@@ -49,7 +49,7 @@ function PickupStocks({ stocks, period }) {
       else if (volChg >= 20) parts.push('Volume +' + volChg.toFixed(0) + '% — growing market participant interest.')
 
       if (sparkAccel > 3)    parts.push('Price accelerating in the latter half (+' + sparkAccel.toFixed(1) + '% back-half avg) — momentum strengthening.')
-      else if (sparkAccel > 1) parts.push('Price slightly improving in latter half (+' + sparkAccel.toFixed(1) + '% back-halfます')
+      else if (sparkAccel > 1) parts.push('Price slightly improving in latter half (+' + sparkAccel.toFixed(1) + '% back-half avg).')
 
       if (tv >= 5e9)       parts.push('Trading Value ' + fmtL(tv) + ' — high liquidity with active institutional trading.')
       else if (tv >= 1e9)  parts.push('Trading Value ' + fmtL(tv) + ' — adequate liquidity with active trading')
@@ -485,7 +485,7 @@ function StockTable({ stocks: rawStocks, onAddToTheme }) {
               <th style={{ ...thStyle, textAlign:'center', width:'32px', minWidth:'32px', maxWidth:'32px', padding:'8px 4px', background:'var(--bg3)', position:'sticky', left:0, zIndex:3 }}>順</th>
               <th style={{ ...thStyle, textAlign:'left', minWidth:'120px', background:'var(--bg3)', position:'sticky', left:'32px', zIndex:3 }}>銘柄名</th>
               {headers.map(h => (
-                <th key={h} style={{ ...thStyle, minWidth: h==='株価'||h==='Return'?'70px':'80px' }}>{h}</th>
+                <th key={h} style={{ ...thStyle, minWidth: h==='Price'||h==='Return'?'70px':'80px' }}>{h}</th>
               ))}
             </tr>
           </thead>
@@ -751,7 +751,7 @@ export default function MarketRank() {
           Use the tabs above to switch between 'Major Stocks', 'Domestic All', 'Market Segment', and 'ETF', then select a segment.
           <br/>
           <span style={{ fontSize:'11px', color:'var(--text3)' }}>
-            💡 活用ポイント：When the 'Technology' segment is strong, also check Semiconductor and AI/Cloud themes in the Theme List.
+            💡 Tip: When the 'Technology' segment is strong, also check Semiconductor and AI/Cloud themes in the Theme List.
             Combining segment and theme tracking gives a more accurate picture of capital flows.
           </span>
         </div>

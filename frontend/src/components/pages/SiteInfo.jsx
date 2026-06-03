@@ -195,19 +195,34 @@ We also hope to share the enjoyment of "reading the flow" of theme investing wit
       </div>
 
       {/* Contact */}
-      <div style={{ textAlign: 'center', marginTop: '32px' }}>
-        <a href="https://twitter.com/StockWaveJP" target="_blank" rel="noopener noreferrer"
-          style={{
-            display: 'inline-flex', alignItems: 'center', gap: '10px',
-            background: 'rgba(91,156,246,0.1)', border: '1px solid rgba(91,156,246,0.25)',
-            borderRadius: '8px', padding: '12px 24px',
-            color: 'var(--accent)', textDecoration: 'none', fontWeight: 600, fontSize: '14px',
-          }}>
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-          </svg>
-          X (formerly Twitter) @StockWaveJP
-        </a>
+      <div style={{ marginTop: '32px' }}>
+        <h2 style={{ fontSize:'15px', fontWeight:700, color:'var(--text)', marginBottom:'14px' }}>Contact & Feedback</h2>
+        <p style={{ fontSize:'13px', color:'var(--text2)', lineHeight:1.8, marginBottom:'16px' }}>
+          For bug reports, feature requests, or general feedback, please use the form below.
+        </p>
+        <div style={{ display:'flex', gap:'12px', flexWrap:'wrap', alignItems:'center' }}>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSeHLMXrJAttWONfyfe94OSsiP039PX5xi918R3kuDHFJ0Aiow/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer"
+            style={{
+              display: 'inline-flex', alignItems: 'center', gap: '8px',
+              background: 'rgba(74,158,255,0.1)', border: '1px solid rgba(74,158,255,0.3)',
+              borderRadius: '8px', padding: '12px 24px',
+              color: 'var(--accent)', textDecoration: 'none', fontWeight: 600, fontSize: '14px',
+            }}>
+            📬 Open Contact Form
+          </a>
+          <a href="https://twitter.com/StockWaveJP" target="_blank" rel="noopener noreferrer"
+            style={{
+              display: 'inline-flex', alignItems: 'center', gap: '8px',
+              background: 'rgba(91,156,246,0.1)', border: '1px solid rgba(91,156,246,0.25)',
+              borderRadius: '8px', padding: '12px 24px',
+              color: 'var(--accent)', textDecoration: 'none', fontWeight: 600, fontSize: '14px',
+            }}>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+            </svg>
+            X (Twitter) @StockWaveJP
+          </a>
+        </div>
       </div>
     </div>
   )

@@ -299,9 +299,9 @@ function BubbleScatter({ data, mPeriod, setMPeriod, onNavigate }) {
 
   // ── ゾーン定義（サイトカラーに合わせた暗いトーン）──
   const zones = [
-    { label:'Hotーン Rising+Volume増',  x:x0, y:PT,  w:PL+GW-x0, h:y0-PT,    bg:'rgba(255,83,112,0.22)', border:'rgba(255,83,112,0.60)' },
-    { label:'Sell Falling+Volume増',    x:PL, y:PT,  w:x0-PL,    h:y0-PT,    bg:'rgba(0,196,140,0.18)',  border:'rgba(0,196,140,0.55)'  },
-    { label:'Quiet↑ Volume少',       x:x0, y:y0,  w:PL+GW-x0, h:PT+GH-y0, bg:'rgba(255,140,66,0.15)', border:'rgba(255,140,66,0.50)' },
+    { label:'🔥 Hot Zone: Rising+Vol.Surge',  x:x0, y:PT,  w:PL+GW-x0, h:y0-PT,    bg:'rgba(255,83,112,0.22)', border:'rgba(255,83,112,0.60)' },
+    { label:'⚠️ Sell Pressure: Falling+Vol.Surge',    x:PL, y:PT,  w:x0-PL,    h:y0-PT,    bg:'rgba(0,196,140,0.18)',  border:'rgba(0,196,140,0.55)'  },
+    { label:'📈 Quiet Rising: Low Volume',       x:x0, y:y0,  w:PL+GW-x0, h:PT+GH-y0, bg:'rgba(255,140,66,0.15)', border:'rgba(255,140,66,0.50)' },
     { label:'Quiet Falling',                x:PL, y:y0,  w:x0-PL,    h:PT+GH-y0, bg:'rgba(74,158,255,0.13)', border:'rgba(74,158,255,0.45)' },
   ]
 
@@ -605,7 +605,7 @@ export default function Heatmap({ onNavigate }) {
       <BubbleScatter data={momentumData} mPeriod={mPeriod} setMPeriod={setMPeriod} onNavigate={onNavigate} />
 
       <style>{`
-        /* ⑥ PC版：Hotーン説明を横並び4列 */
+        /* Zone labels (4 columns) */
         .scatter-zone-desc {
           display: grid;
           grid-template-columns: repeat(4, 1fr);

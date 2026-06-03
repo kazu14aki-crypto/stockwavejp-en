@@ -104,8 +104,8 @@ function genThemeComment(themes, summary, period, momentum) {
   const volSurge = themes.filter(t => (t.volume_chg || 0) >= 30).map(t => t.theme)
 
   // Momentum（加速・失速）
-  const accel = momentum?.filter(t => t.state?.includes('加速') || t.state?.includes('Accel')).map(t => t.theme) || []
-  const decel = momentum?.filter(t => t.state?.includes('失速') || t.state?.includes('Stall')).map(t => t.theme) || []
+  const accel = momentum?.filter(t => t.state?.includes('加速') || t.state?.includes('Accel') || t.state?.includes('Accelerating')).map(t => t.theme) || []
+  const decel = momentum?.filter(t => t.state?.includes('失速') || t.state?.includes('Stall') || t.state?.includes('Stalling')).map(t => t.theme) || []
 
   const lines = []
 
@@ -341,7 +341,7 @@ function BubbleScatterMini({ onNavigate }) {
           <line x1={PL} y1={y0} x2={PL+GW} y2={y0} stroke="rgba(255,255,255,0.3)" strokeWidth="1.2" strokeDasharray="5,3"/>
           <text x={x0+6} y={PT+14} fontSize="10" fill="rgba(255,83,112,0.8)" fontWeight="700">🔥 注目</text>
           <text x={PL+6} y={PT+14} fontSize="10" fill="rgba(0,196,140,0.75)" fontWeight="700">⚠️ 売圧</text>
-          <text x={x0+6} y={PT+GH-6} fontSize="10" fill="rgba(255,140,66,0.7)">📈 静Rising</text>
+          <text x={x0+6} y={PT+GH-6} fontSize="10" fill="rgba(255,140,66,0.7)">📈 Quiet↑</text>
           <text x={PL+6} y={PT+GH-6} fontSize="10" fill="rgba(74,158,255,0.65)">❄️ 静Falling</text>
           {/* バブル（ホバー以外） */}
           {filtered.filter(d=>d.theme!==hovered?.theme).map(d=>{
@@ -1004,7 +1004,7 @@ function MonthlyVolChart({ volTrendData, allThemeNames, months }) {
   const xS = i => PL + (i / Math.max(dispMonths.length-1, 1)) * GW
 
   // ③ 5億刻みでY軸目盛りを生成
-  const OKU5 = 5e8  // 5億
+  const OKU5 = 5e8
   const volStep = maxV < 5e9 ? OKU5 : maxV < 5e10 ? 5e9 : 5e10
   const nVolTicks = Math.ceil(maxV / volStep)
   const volAxisMax = nVolTicks * volStep
@@ -1111,7 +1111,7 @@ function MonthlyTVChart({ volTrendData, allThemeNames, months }) {
   const xS = i => PL + (i / Math.max(dispMonths.length-1, 1)) * GW
 
   // ③ 5兆刻みでY軸目盛りを生成（Trade Valueは大きい値）
-  const CHO5 = 5e12  // 5兆
+  const CHO5 = 5e12
   const tvStep = maxV < 5e11 ? 5e10 : maxV < 5e12 ? 5e11 : CHO5
   const nTvTicks = Math.ceil(maxV / tvStep)
   const tvAxisMax = nTvTicks * tvStep
@@ -1200,12 +1200,12 @@ export default function ThemeList({ onNavigate }) {
       .catch(() => {})
   }, [])
   const { themes: customThemes } = useCustomThemes()
-  const { data: macroRaw } = useMacro('1mo')  // 指数参照は1mo固定
+  const { data: macroRaw } = useMacro('1mo')  
   const { data: momentumData } = useMomentum(period)
   const macro = macroRaw?.data || {}
   // 1321・1306の直近Returnを取得
   const get1321pct = () => {
-    const arr = macro['国内主要株(1321)'] || []
+    const arr = macro['国内主要株(1321)'] || macro['Nikkei225ETF(1321)'] || []
     if (arr.length < 2) return null
     const last = arr[arr.length - 1]
     return last?.pct ?? null

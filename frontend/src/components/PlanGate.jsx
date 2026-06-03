@@ -10,9 +10,9 @@ import { useAuth }         from '../hooks/useAuth.jsx'
 import { useSubscription } from '../hooks/useSubscription.jsx'
 
 const FEATURE_LABELS = {
-  institutional:      { name:'機関投資家大量保有情報', requiredPlan:'プロ', requiredKey:'pro' },
-  weekly_archive:     { name:'週次レポートアーカイブ',  requiredPlan:'スタンダード以上', requiredKey:'standard' },
-  custom_theme_ai:    { name:'カスタムテーマAI分析',  requiredPlan:'プロ', requiredKey:'pro' },
+  institutional:      { name:'Institutional Holdings', requiredPlan:'Pro', requiredKey:'pro' },
+  weekly_archive:     { name:'Weekly Report Archive',   requiredPlan:'Standard or above', requiredKey:'standard' },
+  custom_theme_ai:    { name:'Custom Theme AI Analysis', requiredPlan:'Pro', requiredKey:'pro' },
 }
 
 export default function PlanGate({ feature, children, onNavigate }) {
@@ -22,7 +22,7 @@ export default function PlanGate({ feature, children, onNavigate }) {
   // アクセス可能なら素通し
   if (canAccess(feature)) return children
 
-  const info = FEATURE_LABELS[feature] || { name:'この機能', requiredPlan:'上位プラン' }
+  const info = FEATURE_LABELS[feature] || { name:'This feature', requiredPlan:'a higher plan' }
 
   return (
     <div style={{ padding:'40px 24px', textAlign:'center', maxWidth:'500px', margin:'0 auto' }}>
@@ -31,7 +31,7 @@ export default function PlanGate({ feature, children, onNavigate }) {
         {info.name}
       </h2>
       <p style={{ fontSize:'13px', color:'var(--text3)', lineHeight:1.8, marginBottom:'24px' }}>
-        この機能は<strong style={{ color:'var(--accent)' }}>{info.requiredPlan}</strong>でのみご利用いただけます。
+        This feature is available on <strong style={{ color:'var(--accent)' }}>{info.requiredPlan}</strong> only.用いただけます。
         {!isLoggedIn && <>\nご利用には<strong>Googleログイン</strong>が必要です。</>}
       </p>
       {!isLoggedIn ? (
@@ -44,7 +44,7 @@ export default function PlanGate({ feature, children, onNavigate }) {
           🔑 Googleでログイン
         </button>
       ) : (
-        <button onClick={() => onNavigate?.('プラン・料金')} style={{
+        <button onClick={() => onNavigate?.('Plan & Pricing')} style={{
           padding:'12px 28px', background:'var(--accent)', color:'#fff',
           border:'none', borderRadius:'10px', cursor:'pointer',
           fontFamily:'var(--font)', fontSize:'14px', fontWeight:700,
@@ -53,7 +53,7 @@ export default function PlanGate({ feature, children, onNavigate }) {
           💰 プランをアップグレード
         </button>
       )}
-      <button onClick={() => onNavigate?.('プラン・料金')} style={{
+      <button onClick={() => onNavigate?.('Plan & Pricing')} style={{
         background:'none', border:'none', color:'var(--text3)', cursor:'pointer',
         fontFamily:'var(--font)', fontSize:'12px', textDecoration:'underline',
       }}>

@@ -254,7 +254,7 @@ export default function Column({ initialArticleId = null, onNavigate }) {
   ]
   const _base = activeCat === 'All'
     ? COLUMNS
-    : activeCat === 'テーマ'
+    : activeCat === 'Theme'
     ? COLUMNS.filter(c => THEME_CATS.includes(c.category))
     : COLUMNS.filter(c => c.category === activeCat)
 
@@ -286,7 +286,7 @@ export default function Column({ initialArticleId = null, onNavigate }) {
           fontSize:'13px', cursor:'pointer', fontFamily:'var(--font)',
           padding:'0', marginBottom:'20px',
         }}>
-          ← コラム一覧に戻る
+          ← Back to Column List
         </button>
         <span style={{ fontSize:'11px', fontWeight:600, padding:'3px 10px', borderRadius:'20px',
           background:cat.bg, color:cat.color, border:`1px solid ${cat.border}`,
@@ -305,8 +305,8 @@ export default function Column({ initialArticleId = null, onNavigate }) {
         </div>
         <div style={{ background:'rgba(255,140,66,0.07)', border:'1px solid rgba(255,140,66,0.2)',
           borderRadius:'8px', padding:'14px 18px', fontSize:'12px', color:'#e8f0ff', lineHeight:1.8 }}>
-          ⚠️ 本コラムは情報提供を目的としており、特定の銘柄・投資方法を推奨するものではありません。
-          実際の投資判断はご自身の責任において行ってください。
+          ⚠️ This column is for informational purposes only and does not recommend any specific stock or investment method.
+          All investment decisions are your sole responsibility.
         </div>
 
         {/* ⑤ 関連テーマセクション（col.themesフィールドベース） */}
@@ -439,7 +439,7 @@ export default function Column({ initialArticleId = null, onNavigate }) {
             onMouseEnter={e => { e.currentTarget.style.borderColor='var(--accent)'; e.currentTarget.style.color='var(--accent)' }}
             onMouseLeave={e => { e.currentTarget.style.borderColor='var(--border)'; e.currentTarget.style.color='var(--text2)' }}
           >
-            ← コラム一覧に戻る
+            ← Back to Column List
           </button>
         </div>
       </div>
@@ -452,14 +452,14 @@ export default function Column({ initialArticleId = null, onNavigate }) {
         Column
       </h1>
       <p style={{ fontSize:'13px', color:'var(--text3)', marginBottom:'24px' }}>
-        テーマ株投資の基礎から各テーマの詳細解説まで、投資判断に役立つ情報を提供します。
+        From the basics of theme investing to detailed analysis of each theme — useful information for your investment decisions.
       </p>
 
       {/* キーワード・テーマ検索 */}
       <div style={{ position:'relative', marginBottom:'12px', maxWidth:'400px' }}>
         <input
           type="text"
-          placeholder="キーワード・Theme Nameで検索..."
+          placeholder="Search by keyword or theme name..."
           value={searchQuery}
           onChange={e => { setSearchQuery(e.target.value); setPage(1) }}
           style={{
@@ -497,7 +497,7 @@ export default function Column({ initialArticleId = null, onNavigate }) {
       {/* ページ情報 */}
       {filtered.length > 0 && (
         <div style={{ fontSize:'12px', color:'var(--text3)', marginBottom:'12px' }}>
-          {filtered.length}件中 {(page-1)*ITEMS_PER_PAGE+1}〜{Math.min(page*ITEMS_PER_PAGE, filtered.length)}件表示
+          {filtered.length} results — showing {(page-1)*ITEMS_PER_PAGE+1}–{Math.min(page*ITEMS_PER_PAGE, filtered.length)}
         </div>
       )}
 
