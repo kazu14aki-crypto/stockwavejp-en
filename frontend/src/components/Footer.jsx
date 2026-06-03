@@ -22,8 +22,8 @@ export default function Footer() {
             <span style={{ color: '#e63030' }}>Stock</span>WaveJP
           </div>
           <div style={{ lineHeight: 1.7 }}>
-            日本株テーマ別投資情報サービス。掲載情報は情報提供を目的とし、
-            投資助言・推奨を行うものではありません。
+            Japanese Stock Theme Investment Information Service. For informational purposes only.
+            Not investment advice or recommendations.
           </div>
         </div>
 
@@ -49,11 +49,11 @@ export default function Footer() {
           <div>
             <div style={{ fontWeight: 600, color: 'var(--text2)', marginBottom: '8px', fontSize: '11px' }}>メニュー</div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
-              <a href="/#/" onClick={e => { e.preventDefault(); window.dispatchEvent(new CustomEvent('navigate', { detail: 'Home' })) }}
+              <a href="/#/" onClick={e => { e.preventDefault(); window.dispatchEvent(new CustomEvent('navigate', { detail: 'ホーム' })) }}
                 style={{ color: 'var(--text3)', textDecoration: 'none', cursor: 'pointer' }}
                 onMouseEnter={e => e.target.style.color = 'var(--accent)'}
                 onMouseLeave={e => e.target.style.color = 'var(--text3)'}>
-                Home
+                ホーム
               </a>
               <a href="/#/themes" onClick={e => { e.preventDefault(); window.dispatchEvent(new CustomEvent('navigate', { detail: 'Theme List' })) }}
                 style={{ color: 'var(--text3)', textDecoration: 'none', cursor: 'pointer' }}
@@ -80,7 +80,7 @@ export default function Footer() {
       }}>
         <span>© 2026 StockWaveJP. All rights reserved.</span>
         <span style={{ color: 'var(--text3)' }}>
-          ※ 本サービスの情報はNot financial advice。投資は自己責任で行ってください。
+          ※ 本サービスの情報は投資助言ではありません。投資は自己責任で行ってください。
         </span>
       </div>
     </footer>

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { useThemeNames, useTrends, useMacro } from '../../hooks/useMarketData.js'
+import { useThemeNames, useTrends, useMacro } from '../../hooks/useMarketData'
 
 const API = import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000'
 const PERIODS = [
@@ -24,7 +24,7 @@ function Loading() {
           animation: `pulse 1.2s ease-in-out ${d}s infinite`,
         }} />
       ))}
-      <div style={{ marginTop: '12px', fontSize: '12px' }}>Loading......</div>
+      <div style={{ marginTop: '12px', fontSize: '12px' }}>データ取得中...</div>
     </div>
   )
 }
@@ -32,7 +32,7 @@ function Loading() {
 function MultiLineChart({ trends, selected }) {
   if (!selected.length) return (
     <div style={{ textAlign: 'center', padding: '40px', color: 'var(--text3)', fontSize: '13px' }}>
-      テーマを1つ以上選択してください
+      Please select at least one theme
     </div>
   )
 
@@ -122,7 +122,7 @@ export default function Compare() {
   const [selThemes,  setSelThemes]  = useState([])
   const [themeTrends, setThemeTrends] = useState({})
   const [macroData,  setMacroData]  = useState({})
-  const [selMacro,   setSelMacro]   = useState(['国内株(ETF)', '米国株(ETF)', 'ドル円'])
+  const [selMacro,   setSelMacro]   = useState(['Domestic (ETF)', 'US Stocks (ETF)', 'USD/JPY'])
   const [loadingT,   setLoadingT]   = useState(false)
   const [loadingM,   setLoadingM]   = useState(false)
 
@@ -162,10 +162,10 @@ export default function Compare() {
   return (
     <div style={{ padding: '28px 32px 48px' }}>
       <h1 style={{ fontSize: '24px', fontWeight: 700, letterSpacing: '-0.02em', color: '#e8f0ff', marginBottom: '4px' }}>
-        テーマ・マクロ比較
+        Theme & Macro Comparison
       </h1>
       <p style={{ fontSize: '12px', color: 'var(--text3)', marginBottom: '20px' }}>
-        テーマReturnの比較 ＋ マクロ指標との対比
+        テーマPrice Change %の比較 ＋ マクロ指標との対比
       </p>
 
       {/* 期間選択 */}
@@ -175,7 +175,7 @@ export default function Compare() {
 
       {/* テーマ比較 */}
       <div style={sHead}>
-        <span style={sTitle}>テーマ比較</span>
+        <span style={sTitle}>Theme Comparison</span>
         <div style={sLine} />
       </div>
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginBottom: '16px' }}>
@@ -195,7 +195,7 @@ export default function Compare() {
 
       {/* マクロ比較 */}
       <div style={{ ...sHead, marginTop: '32px' }}>
-        <span style={sTitle}>マクロ比較</span>
+        <span style={sTitle}>Macro Comparison</span>
         <div style={sLine} />
       </div>
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginBottom: '16px' }}>

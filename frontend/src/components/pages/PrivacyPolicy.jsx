@@ -1,26 +1,51 @@
 export default function PrivacyPolicy() {
-  const s={padding:'32px 28px 60px',maxWidth:'780px',margin:'0 auto',lineHeight:1.9,fontSize:'13px',color:'var(--text2)'}
-  const h1={fontSize:'22px',fontWeight:700,color:'var(--text)',marginBottom:'8px'}
-  const h2={fontSize:'14px',fontWeight:700,color:'var(--text)',margin:'24px 0 8px',paddingBottom:'6px',borderBottom:'1px solid var(--border)'}
-  const p={marginBottom:'12px'}
+  const items = [
+    {
+      title: '1. Basic Policy',
+      body: `StockWaveJP values the protection of user personal information and complies with applicable privacy laws. By using this service, you agree to the terms of this Privacy Policy.`,
+    },
+    {
+      title: '2. Information We Collect',
+      body: `We collect the following information:\n\n[Automatically collected]\n• Access logs (IP address, browser type/version, OS, referrer URL, access date/time)\n• Usage data via cookies and similar technologies\n• Page views, session duration, and behavior flow via Google Analytics\n\n[Voluntarily provided]\n• Email address and display name via Google account authentication (when using Custom Theme)\n• Custom theme names and constituent stock data (stored in browser localStorage or Supabase)\n\n[Not collected]\n• Credit card numbers or bank account information\n• Names, addresses, or phone numbers (except email from Google login)`,
+    },
+    {
+      title: '3. Use of Information',
+      body: `Collected information is used for the following purposes:\n• Providing, operating, and improving this service\n• User authentication and Custom Theme feature\n• Service usage analysis and statistics (Google Analytics)`,
+    },
+    {
+      title: '4. Cookies',
+      body: `This site uses cookies to improve user experience and analyze usage. Google Analytics uses cookies to collect traffic data. You can disable cookies in your browser settings, though some features may not function correctly.`,
+    },
+    {
+      title: '5. Third-Party Services',
+      body: `This site uses the following third-party services:\n• Google Analytics (usage analysis)\n• Google Firebase Authentication (user login)\n• Supabase (data storage)\n• Stripe (payment processing)\nPlease refer to each service\'s privacy policy for details.`,
+    },
+    {
+      title: '6. Disclaimer',
+      body: `Information on this site is prepared based on sources believed to be reliable, but we do not guarantee its accuracy or completeness. We are not liable for any damages arising from the use of this site.`,
+    },
+    {
+      title: '7. Changes to This Policy',
+      body: `The content of this policy may be changed without notice due to changes in laws or other circumstances. Updated policies take effect when posted on this page.`,
+    },
+    {
+      title: '8. Contact',
+      body: `For inquiries about this Privacy Policy, please contact us via X (formerly Twitter) DM (@StockWaveJP) or the contact form on this site.`,
+    },
+  ]
   return (
-    <div style={s}>
-      <h1 style={h1}>Privacy Policy</h1>
-      <p style={{...p,fontSize:'12px',color:'var(--text3)'}}>Last updated: May 2026</p>
-      <h2 style={h2}>Information We Collect</h2>
-      <p style={p}><strong>Account:</strong> Google OAuth provides your email, name, and profile photo. We never receive your Google password.</p>
-      <p style={p}><strong>Usage Data:</strong> Anonymized analytics to improve the service.</p>
-      <p style={p}><strong>Custom Themes:</strong> Stored in our database (Supabase) when you are signed in.</p>
-      <h2 style={h2}>How We Use It</h2>
-      <p style={p}>To provide and improve the service, manage subscriptions, and prevent abuse.</p>
-      <h2 style={h2}>Third-Party Services</h2>
-      <p style={p}>Google OAuth (auth), Supabase (database), Stripe (payments), GitHub Pages (hosting), Render.com (API), Infoway (market data). Each has its own privacy policy.</p>
-      <h2 style={h2}>Data Retention</h2>
-      <p style={p}>Your data is retained while your account is active. You may request deletion by contacting us.</p>
-      <h2 style={h2}>Cookies</h2>
-      <p style={p}>Essential cookies only (auth/session). No advertising cookies. We do not sell your data.</p>
-      <h2 style={h2}>Contact</h2>
-      <p style={p}><a href="mailto:stockwavejp26@gmail.com" style={{color:'var(--accent)'}}>stockwavejp26@gmail.com</a></p>
+    <div style={{ padding: '24px 28px 60px', maxWidth: '760px', margin: '0 auto' }}>
+      <h1 style={{ fontSize: '20px', fontWeight: 700, color: '#e8f0ff', marginBottom: '4px' }}>Privacy Policy</h1>
+      <p style={{ fontSize: '12px', color: 'var(--text3)', marginBottom: '24px' }}>Last updated: April 2026</p>
+      {items.map((item, i) => (
+        <div key={i} style={{
+          background: 'var(--bg2)', border: '1px solid var(--border)',
+          borderRadius: '8px', padding: '18px 22px', marginBottom: '12px'
+        }}>
+          <h2 style={{ fontSize: '14px', fontWeight: 700, color: 'var(--text)', marginBottom: '8px' }}>{item.title}</h2>
+          <p style={{ fontSize: '13px', color: 'var(--text2)', lineHeight: 1.8, whiteSpace: 'pre-wrap' }}>{item.body}</p>
+        </div>
+      ))}
     </div>
   )
 }

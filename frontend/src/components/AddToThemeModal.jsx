@@ -1,9 +1,9 @@
 /**
- * AddToThemeModal — 銘柄をAdd to Custom Themeするミニモーダル
+ * AddToThemeModal — 銘柄をCustom Themeに追加するミニモーダル
  * ThemeDetail・MarketRankの銘柄テーブル各行から呼び出す
  */
 import { useState } from 'react'
-import { useCustomThemes } from '../hooks/useCustomThemes.js'
+import { useCustomThemes } from '../hooks/useCustomThemes'
 
 export default function AddToThemeModal({ stock, onClose }) {
   const { themes, addStockToTheme, createThemeWithStock } = useCustomThemes()
@@ -14,7 +14,7 @@ export default function AddToThemeModal({ stock, onClose }) {
 
   const handleAdd = (idx) => {
     addStockToTheme(idx, stock)
-    setMsg(`「${themes[idx].name}」にAddしました`)
+    setMsg(`Added to '${themes[idx].name}'`)
     setDone(true)
     setTimeout(onClose, 1200)
   }
@@ -22,7 +22,7 @@ export default function AddToThemeModal({ stock, onClose }) {
   const handleCreate = () => {
     if (!newName.trim()) return
     createThemeWithStock(newName.trim(), stock)
-    setMsg(`「${newName.trim()}」を作成してAddしました`)
+    setMsg(`Created '${newName.trim()}' and added`)
     setDone(true)
     setTimeout(onClose, 1200)
   }
@@ -45,7 +45,7 @@ export default function AddToThemeModal({ stock, onClose }) {
         <div style={{ display:'flex', alignItems:'flex-start', justifyContent:'space-between', marginBottom:'14px' }}>
           <div>
             <div style={{ fontSize:'13px', fontWeight:700, color:'var(--text)', marginBottom:'2px' }}>
-              Add to Custom Theme
+              Custom Themeに追加
             </div>
             <div style={{ fontSize:'11px', color:'var(--text3)' }}>
               {stock.ticker.replace('.T','')} · {stock.name}
@@ -66,7 +66,7 @@ export default function AddToThemeModal({ stock, onClose }) {
           <>
             {/* タブ */}
             <div style={{ display:'flex', gap:'4px', marginBottom:'14px' }}>
-              {[['select','既存テーマへAdd'],['create','新規Create Theme']].map(([k,l]) => (
+              {[['select','Add to existing theme'],['create','Create new theme']].map(([k,l]) => (
                 <button key={k} onClick={() => setMode(k)} style={{
                   flex:1, padding:'6px', borderRadius:'6px', fontSize:'11px',
                   fontWeight:600, cursor:'pointer', fontFamily:'var(--font)',
@@ -80,7 +80,7 @@ export default function AddToThemeModal({ stock, onClose }) {
             {mode === 'select' ? (
               themes.length === 0 ? (
                 <div style={{ textAlign:'center', padding:'16px', fontSize:'12px', color:'var(--text3)' }}>
-                  Custom Themeがありません。<br/>「新規Create Theme」からAddできます。
+                  No Custom Themes yet.<br/>Create one with 'Create new theme'.
                 </div>
               ) : (
                 <div style={{ display:'flex', flexDirection:'column', gap:'5px', maxHeight:'200px', overflowY:'auto' }}>
@@ -98,7 +98,7 @@ export default function AddToThemeModal({ stock, onClose }) {
                         onMouseLeave={e => (e.currentTarget.style.borderColor='var(--border)')}>
                         <span style={{ fontSize:'13px', fontWeight:600, color:'var(--text)' }}>{t.name}</span>
                         <span style={{ fontSize:'10px', color: alreadyIn ? 'var(--text3)' : 'var(--accent)', fontWeight:600 }}>
-                          {alreadyIn ? 'Add済み' : `＋ Add（${(t.stocks||[]).length}銘柄）`}
+                          {alreadyIn ? 'Already added' : `+ Add (${(t.stocks||[]).length} stocks)`}
                         </span>
                       </button>
                     )
@@ -108,14 +108,14 @@ export default function AddToThemeModal({ stock, onClose }) {
             ) : (
               <div>
                 <div style={{ fontSize:'11px', color:'var(--text3)', marginBottom:'6px' }}>
-                  新しいTheme Name
+                  新しいテーマ名
                 </div>
                 <div style={{ display:'flex', gap:'6px' }}>
                   <input
                     value={newName}
                     onChange={e => setNewName(e.target.value)}
                     onKeyDown={e => e.key === 'Enter' && handleCreate()}
-                    placeholder="例：注目銘柄、マイポートフォリオ"
+                    placeholder="e.g. Watchlist, My Portfolio"
                     autoFocus
                     style={{
                       flex:1, background:'var(--bg3)', color:'var(--text)',
@@ -129,7 +129,7 @@ export default function AddToThemeModal({ stock, onClose }) {
                     background:'rgba(74,158,255,0.15)', color:'var(--accent)',
                     border:'1px solid rgba(74,158,255,0.3)',
                     opacity: newName.trim() ? 1 : 0.4,
-                  }}>作成</button>
+                  }}>Create</button>
                 </div>
               </div>
             )}

@@ -48,7 +48,7 @@ function Loading() {
           animation: `pulse 1.2s ease-in-out ${d}s infinite`,
         }} />
       ))}
-      <div style={{ marginTop: '12px', fontSize: '12px' }}>Loading......</div>
+      <div style={{ marginTop: '12px', fontSize: '12px' }}>データ取得中...</div>
     </div>
   )
 }
@@ -67,7 +67,7 @@ export default function FundFlow() {
         const json = await res.json()
         setData(json)
       } catch {
-        setError('データ取得に失敗しました')
+        setError('Failed to fetch data')
       } finally {
         setLoading(false)
       }
@@ -81,10 +81,10 @@ export default function FundFlow() {
   return (
     <div style={{ padding: '28px 32px 48px' }}>
       <h1 style={{ fontSize: '24px', fontWeight: 700, letterSpacing: '-0.02em', color: '#e8f0ff', marginBottom: '4px' }}>
-        資金フロー
+        Capital Flow
       </h1>
       <p style={{ fontSize: '12px', color: 'var(--text3)', marginBottom: '20px' }}>
-        Risingテーマ vs Fallingテーマの騰落幅を比較。どのテーマに資金が集まっているか把握できます。
+        上昇テーマ vs 下落テーマの騰落幅を比較。どのテーマに資金が集まっているか把握できます。
       </p>
 
       <select value={period} onChange={e => setPeriod(e.target.value)} style={selStyle}>
@@ -99,23 +99,23 @@ export default function FundFlow() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px', marginTop: '24px' }} className="flow-grid">
             <div>
               <div style={sectionHead}>
-                <span style={sectionTitle}>🔥 資金流入 TOP10</span>
+                <span style={sectionTitle}>🔥 Inflow TOP10</span>
                 <div style={sectionLine} />
               </div>
               <HBarChart items={data?.gainers ?? []} color="var(--red)" maxAbs={maxAbs} />
             </div>
             <div>
               <div style={sectionHead}>
-                <span style={sectionTitle}>❄️ 資金流出 TOP10</span>
+                <span style={sectionTitle}>❄️ Outflow TOP10</span>
                 <div style={sectionLine} />
               </div>
               <HBarChart items={data?.losers ?? []} color="var(--green)" maxAbs={maxAbs} />
             </div>
           </div>
 
-          {/* All Themes */}
+          {/* 全テーマ */}
           <div style={sectionHead}>
-            <span style={sectionTitle}>All Themes Return一覧</span>
+            <span style={sectionTitle}>全テーマ Price Change %一覧</span>
             <div style={sectionLine} />
           </div>
           <HBarChart items={allItems} color={undefined} maxAbs={maxAbs} />

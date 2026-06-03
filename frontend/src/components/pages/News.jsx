@@ -1,51 +1,119 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
+// 手動更新のお知らせリスト（新しい順）
 const MANUAL_NEWS = [
-  { date:'2026/05/29', title:'MLCC Theme Added + Murata & MLCC Column Articles Published', body:'New MLCC/Electronic Components theme (14 stocks incl. Murata 6981, TDK 6762, Taiyo Yuden 6976). Two in-depth English columns published: Murata Manufacturing analysis and MLCC industry overview.' },
-  { date:'2026/05/29', title:'Weekly Report (May 25-29) Published', body:'MLCC/Electronic Components theme led all themes (+9.4%). Defense & Aerospace continued its 3-week winning streak. Avg theme change: +0.82%.' },
-  { date:'2026/05/22', title:'Weekly Report (May 18-22) Published', body:'Defense & Aerospace topped again (+8.1%). Cyber Security and Next-Gen Semiconductor also strong. Avg theme change: +1.24%.' },
-  { date:'2026/05/19', title:'Institutional Holdings Page Added', body:'New page showing major shareholders (5%+ ownership) from EDINET filings. Searchable by stock ticker or institution name. Pro plan only.' },
-  { date:'2026/05/18', title:'Pricing Plans Launched — 30-Day Pro Trial for New Users', body:'Pricing page is now live. Standard ($20/mo) and Pro ($30/mo) plans coming soon. All new users automatically receive a free 30-day Pro trial upon first login.' },
-  { date:'2026/05/15', title:'Weekly Report (May 11-15) Published', body:'Defense & Aerospace (+8.6%) led for the second consecutive week. Semiconductor equipment also surged.' },
-  { date:'2026/05/08', title:'Weekly Report (May 4-8) Published', body:'Post-Golden Week surge. Semiconductor equipment (+12.4%) led all themes. Defense-related and optical communication themes also rose sharply.' },
-  { date:'2026/03/14', title:'StockWaveJP English Version Launched', body:'StockWaveJP is now available in English. Track 67+ Japanese stock themes in real-time.' },
+  { date:'2026/05/29', title:'Weekly Report（5/25〜5/29）公開・MLCCテーマ追加', body:'MLCC・電子部品テーマを新設し、村田製作所の時価総額14兆円突破を受けてMLCC関連銘柄が急騰した5/25〜5/29週のレポートを公開しました。テーマ平均+0.82%。' },
+  { date:'2026/05/22', title:'Weekly Report（5/18〜5/22）公開・防衛3週連続首位', body:'防衛・航空（+8.1%）が3週連続で首位。宇宙・衛星・サイバーセキュリティも上昇継続。来週は日銀金融政策決定会合（5/28〜29）に注目。テーマ平均Price Change %+1.24%。' },
+  { date:'2026/04/01', title:'Added 8 columns & improved descriptions', body:'各ページに説明文とポイントを追加しました。コラムページに親子上場・バフェット銘柄・フィジカルAI・パワー半導体・NISA・光通信・国土強靭化・中東情勢の8本を追加。全20本となりました。' },
+  { date:'2026/03/31', title:'Custom Theme feature enhanced', body:'Googleログインによるマルチデバイス同期に対応しました。Theme List・Theme DetailからCustom Themeへの追加ボタンも設置されています。' },
+  { date:'2026/03/28', title:'Renamed Market Ranking page', body:'より内容を正確に表す「Market Ranking」に名称を変更しました。また1日・1週間・1ヶ月など期間選択のデフォルトを1日表示に変更しました。' },
+  { date:'2026/03/14', title:'React version released', body:'StockWaveJP がReact+FastAPIに移行しました。デザイン・モバイル対応が大幅に改善されています。' },
+  { date:'2026/03/01', title:'Volume・Trading Valueランキング追加', body:'Theme ListページにVolume・Trading Valueのランキンググラフを追加しました。' },
+  { date:'2026/02/15', title:'Price Momentum機能追加', body:'先週比・先月比の変化から「加速・失速・転換」テーマを一目で把握できるPrice Momentumページを追加しました。' },
 ]
 
-export default function News({ onNavigate }) {
-  const [expanded, setExpanded] = useState(null)
+const DATA_URL = '/data/market.json'
+
+export default function News() {
+  const [actions, setActions] = useState([])
+
+  // market.jsonから銘柄アクション（分割・廃止等）を取得
+  useEffect(() => {
+    fetch(`${DATA_URL}?t=${Date.now()}`)
+      .then(r => r.json())
+      .then(json => {
+        const acts = json.corporate_actions || []
+        setActions(acts)
+      })
+      .catch(() => {})
+  }, [])
+
+  // 最新日付を特定（NEWバッジ用）
+  const allDates = MANUAL_NEWS.map(n => n.date)
+  const latestDate = allDates.length > 0 ? allDates.reduce((a,b) => a > b ? a : b) : null
 
   return (
-    <div style={{ padding:'16px 16px 60px', maxWidth:'860px', margin:'0 auto' }}>
-      <h1 style={{ fontSize:'22px', fontWeight:700, color:'var(--text)', marginBottom:'6px' }}>📣 News & Updates</h1>
-      <p style={{ fontSize:'12px', color:'var(--text3)', marginBottom:'20px' }}>Latest updates and announcements from StockWaveJP.</p>
+    <div style={{ padding:'28px 32px 48px' }}>
+      <h1 style={{ fontSize:'24px', fontWeight:700, letterSpacing:'-0.02em', color:'#e8f0ff', marginBottom:'4px' }}>
+        お知らせ
+      </h1>
+      <p style={{ fontSize:'12px', color:'var(--text3)', marginBottom:'28px' }}>
+        StockWaveJPの機能追加・変更・修正情報
+      </p>
 
-      <div style={{ display:'flex', flexDirection:'column', gap:'10px' }}>
-        {MANUAL_NEWS.map((n, i) => (
-          <div key={i} onClick={() => setExpanded(expanded === i ? null : i)}
-            style={{ background:'var(--bg2)', border:'1px solid var(--border)', borderRadius:'10px',
-              padding:'14px 16px', cursor:'pointer',
-              borderLeft: i === 0 ? '3px solid var(--accent)' : '3px solid transparent' }}>
-            <div style={{ display:'flex', alignItems:'center', gap:'10px', marginBottom:'6px', flexWrap:'wrap' }}>
-              <span style={{ fontSize:'11px', color:'var(--text3)', fontFamily:'var(--mono)' }}>{n.date}</span>
-              {i === 0 && (
-                <span style={{ fontSize:'10px', fontWeight:700, padding:'2px 8px', borderRadius:'10px',
-                  background:'rgba(74,158,255,0.15)', color:'var(--accent)', border:'1px solid rgba(74,158,255,0.3)' }}>
-                  NEW
-                </span>
-              )}
-            </div>
-            <div style={{ fontSize:'13px', fontWeight:600, color:'var(--text)', marginBottom: expanded === i ? '10px' : 0 }}>
-              {n.title}
-            </div>
-            {expanded === i && n.body && (
-              <div style={{ fontSize:'12px', color:'var(--text2)', lineHeight:1.7, marginTop:'8px',
-                paddingTop:'8px', borderTop:'1px solid var(--border)' }}>
-                {n.body}
+      {/* 銘柄アクション（自動取得） */}
+      {actions.length > 0 && (
+        <div style={{ marginBottom:'24px' }}>
+          <div style={{ fontSize:'12px', fontWeight:700, color:'var(--text2)',
+            letterSpacing:'0.06em', textTransform:'uppercase',
+            marginBottom:'10px', display:'flex', alignItems:'center', gap:'8px' }}>
+            <span>📢 銘柄アクション情報</span>
+            <div style={{ flex:1, height:'1px', background:'var(--border)' }}/>
+          </div>
+          {actions.map((a, i) => (
+            <div key={i} style={{
+              background:'rgba(255,214,25,0.06)', border:'1px solid rgba(255,214,25,0.2)',
+              borderRadius:'8px', padding:'12px 16px', marginBottom:'8px',
+              display:'flex', alignItems:'flex-start', gap:'12px',
+            }}>
+              <span style={{ fontSize:'10px', fontWeight:700, padding:'2px 8px', borderRadius:'20px',
+                background:'rgba(255,214,25,0.15)', color:'#ffd619',
+                border:'1px solid rgba(255,214,25,0.3)', flexShrink:0, marginTop:'1px' }}>
+                {a.type === 'split'  ? 'Stock Split' :
+                 a.type === 'merge'  ? 'Stock Merger' :
+                 a.type === 'delist' ? 'Delisted' :
+                 a.type === 'rename' ? 'Company Renamed' : 'Action'}
+              </span>
+              <div style={{ flex:1, minWidth:0 }}>
+                <div style={{ fontSize:'13px', fontWeight:600, color:'var(--text)', marginBottom:'3px' }}>
+                  {a.name}（{a.ticker?.replace('.T','')}）
+                </div>
+                <div style={{ fontSize:'12px', color:'var(--text2)', lineHeight:1.7 }}>
+                  {a.detail}
+                </div>
+                <div style={{ fontSize:'10px', color:'var(--text3)', marginTop:'4px', fontFamily:'var(--mono)' }}>
+                  確認日: {a.detected_at}
+                  {a.effective_date && ` ／ 実施予定日: ${a.effective_date}`}
+                </div>
               </div>
+            </div>
+          ))}
+        </div>
+      )}
+
+      {/* 手動お知らせ */}
+      <div style={{ fontSize:'12px', fontWeight:700, color:'var(--text2)',
+        letterSpacing:'0.06em', textTransform:'uppercase',
+        marginBottom:'10px', display:'flex', alignItems:'center', gap:'8px' }}>
+        <span>📋 更新履歴</span>
+        <div style={{ flex:1, height:'1px', background:'var(--border)' }}/>
+      </div>
+      {MANUAL_NEWS.map((n, i) => (
+        <div key={i} style={{
+          background:'var(--bg2)', border:'1px solid var(--border)',
+          borderRadius:'var(--radius)', padding:'20px 24px', marginBottom:'12px',
+          animation:`fadeUp 0.3s ease ${i*0.06}s both`,
+        }}>
+          <div style={{ display:'flex', alignItems:'center', gap:'12px', marginBottom:'8px' }}>
+            <span style={{ fontSize:'11px', color:'var(--text3)', fontFamily:'var(--mono)' }}>
+              {n.date}
+            </span>
+            {n.date === latestDate && (
+              <span style={{ fontSize:'10px', padding:'2px 8px', borderRadius:'20px',
+                background:'rgba(74,158,255,0.12)', color:'var(--accent)',
+                border:'1px solid rgba(74,158,255,0.25)', fontWeight:700 }}>
+                NEW
+              </span>
             )}
           </div>
-        ))}
-      </div>
+          <div style={{ fontSize:'15px', fontWeight:600, color:'#e8f0ff', marginBottom:'8px' }}>
+            {n.title}
+          </div>
+          <div style={{ fontSize:'13px', color:'var(--text2)', lineHeight:1.7 }}>
+            {n.body}
+          </div>
+        </div>
+      ))}
     </div>
   )
 }

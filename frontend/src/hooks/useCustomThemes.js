@@ -1,16 +1,17 @@
+import { useSubscription } from './useSubscription.jsx'
 /**
  * useCustomThemes — Custom Theme管理フック
  *
- * Sign In済み → Supabase DB にSave（マルチデバイス同期）
- * 未Sign In   → localStorage にSave（従来通り）
+ * ログイン済み → Supabase DB に保存（マルチデバイス同期）
+ * 未ログイン   → localStorage に保存（従来通り）
  *
- * 呼び出し側はSave先を意識せずに使える。
+ * 呼び出し側は保存先を意識せずに使える。
  */
 import { useState, useEffect, useCallback } from 'react'
-import { supabase } from '../lib/supabase.js'
+import { supabase } from '../lib/supabase'
 import { useAuth } from './useAuth.jsx'
 
-// ── localStorage（未Sign In時） ─────────────────
+// ── localStorage（未ログイン時） ─────────────────
 const LS_KEY = 'swjp_custom_themes_v2'
 
 function lsLoad() {
@@ -21,7 +22,7 @@ function lsSave(themes) {
   window.dispatchEvent(new CustomEvent('swjp_themes_updated'))
 }
 
-// ── Supabase CRUD（Sign In時） ───────────────────
+// ── Supabase CRUD（ログイン時） ───────────────────
 async function dbLoad(userId) {
   const { data, error } = await supabase
     .from('custom_themes')
@@ -59,12 +60,13 @@ async function dbDelete(id) {
 }
 
 // ── メインフック ──────────────────────────────────
-export function useCustomThemes({ maxThemes = 3, maxStocks = 10 } = {}) {
+export function useCustomThemes() {
+  const { maxThemes, maxStocks } = useSubscription()
   const { user, isLoggedIn } = useAuth()
   const [themes,  setThemes]  = useState([])
   const [syncing, setSyncing] = useState(false)
 
-  // テーマ読み込み（Sign In状態が変わるたびに実行）
+  // テーマ読み込み（ログイン状態が変わるたびに実行）
   useEffect(() => {
     let cancelled = false
     const load = async () => {
@@ -77,7 +79,7 @@ export function useCustomThemes({ maxThemes = 3, maxStocks = 10 } = {}) {
           if (!cancelled) setThemes(lsLoad())
         }
       } catch (e) {
-        console.error('テーマ読み込みError:', e)
+        console.error('テーマ読み込みエラー:', e)
         if (!cancelled) setThemes(lsLoad()) // フォールバック
       } finally {
         if (!cancelled) setSyncing(false)
@@ -85,7 +87,7 @@ export function useCustomThemes({ maxThemes = 3, maxStocks = 10 } = {}) {
     }
     load()
 
-    // Not logged in時はlocalStorageの変化も監視
+    // 未ログイン時はlocalStorageの変化も監視
     if (!isLoggedIn) {
       const handler = () => setThemes(lsLoad())
       window.addEventListener('swjp_themes_updated', handler)
@@ -94,13 +96,13 @@ export function useCustomThemes({ maxThemes = 3, maxStocks = 10 } = {}) {
     return () => { cancelled = true }
   }, [isLoggedIn, user?.id])
 
-  // Save theme (create/edit)
-  // MAX_THEMES is dynamically obtained from useSubscription().maxThemes
+  // テーマ保存（作成・編集）
+  // MAX_THEMES はuseSubscription().maxThemesで動的に取得
 
   const saveTheme = useCallback(async (theme, editIndex = null) => {
-    // Check limit for new additions
+    // 新規追加の場合は上限チェック
     if (editIndex === null && themes.length >= maxThemes) {
-      alert(`You've reached the theme limit for your current plan (${maxThemes}). Please delete an existing theme or upgrade your plan.`)
+      alert(`Custom Themeは現在のプランでは最大${maxThemes}つまでです。\n既存のテーマを削除するかプランをアップグレードしてください。`)
       return false
     }
     if (isLoggedIn && user) {
@@ -123,7 +125,7 @@ export function useCustomThemes({ maxThemes = 3, maxStocks = 10 } = {}) {
     return true
   }, [isLoggedIn, user, themes])
 
-  // テーマDelete
+  // テーマ削除
   const deleteTheme = useCallback(async (index) => {
     const target = themes[index]
     if (isLoggedIn && user && target?.id) {
@@ -136,7 +138,7 @@ export function useCustomThemes({ maxThemes = 3, maxStocks = 10 } = {}) {
     }
   }, [isLoggedIn, user, themes])
 
-  // 既存テーマへ銘柄Add
+  // 既存テーマへ銘柄追加
   const addStockToTheme = useCallback(async (themeIndex, stock) => {
     const target = themes[themeIndex]
     if (!target) return
@@ -145,7 +147,7 @@ export function useCustomThemes({ maxThemes = 3, maxStocks = 10 } = {}) {
     await saveTheme(updated, themeIndex)
   }, [themes, saveTheme])
 
-  // 新規Create Themeして銘柄Add
+  // 新規テーマを作成して銘柄追加
   const createThemeWithStock = useCallback(async (themeName, stock) => {
     if (!themeName.trim()) return
     await saveTheme({ name: themeName.trim(), stocks: [stock] })

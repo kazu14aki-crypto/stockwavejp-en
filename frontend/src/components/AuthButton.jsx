@@ -1,5 +1,5 @@
 /**
- * AuthButton — ヘッダー右側のLogin/ユーザーボタン
+ * AuthButton — ヘッダー右側のログイン/ユーザーボタン
  */
 import { useState } from 'react'
 import { useAuth } from '../hooks/useAuth.jsx'
@@ -16,7 +16,7 @@ export default function AuthButton() {
   if (!isLoggedIn) return (
     <button
       onClick={() => signIn()}
-      title="GoogleでLoginするとCustom Themeがどのデバイスでも同期されます"
+      title="GoogleでログインするとCustom Themeがどのデバイスでも同期されます"
       style={{
         display:'flex', alignItems:'center', gap:'6px',
         background:'rgba(74,158,255,0.1)', border:'1px solid rgba(74,158,255,0.3)',
@@ -29,11 +29,11 @@ export default function AuthButton() {
       onMouseLeave={e => e.currentTarget.style.background='rgba(74,158,255,0.1)'}
     >
       <GoogleIcon />
-      <span className="auth-btn-label">Login</span>
+      <span className="auth-btn-label">ログイン</span>
     </button>
   )
 
-  // Login済み
+  // ログイン済み
   return (
     <div style={{ position:'relative', flexShrink:0 }}>
       <button
@@ -59,7 +59,7 @@ export default function AuthButton() {
         )}
         <span className="auth-btn-label" style={{ fontSize:'12px', color:'var(--text2)',
           maxWidth:'80px', overflow:'hidden', textOverflow:'ellipsis', whiteSpace:'nowrap' }}>
-          {displayName?.split(' ')[0] || 'ユーザー'}
+          {displayName?.split(' ')[0] || 'User'}
         </span>
       </button>
 
@@ -79,7 +79,7 @@ export default function AuthButton() {
                 {displayName}
               </div>
               <div style={{ fontSize:'10px', color:'var(--text3)', marginTop:'2px' }}>
-                Custom Themeを同期中
+                Syncing Custom Themes
               </div>
             </div>
             <button onClick={() => { signOut(); setMenuOpen(false) }} style={{
@@ -91,7 +91,7 @@ export default function AuthButton() {
               onMouseEnter={e => e.currentTarget.style.background='rgba(255,83,112,0.08)'}
               onMouseLeave={e => e.currentTarget.style.background='none'}
             >
-              Logout
+              ログアウト
             </button>
           </div>
         </>

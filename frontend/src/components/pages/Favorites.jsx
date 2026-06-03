@@ -13,7 +13,7 @@ function Loading() {
           animation: `pulse 1.2s ease-in-out ${d}s infinite`,
         }} />
       ))}
-      <div style={{ marginTop: '12px', fontSize: '12px' }}>Loading......</div>
+      <div style={{ marginTop: '12px', fontSize: '12px' }}>データ取得中...</div>
     </div>
   )
 }
@@ -64,12 +64,12 @@ export default function Favorites() {
         お気に入り
       </h1>
       <p style={{ fontSize: '12px', color: 'var(--text3)', marginBottom: '20px' }}>
-        注目テーマを登録して素早くチェック
+        Add themes to your favorites for quick access
       </p>
 
       {/* テーマ選択 */}
       <div style={sHead}>
-        <span style={sTitle}>Select Theme</span>
+        <span style={sTitle}>テーマを選択</span>
         <div style={sLine} />
       </div>
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginBottom: '24px' }}>
@@ -94,12 +94,12 @@ export default function Favorites() {
           color: 'var(--text3)', fontSize: '13px',
         }}>
           <div style={{ fontSize: '32px', marginBottom: '12px' }}>⭐</div>
-          上のボタンからお気に入りテーマをAddしてください
+          Add favorite themes using the buttons above
         </div>
       ) : (
         <>
           <div style={sHead}>
-            <span style={sTitle}>お気に入りテーマ ({favorites.length}件)</span>
+            <span style={sTitle}>Favorites ({favorites.length})</span>
             <div style={sLine} />
             <select value={period} onChange={e => setPeriod(e.target.value)} style={selStyle}>
               {PERIODS.map(p => <option key={p.value} value={p.value}>{p.label}</option>)}

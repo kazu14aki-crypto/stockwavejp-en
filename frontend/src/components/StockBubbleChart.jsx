@@ -10,7 +10,7 @@ function StockBubbleChart({ stocks, themeName, onNavigate }) {
   )
   if (filtered.length === 0) return (
     <div style={{ textAlign:'center', padding:'30px', color:'var(--text3)', fontSize:'13px' }}>
-      Loading data...
+      データを読み込み中...
     </div>
   )
 
@@ -24,7 +24,7 @@ function StockBubbleChart({ stocks, themeName, onNavigate }) {
 
   const hasVol = volChgs.some(v => v !== 0)
   const yVals  = hasVol ? volChgs : filtered.map(d => d.pct * 0.5)
-  const yLabel = hasVol ? 'Volume急増率 (%)' : 'Returnの0.5倍（Volumeデータ準備中）'
+  const yLabel = hasVol ? 'Volume急増率 (%)' : 'Price Change %の0.5倍（Volumeデータ準備中）'
 
   const rawXMin = Math.min(...pcts), rawXMax = Math.max(...pcts)
   const rawYMin = Math.min(...yVals), rawYMax = Math.max(...yVals)
@@ -52,8 +52,8 @@ function StockBubbleChart({ stocks, themeName, onNavigate }) {
   const x0 = xS(0), y0 = yS(0)
   const fmtL = tv => {
     if (!tv) return '-'
-    if (tv >= 1e8) return (tv/1e8).toFixed(0) + 'B'
-    if (tv >= 1e4) return (tv/1e4).toFixed(0) + 'M'
+    if (tv >= 1e8) return (tv/1e8).toFixed(0) + '億'
+    if (tv >= 1e4) return (tv/1e4).toFixed(0) + '万'
     return tv.toLocaleString()
   }
 
@@ -68,7 +68,7 @@ function StockBubbleChart({ stocks, themeName, onNavigate }) {
   return (
     <div>
       <div style={{ fontSize:'10px', color:'var(--text3)', marginBottom:'6px' }}>
-        X軸=Return　Y軸={yLabel}　円サイズ=Trade Value　バブルをクリックで銘柄Confirm
+        X軸=Price Change %　Y軸={yLabel}　円サイズ=Trading Value　バブルをクリックで銘柄確認
       </div>
       <div style={{ width:'100%', overflowX:'auto', WebkitOverflowScrolling:'touch' }}>
         <svg viewBox={`0 0 ${W} ${H}`}
@@ -101,8 +101,8 @@ function StockBubbleChart({ stocks, themeName, onNavigate }) {
           {/* ゾーンラベル */}
           <text x={x0+6} y={PT+14} fontSize="9" fill="rgba(255,83,112,0.8)" fontWeight="700">🔥 注目</text>
           <text x={PL+4} y={PT+14} fontSize="9" fill="rgba(0,196,140,0.7)" fontWeight="700">⚠️ 売り</text>
-          <text x={x0+6} y={PT+GH-6} fontSize="9" fill="rgba(255,140,66,0.6)" fontWeight="700">📈 Rising</text>
-          <text x={PL+4} y={PT+GH-6} fontSize="9" fill="rgba(74,158,255,0.6)" fontWeight="700">❄️ Falling</text>
+          <text x={x0+6} y={PT+GH-6} fontSize="9" fill="rgba(255,140,66,0.6)" fontWeight="700">📈 上昇</text>
+          <text x={PL+4} y={PT+GH-6} fontSize="9" fill="rgba(74,158,255,0.6)" fontWeight="700">❄️ 下落</text>
 
           {/* バブル（ホバー以外） */}
           {filtered.filter(s => s.ticker !== hovered?.ticker).map(s => {
@@ -150,7 +150,7 @@ function StockBubbleChart({ stocks, themeName, onNavigate }) {
                     {(s.name||s.ticker.replace('.T','')).slice(0,16)}
                   </text>
                   <text x={tx+10} y={ty+36} fontSize="12" fill={col}>
-                    {'Return: ' + (s.pct >= 0 ? '+' : '') + (s.pct?.toFixed(2) ?? '-') + '%'}
+                    {'Price Change %: ' + (s.pct >= 0 ? '+' : '') + (s.pct?.toFixed(2) ?? '-') + '%'}
                   </text>
                   {hasVol && (
                     <text x={tx+10} y={ty+53} fontSize="12" fill={(s.volume_chg??0)>=0?'#ff8c42':'#4a9eff'}>
@@ -158,7 +158,7 @@ function StockBubbleChart({ stocks, themeName, onNavigate }) {
                     </text>
                   )}
                   <text x={tx+10} y={ty+70} fontSize="12" fill="#8b949e">
-                    {'Trade Value: ' + fmtL(s.trade_value)}
+                    {'Trading Value: ' + fmtL(s.trade_value)}
                   </text>
                 </g>
               </g>
@@ -173,7 +173,7 @@ function StockBubbleChart({ stocks, themeName, onNavigate }) {
             </text>
           ))}
           <text x={PL + GW/2} y={H-4} textAnchor="middle"
-            fontSize="10" fill="rgba(255,255,255,0.35)">← Falling　　Return　　Rising →</text>
+            fontSize="10" fill="rgba(255,255,255,0.35)">← 下落　　Price Change %　　上昇 →</text>
 
           {/* Y軸ラベル */}
           {yTicks.map(v => (
@@ -185,7 +185,7 @@ function StockBubbleChart({ stocks, themeName, onNavigate }) {
           <text x={14} y={PT + GH/2} textAnchor="middle"
             fontSize="9" fill="rgba(255,255,255,0.35)"
             transform={`rotate(-90, 14, ${PT + GH/2})`}>
-            {hasVol ? 'Volume急増率' : ''}
+            {hasVol ? 'Vol. Change Rate' : ''}
           </text>
         </svg>
       </div>

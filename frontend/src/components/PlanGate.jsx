@@ -1,7 +1,7 @@
 /**
  * PlanGate — 特定プランのみアクセス可能なコンポーネント
  * 
- * 使い方:
+ * How to Use:
  *   <PlanGate feature="institutional" onNavigate={onNavigate}>
  *     <InstitutionalHoldings ... />
  *   </PlanGate>
@@ -10,9 +10,9 @@ import { useAuth }         from '../hooks/useAuth.jsx'
 import { useSubscription } from '../hooks/useSubscription.jsx'
 
 const FEATURE_LABELS = {
-  institutional:      { name:'Institutional Holdings', requiredPlan:'Pro', requiredKey:'pro' },
-  weekly_archive:     { name:'Weekly Report Archive',   requiredPlan:'Standard or above', requiredKey:'standard' },
-  custom_theme_ai:    { name:'Custom Theme AI Analysis', requiredPlan:'Pro', requiredKey:'pro' },
+  institutional:      { name:'機関投資家大量保有情報', requiredPlan:'プロ', requiredKey:'pro' },
+  weekly_archive:     { name:'Weekly Reportアーカイブ',  requiredPlan:'スタンダード以上', requiredKey:'standard' },
+  custom_theme_ai:    { name:'Custom ThemeAI分析',  requiredPlan:'プロ', requiredKey:'pro' },
 }
 
 export default function PlanGate({ feature, children, onNavigate }) {
@@ -22,7 +22,7 @@ export default function PlanGate({ feature, children, onNavigate }) {
   // アクセス可能なら素通し
   if (canAccess(feature)) return children
 
-  const info = FEATURE_LABELS[feature] || { name:'This feature', requiredPlan:'a higher plan' }
+  const info = FEATURE_LABELS[feature] || { name:'この機能', requiredPlan:'上位プラン' }
 
   return (
     <div style={{ padding:'40px 24px', textAlign:'center', maxWidth:'500px', margin:'0 auto' }}>
@@ -31,7 +31,7 @@ export default function PlanGate({ feature, children, onNavigate }) {
         {info.name}
       </h2>
       <p style={{ fontSize:'13px', color:'var(--text3)', lineHeight:1.8, marginBottom:'24px' }}>
-        This feature is available on <strong style={{ color:'var(--accent)' }}>{info.requiredPlan}</strong> only.用いただけます。
+        この機能は<strong style={{ color:'var(--accent)' }}>{info.requiredPlan}</strong>でのみご利用いただけます。
         {!isLoggedIn && <>\nPlease <strong>sign in with Google</strong> to use this feature.</>}
       </p>
       {!isLoggedIn ? (

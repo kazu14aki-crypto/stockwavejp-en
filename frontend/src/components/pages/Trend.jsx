@@ -12,7 +12,7 @@ const COLORS = [
   '#ff4560','#ff8c42','#ffd166','#06d6a0','#4a9eff',
   '#aa77ff','#ff77aa','#44dddd','#aaddff','#ffaa77',
 ]
-const MODES = ['🏆 上位5＋下位5', '✅ 手動選択', '📊 All Themes']
+const MODES = ['🏆 Top5 + Bottom5', '✅ Manual Select', '📊 全テーマ']
 
 function Loading() {
   return (
@@ -24,7 +24,7 @@ function Loading() {
           animation: `pulse 1.2s ease-in-out ${d}s infinite`,
         }} />
       ))}
-      <div style={{ marginTop: '12px', fontSize: '12px' }}>日次Loading......（初回は時間がかかります）</div>
+      <div style={{ marginTop: '12px', fontSize: '12px' }}>日次データ取得中...（初回は時間がかかります）</div>
     </div>
   )
 }
@@ -161,14 +161,14 @@ function LineChart({ trends, selected }) {
 
 export default function Trend() {
   const [period,   setPeriod]   = useState('1y')
-  const [mode,     setMode]     = useState('🏆 上位5＋下位5')
+  const [mode,     setMode]     = useState('🏆 Top5 + Bottom5')
   const [trends,   setTrends]   = useState({})
   const [themeNames, setThemeNames] = useState([])
   const [selected, setSelected] = useState([])
   const [loading,  setLoading]  = useState(true)
   const [error,    setError]    = useState(null)
 
-  // Theme Name一覧取得
+  // テーマ名一覧取得
   useEffect(() => {
     fetch(`${API}/api/theme-names`)
       .then(r => r.json())
@@ -176,7 +176,7 @@ export default function Trend() {
       .catch(() => {})
   }, [])
 
-  // All Themesの推移取得
+  // 全テーマの推移取得
   useEffect(() => {
     if (!themeNames.length) return
     const fetch_ = async () => {
@@ -199,7 +199,7 @@ export default function Trend() {
         const bot5   = sorted.slice(-5).map(x => x.name)
         setSelected([...new Set([...top5, ...bot5])])
       } catch {
-        setError('データ取得に失敗しました')
+        setError('Failed to fetch data')
       } finally {
         setLoading(false)
       }
@@ -214,11 +214,11 @@ export default function Trend() {
       .map(([name, data]) => ({ name, last: data[data.length - 1]?.pct ?? 0 }))
       .sort((a, b) => b.last - a.last)
 
-    if (mode === '🏆 上位5＋下位5') {
+    if (mode === '🏆 Top5 + Bottom5') {
       const top5 = sorted.slice(0, 5).map(x => x.name)
       const bot5 = sorted.slice(-5).map(x => x.name)
       setSelected([...new Set([...top5, ...bot5])])
-    } else if (mode === '📊 All Themes') {
+    } else if (mode === '📊 全テーマ') {
       setSelected(Object.keys(trends))
     }
   }, [mode])
@@ -229,10 +229,10 @@ export default function Trend() {
   return (
     <div style={{ padding: '28px 32px 48px' }}>
       <h1 style={{ fontSize: '24px', fontWeight: 700, letterSpacing: '-0.02em', color: '#e8f0ff', marginBottom: '4px' }}>
-        騰落推移
+        Return Trend
       </h1>
       <p style={{ fontSize: '12px', color: 'var(--text3)', marginBottom: '20px' }}>
-        yfinanceの日次終値から算出したテーマ別累積Returnの推移
+        yfinanceの日次終値から算出したテーマ別累積Price Change %の推移
       </p>
 
       {/* コントロール */}
@@ -254,7 +254,7 @@ export default function Trend() {
       </div>
 
       {/* 手動選択 */}
-      {mode === '✅ 手動選択' && (
+      {mode === '✅ Manual Select' && (
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginBottom: '16px' }}>
           {themeNames.map(t => (
             <button key={t} onClick={() => toggleTheme(t)} style={{

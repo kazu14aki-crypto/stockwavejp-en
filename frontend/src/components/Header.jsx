@@ -14,7 +14,7 @@ const LogoSvg = () => (
   </svg>
 )
 
-import AuthButton from './AuthButton.jsx'
+import AuthButton from './AuthButton'
 
 export default function Header({ status, onMenuClick, sidebarOpen, viewMode, onViewModeChange, onLogoClick }) {
   return (
@@ -56,7 +56,7 @@ export default function Header({ status, onMenuClick, sidebarOpen, viewMode, onV
                 <span style={{ color: '#e63030', fontSize: '10px', marginLeft: '2px' }}>JP</span>
               </div>
               <div className="logo-sub" style={{ fontSize: '7px', letterSpacing: '0.3em', color: 'var(--text3)', fontWeight: 600, marginTop: '1px' }}>
-                株　式　波　動
+                StockWaveJP
               </div>
             </div>
           </button>
@@ -78,7 +78,7 @@ export default function Header({ status, onMenuClick, sidebarOpen, viewMode, onV
               <span className="status-updated" style={{ fontSize: '10px', color: 'var(--text3)', whiteSpace: 'nowrap', marginLeft: '4px' }}>
                 {(() => {
                   const m = (status.updatedAt || '').match(/(\d{2}\/\d{2} \d{2}:\d{2})/)
-                  return 'Last Updated：' + (m ? m[1] : status.updatedAt.slice(0,16))
+                  return '最終更新：' + (m ? m[1] : status.updatedAt.slice(0,16))
                 })()}
               </span>
             )}

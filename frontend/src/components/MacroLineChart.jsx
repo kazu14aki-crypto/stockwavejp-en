@@ -1,4 +1,4 @@
-// MacroLineChart.jsx — Home・Market Rankingで共通使用するマクロ指標グラフ
+// MacroLineChart.jsx — ホーム・Market Rankingで共通使用するマクロ指標グラフ
 import { useState } from 'react'
 
 export const MACRO_COLORS = ['#ff4560','#ff8c42','#ffd166','#06d6a0','#4a9eff','#aa77ff']
@@ -60,7 +60,7 @@ export default function MacroLineChart({ macro }) {
   const W = 800, H = 160, PL = 46, PR = 16, PT = 12, PB = 28
 
   // 各指標を独立スケールで正規化（0基準→期間内の相対変化を均等表示）
-  // Y軸は「相対Return（各指標の期間内変化幅を揃える）」
+  // Y軸は「相対Price Change %（各指標の期間内変化幅を揃える）」
   const scaledData = {}
   names.forEach(n => {
     const data = macro[n] || []
@@ -91,7 +91,7 @@ export default function MacroLineChart({ macro }) {
 
   return (
     <div style={{ background:'var(--bg2)', border:'1px solid var(--border)', borderRadius:'var(--radius)', padding:'14px', overflowX:'auto' }}>
-      {/* ミニチャートカード（各指標の実際のReturn）*/}
+      {/* ミニチャートカード（各指標の実際のPrice Change %）*/}
       <div style={{ display:'grid', gridTemplateColumns:'repeat(3, 1fr)', gap:'8px', marginBottom:'14px' }} className="macro-mini-grid">
         {names.map((name, ti) => (
           <MacroCard key={name} name={name} data={macro[name] || []} color={MACRO_COLORS[ti % MACRO_COLORS.length]} />
@@ -100,7 +100,7 @@ export default function MacroLineChart({ macro }) {
 
       {/* 折れ線グラフ（各指標の相対変化を均等スケールで表示）*/}
       <div style={{ fontSize:'10px', color:'var(--text3)', marginBottom:'6px' }}>
-        ▼ 期間内の相対変化トレンド（各指標の変動幅を均等に正規化）
+        ▼ Relative trend over period (each metric normalized to equal amplitude)
       </div>
       <svg viewBox={`0 0 ${W} ${H}`} width="100%" style={{ display:'block', minWidth:'320px' }}>
         {ticks.map(v => (
@@ -154,7 +154,7 @@ export default function MacroLineChart({ macro }) {
         })}
       </div>
       <div style={{ fontSize:'10px', color:'var(--text3)', marginTop:'6px' }}>
-        ※ETFベースの独自指標。Y軸は各指標の変動幅を正規化した相対値（実際のReturnはカード参照）
+        ※ETFベースの独自指標。Y軸は各指標の変動幅を正規化した相対値（実際のPrice Change %はカード参照）
       </div>
     </div>
   )

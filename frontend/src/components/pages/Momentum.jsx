@@ -10,7 +10,7 @@ const PERIODS = [
   { label: '1Y',   value: '1y'  },
 ]
 
-const SORT_KEYS = ['Return（Desc）', '先週比変化（Desc）', '先月比変化（Desc）']
+const SORT_KEYS = ['Price Change %（降順）', '先週比変化（降順）', '先月比変化（降順）']
 const STATES    = ['🔥加速', '↗転換↑', '→横ばい', '↘転換↓', '❄️失速']
 
 const STATE_COLORS = {
@@ -31,14 +31,14 @@ function Loading() {
           animation: `pulse 1.2s ease-in-out ${d}s infinite`,
         }} />
       ))}
-      <div style={{ marginTop: '12px', fontSize: '12px' }}>Loading......</div>
+      <div style={{ marginTop: '12px', fontSize: '12px' }}>データ取得中...</div>
     </div>
   )
 }
 
 export default function Momentum() {
   const [period,   setPeriod]   = useState('1mo')
-  const [sortKey,  setSortKey]  = useState('Return（Desc）')
+  const [sortKey,  setSortKey]  = useState('Price Change %（降順）')
   const [filter,   setFilter]   = useState([])
   const [data,     setData]     = useState([])
   const [loading,  setLoading]  = useState(true)
@@ -52,7 +52,7 @@ export default function Momentum() {
         const json = await res.json()
         setData(json.data)
       } catch {
-        setError('データ取得に失敗しました')
+        setError('Failed to fetch data')
       } finally {
         setLoading(false)
       }
@@ -62,9 +62,9 @@ export default function Momentum() {
 
   // ソート
   let sorted = [...data]
-  if (sortKey === 'Return（Desc）')      sorted.sort((a,b) => b.pct - a.pct)
-  if (sortKey === '先週比変化（Desc）')   sorted.sort((a,b) => b.week_diff - a.week_diff)
-  if (sortKey === '先月比変化（Desc）')   sorted.sort((a,b) => b.month_diff - a.month_diff)
+  if (sortKey === 'Price Change %（降順）')      sorted.sort((a,b) => b.pct - a.pct)
+  if (sortKey === '先週比変化（降順）')   sorted.sort((a,b) => b.week_diff - a.week_diff)
+  if (sortKey === '先月比変化（降順）')   sorted.sort((a,b) => b.month_diff - a.month_diff)
 
   // フィルター
   if (filter.length > 0) sorted = sorted.filter(d => filter.includes(d.state))
@@ -78,10 +78,10 @@ export default function Momentum() {
   return (
     <div style={{ padding: '28px 32px 48px' }}>
       <h1 style={{ fontSize: '24px', fontWeight: 700, letterSpacing: '-0.02em', color: '#e8f0ff', marginBottom: '4px' }}>
-        騰落モメンタム
+        Price Momentum
       </h1>
       <p style={{ fontSize: '12px', color: 'var(--text3)', marginBottom: '20px' }}>
-        現在のReturn ＋ 先週比・先月比の変化で「加速・失速・転換」テーマを把握
+        現在のPrice Change % ＋ 先週比・先月比の変化で「加速・失速・転換」テーマを把握
       </p>
 
       {/* コントロール */}
@@ -125,11 +125,11 @@ export default function Momentum() {
           {/* テーブルヘッダー */}
           <div style={{ ...rowStyle, background: 'transparent', borderColor: 'transparent',
             padding: '4px 16px', marginBottom: '4px' }}>
-            <span style={hdrStyle}>Theme Name</span>
-            <span style={{ ...hdrStyle, textAlign: 'right' }}>Return</span>
-            <span style={{ ...hdrStyle, textAlign: 'right' }}>先週比</span>
-            <span style={{ ...hdrStyle, textAlign: 'right' }}>先月比</span>
-            <span style={{ ...hdrStyle, textAlign: 'center' }}>状態</span>
+            <span style={hdrStyle}>テーマ名</span>
+            <span style={{ ...hdrStyle, textAlign: 'right' }}>Price Change %</span>
+            <span style={{ ...hdrStyle, textAlign: 'right' }}>WoW</span>
+            <span style={{ ...hdrStyle, textAlign: 'right' }}>MoM</span>
+            <span style={{ ...hdrStyle, textAlign: 'center' }}>State</span>
           </div>
 
           {sorted.map((d, i) => (
@@ -171,7 +171,7 @@ export default function Momentum() {
           ))}
 
           <p style={{ fontSize: '11px', color: 'var(--text3)', marginTop: '16px' }}>
-            💡 Return=選択期間の変化率 / 先週比・先月比=1週間・1ヶ月との差分 / 🔥加速=両方↑ / ❄️失速=両方↓
+            💡 Price Change %=選択期間の変化率 / 先週比・先月比=1週間・1ヶ月との差分 / 🔥加速=両方↑ / ❄️失速=両方↓
           </p>
         </>
       )}
