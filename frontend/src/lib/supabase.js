@@ -14,12 +14,15 @@ export const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
   },
 })
 
-// GoogleLogin（リダイレクト方式）
+// Google Login (redirect method)
+// redirectTo is explicitly set to EN site URL to prevent redirect to JP version
+const EN_SITE_URL = 'https://stockwavejp-en.com'
+
 export async function signInWithGoogle() {
   const { error } = await supabase.auth.signInWithOAuth({
     provider: 'google',
     options: {
-      redirectTo: window.location.origin + window.location.pathname,
+      redirectTo: EN_SITE_URL + '/',
     },
   })
   if (error) throw error

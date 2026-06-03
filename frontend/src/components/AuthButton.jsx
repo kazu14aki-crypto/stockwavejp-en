@@ -16,7 +16,7 @@ export default function AuthButton() {
   if (!isLoggedIn) return (
     <button
       onClick={() => signIn()}
-      title="GoogleでログインするとCustom Themeがどのデバイスでも同期されます"
+      title="Sign in with Google to sync your Custom Themes across all devices"
       style={{
         display:'flex', alignItems:'center', gap:'6px',
         background:'rgba(74,158,255,0.1)', border:'1px solid rgba(74,158,255,0.3)',
@@ -29,7 +29,7 @@ export default function AuthButton() {
       onMouseLeave={e => e.currentTarget.style.background='rgba(74,158,255,0.1)'}
     >
       <GoogleIcon />
-      <span className="auth-btn-label">ログイン</span>
+      <span className="auth-btn-label">Sign In</span>
     </button>
   )
 

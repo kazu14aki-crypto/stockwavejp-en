@@ -620,7 +620,7 @@ function ThemeCard({ item, rank, maxAbs, valueKey='pct', barColor, pctColor, pct
         <div style={{ display:'flex', alignItems:'center', gap:'4px', marginBottom:'3px', minWidth:0 }}>
           <span style={{ fontSize:'11px', fontWeight:600, color:'var(--text)',
             overflow:'hidden', textOverflow:'ellipsis', whiteSpace:'nowrap', flex:1, minWidth:0 }}>
-            {item.theme}
+            {tn(item.theme)}
           </span>
           {valueKey === 'pct' && momentumState && (() => {
             const stateColors = { '🔥 Accel':'#ff4560','↗ Rev.↑':'#ff8c42','→ Flat':'var(--text3)','↘ Rev.↓':'#4a9eff','❄️ Stall':'#4a9eff' }
@@ -735,7 +735,7 @@ function ThemeCardGrid({ items, pctColor, valueKey='pct', barColor, pctRankMap, 
     <>
     <div className="theme-card-grid">
       {displayed.map((item, idx) => (
-        <ThemeCard key={item.theme} item={item} rank={idx+1}
+        <ThemeCard key={tn(item.theme)} item={item} rank={idx+1}
           maxAbs={maxVal} valueKey={valueKey}
           barColor={barColor} pctColor={pctColor}
           pctRank={pctRankMap?.get(item.theme)}
