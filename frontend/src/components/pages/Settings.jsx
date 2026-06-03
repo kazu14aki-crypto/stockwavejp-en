@@ -38,9 +38,19 @@ export default function Settings({ viewMode, onViewModeChange, colorTheme, onCol
     { key:'us', label:'US Style', desc:'Rising=Green / Falling=Red' },
   ]
 
-  const colorDir = localStorage.getItem('swjp_color_dir') || 'jp'
+  const [colorDir, setColorDirState] = useState(localStorage.getItem('swjp_color_dir') || 'jp')
   const setColorDir = (v) => {
     localStorage.setItem('swjp_color_dir', v)
+    setColorDirState(v)
+    // CSSカスタムプロパティを即時変更
+    const root = document.documentElement
+    if (v === 'us') {
+      root.style.setProperty('--red',   '#1a9a50')  // US style: green=rising
+      root.style.setProperty('--green', '#e63030')  // US style: red=falling
+    } else {
+      root.style.setProperty('--red',   '')          // Japan style: reset to default
+      root.style.setProperty('--green', '')
+    }
     window.dispatchEvent(new Event('storage'))
   }
 
