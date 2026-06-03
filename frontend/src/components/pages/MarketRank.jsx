@@ -548,19 +548,19 @@ function StockTable({ stocks: rawStocks, onAddToTheme }) {
 
 // ETFセグメント定義（market.jsonに未登録のためフロントエンドでハードコード）
 const ETF_GROUPS = {
-  'ETF｜国内株式インデックス': {
-    '1321': 'NEXT FUNDS 日経225連動型',
-    '1306': 'TOPIX連動型上場投信',
-    '1308': 'NEXT FUNDS TOPIX連動型',
-    '1330': '上場インデックスファンド225',
-    '1346': 'MAXIS 日経225上場投信',
-    '1329': 'iシェアーズ 日経225 ETF',
-    '1348': 'MAXIS TOPIX上場投信',
-    '1591': 'JPX日経400 ETF',
-    '1577': '日本株高配当70 ETF',
-    '1489': '日経Avg高配当株50',
-    '1343': 'NEXT FUNDS 東証REIT指数連動型',
-    '1597': 'MAXIS Jリート上場投信',
+  'ETF | Domestic Index': {
+    '1321': 'Nikkei 225 ETF (1321)',
+    '1306': 'TOPIX ETF (1306)',
+    '1308': 'TOPIX ETF (1308)',
+    '1330': 'Nikkei 225 Index (1330)',
+    '1346': 'MAXIS Nikkei225 (1346)',
+    '1329': 'iShares Nikkei225 (1329)',
+    '1348': 'MAXIS TOPIX (1348)',
+    '1591': 'JPX-Nikkei400 ETF (1591)',
+    '1577': 'High-Dividend 70 ETF (1577)',
+    '1489': 'Nikkei High-Div 50 (1489)',
+    '1343': 'NEXT FUNDS REIT (1343)',
+    '1597': 'MAXIS J-REIT (1597)',
     '1476': 'iシェアーズ・コア Jリート ETF',
     '1488': 'iFreeETF 東証REIT指数',
     '1478': 'iシェアーズ 日本高配当株 ETF',

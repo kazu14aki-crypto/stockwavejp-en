@@ -32,7 +32,7 @@ export default function PlanGate({ feature, children, onNavigate }) {
       </h2>
       <p style={{ fontSize:'13px', color:'var(--text3)', lineHeight:1.8, marginBottom:'24px' }}>
         This feature is available on <strong style={{ color:'var(--accent)' }}>{info.requiredPlan}</strong> only.用いただけます。
-        {!isLoggedIn && <>\nご利用には<strong>Googleログイン</strong>が必要です。</>}
+        {!isLoggedIn && <>\nPlease <strong>sign in with Google</strong> to use this feature.</>}
       </p>
       {!isLoggedIn ? (
         <button onClick={signIn} style={{

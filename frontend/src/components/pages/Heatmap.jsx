@@ -391,10 +391,10 @@ function BubbleScatter({ data, mPeriod, setMPeriod, onNavigate }) {
             stroke="rgba(255,255,255,0.35)" strokeWidth="1.5" strokeDasharray="5,3" />
 
           {/* ゾーンラベル */}
-          <text x={x0+8} y={PT+16} fontSize="11" fill="rgba(255,83,112,0.85)" fontWeight="700">🔥 Hotーン</text>
+    <text x={x0+8} y={PT+16} fontSize="11" fill="rgba(255,83,112,0.85)" fontWeight="700">🔥 Hot</text>
           <text x={PL+6} y={PT+16} fontSize="11" fill="rgba(0,196,140,0.8)" fontWeight="700">⚠️ Sell</text>
-          <text x={x0+8} y={PT+GH-8} fontSize="11" fill="rgba(255,140,66,0.7)" fontWeight="600">📈 Quiet↑なRising</text>
-          <text x={PL+6} y={PT+GH-8} fontSize="11" fill="rgba(74,158,255,0.65)" fontWeight="600">❄️ 静かなFalling</text>
+    <text x={x0+8} y={PT+GH-8} fontSize="11" fill="rgba(255,140,66,0.7)" fontWeight="600">📈 Quiet↑</text>
+    <text x={PL+6} y={PT+GH-8} fontSize="11" fill="rgba(74,158,255,0.65)" fontWeight="600">❄️ Quiet↓</text>
 
           {/* バブル（ホバーされていないものを先に描画） */}
           {filtered

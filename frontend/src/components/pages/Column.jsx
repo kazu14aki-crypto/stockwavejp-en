@@ -309,14 +309,14 @@ export default function Column({ initialArticleId = null, onNavigate }) {
           All investment decisions are your sole responsibility.
         </div>
 
-        {/* ⑤ 関連テーマセクション（col.themesフィールドベース） */}
+{/* ⑤ Related Theme section */}
         {col.themes && col.themes.length > 0 && onNavigate && (
           <div style={{ marginTop:'24px', padding:'16px 20px',
             background:'var(--bg2)', border:'1px solid var(--border)',
             borderRadius:'10px' }}>
             <div style={{ fontSize:'11px', fontWeight:600, color:'var(--text3)',
               letterSpacing:'0.08em', textTransform:'uppercase', marginBottom:'10px' }}>
-              🔗 関連テーマ
+                    🔗 Related Theme
             </div>
             <p style={{ fontSize:'12px', color:'var(--text2)', lineHeight:1.8, marginBottom:'12px' }}>
               {'Related Themes: ' + col.themes.join('、')}
@@ -341,7 +341,7 @@ export default function Column({ initialArticleId = null, onNavigate }) {
                       onMouseEnter={e => e.currentTarget.style.background='rgba(170,119,255,0.2)'}
                       onMouseLeave={e => e.currentTarget.style.background='rgba(170,119,255,0.1)'}
                     >
-                      📊 テーマ詳細を見る
+                      📊 View Theme Detail
                     </button>
                     {THEME_ARTICLE_MAP[theme] && THEME_ARTICLE_MAP[theme] !== col.id && (
                       <button
@@ -353,7 +353,7 @@ export default function Column({ initialArticleId = null, onNavigate }) {
                         onMouseEnter={e => e.currentTarget.style.background='rgba(74,158,255,0.15)'}
                         onMouseLeave={e => e.currentTarget.style.background='rgba(74,158,255,0.07)'}
                       >
-                        📖 関連コラムを読む
+                      📖 Read Related Column
                       </button>
                     )}
                   </div>
@@ -363,7 +363,7 @@ export default function Column({ initialArticleId = null, onNavigate }) {
           </div>
         )}
 
-        {/* テーマデータへのリンクボタン */}
+{/* Link button to theme data */}
         {(() => {
           const CAT_TO_THEME = {
             '半導体製造装置':'半導体製造装置','半導体検査装置':'半導体検査装置',
@@ -408,7 +408,7 @@ export default function Column({ initialArticleId = null, onNavigate }) {
                 onMouseEnter={e => { e.currentTarget.style.background='rgba(74,158,255,0.2)' }}
                 onMouseLeave={e => { e.currentTarget.style.background='rgba(74,158,255,0.1)' }}
               >
-                📊 {themeName}テーマのデータを見る
+                  📊 View {themeName} Theme Data
               </button>
               <button
                 onClick={() => onNavigate('Theme List')}
@@ -421,13 +421,13 @@ export default function Column({ initialArticleId = null, onNavigate }) {
                 onMouseEnter={e => { e.currentTarget.style.background='rgba(170,119,255,0.2)' }}
                 onMouseLeave={e => { e.currentTarget.style.background='rgba(170,119,255,0.1)' }}
               >
-                📈 全Theme Listを見る
+                  📈 View All Themes
               </button>
             </div>
           )
         })()}
 
-        {/* 下部の戻るボタン */}
+{/* Back button */}
         <div style={{ marginTop:'32px', paddingTop:'24px', borderTop:'1px solid var(--border)', textAlign:'center' }}>
           <button onClick={() => closeArticle()} style={{
             display:'inline-flex', alignItems:'center', gap:'8px',
@@ -455,7 +455,7 @@ export default function Column({ initialArticleId = null, onNavigate }) {
         From the basics of theme investing to detailed analysis of each theme — useful information for your investment decisions.
       </p>
 
-      {/* キーワード・テーマ検索 */}
+{/* Keyword / Theme search */}
       <div style={{ position:'relative', marginBottom:'12px', maxWidth:'400px' }}>
         <input
           type="text"
@@ -478,7 +478,7 @@ export default function Column({ initialArticleId = null, onNavigate }) {
         )}
       </div>
 
-      {/* カテゴリフィルタ */}
+{/* Category filter */}
       <div style={{ display:'flex', gap:'6px', flexWrap:'wrap', marginBottom:'24px' }}>
         {CATEGORIES.map(cat => (
           <button key={cat} onClick={() => { setActiveCat(cat); setPage(1) }} style={{
@@ -494,14 +494,14 @@ export default function Column({ initialArticleId = null, onNavigate }) {
         ))}
       </div>
 
-      {/* ページ情報 */}
+{/* Page info */}
       {filtered.length > 0 && (
         <div style={{ fontSize:'12px', color:'var(--text3)', marginBottom:'12px' }}>
           {filtered.length} results — showing {(page-1)*ITEMS_PER_PAGE+1}–{Math.min(page*ITEMS_PER_PAGE, filtered.length)}
         </div>
       )}
 
-      {/* コラム一覧 */}
+{/* Column list */}
       <div style={{ display:'grid', gridTemplateColumns:'repeat(2, 1fr)', gap:'14px' }} className="col-grid">
         {pagedItems.filter(Boolean).map((col, i) => {
           const cat = CAT_COLORS[col.category] || { bg:'rgba(74,158,255,0.1)', color:'#4a9eff', border:'rgba(74,158,255,0.25)' }
@@ -533,14 +533,14 @@ export default function Column({ initialArticleId = null, onNavigate }) {
                 {col.summary}
               </p>
               <div style={{ marginTop:'12px', fontSize:'11px', color:'var(--accent)', fontWeight:600 }}>
-                続きを読む →
+              Read More →
               </div>
             </div>
           )
         })}
       </div>
 
-      {/* ページネーション */}
+{/* Pagination */}
       {totalPages > 1 && (
         <div style={{ display:'flex', justifyContent:'center', alignItems:'center',
           gap:'8px', marginTop:'28px', flexWrap:'wrap' }}>
@@ -551,7 +551,7 @@ export default function Column({ initialArticleId = null, onNavigate }) {
               color: page === 1 ? 'var(--text3)' : 'var(--text)',
               cursor: page === 1 ? 'default' : 'pointer',
               fontFamily:'var(--font)', fontSize:'12px' }}>
-            ← 前へ
+            ← Prev
           </button>
           {Array.from({ length: totalPages }, (_, i) => i + 1).map(p => (
             <button key={p} onClick={() => { setPage(p); window.scrollTo(0,0) }}
@@ -571,7 +571,7 @@ export default function Column({ initialArticleId = null, onNavigate }) {
               color: page === totalPages ? 'var(--text3)' : 'var(--text)',
               cursor: page === totalPages ? 'default' : 'pointer',
               fontFamily:'var(--font)', fontSize:'12px' }}>
-            次へ →
+            Next →
           </button>
         </div>
       )}

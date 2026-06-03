@@ -104,8 +104,8 @@ function genThemeComment(themes, summary, period, momentum) {
   const volSurge = themes.filter(t => (t.volume_chg || 0) >= 30).map(t => t.theme)
 
   // Momentum（加速・失速）
-  const accel = momentum?.filter(t => t.state?.includes('加速') || t.state?.includes('Accel') || t.state?.includes('Accelerating')).map(t => t.theme) || []
-  const decel = momentum?.filter(t => t.state?.includes('失速') || t.state?.includes('Stall') || t.state?.includes('Stalling')).map(t => t.theme) || []
+  const accel = momentum?.filter(t => t.state?.includes('加速') || t.state?.includes('Accel') || t.state?.includes('Accelerating') || t.state?.includes('🔥'))
+  const decel = momentum?.filter(t => t.state?.includes('失速') || t.state?.includes('Stall') || t.state?.includes('Stalling') || t.state?.includes('❄️'))
 
   const lines = []
 
@@ -339,10 +339,10 @@ function BubbleScatterMini({ onNavigate }) {
           <rect x={x0} y={y0} width={PL+GW-x0} height={PT+GH-y0} fill="rgba(255,140,66,0.15)" rx="3"/>
           <line x1={x0} y1={PT} x2={x0} y2={PT+GH} stroke="rgba(255,255,255,0.3)" strokeWidth="1.2" strokeDasharray="5,3"/>
           <line x1={PL} y1={y0} x2={PL+GW} y2={y0} stroke="rgba(255,255,255,0.3)" strokeWidth="1.2" strokeDasharray="5,3"/>
-          <text x={x0+6} y={PT+14} fontSize="10" fill="rgba(255,83,112,0.8)" fontWeight="700">🔥 注目</text>
-          <text x={PL+6} y={PT+14} fontSize="10" fill="rgba(0,196,140,0.75)" fontWeight="700">⚠️ 売圧</text>
+    <text x={x0+6} y={PT+14} fontSize="10" fill="rgba(255,83,112,0.8)" fontWeight="700">🔥 Hot</text>
+    <text x={PL+6} y={PT+14} fontSize="10" fill="rgba(0,196,140,0.75)" fontWeight="700">⚠️ Sell</text>
           <text x={x0+6} y={PT+GH-6} fontSize="10" fill="rgba(255,140,66,0.7)">📈 Quiet↑</text>
-          <text x={PL+6} y={PT+GH-6} fontSize="10" fill="rgba(74,158,255,0.65)">❄️ 静Falling</text>
+    <text x={PL+6} y={PT+GH-6} fontSize="10" fill="rgba(74,158,255,0.65)">❄️ Quiet↓</text>
           {/* バブル（ホバー以外） */}
           {filtered.filter(d=>d.theme!==hovered?.theme).map(d=>{
             const cx=xS(d.pct), cy=yS(d.volume_chg??d.week_diff??0), r=rS(d.trade_value), col=bC(d.pct)
@@ -372,7 +372,7 @@ function BubbleScatterMini({ onNavigate }) {
                   <rect x={tx} y={ty} width="164" height="74" rx="6" fill="#1a1f2e" stroke="rgba(255,255,255,0.2)" strokeWidth="1"/>
                   <text x={tx+8} y={ty+16} fontSize="11" fill="#e8f0ff" fontWeight="700">{d.theme}</text>
                   <text x={tx+8} y={ty+32} fontSize="10" fill={col}>{'Return: '+(d.pct>=0?'+':'')+d.pct.toFixed(2)+'%'}</text>
-                  <text x={tx+8} y={ty+47} fontSize="10" fill={(d.volume_chg??0)>=0?'#ff8c42':'#4a9eff'}>{'Volume増減: '+((d.volume_chg??0)>=0?'+':'')+(d.volume_chg??0).toFixed(0)+'%'}</text>
+    <text x={tx+8} y={ty+47} fontSize="10" fill={(d.volume_chg??0)>=0?'#ff8c42':'#4a9eff'}>{'Vol '+(d.volume_chg??0).toFixed(0)+'%'}</text>
                   <text x={tx+8} y={ty+62} fontSize="10" fill="#8b949e">{'Trade Value: '+fmtL(d.trade_value)}</text>
                 </g>
               </g>
@@ -1205,13 +1205,13 @@ export default function ThemeList({ onNavigate }) {
   const macro = macroRaw?.data || {}
   // 1321・1306の直近Returnを取得
   const get1321pct = () => {
-    const arr = macro['国内主要株(1321)'] || macro['Nikkei225ETF(1321)'] || []
+  const arr = macro['国内主要株(1321)'] || macro['Nikkei225ETF(1321)'] || macro['日経225連動型(1321)'] || []
     if (arr.length < 2) return null
     const last = arr[arr.length - 1]
     return last?.pct ?? null
   }
   const get1306pct = () => {
-    const arr = macro['TOPIX連動型上場投信(1306)'] || []
+  const arr = macro['TOPIX連動型上場投信(1306)'] || macro['TOPIXetf(1306)'] || []
     if (arr.length < 2) return null
     const last = arr[arr.length - 1]
     return last?.pct ?? null
@@ -1265,7 +1265,7 @@ export default function ThemeList({ onNavigate }) {
           Switch periods (1W to 1Y) to track both short-term capital inflows and long-term trends.
           <br />
           <span style={{ fontSize:'11px', color:'var(--text2)' }}>
-            💡 活用ポイント：Themes appearing repeatedly in 'Rising TOP5' may indicate strong trends.
+  💡 Tip: Themes appearing repeatedly in 'Rising TOP5' may indicate strong trends.
             Always cross-check Volume and Trading Value to gauge conviction behind price moves.
           </span>
         </div>
@@ -1398,7 +1398,7 @@ export default function ThemeList({ onNavigate }) {
                   {/* Theme Heatmap（BubbleScatter） */}
                   <div className="monthly-chart-cell">
                     <div style={{ fontSize:'13px', fontWeight:700, color:'var(--text)', marginBottom:'8px' }}>🔥 Theme Heatmap</div>
-                    <ExpandableChart title="Theme Heatmap（資金フロー）" showZoneDesc>
+      <ExpandableChart title="Theme Heatmap (Capital Flow)" showZoneDesc>
                       <BubbleScatterMini onNavigate={onNavigate} />
                     </ExpandableChart>
                   </div>
