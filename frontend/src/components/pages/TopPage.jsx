@@ -191,13 +191,13 @@ function generateMarketComment(themeData, macro) {
 
   // Risingテーマ
   if (top3.length && top3[0].pct > 0) {
-    const upNames = top3.filter(x=>x.pct>0).map(x=>`"x.theme)"(${x.pct>=0?'+':''}${x.pct.toFixed(1)}%)`).join('、')
+    const upNames = top3.filter(x=>x.pct>0).map(x=>`"${tn(x.theme)}"(${x.pct>=0?'+':''}${x.pct.toFixed(1)}%)`).join('、')
     lines.push(`▲ Notable Rising themes: ${upNames}. ${volUp.length>0&&top3.some(top=>volUp.some(v=>v.theme===top.theme))?`'${tn(top3[0].theme)}' is also seeing volume surge — institutional inflow may be starting.`:''}`)
   }
 
   // Fallingテーマ
   if (bot3.length && bot3[0].pct < 0) {
-    const dnNames = bot3.filter(x=>x.pct<0).map(x=>`"x.theme)"(${x.pct.toFixed(1)}%)`).join('、')
+    const dnNames = bot3.filter(x=>x.pct<0).map(x=>`"${tn(x.theme)}"(${x.pct.toFixed(1)}%)`).join('、')
     lines.push(`▼ Notable Falling themes: ${dnNames}. ${coldThemes.length>3?'Broad selling pressure — selective theme approach recommended.':'Sharp decline — overheating correction or external headwinds likely.'}`)
   }
 
@@ -339,7 +339,7 @@ export default function TopPage({ onNavigate }) {
           arrow="up"
           sub={s?.top?<span style={{ color:'var(--red)', fontWeight:600 }}>+{s.top.pct.toFixed(1)}%</span>:'-'}/>
         <KpiCard delay={0.2} loading={loading} label="Top Outflow"
-          value={<span>{s?.bot?.theme||'-'}</span>}
+          value={<span>{tn(s?.bot?.theme)||'-'}</span>}
           valueColor="var(--green)"
           arrow="down"
           sub={s?.bot?<span style={{ color:'var(--green)', fontWeight:600 }}>{s.bot.pct.toFixed(1)}%</span>:'-'}/>

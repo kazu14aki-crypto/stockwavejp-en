@@ -20,6 +20,18 @@ const MACRO_LABELS = {
   '長期国債':                    'JGB Long-term',
   '米国債(2647)':                'US Treasury ETF',
   '原油(1699)':                  'Crude Oil ETF',
+  '米国ハイテク株100(QQQ)':        'US Tech 100 (QQQ)',
+  '米国ハイテク株100':              'US Tech 100 (QQQ)',
+  'QQQ':                            'US Tech 100 (QQQ)',
+  'ハイテク株':                     'US Tech (QQQ)',
+  '日経平均(225)':                  'Nikkei 225',
+  '日経225':                        'Nikkei 225',
+  'TOPIX(1306)':                     'TOPIX ETF',
+  '東証REIT(1343)':                 'J-REIT ETF',
+  '長期国債ETF(2621)':              'JGB Long-term ETF',
+  '米国株ETF(2558)':                'S&P500 ETF',
+  'ドル円':                         'USD/JPY',
+  '米ドル円':                       'USD/JPY',
   '原油':                        'Crude Oil',
 }
 const ml = (name) => MACRO_LABELS[name] || name
