@@ -15,7 +15,7 @@
 import { useState, useEffect, createContext, useContext } from 'react'
 import { supabase } from '../lib/supabase'
 
-// Developer emailsアドレス（全機能解放）
+// 開発者メールアドレス（全機能解放）
 const DEV_EMAILS = [
   'stockwavejp26@gmail.com',
 ]
@@ -141,7 +141,7 @@ export function SubscriptionProvider({ children }) {
     maxThemes: { free:1, standard:5, pro:10, pro_trial:10, dev:999 }[plan] ?? 1,
     maxStocks: { free:10, standard:20, pro:50, pro_trial:50, dev:999 }[plan] ?? 10,
     planLabel: {
-      free:'Free', standard:'スタンダード', pro:'プロ', pro_trial:'プロ体験版（無料）', dev:'開発者'
+      free:'Free', standard:'Standard', pro:'Pro', pro_trial:'Pro Trial', dev:'Developer'
     }[plan] || 'Free',
   }
 

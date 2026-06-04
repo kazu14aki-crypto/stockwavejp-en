@@ -5,7 +5,7 @@ import { useAuth }         from '../hooks/useAuth.jsx'
 import { useSubscription } from '../hooks/useSubscription.jsx'
 
 const FEATURE_LABELS = {
-  institutional:   { name:'Institutional Holdings', requiredPlan:'Pro', requiredKey:'pro' },
+  institutional:   { name:'Institutional Holdings', status:'coming_soon' },
   weekly_archive:  { name:'Weekly Report Archive',  requiredPlan:'Standard or above', requiredKey:'standard' },
   custom_theme_ai: { name:'Custom Theme AI Analysis', requiredPlan:'Pro', requiredKey:'pro' },
   market_detail:   { name:'Market Ranking (All Periods)', requiredPlan:'Standard or above', requiredKey:'standard' },
@@ -18,6 +18,24 @@ export default function PlanGate({ feature, children, onNavigate }) {
   if (canAccess(feature)) return children
 
   const info = FEATURE_LABELS[feature] || { name:'This feature', requiredPlan:'a higher plan' }
+
+  // Coming Soon 表示
+  if (info.status === 'coming_soon') {
+    return (
+      <div style={{ padding:'60px 24px', textAlign:'center', maxWidth:'500px', margin:'0 auto' }}>
+        <div style={{ fontSize:'56px', marginBottom:'16px' }}>🚧</div>
+        <h2 style={{ fontSize:'22px', fontWeight:700, color:'var(--text)', marginBottom:'12px' }}>
+          Coming Soon
+        </h2>
+        <p style={{ fontSize:'13px', color:'var(--text3)', lineHeight:1.9, marginBottom:'8px' }}>
+          <strong style={{ color:'var(--text2)' }}>{info.name}</strong> is currently under development.
+        </p>
+        <p style={{ fontSize:'13px', color:'var(--text3)', lineHeight:1.9 }}>
+          This feature will be available in a future update. Stay tuned!
+        </p>
+      </div>
+    )
+  }
 
   return (
     <div style={{ padding:'40px 24px', textAlign:'center', maxWidth:'500px', margin:'0 auto' }}>

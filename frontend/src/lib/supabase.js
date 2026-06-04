@@ -1,29 +1,28 @@
 /**
- * supabase.js — Supabaseクライアントの初期化
+ * supabase.js — EN version client
+ * redirectTo is hardcoded via vite.config.js define to ensure EN site URL
  */
 import { createClient } from '@supabase/supabase-js'
 
 const SUPABASE_URL      = import.meta.env.VITE_SUPABASE_URL
 const SUPABASE_ANON_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY
+const REDIRECT_TO       = import.meta.env.VITE_SUPABASE_REDIRECT_TO || 'https://stockwavejp-en.com/'
 
 export const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
   auth: {
     persistSession:     true,
     autoRefreshToken:   true,
     detectSessionInUrl: true,
-    flowType:           'implicit',  // Use hash-based flow (not pkce) to avoid Site URL redirect
+    flowType:           'implicit',
   },
 })
 
-// Google Login (redirect method)
-// redirectTo is explicitly set to EN site URL to prevent redirect to JP version
-const EN_SITE_URL = 'https://stockwavejp-en.com'
-
+// Google Login — redirectTo is hardcoded to EN site URL via vite.config.js
 export async function signInWithGoogle() {
   const { error } = await supabase.auth.signInWithOAuth({
     provider: 'google',
     options: {
-      redirectTo: EN_SITE_URL + '/',
+      redirectTo: REDIRECT_TO,
     },
   })
   if (error) throw error
