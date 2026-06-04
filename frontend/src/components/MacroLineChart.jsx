@@ -1,6 +1,29 @@
 // MacroLineChart.jsx — ホーム・Market Rankingで共通使用するマクロ指標グラフ
 import { useState } from 'react'
 
+
+const MACRO_LABELS = {
+  '国内主要株(1321)':           'Nikkei225 ETF',
+  '国内主要株':                  'Nikkei225 ETF',
+  'TOPIX連動型上場投信(1306)':   'TOPIX ETF',
+  'TOPIX':                       'TOPIX ETF',
+  'ドル円(USDJPY)':              'USD/JPY',
+  'ドル円':                      'USD/JPY',
+  '米国株(2558)':                'S&P500 ETF (US)',
+  '米国株':                      'S&P500 ETF',
+  'S&P500':                      'S&P500 ETF',
+  '金(1540)':                    'Gold ETF',
+  '金':                          'Gold ETF',
+  'VIX(恐怖指数)':               'VIX (Fear Index)',
+  'VIX':                         'VIX',
+  '長期国債(2621)':              'JGB Long-term ETF',
+  '長期国債':                    'JGB Long-term',
+  '米国債(2647)':                'US Treasury ETF',
+  '原油(1699)':                  'Crude Oil ETF',
+  '原油':                        'Crude Oil',
+}
+const ml = (name) => MACRO_LABELS[name] || name
+
 export const MACRO_COLORS = ['#ff4560','#ff8c42','#ffd166','#06d6a0','#4a9eff','#aa77ff']
 
 // niceScale
@@ -18,7 +41,7 @@ export function MacroCard({ name, data, color }) {
     <div style={{ background:'var(--bg2)', border:'1px solid var(--border)', borderRadius:'8px',
       padding:'10px 12px', display:'flex', flexDirection:'column', gap:'6px', minWidth:0 }}>
       <div style={{ fontSize:'10px', color:'var(--text3)', fontWeight:600, letterSpacing:'0.05em',
-        overflow:'hidden', textOverflow:'ellipsis', whiteSpace:'nowrap' }}>{name}</div>
+        overflow:'hidden', textOverflow:'ellipsis', whiteSpace:'nowrap' }}>{ml(name)}</div>
       <div style={{ display:'flex', alignItems:'flex-end', justifyContent:'space-between', gap:'8px' }}>
         <div style={{ fontFamily:'var(--mono)', fontSize:'16px', fontWeight:700, color:pctColor, lineHeight:1 }}>
           {last.pct>=0?'+':''}{last.pct.toFixed(1)}%
@@ -143,7 +166,7 @@ export default function MacroLineChart({ macro }) {
           return (
             <div key={name} style={{ display:'flex', alignItems:'center', gap:'5px' }}>
               <div style={{ width:'14px', height:'2px', background:color, borderRadius:'1px' }} />
-              <span style={{ fontSize:'11px', color:'var(--text2)' }}>{name}</span>
+              <span style={{ fontSize:'11px', color:'var(--text2)' }}>{ml(name)}</span>
               {last && (
                 <span style={{ fontSize:'11px', fontFamily:'var(--mono)', color, fontWeight:700 }}>
                   {last.pct >= 0 ? '+' : ''}{last.pct.toFixed(1)}%
@@ -154,7 +177,7 @@ export default function MacroLineChart({ macro }) {
         })}
       </div>
       <div style={{ fontSize:'10px', color:'var(--text3)', marginTop:'6px' }}>
-        ※ETFベースの独自指標。Y軸は各指標の変動幅を正規化した相対値（実際のPrice Change %はカード参照）
+        * ETF-based index. Y-axis = normalized relative amplitude. Actual Price Change % shown in cards above.
       </div>
     </div>
   )

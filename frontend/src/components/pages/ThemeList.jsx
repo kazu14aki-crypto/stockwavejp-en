@@ -97,11 +97,11 @@ function genThemeComment(themes, summary, period, momentum) {
   const bot     = themes[themes.length - 1]
 
   // 急騰・急落テーマ
-  const hotThemes  = themes.filter(t => t.pct >= 5).map(t => t.theme)
-  const coldThemes = themes.filter(t => t.pct <= -5).map(t => t.theme)
+  const hotThemes  = themes.filter(t => t.pct >= 5).map(t => tn(t.theme))
+  const coldThemes = themes.filter(t => t.pct <= -5).map(t => tn(t.theme))
 
   // Volume急増テーマ（前期比+30%以上）
-  const volSurge = themes.filter(t => (t.volume_chg || 0) >= 30).map(t => t.theme)
+  const volSurge = themes.filter(t => (t.volume_chg || 0) >= 30).map(t => tn(t.theme))
 
   // Momentum（加速・失速）
   const accel = momentum?.filter(t => t.state?.includes('加速') || t.state?.includes('Accel') || t.state?.includes('Accelerating') || t.state?.includes('🔥'))
@@ -110,7 +110,7 @@ function genThemeComment(themes, summary, period, momentum) {
   const lines = []
 
   // 全体相場概況
-  const mktTone = avg >= 2 ? 'Bullish' : avg >= 0.5 ? 'Mildly Bullish' : avg <= -2 ? 'Bearish' : avg <= -0.5 ? 'やや弱気' : '中立'
+  const mktTone = avg >= 2 ? 'Bullish' : avg >= 0.5 ? 'Mildly Bullish' : avg <= -2 ? 'Bearish' : avg <= -0.5 ? 'Mildly Bearish' : '中立'
   lines.push(`[${periodLabel} Overview] Across all 67 themes: Rising ${rising.length}, Falling ${falling.length} (avg return ${avg >= 0 ? '+' : ''}${avg.toFixed(2)}% — ${mktTone}).`)
 
   // トップ・ボトム
@@ -133,10 +133,10 @@ function genThemeComment(themes, summary, period, momentum) {
 
   // Momentum
   if (accel.length > 0) {
-    lines.push(`🔥 Accelerating Momentum: ${accel.slice(0, 4).join(', ')}. Existing trend strengthening — high-priority monitoring target.`)
+    lines.push(`🔥 Accelerating Momentum: ${accel.slice(0, 4).map(t => tn(t.theme || t.name || t)).join(', ')}. Existing trend strengthening — high-priority monitoring target.`)
   }
   if (decel.length > 0) {
-    lines.push(`❄️ Stalling Momentum: ${decel.slice(0, 4).join(', ')}. May signal a top — but can also be a temporary pause. Watch for reversal confirmation.`)
+    lines.push(`❄️ Stalling Momentum: ${decel.slice(0, 4).map(t => tn(t.theme || t.name || t)).join(', ')}. May signal a top — but can also be a temporary pause. Watch for reversal confirmation.`)
   }
 
   // 総合判断
@@ -984,7 +984,7 @@ function MonthlyVolChart({ volTrendData, allThemeNames, months }) {
   // 週次→月次変換
   const monthlyByTheme = {}
   allThemeNames.forEach(t => {
-    const d = volTrendData[`vol_trend_${tn(t)}`]
+    const d = volTrendData[`vol_trend_${t}`]
     if (!d?.dates) return
     const monthly = {}
     d.dates.forEach((date, i) => {
@@ -1091,7 +1091,7 @@ function MonthlyTVChart({ volTrendData, allThemeNames, months }) {
 
   const tvByTheme = {}
   allThemeNames.forEach(t => {
-    const d = volTrendData[`vol_trend_${tn(t)}`]
+    const d = volTrendData[`vol_trend_${t}`]
     if (!d?.dates) return
     const monthly = {}
     d.dates.forEach((date, i) => {
