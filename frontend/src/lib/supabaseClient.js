@@ -3,7 +3,7 @@ import { createClient } from '@supabase/supabase-js'
 const SUPABASE_URL      = import.meta.env.VITE_SUPABASE_URL
 const SUPABASE_ANON_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY
 
-// EN site URL - hardcoded, not from env to ensure reliability
+// EN site URL - hardcoded to ensure EN redirect after login
 const EN_REDIRECT_URL = 'https://stockwavejp-en.com/'
 
 export const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {

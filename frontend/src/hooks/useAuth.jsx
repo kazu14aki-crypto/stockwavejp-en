@@ -3,7 +3,7 @@
  * App全体で共有し、Loginユーザー情報を提供する
  */
 import { useState, useEffect, createContext, useContext } from 'react'
-import { supabase, signInWithGoogle, signOut } from '../lib/supabaseClient.js'
+import { supabase, signInWithGoogle, signOut } from '../lib/supabase'
 
 // Contextで全体共有
 const AuthContext = createContext(null)
