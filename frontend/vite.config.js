@@ -29,10 +29,8 @@ export default defineConfig({
           if (id.includes('node_modules/react') || id.includes('node_modules/react-dom')) {
             return 'react-vendor'
           }
-          // Supabaseを分離（大きいライブラリ）
-          if (id.includes('node_modules/@supabase')) {
-            return 'supabase'
-          }
+          // Note: @supabase is intentionally NOT split into a separate chunk
+          // to ensure src/lib/supabase.js flowType and redirectTo are bundled correctly
           // columnDataは大きいので分離
           if (id.includes('columnData')) {
             return 'column-data'
