@@ -49,7 +49,7 @@ const PAGES_FOOTER = [
 ]
 
 // Contact form URL
-const CONTACT_FORM_URL = 'https://forms.gle/XjNypTdmZt265Kib6'
+const CONTACT_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSeHLMXrJAttWONfyfe94OSsiP039PX5xi918R3kuDHFJ0Aiow/viewform?usp=dialog'
 const ALL_PAGES = [...PAGES, ...PAGES_OTHER, ...PAGES_FOOTER]
 const COLOR_THEME_KEY = 'swjp_color_theme'
 const COLOR_DIR_KEY   = 'sw_color_dir'
