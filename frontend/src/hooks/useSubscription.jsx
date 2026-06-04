@@ -13,7 +13,7 @@
  *   カスタムテーマ分析（AI） → pro のみ
  */
 import { useState, useEffect, createContext, useContext } from 'react'
-import { supabase } from '../lib/supabase'
+import { supabase } from '../lib/supabaseClient'
 
 // 開発者メールアドレス（全機能解放）
 const DEV_EMAILS = [
