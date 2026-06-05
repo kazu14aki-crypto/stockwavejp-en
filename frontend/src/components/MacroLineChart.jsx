@@ -1,5 +1,35 @@
-// MacroLineChart.jsx — Home・Market Rankingで共通使用するマクロ指標グラフ
+// MacroLineChart.jsx - macro indicator chart
 import { useState } from 'react'
+
+// Japanese to English label translation
+const MACRO_LABELS = {
+  '国内主要株(1321)':           'Nikkei225 ETF (1321)',
+  'TOPIX連動型上場投信(1306)':   'TOPIX ETF (1306)',
+  'S&P500 ETF(SPY)':             'S&P500 ETF (SPY)',
+  'ドル円':                       'USD/JPY',
+  '米ドル円':                     'USD/JPY',
+  '米国ハイテク株100(QQQ)':       'US Tech 100 (QQQ)',
+  '日経225':                      'Nikkei 225',
+  '日経平均':                     'Nikkei 225',
+  'TOPIX':                        'TOPIX',
+  'S&P500':                       'S&P500',
+  'QQQ':                          'US Tech 100 (QQQ)',
+  '金':                            'Gold',
+  '金(1540)':                     'Gold ETF (1540)',
+  'VIX':                          'VIX',
+  'VIX(恐怖指数)':                'VIX (Fear Index)',
+  '原油':                          'Crude Oil',
+  '原油(1699)':                   'Crude Oil ETF (1699)',
+  '長期国債':                     'JGB Long-term',
+  '長期国債(2621)':               'JGB Long-term ETF (2621)',
+  '長期国債ETF(2621)':            'JGB Long-term ETF (2621)',
+  '米国株':                       'S&P500 ETF',
+  '米国株(2558)':                 'S&P500 ETF (US)',
+  '米国株ETF(2558)':              'S&P500 ETF (US)',
+  '米国債(2647)':                 'US Treasury ETF (2647)',
+  '東証REIT(1343)':               'J-REIT ETF (1343)',
+}
+const ml = (name) => MACRO_LABELS[name] || name
 
 export const MACRO_COLORS = ['#ff4560','#ff8c42','#ffd166','#06d6a0','#4a9eff','#aa77ff']
 
@@ -18,7 +48,7 @@ export function MacroCard({ name, data, color }) {
     <div style={{ background:'var(--bg2)', border:'1px solid var(--border)', borderRadius:'8px',
       padding:'10px 12px', display:'flex', flexDirection:'column', gap:'6px', minWidth:0 }}>
       <div style={{ fontSize:'10px', color:'var(--text3)', fontWeight:600, letterSpacing:'0.05em',
-        overflow:'hidden', textOverflow:'ellipsis', whiteSpace:'nowrap' }}>{name}</div>
+        overflow:'hidden', textOverflow:'ellipsis', whiteSpace:'nowrap' }}>{ml(name)}</div>
       <div style={{ display:'flex', alignItems:'flex-end', justifyContent:'space-between', gap:'8px' }}>
         <div style={{ fontFamily:'var(--mono)', fontSize:'16px', fontWeight:700, color:pctColor, lineHeight:1 }}>
           {last.pct>=0?'+':''}{last.pct.toFixed(1)}%
@@ -59,8 +89,8 @@ export default function MacroLineChart({ macro }) {
 
   const W = 800, H = 160, PL = 46, PR = 16, PT = 12, PB = 28
 
-  // 各指標を独立スケールで正規化（0基準→期間内の相対変化を均等表示）
-  // Y軸は「相対Return（各指標の期間内変化幅を揃える）」
+  // Normalize each metric independently（0基準→期間内の相対変化を均等表示）
+  // Y-axis: relative return（各指標の期間内変化幅を揃える）」
   const scaledData = {}
   names.forEach(n => {
     const data = macro[n] || []
@@ -72,8 +102,8 @@ export default function MacroLineChart({ macro }) {
     // 各指標を-50〜+50の共通レンジに正規化して表示
     scaledData[n] = data.map(d => ({
       date: d.date,
-      pct: d.pct,  // 実際の%（凡例表示用）
-      scaled: ((d.pct - dataMin) / range) * 80 - 40  // -40〜+40に正規化
+      pct: d.pct,  // actual % for legend display
+      scaled: ((d.pct - dataMin) / range) * 80 - 40  // normalize to -40 to +40
     }))
   })
 
@@ -91,16 +121,16 @@ export default function MacroLineChart({ macro }) {
 
   return (
     <div style={{ background:'var(--bg2)', border:'1px solid var(--border)', borderRadius:'var(--radius)', padding:'14px', overflowX:'auto' }}>
-      {/* ミニチャートカード（各指標の実際のReturn）*/}
+      {/* Mini chart cards (actual return per metric) */}
       <div style={{ display:'grid', gridTemplateColumns:'repeat(3, 1fr)', gap:'8px', marginBottom:'14px' }} className="macro-mini-grid">
         {names.map((name, ti) => (
           <MacroCard key={name} name={name} data={macro[name] || []} color={MACRO_COLORS[ti % MACRO_COLORS.length]} />
         ))}
       </div>
 
-      {/* 折れ線グラフ（各指標の相対変化を均等スケールで表示）*/}
+      {/* Line chart (relative change with equal scale) */}
       <div style={{ fontSize:'10px', color:'var(--text3)', marginBottom:'6px' }}>
-        ▼ 期間内の相対変化トレンド（各指標の変動幅を均等に正規化）
+        ▼ Relative trend over period (each metric normalized to equal amplitude)
       </div>
       <svg viewBox={`0 0 ${W} ${H}`} width="100%" style={{ display:'block', minWidth:'320px' }}>
         {ticks.map(v => (
@@ -134,7 +164,7 @@ export default function MacroLineChart({ macro }) {
           ) : null
         })}
       </svg>
-      {/* 凡例 */}
+      {/* Legend */}
       <div style={{ display:'flex', flexWrap:'wrap', gap:'10px', marginTop:'8px' }}>
         {names.map((name, ti) => {
           const data = macro[name] || []
@@ -143,7 +173,7 @@ export default function MacroLineChart({ macro }) {
           return (
             <div key={name} style={{ display:'flex', alignItems:'center', gap:'5px' }}>
               <div style={{ width:'14px', height:'2px', background:color, borderRadius:'1px' }} />
-              <span style={{ fontSize:'11px', color:'var(--text2)' }}>{name}</span>
+              <span style={{ fontSize:'11px', color:'var(--text2)' }}>{ml(name)}</span>
               {last && (
                 <span style={{ fontSize:'11px', fontFamily:'var(--mono)', color, fontWeight:700 }}>
                   {last.pct >= 0 ? '+' : ''}{last.pct.toFixed(1)}%
@@ -154,7 +184,7 @@ export default function MacroLineChart({ macro }) {
         })}
       </div>
       <div style={{ fontSize:'10px', color:'var(--text3)', marginTop:'6px' }}>
-        ※ETFベースの独自指標。Y軸は各指標の変動幅を正規化した相対値（実際のReturnはカード参照）
+        * ETF-based proprietary index. Y-axis = normalized relative amplitude. Actual returns shown in cards above.
       </div>
     </div>
   )

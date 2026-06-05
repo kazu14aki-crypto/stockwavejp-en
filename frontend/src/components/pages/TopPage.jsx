@@ -1,4 +1,3 @@
-import { tn } from '../../utils/themeNames'
 import { useState } from 'react'
 import { useThemes, useMacro } from '../../hooks/useMarketData'
 import MacroLineChart, { MacroCard, SHead } from '../MacroLineChart'
@@ -6,86 +5,86 @@ import MacroLineChart, { MacroCard, SHead } from '../MacroLineChart'
 const API = import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000'
 
 const THEME_ARTICLE_MAP = {
-  '半導体製造装置':    'semiconductor-theme',
-  '半導体検査装置':    'semiconductor-theme',
-  '半導体材料':        'semiconductor-theme',
-  'メモリ':            'semiconductor-theme',
-  'パワー半導体':      'power-semiconductor',
-  '次世代半導体':      'semiconductor-theme',
-  '生成AI':            'ai-cloud-theme',
-  'AIデータセンター':  'ai-cloud-theme',
-  'フィジカルAI':      'physical-ai-edge-ai',
-  'AI半導体':          'semiconductor-theme',
-  'AI人材':            'education-hr-theme',
-  'エッジAI':          'physical-ai-edge-ai',
-  'EV・電気自動車':    'ev-green-theme',
-  '全固体電池':        'ev-green-theme',
-  '自動運転':          'ev-green-theme',
-  'ドローン':          'drone-theme',
-  '輸送・物流':        'transport-logistics-theme',
-  '造船':              'shipbuilding-theme',
-  '再生可能エネルギー':'renewable-energy-theme',
-  '太陽光発電':        'renewable-energy-theme',
-  '核融合発電':        'renewable-energy-theme',
-  '原子力発電':        'renewable-energy-theme',
-  '電力会社':          'renewable-energy-theme',
+  'Semiconductor Equipment':    'semiconductor-theme',
+  'Semiconductor Testing':    'semiconductor-theme',
+  'Semiconductor Materials':        'semiconductor-theme',
+  'Memory':            'semiconductor-theme',
+  'Power Semiconductor':      'power-semiconductor',
+  'Next-Gen Semiconductor':      'semiconductor-theme',
+  'Generative AI':            'ai-cloud-theme',
+  'AI Datacenter':  'ai-cloud-theme',
+  'Physical AI':      'physical-ai-edge-ai',
+  'AI Semiconductor':          'semiconductor-theme',
+  'AI Talent':            'education-hr-theme',
+  'Edge AI':          'physical-ai-edge-ai',
+  'EV / Electric Vehicles':    'ev-green-theme',
+  'All-Solid-State Battery':        'ev-green-theme',
+  'Autonomous Driving':          'ev-green-theme',
+  'Drones':          'drone-theme',
+  'Transport & Logistics':        'transport-logistics-theme',
+  'Shipbuilding':              'shipbuilding-theme',
+  'Renewable Energy':'renewable-energy-theme',
+  'Solar Power':        'renewable-energy-theme',
+  'Nuclear Fusion':        'renewable-energy-theme',
+  'Nuclear Power':        'renewable-energy-theme',
+  'Electric Utilities':          'renewable-energy-theme',
   'LNG':               'inpex-analysis',
-  '石油':              'inpex-analysis',
-  '蓄電池':            'ev-green-theme',
-  '資源（水素・ヘリウム・水）': 'rare-earth-resources-theme',
+  'Oil & Gas':              'inpex-analysis',
+  'Energy Storage':            'ev-green-theme',
+  'Resources (H2/Helium/Water)': 'rare-earth-resources-theme',
   'IOWN':              'optical-communication',
-  '光通信':            'optical-communication',
-  '通信':              'telecom-theme',
-  '量子コンピューター':'ai-cloud-theme',
+  'Optical Communication':            'optical-communication',
+  'Telecom':              'telecom-theme',
+  'Quantum Computing':'ai-cloud-theme',
   'SaaS':              'fintech-theme',
-  'ウェアラブル端末':  'game-entertainment-theme',
-  '仮想通貨':          'fintech-theme',
-  'ネット銀行':        'banking-finance-theme',
-  '鉄鋼・素材':        'steel-materials-theme',
-  '化学':              'chemical-theme',
-  '建築資材':          'construction-infra-theme',
-  '塗料':              'chemical-theme',
-  '医薬品・バイオ':    'pharma-bio-theme',
-  'ヘルスケア・介護':  'healthcare-nursing-theme',
-  '薬局・ドラッグストア': 'healthcare-nursing-theme',
-  '銀行・金融':        'banking-finance-theme',
-  '地方銀行':          'regional-bank-theme',
-  '保険':              'insurance-theme',
-  'フィンテック':      'fintech-theme',
-  '不動産':            'real-estate-theme',
-  '建設・インフラ':    'construction-infra-theme',
-  '国土強靭化計画':    'national-resilience',
-  '下水道':            'construction-infra-theme',
-  '食品・飲料':        'food-beverage-theme',
-  '農業・フードテック':'agritech-foodtech-theme',
-  '小売・EC':          'retail-ec-theme',
-  '観光・ホテル・レジャー': 'tourism-hotel-theme',
-  'インバウンド':      'inbound-theme',
-  'リユース・中古品':  'retail-ec-theme',
-  '防衛・航空':        'defense-theme',
-  '宇宙・衛星':        'space-satellite-theme',
-  'ロボット・自動化':  'robot-automation-theme',
-  'レアアース・資源':  'rare-earth-resources-theme',
-  'バフェット銘柄':    'sogo-shosha-analysis',
-  'サイバーセキュリティ': 'cybersecurity-theme',
-  '警備':              'cybersecurity-theme',
-  '脱炭素・ESG':       'ev-green-theme',
-  '教育・HR・人材':    'education-hr-theme',
-  '人材派遣':          'education-hr-theme',
-  'ゲーム・エンタメ':  'game-entertainment-theme',
+  'Wearables':  'game-entertainment-theme',
+  'Crypto / Virtual Currency':          'fintech-theme',
+  'Digital Banking':        'banking-finance-theme',
+  'Steel & Materials':        'steel-materials-theme',
+  'Chemicals':              'chemical-theme',
+  'Building Materials':          'construction-infra-theme',
+  'Paints & Coatings':              'chemical-theme',
+  'Pharma & Biotech':    'pharma-bio-theme',
+  'Healthcare & Nursing':  'healthcare-nursing-theme',
+  'Pharmacy / Drug Store': 'healthcare-nursing-theme',
+  'Banking / Finance':        'banking-finance-theme',
+  'Regional Banks':          'regional-bank-theme',
+  'Insurance':              'insurance-theme',
+  'Fintech':      'fintech-theme',
+  'Real Estate':            'real-estate-theme',
+  'Construction & Infra':    'construction-infra-theme',
+  'National Resilience':    'national-resilience',
+  'Water Infrastructure':            'construction-infra-theme',
+  'Food & Beverage':        'food-beverage-theme',
+  'Agritech & Foodtech':'agritech-foodtech-theme',
+  'Retail & E-Commerce':          'retail-ec-theme',
+  'Tourism & Hotels': 'tourism-hotel-theme',
+  'Inbound Tourism':      'inbound-theme',
+  'Resale / Second-hand':  'retail-ec-theme',
+  'Defense & Aerospace':        'defense-theme',
+  'Space & Satellite':        'space-satellite-theme',
+  'Robotics & Automation':  'robot-automation-theme',
+  'Rare Earth & Resources':  'rare-earth-resources-theme',
+  'Buffett Picks':    'sogo-shosha-analysis',
+  'Cyber Security': 'cybersecurity-theme',
+  'Security Services':              'cybersecurity-theme',
+  'Decarbonization / ESG':       'ev-green-theme',
+  'Education & HR':    'education-hr-theme',
+  'Staffing / HR':          'education-hr-theme',
+  'Gaming & Entertainment':  'game-entertainment-theme',
 }
 
 const ALL_NEWS = [
-  { date:'2026/04/19', tag:'NEW',    title:'Weekly Report feature added (auto-generated every Friday)' },
-  { date:'2026/04/19', tag:'UPDATE', title:'Added capital flow scatter chart to Custom Theme' },
-  { date:'2026/04/19', tag:'UPDATE', title:'Removed period tabs from Theme Heatmap' },
-  { date:'2026/04/15', tag:'UPDATE', title:'Fixed stock definitions in Market Ranking' },
-  { date:'2026/04/10', tag:'UPDATE', title:'Renamed menu item to Theme Heatmap' },
-  { date:'2026/04/01', tag:'UPDATE', title:'Added 8 new column articles' },
-  { date:'2026/03/31', tag:'UPDATE', title:'Enhanced Custom Theme features' },
-  { date:'2026/03/14', tag:'NEW',    title:'React version released' },
+  { date:'2026/05/29', tag:'NEW',    title:'MLCC Theme Added & Murata/MLCC Column Articles Published' },
+  { date:'2026/05/29', tag:'NEW',    title:'Weekly Report (May 25-29) Published' },
+  { date:'2026/05/22', tag:'NEW',    title:'Weekly Report (May 18-22) Published' },
+  { date:'2026/05/19', tag:'NEW',    title:'Institutional Holdings Page Added' },
+  { date:'2026/05/18', tag:'UPDATE', title:'Custom Themes: Cost Basis & P&L Tracking Added' },
+  { date:'2026/05/15', tag:'NEW',    title:'Weekly Report (May 11-15) Published' },
+  { date:'2026/05/08', tag:'NEW',    title:'Weekly Report (May 4-8) Published' },
+  { date:'2026/03/14', tag:'NEW',    title:'StockWaveJP React Version Launched' },
 ]
-// Descソート・最新3件
+// Sort descending, show latest 3 items
 const NEWS_LIST = [...ALL_NEWS].sort((a,b) => b.date.localeCompare(a.date)).slice(0,3)
 const TAG_COLORS = {
   'NEW':    { bg:'rgba(255,83,112,0.15)', color:'var(--red)',    border:'rgba(255,83,112,0.3)' },
@@ -93,9 +92,9 @@ const TAG_COLORS = {
   'INFO':   { bg:'rgba(76,175,130,0.12)', color:'var(--green)',  border:'rgba(76,175,130,0.25)' },
 }
 
-// ── 市場コメント自動生成 ──
+// ── Auto-generate market commentary ──
 function AutoComment({ lines }) {
-  // 防御的処理: null/undefined/空/文字列に対応
+  // Defensive: handle null/undefined/empty/string
   let safeLines = lines
   if (!safeLines) return null
   if (typeof safeLines === 'string') safeLines = safeLines.split('\n').filter(Boolean)
@@ -150,10 +149,10 @@ function generateMarketComment(themeData, macro) {
   const avg       = s.avg ?? 0
 
   // 市場全体の状態
-  const mktState = riseCount >= total*0.7 ? 'Broad Rising market' :
-                   riseCount >= total*0.55 ? 'Rising-dominant market' :
-                   fallCount >= total*0.7  ? 'Broad Falling market' :
-                   fallCount >= total*0.55 ? 'Falling-dominant market' : 'Mixed / no clear direction'
+  const mktState = riseCount >= total*0.7 ? 'broad rally' :
+                   riseCount >= total*0.55 ? 'mostly rising' :
+                   fallCount >= total*0.7  ? 'broad decline' :
+                   fallCount >= total*0.55 ? 'mostly falling' : 'mixed market'
 
   const top3 = [...t].sort((a,b)=>b.pct-a.pct).slice(0,3)
   const bot3 = [...t].sort((a,b)=>a.pct-b.pct).slice(0,3)
@@ -163,10 +162,10 @@ function generateMarketComment(themeData, macro) {
 
   // マクロ情報
   const macroKeys = macro ? Object.keys(macro) : []
-  const nikkei = macro?.['Nikkei225ETF(1321)'] || macro?.['国内主要株(1321)'] || macro?.['日経225連動型(1321)']
-  const topix  = macro?.['TOPIXetf(1306)'] || macro?.['TOPIX連動型上場投信(1306)'] || macro?.['TOPIX指数'] || macro?.['TOPIX連動型(1306)'] || macro?.['1306.T']
+  const nikkei = macro?.['国内主要株(1321)'] || macro?.['Nikkei225 ETF (1321)'] || macro?.['Nikkei225 ETF: (1321)']
+  const topix  = macro?.['TOPIX連動型上場投信(1306)'] || macro?.['TOPIX ETF (1306)'] || macro?.['1306.T']
   const sp500  = macro?.['S&P500 ETF(SPY)']
-  const usdjpy = macro?.['USD/JPY'] || macro?.['ドル円']
+  const usdjpy = macro?.['USD/JPY: ']
   const lastNK = nikkei ? nikkei[nikkei.length-1]?.pct : null
   const lastTP = topix  ? topix[topix.length-1]?.pct  : null
   const lastSP = sp500  ? sp500[sp500.length-1]?.pct  : null
@@ -175,50 +174,50 @@ function generateMarketComment(themeData, macro) {
   const lines = []
 
   // 全体概況
-  lines.push(`[Market Overview] Current Japanese theme market: ${mktState}. ${riseCount} Rising / ${fallCount} Falling (avg return ${avg>=0?'+':''}${avg.toFixed(2)}%). ${hotThemes.length>0?`${hotThemes.length} theme(s) surged 5%+. `:``}${coldThemes.length>0?`${coldThemes.length} theme(s) fell 5%+.`:``}`)
+  lines.push(`[Market Overview] Current Japanese theme market: ${mktState}. ${riseCount} Rising / ${fallCount} Falling (avg return ${avg>=0?'+':''}${avg.toFixed(2)}%).${hotThemes.length>0?` ${hotThemes.length} theme(s) surged 5%+.`:''}${coldThemes.length>0?` ${coldThemes.length} theme(s) fell 5%+.`:''}`)
 
   // マクロ環境
   if (lastNK != null || lastSP != null) {
     const macroLine = [
-      lastNK != null ? `Nikkei225 ${lastNK>=0?'+':''}${lastNK.toFixed(1)}%` : null,
-      lastTP != null ? `TOPIX ${lastTP>=0?'+':''}${lastTP.toFixed(1)}%` : null,
+      lastNK != null ? `Nikkei225 ETF: ${lastNK>=0?'+':''}${lastNK.toFixed(1)}%` : null,
+      lastTP != null ? `TOPIX ETF: ${lastTP>=0?'+':''}${lastTP.toFixed(1)}%` : null,
       lastSP != null ? `S&P500 ${lastSP>=0?'+':''}${lastSP.toFixed(1)}%` : null,
-      lastFX != null ? `USD/JPY ${lastFX>=0?'+':''}${lastFX.toFixed(1)}%` : null,
+      lastFX != null ? `USD/JPY: ${lastFX>=0?'+':''}${lastFX.toFixed(1)}%` : null,
     ].filter(Boolean).join(' / ')
-    const riskMode = lastSP != null ? (lastSP > 1 ? 'Risk-on (US stocks rising) — tailwind for theme stocks. ' : lastSP < -1 ? 'Risk-off (US stocks falling) — cautious tone. ' : 'US stocks flat. ') : ''
-    lines.push(`[Macro Indicators] ${macroLine}. ${riskMode}${lastFX != null ? (lastFX > 1 ? 'JPY weakening — tailwind for exporters. ' : lastFX < -1 ? 'JPY strengthening — headwind for exporters. ' : '') : ''}`)
+    const riskMode = lastSP != null ? (lastSP > 1 ? 'Risk-on (US stocks rising) — tailwind for theme stocks. ' : lastSP < -1 ? 'Risk-off (US stocks falling) — defensive positioning recommended. ' : 'Macro neutral — technical and theme factors likely dominate. ') : ''
+    lines.push(`[Macro Indicators] ${macroLine}. ${riskMode}${lastFX != null ? (lastFX > 1 ? 'JPY weakening — tailwind for exporters. ' : lastFX < -1 ? 'JPY strengthening — focus on importers. ' : '') : ''}`)
   }
 
-  // Risingテーマ
+  // risingTheme
   if (top3.length && top3[0].pct > 0) {
-    const upNames = top3.filter(x=>x.pct>0).map(x=>`"${tn(x.theme)}"(${x.pct>=0?'+':''}${x.pct.toFixed(1)}%)`).join('、')
-    lines.push(`▲ Notable Rising themes: ${upNames}. ${volUp.length>0&&top3.some(top=>volUp.some(v=>v.theme===top.theme))?`'${tn(top3[0].theme)}' is also seeing volume surge — institutional inflow may be starting.`:''}`)
+    const upNames = top3.filter(x=>x.pct>0).map(x=>`「${x.theme}」(${x.pct>=0?'+':''}${x.pct.toFixed(1)}%)`).join('、')
+    lines.push(`▲ Notable Rising themes: ${upNames}.${volUp.length>0&&top3.some(top=>volUp.some(v=>v.theme===top.theme)) ? ' Volume surge concurrent with rising — particularly noteworthy.' : ''}`)
   }
 
-  // Fallingテーマ
+  // fallingTheme
   if (bot3.length && bot3[0].pct < 0) {
-    const dnNames = bot3.filter(x=>x.pct<0).map(x=>`"${tn(x.theme)}"(${x.pct.toFixed(1)}%)`).join('、')
-    lines.push(`▼ Notable Falling themes: ${dnNames}. ${coldThemes.length>3?'Broad selling pressure — selective theme approach recommended.':'Sharp decline — overheating correction or external headwinds likely.'}`)
+    const dnNames = bot3.filter(x=>x.pct<0).map(x=>`「${x.theme}」(${x.pct.toFixed(1)}%)`).join('、')
+    lines.push(`▼ Notable Falling themes: ${dnNames}. ${coldThemes.length>3?'Broad selling pressure — selective theme approach recommended.':'Sharp declines — possible overheating correction or external pressure.'}`)
   }
 
-  // Volume増加テーマ
+  // Volume増加Theme
   if (volUp.length > 0) {
-    lines.push(`📊 Volume surging 20%+: ${volUp.map(x=>x.theme).join(', ')}. Rising volume often leads price moves — a key signal for tracking potential breakouts.`)
+    lines.push(`📊 Volume surging 20%+: ${volUp.map(x=>tn(x.theme)).join(', ')}. Rising volume often leads price moves — a key signal for tracking potential breakouts.`)
   }
 
-  // Volume急増かつRisingテーマ → 特に注目
+  // Volume急増かつrisingTheme → 特に注目
   const hotWithVol = hotThemes.filter(h => volUp.some(v => v.theme === h.theme))
   if (hotWithVol.length > 0) {
-    lines.push(`🔥 Surging + Volume spike: ${hotWithVol.map(t=>t.theme).join(', ')}. Price rise + volume surge simultaneously — possible early stage of a strong trend.`)
+    lines.push(`🔥 Surging + Volume spike: ${hotWithVol.map(t=>tn(t.theme)).join(', ')}. Price rise + volume surge simultaneously — possible early stage of a strong trend.`)
   }
 
-  // Falling幅が大きいがVolumeも増加（底値模索か）
+  // falling幅が大きいがVolumeも増加（底値模索か）
   const coldWithVolUp = coldThemes.filter(h => volUp.some(v => v.theme === h.theme))
   if (coldWithVolUp.length > 0) {
-    lines.push(`📉 Falling themes with rising volume: ${coldWithVolUp.map(t=>t.theme).join(', ')}. Heavy selling with rising volume — possible capitulation. Watch for reversal signals before acting.`)
+    lines.push(`📉 Falling themes with rising volume: ${coldWithVolUp.map(t=>tn(t.theme)).join(', ')}. Strong selling pressure, but volume increase may signal potential bottom reversal.`)
   }
 
-  lines.push(`💡 Today's point: ${avg >= 2 ? 'Strong broad environment — concentration in bullish themes tends to work well.' : avg <= -2 ? 'Weak broad market — defensive themes are preferable. Consider reducing risk exposure.' : 'Mixed environment — selective theme approach and risk management are key.'}`)
+  lines.push(`💡 Today's point: ${avg >= 2 ? 'Strong broad environment — concentration in bullish themes tends to work well.' : avg <= -2 ? 'Weak broad environment — focus on defensive plays and higher cash levels.' : 'Mixed environment — theme rotation and stock selection are key.'}`)
 
   return lines
 }
@@ -289,13 +288,13 @@ export default function TopPage({ onNavigate }) {
           <span style={{ color:'var(--logo-red)', fontSize:'13px' }}>JP</span>
         </h1>
         {/* PC:1行 / SP:折り返し */}
-        <p style={{ fontSize:'13px', color:'var(--text)', lineHeight:1.7 }} className="hero-desc">
-          Track Return, Volume, and Trading Value across Japanese stock themes. Visualize capital flows by theme using period-based Heatmaps, Market Rankings, and Analysis Columns.ラムを組み合わせ、より実践的な投資分析をサポートします。
+        <p style={{ fontSize:'11px', color:'var(--text2)', lineHeight:1.7 }} className="hero-desc">
+          Track 67+ Japanese stock themes in real-time. Visualize capital flows by theme, period heatmaps, Market Ranking and analytical columns — all in one place for more actionable insights.
         </p>
       </div>
 
       {/* News（小見出しのみ・コンパクト） */}
-      <SHead title="📣 News" />
+      <SHead title="📣 News & Updates" />
       <div style={{ display:'flex', flexDirection:'column', gap:'4px', marginBottom:'4px' }}>
         {NEWS_LIST.map((n,i)=>{
           const tc = TAG_COLORS[n.tag]||TAG_COLORS['INFO']
@@ -321,25 +320,25 @@ export default function TopPage({ onNavigate }) {
       </div>
 
       {/* KPIカード */}
-      <SHead title="📊 Market Summary (1 Month)" />
+      <SHead title="📊 Market Summary (1M)" />
       <div className="responsive-grid-4" style={{ marginBottom:'4px' }}>
-        <KpiCard delay={0.05} loading={loading} label="Rising Themes"
+        <KpiCard delay={0.05} loading={loading} label="risingTheme"
           value={<span>{s?s.rise:'-'}<span style={{ fontSize:'14px', color:'var(--text3)', fontWeight:400 }}>{s?` / ${s.total}`:''}</span></span>}
           valueColor="var(--red)"
           arrow={s ? (s.rise > s.fall ? 'up' : s.rise < s.fall ? 'down' : null) : null}
           sub="of All Themes"/>
-        <KpiCard delay={0.1} loading={loading} label="AvgReturn"
+        <KpiCard delay={0.1} loading={loading} label="Avg Change"
           value={s?`${s.avg>=0?'+':''}${s.avg?.toFixed(2)}%`:'-'}
           valueColor={s?.avg>=0?'var(--red)':'var(--green)'}
           arrow={s ? (s.avg >= 0 ? 'up' : 'down') : null}
           sub="Period: 1M"/>
-        <KpiCard delay={0.15} loading={loading} label="Top Inflow"
-          value={<span>{tn(s?.top?.theme)||'-'}</span>}
+        <KpiCard delay={0.15} loading={loading} label="capital inflowTOP"
+          value={<span>{s?.top?.theme||'-'}</span>}
           valueColor="var(--red)"
           arrow="up"
           sub={s?.top?<span style={{ color:'var(--red)', fontWeight:600 }}>+{s.top.pct.toFixed(1)}%</span>:'-'}/>
-        <KpiCard delay={0.2} loading={loading} label="Top Outflow"
-          value={<span>{tn(s?.bot?.theme)||'-'}</span>}
+        <KpiCard delay={0.2} loading={loading} label="capital outflowTOP"
+          value={<span>{s?.bot?.theme||'-'}</span>}
           valueColor="var(--green)"
           arrow="down"
           sub={s?.bot?<span style={{ color:'var(--green)', fontWeight:600 }}>{s.bot.pct.toFixed(1)}%</span>:'-'}/>
@@ -354,18 +353,18 @@ export default function TopPage({ onNavigate }) {
         }}>
           <div style={{ fontSize:'10px', fontWeight:700, color:'var(--accent)',
             letterSpacing:'0.1em', textTransform:'uppercase', marginBottom:'6px' }}>
-            📝 Today's Market Commentary (auto-generated, 1M data)
+          📝 Today's Market Commentary (Auto-generated, 1M data)
           </div>
           <AutoComment lines={generateMarketComment(themes, macro)} />
 
-          {/* 注目テーマ誘導ボタン */}
+          {/* 注目Theme誘導ボタン */}
           {themes?.themes?.length > 0 && onNavigate && (() => {
             const top3 = [...(themes.themes||[])].sort((a,b)=>b.pct-a.pct).slice(0,3)
             return (
               <div style={{ marginTop:'14px' }}>
                 <div style={{ fontSize:'11px', color:'var(--text3)', marginBottom:'10px',
                   fontWeight:600, letterSpacing:'0.08em', textTransform:'uppercase' }}>
-                  🔎 Top 3 Themes
+        🔎 Top 3 Themes
                 </div>
                 <div style={{ display:'grid', gridTemplateColumns:'repeat(3,1fr)', gap:'10px', marginBottom:'12px' }} className="top3-grid">
                   {top3.map((t, i) => (
@@ -378,7 +377,7 @@ export default function TopPage({ onNavigate }) {
                         {i===0?'🥇 Top Theme #1':i===1?'🥈 Top Theme #2':'🥉 Top Theme #3'}
                       </div>
                       <div style={{ fontSize:'13px', fontWeight:700, color:'var(--text)', marginBottom:'8px' }}>
-                        {tn(t.theme)}
+                        {t.theme}
                         <span style={{ marginLeft:'8px', fontSize:'12px', fontWeight:700,
                           color: t.pct >= 0 ? 'var(--red)' : 'var(--green)',
                           fontFamily:'var(--mono)' }}>
@@ -393,7 +392,7 @@ export default function TopPage({ onNavigate }) {
                           📊 Theme Detail
                         </button>
                         {THEME_ARTICLE_MAP[t.theme] && (
-                          <button onClick={() => onNavigate('Column', THEME_ARTICLE_MAP[t.theme])}
+                          <button onClick={() => onNavigate('Column & Analysis', THEME_ARTICLE_MAP[t.theme])}
                             style={{ padding:'5px 12px', borderRadius:'5px', fontSize:'11px',
                               background:'rgba(74,158,255,0.07)', border:'1px solid rgba(74,158,255,0.2)',
                               color:'var(--accent)', cursor:'pointer', fontFamily:'var(--font)', fontWeight:600 }}>
