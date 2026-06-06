@@ -1,9 +1,9 @@
 """
 main_en.py — FastAPI English Edition
 """
-from fastapi import FastAPI, Request
+from fastapi import FastAPI, Request, Query
 import stripe
-import os, Query
+import os
 from fastapi.responses import Response
 from fastapi.middleware.cors import CORSMiddleware
 from datetime import datetime
