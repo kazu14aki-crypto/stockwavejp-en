@@ -615,7 +615,7 @@ const ETF_GROUPS = {
   },
 }
 
-export default function MarketRank() {
+export default function MarketRank({ onNavigate }) {
   const [modalStock,  setModalStock]  = useState(null)
   const [period,      setPeriod]      = useState('1mo')
   const [summary,     setSummary]     = useState(null)

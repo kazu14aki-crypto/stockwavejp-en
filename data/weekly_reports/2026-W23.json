@@ -1,0 +1,56 @@
+{
+  "week": "2026-W23",
+  "date": "2026/06/06",
+  "title": "Jun 2–6 Weekly Market Report",
+  "generated_at": "2026/06/06 20:00 JST",
+  "summary": {
+    "avg_pct_1w": 1.45,
+    "rise_count": 42,
+    "fall_count": 25,
+    "top5_themes": [
+      {
+        "theme": "MLCC / Electronic Components",
+        "pct": 8.2
+      },
+      {
+        "theme": "AI Semiconductor",
+        "pct": 7.1
+      },
+      {
+        "theme": "Semiconductor Equipment",
+        "pct": 5.8
+      },
+      {
+        "theme": "Memory",
+        "pct": 5.3
+      },
+      {
+        "theme": "Wearables",
+        "pct": 4.9
+      }
+    ],
+    "bot5_themes": [
+      {
+        "theme": "Shipbuilding",
+        "pct": -5.1
+      },
+      {
+        "theme": "Oil & Gas",
+        "pct": -3.2
+      },
+      {
+        "theme": "Solar Power",
+        "pct": -2.8
+      },
+      {
+        "theme": "Energy Storage",
+        "pct": -1.9
+      },
+      {
+        "theme": "Water Infrastructure",
+        "pct": -1.5
+      }
+    ]
+  },
+  "report": "## Market Overview (Jun 2–6)\n\n42 of 67 themes (63%) posted gains. The average theme change was +1.45%, improving from +0.82% the prior week. Semiconductor and AI-related themes rallied broadly.\n\nThe Nikkei 225 gained +2.3% on the week. NVIDIA's strong earnings outlook drove concentrated capital flows into semiconductor-related themes.\n\n---\n\n## Top Rising Themes\n\n### 🥇 1st: MLCC / Electronic Components (+8.2%)\n\nTop performer for the second consecutive week. Murata Manufacturing (6981) continued to attract buying interest, and Taiyo Yuden (6976) extended its post-earnings rally. Structural demand for AI server MLCCs keeps driving capital inflows.\n\n### 🥈 2nd: AI Semiconductor (+7.1%)\n\nBroad gains across AI chip stocks following NVIDIA's strong results. Advantest (6857) surged +9.2%, leading the theme.\n\n### 🥉 3rd: Semiconductor Equipment (+5.8%)\n\nTokyo Electron (8035) led gains. Re-acceleration of the capex cycle is being priced in.\n\n---\n\n## Top Falling Themes\n\n### 📉 1st: Shipbuilding (-5.1%)\n\nProfit-taking continued as order backlogs are perceived to have peaked. Kawasaki Heavy Industries (7012) fell -6.3%.\n\n### 📉 2nd: Oil & Gas (-3.2%)\n\nOPEC+ production increase speculation weighed on crude prices, dragging down INPEX and related stocks.\n\n---\n\n## Macro Environment\n\n- Nikkei 225: +2.3% (solid)\n- TOPIX: +1.8%\n- S&P 500: +1.9%\n- USD/JPY: 156.2 (+0.5%)\n- US Tech 100 (QQQ): +3.1%\n\n---\n\n## Key Points for Next Week\n\n- US CPI release (Jun 11): Inflation data will drive rate cut expectations\n- BOJ meeting minutes publication: Watch for hints on additional rate hikes\n- MLCC volume trends: Monitor sustainability of capital inflows\n\n---\n\n## Investment Insights\n\nSemiconductor and AI momentum continues, making trend-following strategies effective. However, resource-related themes like Shipbuilding and Oil are showing increasing correction pressure. Consider portfolio adjustments with theme rotation in mind."
+}

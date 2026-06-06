@@ -1,8 +1,16 @@
 [
   {
+    "week": "2026-W23",
+    "date": "2026/06/06",
+    "title": "Jun 2–6 Weekly Market Report",
+    "avg_pct_1w": 1.45,
+    "rise_count": 42,
+    "fall_count": 25
+  },
+  {
     "week": "2026-W22",
     "date": "2026/05/29",
-    "title": "5/25〜5/29 Weekly Market Report",
+    "title": "May 25–29 Weekly Market Report",
     "avg_pct_1w": 0.82,
     "rise_count": 35,
     "fall_count": 32
@@ -10,41 +18,33 @@
   {
     "week": "2026-W21",
     "date": "2026/05/22",
-    "title": "5/18〜5/22 Weekly Market Report",
+    "title": "May 18–22 Weekly Market Report",
     "avg_pct_1w": 1.24,
-    "rise_count": 38,
-    "fall_count": 29
+    "rise_count": 41,
+    "fall_count": 26
   },
   {
     "week": "2026-W20",
     "date": "2026/05/15",
-    "title": "5/11〜5/15 Weekly Market Report",
-    "avg_pct_1w": 2.84,
-    "rise_count": 45,
-    "fall_count": 22
+    "title": "May 11–15 Weekly Market Report",
+    "avg_pct_1w": 0.95,
+    "rise_count": 38,
+    "fall_count": 29
   },
   {
     "week": "2026-W19",
     "date": "2026/05/08",
-    "title": "5/4〜5/8 Weekly Market Report",
-    "avg_pct_1w": 3.12,
-    "rise_count": 51,
-    "fall_count": 16
+    "title": "May 4–8 Weekly Market Report",
+    "avg_pct_1w": 2.14,
+    "rise_count": 52,
+    "fall_count": 15
   },
   {
     "week": "2026-W18",
     "date": "2026/05/01",
-    "title": "4/27〜5/1 Weekly Market Report",
-    "avg_pct_1w": 2.31,
-    "rise_count": 42,
-    "fall_count": 25
-  },
-  {
-    "week": "2026-04-24",
-    "date": "2026/04/24",
-    "title": "4/20〜4/24 Weekly Market Report",
-    "avg_pct_1w": 1.71,
-    "rise_count": 38,
-    "fall_count": 29
+    "title": "Apr 27–May 1 Weekly Market Report",
+    "avg_pct_1w": 0.43,
+    "rise_count": 33,
+    "fall_count": 34
   }
 ]
