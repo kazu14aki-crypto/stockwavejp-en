@@ -288,8 +288,8 @@ export default function TopPage({ onNavigate }) {
           <span style={{ color:'var(--logo-red)', fontSize:'13px' }}>JP</span>
         </h1>
         {/* PC:1行 / SP:折り返し */}
-        <p style={{ fontSize:'11px', color:'var(--text2)', lineHeight:1.7 }} className="hero-desc">
-          Track 67+ Japanese stock themes in real-time. Visualize capital flows by theme, period heatmaps, Market Ranking and analytical columns — all in one place for more actionable insights.
+        <p style={{ fontSize:'13px', color:'var(--text2)', lineHeight:1.9 }} className="hero-desc">
+          Track Return, Volume, and Trading Value across 67+ Japanese stock themes in real-time. Visualize capital flows by theme using period-based Heatmaps, Market Rankings, and Analysis Columns to support more actionable investment decisions.
         </p>
       </div>
 
