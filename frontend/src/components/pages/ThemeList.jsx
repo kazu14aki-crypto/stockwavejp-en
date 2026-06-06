@@ -1341,7 +1341,7 @@ export default function ThemeList({ onNavigate }) {
           </span>
         </div>
         <p style={{ fontSize: '12px', color: 'var(--text3)', marginBottom: '20px' }}>
-        <SHead title={`Japanese Stock Theme Return & Capital Flow — ${periodLabel}`} />
+        <SectionHead title={`Japanese Stock Theme Return & Capital Flow — ${periodLabel}`} />
         </p>
 
         {loading ? <Loading /> : error ? (

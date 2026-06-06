@@ -819,8 +819,8 @@ export default function MarketRank({ onNavigate }) {
                 </div>
 
                 <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:'16px', marginBottom:'20px' }} className="top5g">
-          <Top5Bar items={top5} title={`▲ Rising TOP5 (${stocks.filter(s=>s.pct>0).length} stocks)`} color='var(--red)' onNavigate={onNavigate} />
-          <Top5Bar items={bot5} title={`▼ Falling TOP5 (${stocks.filter(s=>s.pct<0).length} stocks)`} color='var(--green)' onNavigate={onNavigate} />
+          <Top5Bar items={top5} title={`▲ Rising TOP5 (${stocks.filter(s=>s.pct>0).length} stocks)`} colorFn={pct => pct >= 0 ? 'var(--red)' : 'var(--green)'} />
+          <Top5Bar items={bot5} title={`▼ Falling TOP5 (${stocks.filter(s=>s.pct<0).length} stocks)`} colorFn={pct => pct >= 0 ? 'var(--red)' : 'var(--green)'} />
                 </div>
 
                 {/* ③ Featured Stocks */}
