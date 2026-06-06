@@ -349,7 +349,7 @@ async def stripe_webhook(request: Request):
         plan = session.get("metadata", {}).get("plan", "").replace("_monthly", "")
         
         if user_id and plan:
-            from supabase import create_client
+            from supabase import create_client, Client
             sb_url = os.environ.get("SUPABASE_URL", "")
             sb_key = os.environ.get("SUPABASE_SERVICE_ROLE_KEY", "")
             sb = create_client(sb_url, sb_key)
