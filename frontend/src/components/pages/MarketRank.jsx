@@ -1,10 +1,11 @@
+import { tn } from '../../utils/themeNames'
 import React, { useState, useEffect, useRef } from 'react'
-import AddToThemeModal from '../AddToThemeModal'
-import StockBubbleChart from '../StockBubbleChart'
-import { useSegmentDetail, useMarketRankList } from '../../hooks/useMarketData'
+import AddToThemeModal from '../AddToThemeModal.jsx'
+import StockBubbleChart from '../StockBubbleChart.jsx'
+import { useSegmentDetail, useMarketRankList } from '../../hooks/useMarketData.js'
 
-// Volume・Trading Value 棒グラフ（MarketRank用）
-// ── 注目銘柄ピックアップ ──────────────────────────────
+// Volume・Trade Value 棒グラフ（MarketRank用）
+// ── Featured Stocks ──────────────────────────────
 function PickupStocks({ stocks, period }) {
   if (!stocks || stocks.length === 0) return null
 
@@ -12,7 +13,7 @@ function PickupStocks({ stocks, period }) {
     if (!v || v === 0) return '-'
     if (v >= 1e12) return (v / 1e12).toFixed(1) + 'T'
     if (v >= 1e8)  return (v / 1e8).toFixed(1) + 'B'
-    if (v >= 1e4)  return (v / 1e4).toFixed(1) + 'K'
+    if (v >= 1e4)  return (v / 1e4).toFixed(1) + 'M'
     return v.toLocaleString()
   }
 
@@ -40,21 +41,21 @@ function PickupStocks({ stocks, period }) {
 
     const buildReason = () => {
       const parts = []
-      if (pct >= 10)       parts.push('This period: Price Change % +' + pct.toFixed(1) + '% — strongly rising上昇しており、テーマ全体を牽引する動きを見せています')
-      else if (pct >= 5)   parts.push('+' + pct.toFixed(1) + '% — solid performanceで、テーマ内の上位上昇銘柄です')
+      if (pct >= 10)       parts.push('+' + pct.toFixed(1) + '% — strongly rising, leading this segment.')
+  else if (pct >= 5)   parts.push('+' + pct.toFixed(1) + '% — solid performance in the top tier.')
       else if (pct >= 2)   parts.push('+' + pct.toFixed(1) + '% — above segment average.')
       else if (pct > 0)    parts.push('+' + pct.toFixed(1) + '% — marginally positive.')
 
-      if (volChg >= 50)      parts.push('Volume surged +' + volChg.toFixed(0) + '% — signals institutional inflows資家・外国人投資家の大口資金の流入が強く示唆されます')
-      else if (volChg >= 20) parts.push('Volume +' + volChg.toFixed(0) + '% — growing market interest者の注目が高まっています')
+  if (volChg >= 50)      parts.push('Volume surged +' + volChg.toFixed(0) + '% — signals strong institutional inflows.')
+  else if (volChg >= 20) parts.push('Volume +' + volChg.toFixed(0) + '% — growing market interest.')
 
-      if (sparkAccel > 3)    parts.push('Price accelerating in latter half (+' + sparkAccel.toFixed(1) + '%）しており、モメンタムが強まっています')
-      else if (sparkAccel > 1) parts.push('Price slightly improving in latter half (+' + sparkAccel.toFixed(1) + '%）しています')
+  if (sparkAccel > 3)    parts.push('Price accelerating in latter half (+' + sparkAccel.toFixed(1) + '% back-half avg).')
+  else if (sparkAccel > 1) parts.push('Price slightly improving (+' + sparkAccel.toFixed(1) + '% back-half avg).')
 
-      if (tv >= 5e9)       parts.push('Trading Value ' + fmtL(tv) + ' — high liquidity blue-chip柄として積極的に売買されています')
-      else if (tv >= 1e9)  parts.push('Trading Value ' + fmtL(tv) + ' — adequate liquidity with active trading行われています')
+  if (tv >= 5e9)       parts.push('Trading value ' + fmtL(tv) + ' — high liquidity blue-chip.')
+  else if (tv >= 1e9)  parts.push('Trading value ' + fmtL(tv) + ' — adequate liquidity.')
 
-      if (parts.length === 0) parts.push('High composite score (Price Change %, Volume, price trend, Trading Value価で、このテーマ内での注目度が高い銘柄として選定されました')
+  if (parts.length === 0) parts.push('High composite score across Return, Volume, price trend, and Trading Value.')
       return parts.join('。') + '。'
     }
 
@@ -75,12 +76,12 @@ function PickupStocks({ stocks, period }) {
       <div style={{ marginBottom:'12px' }}>
         <div style={{ display:'flex', alignItems:'center', gap:'8px', marginBottom:'4px' }}>
           <span style={{ fontSize:'12px', fontWeight:700, color:'var(--text)', whiteSpace:'nowrap' }}>
-            🔎 注目銘柄ピックアップ
+            🔎 Featured Stocks
           </span>
           <div style={{ flex:1, height:'1px', background:'var(--border)' }} />
         </div>
         <span style={{ fontSize:'10px', color:'var(--text3)', display:'block', paddingLeft:'2px' }}>
-          Scores are auto-calculated from Price Change %, Volume, momentum, and Trading Value.
+          Scores are auto-calculated from Return, Volume, momentum, and Trading Value.
         </span>
       </div>
       <div style={{ display:'grid', gridTemplateColumns:'repeat(3,1fr)', gap:'10px' }}
@@ -96,7 +97,7 @@ function PickupStocks({ stocks, period }) {
               borderTop:'3px solid ' + medalColors[i],
               display:'flex', flexDirection:'column', gap:'6px',
             }}>
-              {/* 順位 + ティッカー + Price Change % */}
+              {/* 順位 + ティッカー + Return */}
               <div style={{ display:'flex', alignItems:'center', gap:'6px' }}>
                 <span style={{ fontSize:'14px' }}>{medals[i]}</span>
                 <span style={{ fontSize:'10px', color:'var(--text3)', fontFamily:'var(--mono)' }}>
@@ -107,7 +108,7 @@ function PickupStocks({ stocks, period }) {
                   {(s.pct ?? 0) >= 0 ? '+' : ''}{s.pct?.toFixed(1)}%
                 </span>
               </div>
-              {/* 銘柄名（必ず表示） */}
+              {/* Stock Name（必ず表示） */}
               <div style={{ fontSize:'13px', fontWeight:700, color:'var(--text)',
                 lineHeight:1.4 }}>
                 {s.name || s.ticker.replace('.T', '')}
@@ -118,19 +119,19 @@ function PickupStocks({ stocks, period }) {
                   <Sparkline data={s.spark} />
                 </span>
               )}
-              {/* 株価 + Trading Value */}
+              {/* 株価 + Trade Value */}
               <div style={{ display:'flex', gap:'10px', fontSize:'10px',
                 fontFamily:'var(--mono)', color:'var(--text3)' }}>
                 {'¥' + (s.price?.toLocaleString() || '-')}
                 {(s.trade_value ?? 0) > 0 && (
-                  <span>{'Trading Value ' + fmtL(s.trade_value)}</span>
+                  <span>{'Trade Value ' + fmtL(s.trade_value)}</span>
                 )}
               </div>
               {/* 注目度スコア */}
               <div style={{ display:'flex', alignItems:'center', gap:'6px' }}>
                 <span style={{ fontSize:'9px', color:'var(--text3)', fontWeight:600,
                   textTransform:'uppercase', letterSpacing:'0.06em', flexShrink:0 }}>
-                  注目度
+              Score
                 </span>
                 <span style={{ fontSize:'15px', fontWeight:800, fontFamily:'var(--mono)',
                   color:scoreColor, lineHeight:1 }}>
@@ -156,11 +157,11 @@ function PickupStocks({ stocks, period }) {
         border:'1px solid rgba(255,193,7,0.15)', fontSize:'10px',
         color:'var(--text3)', lineHeight:1.8 }}>
         ⚠️ <strong style={{ color:'var(--text2)' }}>Note:</strong>
-        Rankings above are auto-calculated from Price Change %, Volume, price trend, and Trading Value.
+        Rankings above are auto-calculated from Return, Volume, price trend, and Trading Value.
         <strong style={{ color:'var(--text2)' }}>Not real-time data</strong>;
         results depend on data update timing (several times per day).
         May differ from current market conditions.
-        Not a recommendation to buy or sell.
+        Not a recommendation to buy or sell any security.
         <strong style={{ color:'var(--text2)' }}>All investment decisions are your sole responsibility</strong>.
       </div>
     </div>
@@ -173,7 +174,7 @@ function MrVolTvChart({ stocks }) {
   if (!stocks || stocks.length === 0) return (
     <div style={{ textAlign:'center', padding:'24px', color:'var(--text3)', fontSize:'12px',
       background:'var(--bg2)', border:'1px solid var(--border)', borderRadius:'10px' }}>
-      Loading...
+      Loading......
     </div>
   )
   const sorted = [...stocks].sort((a,b) => (b[mode==='tv'?'trade_value':'volume']||0)-(a[mode==='tv'?'trade_value':'volume']||0)).slice(0,15)
@@ -182,13 +183,13 @@ function MrVolTvChart({ stocks }) {
     if (!v) return '0'
     if (v >= 1e12) return (v/1e12).toFixed(1)+'T'
     if (v >= 1e8) return (v/1e8).toFixed(1)+'B'
-    if (v >= 1e4) return (v/1e4).toFixed(1)+'K'
+    if (v >= 1e4) return (v/1e4).toFixed(1)+'M'
     return v.toLocaleString()
   }
   const chart = (
     <div>
       <div style={{ display:'flex', gap:'8px', marginBottom:'10px' }}>
-        {[{v:'tv',l:'Trading Value'},{v:'vol',l:'Volume'}].map(m=>(
+        {[{v:'tv',l:'Trade Value'},{v:'vol',l:'Volume'}].map(m=>(
           <button key={m.v} onClick={()=>setMode(m.v)} style={{
             padding:'4px 12px', borderRadius:'6px', fontSize:'12px', fontWeight:600,
             cursor:'pointer', fontFamily:'var(--font)',
@@ -225,7 +226,7 @@ function MrVolTvChart({ stocks }) {
         borderRadius:'6px', border:'1px solid var(--border)',
         background:'rgba(74,158,255,0.06)', color:'var(--accent)',
         fontSize:'11px', fontWeight:600, cursor:'pointer', fontFamily:'var(--font)',
-      }}>🔍 Expand</button>
+      }}>🔍 Click to expand</button>
       {expanded && (
         <div onClick={()=>setExpanded(false)} style={{
           position:'fixed', inset:0, background:'rgba(0,0,0,0.75)', zIndex:2000,
@@ -236,7 +237,7 @@ function MrVolTvChart({ stocks }) {
             padding:'20px', width:'min(92vw,900px)', maxHeight:'90vh', overflowY:'auto',
           }}>
             <div style={{ display:'flex', justifyContent:'space-between', alignItems:'center', marginBottom:'14px' }}>
-              <span style={{ fontSize:'14px', fontWeight:700, color:'var(--text)' }}>Volume・Trading Valueランキング（拡大）</span>
+              <span style={{ fontSize:'14px', fontWeight:700, color:'var(--text)' }}>Volume & Trading Value (Top 15)</span>
               <button onClick={()=>setExpanded(false)} style={{
                 background:'rgba(255,255,255,0.08)', border:'1px solid var(--border)',
                 borderRadius:'6px', color:'var(--text2)', cursor:'pointer', fontSize:'13px', padding:'4px 12px', fontFamily:'var(--font)',
@@ -256,7 +257,7 @@ function MrBubbleChart({ stocks }) {
   if (!stocks || !stocks.length) return (
     <div style={{ textAlign:'center', padding:'24px', color:'var(--text3)', fontSize:'12px',
       background:'var(--bg2)', border:'1px solid var(--border)', borderRadius:'10px' }}>
-      Loading...
+      Loading......
     </div>
   )
   const chart = <StockBubbleChart stocks={stocks} themeName="" onNavigate={null} />
@@ -268,7 +269,7 @@ function MrBubbleChart({ stocks }) {
         borderRadius:'6px', border:'1px solid var(--border)',
         background:'rgba(74,158,255,0.06)', color:'var(--accent)',
         fontSize:'11px', fontWeight:600, cursor:'pointer', fontFamily:'var(--font)',
-      }}>🔍 Expand</button>
+      }}>🔍 Click to expand</button>
       {expanded && (
         <div onClick={()=>setExpanded(false)} style={{
           position:'fixed', inset:0, background:'rgba(0,0,0,0.75)', zIndex:2000,
@@ -279,7 +280,7 @@ function MrBubbleChart({ stocks }) {
             padding:'20px', width:'min(92vw,1000px)', maxHeight:'90vh', overflowY:'auto',
           }}>
             <div style={{ display:'flex', justifyContent:'space-between', alignItems:'center', marginBottom:'14px' }}>
-              <span style={{ fontSize:'14px', fontWeight:700, color:'var(--text)' }}>Stock Heatmap（拡大）</span>
+              <span style={{ fontSize:'14px', fontWeight:700, color:'var(--text)' }}>Stock Heatmap</span>
               <button onClick={()=>setExpanded(false)} style={{
                 background:'rgba(255,255,255,0.08)', border:'1px solid var(--border)',
                 borderRadius:'6px', color:'var(--text2)', cursor:'pointer', fontSize:'13px', padding:'4px 12px', fontFamily:'var(--font)',
@@ -302,11 +303,11 @@ function formatLarge(n) {
   if (!n) return '0'
   if (n >= 1e12) return (n/1e12).toFixed(1)+'T'
   if (n >= 1e8)  return (n/1e8).toFixed(1)+'B'
-  if (n >= 1e4)  return (n/1e4).toFixed(1)+'K'
+  if (n >= 1e4)  return (n/1e4).toFixed(1)+'M'
   return n.toLocaleString()
 }
 
-function Loading({ msg='Loading...' }) {
+function Loading({ msg='Loading......' }) {
   return (
     <div style={{ textAlign:'center', padding:'40px', color:'var(--text3)' }}>
       {[0,0.2,0.4].map((d,i)=>(
@@ -357,7 +358,7 @@ function Top5Bar({ items, title, colorFn, emptyMsg }) {
   )
 }
 
-// スパークライン（銘柄の6ヶ月Price Change %推移）
+// スパークライン（銘柄の6ヶ月Return推移）
 function Sparkline({ data }) {
   if (!data || data.length < 3) return null
   const W = 64, H = 24
@@ -450,14 +451,14 @@ function StockTable({ stocks: rawStocks, onAddToTheme }) {
   }
   const onMouseUp = () => { isDragging.current = false; if (tableRef.current) tableRef.current.style.cursor = 'grab' }
 
-  const headers = ['ミニチャート','株価','Price Change %','時価総額','寄与度%','Volume増減','Volume','Volume順位','Trading Value','Trading Value順位','追加']
-  const sortBtns = [{key:'pct',label:'Price Change %'},{key:'volume',label:'Volume'},{key:'trade_value',label:'Trading Value'}]
+  const headers = ['Chart','Price','Return','Mkt.Cap','Contrib.%','Vol.Chg','Volume','Vol.Rank','Trade Value','TV.Rank','Sparkline']
+  const sortBtns = [{key:'pct',label:'Return'},{key:'volume',label:'Volume'},{key:'trade_value',label:'Trade Value'}]
 
   return (
     <>
       {/* ⑤ ソートボタン */}
       <div style={{ display:'flex', gap:'6px', alignItems:'center', marginBottom:'8px', flexWrap:'wrap' }}>
-        <span style={{ fontSize:'10px', color:'var(--text3)', fontWeight:600, whiteSpace:'nowrap' }}>並び替え:</span>
+        <span style={{ fontSize:'10px', color:'var(--text3)', fontWeight:600, whiteSpace:'nowrap' }}>Sort by:</span>
         {sortBtns.map(b => (
           <button key={b.key} onClick={() => { if (sortKey===b.key) setSortAsc(a=>!a); else { setSortKey(b.key); setSortAsc(false) } }}
             style={{ padding:'3px 10px', borderRadius:'5px', fontSize:'11px', fontWeight:600, cursor:'pointer', fontFamily:'var(--font)',
@@ -483,9 +484,9 @@ function StockTable({ stocks: rawStocks, onAddToTheme }) {
           <thead>
             <tr style={{ borderBottom:'1px solid var(--border)' }}>
               <th style={{ ...thStyle, textAlign:'center', width:'32px', minWidth:'32px', maxWidth:'32px', padding:'8px 4px', background:'var(--bg3)', position:'sticky', left:0, zIndex:3 }}>順</th>
-              <th style={{ ...thStyle, textAlign:'left', minWidth:'120px', background:'var(--bg3)', position:'sticky', left:'32px', zIndex:3 }}>銘柄名</th>
+              <th style={{ ...thStyle, textAlign:'left', minWidth:'120px', background:'var(--bg3)', position:'sticky', left:'32px', zIndex:3 }}>Stock Name</th>
               {headers.map(h => (
-                <th key={h} style={{ ...thStyle, minWidth: h==='Price'||h==='Price Change %'?'70px':'80px' }}>{h}</th>
+                <th key={h} style={{ ...thStyle, minWidth: h==='Price'||h==='Return'?'70px':'80px' }}>{h}</th>
               ))}
             </tr>
           </thead>
@@ -548,69 +549,69 @@ function StockTable({ stocks: rawStocks, onAddToTheme }) {
 
 // ETFセグメント定義（market.jsonに未登録のためフロントエンドでハードコード）
 const ETF_GROUPS = {
-  'ETF｜国内株式インデックス': {
-    '1321': 'NEXT FUNDS 日経225連動型',
-    '1306': 'TOPIX連動型上場投信',
-    '1308': 'NEXT FUNDS TOPIX連動型',
-    '1330': '上場インデックスファンド225',
-    '1346': 'MAXIS 日経225上場投信',
-    '1329': 'iシェアーズ 日経225 ETF',
-    '1348': 'MAXIS TOPIX上場投信',
-    '1591': 'JPX日経400 ETF',
-    '1577': '日本株高配当70 ETF',
-    '1489': '日経平均高配当株50',
-    '1343': 'NEXT FUNDS 東証REIT指数連動型',
-    '1597': 'MAXIS Jリート上場投信',
-    '1476': 'iシェアーズ・コア Jリート ETF',
-    '1488': 'iFreeETF 東証REIT指数',
-    '1478': 'iシェアーズ 日本高配当株 ETF',
+  'ETF | Domestic Index': {
+    '1321': 'Nikkei225 ETF (1321)',
+    '1306': 'TOPIX ETF (1306)',
+    '1308': 'TOPIX ETF (1308)',
+    '1330': 'Nikkei225 Index (1330)',
+    '1346': 'MAXIS Nikkei225 (1346)',
+    '1329': 'iShares Nikkei225 (1329)',
+    '1348': 'MAXIS TOPIX (1348)',
+    '1591': 'JPX-Nikkei400 (1591)',
+    '1577': 'High-Div 70 (1577)',
+    '1489': 'Nikkei High-Div 50 (1489)',
+    '1343': 'TSE REIT Index (1343)',
+    '1597': 'MAXIS J-REIT (1597)',
+    '1476': 'iShares Core J-REIT (1476)',
+    '1488': 'iFree TSE REIT (1488)',
+    '1478': 'iShares Japan High-Div (1478)',
   },
-  'ETF｜国内株式テーマ': {
-    '2644': 'グローバルX半導体 ETF',
-    '1626': 'NEXT FUNDS 情報通信・サービス',
-    '1625': 'NEXT FUNDS 電機・精密',
-    '1622': 'NEXT FUNDS 輸送用機器',
-    '1615': 'NEXT FUNDS 銀行業',
-    '1617': 'NEXT FUNDS 証券・商品先物',
-    '1619': 'NEXT FUNDS 保険業',
-    '1631': 'NEXT FUNDS 不動産業',
-    '2085': 'MAXIS 高配当日本株アクティブ',
-    '2868': 'グローバルX S&P500配当貴族 ETF',
+  'ETF | Domestic Theme': {
+    '2644': 'GlobalX Semiconductor (2644)',
+    '1626': 'NF Info/Comm (1626)',
+    '1625': 'NF Electronics (1625)',
+    '1622': 'NF Transport Equip (1622)',
+    '1615': 'NF Banking (1615)',
+    '1617': 'NF Securities (1617)',
+    '1619': 'NF Insurance (1619)',
+    '1631': 'NF Real Estate (1631)',
+    '2085': 'MAXIS High-Div Active (2085)',
+    '2868': 'GlobalX S&P500 Div Aristo (2868)',
   },
-  'ETF｜海外株式・先進国': {
-    '2558': 'NEXT FUNDS S&P500指数',
-    '1655': 'iシェアーズ S&P500 ETF',
-    '2559': 'MAXIS 全世界株式(オルカン)',
-    '2631': 'NEXT FUNDS ナスダック100',
-    '2841': 'iシェアーズ ナスダック100 ETF',
-    '1680': 'NEXT FUNDS 外国株式MSCI-KOKUSAI',
-    '1554': 'iシェアーズ MSCI 全世界株式',
-    '1546': 'NEXT FUNDS ダウ・ジョーンズ',
-    '1547': '上場インデックスファンド米国株式S&P500',
+  'ETF | Global Developed': {
+    '2558': 'NF S&P500 (2558)',
+    '1655': 'iShares S&P500 (1655)',
+    '2559': 'MAXIS All-World (2559)',
+    '2631': 'NF NASDAQ100 (2631)',
+    '2841': 'iShares NASDAQ100 (2841)',
+    '1680': 'NF MSCI-KOKUSAI (1680)',
+    '1554': 'iShares MSCI ACWI (1554)',
+    '1546': 'NF Dow Jones (1546)',
+    '1547': 'Listed S&P500 (1547)',
   },
-  'ETF｜新興国・アジア': {
-    '1678': 'NEXT FUNDS インドNifty50連動型',
-    '2850': 'グローバルX インド株式 ETF',
-    '2854': 'グローバルX チャイナEV・テック ETF',
-    '1575': 'iシェアーズ 中国株式 ETF',
-    '1495': '上場インデックスファンド アジアリート',
+  'ETF | Emerging & Asia': {
+    '1678': 'NF India Nifty50 (1678)',
+    '2850': 'GlobalX India (2850)',
+    '2854': 'GlobalX China EV (2854)',
+    '1575': 'iShares China (1575)',
+    '1495': 'Listed Asia REIT (1495)',
   },
-  'ETF｜債券・コモディティ': {
-    '2510': 'NEXT FUNDS 国内債券インデックス',
-    '1487': 'iシェアーズ 日本国債 ETF',
-    '1540': 'NEXT FUNDS 金Price連動型',
-    '1699': 'NEXT FUNDS 原油価格連動型',
-    '1482': 'iシェアーズ 米国債7-10年 ETF',
-    '2861': 'グローバルX 金・貴金属 ETF',
-    '1671': 'WisdomTree WTI 原油',
+  'ETF | Bond & Commodity': {
+    '2510': 'NF Domestic Bond (2510)',
+    '1487': 'iShares JGB (1487)',
+    '1540': 'NF Gold (1540)',
+    '1699': 'NF Crude Oil (1699)',
+    '1482': 'iShares US Treasury 7-10Y (1482)',
+    '2861': 'GlobalX Gold/Precious (2861)',
+    '1671': 'WisdomTree WTI Oil (1671)',
   },
-  'ETF｜レバレッジ・インバース': {
-    '1570': 'NEXT FUNDS 日経平均レバレッジ2倍',
-    '1571': 'NEXT FUNDS 日経平均ダブルインバース',
-    '1568': 'NEXT FUNDS TOPIX レバレッジ(2倍)',
-    '1569': 'NEXT FUNDS TOPIX インバース(-1倍)',
-    '1365': '楽天ETF 日経ダブルブル',
-    '1580': '大和ETF 日経225インバース',
+  'ETF | Leveraged & Inverse': {
+    '1570': 'NF Nikkei Lev 2x (1570)',
+    '1571': 'NF Nikkei Double Inv (1571)',
+    '1568': 'NF TOPIX Lev 2x (1568)',
+    '1569': 'NF TOPIX Inv -1x (1569)',
+    '1365': 'Rakuten Nikkei Bull 2x (1365)',
+    '1580': 'Daiwa Nikkei225 Inv (1580)',
   },
 }
 
@@ -631,18 +632,18 @@ export default function MarketRank() {
   useEffect(()=>{
     if (!marketData) return
     setSummary(marketData.data)
-    // ①「ETF」グループをmarket.jsonの外でフロント側に追加
+    // ①「ETF」グループをmarket.jsonの外でフロント側にAdd
     const baseGroups = marketData.groups || {}
     const allGroups = {
       ...baseGroups,
       'ETF': Object.keys(ETF_GROUPS),
     }
     setGroups(allGroups)
-    const firstSeg = (baseGroups['Major Stocks'] || baseGroups['国内主要株'] || Object.values(baseGroups)[0] || [])[0]
+    const firstSeg = (baseGroups['Major Stocks'] || Object.values(baseGroups)[0] || [])[0]
     if (firstSeg && !activeSeg) setActiveSeg(firstSeg)
   },[marketData])
 
-  // activeSeg変更時は即detailをリセット（古いデータ残存防止）
+  // activeSeg変更時は即detailをReset（古いデータ残存防止）
   useEffect(()=>{ setDetail(null); setEtfDetail(null) }, [activeSeg, period])
 
   // ETFグループ選択時はyfinanceからリアルタイム取得
@@ -655,7 +656,7 @@ export default function MarketRank() {
     setEtfDetail(null)
     const API_BASE = import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000'
     ;(async () => {
-      // Step1: market.jsonのseg_キーを確認（GitHub Actions実行後に反映）
+      // Step1: market.jsonのseg_キーをConfirm（GitHub Actions実行後に反映）
       try {
         const mj = await fetch('/data/market.json?t=' + Date.now()).then(r=>r.json())
         const key = 'seg_' + activeSeg + '_' + period
@@ -684,7 +685,7 @@ export default function MarketRank() {
           }
         }
       } catch {}
-      // Step3: APIも失敗 → 銘柄名だけ表示
+      // Step3: APIも失敗 → Stock Nameだけ表示
       const placeholders = Object.entries(tickerMap).map(([code, name]) => ({
         ticker: code+'.T', name, price:0, pct:0, volume:0, trade_value:0,
         volume_chg:0, market_cap:0, spark:[], contribution:null, vol_rank:0, tv_rank:0, _noData:true,
@@ -715,13 +716,13 @@ export default function MarketRank() {
   const tvSorted  = [...rawStocks].sort((a,b) => (b.trade_value||0)-(a.trade_value||0))
   const volRankMap = new Map(volSorted.map((s,i) => [s.ticker, i+1]))
   const tvRankMap  = new Map(tvSorted.map((s,i) => [s.ticker, i+1]))
-  // ①国内全般は時価総額降順、ETFはPrice Change %降順、その他はPrice Change %降順
+  // ①国内全般はMarket CapDesc、ETFはReturnDesc、MoreはReturnDesc
   const mappedStocks = rawStocks.map(s => ({
     ...s,
     vol_rank: volRankMap.get(s.ticker) ?? s.vol_rank,
     tv_rank:  tvRankMap.get(s.ticker)  ?? s.tv_rank,
   }))
-  const stocks = activeGroup === 'Domestic All' || activeGroup === '国内全般'
+  const stocks = activeGroup === 'Domestic All' || activeGroup === 'Domestic All'
     ? [...mappedStocks].sort((a,b) => (b.market_cap||0) - (a.market_cap||0))
     : [...mappedStocks].sort((a,b) => b.pct - a.pct)
   const detailAvg = currentDetail?.avg ?? 0
@@ -745,14 +746,14 @@ export default function MarketRank() {
         <div style={{ background:'rgba(6,214,160,0.05)', border:'1px solid rgba(6,214,160,0.15)',
           borderRadius:'8px', padding:'12px 16px', marginBottom:'16px', fontSize:'12px',
           color:'var(--text)', lineHeight:1.8 }}>
-          <span style={{ fontWeight:700, color:'#06d6a0' }}>📋 About this page:</span>
-          For Top 150 by Market Cap, Market Segments (Prime/Standard/Growth), and ETFs (6 categories):
-          View constituent stock Return rankings and detailed data.
-          Use the tabs to switch between 'Major Stocks', 'Domestic All', 'Market Segment', and 'ETF'.
+          <span style={{ fontWeight:700, color:'#06d6a0' }}>📋 About This Page:</span>
+            For Top 150 by Market Cap, Market Segments (Prime/Standard/Growth), and ETFs (6 categories):
+            View constituent stock Return rankings and detailed data.
+            Use the tabs above to switch between groups, then select a segment.
           <br/>
           <span style={{ fontSize:'11px', color:'var(--text3)' }}>
-            💡 Tip: When 'Technology' segment is strong, also check Semiconductor and AI/Cloud themes in Theme List.
-            
+            💡 Tip: When 'Technology' is strong, also check Semiconductor and AI themes
+            in Theme List for better capital flow insights.
           </span>
         </div>
 
@@ -796,7 +797,7 @@ export default function MarketRank() {
             </div>
 
             {isLoading ? (
-              <Loading msg="Loading..." />
+              <Loading msg="Loading......" />
             ) : currentDetail ? (
               <div>
                 <div style={{ display:'flex', alignItems:'center', gap:'16px', marginBottom:'20px', flexWrap:'wrap' }}>
@@ -809,16 +810,16 @@ export default function MarketRank() {
                 </div>
 
                 <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:'16px', marginBottom:'20px' }} className="top5g">
-                  <Top5Bar items={top5} title={`▲ Rising TOP5 (${stocks.filter(s=>s.pct>0).length} Rising)`} colorFn={pctColor} emptyMsg="上昇銘柄なし"/>
-                  <Top5Bar items={bot5} title={`▼ Falling TOP5 (${stocks.filter(s=>s.pct<0).length} Falling)`} colorFn={pctColor} emptyMsg="下落銘柄なし"/>
+          <Top5Bar items={top5} title={`▲ Rising TOP5 (${stocks.filter(s=>s.pct>0).length} stocks)`} color='var(--red)' onNavigate={onNavigate} />
+          <Top5Bar items={bot5} title={`▼ Falling TOP5 (${stocks.filter(s=>s.pct<0).length} stocks)`} color='var(--green)' onNavigate={onNavigate} />
                 </div>
 
-                {/* ③ 注目銘柄ピックアップ */}
+                {/* ③ Featured Stocks */}
                 <PickupStocks stocks={stocks} period={period} />
 
                 {/* ① Theme Detailと同じレイアウト: 左=グラフ群 / 右=銘柄表 */}
                 <div className="mr-bottom-grid">
-                  {/* 左: Volumeグラフ → ヒートマップ */}
+                  {/* 左: Volumeグラフ → Heatmap */}
                   <div>
                     <div style={{ fontSize:'13px', fontWeight:700, color:'var(--text)', marginBottom:'10px' }}>
                       📊 Volume & Trading Value (Top 15)
@@ -832,7 +833,7 @@ export default function MarketRank() {
                   {/* 右: 銘柄詳細表 */}
                   <div style={{ minWidth: 0 }}>
                     <div style={{ fontSize:'11px', fontWeight:600, letterSpacing:'0.1em', color:'var(--text3)', textTransform:'uppercase', marginBottom:'8px' }}>
-                      Constituent Stocks <span style={{ color:'var(--text3)', fontSize:'10px', fontWeight:400 }}>← 横にスワイプで詳細確認</span>
+                      Constituent Stocks <span style={{ color:'var(--text3)', fontSize:'10px', fontWeight:400 }}>← Swipe for details</span>
                     </div>
                     <div style={{ background:'var(--bg2)', border:'1px solid var(--border)', borderRadius:'var(--radius)', overflow:'hidden' }}>
                       <StockTable stocks={stocks} onAddToTheme={setModalStock} />
@@ -847,7 +848,7 @@ export default function MarketRank() {
 
       <style>{`
         @media (max-width:640px){.top5g{grid-template-columns:1fr !important;}}
-        /* ③ スマホ版パディング調整 */
+        /* Mobile padding */
         .mr-page-body { padding: 10px 12px 40px !important; }
         @media (min-width: 641px) {
           .mr-page-body { padding: 20px 32px 48px !important; }
@@ -866,11 +867,11 @@ export default function MarketRank() {
             min-width: 0;
           }
         }
-        /* ② スマホ版: 右端をTOP5に揃える */
+        /* Mobile: align to TOP5 */
         @media (max-width: 640px) {
           .mr-bottom-grid { padding: 0 !important; }
         }
-        /* ③ スマホ版の表・グラフはみ出し防止 */
+        /* Mobile: prevent overflow */
         @media (max-width: 640px) {
           .mr-page-body .sticky-table { max-width: calc(100vw - 20px); }
           .mr-page-body svg { max-width: 100%; }

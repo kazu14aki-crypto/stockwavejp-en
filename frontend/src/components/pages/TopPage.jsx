@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { tn } from '../../utils/themeNames'
 import { useThemes, useMacro } from '../../hooks/useMarketData'
 import MacroLineChart, { MacroCard, SHead } from '../MacroLineChart'
 
@@ -434,7 +435,7 @@ export default function TopPage({ onNavigate }) {
         @media (max-width:640px) {
           .top3-grid { grid-template-columns: 1fr !important; }
         }
-        .hero-desc { white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+        .hero-desc { white-space:normal; overflow:visible; }
         @media (max-width:900px) {
           .hero-desc { white-space:normal !important; overflow:visible !important; text-overflow:unset !important; }
         }
