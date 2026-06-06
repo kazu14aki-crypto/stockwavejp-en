@@ -1,4 +1,3 @@
-import { tn } from '../../utils/themeNames'
 import React, { useState, useEffect, useRef } from 'react'
 import AddToThemeModal from '../AddToThemeModal.jsx'
 import StockBubbleChart from '../StockBubbleChart.jsx'
@@ -615,12 +614,22 @@ const ETF_GROUPS = {
   },
 }
 
+
+// Group label translation (API keys are JP, display labels are EN)
+const GROUP_LABEL = {
+  '国内主要株': 'Major Stocks',
+  '国内全般':   'Domestic All',
+  '市場区分':   'Market Segment',
+  'ETF':        'ETF',
+}
+const gl = (key) => GROUP_LABEL[key] || key
+
 export default function MarketRank({ onNavigate }) {
   const [modalStock,  setModalStock]  = useState(null)
   const [period,      setPeriod]      = useState('1mo')
   const [summary,     setSummary]     = useState(null)
   const [groups,      setGroups]      = useState({})
-  const [activeGroup, setActiveGroup] = useState('Major Stocks')
+  const [activeGroup, setActiveGroup] = useState('国内主要株')
   const [activeSeg,   setActiveSeg]   = useState(null)
   const [detail,      setDetail]      = useState(null)
   // ETF専用状態
@@ -639,7 +648,7 @@ export default function MarketRank({ onNavigate }) {
       'ETF': Object.keys(ETF_GROUPS),
     }
     setGroups(allGroups)
-    const firstSeg = (baseGroups['Major Stocks'] || Object.values(baseGroups)[0] || [])[0]
+    const firstSeg = (baseGroups['国内主要株'] || Object.values(baseGroups)[0] || [])[0]
     if (firstSeg && !activeSeg) setActiveSeg(firstSeg)
   },[marketData])
 
@@ -722,7 +731,7 @@ export default function MarketRank({ onNavigate }) {
     vol_rank: volRankMap.get(s.ticker) ?? s.vol_rank,
     tv_rank:  tvRankMap.get(s.ticker)  ?? s.tv_rank,
   }))
-  const stocks = activeGroup === 'Domestic All' || activeGroup === 'Domestic All'
+  const stocks = activeGroup === '国内全般'
     ? [...mappedStocks].sort((a,b) => (b.market_cap||0) - (a.market_cap||0))
     : [...mappedStocks].sort((a,b) => b.pct - a.pct)
   const detailAvg = currentDetail?.avg ?? 0
@@ -766,7 +775,7 @@ export default function MarketRank({ onNavigate }) {
               fontFamily:'var(--font)',
               borderBottom: activeGroup===g ? '2px solid var(--accent)' : '2px solid transparent',
               marginBottom:'-1px', transition:'all 0.15s',
-            }}>{g}</button>
+            }}>{gl(g)}</button>
           ))}
         </div>
 

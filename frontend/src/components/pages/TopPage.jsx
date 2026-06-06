@@ -191,13 +191,13 @@ function generateMarketComment(themeData, macro) {
 
   // risingTheme
   if (top3.length && top3[0].pct > 0) {
-    const upNames = top3.filter(x=>x.pct>0).map(x=>`「${x.theme}」(${x.pct>=0?'+':''}${x.pct.toFixed(1)}%)`).join('、')
+    const upNames = top3.filter(x=>x.pct>0).map(x=>`'${x.theme}'(${x.pct>=0?'+':''}${x.pct.toFixed(1)}%)`).join('、')
     lines.push(`▲ Notable Rising themes: ${upNames}.${volUp.length>0&&top3.some(top=>volUp.some(v=>v.theme===top.theme)) ? ' Volume surge concurrent with rising — particularly noteworthy.' : ''}`)
   }
 
   // fallingTheme
   if (bot3.length && bot3[0].pct < 0) {
-    const dnNames = bot3.filter(x=>x.pct<0).map(x=>`「${x.theme}」(${x.pct.toFixed(1)}%)`).join('、')
+    const dnNames = bot3.filter(x=>x.pct<0).map(x=>`'${x.theme}'(${x.pct.toFixed(1)}%)`).join('、')
     lines.push(`▼ Notable Falling themes: ${dnNames}. ${coldThemes.length>3?'Broad selling pressure — selective theme approach recommended.':'Sharp declines — possible overheating correction or external pressure.'}`)
   }
 
