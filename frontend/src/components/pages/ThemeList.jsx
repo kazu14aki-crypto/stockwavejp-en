@@ -159,7 +159,7 @@ function AutoComment({ lines }) {
 // ③ 自動コメント生成（Theme List）
 function genThemeComment(themes, summary, period, momentum) {
   if (!themes || !themes.length) return null
-  const periodLabel = { '1d':'Today', '5d':'1W', '1mo':'1M', '3mo':'3M', '6mo':'6M', '1y':'1年間' }[period] || period
+  const periodLabel = { '1d':'Today', '5d':'1W', '1mo':'1M', '3mo':'3M', '6mo':'6M', '1y':'1Y' }[period] || period
   const rising  = themes.filter(t => t.pct > 0)
   const falling = themes.filter(t => t.pct < 0)
   const avg     = summary?.avg ?? 0
@@ -180,8 +180,8 @@ function genThemeComment(themes, summary, period, momentum) {
   const lines = []
 
   // All 体相場概況
-  const mktTone = avg >= 2 ? 'bullish' : avg >= 0.5 ? 'mildly bullish' : avg <= -2 ? 'bearish' : avg <= -0.5 ? 'mildly bearish' : '中立'
-  lines.push(`[${periodLabel} Overview] Looking at all 67 themes, ${rising.length}テーマ・Falling${falling.length}テーマでAvgReturnは${avg >= 0 ? '+' : ''}${avg.toFixed(2)}%（${mktTone}）。`)
+  const mktTone = avg >= 2 ? 'bullish' : avg >= 0.5 ? 'mildly bullish' : avg <= -2 ? 'bearish' : avg <= -0.5 ? 'mildly bearish' : 'neutral'
+  lines.push(`[${periodLabel} Overview] Looking at all 67 themes, ${rising.length} Rising / ${falling.length} Falling (avg return ${avg >= 0 ? '+' : ''}${avg.toFixed(2)}%, ${mktTone}).`)
 
   // トップ・ボトム
   lines.push(`Top Rising: '${tn(top?.theme)}' (${top?.pct >= 0 ? '+' : ''}${top?.pct?.toFixed(2)}%), Top Falling: '${tn(bot?.theme)}' (${bot?.pct >= 0 ? '+' : ''}${bot?.pct?.toFixed(2)}%). Spread: ${Math.abs((top?.pct||0)-(bot?.pct||0)).toFixed(1)}pt.`)
@@ -198,7 +198,7 @@ function genThemeComment(themes, summary, period, momentum) {
 
   // Volume急増
   if (volSurge.length > 0) {
-    lines.push(`📊 Volume surging (+30% vs prev): ${volSurge.slice(0, 3).join(', ')}. Price動に先立つVolume増加は、大口資金の流入を示唆することが多い。`)
+    lines.push(`📊 Volume surging (+30% vs prev): ${volSurge.slice(0, 3).join(', ')}. Rising volume often leads price moves — a key signal for tracking potential breakouts.`)
   }
 
   // モメンタム
@@ -370,7 +370,7 @@ function BubbleScatterMini({ onNavigate }) {
   const [hovered, setHovered] = useState(null)
   const { data: momentumRaw } = useMomentum(mPeriod)
   const data = momentumRaw?.data || []
-  if (!data.length) return <div style={{ textAlign:'center', padding:'40px', color:'var(--text3)', fontSize:'12px' }}>データLoading...</div>
+  if (!data.length) return <div style={{ textAlign:'center', padding:'40px', color:'var(--text3)', fontSize:'12px' }}>Loading...</div>
 
   const filtered = data.filter(d => d.pct != null && !isNaN(d.pct))
   const W=800, H=380, PL=54, PR=24, PT=32, PB=44
@@ -442,7 +442,7 @@ function BubbleScatterMini({ onNavigate }) {
                   <rect x={tx} y={ty} width="164" height="74" rx="6" fill="#1a1f2e" stroke="rgba(255,255,255,0.2)" strokeWidth="1"/>
                   <text x={tx+8} y={ty+16} fontSize="11" fill="#e8f0ff" fontWeight="700">{d.theme}</text>
                   <text x={tx+8} y={ty+32} fontSize="10" fill={col}>{'Return: '+(d.pct>=0?'+':'')+d.pct.toFixed(2)+'%'}</text>
-                  <text x={tx+8} y={ty+47} fontSize="10" fill={(d.volume_chg??0)>=0?'#ff8c42':'#4a9eff'}>{'Volume増減: '+((d.volume_chg??0)>=0?'+':'')+(d.volume_chg??0).toFixed(0)+'%'}</text>
+                  <text x={tx+8} y={ty+47} fontSize="10" fill={(d.volume_chg??0)>=0?'#ff8c42':'#4a9eff'}>{'Vol.Chg: '+((d.volume_chg??0)>=0?'+':'')+(d.volume_chg??0).toFixed(0)+'%'}</text>
                   <text x={tx+8} y={ty+62} fontSize="10" fill="#8b949e">{'Trade Value: '+fmtL(d.trade_value)}</text>
                 </g>
               </g>
@@ -559,8 +559,8 @@ function HBarChart({ items, valueKey = 'pct', formatFn, colorFn, title, emptyMsg
 function Top5Pair({ top5, bot5, topTitle, botTitle, topColorFn, botColorFn, valueKey, bot5ValueKey, formatFn }) {
   return (
     <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }} className="top5-grid">
-      <HBarChart items={top5} valueKey={valueKey} formatFn={formatFn} colorFn={topColorFn} title={topTitle} emptyMsg="Risingテーマなし" />
-      <HBarChart items={bot5} valueKey={bot5ValueKey || valueKey} formatFn={formatFn} colorFn={botColorFn} title={botTitle} emptyMsg="Fallingテーマなし" />
+      <HBarChart items={top5} valueKey={valueKey} formatFn={formatFn} colorFn={topColorFn} title={topTitle} emptyMsg="No rising themes" />
+      <HBarChart items={bot5} valueKey={bot5ValueKey || valueKey} formatFn={formatFn} colorFn={botColorFn} title={botTitle} emptyMsg="No falling themes" />
     </div>
   )
 }
@@ -1074,7 +1074,7 @@ function MonthlyVolChart({ volTrendData, allThemeNames, months }) {
   const xS = i => PL + (i / Math.max(dispMonths.length-1, 1)) * GW
 
   // ③ 5億刻みでY軸目盛りを生成
-  const OKU5 = 5e8  // 5億
+  const OKU5 = 5e8  // 500M
   const volStep = maxV < 5e9 ? OKU5 : maxV < 5e10 ? 5e9 : 5e10
   const nVolTicks = Math.ceil(maxV / volStep)
   const volAxisMax = nVolTicks * volStep
@@ -1181,7 +1181,7 @@ function MonthlyTVChart({ volTrendData, allThemeNames, months }) {
   const xS = i => PL + (i / Math.max(dispMonths.length-1, 1)) * GW
 
   // ③ 5兆刻みでY軸目盛りを生成（Trade Valueは大きい値）
-  const CHO5 = 5e12  // 5兆
+  const CHO5 = 5e12  // 5T
   const tvStep = maxV < 5e11 ? 5e10 : maxV < 5e12 ? 5e11 : CHO5
   const nTvTicks = Math.ceil(maxV / tvStep)
   const tvAxisMax = nTvTicks * tvStep
@@ -1271,7 +1271,7 @@ export default function ThemeList({ onNavigate }) {
       .catch(() => {})
   }, [])
   const { themes: customThemes } = useCustomThemes()
-  const { data: macroRaw } = useMacro('1mo')  // 指数参照は1mo固定
+  const { data: macroRaw } = useMacro('1mo')  // index reference fixed to 1mo
   const { data: momentumData } = useMomentum(period)
   const macro = macroRaw?.data || {}
   // 1321・1306の直近Returnを取得
@@ -1380,7 +1380,7 @@ export default function ThemeList({ onNavigate }) {
                 value={pct1321 !== null ? `${pct1321 >= 0 ? '+' : ''}${pct1321.toFixed(2)}%` : '-'}
                 valueColor={pct1321 === null ? 'var(--text3)' : pct1321 >= 0 ? 'var(--red)' : 'var(--green)'}
                 arrow={pct1321 === null ? null : pct1321 >= 0 ? 'up' : 'down'}
-                sub={`期間: ${periodLabel}`} />
+                sub={`Period: ${periodLabel}`} />
               <KpiCard delay={0.3}
             label="TOPIX ETF (1306)"
                 value={pct1306 !== null ? `${pct1306 >= 0 ? '+' : ''}${pct1306.toFixed(2)}%` : '-'}
@@ -1447,28 +1447,28 @@ export default function ThemeList({ onNavigate }) {
                 <div className="monthly-chart-grid">
                   {/* MonthlyReturn */}
                   <div className="monthly-chart-cell">
-                    <div style={{ fontSize:'13px', fontWeight:700, color:'var(--text)', marginBottom:'8px' }}>📅 Monthlyテーマ別Return推移</div>
+                    <div style={{ fontSize:'13px', fontWeight:700, color:'var(--text)', marginBottom:'8px' }}>📅 Monthly Theme Return Trend</div>
           <ExpandableChart title="Monthly Theme Return Trend">
                       <MonthlyLineChart data={monthlyData} months={months} onNavigate={onNavigate} />
                     </ExpandableChart>
                   </div>
                   {/* MonthlyVolume */}
                   <div className="monthly-chart-cell">
-                    <div style={{ fontSize:'13px', fontWeight:700, color:'var(--text)', marginBottom:'8px' }}>📊 Monthlyテーマ別Volume推移</div>
+                    <div style={{ fontSize:'13px', fontWeight:700, color:'var(--text)', marginBottom:'8px' }}>📊 Monthly Theme Volume Trend</div>
           <ExpandableChart title="Monthly Theme Volume Trend">
                       <MonthlyVolChart volTrendData={volTrendData} allThemeNames={allThemeNames} months={months} />
                     </ExpandableChart>
                   </div>
                   {/* MonthlyTrade Value */}
                   <div className="monthly-chart-cell">
-                    <div style={{ fontSize:'13px', fontWeight:700, color:'var(--text)', marginBottom:'8px' }}>💴 Monthlyテーマ別Trade Value推移</div>
+                    <div style={{ fontSize:'13px', fontWeight:700, color:'var(--text)', marginBottom:'8px' }}>💴 Monthly Theme Trade Value Trend</div>
           <ExpandableChart title="Monthly Theme Trade Value Trend">
                       <MonthlyTVChart volTrendData={volTrendData} allThemeNames={allThemeNames} months={months} />
                     </ExpandableChart>
                   </div>
                   {/* テーマHeatmap（BubbleScatter） */}
                   <div className="monthly-chart-cell">
-                    <div style={{ fontSize:'13px', fontWeight:700, color:'var(--text)', marginBottom:'8px' }}>🔥 テーマHeatmap</div>
+                    <div style={{ fontSize:'13px', fontWeight:700, color:'var(--text)', marginBottom:'8px' }}>🔥 Theme Heatmap</div>
           <ExpandableChart title="Theme Heatmap (Capital Flow)" showZoneDesc>
                       <BubbleScatterMini onNavigate={onNavigate} />
                     </ExpandableChart>
@@ -1482,7 +1482,7 @@ export default function ThemeList({ onNavigate }) {
       </div>
 
       <style>{`
-        /* ② Monthlyグラフ2×2グリッド */
+        /* Monthly charts 2x2 grid */
         .monthly-chart-grid {
           display: grid;
           grid-template-columns: 1fr;
@@ -1500,7 +1500,7 @@ export default function ThemeList({ onNavigate }) {
           border-radius: 10px;
           padding: 14px;
         }
-        /* ExpandableChart: PC=縮小+ボタン下部 / スマホ=通常 */
+        /* ExpandableChart */
         .expandable-chart-preview {
           display: none;
           position: relative;

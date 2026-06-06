@@ -1,7 +1,9 @@
 """
 main_en.py — FastAPI English Edition
 """
-from fastapi import FastAPI, Query
+from fastapi import FastAPI, Request
+import stripe
+import os, Query
 from fastapi.responses import Response
 from fastapi.middleware.cors import CORSMiddleware
 from datetime import datetime
@@ -296,3 +298,67 @@ def search_stocks(q: str = Query(default="")):
         return {"results": results[:8]}
     except Exception as e:
         return {"results": [], "error": str(e)}
+
+# ── Stripe ──────────────────────────────────────────────
+stripe.api_key = os.environ.get("STRIPE_SECRET_KEY", "")
+
+PRICE_MAP = {
+    "standard_monthly": os.environ.get("STRIPE_PRICE_STANDARD_MONTHLY", ""),
+    "pro_monthly":      os.environ.get("STRIPE_PRICE_PRO_MONTHLY", ""),
+}
+
+@app.post("/api/stripe/create-checkout")
+async def create_checkout(request: Request):
+    body = await request.json()
+    price_key = body.get("priceKey", "")
+    user_id   = body.get("userId", "")
+    email     = body.get("email", "")
+    
+    price_id = PRICE_MAP.get(price_key, "")
+    if not price_id:
+        return {"error": "Invalid price key"}
+    
+    try:
+        session = stripe.checkout.Session.create(
+            payment_method_types=["card"],
+            mode="subscription",
+            customer_email=email,
+            line_items=[{"price": price_id, "quantity": 1}],
+            success_url="https://stockwavejp-en.com/?checkout=success",
+            cancel_url="https://stockwavejp-en.com/?checkout=cancel",
+            metadata={"user_id": user_id, "plan": price_key},
+        )
+        return {"url": session.url}
+    except Exception as e:
+        return {"error": str(e)}
+
+@app.post("/api/stripe/webhook")
+async def stripe_webhook(request: Request):
+    payload = await request.body()
+    sig = request.headers.get("stripe-signature", "")
+    webhook_secret = os.environ.get("STRIPE_WEBHOOK_SECRET", "")
+    
+    try:
+        event = stripe.Webhook.construct_event(payload, sig, webhook_secret)
+    except Exception:
+        return {"error": "Invalid signature"}
+    
+    if event["type"] == "checkout.session.completed":
+        session = event["data"]["object"]
+        user_id = session.get("metadata", {}).get("user_id", "")
+        plan = session.get("metadata", {}).get("plan", "").replace("_monthly", "")
+        
+        if user_id and plan:
+            from supabase import create_client
+            sb_url = os.environ.get("SUPABASE_URL", "")
+            sb_key = os.environ.get("SUPABASE_SERVICE_ROLE_KEY", "")
+            sb = create_client(sb_url, sb_key)
+            sb.table("subscriptions").upsert({
+                "user_id": user_id,
+                "plan": plan,
+                "status": "active",
+                "stripe_subscription_id": session.get("subscription", ""),
+                "stripe_customer_id": session.get("customer", ""),
+            }, on_conflict="user_id").execute()
+    
+    return {"received": True}

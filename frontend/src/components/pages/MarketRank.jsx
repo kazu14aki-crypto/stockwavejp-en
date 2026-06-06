@@ -482,7 +482,7 @@ function StockTable({ stocks: rawStocks, onAddToTheme }) {
         <table style={{ borderCollapse:'collapse', fontSize:'12px', fontFamily:'var(--font)', width:'100%' }}>
           <thead>
             <tr style={{ borderBottom:'1px solid var(--border)' }}>
-              <th style={{ ...thStyle, textAlign:'center', width:'32px', minWidth:'32px', maxWidth:'32px', padding:'8px 4px', background:'var(--bg3)', position:'sticky', left:0, zIndex:3 }}>順</th>
+              <th style={{ ...thStyle, textAlign:'center', width:'32px', minWidth:'32px', maxWidth:'32px', padding:'8px 4px', background:'var(--bg3)', position:'sticky', left:0, zIndex:3 }}>#</th>
               <th style={{ ...thStyle, textAlign:'left', minWidth:'120px', background:'var(--bg3)', position:'sticky', left:'32px', zIndex:3 }}>Stock Name</th>
               {headers.map(h => (
                 <th key={h} style={{ ...thStyle, minWidth: h==='Price'||h==='Return'?'70px':'80px' }}>{h}</th>
