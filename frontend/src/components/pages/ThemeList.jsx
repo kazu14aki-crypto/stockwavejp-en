@@ -1,3 +1,4 @@
+import { tn } from '../../utils/themeNames'
 import React, { useState, useEffect } from 'react'
 import { useThemes, useCustomThemeStats, useMacro, useMomentum, useMonthlyHeatmap } from '../../hooks/useMarketData.js'
 import { useCustomThemes } from '../../hooks/useCustomThemes.js'
