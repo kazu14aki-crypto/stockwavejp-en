@@ -1367,12 +1367,12 @@ export default function ThemeList({ onNavigate }) {
             sub={`Period: ${periodLabel}`} />
               <KpiCard delay={0.15}
             label="Top Inflow"
-                value={<span style={{ fontSize: '17px', color: 'var(--red)', fontWeight: 700 }}>{summary.top?.theme}</span>}
+                value={<span style={{ fontSize: '17px', color: 'var(--red)', fontWeight: 700 }}>{tn(summary.top?.theme)}</span>}
                 arrow="up"
                 sub={<span style={{ color: 'var(--red)', fontWeight: 600 }}>+{summary.top?.pct?.toFixed(1)}%</span>} />
               <KpiCard delay={0.2}
             label="Top Outflow"
-                value={<span style={{ fontSize: '17px', color: 'var(--green)', fontWeight: 700 }}>{summary.bot?.theme}</span>}
+                value={<span style={{ fontSize: '17px', color: 'var(--green)', fontWeight: 700 }}>{tn(summary.bot?.theme)}</span>}
                 arrow="down"
                 sub={<span style={{ color: 'var(--green)', fontWeight: 600 }}>{summary.bot?.pct?.toFixed(1)}%</span>} />
               <KpiCard delay={0.25}

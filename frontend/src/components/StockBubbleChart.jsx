@@ -119,7 +119,7 @@ function StockBubbleChart({ stocks, themeName, onNavigate }) {
                   <text x={cx} y={cy+3} textAnchor="middle"
                     fontSize={Math.min(9, r*0.55)} fill="white" fontWeight="600"
                     style={{ pointerEvents:'none' }}>
-                    {(s.name||s.ticker.replace('.T','')).slice(0,6)}
+                    {sn(s.name||s.ticker.replace('.T','')).slice(0,6)}
                   </text>
                 )}
               </g>
@@ -141,13 +141,13 @@ function StockBubbleChart({ stocks, themeName, onNavigate }) {
                 <circle cx={cx} cy={cy} r={r} fill={col} fillOpacity="0.9" stroke={col} strokeWidth="1.5" />
                 <text x={cx} y={cy+4} textAnchor="middle" fontSize="9" fill="white" fontWeight="700"
                   style={{ pointerEvents:'none' }}>
-                  {(s.name||s.ticker.replace('.T','')).slice(0,8)}
+                  {sn(s.name||s.ticker.replace('.T','')).slice(0,8)}
                 </text>
                 <g style={{ pointerEvents:'none' }}>
                   <rect x={tx} y={ty} width="185" height="82"
                     rx="8" fill="#1a1f2e" stroke="rgba(255,255,255,0.25)" strokeWidth="1.2" />
                   <text x={tx+10} y={ty+18} fontSize="12" fill="#e8f0ff" fontWeight="700">
-                    {(s.name||s.ticker.replace('.T','')).slice(0,16)}
+                    {sn(s.name||s.ticker.replace('.T','')).slice(0,16)}
                   </text>
                   <text x={tx+10} y={ty+36} fontSize="12" fill={col}>
                     {'Price Change %: ' + (s.pct >= 0 ? '+' : '') + (s.pct?.toFixed(2) ?? '-') + '%'}

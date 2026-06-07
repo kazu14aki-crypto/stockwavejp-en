@@ -615,6 +615,9 @@ const ETF_GROUPS = {
 }
 
 
+const SEG_NAME_EN = {"電機・精密": "Electronics & Precision", "情報通信": "Info & Telecom", "輸送用機器": "Transport Equipment", "機械": "Machinery", "医薬品": "Pharmaceuticals", "化学": "Chemicals", "素材": "Materials", "鉄鋼": "Steel", "食品": "Food", "小売": "Retail", "建設": "Construction", "不動産": "Real Estate", "金融": "Finance", "保険": "Insurance", "銀行": "Banking", "証券": "Securities", "エネルギー": "Energy", "サービス": "Services", "運輸": "Transportation", "通信": "Telecom", "プライム": "Prime", "スタンダード": "Standard", "グロース": "Growth", "国内主要株": "Major Stocks", "国内全般": "Domestic All"}
+const strans = (name) => SEG_NAME_EN[name] || name
+
 // Stock name translation (Japanese → English)
 const STOCK_NAME_EN = {
   '村田製作所':'Murata Mfg','アドバンテスト':'Advantest','東京エレクトロン':'Tokyo Electron',

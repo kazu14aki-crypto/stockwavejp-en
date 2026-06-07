@@ -1,0 +1,4813 @@
+{
+  "6857": {
+    "code": "6857",
+    "ticker": "6857.T",
+    "name": "Advantest",
+    "themes": [
+      "Semiconductor Equipment",
+      "Semiconductor Testing",
+      "Memory",
+      "Next-Gen Semiconductor",
+      "AI Semiconductor",
+      "Quantum Computing"
+    ],
+    "pct": 42.17,
+    "price": 29750.0,
+    "market_cap": 64530457250000
+  },
+  "6656": {
+    "code": "6656",
+    "ticker": "6656.T",
+    "name": "エスペック",
+    "themes": [
+      "Semiconductor Equipment"
+    ],
+    "pct": 37.37,
+    "price": 772.0,
+    "market_cap": 4049140000
+  },
+  "7729": {
+    "code": "7729",
+    "ticker": "7729.T",
+    "name": "東京精密",
+    "themes": [
+      "Semiconductor Equipment",
+      "Semiconductor Testing"
+    ],
+    "pct": 29.32,
+    "price": 17355.0,
+    "market_cap": 704271366825
+  },
+  "6920": {
+    "code": "6920",
+    "ticker": "6920.T",
+    "name": "Lasertec",
+    "themes": [
+      "Semiconductor Equipment",
+      "Semiconductor Testing",
+      "Next-Gen Semiconductor",
+      "AI Semiconductor"
+    ],
+    "pct": 25.58,
+    "price": 44330.0,
+    "market_cap": 3973327734090
+  },
+  "6146": {
+    "code": "6146",
+    "ticker": "6146.T",
+    "name": "Disco",
+    "themes": [
+      "Semiconductor Equipment",
+      "Next-Gen Semiconductor",
+      "AI Semiconductor"
+    ],
+    "pct": 18.97,
+    "price": 76440.0,
+    "market_cap": 8290837191000
+  },
+  "6890": {
+    "code": "6890",
+    "ticker": "6890.T",
+    "name": "フェローテック",
+    "themes": [
+      "Semiconductor Equipment"
+    ],
+    "pct": 17.42,
+    "price": 7750.0,
+    "market_cap": 1065291750000
+  },
+  "8035": {
+    "code": "8035",
+    "ticker": "8035.T",
+    "name": "Tokyo Electron",
+    "themes": [
+      "Semiconductor Equipment",
+      "Memory",
+      "Next-Gen Semiconductor",
+      "AI Datacenter",
+      "AI Semiconductor",
+      "Autonomous Driving",
+      "Quantum Computing"
+    ],
+    "pct": 16.25,
+    "price": 45150.0,
+    "market_cap": 20625296489700
+  },
+  "7735": {
+    "code": "7735",
+    "ticker": "7735.T",
+    "name": "SCREEN HD",
+    "themes": [
+      "Semiconductor Equipment",
+      "Power Semiconductor",
+      "AI Semiconductor"
+    ],
+    "pct": 14.54,
+    "price": 10445.0,
+    "market_cap": 1975025267170
+  },
+  "6951": {
+    "code": "6951",
+    "ticker": "6951.T",
+    "name": "日本電子",
+    "themes": [
+      "Semiconductor Equipment",
+      "Semiconductor Testing",
+      "Drones",
+      "Nuclear Fusion",
+      "Defense & Aerospace"
+    ],
+    "pct": 9.66,
+    "price": 6356.0,
+    "market_cap": 431648672000
+  },
+  "6590": {
+    "code": "6590",
+    "ticker": "6590.T",
+    "name": "芝浦メカトロニクス",
+    "themes": [
+      "Semiconductor Equipment"
+    ],
+    "pct": 8.92,
+    "price": 4640.0,
+    "market_cap": 1679072160000
+  },
+  "3494": {
+    "code": "3494",
+    "ticker": "3494.T",
+    "name": "ウルトラファブリクス",
+    "themes": [
+      "Semiconductor Equipment"
+    ],
+    "pct": 2.58,
+    "price": 358.0,
+    "market_cap": 329002000
+  },
+  "7751": {
+    "code": "7751",
+    "ticker": "7751.T",
+    "name": "Canon",
+    "themes": [
+      "Semiconductor Equipment"
+    ],
+    "pct": -5.26,
+    "price": 4125.0,
+    "market_cap": 3621341625000
+  },
+  "7731": {
+    "code": "7731",
+    "ticker": "7731.T",
+    "name": "Nikon",
+    "themes": [
+      "Semiconductor Equipment",
+      "Semiconductor Testing",
+      "Wearables"
+    ],
+    "pct": -10.24,
+    "price": 1706.0,
+    "market_cap": 580729572000
+  },
+  "6866": {
+    "code": "6866",
+    "ticker": "6866.T",
+    "name": "ヒオキ電機",
+    "themes": [
+      "Semiconductor Testing"
+    ],
+    "pct": 47.16,
+    "price": 10640.0,
+    "market_cap": 218981840000
+  },
+  "6871": {
+    "code": "6871",
+    "ticker": "6871.T",
+    "name": "マイクロニクス",
+    "themes": [
+      "Semiconductor Testing"
+    ],
+    "pct": 36.21,
+    "price": 13090.0,
+    "market_cap": 2237408250000
+  },
+  "6666": {
+    "code": "6666",
+    "ticker": "6666.T",
+    "name": "リバーエレテック",
+    "themes": [
+      "Semiconductor Testing"
+    ],
+    "pct": 33.98,
+    "price": 970.0,
+    "market_cap": 78440990000
+  },
+  "6861": {
+    "code": "6861",
+    "ticker": "6861.T",
+    "name": "Keyence",
+    "themes": [
+      "Semiconductor Testing",
+      "Physical AI",
+      "Edge AI",
+      "Robotics & Automation"
+    ],
+    "pct": 33.29,
+    "price": 73800.0,
+    "market_cap": 11763941400000
+  },
+  "6941": {
+    "code": "6941",
+    "ticker": "6941.T",
+    "name": "山一電機",
+    "themes": [
+      "Semiconductor Testing"
+    ],
+    "pct": 29.47,
+    "price": 10060.0,
+    "market_cap": 698787720000
+  },
+  "6627": {
+    "code": "6627",
+    "ticker": "6627.T",
+    "name": "テラプローブ",
+    "themes": [
+      "Semiconductor Testing"
+    ],
+    "pct": 28.06,
+    "price": 10040.0,
+    "market_cap": 218932240000
+  },
+  "6645": {
+    "code": "6645",
+    "ticker": "6645.T",
+    "name": "Omron",
+    "themes": [
+      "Semiconductor Testing",
+      "Physical AI",
+      "Edge AI",
+      "Robotics & Automation"
+    ],
+    "pct": 21.97,
+    "price": 5301.0,
+    "market_cap": 1425507813000
+  },
+  "5214": {
+    "code": "5214",
+    "ticker": "5214.T",
+    "name": "日本電気硝子",
+    "themes": [
+      "Semiconductor Materials",
+      "All-Solid-State Battery",
+      "Energy Storage",
+      "Optical Communication"
+    ],
+    "pct": 36.07,
+    "price": 8186.0,
+    "market_cap": 905347042000
+  },
+  "4187": {
+    "code": "4187",
+    "ticker": "4187.T",
+    "name": "大阪有機化学工業",
+    "themes": [
+      "Semiconductor Materials"
+    ],
+    "pct": 35.85,
+    "price": 4680.0,
+    "market_cap": 155259000000
+  },
+  "4004": {
+    "code": "4004",
+    "ticker": "4004.T",
+    "name": "レゾナック",
+    "themes": [
+      "Semiconductor Materials",
+      "Energy Storage",
+      "Chemicals"
+    ],
+    "pct": 35.65,
+    "price": 14155.0,
+    "market_cap": 7901264380000
+  },
+  "3436": {
+    "code": "3436",
+    "ticker": "3436.T",
+    "name": "SUMCO",
+    "themes": [
+      "Semiconductor Materials",
+      "Next-Gen Semiconductor",
+      "AI Semiconductor",
+      "Solar Power"
+    ],
+    "pct": 31.73,
+    "price": 2348.0,
+    "market_cap": 5160814425000
+  },
+  "4047": {
+    "code": "4047",
+    "ticker": "4047.T",
+    "name": "関東電化工業",
+    "themes": [
+      "Semiconductor Materials",
+      "Chemicals"
+    ],
+    "pct": 20.48,
+    "price": 1700.0,
+    "market_cap": 93863800000
+  },
+  "4186": {
+    "code": "4186",
+    "ticker": "4186.T",
+    "name": "東京応化工業",
+    "themes": [
+      "Semiconductor Materials"
+    ],
+    "pct": 20.09,
+    "price": 9169.0,
+    "market_cap": 1854063490000
+  },
+  "5384": {
+    "code": "5384",
+    "ticker": "5384.T",
+    "name": "フジミインコーポレーテッド",
+    "themes": [
+      "Semiconductor Materials"
+    ],
+    "pct": 14.94,
+    "price": 3200.0,
+    "market_cap": 172748800000
+  },
+  "4063": {
+    "code": "4063",
+    "ticker": "4063.T",
+    "name": "Shin-Etsu Chem",
+    "themes": [
+      "Semiconductor Materials",
+      "Next-Gen Semiconductor",
+      "AI Semiconductor",
+      "All-Solid-State Battery",
+      "Solar Power",
+      "Quantum Computing",
+      "Chemicals"
+    ],
+    "pct": 13.9,
+    "price": 7081.0,
+    "market_cap": 11267896166000
+  },
+  "4109": {
+    "code": "4109",
+    "ticker": "4109.T",
+    "name": "ステラケミファ",
+    "themes": [
+      "Semiconductor Materials"
+    ],
+    "pct": 9.45,
+    "price": 5270.0,
+    "market_cap": 32642380000
+  },
+  "5201": {
+    "code": "5201",
+    "ticker": "5201.T",
+    "name": "AGC",
+    "themes": [
+      "Semiconductor Materials",
+      "All-Solid-State Battery",
+      "Optical Communication",
+      "Building Materials"
+    ],
+    "pct": 5.79,
+    "price": 5754.0,
+    "market_cap": 1161594504000
+  },
+  "4042": {
+    "code": "4042",
+    "ticker": "4042.T",
+    "name": "東ソー",
+    "themes": [
+      "Semiconductor Materials",
+      "Chemicals"
+    ],
+    "pct": 4.23,
+    "price": 2415.0,
+    "market_cap": 460195155000
+  },
+  "4205": {
+    "code": "4205",
+    "ticker": "4205.T",
+    "name": "日本ゼオン",
+    "themes": [
+      "Semiconductor Materials"
+    ],
+    "pct": 3.85,
+    "price": 1833.0,
+    "market_cap": 296834187000
+  },
+  "4188": {
+    "code": "4188",
+    "ticker": "4188.T",
+    "name": "三菱ケミカルグループ",
+    "themes": [
+      "Semiconductor Materials",
+      "All-Solid-State Battery",
+      "Solar Power",
+      "Energy Storage",
+      "Chemicals",
+      "Water Infrastructure"
+    ],
+    "pct": 1.41,
+    "price": 918.0,
+    "market_cap": 1196509070394
+  },
+  "4005": {
+    "code": "4005",
+    "ticker": "4005.T",
+    "name": "住友化学",
+    "themes": [
+      "Semiconductor Materials",
+      "All-Solid-State Battery",
+      "Solar Power",
+      "Resources (H2/He/H2O)",
+      "Chemicals",
+      "Agritech & Foodtech"
+    ],
+    "pct": -0.63,
+    "price": 509.0,
+    "market_cap": 1078042813737
+  },
+  "4208": {
+    "code": "4208",
+    "ticker": "4208.T",
+    "name": "宇部興産",
+    "themes": [
+      "Semiconductor Materials",
+      "Chemicals"
+    ],
+    "pct": -1.67,
+    "price": 2391.0,
+    "market_cap": 335110605000
+  },
+  "285A": {
+    "code": "285A",
+    "ticker": "285A.T",
+    "name": "キオクシアHD",
+    "themes": [
+      "Memory",
+      "Next-Gen Semiconductor",
+      "AI Semiconductor"
+    ],
+    "pct": 81.42,
+    "price": 36320.0,
+    "market_cap": 268067605120000
+  },
+  "6723": {
+    "code": "6723",
+    "ticker": "6723.T",
+    "name": "Renesas",
+    "themes": [
+      "Memory",
+      "Power Semiconductor",
+      "Next-Gen Semiconductor",
+      "Physical AI",
+      "AI Semiconductor",
+      "Edge AI",
+      "Autonomous Driving"
+    ],
+    "pct": 29.78,
+    "price": 2913.0,
+    "market_cap": 8500084479000
+  },
+  "6503": {
+    "code": "6503",
+    "ticker": "6503.T",
+    "name": "Mitsubishi Elec",
+    "themes": [
+      "Memory",
+      "Power Semiconductor",
+      "Physical AI",
+      "EV / Electric Vehicles",
+      "Autonomous Driving",
+      "Nuclear Fusion",
+      "IOWN",
+      "Optical Communication",
+      "Quantum Computing",
+      "Defense & Aerospace",
+      "Space & Satellite",
+      "Robotics & Automation",
+      "警備"
+    ],
+    "pct": 20.55,
+    "price": 6078.0,
+    "market_cap": 6837573738000
+  },
+  "6702": {
+    "code": "6702",
+    "ticker": "6702.T",
+    "name": "Fujitsu",
+    "themes": [
+      "Memory",
+      "Next-Gen Semiconductor",
+      "Generative AI",
+      "AI Datacenter",
+      "AI Talent",
+      "Edge AI",
+      "Autonomous Driving",
+      "Drones",
+      "Nuclear Fusion",
+      "IOWN",
+      "Quantum Computing",
+      "Defense & Aerospace",
+      "Space & Satellite",
+      "Cybersecurity"
+    ],
+    "pct": 18.33,
+    "price": 3693.0,
+    "market_cap": 6315222036000
+  },
+  "6963": {
+    "code": "6963",
+    "ticker": "6963.T",
+    "name": "Rohm",
+    "themes": [
+      "Memory",
+      "Power Semiconductor",
+      "AI Semiconductor",
+      "EV / Electric Vehicles",
+      "Wearables"
+    ],
+    "pct": 9.79,
+    "price": 3431.0,
+    "market_cap": 3030519956000
+  },
+  "6758": {
+    "code": "6758",
+    "ticker": "6758.T",
+    "name": "Sony Group",
+    "themes": [
+      "Memory",
+      "Physical AI",
+      "Edge AI",
+      "Autonomous Driving",
+      "Wearables",
+      "ゲーム・エンタメ"
+    ],
+    "pct": 1.44,
+    "price": 3234.0,
+    "market_cap": 9142155792000
+  },
+  "6981": {
+    "code": "6981",
+    "ticker": "6981.T",
+    "name": "Murata Mfg",
+    "themes": [
+      "Power Semiconductor",
+      "AI Semiconductor",
+      "Edge AI",
+      "EV / Electric Vehicles",
+      "All-Solid-State Battery",
+      "Energy Storage",
+      "IOWN",
+      "Wearables"
+    ],
+    "pct": 36.96,
+    "price": 4840.0,
+    "market_cap": 8968912040000
+  },
+  "6762": {
+    "code": "6762",
+    "ticker": "6762.T",
+    "name": "TDK",
+    "themes": [
+      "Power Semiconductor",
+      "AI Semiconductor",
+      "Edge AI",
+      "EV / Electric Vehicles",
+      "All-Solid-State Battery",
+      "Energy Storage",
+      "Wearables"
+    ],
+    "pct": 33.85,
+    "price": 2677.0,
+    "market_cap": 7130909613000
+  },
+  "6996": {
+    "code": "6996",
+    "ticker": "6996.T",
+    "name": "ニチコン",
+    "themes": [
+      "Power Semiconductor"
+    ],
+    "pct": 31.69,
+    "price": 2323.0,
+    "market_cap": 153761693000
+  },
+  "6707": {
+    "code": "6707",
+    "ticker": "6707.T",
+    "name": "サンケン電気",
+    "themes": [
+      "Power Semiconductor"
+    ],
+    "pct": 27.76,
+    "price": 9481.0,
+    "market_cap": 278874134000
+  },
+  "6504": {
+    "code": "6504",
+    "ticker": "6504.T",
+    "name": "富士電機",
+    "themes": [
+      "Power Semiconductor"
+    ],
+    "pct": 16.81,
+    "price": 12650.0,
+    "market_cap": 2168829850000
+  },
+  "5802": {
+    "code": "5802",
+    "ticker": "5802.T",
+    "name": "Sumitomo Electric",
+    "themes": [
+      "Power Semiconductor",
+      "AI Datacenter",
+      "EV / Electric Vehicles",
+      "Autonomous Driving",
+      "Renewable Energy",
+      "Energy Storage",
+      "IOWN",
+      "Optical Communication",
+      "Rare Earth & Resources"
+    ],
+    "pct": 13.22,
+    "price": 10190.0,
+    "market_cap": 15232022190000
+  },
+  "6501": {
+    "code": "6501",
+    "ticker": "6501.T",
+    "name": "Hitachi",
+    "themes": [
+      "Power Semiconductor",
+      "Next-Gen Semiconductor",
+      "Generative AI",
+      "AI Datacenter",
+      "Edge AI",
+      "Nuclear Fusion",
+      "Nuclear Power",
+      "IOWN",
+      "Optical Communication",
+      "Quantum Computing",
+      "Water Infrastructure",
+      "Cybersecurity"
+    ],
+    "pct": 11.34,
+    "price": 5047.0,
+    "market_cap": 13419306796000
+  },
+  "6844": {
+    "code": "6844",
+    "ticker": "6844.T",
+    "name": "新電元工業",
+    "themes": [
+      "Power Semiconductor"
+    ],
+    "pct": 8.61,
+    "price": 3280.0,
+    "market_cap": 34105440000
+  },
+  "6701": {
+    "code": "6701",
+    "ticker": "6701.T",
+    "name": "NEC",
+    "themes": [
+      "Next-Gen Semiconductor",
+      "Generative AI",
+      "AI Datacenter",
+      "AI Talent",
+      "Edge AI",
+      "Autonomous Driving",
+      "Drones",
+      "Nuclear Fusion",
+      "IOWN",
+      "Quantum Computing",
+      "Defense & Aerospace",
+      "Space & Satellite",
+      "Cybersecurity",
+      "警備"
+    ],
+    "pct": 17.29,
+    "price": 4444.0,
+    "market_cap": 7466008880000
+  },
+  "6526": {
+    "code": "6526",
+    "ticker": "6526.T",
+    "name": "Socionext",
+    "themes": [
+      "Next-Gen Semiconductor",
+      "AI Semiconductor"
+    ],
+    "pct": 5.35,
+    "price": 2010.0,
+    "market_cap": 2775008977500
+  },
+  "4259": {
+    "code": "4259",
+    "ticker": "4259.T",
+    "name": "エクサウィザーズ",
+    "themes": [
+      "Generative AI"
+    ],
+    "pct": 27.61,
+    "price": 721.0,
+    "market_cap": 235340889000
+  },
+  "3993": {
+    "code": "3993",
+    "ticker": "3993.T",
+    "name": "PKSHA Technology",
+    "themes": [
+      "Generative AI",
+      "AI Talent",
+      "SaaS"
+    ],
+    "pct": 26.05,
+    "price": 3315.0,
+    "market_cap": 200812755000
+  },
+  "3778": {
+    "code": "3778",
+    "ticker": "3778.T",
+    "name": "さくらインターネット",
+    "themes": [
+      "Generative AI",
+      "AI Datacenter"
+    ],
+    "pct": 21.69,
+    "price": 3175.0,
+    "market_cap": 2951273625000
+  },
+  "4488": {
+    "code": "4488",
+    "ticker": "4488.T",
+    "name": "AI inside",
+    "themes": [
+      "Generative AI"
+    ],
+    "pct": 19.39,
+    "price": 2629.0,
+    "market_cap": 10834109000
+  },
+  "4684": {
+    "code": "4684",
+    "ticker": "4684.T",
+    "name": "オービック",
+    "themes": [
+      "Generative AI",
+      "SaaS"
+    ],
+    "pct": 12.91,
+    "price": 4293.0,
+    "market_cap": 1763611623000
+  },
+  "9449": {
+    "code": "9449",
+    "ticker": "9449.T",
+    "name": "GMOインターネット",
+    "themes": [
+      "Generative AI",
+      "Crypto"
+    ],
+    "pct": 11.14,
+    "price": 3108.0,
+    "market_cap": 235132632000
+  },
+  "3626": {
+    "code": "3626",
+    "ticker": "3626.T",
+    "name": "TIS",
+    "themes": [
+      "Generative AI",
+      "AI Datacenter",
+      "AI Talent",
+      "SaaS"
+    ],
+    "pct": 8.29,
+    "price": 3568.0,
+    "market_cap": 1143147952000
+  },
+  "4448": {
+    "code": "4448",
+    "ticker": "4448.T",
+    "name": "Chatwork",
+    "themes": [
+      "Generative AI",
+      "AI Talent",
+      "SaaS"
+    ],
+    "pct": 4.43,
+    "price": 283.0,
+    "market_cap": 6159778000
+  },
+  "4483": {
+    "code": "4483",
+    "ticker": "4483.T",
+    "name": "JMDC",
+    "themes": [
+      "Generative AI",
+      "AI Talent",
+      "SaaS"
+    ],
+    "pct": 3.25,
+    "price": 3335.0,
+    "market_cap": 242117665000
+  },
+  "9434": {
+    "code": "9434",
+    "ticker": "9434.T",
+    "name": "SoftBank",
+    "themes": [
+      "Generative AI",
+      "Telecom",
+      "Digital Banking",
+      "Fintech",
+      "Cybersecurity"
+    ],
+    "pct": 3.01,
+    "price": 219.0,
+    "market_cap": 3406621598406
+  },
+  "4307": {
+    "code": "4307",
+    "ticker": "4307.T",
+    "name": "野村総合研究所",
+    "themes": [
+      "Generative AI",
+      "AI Datacenter",
+      "AI Talent",
+      "Cybersecurity"
+    ],
+    "pct": 1.48,
+    "price": 4313.0,
+    "market_cap": 3661331578000
+  },
+  "4751": {
+    "code": "4751",
+    "ticker": "4751.T",
+    "name": "サイバーエージェント",
+    "themes": [
+      "Generative AI",
+      "教育・HR・人材",
+      "ゲーム・エンタメ"
+    ],
+    "pct": -4.01,
+    "price": 1268.0,
+    "market_cap": 732105895500
+  },
+  "9433": {
+    "code": "9433",
+    "ticker": "9433.T",
+    "name": "KDDI",
+    "themes": [
+      "Generative AI",
+      "Autonomous Driving",
+      "Telecom",
+      "Digital Banking",
+      "Space & Satellite",
+      "Buffett Picks",
+      "Cybersecurity"
+    ],
+    "pct": -4.78,
+    "price": 2580.0,
+    "market_cap": 4901604592500
+  },
+  "5803": {
+    "code": "5803",
+    "ticker": "5803.T",
+    "name": "フジクラ",
+    "themes": [
+      "AI Datacenter",
+      "Renewable Energy",
+      "IOWN",
+      "Optical Communication"
+    ],
+    "pct": 39.42,
+    "price": 6281.0,
+    "market_cap": 68787960593000
+  },
+  "5801": {
+    "code": "5801",
+    "ticker": "5801.T",
+    "name": "Furukawa Electric",
+    "themes": [
+      "AI Datacenter",
+      "EV / Electric Vehicles",
+      "Autonomous Driving",
+      "Renewable Energy",
+      "IOWN",
+      "Optical Communication"
+    ],
+    "pct": 38.61,
+    "price": 42900.0,
+    "market_cap": 64461797400000
+  },
+  "8056": {
+    "code": "8056",
+    "ticker": "8056.T",
+    "name": "BIPROGY",
+    "themes": [
+      "AI Datacenter"
+    ],
+    "pct": 1.86,
+    "price": 4652.0,
+    "market_cap": 465148828000
+  },
+  "9432": {
+    "code": "9432",
+    "ticker": "9432.T",
+    "name": "NTT",
+    "themes": [
+      "AI Datacenter",
+      "Drones",
+      "IOWN",
+      "Optical Communication",
+      "Telecom",
+      "Quantum Computing",
+      "Space & Satellite",
+      "Buffett Picks"
+    ],
+    "pct": -3.33,
+    "price": 151.0,
+    "market_cap": 5201947259226
+  },
+  "6506": {
+    "code": "6506",
+    "ticker": "6506.T",
+    "name": "Yaskawa",
+    "themes": [
+      "Physical AI",
+      "Robotics & Automation"
+    ],
+    "pct": 30.35,
+    "price": 5381.0,
+    "market_cap": 4905739318000
+  },
+  "6622": {
+    "code": "6622",
+    "ticker": "6622.T",
+    "name": "ダイヘン",
+    "themes": [
+      "Physical AI",
+      "Robotics & Automation"
+    ],
+    "pct": 29.92,
+    "price": 14980.0,
+    "market_cap": 501620280000
+  },
+  "6268": {
+    "code": "6268",
+    "ticker": "6268.T",
+    "name": "ナブテスコ",
+    "themes": [
+      "Physical AI",
+      "Robotics & Automation"
+    ],
+    "pct": 27.04,
+    "price": 5027.0,
+    "market_cap": 871264559000
+  },
+  "6954": {
+    "code": "6954",
+    "ticker": "6954.T",
+    "name": "Fanuc",
+    "themes": [
+      "Physical AI",
+      "Robotics & Automation"
+    ],
+    "pct": 26.89,
+    "price": 6961.0,
+    "market_cap": 8475783210000
+  },
+  "6273": {
+    "code": "6273",
+    "ticker": "6273.T",
+    "name": "SMC",
+    "themes": [
+      "Physical AI",
+      "Robotics & Automation"
+    ],
+    "pct": 26.13,
+    "price": 77000.0,
+    "market_cap": 4383764000000
+  },
+  "6481": {
+    "code": "6481",
+    "ticker": "6481.T",
+    "name": "THK",
+    "themes": [
+      "Physical AI",
+      "Robotics & Automation"
+    ],
+    "pct": 25.51,
+    "price": 5801.0,
+    "market_cap": 1043594099000
+  },
+  "6474": {
+    "code": "6474",
+    "ticker": "6474.T",
+    "name": "不二越",
+    "themes": [
+      "Physical AI",
+      "Robotics & Automation"
+    ],
+    "pct": 13.24,
+    "price": 5090.0,
+    "market_cap": 147594730000
+  },
+  "7012": {
+    "code": "7012",
+    "ticker": "7012.T",
+    "name": "Kawasaki HI",
+    "themes": [
+      "Physical AI",
+      "Drones",
+      "Shipbuilding",
+      "LNG",
+      "Resources (H2/He/H2O)",
+      "Defense & Aerospace",
+      "Space & Satellite",
+      "Robotics & Automation"
+    ],
+    "pct": 11.18,
+    "price": 3243.0,
+    "market_cap": 8949700614000
+  },
+  "6902": {
+    "code": "6902",
+    "ticker": "6902.T",
+    "name": "Denso",
+    "themes": [
+      "Physical AI",
+      "EV / Electric Vehicles",
+      "Autonomous Driving",
+      "Quantum Computing",
+      "Robotics & Automation"
+    ],
+    "pct": -2.35,
+    "price": 1846.0,
+    "market_cap": 2877404643000
+  },
+  "6098": {
+    "code": "6098",
+    "ticker": "6098.T",
+    "name": "リクルートHD",
+    "themes": [
+      "AI Talent",
+      "教育・HR・人材",
+      "人材派遣"
+    ],
+    "pct": 18.18,
+    "price": 7464.0,
+    "market_cap": 8584741992000
+  },
+  "2181": {
+    "code": "2181",
+    "ticker": "2181.T",
+    "name": "パーソルHD",
+    "themes": [
+      "AI Talent",
+      "教育・HR・人材",
+      "人材派遣"
+    ],
+    "pct": 5.77,
+    "price": 240.0,
+    "market_cap": 338675750497
+  },
+  "2124": {
+    "code": "2124",
+    "ticker": "2124.T",
+    "name": "ジェイエイシーリクルートメント",
+    "themes": [
+      "AI Talent",
+      "教育・HR・人材",
+      "人材派遣"
+    ],
+    "pct": 3.93,
+    "price": 873.0,
+    "market_cap": 50703840000
+  },
+  "4849": {
+    "code": "4849",
+    "ticker": "4849.T",
+    "name": "エン・ジャパン",
+    "themes": [
+      "AI Talent",
+      "教育・HR・人材",
+      "人材派遣"
+    ],
+    "pct": 0.82,
+    "price": 1113.0,
+    "market_cap": 29505630000
+  },
+  "2146": {
+    "code": "2146",
+    "ticker": "2146.T",
+    "name": "UTグループ",
+    "themes": [
+      "AI Talent",
+      "教育・HR・人材",
+      "人材派遣"
+    ],
+    "pct": -5.15,
+    "price": 184.0,
+    "market_cap": 174858512000
+  },
+  "6752": {
+    "code": "6752",
+    "ticker": "6752.T",
+    "name": "パナソニック",
+    "themes": [
+      "Edge AI",
+      "EV / Electric Vehicles",
+      "All-Solid-State Battery",
+      "Solar Power",
+      "Energy Storage",
+      "脱炭素・ESG"
+    ],
+    "pct": 17.73,
+    "price": 3061.0,
+    "market_cap": 5321395450000
+  },
+  "6770": {
+    "code": "6770",
+    "ticker": "6770.T",
+    "name": "Alps Alpine",
+    "themes": [
+      "Edge AI",
+      "Autonomous Driving",
+      "Wearables"
+    ],
+    "pct": 8.86,
+    "price": 2328.0,
+    "market_cap": 493319496000
+  },
+  "6753": {
+    "code": "6753",
+    "ticker": "6753.T",
+    "name": "シャープ",
+    "themes": [
+      "Edge AI",
+      "Solar Power"
+    ],
+    "pct": -0.82,
+    "price": 566.0,
+    "market_cap": 377908530202
+  },
+  "5706": {
+    "code": "5706",
+    "ticker": "5706.T",
+    "name": "三井金属",
+    "themes": [
+      "EV / Electric Vehicles",
+      "Steel & Materials",
+      "National Resilience",
+      "Rare Earth & Resources"
+    ],
+    "pct": 39.93,
+    "price": 41370.0,
+    "market_cap": 15135876420000
+  },
+  "6674": {
+    "code": "6674",
+    "ticker": "6674.T",
+    "name": "GSユアサ",
+    "themes": [
+      "EV / Electric Vehicles",
+      "Nuclear Power",
+      "Energy Storage"
+    ],
+    "pct": 14.34,
+    "price": 6164.0,
+    "market_cap": 1333137592000
+  },
+  "6473": {
+    "code": "6473",
+    "ticker": "6473.T",
+    "name": "ジェイテクト",
+    "themes": [
+      "EV / Electric Vehicles"
+    ],
+    "pct": 12.36,
+    "price": 1810.0,
+    "market_cap": 410302315500
+  },
+  "7201": {
+    "code": "7201",
+    "ticker": "7201.T",
+    "name": "Nissan",
+    "themes": [
+      "EV / Electric Vehicles",
+      "Autonomous Driving"
+    ],
+    "pct": 8.02,
+    "price": 362.0,
+    "market_cap": 1756472362500
+  },
+  "7259": {
+    "code": "7259",
+    "ticker": "7259.T",
+    "name": "Aisin",
+    "themes": [
+      "EV / Electric Vehicles"
+    ],
+    "pct": 6.05,
+    "price": 2305.0,
+    "market_cap": 1173438620000
+  },
+  "5713": {
+    "code": "5713",
+    "ticker": "5713.T",
+    "name": "Sumitomo Metal Mining",
+    "themes": [
+      "EV / Electric Vehicles",
+      "Steel & Materials",
+      "Rare Earth & Resources"
+    ],
+    "pct": 4.48,
+    "price": 9664.0,
+    "market_cap": 5991969920000
+  },
+  "7211": {
+    "code": "7211",
+    "ticker": "7211.T",
+    "name": "三菱自動車",
+    "themes": [
+      "EV / Electric Vehicles"
+    ],
+    "pct": 3.57,
+    "price": 319.0,
+    "market_cap": 873557256000
+  },
+  "7267": {
+    "code": "7267",
+    "ticker": "7267.T",
+    "name": "本田技研工業",
+    "themes": [
+      "EV / Electric Vehicles",
+      "Autonomous Driving"
+    ],
+    "pct": 1.81,
+    "price": 1294.0,
+    "market_cap": 4243585450000
+  },
+  "6201": {
+    "code": "6201",
+    "ticker": "6201.T",
+    "name": "Toyota Industries",
+    "themes": [
+      "EV / Electric Vehicles"
+    ],
+    "pct": 0.07,
+    "price": 20420.0,
+    "market_cap": 2812936680000
+  },
+  "7261": {
+    "code": "7261",
+    "ticker": "7261.T",
+    "name": "Mazda Motor",
+    "themes": [
+      "EV / Electric Vehicles"
+    ],
+    "pct": -0.24,
+    "price": 1038.0,
+    "market_cap": 1357012104000
+  },
+  "7270": {
+    "code": "7270",
+    "ticker": "7270.T",
+    "name": "Subaru Corp",
+    "themes": [
+      "EV / Electric Vehicles"
+    ],
+    "pct": -1.4,
+    "price": 2438.0,
+    "market_cap": 1549471670000
+  },
+  "7203": {
+    "code": "7203",
+    "ticker": "7203.T",
+    "name": "Toyota Motor",
+    "themes": [
+      "EV / Electric Vehicles",
+      "All-Solid-State Battery",
+      "Autonomous Driving",
+      "Buffett Picks"
+    ],
+    "pct": -3.47,
+    "price": 3112.0,
+    "market_cap": 11661295736000
+  },
+  "3402": {
+    "code": "3402",
+    "ticker": "3402.T",
+    "name": "Toray",
+    "themes": [
+      "All-Solid-State Battery",
+      "Energy Storage",
+      "Chemicals",
+      "Water Infrastructure",
+      "脱炭素・ESG"
+    ],
+    "pct": 4.2,
+    "price": 1140.0,
+    "market_cap": 981431043500
+  },
+  "3407": {
+    "code": "3407",
+    "ticker": "3407.T",
+    "name": "Asahi Kasei",
+    "themes": [
+      "All-Solid-State Battery",
+      "Energy Storage",
+      "Resources (H2/He/H2O)",
+      "Chemicals",
+      "Building Materials",
+      "Water Infrastructure",
+      "脱炭素・ESG"
+    ],
+    "pct": 2.36,
+    "price": 1542.0,
+    "market_cap": 1517748966000
+  },
+  "4023": {
+    "code": "4023",
+    "ticker": "4023.T",
+    "name": "クレハ",
+    "themes": [
+      "All-Solid-State Battery",
+      "Energy Storage",
+      "Chemicals"
+    ],
+    "pct": -1.13,
+    "price": 3945.0,
+    "market_cap": 288107295000
+  },
+  "6810": {
+    "code": "6810",
+    "ticker": "6810.T",
+    "name": "マクセル",
+    "themes": [
+      "All-Solid-State Battery",
+      "Energy Storage"
+    ],
+    "pct": -5.72,
+    "price": 1960.0,
+    "market_cap": 91843640000
+  },
+  "5019": {
+    "code": "5019",
+    "ticker": "5019.T",
+    "name": "Idemitsu",
+    "themes": [
+      "All-Solid-State Battery",
+      "Renewable Energy",
+      "Solar Power",
+      "LNG",
+      "Oil & Gas"
+    ],
+    "pct": -13.45,
+    "price": 1348.0,
+    "market_cap": 1238736512000
+  },
+  "4667": {
+    "code": "4667",
+    "ticker": "4667.T",
+    "name": "アイサンテクノロジー",
+    "themes": [
+      "Autonomous Driving"
+    ],
+    "pct": -4.76,
+    "price": 1680.0,
+    "market_cap": 5013120000
+  },
+  "278A": {
+    "code": "278A",
+    "ticker": "278A.T",
+    "name": "テラドローン",
+    "themes": [
+      "Drones",
+      "Space & Satellite"
+    ],
+    "pct": 103.14,
+    "price": 7770.0,
+    "market_cap": 1843603440000
+  },
+  "6232": {
+    "code": "6232",
+    "ticker": "6232.T",
+    "name": "ACSL",
+    "themes": [
+      "Drones"
+    ],
+    "pct": 58.2,
+    "price": 2316.0,
+    "market_cap": 1567732824000
+  },
+  "7011": {
+    "code": "7011",
+    "ticker": "7011.T",
+    "name": "Mitsubishi Heavy",
+    "themes": [
+      "Drones",
+      "Shipbuilding",
+      "Nuclear Fusion",
+      "Nuclear Power",
+      "LNG",
+      "Resources (H2/He/H2O)",
+      "National Resilience",
+      "Defense & Aerospace",
+      "Space & Satellite",
+      "脱炭素・ESG"
+    ],
+    "pct": 8.58,
+    "price": 4797.0,
+    "market_cap": 21313665828000
+  },
+  "4755": {
+    "code": "4755",
+    "ticker": "4755.T",
+    "name": "楽天グループ",
+    "themes": [
+      "Drones",
+      "Telecom",
+      "Crypto",
+      "Digital Banking",
+      "Fintech",
+      "Retail & E-Commerce",
+      "Tourism & Hotels",
+      "Resale / Second-hand"
+    ],
+    "pct": 7.21,
+    "price": 775.0,
+    "market_cap": 1811874050000
+  },
+  "6326": {
+    "code": "6326",
+    "ticker": "6326.T",
+    "name": "クボタ",
+    "themes": [
+      "Drones",
+      "Water Infrastructure",
+      "Agritech & Foodtech"
+    ],
+    "pct": 5.5,
+    "price": 2598.0,
+    "market_cap": 1936586905000
+  },
+  "9233": {
+    "code": "9233",
+    "ticker": "9233.T",
+    "name": "朝日航洋",
+    "themes": [
+      "Drones"
+    ],
+    "pct": -1.91,
+    "price": 1180.0,
+    "market_cap": 3063280000
+  },
+  "7272": {
+    "code": "7272",
+    "ticker": "7272.T",
+    "name": "Yamaha Motor",
+    "themes": [
+      "Drones",
+      "Robotics & Automation"
+    ],
+    "pct": -2.24,
+    "price": 1094.0,
+    "market_cap": 1152095197500
+  },
+  "9735": {
+    "code": "9735",
+    "ticker": "9735.T",
+    "name": "セコム",
+    "themes": [
+      "Drones",
+      "警備"
+    ],
+    "pct": -3.89,
+    "price": 5758.0,
+    "market_cap": 1165367378000
+  },
+  "9474": {
+    "code": "9474",
+    "ticker": "9474.T",
+    "name": "ゼンリン",
+    "themes": [
+      "Drones"
+    ],
+    "pct": -9.94,
+    "price": 879.0,
+    "market_cap": 37550880000
+  },
+  "7013": {
+    "code": "7013",
+    "ticker": "7013.T",
+    "name": "IHI",
+    "themes": [
+      "Drones",
+      "Nuclear Fusion",
+      "Nuclear Power",
+      "Resources (H2/He/H2O)",
+      "Defense & Aerospace",
+      "Space & Satellite",
+      "脱炭素・ESG"
+    ],
+    "pct": -10.54,
+    "price": 2960.0,
+    "market_cap": 9916846494000
+  },
+  "9147": {
+    "code": "9147",
+    "ticker": "9147.T",
+    "name": "NIPPON EXPRESSホールディングス",
+    "themes": [
+      "Transport & Logistics"
+    ],
+    "pct": 19.99,
+    "price": 4202.0,
+    "market_cap": 991134144000
+  },
+  "9171": {
+    "code": "9171",
+    "ticker": "9171.T",
+    "name": "栗林商船",
+    "themes": [
+      "Transport & Logistics"
+    ],
+    "pct": 8.27,
+    "price": 1899.0,
+    "market_cap": 1840131000
+  },
+  "9069": {
+    "code": "9069",
+    "ticker": "9069.T",
+    "name": "センコーグループHD",
+    "themes": [
+      "Transport & Logistics"
+    ],
+    "pct": 4.77,
+    "price": 1868.0,
+    "market_cap": 106492812000
+  },
+  "9064": {
+    "code": "9064",
+    "ticker": "9064.T",
+    "name": "ヤマトHD",
+    "themes": [
+      "Transport & Logistics"
+    ],
+    "pct": 3.3,
+    "price": 1802.0,
+    "market_cap": 414025237500
+  },
+  "9041": {
+    "code": "9041",
+    "ticker": "9041.T",
+    "name": "Kintetsu Group",
+    "themes": [
+      "Transport & Logistics",
+      "Tourism & Hotels",
+      "Inbound Tourism"
+    ],
+    "pct": 3.29,
+    "price": 3356.0,
+    "market_cap": 498678108000
+  },
+  "9143": {
+    "code": "9143",
+    "ticker": "9143.T",
+    "name": "SG Holdings",
+    "themes": [
+      "Transport & Logistics"
+    ],
+    "pct": 1.09,
+    "price": 1479.0,
+    "market_cap": 340416993000
+  },
+  "9101": {
+    "code": "9101",
+    "ticker": "9101.T",
+    "name": "Nippon Yusen",
+    "themes": [
+      "Transport & Logistics"
+    ],
+    "pct": -1.03,
+    "price": 5662.0,
+    "market_cap": 4132784392000
+  },
+  "9308": {
+    "code": "9308",
+    "ticker": "9308.T",
+    "name": "乾汽船",
+    "themes": [
+      "Transport & Logistics"
+    ],
+    "pct": -2.39,
+    "price": 1473.0,
+    "market_cap": 16971906000
+  },
+  "9201": {
+    "code": "9201",
+    "ticker": "9201.T",
+    "name": "JAL",
+    "themes": [
+      "Transport & Logistics",
+      "Tourism & Hotels",
+      "Inbound Tourism"
+    ],
+    "pct": -4.51,
+    "price": 2466.0,
+    "market_cap": 1748192361000
+  },
+  "9020": {
+    "code": "9020",
+    "ticker": "9020.T",
+    "name": "JR East",
+    "themes": [
+      "Transport & Logistics"
+    ],
+    "pct": -4.67,
+    "price": 3451.0,
+    "market_cap": 1919946595000
+  },
+  "9107": {
+    "code": "9107",
+    "ticker": "9107.T",
+    "name": "K Line",
+    "themes": [
+      "Transport & Logistics"
+    ],
+    "pct": -5.84,
+    "price": 2501.0,
+    "market_cap": 3057247410000
+  },
+  "9119": {
+    "code": "9119",
+    "ticker": "9119.T",
+    "name": "飯野海運",
+    "themes": [
+      "Transport & Logistics"
+    ],
+    "pct": -7.99,
+    "price": 1646.0,
+    "market_cap": 77401504000
+  },
+  "9202": {
+    "code": "9202",
+    "ticker": "9202.T",
+    "name": "ANA HD",
+    "themes": [
+      "Transport & Logistics",
+      "Tourism & Hotels",
+      "Inbound Tourism"
+    ],
+    "pct": -8.22,
+    "price": 2629.0,
+    "market_cap": 1640435533000
+  },
+  "9104": {
+    "code": "9104",
+    "ticker": "9104.T",
+    "name": "Mitsui OSK",
+    "themes": [
+      "Transport & Logistics"
+    ],
+    "pct": -11.8,
+    "price": 5965.0,
+    "market_cap": 5643110705000
+  },
+  "7004": {
+    "code": "7004",
+    "ticker": "7004.T",
+    "name": "日立造船",
+    "themes": [
+      "Shipbuilding"
+    ],
+    "pct": 20.95,
+    "price": 1224.0,
+    "market_cap": 284478408000
+  },
+  "6302": {
+    "code": "6302",
+    "ticker": "6302.T",
+    "name": "Sumitomo Heavy",
+    "themes": [
+      "Shipbuilding",
+      "Nuclear Fusion",
+      "Nuclear Power",
+      "Defense & Aerospace",
+      "Robotics & Automation"
+    ],
+    "pct": 14.13,
+    "price": 5550.0,
+    "market_cap": 846153000000
+  },
+  "7030": {
+    "code": "7030",
+    "ticker": "7030.T",
+    "name": "新来島どっく",
+    "themes": [
+      "Shipbuilding"
+    ],
+    "pct": 14.0,
+    "price": 1384.0,
+    "market_cap": 2338960000
+  },
+  "7003": {
+    "code": "7003",
+    "ticker": "7003.T",
+    "name": "Mitsui E&S",
+    "themes": [
+      "Shipbuilding"
+    ],
+    "pct": -0.36,
+    "price": 5792.0,
+    "market_cap": 5053270944000
+  },
+  "7014": {
+    "code": "7014",
+    "ticker": "7014.T",
+    "name": "名村造船所",
+    "themes": [
+      "Shipbuilding"
+    ],
+    "pct": -3.27,
+    "price": 4145.0,
+    "market_cap": 1082292660000
+  },
+  "6016": {
+    "code": "6016",
+    "ticker": "6016.T",
+    "name": "ジャパンエンジンコーポレーション",
+    "themes": [
+      "Shipbuilding"
+    ],
+    "pct": -5.94,
+    "price": 12200.0,
+    "market_cap": 447740000000
+  },
+  "7022": {
+    "code": "7022",
+    "ticker": "7022.T",
+    "name": "サノヤスHD",
+    "themes": [
+      "Shipbuilding"
+    ],
+    "pct": -7.49,
+    "price": 321.0,
+    "market_cap": 6947403000
+  },
+  "9519": {
+    "code": "9519",
+    "ticker": "9519.T",
+    "name": "レノバ",
+    "themes": [
+      "Renewable Energy",
+      "Solar Power",
+      "脱炭素・ESG"
+    ],
+    "pct": 28.77,
+    "price": 1128.0,
+    "market_cap": 424671696000
+  },
+  "8002": {
+    "code": "8002",
+    "ticker": "8002.T",
+    "name": "Marubeni",
+    "themes": [
+      "Renewable Energy",
+      "LNG",
+      "Oil & Gas",
+      "Rare Earth & Resources",
+      "Buffett Picks"
+    ],
+    "pct": 5.57,
+    "price": 6084.0,
+    "market_cap": 4575879828000
+  },
+  "9517": {
+    "code": "9517",
+    "ticker": "9517.T",
+    "name": "エネコーポレーション",
+    "themes": [
+      "Renewable Energy"
+    ],
+    "pct": 1.13,
+    "price": 1072.0,
+    "market_cap": 142801120000
+  },
+  "9502": {
+    "code": "9502",
+    "ticker": "9502.T",
+    "name": "Chubu Electric",
+    "themes": [
+      "Renewable Energy",
+      "Nuclear Power",
+      "Electric Utilities"
+    ],
+    "pct": -0.99,
+    "price": 2610.0,
+    "market_cap": 1544401261000
+  },
+  "5076": {
+    "code": "5076",
+    "ticker": "5076.T",
+    "name": "テス・エンジニアリング",
+    "themes": [
+      "Renewable Energy"
+    ],
+    "pct": -1.4,
+    "price": 2148.0,
+    "market_cap": 716869224000
+  },
+  "8001": {
+    "code": "8001",
+    "ticker": "8001.T",
+    "name": "Itochu",
+    "themes": [
+      "Renewable Energy",
+      "LNG",
+      "Oil & Gas",
+      "Rare Earth & Resources",
+      "Buffett Picks"
+    ],
+    "pct": -1.83,
+    "price": 1958.0,
+    "market_cap": 4618910732000
+  },
+  "9506": {
+    "code": "9506",
+    "ticker": "9506.T",
+    "name": "東北電力",
+    "themes": [
+      "Renewable Energy",
+      "Nuclear Power",
+      "Electric Utilities"
+    ],
+    "pct": -2.65,
+    "price": 1157.0,
+    "market_cap": 497681236000
+  },
+  "9501": {
+    "code": "9501",
+    "ticker": "9501.T",
+    "name": "TEPCO",
+    "themes": [
+      "Renewable Energy",
+      "Solar Power",
+      "Nuclear Power",
+      "Electric Utilities",
+      "脱炭素・ESG"
+    ],
+    "pct": -3.69,
+    "price": 611.0,
+    "market_cap": 7226020715613
+  },
+  "9508": {
+    "code": "9508",
+    "ticker": "9508.T",
+    "name": "九州電力",
+    "themes": [
+      "Renewable Energy",
+      "Nuclear Power",
+      "Electric Utilities"
+    ],
+    "pct": -3.98,
+    "price": 1750.0,
+    "market_cap": 497822500000
+  },
+  "9503": {
+    "code": "9503",
+    "ticker": "9503.T",
+    "name": "Kansai Electric",
+    "themes": [
+      "Renewable Energy",
+      "Nuclear Power",
+      "Electric Utilities",
+      "脱炭素・ESG"
+    ],
+    "pct": -4.25,
+    "price": 2534.0,
+    "market_cap": 1684382274000
+  },
+  "9513": {
+    "code": "9513",
+    "ticker": "9513.T",
+    "name": "Jパワー",
+    "themes": [
+      "Renewable Energy",
+      "Electric Utilities",
+      "脱炭素・ESG"
+    ],
+    "pct": -10.34,
+    "price": 3883.0,
+    "market_cap": 979731379000
+  },
+  "8058": {
+    "code": "8058",
+    "ticker": "8058.T",
+    "name": "Mitsubishi Corp",
+    "themes": [
+      "Renewable Energy",
+      "LNG",
+      "Oil & Gas",
+      "Rare Earth & Resources",
+      "Buffett Picks"
+    ],
+    "pct": -13.34,
+    "price": 4913.0,
+    "market_cap": 9437077094000
+  },
+  "1605": {
+    "code": "1605",
+    "ticker": "1605.T",
+    "name": "INPEX",
+    "themes": [
+      "Renewable Energy",
+      "LNG",
+      "Oil & Gas",
+      "Resources (H2/He/H2O)"
+    ],
+    "pct": -15.72,
+    "price": 4123.0,
+    "market_cap": 9342346930000
+  },
+  "1407": {
+    "code": "1407",
+    "ticker": "1407.T",
+    "name": "ウエストHD",
+    "themes": [
+      "Solar Power"
+    ],
+    "pct": 53.79,
+    "price": 2756.0,
+    "market_cap": 517323248000
+  },
+  "6971": {
+    "code": "6971",
+    "ticker": "6971.T",
+    "name": "Kyocera",
+    "themes": [
+      "Solar Power",
+      "IOWN",
+      "Optical Communication",
+      "Wearables"
+    ],
+    "pct": 12.39,
+    "price": 2689.0,
+    "market_cap": 2227925237000
+  },
+  "4118": {
+    "code": "4118",
+    "ticker": "4118.T",
+    "name": "カネカ",
+    "themes": [
+      "Solar Power",
+      "Chemicals"
+    ],
+    "pct": 3.32,
+    "price": 4887.0,
+    "market_cap": 188535573000
+  },
+  "4204": {
+    "code": "4204",
+    "ticker": "4204.T",
+    "name": "積水化学工業",
+    "themes": [
+      "Solar Power",
+      "Chemicals",
+      "Building Materials"
+    ],
+    "pct": -5.03,
+    "price": 2463.0,
+    "market_cap": 1037280135000
+  },
+  "5020": {
+    "code": "5020",
+    "ticker": "5020.T",
+    "name": "ENEOS HD",
+    "themes": [
+      "Solar Power",
+      "LNG",
+      "Oil & Gas",
+      "脱炭素・ESG"
+    ],
+    "pct": -9.47,
+    "price": 1300.0,
+    "market_cap": 2164149045000
+  },
+  "9509": {
+    "code": "9509",
+    "ticker": "9509.T",
+    "name": "北海道電力",
+    "themes": [
+      "Nuclear Power",
+      "Electric Utilities"
+    ],
+    "pct": -3.67,
+    "price": 1037.0,
+    "market_cap": 558562421000
+  },
+  "9511": {
+    "code": "9511",
+    "ticker": "9511.T",
+    "name": "沖縄電力",
+    "themes": [
+      "Electric Utilities"
+    ],
+    "pct": -3.95,
+    "price": 1021.0,
+    "market_cap": 32435128000
+  },
+  "9507": {
+    "code": "9507",
+    "ticker": "9507.T",
+    "name": "四国電力",
+    "themes": [
+      "Electric Utilities"
+    ],
+    "pct": -4.63,
+    "price": 1678.0,
+    "market_cap": 199955514000
+  },
+  "9504": {
+    "code": "9504",
+    "ticker": "9504.T",
+    "name": "中国電力",
+    "themes": [
+      "Electric Utilities"
+    ],
+    "pct": -5.34,
+    "price": 955.0,
+    "market_cap": 273035639617
+  },
+  "9505": {
+    "code": "9505",
+    "ticker": "9505.T",
+    "name": "北陸電力",
+    "themes": [
+      "Electric Utilities"
+    ],
+    "pct": -7.63,
+    "price": 1005.0,
+    "market_cap": 150867585000
+  },
+  "9532": {
+    "code": "9532",
+    "ticker": "9532.T",
+    "name": "Osaka Gas",
+    "themes": [
+      "Electric Utilities",
+      "LNG",
+      "Resources (H2/He/H2O)"
+    ],
+    "pct": -8.04,
+    "price": 5949.0,
+    "market_cap": 1107923913000
+  },
+  "9531": {
+    "code": "9531",
+    "ticker": "9531.T",
+    "name": "Tokyo Gas",
+    "themes": [
+      "Electric Utilities",
+      "LNG",
+      "Resources (H2/He/H2O)"
+    ],
+    "pct": -8.77,
+    "price": 6937.0,
+    "market_cap": 1676256680000
+  },
+  "8053": {
+    "code": "8053",
+    "ticker": "8053.T",
+    "name": "Sumitomo Corp",
+    "themes": [
+      "LNG",
+      "Oil & Gas",
+      "Quantum Computing",
+      "Rare Earth & Resources",
+      "Buffett Picks"
+    ],
+    "pct": -0.87,
+    "price": 5801.0,
+    "market_cap": 3180694101000
+  },
+  "8031": {
+    "code": "8031",
+    "ticker": "8031.T",
+    "name": "Mitsui & Co",
+    "themes": [
+      "LNG",
+      "Oil & Gas",
+      "Rare Earth & Resources",
+      "Buffett Picks"
+    ],
+    "pct": -7.46,
+    "price": 5820.0,
+    "market_cap": 7368166560000
+  },
+  "5021": {
+    "code": "5021",
+    "ticker": "5021.T",
+    "name": "コスモエネルギーHD",
+    "themes": [
+      "LNG",
+      "Oil & Gas"
+    ],
+    "pct": -12.11,
+    "price": 3985.0,
+    "market_cap": 449225065000
+  },
+  "1662": {
+    "code": "1662",
+    "ticker": "1662.T",
+    "name": "石油資源開発",
+    "themes": [
+      "LNG",
+      "Oil & Gas"
+    ],
+    "pct": -14.81,
+    "price": 2295.0,
+    "market_cap": 1450373445000
+  },
+  "4088": {
+    "code": "4088",
+    "ticker": "4088.T",
+    "name": "エア・ウォーター",
+    "themes": [
+      "Resources (H2/He/H2O)"
+    ],
+    "pct": 5.66,
+    "price": 2260.0,
+    "market_cap": 318818200000
+  },
+  "5401": {
+    "code": "5401",
+    "ticker": "5401.T",
+    "name": "Nippon Steel",
+    "themes": [
+      "Resources (H2/He/H2O)",
+      "Steel & Materials",
+      "Building Materials",
+      "National Resilience",
+      "Buffett Picks",
+      "脱炭素・ESG"
+    ],
+    "pct": 0.54,
+    "price": 578.0,
+    "market_cap": 2506093620454
+  },
+  "4091": {
+    "code": "4091",
+    "ticker": "4091.T",
+    "name": "大陽日酸",
+    "themes": [
+      "Resources (H2/He/H2O)"
+    ],
+    "pct": -2.36,
+    "price": 5677.0,
+    "market_cap": 682840914000
+  },
+  "8088": {
+    "code": "8088",
+    "ticker": "8088.T",
+    "name": "岩谷産業",
+    "themes": [
+      "Resources (H2/He/H2O)"
+    ],
+    "pct": -4.68,
+    "price": 1974.0,
+    "market_cap": 397492518500
+  },
+  "5411": {
+    "code": "5411",
+    "ticker": "5411.T",
+    "name": "JFE Holdings",
+    "themes": [
+      "Resources (H2/He/H2O)",
+      "Steel & Materials",
+      "Building Materials"
+    ],
+    "pct": -6.51,
+    "price": 1700.0,
+    "market_cap": 1182990236000
+  },
+  "6965": {
+    "code": "6965",
+    "ticker": "6965.T",
+    "name": "浜松ホトニクス",
+    "themes": [
+      "IOWN",
+      "Optical Communication"
+    ],
+    "pct": 9.13,
+    "price": 2002.0,
+    "market_cap": 1063491705000
+  },
+  "3110": {
+    "code": "3110",
+    "ticker": "3110.T",
+    "name": "日東紡績",
+    "themes": [
+      "Optical Communication"
+    ],
+    "pct": 42.76,
+    "price": 28210.0,
+    "market_cap": 12718196400000
+  },
+  "7746": {
+    "code": "7746",
+    "ticker": "7746.T",
+    "name": "岡本硝子",
+    "themes": [
+      "Optical Communication"
+    ],
+    "pct": -7.62,
+    "price": 921.0,
+    "market_cap": 280335822000
+  },
+  "9984": {
+    "code": "9984",
+    "ticker": "9984.T",
+    "name": "SoftBank Group",
+    "themes": [
+      "Telecom"
+    ],
+    "pct": 42.69,
+    "price": 5268.0,
+    "market_cap": 76184472660000
+  },
+  "3774": {
+    "code": "3774",
+    "ticker": "3774.T",
+    "name": "インターネットイニシアティブ",
+    "themes": [
+      "Telecom"
+    ],
+    "pct": 13.33,
+    "price": 2737.0,
+    "market_cap": 393156365000
+  },
+  "9412": {
+    "code": "9412",
+    "ticker": "9412.T",
+    "name": "スカパーJSATHD",
+    "themes": [
+      "Telecom",
+      "Space & Satellite"
+    ],
+    "pct": 13.29,
+    "price": 3315.0,
+    "market_cap": 932413365000
+  },
+  "9424": {
+    "code": "9424",
+    "ticker": "9424.T",
+    "name": "日本通信",
+    "themes": [
+      "Telecom"
+    ],
+    "pct": -3.85,
+    "price": 125.0,
+    "market_cap": 45240500000
+  },
+  "3994": {
+    "code": "3994",
+    "ticker": "3994.T",
+    "name": "Money Forward",
+    "themes": [
+      "SaaS",
+      "Fintech"
+    ],
+    "pct": 39.37,
+    "price": 4705.0,
+    "market_cap": 1041141220000
+  },
+  "3923": {
+    "code": "3923",
+    "ticker": "3923.T",
+    "name": "ラクス",
+    "themes": [
+      "SaaS"
+    ],
+    "pct": 18.48,
+    "price": 871.0,
+    "market_cap": 540302871137
+  },
+  "4443": {
+    "code": "4443",
+    "ticker": "4443.T",
+    "name": "Sansan",
+    "themes": [
+      "SaaS"
+    ],
+    "pct": 14.56,
+    "price": 1290.0,
+    "market_cap": 536015640000
+  },
+  "3984": {
+    "code": "3984",
+    "ticker": "3984.T",
+    "name": "ユーザーローカル",
+    "themes": [
+      "SaaS"
+    ],
+    "pct": 12.64,
+    "price": 1559.0,
+    "market_cap": 25107695000
+  },
+  "4477": {
+    "code": "4477",
+    "ticker": "4477.T",
+    "name": "BASE",
+    "themes": [
+      "SaaS",
+      "Fintech",
+      "Retail & E-Commerce"
+    ],
+    "pct": 5.04,
+    "price": 292.0,
+    "market_cap": 40297168000
+  },
+  "2492": {
+    "code": "2492",
+    "ticker": "2492.T",
+    "name": "インフォマート",
+    "themes": [
+      "SaaS",
+      "Fintech"
+    ],
+    "pct": 0.45,
+    "price": 443.0,
+    "market_cap": 129612054000
+  },
+  "4053": {
+    "code": "4053",
+    "ticker": "4053.T",
+    "name": "freee",
+    "themes": [
+      "SaaS",
+      "Fintech"
+    ],
+    "pct": -1.62,
+    "price": 425.0,
+    "market_cap": 8338500000
+  },
+  "4165": {
+    "code": "4165",
+    "ticker": "4165.T",
+    "name": "プレイド",
+    "themes": [
+      "SaaS"
+    ],
+    "pct": -5.6,
+    "price": 539.0,
+    "market_cap": 40582927000
+  },
+  "6952": {
+    "code": "6952",
+    "ticker": "6952.T",
+    "name": "カシオ計算機",
+    "themes": [
+      "Wearables"
+    ],
+    "pct": 11.23,
+    "price": 1600.0,
+    "market_cap": 679018140500
+  },
+  "7762": {
+    "code": "7762",
+    "ticker": "7762.T",
+    "name": "シチズン時計",
+    "themes": [
+      "Wearables"
+    ],
+    "pct": 7.0,
+    "price": 1819.0,
+    "market_cap": 295303736000
+  },
+  "8050": {
+    "code": "8050",
+    "ticker": "8050.T",
+    "name": "セイコーグループ",
+    "themes": [
+      "Wearables"
+    ],
+    "pct": 3.69,
+    "price": 5900.0,
+    "market_cap": 246531500000
+  },
+  "4819": {
+    "code": "4819",
+    "ticker": "4819.T",
+    "name": "デジタルガレージ",
+    "themes": [
+      "Crypto"
+    ],
+    "pct": 29.33,
+    "price": 2478.0,
+    "market_cap": 178782744000
+  },
+  "4689": {
+    "code": "4689",
+    "ticker": "4689.T",
+    "name": "LINE（LINEヤフー）",
+    "themes": [
+      "Crypto",
+      "Retail & E-Commerce"
+    ],
+    "pct": 11.1,
+    "price": 417.0,
+    "market_cap": 1264463614111
+  },
+  "8473": {
+    "code": "8473",
+    "ticker": "8473.T",
+    "name": "SBI HD",
+    "themes": [
+      "Crypto",
+      "Digital Banking",
+      "Banking / Finance",
+      "Fintech"
+    ],
+    "pct": 8.44,
+    "price": 3108.0,
+    "market_cap": 1884514044000
+  },
+  "7833": {
+    "code": "7833",
+    "ticker": "7833.T",
+    "name": "GMOフィナンシャルHD",
+    "themes": [
+      "Crypto",
+      "Digital Banking"
+    ],
+    "pct": 0.76,
+    "price": 663.0,
+    "market_cap": 505869000
+  },
+  "8698": {
+    "code": "8698",
+    "ticker": "8698.T",
+    "name": "マネックスグループ",
+    "themes": [
+      "Crypto",
+      "Fintech"
+    ],
+    "pct": 0.74,
+    "price": 679.0,
+    "market_cap": 202846497000
+  },
+  "3807": {
+    "code": "3807",
+    "ticker": "3807.T",
+    "name": "フィスコ",
+    "themes": [
+      "Crypto"
+    ],
+    "pct": -1.82,
+    "price": 108.0,
+    "market_cap": 2874096000
+  },
+  "8591": {
+    "code": "8591",
+    "ticker": "8591.T",
+    "name": "オリックス",
+    "themes": [
+      "Digital Banking",
+      "Banking / Finance"
+    ],
+    "pct": 16.38,
+    "price": 5350.0,
+    "market_cap": 3362608750000
+  },
+  "8410": {
+    "code": "8410",
+    "ticker": "8410.T",
+    "name": "セブン銀行",
+    "themes": [
+      "Digital Banking",
+      "Fintech"
+    ],
+    "pct": -0.49,
+    "price": 266.0,
+    "market_cap": 254595810166
+  },
+  "8267": {
+    "code": "8267",
+    "ticker": "8267.T",
+    "name": "イオン（イオン銀行）",
+    "themes": [
+      "Digital Banking",
+      "Retail & E-Commerce",
+      "Inbound Tourism"
+    ],
+    "pct": -17.69,
+    "price": 1568.0,
+    "market_cap": 2747739081000
+  },
+  "5727": {
+    "code": "5727",
+    "ticker": "5727.T",
+    "name": "東邦チタニウム",
+    "themes": [
+      "Steel & Materials",
+      "Rare Earth & Resources"
+    ],
+    "pct": 34.41,
+    "price": 3375.0,
+    "market_cap": 565521750000
+  },
+  "5741": {
+    "code": "5741",
+    "ticker": "5741.T",
+    "name": "UACJ",
+    "themes": [
+      "Steel & Materials"
+    ],
+    "pct": 26.33,
+    "price": 2802.0,
+    "market_cap": 491355918000
+  },
+  "5714": {
+    "code": "5714",
+    "ticker": "5714.T",
+    "name": "DOWA HD",
+    "themes": [
+      "Steel & Materials",
+      "Rare Earth & Resources"
+    ],
+    "pct": 9.55,
+    "price": 9730.0,
+    "market_cap": 745716930000
+  },
+  "5703": {
+    "code": "5703",
+    "ticker": "5703.T",
+    "name": "日本軽金属HD",
+    "themes": [
+      "Steel & Materials"
+    ],
+    "pct": 7.98,
+    "price": 2868.0,
+    "market_cap": 120180672000
+  },
+  "5423": {
+    "code": "5423",
+    "ticker": "5423.T",
+    "name": "東京製鐵",
+    "themes": [
+      "Steel & Materials"
+    ],
+    "pct": 3.67,
+    "price": 1693.0,
+    "market_cap": 270912167000
+  },
+  "5406": {
+    "code": "5406",
+    "ticker": "5406.T",
+    "name": "神戸製鋼所",
+    "themes": [
+      "Steel & Materials"
+    ],
+    "pct": 0.72,
+    "price": 1896.0,
+    "market_cap": 635159304000
+  },
+  "5444": {
+    "code": "5444",
+    "ticker": "5444.T",
+    "name": "大和工業",
+    "themes": [
+      "Steel & Materials"
+    ],
+    "pct": 0.5,
+    "price": 12110.0,
+    "market_cap": 315102200000
+  },
+  "5480": {
+    "code": "5480",
+    "ticker": "5480.T",
+    "name": "日本冶金工業",
+    "themes": [
+      "Steel & Materials",
+      "Rare Earth & Resources"
+    ],
+    "pct": -1.81,
+    "price": 4600.0,
+    "market_cap": 58884600000
+  },
+  "5726": {
+    "code": "5726",
+    "ticker": "5726.T",
+    "name": "大阪チタニウムテクノロジーズ",
+    "themes": [
+      "Steel & Materials",
+      "Rare Earth & Resources"
+    ],
+    "pct": -2.81,
+    "price": 2597.0,
+    "market_cap": 467078241000
+  },
+  "4202": {
+    "code": "4202",
+    "ticker": "4202.T",
+    "name": "ダイセル",
+    "themes": [
+      "Chemicals",
+      "Defense & Aerospace"
+    ],
+    "pct": 1.68,
+    "price": 1238.0,
+    "market_cap": 275722301000
+  },
+  "4901": {
+    "code": "4901",
+    "ticker": "4901.T",
+    "name": "Fujifilm HD",
+    "themes": [
+      "Chemicals"
+    ],
+    "pct": 0.17,
+    "price": 2932.0,
+    "market_cap": 2739559095000
+  },
+  "4452": {
+    "code": "4452",
+    "ticker": "4452.T",
+    "name": "花王",
+    "themes": [
+      "Chemicals"
+    ],
+    "pct": -0.56,
+    "price": 5997.0,
+    "market_cap": 1750560282000
+  },
+  "6988": {
+    "code": "6988",
+    "ticker": "6988.T",
+    "name": "日東電工",
+    "themes": [
+      "Chemicals"
+    ],
+    "pct": -1.38,
+    "price": 3003.0,
+    "market_cap": 2163709548000
+  },
+  "4631": {
+    "code": "4631",
+    "ticker": "4631.T",
+    "name": "DIC",
+    "themes": [
+      "Chemicals",
+      "Paints"
+    ],
+    "pct": -2.21,
+    "price": 3592.0,
+    "market_cap": 238379488000
+  },
+  "5393": {
+    "code": "5393",
+    "ticker": "5393.T",
+    "name": "ニチアス",
+    "themes": [
+      "Building Materials"
+    ],
+    "pct": 10.85,
+    "price": 3148.0,
+    "market_cap": 326318532000
+  },
+  "5233": {
+    "code": "5233",
+    "ticker": "5233.T",
+    "name": "太平洋セメント",
+    "themes": [
+      "Building Materials",
+      "National Resilience"
+    ],
+    "pct": 6.09,
+    "price": 3639.0,
+    "market_cap": 398161185000
+  },
+  "5332": {
+    "code": "5332",
+    "ticker": "5332.T",
+    "name": "TOTO",
+    "themes": [
+      "Building Materials"
+    ],
+    "pct": 3.29,
+    "price": 5425.0,
+    "market_cap": 1454751725000
+  },
+  "5232": {
+    "code": "5232",
+    "ticker": "5232.T",
+    "name": "住友大阪セメント",
+    "themes": [
+      "Building Materials",
+      "National Resilience"
+    ],
+    "pct": 2.82,
+    "price": 3905.0,
+    "market_cap": 173397620000
+  },
+  "5938": {
+    "code": "5938",
+    "ticker": "5938.T",
+    "name": "LIXIL",
+    "themes": [
+      "Building Materials"
+    ],
+    "pct": 0.25,
+    "price": 1628.0,
+    "market_cap": 683305788000
+  },
+  "5202": {
+    "code": "5202",
+    "ticker": "5202.T",
+    "name": "日本板硝子",
+    "themes": [
+      "Building Materials"
+    ],
+    "pct": -0.21,
+    "price": 480.0,
+    "market_cap": 220269600000
+  },
+  "1925": {
+    "code": "1925",
+    "ticker": "1925.T",
+    "name": "Daiwa House",
+    "themes": [
+      "Building Materials",
+      "Construction & Infra"
+    ],
+    "pct": -1.08,
+    "price": 4876.0,
+    "market_cap": 1578999956000
+  },
+  "4634": {
+    "code": "4634",
+    "ticker": "4634.T",
+    "name": "東洋インキSCHD",
+    "themes": [
+      "Paints"
+    ],
+    "pct": 4.14,
+    "price": 3900.0,
+    "market_cap": 71994000000
+  },
+  "4616": {
+    "code": "4616",
+    "ticker": "4616.T",
+    "name": "神東塗料",
+    "themes": [
+      "Paints"
+    ],
+    "pct": 1.23,
+    "price": 1900.0,
+    "market_cap": 212800000
+  },
+  "4612": {
+    "code": "4612",
+    "ticker": "4612.T",
+    "name": "日本ペイントHD",
+    "themes": [
+      "Paints"
+    ],
+    "pct": 1.01,
+    "price": 1000.0,
+    "market_cap": 645227000000
+  },
+  "4613": {
+    "code": "4613",
+    "ticker": "4613.T",
+    "name": "関西ペイント",
+    "themes": [
+      "Paints"
+    ],
+    "pct": 0.27,
+    "price": 2376.0,
+    "market_cap": 508677692500
+  },
+  "4617": {
+    "code": "4617",
+    "ticker": "4617.T",
+    "name": "中国塗料",
+    "themes": [
+      "Paints"
+    ],
+    "pct": -2.25,
+    "price": 3260.0,
+    "market_cap": 275890540000
+  },
+  "4619": {
+    "code": "4619",
+    "ticker": "4619.T",
+    "name": "日本特殊塗料",
+    "themes": [
+      "Paints"
+    ],
+    "pct": -4.57,
+    "price": 2069.0,
+    "market_cap": 14805764000
+  },
+  "4884": {
+    "code": "4884",
+    "ticker": "4884.T",
+    "name": "クリングルファーマ",
+    "themes": [
+      "Pharma & Biotech"
+    ],
+    "pct": 21.3,
+    "price": 484.0,
+    "market_cap": 241865448000
+  },
+  "4565": {
+    "code": "4565",
+    "ticker": "4565.T",
+    "name": "そーせいグループ",
+    "themes": [
+      "Pharma & Biotech"
+    ],
+    "pct": 12.23,
+    "price": 973.0,
+    "market_cap": 235247075000
+  },
+  "4530": {
+    "code": "4530",
+    "ticker": "4530.T",
+    "name": "Hisamitsu Pharma",
+    "themes": [
+      "Pharma & Biotech"
+    ],
+    "pct": 0.1,
+    "price": 6040.0,
+    "market_cap": 342323040000
+  },
+  "4587": {
+    "code": "4587",
+    "ticker": "4587.T",
+    "name": "ペプチドリーム",
+    "themes": [
+      "Pharma & Biotech"
+    ],
+    "pct": -0.21,
+    "price": 1170.0,
+    "market_cap": 201391408500
+  },
+  "4578": {
+    "code": "4578",
+    "ticker": "4578.T",
+    "name": "大塚HD",
+    "themes": [
+      "Pharma & Biotech"
+    ],
+    "pct": -0.58,
+    "price": 11180.0,
+    "market_cap": 2472993640000
+  },
+  "4516": {
+    "code": "4516",
+    "ticker": "4516.T",
+    "name": "日本新薬",
+    "themes": [
+      "Pharma & Biotech"
+    ],
+    "pct": -5.34,
+    "price": 4889.0,
+    "market_cap": 174551967000
+  },
+  "4523": {
+    "code": "4523",
+    "ticker": "4523.T",
+    "name": "Eisai",
+    "themes": [
+      "Pharma & Biotech"
+    ],
+    "pct": -5.64,
+    "price": 4605.0,
+    "market_cap": 949201020000
+  },
+  "4568": {
+    "code": "4568",
+    "ticker": "4568.T",
+    "name": "Daiichi Sankyo",
+    "themes": [
+      "Pharma & Biotech"
+    ],
+    "pct": -5.89,
+    "price": 2650.0,
+    "market_cap": 4547765007000
+  },
+  "4536": {
+    "code": "4536",
+    "ticker": "4536.T",
+    "name": "Santen Pharma",
+    "themes": [
+      "Pharma & Biotech"
+    ],
+    "pct": -6.54,
+    "price": 1650.0,
+    "market_cap": 291479950500
+  },
+  "4534": {
+    "code": "4534",
+    "ticker": "4534.T",
+    "name": "Mochida Pharma",
+    "themes": [
+      "Pharma & Biotech"
+    ],
+    "pct": -7.07,
+    "price": 3350.0,
+    "market_cap": 150267600000
+  },
+  "4502": {
+    "code": "4502",
+    "ticker": "4502.T",
+    "name": "武田薬品",
+    "themes": [
+      "Pharma & Biotech"
+    ],
+    "pct": -7.42,
+    "price": 5289.0,
+    "market_cap": 4167864225000
+  },
+  "4528": {
+    "code": "4528",
+    "ticker": "4528.T",
+    "name": "小野薬品",
+    "themes": [
+      "Pharma & Biotech"
+    ],
+    "pct": -8.12,
+    "price": 2312.0,
+    "market_cap": 682989937500
+  },
+  "4519": {
+    "code": "4519",
+    "ticker": "4519.T",
+    "name": "Chugai",
+    "themes": [
+      "Pharma & Biotech"
+    ],
+    "pct": -8.31,
+    "price": 7940.0,
+    "market_cap": 4774782520000
+  },
+  "4507": {
+    "code": "4507",
+    "ticker": "4507.T",
+    "name": "Shionogi",
+    "themes": [
+      "Pharma & Biotech"
+    ],
+    "pct": -8.93,
+    "price": 3180.0,
+    "market_cap": 1593046440000
+  },
+  "4503": {
+    "code": "4503",
+    "ticker": "4503.T",
+    "name": "Astellas",
+    "themes": [
+      "Pharma & Biotech"
+    ],
+    "pct": -9.87,
+    "price": 2306.0,
+    "market_cap": 2271645212000
+  },
+  "4571": {
+    "code": "4571",
+    "ticker": "4571.T",
+    "name": "ナノキャリア",
+    "themes": [
+      "Pharma & Biotech"
+    ],
+    "pct": -10.83,
+    "price": 140.0,
+    "market_cap": 17231760000
+  },
+  "4480": {
+    "code": "4480",
+    "ticker": "4480.T",
+    "name": "メドレー",
+    "themes": [
+      "Healthcare & Nursing"
+    ],
+    "pct": 18.85,
+    "price": 2232.0,
+    "market_cap": 128712744000
+  },
+  "6547": {
+    "code": "6547",
+    "ticker": "6547.T",
+    "name": "PHCホールディングス",
+    "themes": [
+      "Healthcare & Nursing"
+    ],
+    "pct": 17.52,
+    "price": 2287.0,
+    "market_cap": 25200453000
+  },
+  "7733": {
+    "code": "7733",
+    "ticker": "7733.T",
+    "name": "オリンパス",
+    "themes": [
+      "Healthcare & Nursing"
+    ],
+    "pct": 4.97,
+    "price": 1564.0,
+    "market_cap": 1524318192000
+  },
+  "6869": {
+    "code": "6869",
+    "ticker": "6869.T",
+    "name": "シスメックス",
+    "themes": [
+      "Healthcare & Nursing"
+    ],
+    "pct": 2.57,
+    "price": 1379.0,
+    "market_cap": 841440978000
+  },
+  "6197": {
+    "code": "6197",
+    "ticker": "6197.T",
+    "name": "ソラスト",
+    "themes": [
+      "Healthcare & Nursing"
+    ],
+    "pct": 0.18,
+    "price": 1117.0,
+    "market_cap": 189817395000
+  },
+  "9067": {
+    "code": "9067",
+    "ticker": "9067.T",
+    "name": "Suzuken",
+    "themes": [
+      "Healthcare & Nursing"
+    ],
+    "pct": 0.0,
+    "price": 942.0,
+    "market_cap": 544476000
+  },
+  "4540": {
+    "code": "4540",
+    "ticker": "4540.T",
+    "name": "ツムラ",
+    "themes": [
+      "Healthcare & Nursing"
+    ],
+    "pct": -1.04,
+    "price": 3700.0,
+    "market_cap": 165471400000
+  },
+  "4543": {
+    "code": "4543",
+    "ticker": "4543.T",
+    "name": "Terumo",
+    "themes": [
+      "Healthcare & Nursing"
+    ],
+    "pct": -2.31,
+    "price": 2056.0,
+    "market_cap": 1895010671000
+  },
+  "8086": {
+    "code": "8086",
+    "ticker": "8086.T",
+    "name": "ニプロ",
+    "themes": [
+      "Healthcare & Nursing"
+    ],
+    "pct": -2.51,
+    "price": 1534.0,
+    "market_cap": 198117465500
+  },
+  "7459": {
+    "code": "7459",
+    "ticker": "7459.T",
+    "name": "Medipal HD",
+    "themes": [
+      "Healthcare & Nursing"
+    ],
+    "pct": -2.74,
+    "price": 2822.0,
+    "market_cap": 200858672000
+  },
+  "2413": {
+    "code": "2413",
+    "ticker": "2413.T",
+    "name": "エムスリー",
+    "themes": [
+      "Healthcare & Nursing"
+    ],
+    "pct": -3.58,
+    "price": 1520.0,
+    "market_cap": 1052049760000
+  },
+  "2393": {
+    "code": "2393",
+    "ticker": "2393.T",
+    "name": "日本ケアサプライ",
+    "themes": [
+      "Healthcare & Nursing"
+    ],
+    "pct": -4.19,
+    "price": 2265.0,
+    "market_cap": 1139295000
+  },
+  "9627": {
+    "code": "9627",
+    "ticker": "9627.T",
+    "name": "アインホールディングス",
+    "themes": [
+      "Pharmacy / Drug Store"
+    ],
+    "pct": 4.64,
+    "price": 5765.0,
+    "market_cap": 263650745000
+  },
+  "2796": {
+    "code": "2796",
+    "ticker": "2796.T",
+    "name": "ファルマライズHD",
+    "themes": [
+      "Pharmacy / Drug Store"
+    ],
+    "pct": 0.0,
+    "price": 520.0,
+    "market_cap": 343720000
+  },
+  "3148": {
+    "code": "3148",
+    "ticker": "3148.T",
+    "name": "クリエイトSDホールディングス",
+    "themes": [
+      "Pharmacy / Drug Store"
+    ],
+    "pct": -0.92,
+    "price": 3240.0,
+    "market_cap": 86508000000
+  },
+  "9989": {
+    "code": "9989",
+    "ticker": "9989.T",
+    "name": "Sundrug",
+    "themes": [
+      "Pharmacy / Drug Store"
+    ],
+    "pct": -1.34,
+    "price": 3821.0,
+    "market_cap": 255961148000
+  },
+  "3549": {
+    "code": "3549",
+    "ticker": "3549.T",
+    "name": "クスリのアオキHD",
+    "themes": [
+      "Pharmacy / Drug Store"
+    ],
+    "pct": -1.63,
+    "price": 3806.0,
+    "market_cap": 183072406000
+  },
+  "2664": {
+    "code": "2664",
+    "ticker": "2664.T",
+    "name": "カワチ薬品",
+    "themes": [
+      "Pharmacy / Drug Store"
+    ],
+    "pct": -2.12,
+    "price": 2906.0,
+    "market_cap": 36993380000
+  },
+  "3088": {
+    "code": "3088",
+    "ticker": "3088.T",
+    "name": "Matsukiyo Kokkomin HD",
+    "themes": [
+      "Pharmacy / Drug Store",
+      "Retail & E-Commerce",
+      "Inbound Tourism"
+    ],
+    "pct": -4.89,
+    "price": 2374.0,
+    "market_cap": 962036514000
+  },
+  "7649": {
+    "code": "7649",
+    "ticker": "7649.T",
+    "name": "スギHD",
+    "themes": [
+      "Pharmacy / Drug Store",
+      "Retail & E-Commerce",
+      "Inbound Tourism"
+    ],
+    "pct": -5.53,
+    "price": 3245.0,
+    "market_cap": 469457395000
+  },
+  "3349": {
+    "code": "3349",
+    "ticker": "3349.T",
+    "name": "コスモス薬品",
+    "themes": [
+      "Pharmacy / Drug Store"
+    ],
+    "pct": -6.68,
+    "price": 6243.0,
+    "market_cap": 629169540000
+  },
+  "3391": {
+    "code": "3391",
+    "ticker": "3391.T",
+    "name": "Tsuruha HD",
+    "themes": [
+      "Pharmacy / Drug Store"
+    ],
+    "pct": -13.46,
+    "price": 2152.0,
+    "market_cap": 1051414383500
+  },
+  "8308": {
+    "code": "8308",
+    "ticker": "8308.T",
+    "name": "りそな",
+    "themes": [
+      "Banking / Finance"
+    ],
+    "pct": 15.35,
+    "price": 2006.0,
+    "market_cap": 3477487258000
+  },
+  "8411": {
+    "code": "8411",
+    "ticker": "8411.T",
+    "name": "みずほ",
+    "themes": [
+      "Banking / Finance"
+    ],
+    "pct": 13.06,
+    "price": 6936.0,
+    "market_cap": 11809212792000
+  },
+  "8316": {
+    "code": "8316",
+    "ticker": "8316.T",
+    "name": "三井住友",
+    "themes": [
+      "Banking / Finance"
+    ],
+    "pct": 11.78,
+    "price": 5648.0,
+    "market_cap": 12639591424000
+  },
+  "8306": {
+    "code": "8306",
+    "ticker": "8306.T",
+    "name": "三菱UFJ",
+    "themes": [
+      "Banking / Finance",
+      "Buffett Picks"
+    ],
+    "pct": 9.69,
+    "price": 2875.0,
+    "market_cap": 20967906875000
+  },
+  "8309": {
+    "code": "8309",
+    "ticker": "8309.T",
+    "name": "三井住友トラストHD",
+    "themes": [
+      "Banking / Finance"
+    ],
+    "pct": 7.83,
+    "price": 5316.0,
+    "market_cap": 1949930064000
+  },
+  "7182": {
+    "code": "7182",
+    "ticker": "7182.T",
+    "name": "ゆうちょ銀行",
+    "themes": [
+      "Banking / Finance"
+    ],
+    "pct": 7.8,
+    "price": 2696.0,
+    "market_cap": 3356862064000
+  },
+  "8604": {
+    "code": "8604",
+    "ticker": "8604.T",
+    "name": "野村HD",
+    "themes": [
+      "Banking / Finance"
+    ],
+    "pct": 5.9,
+    "price": 1274.0,
+    "market_cap": 2888378402000
+  },
+  "8304": {
+    "code": "8304",
+    "ticker": "8304.T",
+    "name": "あおぞら銀行",
+    "themes": [
+      "Banking / Finance"
+    ],
+    "pct": -0.22,
+    "price": 2534.0,
+    "market_cap": 456699158500
+  },
+  "8628": {
+    "code": "8628",
+    "ticker": "8628.T",
+    "name": "松井証券",
+    "themes": [
+      "Banking / Finance"
+    ],
+    "pct": -0.63,
+    "price": 945.0,
+    "market_cap": 137102490000
+  },
+  "8601": {
+    "code": "8601",
+    "ticker": "8601.T",
+    "name": "Daiwa Securities",
+    "themes": [
+      "Banking / Finance"
+    ],
+    "pct": -1.91,
+    "price": 1466.0,
+    "market_cap": 1258061955500
+  },
+  "8336": {
+    "code": "8336",
+    "ticker": "8336.T",
+    "name": "武蔵野銀行",
+    "themes": [
+      "Regional Banks"
+    ],
+    "pct": 19.07,
+    "price": 2460.0,
+    "market_cap": 233547480000
+  },
+  "8418": {
+    "code": "8418",
+    "ticker": "8418.T",
+    "name": "山口FG",
+    "themes": [
+      "Regional Banks"
+    ],
+    "pct": 15.6,
+    "price": 2779.0,
+    "market_cap": 285683979000
+  },
+  "8387": {
+    "code": "8387",
+    "ticker": "8387.T",
+    "name": "四国銀行",
+    "themes": [
+      "Regional Banks"
+    ],
+    "pct": 14.45,
+    "price": 2614.0,
+    "market_cap": 73638994000
+  },
+  "8359": {
+    "code": "8359",
+    "ticker": "8359.T",
+    "name": "八十二銀行",
+    "themes": [
+      "Regional Banks"
+    ],
+    "pct": 11.12,
+    "price": 2168.0,
+    "market_cap": 503862712000
+  },
+  "8354": {
+    "code": "8354",
+    "ticker": "8354.T",
+    "name": "ふくおかFG",
+    "themes": [
+      "Regional Banks"
+    ],
+    "pct": 10.2,
+    "price": 6603.0,
+    "market_cap": 803208729000
+  },
+  "7186": {
+    "code": "7186",
+    "ticker": "7186.T",
+    "name": "コンコルディアFG",
+    "themes": [
+      "Regional Banks"
+    ],
+    "pct": 10.06,
+    "price": 1526.0,
+    "market_cap": 858097268000
+  },
+  "8331": {
+    "code": "8331",
+    "ticker": "8331.T",
+    "name": "Chiba Bank",
+    "themes": [
+      "Regional Banks"
+    ],
+    "pct": 9.45,
+    "price": 2194.0,
+    "market_cap": 1026539690000
+  },
+  "8524": {
+    "code": "8524",
+    "ticker": "8524.T",
+    "name": "Hokuyoh Bank",
+    "themes": [
+      "Regional Banks"
+    ],
+    "pct": 7.64,
+    "price": 1014.0,
+    "market_cap": 457978170000
+  },
+  "8366": {
+    "code": "8366",
+    "ticker": "8366.T",
+    "name": "滋賀銀行",
+    "themes": [
+      "Regional Banks"
+    ],
+    "pct": 7.08,
+    "price": 1952.0,
+    "market_cap": 330692224000
+  },
+  "8346": {
+    "code": "8346",
+    "ticker": "8346.T",
+    "name": "東邦銀行",
+    "themes": [
+      "Regional Banks"
+    ],
+    "pct": 4.39,
+    "price": 689.0,
+    "market_cap": 104587444000
+  },
+  "8377": {
+    "code": "8377",
+    "ticker": "8377.T",
+    "name": "北陸銀行",
+    "themes": [
+      "Regional Banks"
+    ],
+    "pct": 3.7,
+    "price": 6187.0,
+    "market_cap": 486149712000
+  },
+  "8341": {
+    "code": "8341",
+    "ticker": "8341.T",
+    "name": "Shichijushichi Bank",
+    "themes": [
+      "Regional Banks"
+    ],
+    "pct": 1.86,
+    "price": 3121.0,
+    "market_cap": 500452350000
+  },
+  "8522": {
+    "code": "8522",
+    "ticker": "8522.T",
+    "name": "名古屋銀行",
+    "themes": [
+      "Regional Banks"
+    ],
+    "pct": 0.34,
+    "price": 5910.0,
+    "market_cap": 199929390000
+  },
+  "8750": {
+    "code": "8750",
+    "ticker": "8750.T",
+    "name": "第一生命",
+    "themes": [
+      "Insurance"
+    ],
+    "pct": 2.7,
+    "price": 1444.0,
+    "market_cap": 2216906776000
+  },
+  "8725": {
+    "code": "8725",
+    "ticker": "8725.T",
+    "name": "MS&AD",
+    "themes": [
+      "Insurance"
+    ],
+    "pct": -0.05,
+    "price": 4019.0,
+    "market_cap": 2309654996000
+  },
+  "8766": {
+    "code": "8766",
+    "ticker": "8766.T",
+    "name": "Tokio Marine",
+    "themes": [
+      "Insurance"
+    ],
+    "pct": -0.41,
+    "price": 7238.0,
+    "market_cap": 8470689304000
+  },
+  "8795": {
+    "code": "8795",
+    "ticker": "8795.T",
+    "name": "T&Dホールディングス",
+    "themes": [
+      "Insurance"
+    ],
+    "pct": -2.76,
+    "price": 3773.0,
+    "market_cap": 1503582003000
+  },
+  "7181": {
+    "code": "7181",
+    "ticker": "7181.T",
+    "name": "Japan Post Insurance",
+    "themes": [
+      "Insurance"
+    ],
+    "pct": -2.9,
+    "price": 1526.0,
+    "market_cap": 636260116500
+  },
+  "8630": {
+    "code": "8630",
+    "ticker": "8630.T",
+    "name": "SOMPO HD",
+    "themes": [
+      "Insurance"
+    ],
+    "pct": -3.3,
+    "price": 5771.0,
+    "market_cap": 2365729114000
+  },
+  "7383": {
+    "code": "7383",
+    "ticker": "7383.T",
+    "name": "ネットプロテクションHD",
+    "themes": [
+      "Fintech"
+    ],
+    "pct": 22.03,
+    "price": 432.0,
+    "market_cap": 79014096000
+  },
+  "8515": {
+    "code": "8515",
+    "ticker": "8515.T",
+    "name": "アイフル",
+    "themes": [
+      "Fintech"
+    ],
+    "pct": 7.06,
+    "price": 485.0,
+    "market_cap": 205842730000
+  },
+  "4385": {
+    "code": "4385",
+    "ticker": "4385.T",
+    "name": "Mercari",
+    "themes": [
+      "Fintech",
+      "Retail & E-Commerce",
+      "Resale / Second-hand"
+    ],
+    "pct": 4.56,
+    "price": 3873.0,
+    "market_cap": 1351882269000
+  },
+  "3769": {
+    "code": "3769",
+    "ticker": "3769.T",
+    "name": "GMO PG",
+    "themes": [
+      "Fintech"
+    ],
+    "pct": -3.03,
+    "price": 7941.0,
+    "market_cap": 476293239000
+  },
+  "8830": {
+    "code": "8830",
+    "ticker": "8830.T",
+    "name": "住友不動産",
+    "themes": [
+      "Real Estate"
+    ],
+    "pct": 8.72,
+    "price": 4773.0,
+    "market_cap": 2072484330000
+  },
+  "8802": {
+    "code": "8802",
+    "ticker": "8802.T",
+    "name": "Mitsubishi Estate",
+    "themes": [
+      "Real Estate"
+    ],
+    "pct": 5.19,
+    "price": 4496.0,
+    "market_cap": 2779202400000
+  },
+  "8801": {
+    "code": "8801",
+    "ticker": "8801.T",
+    "name": "Mitsui Fudosan",
+    "themes": [
+      "Real Estate"
+    ],
+    "pct": 3.63,
+    "price": 1711.0,
+    "market_cap": 2848296567000
+  },
+  "8848": {
+    "code": "8848",
+    "ticker": "8848.T",
+    "name": "レオパレス21",
+    "themes": [
+      "Real Estate"
+    ],
+    "pct": 3.57,
+    "price": 668.0,
+    "market_cap": 111890668000
+  },
+  "1911": {
+    "code": "1911",
+    "ticker": "1911.T",
+    "name": "住友林業",
+    "themes": [
+      "Real Estate",
+      "脱炭素・ESG"
+    ],
+    "pct": 2.78,
+    "price": 1440.0,
+    "market_cap": 877774437000
+  },
+  "3283": {
+    "code": "3283",
+    "ticker": "3283.T",
+    "name": "日本プロロジスリート投資法人",
+    "themes": [
+      "Real Estate"
+    ],
+    "pct": 2.43,
+    "price": 88500.0,
+    "market_cap": 185656185000
+  },
+  "3289": {
+    "code": "3289",
+    "ticker": "3289.T",
+    "name": "東急不動産HD",
+    "themes": [
+      "Real Estate"
+    ],
+    "pct": 2.4,
+    "price": 1344.0,
+    "market_cap": 548239358000
+  },
+  "8803": {
+    "code": "8803",
+    "ticker": "8803.T",
+    "name": "平和不動産",
+    "themes": [
+      "Real Estate"
+    ],
+    "pct": 1.75,
+    "price": 2441.0,
+    "market_cap": 81180337000
+  },
+  "8804": {
+    "code": "8804",
+    "ticker": "8804.T",
+    "name": "東京建物",
+    "themes": [
+      "Real Estate"
+    ],
+    "pct": 1.14,
+    "price": 3649.0,
+    "market_cap": 611327917000
+  },
+  "3231": {
+    "code": "3231",
+    "ticker": "3231.T",
+    "name": "野村不動産HD",
+    "themes": [
+      "Real Estate"
+    ],
+    "pct": -0.45,
+    "price": 1002.0,
+    "market_cap": 454030248000
+  },
+  "3003": {
+    "code": "3003",
+    "ticker": "3003.T",
+    "name": "ヒューリック",
+    "themes": [
+      "Real Estate"
+    ],
+    "pct": -2.53,
+    "price": 1794.0,
+    "market_cap": 667618602000
+  },
+  "1878": {
+    "code": "1878",
+    "ticker": "1878.T",
+    "name": "大東建託",
+    "themes": [
+      "Real Estate"
+    ],
+    "pct": -4.21,
+    "price": 3508.0,
+    "market_cap": 1018582880000
+  },
+  "9005": {
+    "code": "9005",
+    "ticker": "9005.T",
+    "name": "Tokyu Corp",
+    "themes": [
+      "Real Estate",
+      "Tourism & Hotels",
+      "Inbound Tourism"
+    ],
+    "pct": -9.81,
+    "price": 1687.0,
+    "market_cap": 651246106000
+  },
+  "1803": {
+    "code": "1803",
+    "ticker": "1803.T",
+    "name": "Shimizu",
+    "themes": [
+      "Construction & Infra",
+      "National Resilience"
+    ],
+    "pct": 13.92,
+    "price": 3188.0,
+    "market_cap": 2059224840000
+  },
+  "1812": {
+    "code": "1812",
+    "ticker": "1812.T",
+    "name": "Kajima",
+    "themes": [
+      "Construction & Infra",
+      "National Resilience"
+    ],
+    "pct": 9.48,
+    "price": 6499.0,
+    "market_cap": 2368307089000
+  },
+  "1801": {
+    "code": "1801",
+    "ticker": "1801.T",
+    "name": "Taisei",
+    "themes": [
+      "Construction & Infra",
+      "National Resilience"
+    ],
+    "pct": 7.68,
+    "price": 17590.0,
+    "market_cap": 2840081400000
+  },
+  "1893": {
+    "code": "1893",
+    "ticker": "1893.T",
+    "name": "五洋建設",
+    "themes": [
+      "Construction & Infra",
+      "National Resilience"
+    ],
+    "pct": 7.42,
+    "price": 1816.0,
+    "market_cap": 660797287500
+  },
+  "1820": {
+    "code": "1820",
+    "ticker": "1820.T",
+    "name": "西松建設",
+    "themes": [
+      "Construction & Infra"
+    ],
+    "pct": 2.0,
+    "price": 5878.0,
+    "market_cap": 131149936000
+  },
+  "1861": {
+    "code": "1861",
+    "ticker": "1861.T",
+    "name": "熊谷組",
+    "themes": [
+      "Construction & Infra"
+    ],
+    "pct": 1.5,
+    "price": 1556.0,
+    "market_cap": 286778580000
+  },
+  "1802": {
+    "code": "1802",
+    "ticker": "1802.T",
+    "name": "Obayashi",
+    "themes": [
+      "Construction & Infra",
+      "National Resilience"
+    ],
+    "pct": 1.37,
+    "price": 3844.0,
+    "market_cap": 1728058668000
+  },
+  "1860": {
+    "code": "1860",
+    "ticker": "1860.T",
+    "name": "戸田建設",
+    "themes": [
+      "Construction & Infra"
+    ],
+    "pct": 0.03,
+    "price": 1445.0,
+    "market_cap": 236319635000
+  },
+  "1808": {
+    "code": "1808",
+    "ticker": "1808.T",
+    "name": "長谷工コーポレーション",
+    "themes": [
+      "Construction & Infra"
+    ],
+    "pct": -1.78,
+    "price": 2818.0,
+    "market_cap": 559536444000
+  },
+  "1928": {
+    "code": "1928",
+    "ticker": "1928.T",
+    "name": "Sekisui House",
+    "themes": [
+      "Construction & Infra",
+      "脱炭素・ESG"
+    ],
+    "pct": -2.1,
+    "price": 3455.0,
+    "market_cap": 1431914385000
+  },
+  "1414": {
+    "code": "1414",
+    "ticker": "1414.T",
+    "name": "ショーボンドHD",
+    "themes": [
+      "Construction & Infra",
+      "National Resilience"
+    ],
+    "pct": -3.82,
+    "price": 1358.0,
+    "market_cap": 214397111500
+  },
+  "1720": {
+    "code": "1720",
+    "ticker": "1720.T",
+    "name": "東急建設",
+    "themes": [
+      "National Resilience"
+    ],
+    "pct": 7.14,
+    "price": 1515.0,
+    "market_cap": 87716985000
+  },
+  "5269": {
+    "code": "5269",
+    "ticker": "5269.T",
+    "name": "日本コンクリート工業",
+    "themes": [
+      "National Resilience"
+    ],
+    "pct": 1.28,
+    "price": 317.0,
+    "market_cap": 12248880000
+  },
+  "6361": {
+    "code": "6361",
+    "ticker": "6361.T",
+    "name": "荏原製作所",
+    "themes": [
+      "Water Infrastructure"
+    ],
+    "pct": 27.51,
+    "price": 5423.0,
+    "market_cap": 3131007011000
+  },
+  "6332": {
+    "code": "6332",
+    "ticker": "6332.T",
+    "name": "月島ホールディングス",
+    "themes": [
+      "Water Infrastructure"
+    ],
+    "pct": 18.5,
+    "price": 3235.0,
+    "market_cap": 115311575000
+  },
+  "6367": {
+    "code": "6367",
+    "ticker": "6367.T",
+    "name": "ダイキン工業",
+    "themes": [
+      "Water Infrastructure"
+    ],
+    "pct": 15.17,
+    "price": 21865.0,
+    "market_cap": 4914945890000
+  },
+  "1815": {
+    "code": "1815",
+    "ticker": "1815.T",
+    "name": "鉄建建設",
+    "themes": [
+      "Water Infrastructure"
+    ],
+    "pct": 9.57,
+    "price": 4980.0,
+    "market_cap": 95406840000
+  },
+  "6257": {
+    "code": "6257",
+    "ticker": "6257.T",
+    "name": "栗田工業",
+    "themes": [
+      "Water Infrastructure"
+    ],
+    "pct": 0.41,
+    "price": 975.0,
+    "market_cap": 4574700000
+  },
+  "9551": {
+    "code": "9551",
+    "ticker": "9551.T",
+    "name": "メタウォーター",
+    "themes": [
+      "Water Infrastructure"
+    ],
+    "pct": 0.15,
+    "price": 3415.0,
+    "market_cap": 100220005000
+  },
+  "2802": {
+    "code": "2802",
+    "ticker": "2802.T",
+    "name": "Ajinomoto",
+    "themes": [
+      "Food & Beverage",
+      "Agritech & Foodtech"
+    ],
+    "pct": 7.2,
+    "price": 4767.0,
+    "market_cap": 2664047484000
+  },
+  "2587": {
+    "code": "2587",
+    "ticker": "2587.T",
+    "name": "サントリー食品",
+    "themes": [
+      "Food & Beverage"
+    ],
+    "pct": 0.72,
+    "price": 4496.0,
+    "market_cap": 672610592000
+  },
+  "2593": {
+    "code": "2593",
+    "ticker": "2593.T",
+    "name": "Ito En",
+    "themes": [
+      "Food & Beverage"
+    ],
+    "pct": -0.13,
+    "price": 2937.0,
+    "market_cap": 360798702000
+  },
+  "2810": {
+    "code": "2810",
+    "ticker": "2810.T",
+    "name": "ハウス食品",
+    "themes": [
+      "Food & Beverage"
+    ],
+    "pct": -0.16,
+    "price": 3030.0,
+    "market_cap": 85046040000
+  },
+  "2503": {
+    "code": "2503",
+    "ticker": "2503.T",
+    "name": "Kirin HD",
+    "themes": [
+      "Food & Beverage"
+    ],
+    "pct": -0.26,
+    "price": 2495.0,
+    "market_cap": 1816265190000
+  },
+  "2270": {
+    "code": "2270",
+    "ticker": "2270.T",
+    "name": "Megmilk Snow Brand",
+    "themes": [
+      "Food & Beverage",
+      "Agritech & Foodtech"
+    ],
+    "pct": -0.78,
+    "price": 3195.0,
+    "market_cap": 111665250000
+  },
+  "2502": {
+    "code": "2502",
+    "ticker": "2502.T",
+    "name": "Asahi Group HD",
+    "themes": [
+      "Food & Beverage"
+    ],
+    "pct": -1.14,
+    "price": 1560.0,
+    "market_cap": 1803999600000
+  },
+  "2206": {
+    "code": "2206",
+    "ticker": "2206.T",
+    "name": "Ezaki Glico",
+    "themes": [
+      "Food & Beverage"
+    ],
+    "pct": -2.05,
+    "price": 5775.0,
+    "market_cap": 220893750000
+  },
+  "2897": {
+    "code": "2897",
+    "ticker": "2897.T",
+    "name": "Nissin Food HD",
+    "themes": [
+      "Food & Beverage"
+    ],
+    "pct": -2.78,
+    "price": 2868.0,
+    "market_cap": 554000088000
+  },
+  "2811": {
+    "code": "2811",
+    "ticker": "2811.T",
+    "name": "Kagome",
+    "themes": [
+      "Food & Beverage",
+      "Agritech & Foodtech"
+    ],
+    "pct": -3.12,
+    "price": 2704.0,
+    "market_cap": 133431242500
+  },
+  "2871": {
+    "code": "2871",
+    "ticker": "2871.T",
+    "name": "ニチレイ",
+    "themes": [
+      "Food & Beverage"
+    ],
+    "pct": -3.46,
+    "price": 1897.0,
+    "market_cap": 340189010000
+  },
+  "2269": {
+    "code": "2269",
+    "ticker": "2269.T",
+    "name": "Meiji HD",
+    "themes": [
+      "Food & Beverage",
+      "Agritech & Foodtech"
+    ],
+    "pct": -3.58,
+    "price": 3739.0,
+    "market_cap": 735622077000
+  },
+  "2602": {
+    "code": "2602",
+    "ticker": "2602.T",
+    "name": "日清オイリオグループ",
+    "themes": [
+      "Food & Beverage"
+    ],
+    "pct": -4.57,
+    "price": 1818.0,
+    "market_cap": 82117242000
+  },
+  "2282": {
+    "code": "2282",
+    "ticker": "2282.T",
+    "name": "NH Foods",
+    "themes": [
+      "Food & Beverage"
+    ],
+    "pct": -6.16,
+    "price": 6568.0,
+    "market_cap": 487746248000
+  },
+  "2212": {
+    "code": "2212",
+    "ticker": "2212.T",
+    "name": "山崎製パン",
+    "themes": [
+      "Food & Beverage"
+    ],
+    "pct": -8.2,
+    "price": 3213.0,
+    "market_cap": 412767684000
+  },
+  "4028": {
+    "code": "4028",
+    "ticker": "4028.T",
+    "name": "石原産業",
+    "themes": [
+      "Agritech & Foodtech"
+    ],
+    "pct": 8.51,
+    "price": 3035.0,
+    "market_cap": 202540725000
+  },
+  "6310": {
+    "code": "6310",
+    "ticker": "6310.T",
+    "name": "井関農機",
+    "themes": [
+      "Agritech & Foodtech"
+    ],
+    "pct": 6.59,
+    "price": 1682.0,
+    "market_cap": 39966002000
+  },
+  "4997": {
+    "code": "4997",
+    "ticker": "4997.T",
+    "name": "日本農薬",
+    "themes": [
+      "Agritech & Foodtech"
+    ],
+    "pct": -2.67,
+    "price": 986.0,
+    "market_cap": 18560464000
+  },
+  "4996": {
+    "code": "4996",
+    "ticker": "4996.T",
+    "name": "クミアイ化学工業",
+    "themes": [
+      "Agritech & Foodtech"
+    ],
+    "pct": -3.01,
+    "price": 760.0,
+    "market_cap": 74337880000
+  },
+  "1379": {
+    "code": "1379",
+    "ticker": "1379.T",
+    "name": "ホクト",
+    "themes": [
+      "Agritech & Foodtech"
+    ],
+    "pct": -3.92,
+    "price": 1840.0,
+    "market_cap": 26013920000
+  },
+  "9983": {
+    "code": "9983",
+    "ticker": "9983.T",
+    "name": "Fast Retailing",
+    "themes": [
+      "Retail & E-Commerce",
+      "Inbound Tourism"
+    ],
+    "pct": 18.74,
+    "price": 73170.0,
+    "market_cap": 18392377050000
+  },
+  "2678": {
+    "code": "2678",
+    "ticker": "2678.T",
+    "name": "アスクル",
+    "themes": [
+      "Retail & E-Commerce"
+    ],
+    "pct": 5.14,
+    "price": 1165.0,
+    "market_cap": 105885685000
+  },
+  "3092": {
+    "code": "3092",
+    "ticker": "3092.T",
+    "name": "ZOZO",
+    "themes": [
+      "Retail & E-Commerce",
+      "Resale / Second-hand"
+    ],
+    "pct": -4.45,
+    "price": 1064.0,
+    "market_cap": 696469134000
+  },
+  "9843": {
+    "code": "9843",
+    "ticker": "9843.T",
+    "name": "Nitori HD",
+    "themes": [
+      "Retail & E-Commerce"
+    ],
+    "pct": -8.97,
+    "price": 2315.0,
+    "market_cap": 1963055180000
+  },
+  "7532": {
+    "code": "7532",
+    "ticker": "7532.T",
+    "name": "ドン・キホーテ（PPIH）",
+    "themes": [
+      "Retail & E-Commerce"
+    ],
+    "pct": -9.19,
+    "price": 901.0,
+    "market_cap": 1546608203560
+  },
+  "3382": {
+    "code": "3382",
+    "ticker": "3382.T",
+    "name": "Seven & i",
+    "themes": [
+      "Retail & E-Commerce",
+      "Inbound Tourism"
+    ],
+    "pct": -10.11,
+    "price": 1920.0,
+    "market_cap": 2695169280000
+  },
+  "9722": {
+    "code": "9722",
+    "ticker": "9722.T",
+    "name": "藤田観光",
+    "themes": [
+      "Tourism & Hotels",
+      "Inbound Tourism"
+    ],
+    "pct": 4.27,
+    "price": 2098.0,
+    "market_cap": 87526462000
+  },
+  "9045": {
+    "code": "9045",
+    "ticker": "9045.T",
+    "name": "Keihan HD",
+    "themes": [
+      "Tourism & Hotels"
+    ],
+    "pct": 1.57,
+    "price": 3306.0,
+    "market_cap": 164205714000
+  },
+  "9603": {
+    "code": "9603",
+    "ticker": "9603.T",
+    "name": "エイチ・アイ・エス",
+    "themes": [
+      "Tourism & Hotels",
+      "Inbound Tourism"
+    ],
+    "pct": 1.34,
+    "price": 1060.0,
+    "market_cap": 110917340000
+  },
+  "4681": {
+    "code": "4681",
+    "ticker": "4681.T",
+    "name": "リゾートトラスト",
+    "themes": [
+      "Tourism & Hotels"
+    ],
+    "pct": -0.56,
+    "price": 1762.0,
+    "market_cap": 169950186000
+  },
+  "9001": {
+    "code": "9001",
+    "ticker": "9001.T",
+    "name": "Tobu Railway",
+    "themes": [
+      "Tourism & Hotels"
+    ],
+    "pct": -1.16,
+    "price": 2809.0,
+    "market_cap": 251346511000
+  },
+  "9042": {
+    "code": "9042",
+    "ticker": "9042.T",
+    "name": "阪急阪神HD",
+    "themes": [
+      "Tourism & Hotels",
+      "Inbound Tourism"
+    ],
+    "pct": -1.67,
+    "price": 4539.0,
+    "market_cap": 981458892000
+  },
+  "4661": {
+    "code": "4661",
+    "ticker": "4661.T",
+    "name": "オリエンタルランド",
+    "themes": [
+      "Tourism & Hotels",
+      "Inbound Tourism"
+    ],
+    "pct": -7.7,
+    "price": 2434.0,
+    "market_cap": 2216828920500
+  },
+  "9024": {
+    "code": "9024",
+    "ticker": "9024.T",
+    "name": "Seibu HD",
+    "themes": [
+      "Tourism & Hotels"
+    ],
+    "pct": -10.71,
+    "price": 3893.0,
+    "market_cap": 635131271000
+  },
+  "9708": {
+    "code": "9708",
+    "ticker": "9708.T",
+    "name": "帝国ホテル",
+    "themes": [
+      "Tourism & Hotels",
+      "Inbound Tourism"
+    ],
+    "pct": -22.73,
+    "price": 1217.0,
+    "market_cap": 30684221000
+  },
+  "3099": {
+    "code": "3099",
+    "ticker": "3099.T",
+    "name": "三越伊勢丹HD",
+    "themes": [
+      "Inbound Tourism"
+    ],
+    "pct": 4.51,
+    "price": 2991.0,
+    "market_cap": 932432286000
+  },
+  "8233": {
+    "code": "8233",
+    "ticker": "8233.T",
+    "name": "高島屋",
+    "themes": [
+      "Inbound Tourism"
+    ],
+    "pct": 0.29,
+    "price": 1876.0,
+    "market_cap": 511278179500
+  },
+  "2780": {
+    "code": "2780",
+    "ticker": "2780.T",
+    "name": "コメ兵HD",
+    "themes": [
+      "Resale / Second-hand"
+    ],
+    "pct": 20.37,
+    "price": 5260.0,
+    "market_cap": 92302480000
+  },
+  "9278": {
+    "code": "9278",
+    "ticker": "9278.T",
+    "name": "ブックオフグループHD",
+    "themes": [
+      "Resale / Second-hand"
+    ],
+    "pct": 14.81,
+    "price": 2047.0,
+    "market_cap": 48610109000
+  },
+  "2681": {
+    "code": "2681",
+    "ticker": "2681.T",
+    "name": "ゲオHD",
+    "themes": [
+      "Resale / Second-hand"
+    ],
+    "pct": 11.09,
+    "price": 1873.0,
+    "market_cap": 69192366000
+  },
+  "2674": {
+    "code": "2674",
+    "ticker": "2674.T",
+    "name": "ハードオフコーポレーション",
+    "themes": [
+      "Resale / Second-hand"
+    ],
+    "pct": 4.78,
+    "price": 2037.0,
+    "market_cap": 14016597000
+  },
+  "3093": {
+    "code": "3093",
+    "ticker": "3093.T",
+    "name": "トレジャー・ファクトリー",
+    "themes": [
+      "Resale / Second-hand"
+    ],
+    "pct": 3.32,
+    "price": 1711.0,
+    "market_cap": 58576085000
+  },
+  "6301": {
+    "code": "6301",
+    "ticker": "6301.T",
+    "name": "Komatsu",
+    "themes": [
+      "Defense & Aerospace"
+    ],
+    "pct": 14.27,
+    "price": 6856.0,
+    "market_cap": 5074043328000
+  },
+  "6203": {
+    "code": "6203",
+    "ticker": "6203.T",
+    "name": "豊和工業",
+    "themes": [
+      "Defense & Aerospace"
+    ],
+    "pct": 8.27,
+    "price": 1585.0,
+    "market_cap": 95667430000
+  },
+  "7701": {
+    "code": "7701",
+    "ticker": "7701.T",
+    "name": "島津製作所",
+    "themes": [
+      "Defense & Aerospace"
+    ],
+    "pct": -2.88,
+    "price": 3644.0,
+    "market_cap": 891602988000
+  },
+  "9686": {
+    "code": "9686",
+    "ticker": "9686.T",
+    "name": "東洋テック",
+    "themes": [
+      "Defense & Aerospace",
+      "警備"
+    ],
+    "pct": -4.71,
+    "price": 1537.0,
+    "market_cap": 1955064000
+  },
+  "186A": {
+    "code": "186A",
+    "ticker": "186A.T",
+    "name": "Astroscale",
+    "themes": [
+      "Space & Satellite"
+    ],
+    "pct": 43.7,
+    "price": 1312.0,
+    "market_cap": 2443699712000
+  },
+  "166A": {
+    "code": "166A",
+    "ticker": "166A.T",
+    "name": "アクセルスペースHD",
+    "themes": [
+      "Space & Satellite"
+    ],
+    "pct": 2.66,
+    "price": 810.0,
+    "market_cap": 50005350000
+  },
+  "6141": {
+    "code": "6141",
+    "ticker": "6141.T",
+    "name": "DMG森精機",
+    "themes": [
+      "Robotics & Automation"
+    ],
+    "pct": 23.84,
+    "price": 2888.0,
+    "market_cap": 758907159000
+  },
+  "6135": {
+    "code": "6135",
+    "ticker": "6135.T",
+    "name": "牧野フライス製作所",
+    "themes": [
+      "Robotics & Automation"
+    ],
+    "pct": 2.61,
+    "price": 11800.0,
+    "market_cap": 582731200000
+  },
+  "3132": {
+    "code": "3132",
+    "ticker": "3132.T",
+    "name": "Macnica Holdings",
+    "themes": [
+      "Cybersecurity"
+    ],
+    "pct": 13.22,
+    "price": 2638.0,
+    "market_cap": 382277856000
+  },
+  "4417": {
+    "code": "4417",
+    "ticker": "4417.T",
+    "name": "グローバルセキュリティエキスパート",
+    "themes": [
+      "Cybersecurity"
+    ],
+    "pct": 10.42,
+    "price": 2500.0,
+    "market_cap": 33520000000
+  },
+  "2326": {
+    "code": "2326",
+    "ticker": "2326.T",
+    "name": "デジタルアーツ",
+    "themes": [
+      "Cybersecurity"
+    ],
+    "pct": 9.04,
+    "price": 5550.0,
+    "market_cap": 113808300000
+  },
+  "4704": {
+    "code": "4704",
+    "ticker": "4704.T",
+    "name": "トレンドマイクロ",
+    "themes": [
+      "Cybersecurity"
+    ],
+    "pct": 8.49,
+    "price": 5611.0,
+    "market_cap": 1433778830000
+  },
+  "3692": {
+    "code": "3692",
+    "ticker": "3692.T",
+    "name": "FFRIセキュリティ",
+    "themes": [
+      "Cybersecurity"
+    ],
+    "pct": -2.76,
+    "price": 5980.0,
+    "market_cap": 194583220000
+  },
+  "4493": {
+    "code": "4493",
+    "ticker": "4493.T",
+    "name": "サイバーセキュリティクラウド",
+    "themes": [
+      "Cybersecurity"
+    ],
+    "pct": -3.25,
+    "price": 1605.0,
+    "market_cap": 41421840000
+  },
+  "7739": {
+    "code": "7739",
+    "ticker": "7739.T",
+    "name": "キヤノン電子",
+    "themes": [
+      "警備"
+    ],
+    "pct": 0.14,
+    "price": 3635.0,
+    "market_cap": 36139170000
+  },
+  "2331": {
+    "code": "2331",
+    "ticker": "2331.T",
+    "name": "綜合警備保障（ALSOK）",
+    "themes": [
+      "警備"
+    ],
+    "pct": -2.23,
+    "price": 1205.0,
+    "market_cap": 217895330000
+  },
+  "3861": {
+    "code": "3861",
+    "ticker": "3861.T",
+    "name": "王子HD",
+    "themes": [
+      "脱炭素・ESG"
+    ],
+    "pct": -1.49,
+    "price": 826.0,
+    "market_cap": 681574019924
+  },
+  "3880": {
+    "code": "3880",
+    "ticker": "3880.T",
+    "name": "大王製紙",
+    "themes": [
+      "脱炭素・ESG"
+    ],
+    "pct": -6.31,
+    "price": 965.0,
+    "market_cap": 63862735000
+  },
+  "9470": {
+    "code": "9470",
+    "ticker": "9470.T",
+    "name": "学研HD",
+    "themes": [
+      "教育・HR・人材"
+    ],
+    "pct": -0.82,
+    "price": 973.0,
+    "market_cap": 23673090000
+  },
+  "4848": {
+    "code": "4848",
+    "ticker": "4848.T",
+    "name": "フルキャストHD",
+    "themes": [
+      "人材派遣"
+    ],
+    "pct": -1.03,
+    "price": 1637.0,
+    "market_cap": 22400708000
+  },
+  "3662": {
+    "code": "3662",
+    "ticker": "3662.T",
+    "name": "エイチーム",
+    "themes": [
+      "ゲーム・エンタメ"
+    ],
+    "pct": 9.87,
+    "price": 1013.0,
+    "market_cap": 13302716000
+  },
+  "2432": {
+    "code": "2432",
+    "ticker": "2432.T",
+    "name": "DeNA",
+    "themes": [
+      "ゲーム・エンタメ"
+    ],
+    "pct": 7.02,
+    "price": 2600.0,
+    "market_cap": 740966679000
+  },
+  "9697": {
+    "code": "9697",
+    "ticker": "9697.T",
+    "name": "カプコン",
+    "themes": [
+      "ゲーム・エンタメ"
+    ],
+    "pct": 5.37,
+    "price": 3490.0,
+    "market_cap": 1677506890000
+  },
+  "9766": {
+    "code": "9766",
+    "ticker": "9766.T",
+    "name": "コナミ",
+    "themes": [
+      "ゲーム・エンタメ"
+    ],
+    "pct": 3.53,
+    "price": 19790.0,
+    "market_cap": 1835661030000
+  },
+  "3765": {
+    "code": "3765",
+    "ticker": "3765.T",
+    "name": "Gungho",
+    "themes": [
+      "ゲーム・エンタメ"
+    ],
+    "pct": 3.04,
+    "price": 2506.0,
+    "market_cap": 115403806000
+  },
+  "9684": {
+    "code": "9684",
+    "ticker": "9684.T",
+    "name": "スクウェア・エニックス",
+    "themes": [
+      "ゲーム・エンタメ"
+    ],
+    "pct": 2.22,
+    "price": 2506.0,
+    "market_cap": 524119876000
+  },
+  "3932": {
+    "code": "3932",
+    "ticker": "3932.T",
+    "name": "アカツキ",
+    "themes": [
+      "ゲーム・エンタメ"
+    ],
+    "pct": 1.55,
+    "price": 2758.0,
+    "market_cap": 33079452000
+  },
+  "3632": {
+    "code": "3632",
+    "ticker": "3632.T",
+    "name": "グリー",
+    "themes": [
+      "ゲーム・エンタメ"
+    ],
+    "pct": 0.82,
+    "price": 371.0,
+    "market_cap": 28433069000
+  },
+  "3635": {
+    "code": "3635",
+    "ticker": "3635.T",
+    "name": "コーエーテクモ",
+    "themes": [
+      "ゲーム・エンタメ"
+    ],
+    "pct": -0.93,
+    "price": 1596.0,
+    "market_cap": 489636840000
+  },
+  "7832": {
+    "code": "7832",
+    "ticker": "7832.T",
+    "name": "バンダイナムコ",
+    "themes": [
+      "ゲーム・エンタメ"
+    ],
+    "pct": -2.62,
+    "price": 3721.0,
+    "market_cap": 1407970585000
+  },
+  "6460": {
+    "code": "6460",
+    "ticker": "6460.T",
+    "name": "セガサミー",
+    "themes": [
+      "ゲーム・エンタメ"
+    ],
+    "pct": -3.16,
+    "price": 2332.0,
+    "market_cap": 337557000000
+  },
+  "3659": {
+    "code": "3659",
+    "ticker": "3659.T",
+    "name": "ネクソン",
+    "themes": [
+      "ゲーム・エンタメ"
+    ],
+    "pct": -8.81,
+    "price": 2670.0,
+    "market_cap": 1133838091000
+  },
+  "7974": {
+    "code": "7974",
+    "ticker": "7974.T",
+    "name": "Nintendo",
+    "themes": [
+      "ゲーム・エンタメ"
+    ],
+    "pct": -10.98,
+    "price": 7922.0,
+    "market_cap": 13498953326000
+  }
+}
