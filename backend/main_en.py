@@ -232,7 +232,8 @@ def get_theme_detail(theme_name: str, period: str = Query(default="1mo")):
     ja_name = next((k for k, v in THEME_NAME_EN.items() if v == theme_name), theme_name)
     themes_to_use = EXTRA_THEMES_EN if theme_name in EXTRA_THEMES_EN else DEFAULT_THEMES
     name_to_use = theme_name if theme_name in EXTRA_THEMES_EN else ja_name
-    data = fetch_theme_detail(themes_to_use, name_to_use, period)
+    theme_stocks = themes_to_use.get(name_to_use, {})
+    data = fetch_theme_detail(name_to_use, theme_stocks, period)
     stocks_en = [
         {**s, "name": translate_stock(s.get("name", ""))}
         for s in data.get("stocks", [])
