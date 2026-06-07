@@ -110,7 +110,7 @@ function PickupStocks({ stocks, period }) {
               {/* Stock Name（必ず表示） */}
               <div style={{ fontSize:'13px', fontWeight:700, color:'var(--text)',
                 lineHeight:1.4 }}>
-                {s.name || s.ticker.replace('.T', '')}
+                {sn(s.name) || s.ticker.replace('.T', '')}
               </div>
               {/* スパークライン ④ 高さを拡大 */}
               {s.spark && s.spark.length >= 3 && (
@@ -205,7 +205,7 @@ function MrVolTvChart({ stocks }) {
           const pc = s.pct>=0?'var(--red)':'var(--green)'
           return (
             <div key={s.ticker} style={{ display:'grid', gridTemplateColumns:'110px 1fr 70px 56px', gap:'6px', alignItems:'center' }}>
-              <span style={{ fontSize:'11px', color:'var(--text2)', overflow:'hidden', textOverflow:'ellipsis', whiteSpace:'nowrap', textAlign:'right' }}>{s.name}</span>
+              <span style={{ fontSize:'11px', color:'var(--text2)', overflow:'hidden', textOverflow:'ellipsis', whiteSpace:'nowrap', textAlign:'right' }}>{sn(s.name)}</span>
               <div style={{ height:'12px', background:'rgba(255,255,255,0.04)', borderRadius:'3px', overflow:'hidden' }}>
                 <div style={{ height:'100%', width:`${w}%`, background:mode==='tv'?'#ff8c42':'#378ADD', borderRadius:'3px', opacity:0.85 }}/>
               </div>
@@ -500,7 +500,7 @@ function StockTable({ stocks: rawStocks, onAddToTheme }) {
                   </td>
                   <td style={{ ...tdL, fontWeight:600, color:'var(--text)', minWidth:'120px', background: i%2===0?'var(--bg2)':'var(--bg3)', position:'sticky', left:'32px', zIndex:2 }}>
                     <div style={{ fontSize:'10px', color:'var(--text3)', fontFamily:'var(--mono)', marginBottom:'1px' }}>{s.ticker.replace('.T','')}</div>
-                    <span style={{ fontSize:'13px', overflow:'hidden', textOverflow:'ellipsis', whiteSpace:'nowrap', display:'block' }}>{s.name}</span>
+                    <span style={{ fontSize:'13px', overflow:'hidden', textOverflow:'ellipsis', whiteSpace:'nowrap', display:'block' }}>{sn(s.name)}</span>
                   </td>
                   {/* ① ミニチャート列（固定なし・横スクロールで動く） */}
                   <td style={{ ...tdC, padding:'4px 8px', minWidth:'72px', width:'72px' }}>
@@ -521,7 +521,7 @@ function StockTable({ stocks: rawStocks, onAddToTheme }) {
                   <td style={{ ...tdR, fontFamily:'var(--mono)', color:'var(--text2)' }}>{formatLarge(s.trade_value)}</td>
                   <td style={tdC}>{s.tv_rank}</td>
                   <td style={tdC}>
-                    <button onClick={() => onAddToTheme && onAddToTheme({ ticker:s.ticker, name:s.name, price:s.price })}
+                    <button onClick={() => onAddToTheme && onAddToTheme({ ticker:s.ticker, name:sn(s.name), price:s.price })}
                       title="Add to Custom Theme"
                       style={{ background:'rgba(74,158,255,0.1)', border:'1px solid rgba(74,158,255,0.25)',
                         borderRadius:'4px', color:'var(--accent)', cursor:'pointer', fontSize:'13px',
@@ -615,6 +615,76 @@ const ETF_GROUPS = {
 }
 
 
+// Stock name translation (Japanese → English)
+const STOCK_NAME_EN = {
+  '村田製作所':'Murata Mfg','アドバンテスト':'Advantest','東京エレクトロン':'Tokyo Electron',
+  'レーザーテック':'Lasertec','ディスコ':'Disco','ルネサス':'Renesas',
+  'TDK':'TDK','ソニーグループ':'Sony Group','日立製作所':'Hitachi',
+  'キーエンス':'Keyence','ファナック':'Fanuc','パナソニックHD':'Panasonic HD',
+  '三菱電機':'Mitsubishi Electric','富士通':'Fujitsu','NEC':'NEC',
+  'トヨタ自動車':'Toyota Motor','ホンダ':'Honda','日産自動車':'Nissan',
+  '東芝':'Toshiba','シャープ':'Sharp','デンソー':'Denso',
+  '三菱重工業':'Mitsubishi Heavy','川崎重工業':'Kawasaki HI','IHI':'IHI',
+  '三井E&S':'Mitsui E&S','住友重機械工業':'Sumitomo Heavy',
+  'SCREEN HD':'SCREEN HD','SCREENホールディングス':'SCREEN HD',
+  'ニコン':'Nikon','キヤノン':'Canon','リコー':'Ricoh',
+  '信越化学工業':'Shin-Etsu Chem','住友化学':'Sumitomo Chem',
+  '三菱化学グループ':'Mitsubishi Chem','旭化成':'Asahi Kasei',
+  '東レ':'Toray','帝人':'Teijin','クラレ':'Kuraray',
+  '新日本製鐵':'Nippon Steel','JFEホールディングス':'JFE Holdings',
+  '神戸製鋼所':'Kobe Steel','住友金属鉱山':'Sumitomo Metal Mining',
+  '三菱マテリアル':'Mitsubishi Materials','DOWAホールディングス':'DOWA HD',
+  '任天堂':'Nintendo','カプコン':'Capcom','バンダイナムコ':'Bandai Namco',
+  'テルモ':'Terumo','武田薬品工業':'Takeda Pharma','アステラス製薬':'Astellas',
+  '中外製薬':'Chugai Pharma','第一三共':'Daiichi Sankyo','エーザイ':'Eisai',
+  '塩野義製薬':'Shionogi','大塚ホールディングス':'Otsuka HD',
+  '京セラ':'Kyocera','ローム':'Rohm','新電元工業':'Shindengen',
+  'ソシオネクスト':'Socionext','エヌビディア':'NVIDIA',
+  '三菱UFJフィナンシャル':'MUFG','三井住友フィナンシャル':'SMFG',
+  'みずほフィナンシャル':'Mizuho FG','りそなHD':'Resona HD',
+  '野村ホールディングス':'Nomura HD','大和証券グループ':'Daiwa Securities',
+  '東京海上HD':'Tokio Marine','MS&ADインシュアランス':'MS&AD',
+  'SOMPOホールディングス':'SOMPO HD','第一生命HD':'Dai-ichi Life',
+  '日本郵政':'Japan Post','かんぽ生命':'Japan Post Insurance',
+  'NTT':'NTT','KDDI':'KDDI','ソフトバンク':'SoftBank Corp',
+  'ソフトバンクグループ':'SoftBank Group','楽天グループ':'Rakuten Group',
+  'メルカリ':'Mercari','LINE':'LINE','ヤフー':'Yahoo Japan',
+  'INPEX':'INPEX','出光興産':'Idemitsu Kosan','ENEOSホールディングス':'ENEOS HD',
+  '中部電力':'Chubu Electric','東京電力HD':'TEPCO','関西電力':'Kansai Electric',
+  '東京ガス':'Tokyo Gas','大阪ガス':'Osaka Gas',
+  '三菱商事':'Mitsubishi Corp','三井物産':'Mitsui & Co',
+  '伊藤忠商事':'Itochu','住友商事':'Sumitomo Corp','丸紅':'Marubeni',
+  '日本郵船':'Nippon Yusen','商船三井':'Mitsui OSK','川崎汽船':'K Line',
+  'ANAホールディングス':'ANA HD','日本航空':'JAL',
+  '日本通運':'Nippon Express','ヤマトホールディングス':'Yamato HD',
+  'ニトリHD':'Nitori HD','ファーストリテイリング':'Fast Retailing',
+  'セブン&アイ':'Seven & i','イオン':'Aeon','ローソン':'Lawson',
+  '三菱地所':'Mitsubishi Estate','三井不動産':'Mitsui Fudosan',
+  '住友不動産':'Sumitomo Realty','東急不動産HD':'Tokyu Fudosan HD',
+  '大和ハウス工業':'Daiwa House','積水ハウス':'Sekisui House',
+  '鹿島建設':'Kajima','清水建設':'Shimizu','大成建設':'Taisei','大林組':'Obayashi',
+  'モノタロウ':'MonotaRO','ZOZO':'ZOZO','サイバーエージェント':'CyberAgent',
+  'マネーフォワード':'Money Forward','SBIホールディングス':'SBI HD',
+  'GMOペイメントゲートウェイ':'GMO PG','弁護士ドットコム':'Bengo4.com',
+  '富士フイルムHD':'Fujifilm HD','コニカミノルタ':'Konica Minolta',
+  'エレコム':'Elecom','バッファロー':'Buffalo','ロジテック':'Logitec',
+  'JSR':'JSR','SUMCO':'SUMCO','フォトニクス':'Photonics',
+  '日本電産':'Nidec','安川電機':'Yaskawa Electric','オムロン':'Omron',
+  'SMC':'SMC','THK':'THK','ミネベアミツミ':'MinebeaMitsumi',
+  'アルプスアルパイン':'Alps Alpine','日本電気硝子':'Nippon Electric Glass',
+  'AGC':'AGC','日本板硝子':'NSG Group','東洋ガラス':'Toyo Glass',
+  '太陽誘電':'Taiyo Yuden','京セラ':'Kyocera','日本ケミコン':'Nippon Chemicon',
+  'ニチコン':'Nichicon','パナソニック':'Panasonic','シャープ':'Sharp',
+  'ハリマ化成グループ':'Harima Chem','東亞合成':'Toa Gosei',
+  '昭和電工':'Showa Denko','クレハ':'Kureha','日本ゼオン':'Zeon',
+  '宇部興産':'UBE Industries','積水化学工業':'Sekisui Chem',
+  '日本ペイントHD':'Nippon Paint HD','関西ペイント':'Kansai Paint',
+  'エスケー化研':'SK Kaken','大日本塗料':'DNT','中国塗料':'Chugoku Marine',
+  '荏原製作所':'Ebara','日機装':'Nikkiso','横河電機':'Yokogawa',
+  'アズビル':'Azbil','オリエンタルモーター':'Oriental Motor',
+}
+const sn = (name) => STOCK_NAME_EN[name] || name
+
 // Group label translation (API keys are JP, display labels are EN)
 const GROUP_LABEL = {
   '国内主要株': 'Major Stocks',
@@ -687,7 +757,7 @@ export default function MarketRank({ onNavigate }) {
           const ss = Array.isArray(json) ? json : (json.data ?? json.stocks ?? [])
           if (ss.length > 0) {
             const enriched = ss.map(s => ({
-              ...s, name: tickerMap[s.ticker?.replace('.T','')] || s.name || s.ticker,
+              ...s, name: sn(tickerMap[s.ticker?.replace('.T','')] || s.name || s.ticker),
             }))
             setEtfDetail({ stocks: enriched, avg: enriched.reduce((s,x)=>s+(x.pct??0),0)/enriched.length })
             setEtfLoading(false); return

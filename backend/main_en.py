@@ -311,7 +311,7 @@ PRICE_MAP = {
 @app.post("/api/stripe/create-checkout")
 async def create_checkout(request: Request):
     body = await request.json()
-    price_key = body.get("priceKey", "")
+    price_key = body.get("price_key") or body.get("priceKey", "")
     user_id   = body.get("userId", "")
     email     = body.get("email", "")
     

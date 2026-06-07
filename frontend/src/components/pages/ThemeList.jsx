@@ -869,7 +869,7 @@ function MonthlyThemePicker({ allThemes, selected, setSelected }) {
               fontWeight:600, border:'1.5px solid ' + col,
               background: col + '22', color: col,
             }}>
-              {t}
+              {tn(t)}
               <button onClick={() => toggleTheme(t)}
                 style={{ background:'none', border:'none', cursor:'pointer',
                   color: col, fontSize:'12px', lineHeight:1, padding:'0 2px',
@@ -920,7 +920,7 @@ function MonthlyThemePicker({ allThemes, selected, setSelected }) {
                     color: isOn ? col : 'var(--text3)',
                     transition:'all 0.12s',
                   }}>
-                  {isOn ? '✓ ' : ''}{t}
+                  {isOn ? '✓ ' : ''}{tn(t)}
                 </button>
               )
             })}
