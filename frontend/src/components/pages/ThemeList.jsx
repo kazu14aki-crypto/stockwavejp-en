@@ -167,15 +167,15 @@ function genThemeComment(themes, summary, period, momentum) {
   const bot     = themes[themes.length - 1]
 
   // surging・plungingテーマ
-  const hotThemes  = themes.filter(t => t.pct >= 5).map(t => t.theme)
-  const coldThemes = themes.filter(t => t.pct <= -5).map(t => t.theme)
+  const hotThemes  = themes.filter(t => t.pct >= 5).map(t => tn(t.theme))
+  const coldThemes = themes.filter(t => t.pct <= -5).map(t => tn(t.theme))
 
   // Volume急増テーマ（vs prev+30%以上）
-  const volSurge = themes.filter(t => (t.volume_chg || 0) >= 30).map(t => t.theme)
+  const volSurge = themes.filter(t => (t.volume_chg || 0) >= 30).map(t => tn(t.theme))
 
   // モメンタム（accelerating・decelerating）
-  const accel = momentum?.filter(t => t.state?.includes('accelerating')).map(t => t.theme) || []
-  const decel = momentum?.filter(t => t.state?.includes('decelerating')).map(t => t.theme) || []
+  const accel = momentum?.filter(t => t.state?.includes('accelerating')).map(t => tn(t.theme)) || []
+  const decel = momentum?.filter(t => t.state?.includes('decelerating')).map(t => tn(t.theme)) || []
 
   const lines = []
 
