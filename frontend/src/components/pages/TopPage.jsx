@@ -191,13 +191,13 @@ function generateMarketComment(themeData, macro) {
 
   // risingTheme
   if (top3.length && top3[0].pct > 0) {
-    const upNames = top3.filter(x=>x.pct>0).map(x=>`'${x.theme}'(${x.pct>=0?'+':''}${x.pct.toFixed(1)}%)`).join('、')
+    const upNames = top3.filter(x=>x.pct>0).map(x=>`'${tn(x.theme)}'(${x.pct>=0?'+':''}${x.pct.toFixed(1)}%)`).join('、')
     lines.push(`▲ Notable Rising themes: ${upNames}.${volUp.length>0&&top3.some(top=>volUp.some(v=>v.theme===top.theme)) ? ' Volume surge concurrent with rising — particularly noteworthy.' : ''}`)
   }
 
   // fallingTheme
   if (bot3.length && bot3[0].pct < 0) {
-    const dnNames = bot3.filter(x=>x.pct<0).map(x=>`'${x.theme}'(${x.pct.toFixed(1)}%)`).join('、')
+    const dnNames = bot3.filter(x=>x.pct<0).map(x=>`'${tn(x.theme)}'(${x.pct.toFixed(1)}%)`).join(", ")
     lines.push(`▼ Notable Falling themes: ${dnNames}. ${coldThemes.length>3?'Broad selling pressure — selective theme approach recommended.':'Sharp declines — possible overheating correction or external pressure.'}`)
   }
 
@@ -378,7 +378,7 @@ export default function TopPage({ onNavigate }) {
                         {i===0?'🥇 Top Theme #1':i===1?'🥈 Top Theme #2':'🥉 Top Theme #3'}
                       </div>
                       <div style={{ fontSize:'13px', fontWeight:700, color:'var(--text)', marginBottom:'8px' }}>
-                        {t.theme}
+                        {tn(t.theme)}
                         <span style={{ marginLeft:'8px', fontSize:'12px', fontWeight:700,
                           color: t.pct >= 0 ? 'var(--red)' : 'var(--green)',
                           fontFamily:'var(--mono)' }}>

@@ -9,6 +9,7 @@ import TopPage     from './components/pages/TopPage'
 import ThemeList   from './components/pages/ThemeList'
 import Heatmap     from './components/pages/Heatmap'
 import MarketRank  from './components/pages/MarketRank'
+import StockSearch  from './components/pages/StockSearch.jsx'
 import ThemeDetail from './components/pages/ThemeDetail'
 import CustomTheme from './components/pages/CustomTheme'
 import News        from './components/pages/News'
@@ -28,12 +29,15 @@ const PAGES = [
   { icon:'📊', label:'Theme List',           component:ThemeList             },
   { icon:'🔥', label:'Heatmap',              component:Heatmap               },
   { icon:'🔍', label:'Theme Detail',         component:ThemeDetail           },
+  { icon:'🔍', label:'Stock Search',  component:StockSearch  },
   { icon:'📋', label:'Market Ranking',       component:MarketRank            },
   { icon:'🎨', label:'Custom Theme',         component:CustomTheme           },
   { icon:'🏦', label:'Institutional Holdings', component:InstitutionalHoldings, locked:true },
   { icon:'📰', label:'Weekly Report',        component:WeeklyReport          },
   { icon:'📝', label:'Column',               component:Column                },
 ]
+// Stock Search is in PAGES
+// (inserted below)
 const PAGES_OTHER = [
   { icon:'🏢', label:'About',               component:SiteInfo              },
   { icon:'📣', label:'News',                component:News                  },

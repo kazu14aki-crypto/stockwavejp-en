@@ -317,7 +317,8 @@ async def create_checkout(request: Request):
     
     price_id = PRICE_MAP.get(price_key, "")
     if not price_id:
-        return {"error": "Invalid price key"}
+        available = list(PRICE_MAP.keys())
+        return {"error": f"Invalid price key: '{price_key}'. Available: {available}. PRICE_MAP values: {list(PRICE_MAP.values())}"}
     
     try:
         session = stripe.checkout.Session.create(
@@ -330,8 +331,11 @@ async def create_checkout(request: Request):
             metadata={"user_id": user_id, "plan": price_key},
         )
         return {"url": session.url}
+    except stripe.error.StripeError as e:
+        return {"error": f"Stripe error: {e.user_message or str(e)}"}
     except Exception as e:
-        return {"error": str(e)}
+        import traceback
+        return {"error": f"Server error: {str(e)}", "detail": traceback.format_exc()}
 
 @app.post("/api/stripe/webhook")
 async def stripe_webhook(request: Request):

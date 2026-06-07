@@ -38,12 +38,12 @@ const COL_LABELS = {
 function guessETF(ticker, themes = []) {
   const code = parseInt(ticker)
   const etfs = []
-  if (code) etfs.push('1306（TOPIX連動ETF）')
+  if (code) etfs.push('1306 (TOPIX ETF)')
   const n225 = [7203,6758,8306,6861,8035,9983,4063,9433,7974,6367,6501,8316,8058]
-  if (n225.includes(code)) etfs.push('1321（日経225連動ETF）')
+  if (n225.includes(code)) etfs.push('1321 (Nikkei225 ETF)')
   if (themes.some(t => ['AI半導体','半導体製造装置','MLCC・電子部品'].includes(t))) etfs.push('2644（グローバルX半導体）')
-  if (themes.some(t => ['防衛・航空','防衛・セキュリティ'].includes(t))) etfs.push('2648（グローバルX防衛）')
-  if (themes.some(t => ['EV・電気自動車'].includes(t))) etfs.push('2636（グローバルXEV）')
+  if (themes.some(t => ['防衛・航空','防衛・セキュリティ'].includes(t))) etfs.push('2648 (GlobalX Defense衛）')
+  if (themes.some(t => ['EV・電気自動車'].includes(t))) etfs.push('2636 (GlobalX EV)')
   return etfs
 }
 
@@ -143,7 +143,7 @@ export default function StockSearch({ onNavigate }) {
   }, [stockIndex, searchQ])
 
   const pColor = v => v == null ? 'var(--text3)' : v >= 0 ? 'var(--red)' : 'var(--green)'
-  const fmt = v => v==null?'-': v>=1e12?(v/1e12).toFixed(1)+'兆円': v>=1e8?(v/1e8).toFixed(0)+'億円': v.toLocaleString()
+  const fmt = v => v==null?'-': v>=1e12?(v/1e12).toFixed(1)+'T': v>=1e8?(v/1e8).toFixed(0)+'B': v.toLocaleString()
 
   const PERIODS = [
     {v:'1d',l:'1D'},{v:'5d',l:'1W'},{v:'1mo',l:'1M'},
