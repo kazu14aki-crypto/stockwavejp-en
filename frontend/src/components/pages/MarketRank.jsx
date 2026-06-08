@@ -74,7 +74,7 @@ const STOCK_NAME_EN = {
   '荏原製作所':'Ebara','日機装':'Nikkiso','横河電機':'Yokogawa',
   'アズビル':'Azbil','オリエンタルモーター':'Oriental Motor',
 }
-const sn = (name) => STOCK_NAME_EN[name] || name
+const getStockName = (name) => STOCK_NAME_EN[name] || name
 
 
 // Volume・Trade Value 棒グラフ（MarketRank用）
@@ -184,7 +184,7 @@ function PickupStocks({ stocks, period }) {
               {/* Stock Name（必ず表示） */}
               <div style={{ fontSize:'13px', fontWeight:700, color:'var(--text)',
                 lineHeight:1.4 }}>
-                {sn(s.name) || s.ticker.replace('.T', '')}
+                {getStockName(s.name) || s.ticker.replace('.T', '')}
               </div>
               {/* スパークライン ④ 高さを拡大 */}
               {s.spark && s.spark.length >= 3 && (
@@ -279,7 +279,7 @@ function MrVolTvChart({ stocks }) {
           const pc = s.pct>=0?'var(--red)':'var(--green)'
           return (
             <div key={s.ticker} style={{ display:'grid', gridTemplateColumns:'110px 1fr 70px 56px', gap:'6px', alignItems:'center' }}>
-              <span style={{ fontSize:'11px', color:'var(--text2)', overflow:'hidden', textOverflow:'ellipsis', whiteSpace:'nowrap', textAlign:'right' }}>{sn(s.name)}</span>
+              <span style={{ fontSize:'11px', color:'var(--text2)', overflow:'hidden', textOverflow:'ellipsis', whiteSpace:'nowrap', textAlign:'right' }}>{getStockName(s.name)}</span>
               <div style={{ height:'12px', background:'rgba(255,255,255,0.04)', borderRadius:'3px', overflow:'hidden' }}>
                 <div style={{ height:'100%', width:`${w}%`, background:mode==='tv'?'#ff8c42':'#378ADD', borderRadius:'3px', opacity:0.85 }}/>
               </div>
@@ -574,7 +574,7 @@ function StockTable({ stocks: rawStocks, onAddToTheme }) {
                   </td>
                   <td style={{ ...tdL, fontWeight:600, color:'var(--text)', minWidth:'120px', background: i%2===0?'var(--bg2)':'var(--bg3)', position:'sticky', left:'32px', zIndex:2 }}>
                     <div style={{ fontSize:'10px', color:'var(--text3)', fontFamily:'var(--mono)', marginBottom:'1px' }}>{s.ticker.replace('.T','')}</div>
-                    <span style={{ fontSize:'13px', overflow:'hidden', textOverflow:'ellipsis', whiteSpace:'nowrap', display:'block' }}>{sn(s.name)}</span>
+                    <span style={{ fontSize:'13px', overflow:'hidden', textOverflow:'ellipsis', whiteSpace:'nowrap', display:'block' }}>{getStockName(s.name)}</span>
                   </td>
                   {/* ① ミニチャート列（固定なし・横スクロールで動く） */}
                   <td style={{ ...tdC, padding:'4px 8px', minWidth:'72px', width:'72px' }}>
@@ -595,7 +595,7 @@ function StockTable({ stocks: rawStocks, onAddToTheme }) {
                   <td style={{ ...tdR, fontFamily:'var(--mono)', color:'var(--text2)' }}>{formatLarge(s.trade_value)}</td>
                   <td style={tdC}>{s.tv_rank}</td>
                   <td style={tdC}>
-                    <button onClick={() => onAddToTheme && onAddToTheme({ ticker:s.ticker, name:sn(s.name), price:s.price })}
+                    <button onClick={() => onAddToTheme && onAddToTheme({ ticker:s.ticker, name:getStockName(s.name), price:s.price })}
                       title="Add to Custom Theme"
                       style={{ background:'rgba(74,158,255,0.1)', border:'1px solid rgba(74,158,255,0.25)',
                         borderRadius:'4px', color:'var(--accent)', cursor:'pointer', fontSize:'13px',
@@ -762,7 +762,7 @@ export default function MarketRank({ onNavigate }) {
           const ss = Array.isArray(json) ? json : (json.data ?? json.stocks ?? [])
           if (ss.length > 0) {
             const enriched = ss.map(s => ({
-              ...s, name: sn(tickerMap[s.ticker?.replace('.T','')] || s.name || s.ticker),
+              ...s, name: getStockName(tickerMap[s.ticker?.replace('.T','')] || s.name || s.ticker),
             }))
             setEtfDetail({ stocks: enriched, avg: enriched.reduce((s,x)=>s+(x.pct??0),0)/enriched.length })
             setEtfLoading(false); return
