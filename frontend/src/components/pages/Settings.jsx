@@ -94,10 +94,10 @@ export default function Settings({ viewMode, onViewModeChange, colorTheme, onCol
           <>
             <div style={{ display:'flex', alignItems:'center', gap:'12px', marginBottom:'14px', flexWrap:'wrap' }}>
               <span style={{ fontSize:'20px', fontWeight:800, color:planColor }}>{planLabel}</span>
-              {plan === 'pro_trial' && expiresAt && (
+              {plan === 'pro_trial' && (
                 <span style={{ fontSize:'11px', padding:'3px 10px', borderRadius:'20px',
                   background:'rgba(170,119,255,0.15)', color:'#aa77ff', border:'1px solid rgba(170,119,255,0.3)' }}>
-                  14-day free trial active — expires {expiresAt ? expiresAt.toLocaleDateString('en-US') : ''}
+                  14-day free trial active{expiresAt ? ' — expires ' + expiresAt.toLocaleDateString('en-US') : ''}
                 </span>
               )}
             </div>

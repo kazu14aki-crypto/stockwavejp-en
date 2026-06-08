@@ -2,6 +2,35 @@ import { useState } from 'react'
 
 // ── 銘柄版バブルチャート（テーマ詳細・Custom Theme共通） ──────────────────
 // ── 銘柄版バブルチャート（テーマ詳細用） ─────────────────────────────
+
+// Stock name translation for bubble chart
+const STOCK_NAME_EN_BUBBLE = {
+  '村田製作所':'Murata','アドバンテスト':'Advantest','東京エレクトロン':'Tokyo Electron',
+  'レーザーテック':'Lasertec','ディスコ':'Disco','ルネサス':'Renesas','TDK':'TDK',
+  'ソニーグループ':'Sony Group','日立製作所':'Hitachi','キーエンス':'Keyence',
+  'ファナック':'Fanuc','パナソニックHD':'Panasonic','三菱電機':'Mitsubishi Elec',
+  '富士通':'Fujitsu','NEC':'NEC','信越化学工業':'Shin-Etsu','SUMCO':'SUMCO',
+  '太陽誘電':'Taiyo Yuden','京セラ':'Kyocera','ローム':'Rohm','テルモ':'Terumo',
+  '武田薬品工業':'Takeda','アステラス製薬':'Astellas','中外製薬':'Chugai',
+  '第一三共':'Daiichi Sankyo','安川電機':'Yaskawa','オムロン':'Omron','SMC':'SMC',
+  '三菱重工業':'Mitsubishi HI','川崎重工業':'Kawasaki HI','IHI':'IHI',
+  'INPEX':'INPEX','NTT':'NTT','KDDI':'KDDI','ソフトバンクグループ':'SoftBank G',
+  'ソニー':'Sony','トヨタ自動車':'Toyota','ホンダ':'Honda','デンソー':'Denso',
+  '三菱UFJフィナンシャル':'MUFG','三井住友フィナンシャル':'SMFG',
+  'みずほフィナンシャル':'Mizuho','東京海上HD':'Tokio Marine',
+  '三菱商事':'Mitsubishi Corp','三井物産':'Mitsui & Co','伊藤忠商事':'Itochu',
+  '日本郵船':'Nippon Yusen','商船三井':'Mitsui OSK','ANAホールディングス':'ANA',
+  'SCREENホールディングス':'SCREEN','ニコン':'Nikon','ソシオネクスト':'Socionext',
+  '任天堂':'Nintendo','メルカリ':'Mercari','富士フイルムHD':'Fujifilm HD',
+  'ニデック':'Nidec','コマツ':'Komatsu','中部電力':'Chubu Elec',
+  '新日本製鐵':'Nippon Steel','JFEホールディングス':'JFE HD',
+  'ファーストリテイリング':'Fast Retail','セブン&アイ':'Seven & i',
+  'SBIホールディングス':'SBI HD','マネーフォワード':'Money Fwd',
+  '三菱地所':'Mitsubishi Est','三井不動産':'Mitsui Fudo',
+  '大成建設':'Taisei','鹿島建設':'Kajima',
+}
+const getStockNameBubble = (name) => STOCK_NAME_EN_BUBBLE[name] || name
+
 function StockBubbleChart({ stocks, themeName, onNavigate }) {
   const [hovered, setHovered] = useState(null)
 
@@ -10,7 +39,7 @@ function StockBubbleChart({ stocks, themeName, onNavigate }) {
   )
   if (filtered.length === 0) return (
     <div style={{ textAlign:'center', padding:'30px', color:'var(--text3)', fontSize:'13px' }}>
-      データを読み込み中...
+      Loading...
     </div>
   )
 
