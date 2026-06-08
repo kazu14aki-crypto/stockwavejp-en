@@ -3,7 +3,7 @@ import AddToThemeModal from '../AddToThemeModal.jsx'
 import StockBubbleChart from '../StockBubbleChart.jsx'
 import { useSegmentDetail, useMarketRankList } from '../../hooks/useMarketData.js'
 
-const SEG_NAME_EN = {"電機・精密": "Electronics & Precision", "情報通信": "Info & Telecom", "輸送用機器": "Transport Equipment", "機械": "Machinery", "医薬品": "Pharmaceuticals", "化学": "Chemicals", "素材": "Materials", "鉄鋼": "Steel", "食品": "Food", "小売": "Retail", "建設": "Construction", "不動産": "Real Estate", "金融": "Finance", "保険": "Insurance", "銀行": "Banking", "証券": "Securities", "エネルギー": "Energy", "サービス": "Services", "運輸": "Transportation", "通信": "Telecom", "プライム": "Prime", "スタンダード": "Standard", "グロース": "Growth", "国内主要株": "Major Stocks", "国内全般": "Domestic All"}
+const SEG_NAME_EN = {"国内主要株（101-150）": "Major Stocks (101-150)", "国内主要株（51-100）": "Major Stocks (51-100)", "国内主要株（上位50）": "Major Stocks (Top 50)", "グロース市場": "Growth Market", "スタンダード市場": "Standard Market", "プライム市場（小型株）": "Prime (Small)", "プライム市場（中型株）": "Prime (Mid)", "プライム市場（大型株）": "Prime (Large)", "上位101-150位": "Rank 101-150", "上位51-100位": "Rank 51-100", "時価総額上位50": "Top 50 by MktCap", "電機・精密": "Electronics & Precision", "情報通信": "Info & Telecom", "輸送用機器": "Transport Equipment", "機械": "Machinery", "医薬品": "Pharmaceuticals", "化学": "Chemicals", "素材": "Materials", "鉄鋼": "Steel", "食品": "Food", "小売": "Retail", "建設": "Construction", "不動産": "Real Estate", "金融": "Finance", "保険": "Insurance", "銀行": "Banking", "証券": "Securities", "エネルギー": "Energy", "サービス": "Services", "運輸": "Transportation", "通信": "Telecom", "プライム": "Prime", "スタンダード": "Standard", "グロース": "Growth", "国内主要株": "Major Stocks", "国内全般": "Domestic All"}
 const strans = (name) => SEG_NAME_EN[name] || name
 
 // Stock name translation (Japanese → English)
@@ -12,6 +12,51 @@ const STOCK_NAME_EN = {
   'レーザーテック':'Lasertec','ディスコ':'Disco','ルネサス':'Renesas',
   'TDK':'TDK','ソニーグループ':'Sony Group','日立製作所':'Hitachi',
   'キーエンス':'Keyence','ファナック':'Fanuc','パナソニックHD':'Panasonic HD',
+  'ソフトバンクG':'SoftBank G','ソフトバンク':'SoftBank',
+  '三菱UFJ FG':'MUFG','三菱UFJフィナンシャルG':'MUFG','三菱UFJフィナンシャル・グループ':'MUFG',
+  'みずほFG':'Mizuho FG','三井住友FG':'SMFG','三井住友フィナンシャルG':'SMFG',
+  'りそなHD':'Resona HD','住友金属鉱山':'Sumitomo Metal Min',
+  'リクルートHD':'Recruit HD','オリックス':'Orix','信越化学':'Shin-Etsu Chem',
+  'セブン＆アイ・HD':'Seven & i','セブン＆アイ':'Seven & i',
+  '東芝':'Toshiba','シャープ':'Sharp','三菱ケミカルG':'Mitsubishi Chem G',
+  '三菱電機':'Mitsubishi Elec','三菱UFJ':'MUFG','みずほ':'Mizuho',
+  '三井住友':'SMFG','東京海上':'Tokio Marine','第一生命':'Dai-ichi Life',
+  'オリックス':'Orix','村田製作所':'Murata','住友電工':'Sumitomo Elec',
+  '古河電工':'Furukawa Elec','住友電気工業':'Sumitomo Elec',
+  '三菱UFJ銀行':'MUFG Bank','野村HD':'Nomura HD','大和証券G':'Daiwa Sec G',
+  'NTTデータG':'NTT Data G','NTTデータ':'NTT Data',
+  'ソニーG':'Sony Group','トヨタ':'Toyota','デンソー':'Denso',
+  '本田技研工業':'Honda','マツダ':'Mazda','スズキ':'Suzuki',
+  '日立G':'Hitachi','三菱地所':'Mitsubishi Est','三井不動産':'Mitsui Fudosan',
+  '積水ハウス':'Sekisui House','住友不動産':'Sumitomo Realty',
+  '鹿島建設':'Kajima','清水建設':'Shimizu','大成建設':'Taisei',
+  '大林組':'Obayashi','戸田建設':'Toda Corp','西松建設':'Nishimatsu',
+  '中部電力':'Chubu Elec','関西電力':'Kansai Elec','東北電力':'Tohoku Elec',
+  '九州電力':'Kyushu Elec','北海道電力':'Hokkaido Elec',
+  '東京ガス':'Tokyo Gas','大阪ガス':'Osaka Gas','東邦ガス':'Toho Gas',
+  'JR東日本':'JR East','JR西日本':'JR West','JR東海':'JR Tokai',
+  'JR九州':'JR Kyushu','近鉄GHD':'Kintetsu GHD','東急':'Tokyu',
+  '阪急阪神HD':'Hankyu-Hanshin','小田急電鉄':'Odakyu','京王電鉄':'Keio',
+  '西武HD':'Seibu HD','東武鉄道':'Tobu','名古屋鉄道':'Nagoya Railroad',
+  'ANA HD':'ANA HD','JAL':'JAL','日本航空':'JAL',
+  '日本通運':'Nippon Express','ヤマトHD':'Yamato HD','SGホールディングス':'SG HD',
+  'ファミリーマート':'FamilyMart','ローソン':'Lawson','セブン-イレブン・ジャパン':'7-Eleven Japan',
+  'イトーヨーカ堂':'Ito-Yokado','ユニー':'UNY','ドン・キホーテ':'Don Quijote',
+  '武田薬品':'Takeda','アステラス':'Astellas','第一三共':'Daiichi Sankyo',
+  '塩野義製薬':'Shionogi','エーザイ':'Eisai','中外製薬':'Chugai',
+  '大塚HD':'Otsuka HD','久光製薬':'Hisamitsu','小野薬品':'Ono Pharma',
+  '旭化成':'Asahi Kasei','東レ':'Toray','帝人':'Teijin',
+  '東洋紡':'Toyobo','ユニチカ':'Unitika','クラレ':'Kuraray',
+  '日本製鉄':'Nippon Steel','神戸製鋼所':'Kobe Steel','JFE HD':'JFE HD',
+  '住友金属工業':'Sumitomo Metal','三菱マテリアル':'Mitsubishi Mat',
+  'DOWA HD':'DOWA HD','住友鉱山':'Sumitomo Mining',
+  'キリンHD':'Kirin HD','サッポロ HD':'Sapporo HD','アサヒGHD':'Asahi GHD',
+  '味の素':'Ajinomoto','日清食品HD':'Nissin Food HD','明治HD':'Meiji HD',
+  '日本ハム':'NH Foods','伊藤ハム米久HD':'Itoham HD',
+  'ニコン':'Nikon','キヤノン':'Canon','リコー':'Ricoh',
+  'コニカミノルタ':'Konica Minolta','セイコーエプソン':'Seiko Epson',
+  '凸版印刷':'Toppan','大日本印刷':'DNP',
+  'ゲンキー':'Genky','コスモス薬品':'Cosmos Pharma',
   '三菱電機':'Mitsubishi Electric','富士通':'Fujitsu','NEC':'NEC',
   'トヨタ自動車':'Toyota Motor','ホンダ':'Honda','日産自動車':'Nissan',
   '東芝':'Toshiba','シャープ':'Sharp','デンソー':'Denso',
@@ -859,7 +904,8 @@ export default function MarketRank({ onNavigate }) {
             <div style={{ display:'flex', gap:'6px', flexWrap:'wrap', padding:'12px 0', borderBottom:'1px solid var(--border)', marginBottom:'20px' }}>
               {(groups[activeGroup]||[]).map(seg=>{
                 const avg = summary?.[seg]?.pct
-                const shortName = seg.split('｜')[1] || seg.split('（')[0]
+                const rawShort = seg.split('｜')[1] || seg.split('（')[0]
+                const shortName = strans(rawShort) || strans(seg) || rawShort
                 return (
                   <button key={seg} onClick={()=>setActiveSeg(seg)} style={{
                     padding:'6px 14px', borderRadius:'6px', fontSize:'12px', cursor:'pointer',
@@ -885,7 +931,7 @@ export default function MarketRank({ onNavigate }) {
             ) : currentDetail ? (
               <div>
                 <div style={{ display:'flex', alignItems:'center', gap:'16px', marginBottom:'20px', flexWrap:'wrap' }}>
-                  <span style={{ fontSize:'16px', fontWeight:700, color:'var(--text)' }}>{activeSeg ? (activeSeg.split('｜')[1] || activeSeg) : ''}</span>
+                  <span style={{ fontSize:'16px', fontWeight:700, color:'var(--text)' }}>{activeSeg ? (strans(activeSeg.split('｜')[1] || activeSeg) : ''}</span>
                   <span style={{ fontSize:'15px', fontFamily:'var(--mono)', fontWeight:700,
                     color:detailAvg>=0?'var(--red)':'var(--green)' }}>
                     Avg {detailAvg>=0?'+':''}{detailAvg.toFixed(1)}%
