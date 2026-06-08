@@ -13,7 +13,10 @@ export default function PrivacyPolicy() {
       body: `Collected information is used for the following purposes:\n• Providing, operating, and improving this service\n• User authentication and Custom Theme feature\n• Service usage analysis and statistics (Google Analytics)`,
     },
     {
-      title: '4. Cookies',
+      title: '4. Affiliate Advertising',
+        body: `StockWaveJP participates in affiliate advertising programs (A8.net and similar). If you click a link and complete a purchase or registration, we may receive a commission. Revenue supports the operation of this service. We are not instructed by advertisers to recommend products. Ads do not influence investment recommendations.`,
+      },{
+        title: '5. Cookies',
       body: `This site uses cookies to improve user experience and analyze usage. Google Analytics uses cookies to collect traffic data. You can disable cookies in your browser settings, though some features may not function correctly.`,
     },
     {

@@ -3,7 +3,7 @@ import { useSubscription } from '../../hooks/useSubscription.jsx'
 import { useAuth }         from '../../hooks/useAuth.jsx'
 
 export default function Settings({ viewMode, onViewModeChange, colorTheme, onColorThemeChange, isMobile, onNavigate }) {
-  const { plan, planLabel, isPro, isStandard } = useSubscription()
+  const { plan, planLabel, isPro, isStandard, expiresAt } = useSubscription()
   const { isLoggedIn, user } = useAuth()
   const [cancelling,  setCancelling]  = useState(false)
   const [cancelDone,  setCancelDone]  = useState(false)
@@ -94,10 +94,10 @@ export default function Settings({ viewMode, onViewModeChange, colorTheme, onCol
           <>
             <div style={{ display:'flex', alignItems:'center', gap:'12px', marginBottom:'14px', flexWrap:'wrap' }}>
               <span style={{ fontSize:'20px', fontWeight:800, color:planColor }}>{planLabel}</span>
-              {plan === 'pro_trial' && (
+              {plan === 'pro_trial' && expiresAt && (
                 <span style={{ fontSize:'11px', padding:'3px 10px', borderRadius:'20px',
                   background:'rgba(170,119,255,0.15)', color:'#aa77ff', border:'1px solid rgba(170,119,255,0.3)' }}>
-                  14-day free trial active
+                  14-day free trial active — expires {expiresAt ? expiresAt.toLocaleDateString('en-US') : ''}
                 </span>
               )}
             </div>
@@ -118,7 +118,7 @@ export default function Settings({ viewMode, onViewModeChange, colorTheme, onCol
             )}
 
             {/* Cancel subscription button */}
-            {(plan === 'standard' || plan === 'pro') && !cancelDone && (
+            {(plan === 'standard' || plan === 'pro' || plan === 'pro_trial') && !cancelDone && (
               <div style={{ marginTop:'8px', padding:'14px', background:'rgba(255,100,100,0.08)',
                 border:'1px solid rgba(255,100,100,0.25)', borderRadius:'10px' }}>
                 <div style={{ fontSize:'13px', fontWeight:600, color:'#ff6464', marginBottom:'8px' }}>
