@@ -931,7 +931,7 @@ export default function MarketRank({ onNavigate }) {
             ) : currentDetail ? (
               <div>
                 <div style={{ display:'flex', alignItems:'center', gap:'16px', marginBottom:'20px', flexWrap:'wrap' }}>
-                  <span style={{ fontSize:'16px', fontWeight:700, color:'var(--text)' }}>{activeSeg ? (strans(activeSeg.split('｜')[1] || activeSeg) : ''}</span>
+                  <span style={{ fontSize:'16px', fontWeight:700, color:'var(--text)' }}>{activeSeg ? strans(activeSeg.split('｜')[1] || activeSeg) : ''}</span>
                   <span style={{ fontSize:'15px', fontFamily:'var(--mono)', fontWeight:700,
                     color:detailAvg>=0?'var(--red)':'var(--green)' }}>
                     Avg {detailAvg>=0?'+':''}{detailAvg.toFixed(1)}%
