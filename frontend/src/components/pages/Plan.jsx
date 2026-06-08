@@ -22,7 +22,7 @@ export default function Plan({ onNavigate }) {
       key: 'free',
       name: 'Free', color: '#4a9eff',
       badge: currentPlan === 'free' ? 'Current Plan' : null,
-      monthly: { price: '$0', label: 'Forever Free', perDay: null },
+      monthly: { price: '$0', label: 'Forever Free (with ads)', perDay: null },
       yearly:  null,
       features: [
         '67 themes real-time data',
