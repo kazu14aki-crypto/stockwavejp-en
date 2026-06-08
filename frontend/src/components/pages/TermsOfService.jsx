@@ -2,7 +2,7 @@ export default function TermsOfService() {
   const sections = [
     {
       title: '1. Acceptance of Terms',
-      body: `By accessing or using StockWaveJP ("the Service"), you agree to be bound by these Terms of Service ("Terms"). If you do not agree, please do not use the Service.`,
+      body: `By accessing or using StockWaveJP ("the Service"), you agree to be bound by these Terms of Service. If you do not agree, please do not use the Service.`,
     },
     {
       title: '2. Eligibility',
@@ -35,15 +35,15 @@ Cancellation: You may cancel at any time from your Settings page. Upon cancellat
 
 Refunds: Due to the digital nature of the Service, refunds are generally not provided. Exceptions may apply in cases of material service failure.
 
-Price Changes: We will provide 30 days` notice of price changes to registered email addresses.',
+Price Changes: We will provide 30 days notice of price changes to registered email addresses.`,
     },
     {
       title: '6. Intellectual Property',
-      body: `All content on the Service, including text, graphics, code, data, and user interface elements, is owned by StockWaveJP and protected by copyright, trademark, and other intellectual property laws. You may access the Service for personal, non-commercial use only. Reproduction, redistribution, or commercial exploitation is strictly prohibited without prior written consent.`,
+      body: `All content on the Service, including text, graphics, code, data, and user interface elements, is owned by StockWaveJP and protected by copyright and other intellectual property laws. You may access the Service for personal, non-commercial use only.`,
     },
     {
       title: '7. Financial Information Disclaimer',
-      body: `The Service provides market data and analytics tools for informational purposes only. Nothing on the Service constitutes financial, investment, tax, or legal advice. We are not registered as an investment advisor in Japan, the United States (SEC/FINRA), or any EU member state. Always conduct your own research and consult qualified professionals before making investment decisions.`,
+      body: `The Service provides market data and analytics tools for informational purposes only. Nothing on the Service constitutes financial, investment, tax, or legal advice. We are not registered as an investment advisor in Japan, the United States (SEC/FINRA), or any EU member state. Always consult qualified professionals before making investment decisions.`,
     },
     {
       title: '8. Disclaimer of Warranties',
@@ -51,7 +51,7 @@ Price Changes: We will provide 30 days` notice of price changes to registered em
     },
     {
       title: '9. Limitation of Liability',
-      body: `To the maximum extent permitted by applicable law, StockWaveJP and its operators shall not be liable for any indirect, incidental, special, exemplary, or consequential damages, including loss of profits, data, or goodwill, even if advised of the possibility of such damages.
+      body: `To the maximum extent permitted by applicable law, StockWaveJP and its operators shall not be liable for any indirect, incidental, special, exemplary, or consequential damages, including loss of profits, data, or goodwill.
 
 Our total liability shall not exceed the amount paid by you in the 12 months preceding the claim.`,
     },
@@ -61,11 +61,11 @@ Our total liability shall not exceed the amount paid by you in the 12 months pre
     },
     {
       title: '11. Governing Law and Dispute Resolution',
-      body: `These Terms are governed by the laws of Japan. Disputes shall be submitted to the exclusive jurisdiction of the Tokyo District Court as the court of first instance.
+      body: `These Terms are governed by the laws of Japan. Disputes shall be submitted to the exclusive jurisdiction of the Tokyo District Court.
 
-For EU consumers: Mandatory consumer protection laws of your home country may apply. You retain the right to bring disputes before an ADR (Alternative Dispute Resolution) body in your country.
+For EU consumers: Mandatory consumer protection laws of your home country may apply. You retain the right to bring disputes before an ADR body in your country.
 
-For US users: Applicable state law may apply in cases where federal or state consumer protection laws provide greater protection.`,
+For US users: Applicable state law may apply where federal or state consumer protection laws provide greater protection.`,
     },
     {
       title: '12. Severability',

@@ -2,17 +2,17 @@ export default function PrivacyPolicy() {
   const sections = [
     {
       title: '1. Introduction',
-      body: `StockWaveJP ("we," "our," or "the Service") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information in compliance with applicable laws including Japan`s Act on Protection of Personal Information (APPI), the EU General Data Protection Regulation (GDPR), and the California Consumer Privacy Act (CCPA).',
+      body: `StockWaveJP ("we," "our," or "the Service") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information in compliance with applicable laws including Japan's Act on Protection of Personal Information (APPI), the EU General Data Protection Regulation (GDPR), and the California Consumer Privacy Act (CCPA).`,
     },
     {
       title: '2. Information We Collect',
-      body: `Account Information: Email address (collected via Google OAuth authentication), authentication tokens (managed by Supabase).
+      body: `Account Information: Email address (collected via Google OAuth), authentication tokens managed by Supabase.
 
 Usage Data: IP address, browser type, OS, pages visited, time spent, and other access logs.
 
 User-Generated Content: Custom theme settings and saved investment data.
 
-Payment Information: Payment is processed by Stripe. We do not store your credit card information.`,
+Payment Information: Processed by Stripe. We do not store your credit card information.`,
     },
     {
       title: '3. How We Use Your Information',
@@ -38,8 +38,8 @@ EU users will be presented with a cookie consent mechanism. You can disable cook
       title: '5. Third-Party Services',
       body: `We share data with the following third parties as necessary to operate the Service:
 
-• Supabase (authentication and database, USA) — processes account data
-• Stripe (payment processing, USA) — processes payment information
+• Supabase (authentication and database, USA)
+• Stripe (payment processing, USA)
 • Google Analytics (USA) — anonymous usage analytics
 • A8.net (Japan) — affiliate marketing tracking
 • Render.com (USA) — API server hosting
@@ -48,7 +48,7 @@ All third parties are bound by data processing agreements and applicable privacy
     },
     {
       title: '6. International Data Transfers (GDPR)',
-      body: `If you are located in the EU/EEA, your personal data may be transferred to countries outside the EU, including the United States. Such transfers are governed by the European Commission`s Standard Contractual Clauses (SCCs) or other appropriate safeguards as required by GDPR Chapter V.',
+      body: `If you are located in the EU/EEA, your personal data may be transferred to countries outside the EU, including the United States. Such transfers are governed by the European Commission's Standard Contractual Clauses (SCCs) or other appropriate safeguards as required by GDPR Chapter V.`,
     },
     {
       title: '7. Data Retention',
@@ -62,26 +62,25 @@ Payment records: Retained for 7 years as required by law.`,
 
 • Right of Access: Request a copy of your personal data
 • Right to Rectification: Correct inaccurate information
-• Right to Erasure ("Right to be Forgotten"): Request deletion
+• Right to Erasure: Request deletion of your data
 • Right to Restrict Processing: Limit how we use your data
 • Right to Data Portability: Receive data in a machine-readable format
 • Right to Object: Object to certain processing activities
-• Right to Withdraw Consent: At any time for consent-based processing
 
-CCPA rights for California residents: Right to Know, Right to Delete, Right to Opt-Out of Sale. We do not sell personal data.
+California residents (CCPA): Right to Know, Right to Delete, Right to Opt-Out of Sale. We do not sell personal data.
 
-To exercise any right, contact us via the methods listed in Section 10.`,
+To exercise any right, contact us via the methods listed in Section 13.`,
     },
     {
       title: '9. Affiliate Advertising Disclosure',
-      body: `StockWaveJP participates in affiliate advertising programs, including A8.net. If you click a link on our site and complete a purchase or sign-up, we may receive a commission. This does not affect the price you pay or the objectivity of our content. Commissions help support the operation of this Service. We are never instructed by advertisers to recommend specific products or services.`,
+      body: `StockWaveJP participates in affiliate advertising programs, including A8.net. If you click a link on our site and complete a purchase or sign-up, we may receive a commission. This does not affect the price you pay or the objectivity of our content. We are never instructed by advertisers to recommend specific products or services.`,
     },
     {
       title: '10. Security',
       body: `We implement appropriate technical and organizational security measures including SSL/TLS encryption, access controls, and regular security assessments. However, no method of transmission over the Internet is 100% secure.`,
     },
     {
-      title: '11. Children's Privacy',
+      title: "11. Children's Privacy",
       body: `The Service is not directed to individuals under 18 years of age. We do not knowingly collect personal information from minors. If we become aware that a minor has provided personal data, we will delete it promptly.`,
     },
     {
@@ -90,12 +89,12 @@ To exercise any right, contact us via the methods listed in Section 10.`,
     },
     {
       title: '13. Contact Us',
-      body: `For privacy-related inquiries, to exercise your rights, or to lodge a complaint, please contact us:
+      body: `For privacy-related inquiries or to exercise your rights, please contact us:
 
 • X (Twitter): @StockWaveJP (DM)
 • In-app contact form
 
-We will respond within 30 days. EU users may also lodge a complaint with their national data protection authority (Supervisory Authority).`,
+We will respond within 30 days. EU users may also lodge a complaint with their national data protection authority.`,
     },
   ]
   return (
