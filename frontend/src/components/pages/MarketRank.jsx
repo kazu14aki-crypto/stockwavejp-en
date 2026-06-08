@@ -3,9 +3,49 @@ import AddToThemeModal from '../AddToThemeModal.jsx'
 import StockBubbleChart from '../StockBubbleChart.jsx'
 import { useSegmentDetail, useMarketRankList } from '../../hooks/useMarketData.js'
 
-const SEG_NAME_EN = {"国内主要株（101-150）": "Major Stocks (101-150)", "国内主要株（51-100）": "Major Stocks (51-100)", "国内主要株（上位50）": "Major Stocks (Top 50)", "グロース市場": "Growth Market", "スタンダード市場": "Standard Market", "プライム市場（小型株）": "Prime (Small)", "プライム市場（中型株）": "Prime (Mid)", "プライム市場（大型株）": "Prime (Large)", "上位101-150位": "Rank 101-150", "上位51-100位": "Rank 51-100", "時価総額上位50": "Top 50 by MktCap", "電機・精密": "Electronics & Precision", "情報通信": "Info & Telecom", "輸送用機器": "Transport Equipment", "機械": "Machinery", "医薬品": "Pharmaceuticals", "化学": "Chemicals", "素材": "Materials", "鉄鋼": "Steel", "食品": "Food", "小売": "Retail", "建設": "Construction", "不動産": "Real Estate", "金融": "Finance", "保険": "Insurance", "銀行": "Banking", "証券": "Securities", "エネルギー": "Energy", "サービス": "Services", "運輸": "Transportation", "通信": "Telecom", "プライム": "Prime", "スタンダード": "Standard", "グロース": "Growth", "国内主要株": "Major Stocks", "国内全般": "Domestic All"}
+const SEG_NAME_EN = {
+  // Segment tabs
+  "時価総額上位50": "Top 50 by Mkt Cap",
+  "上位51-100位": "Rank 51–100",
+  "上位101-150位": "Rank 101–150",
+  // Market categories
+  "プライム市場": "Prime Market",
+  "プライム市場（大型株）": "Prime (Large Cap)",
+  "プライム市場（中型株）": "Prime (Mid Cap)",
+  "プライム市場（小型株）": "Prime (Small Cap)",
+  "スタンダード市場": "Standard Market",
+  "グロース市場": "Growth Market",
+  "大型株": "Large Cap",
+  "中型株": "Mid Cap",
+  "小型株": "Small Cap",
+  // Industry
+  "電機・精密": "Electronics & Precision",
+  "情報通信": "Info & Telecom",
+  "輸送用機器": "Transport Equipment",
+  "機械": "Machinery",
+  "医薬品": "Pharmaceuticals",
+  "化学": "Chemicals",
+  "素材": "Materials",
+  "鉄鋼": "Steel",
+  "食品": "Food",
+  "小売": "Retail",
+  "建設": "Construction",
+  "不動産": "Real Estate",
+  "金融": "Finance",
+  "保険": "Insurance",
+  "銀行": "Banking",
+  "証券": "Securities",
+  "エネルギー": "Energy",
+  "サービス": "Services",
+  "運輸": "Transportation",
+  "通信": "Telecom",
+  "国内主要株": "Major Stocks",
+  "国内全般": "Domestic All",
+  "プライム": "Prime",
+  "スタンダード": "Standard",
+  "グロース": "Growth",
+}
 const strans = (name) => SEG_NAME_EN[name] || name
-
 // Stock name translation (Japanese → English)
 const STOCK_NAME_EN = {
   '村田製作所':'Murata Mfg','アドバンテスト':'Advantest','東京エレクトロン':'Tokyo Electron',
