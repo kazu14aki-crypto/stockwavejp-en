@@ -1,35 +1,12 @@
 import { useState } from 'react'
 
-// ── 銘柄版バブルチャート（テーマ詳細・Custom Theme共通） ──────────────────
-// ── 銘柄版バブルチャート（テーマ詳細用） ─────────────────────────────
-
-// Stock name translation for bubble chart
-const STOCK_NAME_EN_BUBBLE = {
-  '村田製作所':'Murata','アドバンテスト':'Advantest','東京エレクトロン':'Tokyo Electron',
-  'レーザーテック':'Lasertec','ディスコ':'Disco','ルネサス':'Renesas','TDK':'TDK',
-  'ソニーグループ':'Sony Group','日立製作所':'Hitachi','キーエンス':'Keyence',
-  'ファナック':'Fanuc','パナソニックHD':'Panasonic','三菱電機':'Mitsubishi Elec',
-  '富士通':'Fujitsu','NEC':'NEC','信越化学工業':'Shin-Etsu','SUMCO':'SUMCO',
-  '太陽誘電':'Taiyo Yuden','京セラ':'Kyocera','ローム':'Rohm','テルモ':'Terumo',
-  '武田薬品工業':'Takeda','アステラス製薬':'Astellas','中外製薬':'Chugai',
-  '第一三共':'Daiichi Sankyo','安川電機':'Yaskawa','オムロン':'Omron','SMC':'SMC',
-  '三菱重工業':'Mitsubishi HI','川崎重工業':'Kawasaki HI','IHI':'IHI',
-  'INPEX':'INPEX','NTT':'NTT','KDDI':'KDDI','ソフトバンクグループ':'SoftBank G',
-  'ソニー':'Sony','トヨタ自動車':'Toyota','ホンダ':'Honda','デンソー':'Denso',
-  '三菱UFJフィナンシャル':'MUFG','三井住友フィナンシャル':'SMFG',
-  'みずほフィナンシャル':'Mizuho','東京海上HD':'Tokio Marine',
-  '三菱商事':'Mitsubishi Corp','三井物産':'Mitsui & Co','伊藤忠商事':'Itochu',
-  '日本郵船':'Nippon Yusen','商船三井':'Mitsui OSK','ANAホールディングス':'ANA',
-  'SCREENホールディングス':'SCREEN','ニコン':'Nikon','ソシオネクスト':'Socionext',
-  '任天堂':'Nintendo','メルカリ':'Mercari','富士フイルムHD':'Fujifilm HD',
-  'ニデック':'Nidec','コマツ':'Komatsu','中部電力':'Chubu Elec',
-  '新日本製鐵':'Nippon Steel','JFEホールディングス':'JFE HD',
-  'ファーストリテイリング':'Fast Retail','セブン&アイ':'Seven & i',
-  'SBIホールディングス':'SBI HD','マネーフォワード':'Money Fwd',
-  '三菱地所':'Mitsubishi Est','三井不動産':'Mitsui Fudo',
-  '大成建設':'Taisei','鹿島建設':'Kajima',
+// Stock name translation (ticker-based, 400 stocks)
+const TICKER_TO_EN_B = {'1379':'ホクト','1407':'ウエストHD','1414':'ショーボンドHD','1605':'INPEX','1662':'石油資源開発','166A':'アクセルスペースHD','1720':'東急建設','1801':'Taisei','1802':'Obayashi','1803':'Shimizu','1808':'長谷工コーポレーション','1812':'Kajima','1815':'鉄建建設','1820':'西松建設','1860':'戸田建設','1861':'熊谷組','186A':'Astroscale','1878':'大東建託','1893':'五洋建設','1911':'住友林業','1925':'Daiwa House','1928':'Sekisui House','2124':'ジェイエイシーリクルートメント','2146':'UTグループ','2181':'パーソルHD','2206':'Ezaki Glico','2212':'山崎製パン','2269':'Meiji HD','2270':'Megmilk Snow Brand','2282':'NH Foods','2326':'デジタルアーツ','2331':'綜合警備保障（ALSOK）','2393':'日本ケアサプライ','2413':'エムスリー','2432':'DeNA','2492':'インフォマート','2502':'Asahi Group HD','2503':'Kirin HD','2587':'サントリー食品','2593':'Ito En','2602':'日清オイリオグループ','2664':'カワチ薬品','2674':'ハードオフコーポレーション','2678':'アスクル','2681':'ゲオHD','2780':'コメ兵HD','278A':'テラドローン','2796':'ファルマライズHD','2802':'Ajinomoto','2810':'ハウス食品','2811':'Kagome','285A':'キオクシアHD','2871':'ニチレイ','2897':'Nissin Food HD','3003':'ヒューリック','3088':'Matsukiyo Kokkomin HD','3092':'ZOZO','3093':'トレジャー・ファクトリー','3099':'三越伊勢丹HD','3110':'日東紡績','3132':'Macnica Holdings','3148':'クリエイトSDホールディングス','3231':'野村不動産HD','3283':'日本プロロジスリート投資法人','3289':'東急不動産HD','3349':'コスモス薬品','3382':'Seven & i','3391':'Tsuruha HD','3402':'Toray','3407':'Asahi Kasei','3436':'SUMCO','3494':'ウルトラファブリクス','3549':'クスリのアオキHD','3626':'TIS','3632':'グリー','3635':'コーエーテクモ','3659':'ネクソン','3662':'エイチーム','3692':'FFRIセキュリティ','3765':'Gungho','3769':'GMO PG','3774':'インターネットイニシアティブ','3778':'さくらインターネット','3807':'フィスコ','3861':'王子HD','3880':'大王製紙','3923':'ラクス','3932':'アカツキ','3984':'ユーザーローカル','3993':'PKSHA Technology','3994':'Money Forward','4004':'レゾナック','4005':'住友化学','4023':'クレハ','4028':'石原産業','4042':'東ソー','4047':'関東電化工業','4053':'freee','4063':'Shin-Etsu Chem','4088':'エア・ウォーター','4091':'大陽日酸','4109':'ステラケミファ','4118':'カネカ','4165':'プレイド','4186':'東京応化工業','4187':'大阪有機化学工業','4188':'三菱ケミカルグループ','4202':'ダイセル','4204':'積水化学工業','4205':'日本ゼオン','4208':'宇部興産','4259':'エクサウィザーズ','4307':'野村総合研究所','4385':'Mercari','4417':'グローバルセキュリティエキスパート','4443':'Sansan','4448':'Chatwork','4452':'花王','4477':'BASE','4480':'メドレー','4483':'JMDC','4488':'AI inside','4493':'サイバーセキュリティクラウド','4502':'武田薬品','4503':'Astellas','4507':'Shionogi','4516':'日本新薬','4519':'Chugai','4523':'Eisai','4528':'小野薬品','4530':'Hisamitsu Pharma','4534':'Mochida Pharma','4536':'Santen Pharma','4540':'ツムラ','4543':'Terumo','4565':'そーせいグループ','4568':'Daiichi Sankyo','4571':'ナノキャリア','4578':'大塚HD','4587':'ペプチドリーム','4612':'日本ペイントHD','4613':'関西ペイント','4616':'神東塗料','4617':'中国塗料','4619':'日本特殊塗料','4631':'DIC','4634':'東洋インキSCHD','4661':'オリエンタルランド','4667':'アイサンテクノロジー','4681':'リゾートトラスト','4684':'オービック','4689':'LINE（LINEヤフー）','4704':'トレンドマイクロ','4751':'サイバーエージェント','4755':'楽天グループ','4819':'デジタルガレージ','4848':'フルキャストHD','4849':'エン・ジャパン','4884':'クリングルファーマ','4901':'Fujifilm HD','4996':'クミアイ化学工業','4997':'日本農薬','5019':'Idemitsu','5020':'ENEOS HD','5021':'コスモエネルギーHD','5076':'テス・エンジニアリング','5201':'AGC','5202':'日本板硝子','5214':'日本電気硝子','5232':'住友大阪セメント','5233':'太平洋セメント','5269':'日本コンクリート工業','5332':'TOTO','5384':'フジミインコーポレーテッド','5393':'ニチアス','5401':'Nippon Steel','5406':'神戸製鋼所','5411':'JFE Holdings','5423':'東京製鐵','5444':'大和工業','5480':'日本冶金工業','5703':'日本軽金属HD','5706':'三井金属','5713':'Sumitomo Metal Mining','5714':'DOWA HD','5726':'大阪チタニウムテクノロジーズ','5727':'東邦チタニウム','5741':'UACJ','5801':'Furukawa Electric','5802':'Sumitomo Electric','5803':'フジクラ','5938':'LIXIL','6016':'ジャパンエンジンコーポレーション','6098':'リクルートHD','6135':'牧野フライス製作所','6141':'DMG森精機','6146':'Disco','6197':'ソラスト','6201':'Toyota Industries','6203':'豊和工業','6232':'ACSL','6257':'栗田工業','6268':'ナブテスコ','6273':'SMC','6301':'Komatsu','6302':'Sumitomo Heavy','6310':'井関農機','6326':'クボタ','6332':'月島ホールディングス','6361':'荏原製作所','6367':'ダイキン工業','6460':'セガサミー','6473':'ジェイテクト','6474':'不二越','6481':'THK','6501':'Hitachi','6503':'Mitsubishi Elec','6504':'富士電機','6506':'Yaskawa','6526':'Socionext','6547':'PHCホールディングス','6590':'芝浦メカトロニクス','6622':'ダイヘン','6627':'テラプローブ','6645':'Omron','6656':'エスペック','6666':'リバーエレテック','6674':'GSユアサ','6701':'NEC','6702':'Fujitsu','6707':'サンケン電気','6723':'Renesas','6752':'パナソニック','6753':'シャープ','6758':'Sony Group','6762':'TDK','6770':'Alps Alpine','6810':'マクセル','6844':'新電元工業','6857':'Advantest','6861':'Keyence','6866':'ヒオキ電機','6869':'シスメックス','6871':'マイクロニクス','6890':'フェローテック','6902':'Denso','6920':'Lasertec','6941':'山一電機','6951':'日本電子','6952':'カシオ計算機','6954':'Fanuc','6963':'Rohm','6965':'浜松ホトニクス','6971':'Kyocera','6981':'Murata Mfg','6988':'日東電工','6996':'ニチコン','7003':'Mitsui E&S','7004':'日立造船','7011':'Mitsubishi Heavy','7012':'Kawasaki HI','7013':'IHI','7014':'名村造船所','7022':'サノヤスHD','7030':'新来島どっく','7181':'Japan Post Insurance','7182':'ゆうちょ銀行','7186':'コンコルディアFG','7201':'Nissan','7203':'Toyota Motor','7211':'三菱自動車','7259':'Aisin','7261':'Mazda Motor','7267':'本田技研工業','7270':'Subaru Corp','7272':'Yamaha Motor','7383':'ネットプロテクションHD','7459':'Medipal HD','7532':'ドン・キホーテ（PPIH）','7649':'スギHD','7701':'島津製作所','7729':'東京精密','7731':'Nikon','7733':'オリンパス','7735':'SCREEN HD','7739':'キヤノン電子','7746':'岡本硝子','7751':'Canon','7762':'シチズン時計','7832':'バンダイナムコ','7833':'GMOフィナンシャルHD','7974':'Nintendo','8001':'Itochu','8002':'Marubeni','8031':'Mitsui & Co','8035':'Tokyo Electron','8050':'セイコーグループ','8053':'Sumitomo Corp','8056':'BIPROGY','8058':'Mitsubishi Corp','8086':'ニプロ','8088':'岩谷産業','8233':'高島屋','8267':'イオン（イオン銀行）','8304':'あおぞら銀行','8306':'三菱UFJ','8308':'りそな','8309':'三井住友トラストHD','8316':'三井住友','8331':'Chiba Bank','8336':'武蔵野銀行','8341':'Shichijushichi Bank','8346':'東邦銀行','8354':'ふくおかFG','8359':'八十二銀行','8366':'滋賀銀行','8377':'北陸銀行','8387':'四国銀行','8410':'セブン銀行','8411':'みずほ','8418':'山口FG','8473':'SBI HD','8515':'アイフル','8522':'名古屋銀行','8524':'Hokuyoh Bank','8591':'オリックス','8601':'Daiwa Securities','8604':'野村HD','8628':'松井証券','8630':'SOMPO HD','8698':'マネックスグループ','8725':'MS&AD','8750':'第一生命','8766':'Tokio Marine','8795':'T&Dホールディングス','8801':'Mitsui Fudosan','8802':'Mitsubishi Estate','8803':'平和不動産','8804':'東京建物','8830':'住友不動産','8848':'レオパレス21','9001':'Tobu Railway','9005':'Tokyu Corp','9020':'JR East','9024':'Seibu HD','9041':'Kintetsu Group','9042':'阪急阪神HD','9045':'Keihan HD','9064':'ヤマトHD','9067':'Suzuken','9069':'センコーグループHD','9101':'Nippon Yusen','9104':'Mitsui OSK','9107':'K Line','9119':'飯野海運','9143':'SG Holdings','9147':'NIPPON EXPRESSホールディングス','9171':'栗林商船','9201':'JAL','9202':'ANA HD','9233':'朝日航洋','9278':'ブックオフグループHD','9308':'乾汽船','9412':'スカパーJSATHD','9424':'日本通信','9432':'NTT','9433':'KDDI','9434':'SoftBank','9449':'GMOインターネット','9470':'学研HD','9474':'ゼンリン','9501':'TEPCO','9502':'Chubu Electric','9503':'Kansai Electric','9504':'中国電力','9505':'北陸電力','9506':'東北電力','9507':'四国電力','9508':'九州電力','9509':'北海道電力','9511':'沖縄電力','9513':'Jパワー','9517':'エネコーポレーション','9519':'レノバ','9531':'Tokyo Gas','9532':'Osaka Gas','9551':'メタウォーター','9603':'エイチ・アイ・エス','9627':'アインホールディングス','9684':'スクウェア・エニックス','9686':'東洋テック','9697':'カプコン','9708':'帝国ホテル','9722':'藤田観光','9735':'セコム','9766':'コナミ','9843':'Nitori HD','9983':'Fast Retailing','9984':'SoftBank Group','9989':'Sundrug'}
+const getBubbleName = (name, ticker) => {
+  if (!ticker) return name || ''
+  const code = String(ticker).replace('.T', '')
+  return TICKER_TO_EN_B[code] || name || code
 }
-const getStockNameBubble = (name) => STOCK_NAME_EN_BUBBLE[name] || name
 
 function StockBubbleChart({ stocks, themeName, onNavigate }) {
   const [hovered, setHovered] = useState(null)
@@ -148,7 +125,7 @@ function StockBubbleChart({ stocks, themeName, onNavigate }) {
                   <text x={cx} y={cy+3} textAnchor="middle"
                     fontSize={Math.min(9, r*0.55)} fill="white" fontWeight="600"
                     style={{ pointerEvents:'none' }}>
-                    {getStockNameBubble(s.name||s.ticker.replace('.T','')).slice(0,6)}
+                    {getBubbleName(s.name, s.ticker).slice(0,6)}
                   </text>
                 )}
               </g>
@@ -170,13 +147,13 @@ function StockBubbleChart({ stocks, themeName, onNavigate }) {
                 <circle cx={cx} cy={cy} r={r} fill={col} fillOpacity="0.9" stroke={col} strokeWidth="1.5" />
                 <text x={cx} y={cy+4} textAnchor="middle" fontSize="9" fill="white" fontWeight="700"
                   style={{ pointerEvents:'none' }}>
-                  {getStockNameBubble(s.name||s.ticker.replace('.T','')).slice(0,8)}
+                  {getBubbleName(s.name, s.ticker).slice(0,8)}
                 </text>
                 <g style={{ pointerEvents:'none' }}>
                   <rect x={tx} y={ty} width="185" height="82"
                     rx="8" fill="#1a1f2e" stroke="rgba(255,255,255,0.25)" strokeWidth="1.2" />
                   <text x={tx+10} y={ty+18} fontSize="12" fill="#e8f0ff" fontWeight="700">
-                    {getStockNameBubble(s.name||s.ticker.replace('.T','')).slice(0,16)}
+                    {getBubbleName(s.name, s.ticker).slice(0,16)}
                   </text>
                   <text x={tx+10} y={ty+36} fontSize="12" fill={col}>
                     {'Price Change %: ' + (s.pct >= 0 ? '+' : '') + (s.pct?.toFixed(2) ?? '-') + '%'}
