@@ -1,0 +1,220 @@
+{
+  "week": "2026-W24",
+  "date": "2026-06-12",
+  "generated_at": "2026-06-12T18:00:00+09:00",
+  "title": "Weekly Market Report | Jun 6-12, 2026",
+  "avg": -2.3,
+  "top_theme": "MLCC / Electronic Components",
+  "summary": "# 📊 Weekly Market Report | June 6–12, 2026\n\n---\n\n## 🇯🇵 Japan Equity Markets — Weekly Overview\n\nJapan's equity market entered a full correction phase this week following the historic year-to-date high of 68,786 (Nikkei 225, June 3). However, the decline was concentrated in AI/semiconductor leaders — a healthy rotation rather than a broad selloff.\n\n**Nikkei 225 Weekly Trajectory:**\n- Mon (6/8): Opened ~65,900, volatile on SQ (derivatives expiry)\n- Tue-Wed (6/9-10): Range-bound 64,800–65,200 zone\n- Thu (6/11): Closed 64,217 — apparent short-term floor\n- Fri (6/12): Rebounded to ~65,400 on Iran/geopolitical relief\n\n**Weekly change: -2,371 pts (-3.6%)** | Trading value remained elevated at Y12–15T/day.\n\n### Key Observations\n\n- Over 70% of TSE Prime stocks ROSE this week — a selective correction, not a broad breakdown\n- Major SQ (Special Quotation) expiry week amplified intraday volatility\n- Foreign investor profit-taking in AI/semicon; domestic retail buying defense and value names\n\n---\n\n## 🇺🇸 US Markets & Global Events\n\n### 🚀 SpaceX IPO (SPCX) — History Made Today\n\n- **IPO Price: $135/share** | **Raised: ~$75B** | **Valuation: ~$1.77T**\n- Demand 4x oversubscribed ($250B+ orders vs $75B offered)\n- 30% retail allocation — unprecedented for a mega-IPO\n- Comparable in scale to Tesla, Apple at their respective peaks\n\n### 🔧 Marvell Technology (MRVL) +25%+ Weekly\n\n- Nvidia CEO Jensen Huang called Marvell 'the next trillion-dollar company' at Computex (Taiwan)\n- Nvidia-Marvell AI custom chip (ASIC) partnership: revenue to exceed $10B by FY2029\n- Positive read-through for Japan's electronic component makers (Murata, TDK, Taiyo Yuden)\n\n### 🌐 Iran Geopolitical Risk: Easing\n\n- Trump cancelled planned strikes on Iran; peace deal signaled in principle\n- WTI crude dropped sharply\n- Thursday US session: Dow +1.86% (+923 pts), S&P 500 +1.75%, Nasdaq +2.54%\n\n---\n\n## 📊 Theme Performance Rankings (Week)\n\n### ▲ Top 5 Rising Themes\n\n### #1: MLCC / Electronic Components +10.2%\nDirect beneficiary of the Marvell/Nvidia AI partnership announcement. Japan's leading component suppliers (Murata, TDK, Taiyo Yuden) saw concentrated buying as Computex-driven AI capex enthusiasm spread through the supply chain.\n\n### #2: Defense & Aerospace +6.5%\nSustained by Iran tensions (even as easing), Trump's NATO defense spending demands, and PM Kishida's '17 Strategic Domains' policy that explicitly includes defense. Mitsubishi Heavy, Kawasaki HI, IHI led gains.\n\n### #3: Resources (LNG/Hydrogen) +4.1%\nWhile oil fell on Iran relief, LNG and natgas-linked names held firm on stable demand. European LNG export expansion and energy security themes provided a floor. INPEX led.\n\n### #4: Buffett Picks (Trading Companies) +3.2%\nRisk-on rotation into Berkshire-held Japanese trading companies (Mitsubishi Corp, Mitsui & Co, etc.). Yen weakness tailwind and stable commodity prices support earnings outlook.\n\n### #5: EV / Battery +2.8%\nReports of Chinese EV majors entering Japan market and EU EV subsidy continuations drove interest. Panasonic, Prime Earth EV Energy among gainers.\n\n---\n\n### ▼ Bottom 5 Falling Themes\n\n### #1: Rare Earth / Resources -7.9%\nChina signaled potential new rare earth export controls, reigniting supply chain fears for semiconductors and EVs. Sumitomo Metal Mining and Toho Titanium among hardest hit.\n\n### #2: Generative AI / AI Datacenter -6.8%\nProfit-taking after driving 5+ weeks of sharp gains. Fund rebalancing and quarter-end position adjustments added pressure. SoftBank Group, Nvidia-linked names at the center of selling.\n\n### #3: Semiconductor Equipment -5.4%\nTokyo Electron, Advantest, Lasertec gave back gains after last week's surge. Renewed China export restriction reports added to downward pressure.\n\n### #4: Quantum Computing -4.9%\nSpeculative buying from prior weeks unwound; skepticism about near-term commercialization timelines resurfaced.\n\n### #5: Crypto / Web3 -4.2%\nCapital rotated toward SpaceX IPO. Continued regulatory headwinds in major jurisdictions added pressure.\n\n---\n\n## 🔮 Next Week Watch List (Jun 15–19)\n\n### SPCX — History's Largest IPO: First Week Trading\nHow SpaceX prices at open and performs in its first week will create ripple effects: index inclusion demand, Nasdaq capital flows, and sentiment for Japan's space/AI-related names.\n\n### FOMC Meeting (Jun 17-18)\nRate hold widely expected (5.25-5.50%). Key: Powell's language on inflation trajectory and rate cut timing. Any hint of 2026 cuts = yen weakness and Japan equity tailwind. Hawkish surprise = risk-off.\n\n### Iran Peace Talks\nResolution = crude stays low = risk-on continuation. Breakdown = oil spike, defense bid, risk-off. Weekend headlines will set the tone for Monday open.\n\n### Japan Economic Data\n- Jun 16 (Mon): Bank of Japan May meeting minutes\n- Jun 18 (Wed): May Trade Statistics — export strength test\n- Jun 19 (Thu): National CPI (May) — most critical data point for BoJ rate path\n\n---\n\n## 💡 StockWaveJP Editorial View\n\nThis week's correction is a classic 'pause' after the historic 68,786 high — not a trend reversal.\n\n**Scenarios for Next Week:**\n\nBull Case (55% probability): SPCX strong open + Iran deal confirmed + FOMC neutral = Nikkei recovery to 66,000-68,000. MLCC/defense/trading company rotation sustains; AI names bottom and rebound.\n\nNeutral Case (30% probability): SPCX disappoints OR FOMC hawkish OR Iran re-escalates — Nikkei tests 64,000. 63,000-64,000 range acts as strong support; correction extends 1-2 more weeks.\n\nBear Case (15% probability): Multiple headwinds coincide — Nikkei tests 61,000-range. Medium-term trend intact; would represent a buy-the-dip opportunity rather than a trend change.\n\n> Informational only. Not investment advice. All investment decisions are your sole responsibility.",
+  "chart_data": {
+    "nikkei_weekly": [
+      {
+        "date": "6/3",
+        "close": 68786,
+        "label": "年初来高値"
+      },
+      {
+        "date": "6/6",
+        "close": 66588,
+        "label": ""
+      },
+      {
+        "date": "6/9",
+        "close": 65200,
+        "label": ""
+      },
+      {
+        "date": "6/10",
+        "close": 64800,
+        "label": ""
+      },
+      {
+        "date": "6/11",
+        "close": 64217,
+        "label": "底"
+      },
+      {
+        "date": "6/12",
+        "close": 65400,
+        "label": "反発"
+      }
+    ],
+    "theme_perf_jp": [
+      {
+        "theme": "MLCC・電子部品",
+        "pct": 10.2,
+        "rank": 1
+      },
+      {
+        "theme": "防衛・航空",
+        "pct": 6.5,
+        "rank": 2
+      },
+      {
+        "theme": "資源(LNG)",
+        "pct": 4.1,
+        "rank": 3
+      },
+      {
+        "theme": "バフェット銘柄",
+        "pct": 3.2,
+        "rank": 4
+      },
+      {
+        "theme": "蓄電池・EV",
+        "pct": 2.8,
+        "rank": 5
+      },
+      {
+        "theme": "仮想通貨",
+        "pct": -4.2,
+        "rank": -5
+      },
+      {
+        "theme": "量子コンピューター",
+        "pct": -4.9,
+        "rank": -4
+      },
+      {
+        "theme": "半導体製造装置",
+        "pct": -5.4,
+        "rank": -3
+      },
+      {
+        "theme": "生成AI",
+        "pct": -6.8,
+        "rank": -2
+      },
+      {
+        "theme": "レアアース",
+        "pct": -7.9,
+        "rank": -1
+      }
+    ],
+    "theme_perf_en": [
+      {
+        "theme": "MLCC/Electronics",
+        "pct": 10.2,
+        "rank": 1
+      },
+      {
+        "theme": "Defense",
+        "pct": 6.5,
+        "rank": 2
+      },
+      {
+        "theme": "LNG/Resources",
+        "pct": 4.1,
+        "rank": 3
+      },
+      {
+        "theme": "Buffett Picks",
+        "pct": 3.2,
+        "rank": 4
+      },
+      {
+        "theme": "EV/Battery",
+        "pct": 2.8,
+        "rank": 5
+      },
+      {
+        "theme": "Crypto/Web3",
+        "pct": -4.2,
+        "rank": -5
+      },
+      {
+        "theme": "Quantum",
+        "pct": -4.9,
+        "rank": -4
+      },
+      {
+        "theme": "Semicon Equip",
+        "pct": -5.4,
+        "rank": -3
+      },
+      {
+        "theme": "Gen AI",
+        "pct": -6.8,
+        "rank": -2
+      },
+      {
+        "theme": "Rare Earth",
+        "pct": -7.9,
+        "rank": -1
+      }
+    ],
+    "global": [
+      {
+        "index": "日経225",
+        "en": "Nikkei225",
+        "pct": -3.6
+      },
+      {
+        "index": "TOPIX",
+        "en": "TOPIX",
+        "pct": -2.8
+      },
+      {
+        "index": "NYダウ",
+        "en": "Dow Jones",
+        "pct": 1.2
+      },
+      {
+        "index": "S&P500",
+        "en": "S&P 500",
+        "pct": 1.8
+      },
+      {
+        "index": "Nasdaq",
+        "en": "Nasdaq",
+        "pct": 2.5
+      }
+    ],
+    "spacex": {
+      "price": 135,
+      "valuation": 1770,
+      "raised": 75,
+      "oversubscribed": 4
+    },
+    "scenarios_jp": [
+      {
+        "label": "強気",
+        "prob": 55,
+        "range": "66,000〜68,000円",
+        "color": "#ff4444"
+      },
+      {
+        "label": "中立",
+        "prob": 30,
+        "range": "64,000〜66,000円",
+        "color": "#ffd700"
+      },
+      {
+        "label": "弱気",
+        "prob": 15,
+        "range": "61,000〜64,000円",
+        "color": "#4a9eff"
+      }
+    ],
+    "scenarios_en": [
+      {
+        "label": "Bull",
+        "prob": 55,
+        "range": "66,000–68,000",
+        "color": "#ff4444"
+      },
+      {
+        "label": "Neutral",
+        "prob": 30,
+        "range": "64,000–66,000",
+        "color": "#ffd700"
+      },
+      {
+        "label": "Bear",
+        "prob": 15,
+        "range": "61,000–64,000",
+        "color": "#4a9eff"
+      }
+    ]
+  }
+}
