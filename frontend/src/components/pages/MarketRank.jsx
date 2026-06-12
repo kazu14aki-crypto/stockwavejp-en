@@ -77,8 +77,8 @@ function PickupStocks({ stocks, period }) {
       if (volChg >= 50)      parts.push('Volume surged +' + volChg.toFixed(0) + '% — strong inflows.')
       else if (volChg >= 20) parts.push('Volume +' + volChg.toFixed(0) + '% — growing interest.')
 
-      if (sparkAccel > 3)    parts.push('Price accelerating (+' + sparkAccel.toFixed(1) + '% back-half.)'),
-      else if (sparkAccel > 1) parts.push('Improving (+' + sparkAccel.toFixed(1) + '% back-half.)'),
+      if (sparkAccel > 3)    parts.push('Price accelerating (+' + sparkAccel.toFixed(1) + '% back-half.)')
+      else if (sparkAccel > 1) parts.push('Improving (+' + sparkAccel.toFixed(1) + '% back-half.)')
 
       if (tv >= 5e9)       parts.push('Trade Value ' + fmtL(tv) + ' — high liquidity blue-chip.')
       else if (tv >= 1e9)  parts.push('Trade Value ' + fmtL(tv) + ' — adequate liquidity.')
