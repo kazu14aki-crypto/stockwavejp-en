@@ -1,0 +1,126 @@
+{
+  "week": "2026-W24",
+  "date": "2026-06-12",
+  "generated_at": "2026-06-12T18:00:00+09:00",
+  "title": "Weekly Market Report | Jun 6-12, 2026",
+  "avg": -2.3,
+  "top_theme": "MLCC / Electronic Components",
+  "summary": "# Weekly Market Report | Jun 6-12, 2026\n\n## Japan Equity Markets\n\nJapan's market entered a consolidation after the YTD high of 68,786 (Jun 3).\n\n**Key Index Moves**\n- Nikkei 225: 66,588 to 64,217 (Jun 11) -- -2,371 pts (-3.6%)\n- TOPIX: ~3,924 to ~3,800 range\n- TSE Prime trading value: Y12-15T, remained elevated\n\n## Weekly Timeline\n\n**Jun 4-5: Profit-taking hits AI/Semiconductor leaders**\n- SoftBank Group, Tokyo Electron, Advantest led declines\n- 70%+ of listed stocks ROSE -- a selective, rotation-driven correction\n- Capital shifted to cyclicals, defense, resources\n\n**Jun 8-10: Major SQ week - derivatives volatility**\n- Nikkei oscillated 63,000-65,000 range on futures expiry noise\n\n**Jun 11: Geopolitical relief rally**\n- Trump cancelled Iran strikes; peace deal signaled\n- Dow +1.86%, S&P 500 +1.75%, Nasdaq +2.54%\n\n---\n\n## THE Event: SpaceX IPO (SPCX) -- June 12\n\nSpaceX debuted on Nasdaq today -- history's largest IPO.\n- IPO Price: $135/share (fixed-price, unconventional)\n- Total Raised: ~$75 billion\n- Valuation: ~$1.77 trillion (larger than Tesla on day one)\n- Oversubscription: 4x ($250B+ demand vs. $75B offered)\n- 30% retail investor allocation -- unprecedented for a mega-IPO\n\n**Marvell Technology (MRVL) +25%+**\n- Nvidia CEO Jensen Huang called Marvell 'the next trillion-dollar company' at Computex\n- AI custom chip revenue to exceed $10B by FY2029\n\n---\n\n## Theme Performance (Weekly)\n\n**Rising Themes**\n- MLCC / Electronic Components: +10.2% (Marvell halo + AI demand)\n- Defense & Aerospace: +6.5% (geopolitical spending theme)\n- Resources (LNG): +4.1% (stable prices, green transition)\n- Buffett Picks: +3.2% (rotation to trading cos. & banks)\n\n**Falling Themes**\n- Generative AI / AI Datacenter: -6.8% (profit-taking)\n- Semiconductor Equipment: -5.4% (mean reversion)\n- Rare Earth / Resources: -7.9% (China risk premium)\n\n---\n\n## Watch Points for Next Week\n\n1. SPCX first-week trading: Largest IPO in history -- index demand effects\n2. FOMC meeting: Rate hold expected; tone on inflation matters\n3. Iran peace deal: Confirmed = risk-on; breakdown = defensive positioning\n4. Japan pre-earnings: FY2027 guidance revisions from domestic corporates\n\n---\n\n## StockWaveJP Editorial View\n\nThis correction is a healthy pause. Easing geopolitical risk and the historic SpaceX IPO provide a constructive backdrop. Rotation into defense, MLCC, and trading companies looks durable. Theme selection into the potential recovery will be critical.\n\n> Informational only. Not investment advice. All decisions are your sole responsibility.",
+  "chart_data": {
+    "nikkei_weekly": [
+      {
+        "date": "6/6",
+        "close": 66588
+      },
+      {
+        "date": "6/9",
+        "close": 65200
+      },
+      {
+        "date": "6/10",
+        "close": 64800
+      },
+      {
+        "date": "6/11",
+        "close": 64217
+      },
+      {
+        "date": "6/12",
+        "close": 65400
+      }
+    ],
+    "theme_perf_jp": [
+      {
+        "theme": "MLCC・電子部品",
+        "pct": 10.2
+      },
+      {
+        "theme": "防衛・航空",
+        "pct": 6.5
+      },
+      {
+        "theme": "資源(LNG)",
+        "pct": 4.1
+      },
+      {
+        "theme": "バフェット銘柄",
+        "pct": 3.2
+      },
+      {
+        "theme": "生成AI",
+        "pct": -6.8
+      },
+      {
+        "theme": "半導体装置",
+        "pct": -5.4
+      },
+      {
+        "theme": "レアアース",
+        "pct": -7.9
+      }
+    ],
+    "theme_perf_en": [
+      {
+        "theme": "MLCC/Electronics",
+        "pct": 10.2
+      },
+      {
+        "theme": "Defense",
+        "pct": 6.5
+      },
+      {
+        "theme": "LNG/Resources",
+        "pct": 4.1
+      },
+      {
+        "theme": "Buffett Picks",
+        "pct": 3.2
+      },
+      {
+        "theme": "Gen AI",
+        "pct": -6.8
+      },
+      {
+        "theme": "Semicon Equip",
+        "pct": -5.4
+      },
+      {
+        "theme": "Rare Earth",
+        "pct": -7.9
+      }
+    ],
+    "global": [
+      {
+        "index": "日経225",
+        "en": "Nikkei225",
+        "pct": -3.6
+      },
+      {
+        "index": "NYダウ",
+        "en": "Dow Jones",
+        "pct": 1.2
+      },
+      {
+        "index": "S&P500",
+        "en": "S&P 500",
+        "pct": 1.8
+      },
+      {
+        "index": "Nasdaq",
+        "en": "Nasdaq",
+        "pct": 2.5
+      },
+      {
+        "index": "TOPIX",
+        "en": "TOPIX",
+        "pct": -2.8
+      }
+    ],
+    "spacex": {
+      "price": 135,
+      "valuation": 1770,
+      "raised": 75,
+      "oversubscribed": 4
+    }
+  }
+}
