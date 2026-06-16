@@ -1545,8 +1545,8 @@ export default function ThemeList({ onNavigate }) {
         @media (max-width:640px)  { .momentum-grid { grid-template-columns:repeat(2,1fr); } }
         @media (max-width:1024px) { .theme-card-grid { grid-template-columns:repeat(3,1fr); } }
         @media (max-width:640px)  { .theme-card-grid { grid-template-columns:repeat(2,1fr); } }
-        .theme-card-grid > * { min-width:0; overflow:hidden; }
-        @media (max-width:480px) { .theme-card-grid { grid-template-columns:1fr !important; } }
+        .theme-card-grid > * { min-width:0; overflow:hidden; box-sizing:border-box; }
+        @media (max-width:480px) { .theme-card-grid { grid-template-columns:repeat(2,1fr) !important; } }
         .top5-grid { grid-template-columns: 1fr 1fr !important; }
         @media (max-width: 640px) {
           .top5-grid { grid-template-columns: 1fr !important; }

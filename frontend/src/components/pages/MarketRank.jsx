@@ -21,7 +21,7 @@ const SEG_NAME_EN = {
 const strans = (name) => SEG_NAME_EN[name] || name
 const GROUP_LABEL = {
   '国内主要株':'Major Stocks','国内全般':'Domestic All',
-  '市場区分':'Market Segment','ETF':'ETF',
+  '市場区分':'Market Segment','ETF':'ETF','ADR':'Japan ADR (US-Listed)',
 }
 const gl = (key) => GROUP_LABEL[key] || key
 const TICKER_TO_EN = {'1379':'ホクト','1407':'ウエストHD','1414':'ショーボンドHD','1605':'INPEX','1662':'石油資源開発','166A':'アクセルスペースHD','1720':'東急建設','1801':'Taisei','1802':'Obayashi','1803':'Shimizu','1808':'長谷工コーポレーション','1812':'Kajima','1815':'鉄建建設','1820':'西松建設','1860':'戸田建設','1861':'熊谷組','186A':'Astroscale','1878':'大東建託','1893':'五洋建設','1911':'住友林業','1925':'Daiwa House','1928':'Sekisui House','2124':'ジェイエイシーリクルートメント','2146':'UTグループ','2181':'パーソルHD','2206':'Ezaki Glico','2212':'山崎製パン','2269':'Meiji HD','2270':'Megmilk Snow Brand','2282':'NH Foods','2326':'デジタルアーツ','2331':'綜合警備保障（ALSOK）','2393':'日本ケアサプライ','2413':'エムスリー','2432':'DeNA','2492':'インフォマート','2502':'Asahi Group HD','2503':'Kirin HD','2587':'サントリー食品','2593':'Ito En','2602':'日清オイリオグループ','2664':'カワチ薬品','2674':'ハードオフコーポレーション','2678':'アスクル','2681':'ゲオHD','2780':'コメ兵HD','278A':'テラドローン','2796':'ファルマライズHD','2802':'Ajinomoto','2810':'ハウス食品','2811':'Kagome','285A':'キオクシアHD','2871':'ニチレイ','2897':'Nissin Food HD','3003':'ヒューリック','3088':'Matsukiyo Kokkomin HD','3092':'ZOZO','3093':'トレジャー・ファクトリー','3099':'三越伊勢丹HD','3110':'日東紡績','3132':'Macnica Holdings','3148':'クリエイトSDホールディングス','3231':'野村不動産HD','3283':'日本プロロジスリート投資法人','3289':'東急不動産HD','3349':'コスモス薬品','3382':'Seven & i','3391':'Tsuruha HD','3402':'Toray','3407':'Asahi Kasei','3436':'SUMCO','3494':'ウルトラファブリクス','3549':'クスリのアオキHD','3626':'TIS','3632':'グリー','3635':'コーエーテクモ','3659':'ネクソン','3662':'エイチーム','3692':'FFRIセキュリティ','3765':'Gungho','3769':'GMO PG','3774':'インターネットイニシアティブ','3778':'さくらインターネット','3807':'フィスコ','3861':'王子HD','3880':'大王製紙','3923':'ラクス','3932':'アカツキ','3984':'ユーザーローカル','3993':'PKSHA Technology','3994':'Money Forward','4004':'レゾナック','4005':'住友化学','4023':'クレハ','4028':'石原産業','4042':'東ソー','4047':'関東電化工業','4053':'freee','4063':'Shin-Etsu Chem','4088':'エア・ウォーター','4091':'大陽日酸','4109':'ステラケミファ','4118':'カネカ','4165':'プレイド','4186':'東京応化工業','4187':'大阪有機化学工業','4188':'三菱ケミカルグループ','4202':'ダイセル','4204':'積水化学工業','4205':'日本ゼオン','4208':'宇部興産','4259':'エクサウィザーズ','4307':'野村総合研究所','4385':'Mercari','4417':'グローバルセキュリティエキスパート','4443':'Sansan','4448':'Chatwork','4452':'花王','4477':'BASE','4480':'メドレー','4483':'JMDC','4488':'AI inside','4493':'サイバーセキュリティクラウド','4502':'武田薬品','4503':'Astellas','4507':'Shionogi','4516':'日本新薬','4519':'Chugai','4523':'Eisai','4528':'小野薬品','4530':'Hisamitsu Pharma','4534':'Mochida Pharma','4536':'Santen Pharma','4540':'ツムラ','4543':'Terumo','4565':'そーせいグループ','4568':'Daiichi Sankyo','4571':'ナノキャリア','4578':'大塚HD','4587':'ペプチドリーム','4612':'日本ペイントHD','4613':'関西ペイント','4616':'神東塗料','4617':'中国塗料','4619':'日本特殊塗料','4631':'DIC','4634':'東洋インキSCHD','4661':'オリエンタルランド','4667':'アイサンテクノロジー','4681':'リゾートトラスト','4684':'オービック','4689':'LINE（LINEヤフー）','4704':'トレンドマイクロ','4751':'サイバーエージェント','4755':'楽天グループ','4819':'デジタルガレージ','4848':'フルキャストHD','4849':'エン・ジャパン','4884':'クリングルファーマ','4901':'Fujifilm HD','4996':'クミアイ化学工業','4997':'日本農薬','5019':'Idemitsu','5020':'ENEOS HD','5021':'コスモエネルギーHD','5076':'テス・エンジニアリング','5201':'AGC','5202':'日本板硝子','5214':'日本電気硝子','5232':'住友大阪セメント','5233':'太平洋セメント','5269':'日本コンクリート工業','5332':'TOTO','5384':'フジミインコーポレーテッド','5393':'ニチアス','5401':'Nippon Steel','5406':'神戸製鋼所','5411':'JFE Holdings','5423':'東京製鐵','5444':'大和工業','5480':'日本冶金工業','5703':'日本軽金属HD','5706':'三井金属','5713':'Sumitomo Metal Mining','5714':'DOWA HD','5726':'大阪チタニウムテクノロジーズ','5727':'東邦チタニウム','5741':'UACJ','5801':'Furukawa Electric','5802':'Sumitomo Electric','5803':'フジクラ','5938':'LIXIL','6016':'ジャパンエンジンコーポレーション','6098':'リクルートHD','6135':'牧野フライス製作所','6141':'DMG森精機','6146':'Disco','6197':'ソラスト','6201':'Toyota Industries','6203':'豊和工業','6232':'ACSL','6257':'栗田工業','6268':'ナブテスコ','6273':'SMC','6301':'Komatsu','6302':'Sumitomo Heavy','6310':'井関農機','6326':'クボタ','6332':'月島ホールディングス','6361':'荏原製作所','6367':'ダイキン工業','6460':'セガサミー','6473':'ジェイテクト','6474':'不二越','6481':'THK','6501':'Hitachi','6503':'Mitsubishi Elec','6504':'富士電機','6506':'Yaskawa','6526':'Socionext','6547':'PHCホールディングス','6590':'芝浦メカトロニクス','6622':'ダイヘン','6627':'テラプローブ','6645':'Omron','6656':'エスペック','6666':'リバーエレテック','6674':'GSユアサ','6701':'NEC','6702':'Fujitsu','6707':'サンケン電気','6723':'Renesas','6752':'パナソニック','6753':'シャープ','6758':'Sony Group','6762':'TDK','6770':'Alps Alpine','6810':'マクセル','6844':'新電元工業','6857':'Advantest','6861':'Keyence','6866':'ヒオキ電機','6869':'シスメックス','6871':'マイクロニクス','6890':'フェローテック','6902':'Denso','6920':'Lasertec','6941':'山一電機','6951':'日本電子','6952':'カシオ計算機','6954':'Fanuc','6963':'Rohm','6965':'浜松ホトニクス','6971':'Kyocera','6981':'Murata Mfg','6988':'日東電工','6996':'ニチコン','7003':'Mitsui E&S','7004':'日立造船','7011':'Mitsubishi Heavy','7012':'Kawasaki HI','7013':'IHI','7014':'名村造船所','7022':'サノヤスHD','7030':'新来島どっく','7181':'Japan Post Insurance','7182':'ゆうちょ銀行','7186':'コンコルディアFG','7201':'Nissan','7203':'Toyota Motor','7211':'三菱自動車','7259':'Aisin','7261':'Mazda Motor','7267':'本田技研工業','7270':'Subaru Corp','7272':'Yamaha Motor','7383':'ネットプロテクションHD','7459':'Medipal HD','7532':'ドン・キホーテ（PPIH）','7649':'スギHD','7701':'島津製作所','7729':'東京精密','7731':'Nikon','7733':'オリンパス','7735':'SCREEN HD','7739':'キヤノン電子','7746':'岡本硝子','7751':'Canon','7762':'シチズン時計','7832':'バンダイナムコ','7833':'GMOフィナンシャルHD','7974':'Nintendo','8001':'Itochu','8002':'Marubeni','8031':'Mitsui & Co','8035':'Tokyo Electron','8050':'セイコーグループ','8053':'Sumitomo Corp','8056':'BIPROGY','8058':'Mitsubishi Corp','8086':'ニプロ','8088':'岩谷産業','8233':'高島屋','8267':'イオン（イオン銀行）','8304':'あおぞら銀行','8306':'三菱UFJ','8308':'りそな','8309':'三井住友トラストHD','8316':'三井住友','8331':'Chiba Bank','8336':'武蔵野銀行','8341':'Shichijushichi Bank','8346':'東邦銀行','8354':'ふくおかFG','8359':'八十二銀行','8366':'滋賀銀行','8377':'北陸銀行','8387':'四国銀行','8410':'セブン銀行','8411':'みずほ','8418':'山口FG','8473':'SBI HD','8515':'アイフル','8522':'名古屋銀行','8524':'Hokuyoh Bank','8591':'オリックス','8601':'Daiwa Securities','8604':'野村HD','8628':'松井証券','8630':'SOMPO HD','8698':'マネックスグループ','8725':'MS&AD','8750':'第一生命','8766':'Tokio Marine','8795':'T&Dホールディングス','8801':'Mitsui Fudosan','8802':'Mitsubishi Estate','8803':'平和不動産','8804':'東京建物','8830':'住友不動産','8848':'レオパレス21','9001':'Tobu Railway','9005':'Tokyu Corp','9020':'JR East','9024':'Seibu HD','9041':'Kintetsu Group','9042':'阪急阪神HD','9045':'Keihan HD','9064':'ヤマトHD','9067':'Suzuken','9069':'センコーグループHD','9101':'Nippon Yusen','9104':'Mitsui OSK','9107':'K Line','9119':'飯野海運','9143':'SG Holdings','9147':'NIPPON EXPRESSホールディングス','9171':'栗林商船','9201':'JAL','9202':'ANA HD','9233':'朝日航洋','9278':'ブックオフグループHD','9308':'乾汽船','9412':'スカパーJSATHD','9424':'日本通信','9432':'NTT','9433':'KDDI','9434':'SoftBank','9449':'GMOインターネット','9470':'学研HD','9474':'ゼンリン','9501':'TEPCO','9502':'Chubu Electric','9503':'Kansai Electric','9504':'中国電力','9505':'北陸電力','9506':'東北電力','9507':'四国電力','9508':'九州電力','9509':'北海道電力','9511':'沖縄電力','9513':'Jパワー','9517':'エネコーポレーション','9519':'レノバ','9531':'Tokyo Gas','9532':'Osaka Gas','9551':'メタウォーター','9603':'エイチ・アイ・エス','9627':'アインホールディングス','9684':'スクウェア・エニックス','9686':'東洋テック','9697':'カプコン','9708':'帝国ホテル','9722':'藤田観光','9735':'セコム','9766':'コナミ','9843':'Nitori HD','9983':'Fast Retailing','9984':'SoftBank Group','9989':'Sundrug'}
@@ -662,7 +662,130 @@ export default function MarketRank() {
     setSummary(marketData.data)
     // ①「ETF」グループをmarket.jsonの外でフロント側に追加
     const baseGroups = marketData.groups || {}
-    const allGroups = {
+    
+// ─── Japanese ADR Data (US-listed Japanese stocks) ───────────────────────────
+const ADR_STOCKS = [
+  // Financials
+  { us:'MUFG',  jp:'8306', name:'MUFG',                 sector:'Banking',       mktcap:'$88B' },
+  { us:'SMFG',  jp:'8316', name:'SMFG',                 sector:'Banking',       mktcap:'$72B' },
+  { us:'MFG',   jp:'8411', name:'Mizuho Financial',     sector:'Banking',       mktcap:'$45B' },
+  { us:'OKTAY', jp:'8591', name:'Orix Corp',             sector:'Finance',       mktcap:'$19B' },
+  { us:'TKOMY', jp:'8766', name:'Tokio Marine',          sector:'Insurance',     mktcap:'$58B' },
+  // Technology & Electronics
+  { us:'SONY',  jp:'6758', name:'Sony Group',            sector:'Technology',    mktcap:'$97B' },
+  { us:'KYCCF', jp:'6971', name:'Kyocera',               sector:'Electronics',   mktcap:'$10B' },
+  { us:'FANUY', jp:'6954', name:'Fanuc',                 sector:'Machinery',     mktcap:'$28B' },
+  { us:'ATEYY', jp:'6857', name:'Advantest',             sector:'Semicon Test',  mktcap:'$32B' },
+  { us:'TOELY', jp:'8035', name:'Tokyo Electron',        sector:'Semicon Equip', mktcap:'$58B' },
+  { us:'SHECY', jp:'4063', name:'Shin-Etsu Chemical',    sector:'Chemicals',     mktcap:'$55B' },
+  { us:'HTHIY', jp:'6501', name:'Hitachi',               sector:'Industrial',    mktcap:'$78B' },
+  { us:'FJTSY', jp:'6702', name:'Fujitsu',               sector:'IT Services',   mktcap:'$25B' },
+  // Automotive
+  { us:'TM',    jp:'7203', name:'Toyota Motor',          sector:'Auto',          mktcap:'$235B' },
+  { us:'HMC',   jp:'7267', name:'Honda Motor',           sector:'Auto',          mktcap:'$38B' },
+  { us:'DSNKY', jp:'6902', name:'Denso',                 sector:'Auto Parts',    mktcap:'$46B' },
+  // Telecom & Internet
+  { us:'NTTYY', jp:'9432', name:'NTT',                   sector:'Telecom',       mktcap:'$55B' },
+  { us:'KDDIY', jp:'9433', name:'KDDI',                  sector:'Telecom',       mktcap:'$33B' },
+  { us:'SFTBY', jp:'9984', name:'SoftBank Group',        sector:'Telecom/VC',    mktcap:'$62B' },
+  // Trading & Energy
+  { us:'MITSY', jp:'8058', name:'Mitsubishi Corp',       sector:'Trading',       mktcap:'$62B' },
+  { us:'ITOCY', jp:'8001', name:'Itochu',                sector:'Trading',       mktcap:'$68B' },
+  { us:'IX',    jp:'8591', name:'Itochu (ADR alt.)',     sector:'Trading',       mktcap:'$20B' },
+  { us:'RCRUY', jp:'6098', name:'Recruit Holdings',      sector:'HR/Tech',       mktcap:'$78B' },
+  { us:'PCRFY', jp:'6752', name:'Panasonic Holdings',    sector:'Electronics',   mktcap:'$19B' },
+]
+
+function ADRSection() {
+  const [search, setSearch] = React.useState('')
+  const [sector, setSector] = React.useState('All')
+  const sectors = ['All', ...new Set(ADR_STOCKS.map(s => s.sector))]
+  const filtered = ADR_STOCKS.filter(s => {
+    const q = search.toLowerCase()
+    const matchSearch = !q || s.name.toLowerCase().includes(q) || s.us.toLowerCase().includes(q)
+    const matchSector = sector === 'All' || s.sector === sector
+    return matchSearch && matchSector
+  })
+  return (
+    <div style={{ padding:'20px 0' }}>
+      <div style={{ marginBottom:'14px', padding:'12px 16px', background:'rgba(74,158,255,0.06)',
+        border:'1px solid rgba(74,158,255,0.2)', borderRadius:'10px', fontSize:'12px', color:'var(--text2)', lineHeight:1.8 }}>
+        <strong style={{ color:'var(--accent)' }}>💡 About Japanese ADRs</strong><br/>
+        ADRs (American Depositary Receipts) allow you to invest in major Japanese companies directly through US stock exchanges (NYSE/Nasdaq).
+        Prices follow the Japanese stock and USD/JPY exchange rate. Click any ticker to view current price on Yahoo Finance.
+      </div>
+      <div style={{ display:'flex', gap:'8px', marginBottom:'14px', flexWrap:'wrap' }}>
+        <input
+          placeholder="Search by name or ticker..."
+          value={search}
+          onChange={e => setSearch(e.target.value)}
+          style={{ flex:1, minWidth:'160px', padding:'8px 12px', background:'var(--bg3)', border:'1px solid var(--border)',
+            borderRadius:'8px', color:'var(--text)', fontSize:'12px', fontFamily:'var(--font)' }}
+        />
+        <select value={sector} onChange={e => setSector(e.target.value)}
+          style={{ padding:'8px 10px', background:'var(--bg3)', border:'1px solid var(--border)',
+            borderRadius:'8px', color:'var(--text)', fontSize:'12px', fontFamily:'var(--font)' }}>
+          {sectors.map(s => <option key={s} value={s}>{s}</option>)}
+        </select>
+      </div>
+      <div style={{ overflowX:'auto' }}>
+        <table style={{ width:'100%', borderCollapse:'collapse', fontSize:'12px' }}>
+          <thead>
+            <tr style={{ borderBottom:'1px solid var(--border)' }}>
+              {['US Ticker','Company','Sector','Mkt Cap (USD)','JP Code','Links'].map(h => (
+                <th key={h} style={{ padding:'8px 10px', textAlign:'left', color:'var(--text3)',
+                  fontWeight:600, whiteSpace:'nowrap' }}>{h}</th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {filtered.map((s, i) => (
+              <tr key={s.us} style={{ borderBottom:'1px solid rgba(255,255,255,0.04)',
+                background: i % 2 === 0 ? 'transparent' : 'rgba(255,255,255,0.01)' }}>
+                <td style={{ padding:'9px 10px' }}>
+                  <a href={'https://finance.yahoo.com/quote/' + s.us} target="_blank" rel="noopener noreferrer"
+                    style={{ color:'var(--accent)', fontWeight:700, fontFamily:'var(--mono)', textDecoration:'none' }}>
+                    {s.us}
+                  </a>
+                </td>
+                <td style={{ padding:'9px 10px', color:'var(--text)', fontWeight:500 }}>{s.name}</td>
+                <td style={{ padding:'9px 10px' }}>
+                  <span style={{ padding:'2px 8px', borderRadius:'4px', fontSize:'10px', fontWeight:600,
+                    background:'rgba(74,158,255,0.1)', color:'var(--accent)' }}>{s.sector}</span>
+                </td>
+                <td style={{ padding:'9px 10px', color:'var(--text2)', fontFamily:'var(--mono)' }}>{s.mktcap}</td>
+                <td style={{ padding:'9px 10px', color:'var(--text3)', fontFamily:'var(--mono)' }}>{s.jp}</td>
+                <td style={{ padding:'9px 10px' }}>
+                  <div style={{ display:'flex', gap:'4px' }}>
+                    <a href={'https://finance.yahoo.com/quote/' + s.us} target="_blank" rel="noopener noreferrer"
+                      style={{ padding:'3px 7px', background:'rgba(74,158,255,0.1)', border:'1px solid rgba(74,158,255,0.3)',
+                        borderRadius:'4px', color:'var(--accent)', fontSize:'10px', textDecoration:'none' }}>Yahoo</a>
+                    <a href={'https://www.google.com/finance/quote/' + s.us + ':NYSE'} target="_blank" rel="noopener noreferrer"
+                      style={{ padding:'3px 7px', background:'rgba(255,255,255,0.06)', border:'1px solid var(--border)',
+                        borderRadius:'4px', color:'var(--text2)', fontSize:'10px', textDecoration:'none' }}>Google</a>
+                  </div>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        {filtered.length === 0 && (
+          <div style={{ padding:'24px', textAlign:'center', color:'var(--text3)', fontSize:'13px' }}>
+            No ADRs found for "{search}"
+          </div>
+        )}
+      </div>
+      <div style={{ marginTop:'12px', fontSize:'10px', color:'var(--text3)', lineHeight:1.7 }}>
+        * ADR prices are quoted in USD on US exchanges. Market cap data is approximate.
+        Trading hours differ from Tokyo Stock Exchange. ADRs may have different dividend treatment and fees.
+        Always check current prices via the links above. This is not investment advice.
+      </div>
+    </div>
+  )
+}
+
+const allGroups = {
+    'ADR': {},  // Rendered by ADRSection component
       ...baseGroups,
       'ETF': Object.keys(ETF_GROUPS),
     }
@@ -799,7 +922,9 @@ export default function MarketRank() {
           ))}
         </div>
 
-        {loadingS ? <Loading /> : (
+        {activeGroup === 'ADR' ? (
+          <ADRSection />
+        ) : loadingS ? <Loading /> : (
           <div>
             <div style={{ display:'flex', gap:'6px', flexWrap:'wrap', padding:'12px 0', borderBottom:'1px solid var(--border)', marginBottom:'20px' }}>
               {(groups[activeGroup]||[]).map(seg=>{
