@@ -31,28 +31,28 @@
   {
     "week": "2026-W23",
     "date": "2026/06/06",
-    "title": "Weekly Report | May 11-15, 2026",
+    "title": "Jun 2–6 Weekly Market Report",
     "generated_at": "2026/06/06 20:00 JST",
     "avg_pct_1w": 1.45,
     "top5_themes": [
       {
-        "theme": "MLCC・電子部品",
+        "theme": "MLCC / Electronic Components",
         "pct": 8.2
       },
       {
-        "theme": "AI半導体",
+        "theme": "AI Semiconductor",
         "pct": 7.1
       },
       {
-        "theme": "半導体製造装置",
+        "theme": "Semiconductor Equipment",
         "pct": 5.8
       },
       {
-        "theme": "メモリ",
+        "theme": "Memory",
         "pct": 5.3
       },
       {
-        "theme": "ウェアラブル端末",
+        "theme": "Wearables",
         "pct": 4.9
       }
     ]
@@ -60,88 +60,73 @@
   {
     "week": "2026-W22",
     "date": "2026/05/29",
-    "title": "Weekly Report | May 4-8, 2026",
+    "title": "5/25〜5/29 Weekly Market Report",
     "generated_at": "2026/05/29 20:00 JST",
-    "avg_pct_1w": 0.82,
-    "top5_themes": [
-      {
-        "theme": "MLCC・電子部品",
-        "pct": 9.4
-      },
-      {
-        "theme": "半導体製造装置",
-        "pct": 6.8
-      },
-      {
-        "theme": "防衛・航空",
-        "pct": 5.2
-      },
-      {
-        "theme": "AI半導体",
-        "pct": 4.9
-      },
-      {
-        "theme": "宇宙・衛星",
-        "pct": 4.1
-      }
-    ]
+    "avg_pct_1w": 0,
+    "top5_themes": []
   },
   {
     "week": "2026-W21",
     "date": "2026/05/22",
-    "title": "Weekly Report | Apr 27 - May 1, 2026",
+    "title": "5/18〜5/22 Weekly Market Report",
     "generated_at": "2026/05/22 20:00 JST",
-    "avg_pct_1w": 1.24,
-    "top5_themes": [
-      {
-        "theme": "防衛・航空",
-        "pct": 8.1
-      },
-      {
-        "theme": "宇宙・衛星",
-        "pct": 6.9
-      },
-      {
-        "theme": "サイバーセキュリティ",
-        "pct": 5.8
-      },
-      {
-        "theme": "次世代半導体",
-        "pct": 5.3
-      },
-      {
-        "theme": "ロボット・自動化",
-        "pct": 4.7
-      }
-    ]
+    "avg_pct_1w": 0,
+    "top5_themes": []
   },
   {
     "week": "2026-W20",
     "date": "2026/05/15",
-    "title": "Weekly Report | Apr 20-24, 2026",
+    "title": "5/11〜5/15 Weekly Market Report",
     "generated_at": "2026/05/15 20:00 JST",
-    "avg_pct_1w": 2.84,
-    "top5_themes": [
-      {
-        "theme": "防衛・航空",
-        "pct": 11.2
-      },
-      {
-        "theme": "宇宙・衛星",
-        "pct": 9.8
-      },
-      {
-        "theme": "半導体製造装置",
-        "pct": 8.6
-      },
-      {
-        "theme": "AI半導体",
-        "pct": 7.9
-      },
-      {
-        "theme": "サイバーセキュリティ",
-        "pct": 7.3
-      }
-    ]
+    "avg_pct_1w": 0,
+    "top5_themes": []
+  },
+  {
+    "week": "2026-W19",
+    "date": "2026/05/08",
+    "title": "5/4〜5/8 Weekly Market Report",
+    "generated_at": "2026/05/08 20:00 JST",
+    "avg_pct_1w": 0,
+    "top5_themes": []
+  },
+  {
+    "week": "2026-W18",
+    "date": "2026/05/01",
+    "title": "4/27〜5/1 Weekly Market Report",
+    "generated_at": "2026/05/01 20:00 JST",
+    "avg_pct_1w": 0,
+    "top5_themes": []
+  },
+  {
+    "week": "2026-W17",
+    "date": "2026/04/25",
+    "title": "Week of Apr 21–25: AI & Growth Themes Lead as Energy Pulls Back",
+    "generated_at": "",
+    "avg_pct_1w": 0,
+    "top5_themes": []
+  },
+  {
+    "week": "2026-W16",
+    "date": "2026/04/18",
+    "title": "Week of Apr 14–18: Semiconductor Testing Leads; Optical Communications Joins Top 5",
+    "generated_at": "",
+    "avg_pct_1w": 0,
+    "top5_themes": []
+  },
+  {
+    "week": "2026-W15",
+    "date": "2026/04/11",
+    "title": "Week of Apr 7–11: AI Breakout; Defensive and Infrastructure Themes Gain",
+    "generated_at": "",
+    "avg_pct_1w": 0,
+    "top5_themes": []
+  },
+  {
+    "week": "2026-W14",
+    "date": "2026/04/04",
+    "title": "Week of Mar 31 – Apr 4: Defense & Resilience Lead; Tech Consolidates",
+    "generated_at": "",
+    "avg_pct_1w": 0,
+    "top5_themes": []
   }
 ]

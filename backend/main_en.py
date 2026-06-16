@@ -304,7 +304,7 @@ def search_stocks(q: str = Query(default="")):
 stripe.api_key = os.environ.get("STRIPE_SECRET_KEY", "")
 
 PRICE_MAP = {
-    "standard_monthly": os.environ.get("STRIPE_PRICE_STANDARD_MONTHLY", ""),
+    "standard_monthly": os.environ.get("STRIPE_PRICE_STD_MONTHLY", ""),
     "pro_monthly":      os.environ.get("STRIPE_PRICE_PRO_MONTHLY", ""),
 }
 
