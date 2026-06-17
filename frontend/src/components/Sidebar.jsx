@@ -56,7 +56,7 @@ export default function Sidebar({ pages, pagesOther, currentPage, onPageChange, 
 
   // (see JP version)
   const LOCKED_PAGES = {
-    'Market Ranking':         !canAccess('market_detail'),
+    'Market Detail':         !canAccess('market_detail'),
     'Institutional Holdings': !canAccess('institutional'),
   }
 

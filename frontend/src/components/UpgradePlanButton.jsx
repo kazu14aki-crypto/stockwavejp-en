@@ -1,14 +1,24 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import { useAuth }         from '../hooks/useAuth.jsx'
 import { useSubscription } from '../hooks/useSubscription.jsx'
 
 const API = import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000'
+
+// バックエンドをウォームアップ（コールドスタート対策）
+let backendWarmed = false
+export function warmupBackend() {
+  if (backendWarmed) return
+  backendWarmed = true
+  fetch(`${API}/health`, { method:'GET' }).catch(() => {})
+}
 
 export default function UpgradePlanButton({ priceKey, label, color, disabled }) {
   const { user, isLoggedIn, signIn } = useAuth()
   const { plan: currentPlan }        = useSubscription()
   const [loading,      setLoading]      = useState(false)
   const [showOptions,  setShowOptions]  = useState(false)
+  const prefetchedUrl = useRef(null)
+  const prefetching   = useRef(false)
 
   const targetPlan  = priceKey.includes('pro') ? 'pro' : 'standard'
   const isDowngrade = currentPlan === 'pro' && targetPlan === 'standard'
@@ -23,7 +33,6 @@ export default function UpgradePlanButton({ priceKey, label, color, disabled }) 
     </div>
   )
 
-  // 現在のプランと同じ場合
   if (isActive) return (
     <div style={{ marginTop:'14px', padding:'10px', textAlign:'center',
       background:`${color}20`, border:`1px solid ${color}50`,
@@ -32,10 +41,38 @@ export default function UpgradePlanButton({ priceKey, label, color, disabled }) 
     </div>
   )
 
+  // hoverでpre-fetch（新規加入のみ。アップグレードはタイミング選択後）
+  const handleMouseEnter = async () => {
+    if (!isLoggedIn || isUpgrade || prefetching.current || prefetchedUrl.current) return
+    prefetching.current = true
+    try {
+      const res = await fetch(`${API}/api/stripe/create-checkout`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          price_key:   priceKey,
+          user_id:     user?.id || 'prefetch',
+          email:       user?.email || '',
+          success_url: window.location.origin,
+          cancel_url:  window.location.origin,
+          billing_timing: 'period_end',
+        }),
+      })
+      const data = await res.json()
+      if (data.url) prefetchedUrl.current = data.url
+    } catch {}
+    prefetching.current = false
+  }
+
   const doCheckout = async (timing) => {
     setLoading(true)
     setShowOptions(false)
     try {
+      // pre-fetchされたURLがあれば即使用
+      if (prefetchedUrl.current && timing === 'period_end') {
+        window.location.href = prefetchedUrl.current
+        return
+      }
       const res = await fetch(`${API}/api/stripe/create-checkout`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -45,12 +82,12 @@ export default function UpgradePlanButton({ priceKey, label, color, disabled }) 
           email:       user.email,
           success_url: window.location.origin,
           cancel_url:  window.location.origin,
-          billing_timing: timing,  // 'immediate' or 'period_end'
+          billing_timing: timing,
         }),
       })
       const data = await res.json()
       if (data.url) window.location.href = data.url
-      else throw new Error(data.error || 'Error')
+      else throw new Error(data.error || 'エラー')
     } catch (e) {
       console.error('Checkout error:', e)
       alert('Failed to load checkout page. Please try again later.')
@@ -61,12 +98,7 @@ export default function UpgradePlanButton({ priceKey, label, color, disabled }) 
 
   const handleClick = async () => {
     if (!isLoggedIn) { signIn(); return }
-    // スタンダード→プロへのアップグレードは即時 or 期間終了後を選択
-    if (isUpgrade) {
-      setShowOptions(true)
-      return
-    }
-    // その他（新規加入・ダウングレード）はそのまま
+    if (isUpgrade) { setShowOptions(true); return }
     doCheckout('period_end')
   }
 
@@ -81,16 +113,16 @@ export default function UpgradePlanButton({ priceKey, label, color, disabled }) 
 
   return (
     <div>
-      <button onClick={handleClick} disabled={loading} style={btnStyle}>
+      <button onClick={handleClick} onMouseEnter={handleMouseEnter}
+        disabled={loading} style={btnStyle}>
         {loading ? 'Loading...' :
          isLoggedIn ? (
            isDowngrade ? `Downgrade to ${label} →` :
            isUpgrade   ? `Upgrade to ${label} →` :
-           `Subscribe to ${label} →`
+           ` Subscribe to ${label} →`
          ) : '🔑 Sign In to Subscribe'}
       </button>
 
-      {/* Upgrade timing selection modal */}
       {showOptions && (
         <div style={{ position:'fixed', inset:0, background:'rgba(0,0,0,0.6)',
           zIndex:9999, display:'flex', alignItems:'center', justifyContent:'center',
@@ -98,7 +130,7 @@ export default function UpgradePlanButton({ priceKey, label, color, disabled }) 
           <div style={{ background:'var(--bg2)', border:'1px solid var(--border)',
             borderRadius:'16px', padding:'28px 24px', maxWidth:'400px', width:'100%' }}>
             <div style={{ fontSize:'16px', fontWeight:700, color:'var(--text)', marginBottom:'8px' }}>
-              🔄 プロプランへのアップグレード
+              🔄 Upgrade to Pro Plan
             </div>
             <div style={{ fontSize:'13px', color:'var(--text3)', marginBottom:'20px', lineHeight:1.7 }}>
               Select when to apply the upgrade.
@@ -110,7 +142,7 @@ export default function UpgradePlanButton({ priceKey, label, color, disabled }) 
                 cursor:'pointer', fontFamily:'var(--font)', textAlign:'left',
               }}>
                 <div style={{ fontSize:'13px', fontWeight:700, color:'#aa77ff', marginBottom:'4px' }}>
-                  ⚡ いますぐプロにアップグレード
+                  ⚡ Upgrade to Pro Now
                 </div>
                 <div style={{ fontSize:'11px', color:'var(--text3)', lineHeight:1.6 }}>
                   Switch to Pro immediately from today.<br/>
@@ -123,7 +155,7 @@ export default function UpgradePlanButton({ priceKey, label, color, disabled }) 
                 cursor:'pointer', fontFamily:'var(--font)', textAlign:'left',
               }}>
                 <div style={{ fontSize:'13px', fontWeight:700, color:'var(--accent)', marginBottom:'4px' }}>
-                  📅 現在の契約期間終了後にプロへ移行
+                  📅 Switch to Pro at Period End
                 </div>
                 <div style={{ fontSize:'11px', color:'var(--text3)', lineHeight:1.6 }}>
                   After the current Standard period ends,<br/>

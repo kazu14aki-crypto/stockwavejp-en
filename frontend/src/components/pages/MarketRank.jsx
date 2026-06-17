@@ -643,121 +643,126 @@ const ETF_GROUPS = {
   },
 }
 
+// ─── Japan ADR (US-Listed Japanese Stocks) ──────────────────────────────────
 const ADR_STOCKS = [
-  // Financials
-  { us:'MUFG',  jp:'8306', name:'MUFG',                 sector:'Banking',       mktcap:'$88B' },
-  { us:'SMFG',  jp:'8316', name:'SMFG',                 sector:'Banking',       mktcap:'$72B' },
-  { us:'MFG',   jp:'8411', name:'Mizuho Financial',     sector:'Banking',       mktcap:'$45B' },
-  { us:'OKTAY', jp:'8591', name:'Orix Corp',             sector:'Finance',       mktcap:'$19B' },
-  { us:'TKOMY', jp:'8766', name:'Tokio Marine',          sector:'Insurance',     mktcap:'$58B' },
-  // Technology & Electronics
-  { us:'SONY',  jp:'6758', name:'Sony Group',            sector:'Technology',    mktcap:'$97B' },
-  { us:'KYCCF', jp:'6971', name:'Kyocera',               sector:'Electronics',   mktcap:'$10B' },
-  { us:'FANUY', jp:'6954', name:'Fanuc',                 sector:'Machinery',     mktcap:'$28B' },
-  { us:'ATEYY', jp:'6857', name:'Advantest',             sector:'Semicon Test',  mktcap:'$32B' },
-  { us:'TOELY', jp:'8035', name:'Tokyo Electron',        sector:'Semicon Equip', mktcap:'$58B' },
-  { us:'SHECY', jp:'4063', name:'Shin-Etsu Chemical',    sector:'Chemicals',     mktcap:'$55B' },
-  { us:'HTHIY', jp:'6501', name:'Hitachi',               sector:'Industrial',    mktcap:'$78B' },
-  { us:'FJTSY', jp:'6702', name:'Fujitsu',               sector:'IT Services',   mktcap:'$25B' },
-  // Automotive
-  { us:'TM',    jp:'7203', name:'Toyota Motor',          sector:'Auto',          mktcap:'$235B' },
-  { us:'HMC',   jp:'7267', name:'Honda Motor',           sector:'Auto',          mktcap:'$38B' },
-  { us:'DSNKY', jp:'6902', name:'Denso',                 sector:'Auto Parts',    mktcap:'$46B' },
-  // Telecom & Internet
-  { us:'NTTYY', jp:'9432', name:'NTT',                   sector:'Telecom',       mktcap:'$55B' },
-  { us:'KDDIY', jp:'9433', name:'KDDI',                  sector:'Telecom',       mktcap:'$33B' },
-  { us:'SFTBY', jp:'9984', name:'SoftBank Group',        sector:'Telecom/VC',    mktcap:'$62B' },
-  // Trading & Energy
-  { us:'MITSY', jp:'8058', name:'Mitsubishi Corp',       sector:'Trading',       mktcap:'$62B' },
-  { us:'ITOCY', jp:'8001', name:'Itochu',                sector:'Trading',       mktcap:'$68B' },
-  { us:'IX',    jp:'8591', name:'Itochu (ADR alt.)',     sector:'Trading',       mktcap:'$20B' },
-  { us:'RCRUY', jp:'6098', name:'Recruit Holdings',      sector:'HR/Tech',       mktcap:'$78B' },
-  { us:'PCRFY', jp:'6752', name:'Panasonic Holdings',    sector:'Electronics',   mktcap:'$19B' },
+  { us:'MUFG',  jp:'8306', name:'MUFG',               sector:'Banking',       mktcap:'$88B',  note:'Mitsubishi UFJ Financial' },
+  { us:'SMFG',  jp:'8316', name:'SMFG',               sector:'Banking',       mktcap:'$72B',  note:'Sumitomo Mitsui Financial' },
+  { us:'MFG',   jp:'8411', name:'Mizuho Financial',   sector:'Banking',       mktcap:'$45B',  note:'Mizuho Financial Group' },
+  { us:'OKTAY', jp:'8591', name:'Orix',               sector:'Finance',       mktcap:'$19B',  note:'Diversified financial' },
+  { us:'TKOMY', jp:'8766', name:'Tokio Marine',       sector:'Insurance',     mktcap:'$58B',  note:'Non-life insurance leader' },
+  { us:'SONY',  jp:'6758', name:'Sony Group',         sector:'Technology',    mktcap:'$97B',  note:'Electronics & Entertainment' },
+  { us:'KYCCF', jp:'6971', name:'Kyocera',            sector:'Electronics',   mktcap:'$10B',  note:'Ceramics & components' },
+  { us:'FANUY', jp:'6954', name:'Fanuc',              sector:'Machinery',     mktcap:'$28B',  note:'Industrial robots & CNC' },
+  { us:'ATEYY', jp:'6857', name:'Advantest',          sector:'Semicon Test',  mktcap:'$32B',  note:'Semiconductor test equipment' },
+  { us:'TOELY', jp:'8035', name:'Tokyo Electron',     sector:'Semicon Equip', mktcap:'$58B',  note:'Semiconductor mfg equipment' },
+  { us:'SHECY', jp:'4063', name:'Shin-Etsu Chemical', sector:'Chemicals',     mktcap:'$55B',  note:'Silicon wafers & chemicals' },
+  { us:'HTHIY', jp:'6501', name:'Hitachi',            sector:'Industrial',    mktcap:'$78B',  note:'Infrastructure & IT' },
+  { us:'FJTSY', jp:'6702', name:'Fujitsu',            sector:'IT Services',   mktcap:'$25B',  note:'IT services & consulting' },
+  { us:'TM',    jp:'7203', name:'Toyota Motor',       sector:'Auto',          mktcap:'$235B', note:'Worlds largest automaker' },
+  { us:'HMC',   jp:'7267', name:'Honda Motor',        sector:'Auto',          mktcap:'$38B',  note:'Autos & motorcycles' },
+  { us:'DSNKY', jp:'6902', name:'Denso',              sector:'Auto Parts',    mktcap:'$46B',  note:'Toyota group auto supplier' },
+  { us:'NTTYY', jp:'9432', name:'NTT',                sector:'Telecom',       mktcap:'$55B',  note:'Japan largest telecom' },
+  { us:'KDDIY', jp:'9433', name:'KDDI',               sector:'Telecom',       mktcap:'$33B',  note:'Mobile & broadband' },
+  { us:'SFTBY', jp:'9984', name:'SoftBank Group',     sector:'Telecom/VC',    mktcap:'$62B',  note:'Telecom & global VC' },
+  { us:'MITSY', jp:'8058', name:'Mitsubishi Corp',    sector:'Trading',       mktcap:'$62B',  note:'Diversified trading company' },
+  { us:'ITOCY', jp:'8001', name:'Itochu',             sector:'Trading',       mktcap:'$68B',  note:'Diversified trading company' },
+  { us:'RCRUY', jp:'6098', name:'Recruit Holdings',   sector:'HR/Tech',       mktcap:'$78B',  note:'HR services (Indeed parent)' },
+  { us:'PCRFY', jp:'6752', name:'Panasonic',          sector:'Electronics',   mktcap:'$19B',  note:'Electronics & batteries' },
 ]
-
+const ADR_SECTOR_COLORS = {
+  'Banking':'#4a9eff','Finance':'#5baaff','Insurance':'#6bb4ff',
+  'Technology':'#ff4560','Electronics':'#ff6070','Machinery':'#ff8090',
+  'Semicon Test':'#aa77ff','Semicon Equip':'#bb88ff',
+  'Chemicals':'#39d353','Industrial':'#44d860','IT Services':'#ffd700',
+  'Auto':'#ff8c42','Auto Parts':'#ff9a55','Telecom':'#00d4aa',
+  'Telecom/VC':'#00e5bb','Trading':'#ff6b9d','HR/Tech':'#c975ff',
+}
 function ADRSection() {
   const [search, setSearch] = useState('')
   const [sector, setSector] = useState('All')
-  const sectors = ['All', ...new Set(ADR_STOCKS.map(s => s.sector))]
-  const filtered = ADR_STOCKS.filter(s => {
+  const allSectors = ['All', ...new Set(ADR_STOCKS.map(s => s.sector))]
+  const filtered   = ADR_STOCKS.filter(s => {
     const q = search.toLowerCase()
-    const matchSearch = !q || s.name.toLowerCase().includes(q) || s.us.toLowerCase().includes(q)
-    const matchSector = sector === 'All' || s.sector === sector
-    return matchSearch && matchSector
+    const matchQ = !q || s.name.toLowerCase().includes(q) || s.us.toLowerCase().includes(q) || s.jp.includes(q)
+    return matchQ && (sector === 'All' || s.sector === sector)
   })
   return (
-    <div style={{ padding:'20px 0' }}>
-      <div style={{ marginBottom:'14px', padding:'12px 16px', background:'rgba(74,158,255,0.06)',
-        border:'1px solid rgba(74,158,255,0.2)', borderRadius:'10px', fontSize:'12px', color:'var(--text2)', lineHeight:1.8 }}>
-        <strong style={{ color:'var(--accent)' }}>💡 About Japanese ADRs</strong><br/>
-        ADRs (American Depositary Receipts) allow you to invest in major Japanese companies directly through US stock exchanges (NYSE/Nasdaq).
-        Prices follow the Japanese stock and USD/JPY exchange rate. Click any ticker to view current price on Yahoo Finance.
+    <div>
+      <div style={{ padding:'12px 16px', background:'rgba(74,158,255,0.06)',
+        border:'1px solid rgba(74,158,255,0.18)', borderRadius:'10px',
+        fontSize:'12px', color:'var(--text2)', lineHeight:1.8, marginBottom:'14px' }}>
+        <strong style={{ color:'var(--accent)' }}>💡 Japan ADR — US-Listed Japanese Stocks</strong><br/>
+        ADRs (American Depositary Receipts) let you invest in major Japanese companies on NYSE/Nasdaq in USD.
+        Prices move with both the underlying JP stock and USD/JPY rate. Market cap data is approximate.
       </div>
-      <div style={{ display:'flex', gap:'8px', marginBottom:'14px', flexWrap:'wrap' }}>
-        <input
-          placeholder="Search by name or ticker..."
-          value={search}
-          onChange={e => setSearch(e.target.value)}
-          style={{ flex:1, minWidth:'160px', padding:'8px 12px', background:'var(--bg3)', border:'1px solid var(--border)',
-            borderRadius:'8px', color:'var(--text)', fontSize:'12px', fontFamily:'var(--font)' }}
+      <div style={{ display:'flex', gap:'6px', flexWrap:'wrap', marginBottom:'14px',
+        paddingBottom:'12px', borderBottom:'1px solid var(--border)' }}>
+        {allSectors.map(s => {
+          const col = ADR_SECTOR_COLORS[s] || 'var(--accent)'
+          return (
+            <button key={s} onClick={() => setSector(s)} style={{
+              padding:'5px 12px', borderRadius:'6px', fontSize:'11px', cursor:'pointer',
+              border:`1px solid ${sector===s ? col : 'var(--border)'}`,
+              background: sector===s ? col+'20' : 'transparent',
+              color: sector===s ? col : 'var(--text3)',
+              fontFamily:'var(--font)', transition:'all 0.15s', whiteSpace:'nowrap',
+            }}>{s} {s!=='All' && <span style={{ fontSize:'10px', opacity:0.7 }}>({ADR_STOCKS.filter(a=>a.sector===s).length})</span>}</button>
+          )
+        })}
+      </div>
+      <div style={{ marginBottom:'12px' }}>
+        <input placeholder="Search ticker, name, JP code..."
+          value={search} onChange={e => setSearch(e.target.value)}
+          style={{ width:'100%', padding:'8px 12px', background:'var(--bg3)',
+            border:'1px solid var(--border)', borderRadius:'8px',
+            color:'var(--text)', fontSize:'12px', fontFamily:'var(--font)',
+            boxSizing:'border-box', outline:'none' }}
         />
-        <select value={sector} onChange={e => setSector(e.target.value)}
-          style={{ padding:'8px 10px', background:'var(--bg3)', border:'1px solid var(--border)',
-            borderRadius:'8px', color:'var(--text)', fontSize:'12px', fontFamily:'var(--font)' }}>
-          {sectors.map(s => <option key={s} value={s}>{s}</option>)}
-        </select>
       </div>
       <div style={{ overflowX:'auto' }}>
         <table style={{ width:'100%', borderCollapse:'collapse', fontSize:'12px' }}>
           <thead>
-            <tr style={{ borderBottom:'1px solid var(--border)' }}>
-              {['US Ticker','Company','Sector','Mkt Cap (USD)','JP Code','Links'].map(h => (
+            <tr style={{ borderBottom:'2px solid var(--border)' }}>
+              {['#','US Ticker','Company','Sector','Mkt Cap (USD)','JP Code','Description'].map(h=>(
                 <th key={h} style={{ padding:'8px 10px', textAlign:'left', color:'var(--text3)',
-                  fontWeight:600, whiteSpace:'nowrap' }}>{h}</th>
+                  fontWeight:600, whiteSpace:'nowrap', fontSize:'11px' }}>{h}</th>
               ))}
             </tr>
           </thead>
           <tbody>
-            {filtered.map((s, i) => (
-              <tr key={s.us} style={{ borderBottom:'1px solid rgba(255,255,255,0.04)',
-                background: i % 2 === 0 ? 'transparent' : 'rgba(255,255,255,0.01)' }}>
-                <td style={{ padding:'9px 10px' }}>
-                  <a href={'https://finance.yahoo.com/quote/' + s.us} target="_blank" rel="noopener noreferrer"
-                    style={{ color:'var(--accent)', fontWeight:700, fontFamily:'var(--mono)', textDecoration:'none' }}>
-                    {s.us}
-                  </a>
-                </td>
-                <td style={{ padding:'9px 10px', color:'var(--text)', fontWeight:500 }}>{s.name}</td>
-                <td style={{ padding:'9px 10px' }}>
-                  <span style={{ padding:'2px 8px', borderRadius:'4px', fontSize:'10px', fontWeight:600,
-                    background:'rgba(74,158,255,0.1)', color:'var(--accent)' }}>{s.sector}</span>
-                </td>
-                <td style={{ padding:'9px 10px', color:'var(--text2)', fontFamily:'var(--mono)' }}>{s.mktcap}</td>
-                <td style={{ padding:'9px 10px', color:'var(--text3)', fontFamily:'var(--mono)' }}>{s.jp}</td>
-                <td style={{ padding:'9px 10px' }}>
-                  <div style={{ display:'flex', gap:'4px' }}>
-                    <a href={'https://finance.yahoo.com/quote/' + s.us} target="_blank" rel="noopener noreferrer"
-                      style={{ padding:'3px 7px', background:'rgba(74,158,255,0.1)', border:'1px solid rgba(74,158,255,0.3)',
-                        borderRadius:'4px', color:'var(--accent)', fontSize:'10px', textDecoration:'none' }}>Yahoo</a>
-                    <a href={'https://www.google.com/finance/quote/' + s.us + ':NYSE'} target="_blank" rel="noopener noreferrer"
-                      style={{ padding:'3px 7px', background:'rgba(255,255,255,0.06)', border:'1px solid var(--border)',
-                        borderRadius:'4px', color:'var(--text2)', fontSize:'10px', textDecoration:'none' }}>Google</a>
-                  </div>
-                </td>
-              </tr>
-            ))}
+            {filtered.map((s,i) => {
+              const col = ADR_SECTOR_COLORS[s.sector] || 'var(--accent)'
+              return (
+                <tr key={s.us} style={{ borderBottom:'1px solid rgba(255,255,255,0.04)',
+                  background:i%2===0?'transparent':'rgba(255,255,255,0.015)' }}>
+                  <td style={{ padding:'10px', color:'var(--text3)', fontSize:'11px' }}>{i+1}</td>
+                  <td style={{ padding:'10px' }}>
+                    <span style={{ color:'var(--accent)', fontWeight:800,
+                      fontFamily:'var(--mono)', fontSize:'13px' }}>{s.us}</span>
+                  </td>
+                  <td style={{ padding:'10px', color:'var(--text)', fontWeight:600 }}>{s.name}</td>
+                  <td style={{ padding:'10px' }}>
+                    <span style={{ padding:'2px 8px', borderRadius:'4px', fontSize:'10px',
+                      fontWeight:600, background:col+'18', color:col, whiteSpace:'nowrap' }}>{s.sector}</span>
+                  </td>
+                  <td style={{ padding:'10px', color:'var(--text2)', fontFamily:'var(--mono)', fontWeight:700 }}>{s.mktcap}</td>
+                  <td style={{ padding:'10px', color:'var(--text3)', fontFamily:'var(--mono)', fontSize:'11px' }}>{s.jp}</td>
+                  <td style={{ padding:'10px', color:'var(--text3)', fontSize:'11px', maxWidth:'180px' }}>{s.note}</td>
+                </tr>
+              )
+            })}
           </tbody>
         </table>
         {filtered.length === 0 && (
-          <div style={{ padding:'24px', textAlign:'center', color:'var(--text3)', fontSize:'13px' }}>
-            No ADRs found for "{search}"
+          <div style={{ padding:'32px', textAlign:'center', color:'var(--text3)' }}>
+            No stocks found for "{search || sector}"
           </div>
         )}
       </div>
-      <div style={{ marginTop:'12px', fontSize:'10px', color:'var(--text3)', lineHeight:1.7 }}>
-        * ADR prices are quoted in USD on US exchanges. Market cap data is approximate.
-        Trading hours differ from Tokyo Stock Exchange. ADRs may have different dividend treatment and fees.
-        Always check current prices via the links above. This is not investment advice.
+      <div style={{ marginTop:'12px', fontSize:'10px', color:'var(--text3)', lineHeight:1.7,
+        padding:'8px 12px', background:'var(--bg3)', borderRadius:'6px' }}>
+        ⚠ Market cap data is approximate (Jun 2026). ADR prices differ from JP domestic prices due to currency conversion.
+        Not investment advice. Always verify current data before making investment decisions.
       </div>
     </div>
   )
@@ -889,7 +894,7 @@ const allGroups = {
       )}
 
       <div className="page-header-sticky">
-        <h1 style={{ fontSize:'18px', fontWeight:700, color:'var(--text)', whiteSpace:'nowrap' }}>Market Ranking</h1>
+        <h1 style={{ fontSize:'18px', fontWeight:700, color:'var(--text)', whiteSpace:'nowrap' }}>Market Detail</h1>
         <select value={period} onChange={e=>setPeriod(e.target.value)} style={selStyle}>
           {PERIODS.map(p=><option key={p.value} value={p.value}>{p.label}</option>)}
         </select>

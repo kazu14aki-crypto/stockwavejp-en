@@ -29,7 +29,7 @@ const PAGES = [
   { icon:'📊', label:'Theme List',           component:ThemeList             },
   { icon:'🔥', label:'Heatmap',              component:Heatmap               },
   { icon:'🔍', label:'Theme Detail',         component:ThemeDetail           },
-  { icon:'📋', label:'Market Ranking',       component:MarketRank            },
+  { icon:'📋', label:'Market Detail',       component:MarketRank            },
   { icon:'🔍', label:'Stock Search',   component:StockSearch            },
   { icon:'🎨', label:'Custom Theme',         component:CustomTheme           },
   { icon:'🏦', label:'Institutional Holdings', component:InstitutionalHoldings, locked:true },
@@ -171,7 +171,7 @@ function AppInner() {
     if (currentPage === 'Theme Detail') return { onNavigate: handlePageChange, initialTheme: targetTheme, isMobile }
     if (currentPage === 'Heatmap') return { onNavigate: handlePageChange, isMobile }
     if (currentPage === 'Weekly Report') return { onNavigate: handlePageChange, isMobile }
-    if (currentPage === 'Market Ranking') return { onNavigate: handlePageChange, isMobile }
+    if (currentPage === 'Market Detail') return { onNavigate: handlePageChange, isMobile }
     return { isMobile }
   })()
 
@@ -213,7 +213,7 @@ function AppInner() {
             <PlanGate feature="institutional" onNavigate={handlePageChange}>
               <PageComponent {...pageProps} />
             </PlanGate>
-          ) : currentPage === 'Market Ranking' ? (
+          ) : currentPage === 'Market Detail' ? (
             <PlanGate feature="market_detail" onNavigate={handlePageChange}>
               <PageComponent {...pageProps} />
             </PlanGate>
