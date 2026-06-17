@@ -643,27 +643,6 @@ const ETF_GROUPS = {
   },
 }
 
-export default function MarketRank() {
-  const [modalStock,  setModalStock]  = useState(null)
-  const [period,      setPeriod]      = useState('1mo')
-  const [summary,     setSummary]     = useState(null)
-  const [groups,      setGroups]      = useState({})
-  const [activeGroup, setActiveGroup] = useState('国内主要株')
-  const [activeSeg,   setActiveSeg]   = useState(null)
-  const [detail,      setDetail]      = useState(null)
-  // ETF専用状態
-  const [etfDetail,   setEtfDetail]   = useState(null)
-  const [etfLoading,  setEtfLoading]  = useState(false)
-
-  const { data: marketData, loading: loadingS } = useMarketRankList(period)
-
-  useEffect(()=>{
-    if (!marketData) return
-    setSummary(marketData.data)
-    // ①「ETF」グループをmarket.jsonの外でフロント側に追加
-    const baseGroups = marketData.groups || {}
-    
-// ─── Japanese ADR Data (US-listed Japanese stocks) ───────────────────────────
 const ADR_STOCKS = [
   // Financials
   { us:'MUFG',  jp:'8306', name:'MUFG',                 sector:'Banking',       mktcap:'$88B' },
@@ -697,8 +676,8 @@ const ADR_STOCKS = [
 ]
 
 function ADRSection() {
-  const [search, setSearch] = React.useState('')
-  const [sector, setSector] = React.useState('All')
+  const [search, setSearch] = useState('')
+  const [sector, setSector] = useState('All')
   const sectors = ['All', ...new Set(ADR_STOCKS.map(s => s.sector))]
   const filtered = ADR_STOCKS.filter(s => {
     const q = search.toLowerCase()
@@ -783,6 +762,28 @@ function ADRSection() {
     </div>
   )
 }
+
+export default function MarketRank() {
+  const [modalStock,  setModalStock]  = useState(null)
+  const [period,      setPeriod]      = useState('1mo')
+  const [summary,     setSummary]     = useState(null)
+  const [groups,      setGroups]      = useState({})
+  const [activeGroup, setActiveGroup] = useState('国内主要株')
+  const [activeSeg,   setActiveSeg]   = useState(null)
+  const [detail,      setDetail]      = useState(null)
+  // ETF専用状態
+  const [etfDetail,   setEtfDetail]   = useState(null)
+  const [etfLoading,  setEtfLoading]  = useState(false)
+
+  const { data: marketData, loading: loadingS } = useMarketRankList(period)
+
+  useEffect(()=>{
+    if (!marketData) return
+    setSummary(marketData.data)
+    // ①「ETF」グループをmarket.jsonの外でフロント側に追加
+    const baseGroups = marketData.groups || {}
+    
+// ─── Japanese ADR Data (US-listed Japanese stocks) ───────────────────────────
 
 const allGroups = {
     'ADR': {},  // Rendered by ADRSection component

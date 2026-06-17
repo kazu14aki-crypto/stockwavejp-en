@@ -422,7 +422,7 @@ function BubbleScatterMini({ onNavigate }) {
                 onClick={()=>onNavigate&&onNavigate('Theme Detail',d.theme)}>
                 <circle cx={cx} cy={cy} r={r} fill={col} opacity="0.75" stroke={col} strokeWidth="0.5"/>
                 {r>14&&<text x={cx} y={cy+3} textAnchor="middle" fontSize="7" fill="white" fontWeight="600"
-                  style={{ pointerEvents:'none' }}>{d.theme.slice(0,5)}</text>}
+                  style={{ pointerEvents:'none' }}>{(tn(d.theme)||d.theme).slice(0,5)}</text>}
               </g>
             )
           })}
@@ -440,7 +440,7 @@ function BubbleScatterMini({ onNavigate }) {
                 {r>10&&<text x={cx} y={cy+3} textAnchor="middle" fontSize="8" fill="white" fontWeight="700" style={{ pointerEvents:'none' }}>{d.theme.slice(0,6)}</text>}
                 <g style={{ pointerEvents:'none' }}>
                   <rect x={tx} y={ty} width="164" height="74" rx="6" fill="#1a1f2e" stroke="rgba(255,255,255,0.2)" strokeWidth="1"/>
-                  <text x={tx+8} y={ty+16} fontSize="11" fill="#e8f0ff" fontWeight="700">{d.theme}</text>
+                  <text x={tx+8} y={ty+16} fontSize="11" fill="#e8f0ff" fontWeight="700">{tn(d.theme)||d.theme}</text>
                   <text x={tx+8} y={ty+32} fontSize="10" fill={col}>{'Return: '+(d.pct>=0?'+':'')+d.pct.toFixed(2)+'%'}</text>
                   <text x={tx+8} y={ty+47} fontSize="10" fill={(d.volume_chg??0)>=0?'#ff8c42':'#4a9eff'}>{'Vol.Chg: '+((d.volume_chg??0)>=0?'+':'')+(d.volume_chg??0).toFixed(0)+'%'}</text>
                   <text x={tx+8} y={ty+62} fontSize="10" fill="#8b949e">{'Trade Value: '+fmtL(d.trade_value)}</text>
@@ -1025,7 +1025,7 @@ function MonthlyLineChart({ data, months, onNavigate }) {
                 <g key={t}>
                   <rect x={PL + si * 160} y={PT - 22} width="12" height="12" rx="2" fill={col} opacity="0.85" />
                   <text x={PL + si * 160 + 16} y={PT - 12} fontSize="10" fill="rgba(255,255,255,0.75)">
-                    {t.length > 12 ? t.slice(0, 12) + '…' : t}
+                    {tn(t).length > 14 ? tn(t).slice(0, 14) + '…' : tn(t)}
                   </text>
                 </g>
               )
