@@ -3,6 +3,54 @@
   "date": "2026/05/01",
   "title": "4/27〜5/1 Weekly Market Report",
   "generated_at": "2026/05/01 20:00 JST",
-  "summary": "GW holiday week: 42/67 themes advanced (+2.31% avg). AI themes (SaaS +12.1%, Generative AI +10.8%) led. Capital concentrating in tech/AI.",
+  "summary": {
+    "avg_pct_1w": 2.31,
+    "rise_count": 42,
+    "fall_count": 25,
+    "top5_themes": [
+      {
+        "theme": "SaaS",
+        "pct": 12.1
+      },
+      {
+        "theme": "生成AI",
+        "pct": 10.8
+      },
+      {
+        "theme": "サイバーセキュリティ",
+        "pct": 9.2
+      },
+      {
+        "theme": "エッジAI",
+        "pct": 8.6
+      },
+      {
+        "theme": "AI半導体",
+        "pct": 7.4
+      }
+    ],
+    "bot5_themes": [
+      {
+        "theme": "LNG",
+        "pct": -5.1
+      },
+      {
+        "theme": "石油",
+        "pct": -4.3
+      },
+      {
+        "theme": "電力会社",
+        "pct": -3.8
+      },
+      {
+        "theme": "造船",
+        "pct": -3.2
+      },
+      {
+        "theme": "資源（水素・ヘリウム・水）",
+        "pct": -2.1
+      }
+    ]
+  },
   "report": "## Market Overview (Week of Apr 27–May 1, GW Holiday Week)\n\nA shortened trading week due to Golden Week. 42 of 67 themes (63%) advanced, average return +2.31%. Capital concentrating heavily in AI-related themes — particularly SaaS and Generative AI.\n\n---\n\n## Rising Themes\n\n### 🥇 #1: SaaS (+12.1%)\nStrong earnings from MoneyForward and Sansan. US rate cut expectations supported growth stocks broadly.\n\n### 🥈 #2: Generative AI (+10.8%)\nSoftBank Group announced expanded AI investment and deepened OpenAI ties, drawing large inflows from AI-focused funds.\n\n### 🥉 #3: Cybersecurity (+9.2%)\nWave of reported cyberattacks on Japanese corporations drove security demand higher. GMO Cybersecurity and Digital Arts hit year-to-date highs.\n\n### #4: Edge AI (+8.6%) / #5: AI Semiconductor (+7.4%)\nDistributed AI processing trend accelerated. Edge and embedded AI demand surging.\n\n---\n\n## Falling Themes\n\nEnergy themes (Oil & Gas, LNG) declined as Middle East risk premiums eased. Retail & E-Commerce pulled back on profit-taking.\n\n---\n\n## StockWaveJP Commentary\n\nCapital rotated clearly into high-growth AI themes during the holiday lull. SaaS earnings beats + SoftBank AI commitment = strong confirmation signal. Momentum shifted to 'Accelerating' for both Generative AI and SaaS.\n\n> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility."
 }

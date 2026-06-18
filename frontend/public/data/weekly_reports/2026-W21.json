@@ -3,6 +3,55 @@
   "date": "2026/05/22",
   "title": "5/18〜5/22 Weekly Market Report",
   "generated_at": "2026/05/22 20:00 JST",
-  "summary": "51/67 themes (76%) advanced (+3.14% avg). Nvidia earnings drove massive positive spillover. Semiconductor Equipment +11.2%.",
+  "summary": {
+    "avg_pct_1w": 1.24,
+    "rise_count": 38,
+    "fall_count": 29,
+    "total_themes": 67,
+    "top5_themes": [
+      {
+        "theme": "防衛・航空",
+        "pct": 8.1
+      },
+      {
+        "theme": "宇宙・衛星",
+        "pct": 6.9
+      },
+      {
+        "theme": "サイバーセキュリティ",
+        "pct": 5.8
+      },
+      {
+        "theme": "次世代半導体",
+        "pct": 5.3
+      },
+      {
+        "theme": "ロボット・自動化",
+        "pct": 4.7
+      }
+    ],
+    "bot5_themes": [
+      {
+        "theme": "石油",
+        "pct": -4.2
+      },
+      {
+        "theme": "LNG",
+        "pct": -3.6
+      },
+      {
+        "theme": "電力会社",
+        "pct": -2.9
+      },
+      {
+        "theme": "不動産",
+        "pct": -2.1
+      },
+      {
+        "theme": "地方銀行",
+        "pct": -1.8
+      }
+    ]
+  },
   "report": "## Market Overview (Week of May 19–23)\n\nStrong broad advance. 51 of 67 themes (76%) rose, average return +3.14%. Nvidia earnings drove massive positive spillover to Japanese AI supply chain stocks.\n\n---\n\n## Rising Themes\n\n### 🥇 #1: Semiconductor Equipment (+11.2%)\nNvidia massively beat earnings. Tokyo Electron (8035), Advantest (6857), Lasertec (6920) surged 8–15%.\n\n### 🥈 #2: AI Datacenter (+9.8%)\nNvidia guidance validates datacenter infrastructure investment acceleration globally.\n\n### 🥉 #3: Optical Communication (+8.4%)\nFujikura (5803) and Furukawa Electric (5801) hit 52-week highs on datacenter bandwidth demand validation.\n\n### Additional: Power Semiconductor (+7.1%), Physical AI (+6.9%), Edge AI (+6.3%)\n\n---\n\n## Falling Themes\n\nDefensive themes (Food & Beverage, Healthcare, Telecom) lagged in risk-on environment.\n\n---\n\n## StockWaveJP Commentary\n\nNvidia's earnings = quarterly catalyst for Japan's entire semiconductor ecosystem. Semiconductor Equipment, Optical Communication, AI Datacenter now in 'Accelerating' momentum — highest priority tracking category.\n\n> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility."
 }

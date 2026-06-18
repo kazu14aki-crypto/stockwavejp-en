@@ -417,7 +417,18 @@ function BubbleScatter({ data, mPeriod, setMPeriod, onNavigate }) {
                       y: cy - r - 6,
                     })
                   }}
-                  onClick={() => onNavigate && onNavigate('Theme Detail', d.theme)}
+                  onClick={(e) => {
+                  if ('ontouchstart' in window) {
+                    e.preventDefault()
+                    if (hovered?.theme === d.theme) {
+                      onNavigate && onNavigate('Theme Detail', d.theme)
+                    } else {
+                      setHovered(d)
+                    }
+                  } else {
+                    onNavigate && onNavigate('Theme Detail', d.theme)
+                  }
+                }}
                 >
                   <circle cx={cx} cy={cy} r={r}
                     fill={col} fillOpacity="0.75"
@@ -445,7 +456,18 @@ function BubbleScatter({ data, mPeriod, setMPeriod, onNavigate }) {
               <g key="hovered"
                 style={{ cursor: onNavigate ? 'pointer' : 'default' }}
                 onMouseEnter={() => setHovered(d)}
-                onClick={() => onNavigate && onNavigate('Theme Detail', d.theme)}
+                onClick={(e) => {
+                  if ('ontouchstart' in window) {
+                    e.preventDefault()
+                    if (hovered?.theme === d.theme) {
+                      onNavigate && onNavigate('Theme Detail', d.theme)
+                    } else {
+                      setHovered(d)
+                    }
+                  } else {
+                    onNavigate && onNavigate('Theme Detail', d.theme)
+                  }
+                }}
               >
                 <circle cx={cx} cy={cy} r={r + 3}
                   fill="none" stroke="white" strokeWidth="2" strokeOpacity="0.8" />
