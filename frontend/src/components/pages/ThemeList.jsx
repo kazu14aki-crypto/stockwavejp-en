@@ -329,7 +329,7 @@ function ExpandableChart({ title, children, showZoneDesc = false }) {
         }}>
           <div onClick={e => e.stopPropagation()} style={{
             background:'var(--bg)', borderRadius:'12px', border:'1px solid var(--border)',
-            padding:'16px', width:'min(80vw, 860px)', maxHeight:'80vh',
+            padding:'16px', width:'min(80vw, 860px)', maxHeight:'85vh',
             overflowY:'auto', position:'relative',
           }}>
             <div style={{ display:'flex', justifyContent:'space-between', alignItems:'center', marginBottom:'14px' }}>

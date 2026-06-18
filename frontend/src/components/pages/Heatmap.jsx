@@ -342,10 +342,10 @@ function BubbleScatter({ data, mPeriod, setMPeriod, onNavigate }) {
       {/* ゾーン説明 */}
       <div className="scatter-zone-desc">
         {[
-          { label:'🔥 Hot Zone (top-right)', desc:'Rising + Vol.Surge = Strongest Signal', color:'#ff5370' },
-          { label:'⚠️ Sell Pressure (top-left)',   desc:'Falling + Vol.Surge = Strong Selling',    color:'#00c48c' },
-          { label:'📈 Quiet Rising (bottom-right)',  desc:'Rising + Low Vol. = Gradual Rise',    color:'#ff8c42' },
-          { label:'❄️ Quiet Falling (bottom-left)',  desc:'Weak but low conviction',             color:'#4a9eff' },
+          { label:'🔥 Hot Zone (top-right)', desc:'Rising + Volume surge = strongest signal', color:'#ff5370' },
+          { label:'⚠️ Sell Pressure (top-left)',   desc:'Falling + Volume surge = strong selling',    color:'#00c48c' },
+          { label:'📈 Quiet Rise (bottom-right)',  desc:'Rising + low volume = gradual rise',    color:'#ff8c42' },
+          { label:'❄️ Quiet Fall (bottom-left)',  desc:'Weak but no conviction',             color:'#4a9eff' },
         ].map(z => (
           <div key={z.label} style={{ display:'flex', alignItems:'center', gap:'5px' }}>
             <div style={{ width:'8px', height:'8px', borderRadius:'50%', background:z.color, flexShrink:0 }} />

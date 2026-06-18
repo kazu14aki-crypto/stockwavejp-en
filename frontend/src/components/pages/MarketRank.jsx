@@ -17,6 +17,40 @@ const SEG_NAME_EN = {
   '保険':'Insurance','銀行':'Banking','証券':'Securities','エネルギー':'Energy','サービス':'Services',
   '運輸':'Transportation','通信':'Telecom','技術':'Technology','消費':'Consumer',
   'ディフェンシブ':'Defensive','景気敏感':'Cyclical','国内主要株':'Major Stocks','国内全般':'Domestic All',
+  '資本財・その他':'Capital Goods & Other',
+  '運輸・公共':'Transport & Utilities',
+  '素材・化学':'Materials & Chemicals',
+  '金融・不動産':'Finance & Real Estate',
+  '情報・通信':'Info & Communication',
+  '消費財・サービス':'Consumer & Services',
+  '電気機器':'Electrical Equipment',
+  '精密機器':'Precision Instruments',
+  'その他製品':'Other Products',
+  'サービス業':'Services',
+  '水産・農林業':'Fishery & Forestry',
+  '鉱業':'Mining',
+  '繊維製品':'Textiles',
+  'パルプ・紙':'Pulp & Paper',
+  'ゴム製品':'Rubber Products',
+  'ガラス・土石製品':'Glass & Ceramics',
+  '非鉄金属':'Non-ferrous Metals',
+  '金属製品':'Metal Products',
+  '電気・ガス業':'Electric & Gas Utilities',
+  '倉庫・運輸関連業':'Warehouse & Transport',
+  '卸売業':'Wholesale Trade',
+  'その他金融業':'Other Finance',
+  '石油・石炭製品':'Oil & Coal Products',
+  '空運業':'Air Transport',
+  '海運業':'Marine Transport',
+  '陸運業':'Land Transport',
+  '情報・通信業':'Info & Communication',
+  '証券・商品先物取引業':'Securities & Commodities',
+  '銀行業':'Banking Industry',
+  '保険業':'Insurance Industry',
+  '不動産業':'Real Estate Industry',
+  '建設業':'Construction Industry',
+  '食料品':'Foods',
+  '小売業':'Retail Industry',
 }
 const strans = (name) => SEG_NAME_EN[name] || name
 const GROUP_LABEL = {
@@ -28,7 +62,10 @@ const TICKER_TO_EN = {'1379':'Hokuto Corp','1407':'West Holdings','1414':'Shobon
 const getStockName = (name, ticker) => {
   if (!ticker) return name || ''
   const code = String(ticker).replace('.T', '')
-  return TICKER_TO_EN[code] || name || code
+  if (TICKER_TO_EN[code]) return TICKER_TO_EN[code]
+  // If name contains Japanese characters, show ticker code instead
+  if (/[\u3040-\u9fff\u30a0-\u30ff]/.test(name || '')) return code
+  return name || code
 }
 
 

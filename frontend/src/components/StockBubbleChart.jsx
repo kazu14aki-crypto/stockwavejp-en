@@ -5,7 +5,9 @@ const TICKER_TO_EN_B = {'1379':'Hokuto Corp','1407':'West Holdings','1414':'Shob
 const getBubbleName = (name, ticker) => {
   if (!ticker) return name || ''
   const code = String(ticker).replace('.T', '')
-  return TICKER_TO_EN_B[code] || name || code
+  if (TICKER_TO_EN_B[code]) return TICKER_TO_EN_B[code]
+  if (/[\u3040-\u9fff\u30a0-\u30ff]/.test(name || '')) return code
+  return name || code
 }
 
 function StockBubbleChart({ stocks, themeName, onNavigate }) {
