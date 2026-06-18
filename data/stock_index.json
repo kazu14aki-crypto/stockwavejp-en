@@ -2,7 +2,7 @@
   "6857": {
     "code": "6857",
     "ticker": "6857.T",
-    "name": "Advantest",
+    "name": "Advantest Corp",
     "themes": [
       "Semiconductor Equipment",
       "Semiconductor Testing",
@@ -18,7 +18,7 @@
   "6656": {
     "code": "6656",
     "ticker": "6656.T",
-    "name": "エスペック",
+    "name": "ESPEC Corp",
     "themes": [
       "Semiconductor Equipment"
     ],
@@ -29,7 +29,7 @@
   "7729": {
     "code": "7729",
     "ticker": "7729.T",
-    "name": "東京精密",
+    "name": "Tokyo Seimitsu",
     "themes": [
       "Semiconductor Equipment",
       "Semiconductor Testing"
@@ -41,7 +41,7 @@
   "6920": {
     "code": "6920",
     "ticker": "6920.T",
-    "name": "Lasertec",
+    "name": "Lasertec Corp",
     "themes": [
       "Semiconductor Equipment",
       "Semiconductor Testing",
@@ -55,7 +55,7 @@
   "6146": {
     "code": "6146",
     "ticker": "6146.T",
-    "name": "Disco",
+    "name": "DISCO Corp",
     "themes": [
       "Semiconductor Equipment",
       "Next-Gen Semiconductor",
@@ -68,7 +68,7 @@
   "6890": {
     "code": "6890",
     "ticker": "6890.T",
-    "name": "フェローテック",
+    "name": "Ferrotec Holdings",
     "themes": [
       "Semiconductor Equipment"
     ],
@@ -109,7 +109,7 @@
   "6951": {
     "code": "6951",
     "ticker": "6951.T",
-    "name": "日本電子",
+    "name": "JEOL Ltd",
     "themes": [
       "Semiconductor Equipment",
       "Semiconductor Testing",
@@ -124,7 +124,7 @@
   "6590": {
     "code": "6590",
     "ticker": "6590.T",
-    "name": "芝浦メカトロニクス",
+    "name": "Shibaura Mechatronics",
     "themes": [
       "Semiconductor Equipment"
     ],
@@ -135,7 +135,7 @@
   "3494": {
     "code": "3494",
     "ticker": "3494.T",
-    "name": "ウルトラファブリクス",
+    "name": "Ultrafabrics Holdings",
     "themes": [
       "Semiconductor Equipment"
     ],
@@ -146,7 +146,7 @@
   "7751": {
     "code": "7751",
     "ticker": "7751.T",
-    "name": "Canon",
+    "name": "Canon Inc",
     "themes": [
       "Semiconductor Equipment"
     ],
@@ -170,7 +170,7 @@
   "6866": {
     "code": "6866",
     "ticker": "6866.T",
-    "name": "ヒオキ電機",
+    "name": "Hioki E.E.",
     "themes": [
       "Semiconductor Testing"
     ],
@@ -181,7 +181,7 @@
   "6871": {
     "code": "6871",
     "ticker": "6871.T",
-    "name": "マイクロニクス",
+    "name": "Micronics Japan",
     "themes": [
       "Semiconductor Testing"
     ],
@@ -192,7 +192,7 @@
   "6666": {
     "code": "6666",
     "ticker": "6666.T",
-    "name": "リバーエレテック",
+    "name": "River Eletec",
     "themes": [
       "Semiconductor Testing"
     ],
@@ -203,7 +203,7 @@
   "6861": {
     "code": "6861",
     "ticker": "6861.T",
-    "name": "Keyence",
+    "name": "Keyence Corp",
     "themes": [
       "Semiconductor Testing",
       "Physical AI",
@@ -217,7 +217,7 @@
   "6941": {
     "code": "6941",
     "ticker": "6941.T",
-    "name": "山一電機",
+    "name": "Yamaichi Electronics",
     "themes": [
       "Semiconductor Testing"
     ],
@@ -228,7 +228,7 @@
   "6627": {
     "code": "6627",
     "ticker": "6627.T",
-    "name": "テラプローブ",
+    "name": "TeraPower (TeraProbe)",
     "themes": [
       "Semiconductor Testing"
     ],
@@ -239,7 +239,7 @@
   "6645": {
     "code": "6645",
     "ticker": "6645.T",
-    "name": "Omron",
+    "name": "Omron Corp",
     "themes": [
       "Semiconductor Testing",
       "Physical AI",
@@ -253,7 +253,7 @@
   "5214": {
     "code": "5214",
     "ticker": "5214.T",
-    "name": "日本電気硝子",
+    "name": "Nippon Electric Glass",
     "themes": [
       "Semiconductor Materials",
       "All-Solid-State Battery",
@@ -267,7 +267,7 @@
   "4187": {
     "code": "4187",
     "ticker": "4187.T",
-    "name": "大阪有機化学工業",
+    "name": "Osaka Organic Chemical",
     "themes": [
       "Semiconductor Materials"
     ],
@@ -278,7 +278,7 @@
   "4004": {
     "code": "4004",
     "ticker": "4004.T",
-    "name": "レゾナック",
+    "name": "Showa Denko (Resonac)",
     "themes": [
       "Semiconductor Materials",
       "Energy Storage",
@@ -291,7 +291,7 @@
   "3436": {
     "code": "3436",
     "ticker": "3436.T",
-    "name": "SUMCO",
+    "name": "SUMCO Corp",
     "themes": [
       "Semiconductor Materials",
       "Next-Gen Semiconductor",
@@ -305,7 +305,7 @@
   "4047": {
     "code": "4047",
     "ticker": "4047.T",
-    "name": "関東電化工業",
+    "name": "Kanto Denka Kogyo",
     "themes": [
       "Semiconductor Materials",
       "Chemicals"
@@ -317,7 +317,7 @@
   "4186": {
     "code": "4186",
     "ticker": "4186.T",
-    "name": "東京応化工業",
+    "name": "Tokyo Ohka Kogyo",
     "themes": [
       "Semiconductor Materials"
     ],
@@ -328,7 +328,7 @@
   "5384": {
     "code": "5384",
     "ticker": "5384.T",
-    "name": "フジミインコーポレーテッド",
+    "name": "Fujimi Inc",
     "themes": [
       "Semiconductor Materials"
     ],
@@ -339,7 +339,7 @@
   "4063": {
     "code": "4063",
     "ticker": "4063.T",
-    "name": "Shin-Etsu Chem",
+    "name": "Shin-Etsu Chemical",
     "themes": [
       "Semiconductor Materials",
       "Next-Gen Semiconductor",
@@ -356,7 +356,7 @@
   "4109": {
     "code": "4109",
     "ticker": "4109.T",
-    "name": "ステラケミファ",
+    "name": "Stella Chemifa",
     "themes": [
       "Semiconductor Materials"
     ],
@@ -367,7 +367,7 @@
   "5201": {
     "code": "5201",
     "ticker": "5201.T",
-    "name": "AGC",
+    "name": "AGC Inc",
     "themes": [
       "Semiconductor Materials",
       "All-Solid-State Battery",
@@ -381,7 +381,7 @@
   "4042": {
     "code": "4042",
     "ticker": "4042.T",
-    "name": "東ソー",
+    "name": "Tosoh Corp",
     "themes": [
       "Semiconductor Materials",
       "Chemicals"
@@ -393,7 +393,7 @@
   "4205": {
     "code": "4205",
     "ticker": "4205.T",
-    "name": "日本ゼオン",
+    "name": "Zeon Corp",
     "themes": [
       "Semiconductor Materials"
     ],
@@ -404,7 +404,7 @@
   "4188": {
     "code": "4188",
     "ticker": "4188.T",
-    "name": "三菱ケミカルグループ",
+    "name": "Mitsubishi Chemical Group",
     "themes": [
       "Semiconductor Materials",
       "All-Solid-State Battery",
@@ -420,7 +420,7 @@
   "4005": {
     "code": "4005",
     "ticker": "4005.T",
-    "name": "住友化学",
+    "name": "Sumitomo Chemical",
     "themes": [
       "Semiconductor Materials",
       "All-Solid-State Battery",
@@ -436,7 +436,7 @@
   "4208": {
     "code": "4208",
     "ticker": "4208.T",
-    "name": "宇部興産",
+    "name": "UBE Corp",
     "themes": [
       "Semiconductor Materials",
       "Chemicals"
@@ -448,7 +448,7 @@
   "285A": {
     "code": "285A",
     "ticker": "285A.T",
-    "name": "キオクシアHD",
+    "name": "Kioxia Holdings",
     "themes": [
       "Memory",
       "Next-Gen Semiconductor",
@@ -461,7 +461,7 @@
   "6723": {
     "code": "6723",
     "ticker": "6723.T",
-    "name": "Renesas",
+    "name": "Renesas Electronics",
     "themes": [
       "Memory",
       "Power Semiconductor",
@@ -478,7 +478,7 @@
   "6503": {
     "code": "6503",
     "ticker": "6503.T",
-    "name": "Mitsubishi Elec",
+    "name": "Mitsubishi Electric",
     "themes": [
       "Memory",
       "Power Semiconductor",
@@ -501,7 +501,7 @@
   "6702": {
     "code": "6702",
     "ticker": "6702.T",
-    "name": "Fujitsu",
+    "name": "Fujitsu Ltd",
     "themes": [
       "Memory",
       "Next-Gen Semiconductor",
@@ -525,7 +525,7 @@
   "6963": {
     "code": "6963",
     "ticker": "6963.T",
-    "name": "Rohm",
+    "name": "Rohm Co",
     "themes": [
       "Memory",
       "Power Semiconductor",
@@ -556,7 +556,7 @@
   "6981": {
     "code": "6981",
     "ticker": "6981.T",
-    "name": "Murata Mfg",
+    "name": "Murata Manufacturing",
     "themes": [
       "Power Semiconductor",
       "AI Semiconductor",
@@ -574,7 +574,7 @@
   "6762": {
     "code": "6762",
     "ticker": "6762.T",
-    "name": "TDK",
+    "name": "TDK Corp",
     "themes": [
       "Power Semiconductor",
       "AI Semiconductor",
@@ -591,7 +591,7 @@
   "6996": {
     "code": "6996",
     "ticker": "6996.T",
-    "name": "ニチコン",
+    "name": "Nichicon Corp",
     "themes": [
       "Power Semiconductor"
     ],
@@ -602,7 +602,7 @@
   "6707": {
     "code": "6707",
     "ticker": "6707.T",
-    "name": "サンケン電気",
+    "name": "Sanken Electric",
     "themes": [
       "Power Semiconductor"
     ],
@@ -613,7 +613,7 @@
   "6504": {
     "code": "6504",
     "ticker": "6504.T",
-    "name": "富士電機",
+    "name": "Fuji Electric",
     "themes": [
       "Power Semiconductor"
     ],
@@ -624,7 +624,7 @@
   "5802": {
     "code": "5802",
     "ticker": "5802.T",
-    "name": "Sumitomo Electric",
+    "name": "Sumitomo Electric Industries",
     "themes": [
       "Power Semiconductor",
       "AI Datacenter",
@@ -643,7 +643,7 @@
   "6501": {
     "code": "6501",
     "ticker": "6501.T",
-    "name": "Hitachi",
+    "name": "Hitachi Ltd",
     "themes": [
       "Power Semiconductor",
       "Next-Gen Semiconductor",
@@ -665,7 +665,7 @@
   "6844": {
     "code": "6844",
     "ticker": "6844.T",
-    "name": "新電元工業",
+    "name": "Shindengen Electric",
     "themes": [
       "Power Semiconductor"
     ],
@@ -676,7 +676,7 @@
   "6701": {
     "code": "6701",
     "ticker": "6701.T",
-    "name": "NEC",
+    "name": "NEC Corp",
     "themes": [
       "Next-Gen Semiconductor",
       "Generative AI",
@@ -712,7 +712,7 @@
   "4259": {
     "code": "4259",
     "ticker": "4259.T",
-    "name": "エクサウィザーズ",
+    "name": "ExaWizards Inc",
     "themes": [
       "Generative AI"
     ],
@@ -736,7 +736,7 @@
   "3778": {
     "code": "3778",
     "ticker": "3778.T",
-    "name": "さくらインターネット",
+    "name": "Sakura Internet",
     "themes": [
       "Generative AI",
       "AI Datacenter"
@@ -759,7 +759,7 @@
   "4684": {
     "code": "4684",
     "ticker": "4684.T",
-    "name": "オービック",
+    "name": "Obic Co",
     "themes": [
       "Generative AI",
       "SaaS"
@@ -771,7 +771,7 @@
   "9449": {
     "code": "9449",
     "ticker": "9449.T",
-    "name": "GMOインターネット",
+    "name": "GMO Internet Group",
     "themes": [
       "Generative AI",
       "Crypto"
@@ -783,7 +783,7 @@
   "3626": {
     "code": "3626",
     "ticker": "3626.T",
-    "name": "TIS",
+    "name": "TIS Inc",
     "themes": [
       "Generative AI",
       "AI Datacenter",
@@ -823,7 +823,7 @@
   "9434": {
     "code": "9434",
     "ticker": "9434.T",
-    "name": "SoftBank",
+    "name": "SoftBank (Telecom)",
     "themes": [
       "Generative AI",
       "Telecom",
@@ -838,7 +838,7 @@
   "4307": {
     "code": "4307",
     "ticker": "4307.T",
-    "name": "野村総合研究所",
+    "name": "Nomura Research Institute",
     "themes": [
       "Generative AI",
       "AI Datacenter",
@@ -852,7 +852,7 @@
   "4751": {
     "code": "4751",
     "ticker": "4751.T",
-    "name": "サイバーエージェント",
+    "name": "CyberAgent",
     "themes": [
       "Generative AI",
       "教育・HR・人材",
@@ -865,7 +865,7 @@
   "9433": {
     "code": "9433",
     "ticker": "9433.T",
-    "name": "KDDI",
+    "name": "KDDI Corp",
     "themes": [
       "Generative AI",
       "Autonomous Driving",
@@ -882,7 +882,7 @@
   "5803": {
     "code": "5803",
     "ticker": "5803.T",
-    "name": "フジクラ",
+    "name": "Fujikura Ltd",
     "themes": [
       "AI Datacenter",
       "Renewable Energy",
@@ -923,7 +923,7 @@
   "9432": {
     "code": "9432",
     "ticker": "9432.T",
-    "name": "NTT",
+    "name": "NTT Corp",
     "themes": [
       "AI Datacenter",
       "Drones",
@@ -941,7 +941,7 @@
   "6506": {
     "code": "6506",
     "ticker": "6506.T",
-    "name": "Yaskawa",
+    "name": "Yaskawa Electric",
     "themes": [
       "Physical AI",
       "Robotics & Automation"
@@ -953,7 +953,7 @@
   "6622": {
     "code": "6622",
     "ticker": "6622.T",
-    "name": "ダイヘン",
+    "name": "Daihen Corp",
     "themes": [
       "Physical AI",
       "Robotics & Automation"
@@ -965,7 +965,7 @@
   "6268": {
     "code": "6268",
     "ticker": "6268.T",
-    "name": "ナブテスコ",
+    "name": "Nabtesco Corp",
     "themes": [
       "Physical AI",
       "Robotics & Automation"
@@ -977,7 +977,7 @@
   "6954": {
     "code": "6954",
     "ticker": "6954.T",
-    "name": "Fanuc",
+    "name": "Fanuc Corp",
     "themes": [
       "Physical AI",
       "Robotics & Automation"
@@ -1013,7 +1013,7 @@
   "6474": {
     "code": "6474",
     "ticker": "6474.T",
-    "name": "不二越",
+    "name": "Nachi-Fujikoshi",
     "themes": [
       "Physical AI",
       "Robotics & Automation"
@@ -1025,7 +1025,7 @@
   "7012": {
     "code": "7012",
     "ticker": "7012.T",
-    "name": "Kawasaki HI",
+    "name": "Kawasaki Heavy Industries",
     "themes": [
       "Physical AI",
       "Drones",
@@ -1043,7 +1043,7 @@
   "6902": {
     "code": "6902",
     "ticker": "6902.T",
-    "name": "Denso",
+    "name": "Denso Corp",
     "themes": [
       "Physical AI",
       "EV / Electric Vehicles",
@@ -1058,7 +1058,7 @@
   "6098": {
     "code": "6098",
     "ticker": "6098.T",
-    "name": "リクルートHD",
+    "name": "Recruit Holdings",
     "themes": [
       "AI Talent",
       "教育・HR・人材",
@@ -1071,7 +1071,7 @@
   "2181": {
     "code": "2181",
     "ticker": "2181.T",
-    "name": "パーソルHD",
+    "name": "Persol Holdings",
     "themes": [
       "AI Talent",
       "教育・HR・人材",
@@ -1084,7 +1084,7 @@
   "2124": {
     "code": "2124",
     "ticker": "2124.T",
-    "name": "ジェイエイシーリクルートメント",
+    "name": "JAC Recruitment",
     "themes": [
       "AI Talent",
       "教育・HR・人材",
@@ -1097,7 +1097,7 @@
   "4849": {
     "code": "4849",
     "ticker": "4849.T",
-    "name": "エン・ジャパン",
+    "name": "en Japan Inc",
     "themes": [
       "AI Talent",
       "教育・HR・人材",
@@ -1110,7 +1110,7 @@
   "2146": {
     "code": "2146",
     "ticker": "2146.T",
-    "name": "UTグループ",
+    "name": "UT Group",
     "themes": [
       "AI Talent",
       "教育・HR・人材",
@@ -1123,7 +1123,7 @@
   "6752": {
     "code": "6752",
     "ticker": "6752.T",
-    "name": "パナソニック",
+    "name": "Panasonic Holdings",
     "themes": [
       "Edge AI",
       "EV / Electric Vehicles",
@@ -1152,7 +1152,7 @@
   "6753": {
     "code": "6753",
     "ticker": "6753.T",
-    "name": "シャープ",
+    "name": "Sharp Corp",
     "themes": [
       "Edge AI",
       "Solar Power"
@@ -1164,7 +1164,7 @@
   "5706": {
     "code": "5706",
     "ticker": "5706.T",
-    "name": "三井金属",
+    "name": "Mitsui Mining & Smelting",
     "themes": [
       "EV / Electric Vehicles",
       "Steel & Materials",
@@ -1178,7 +1178,7 @@
   "6674": {
     "code": "6674",
     "ticker": "6674.T",
-    "name": "GSユアサ",
+    "name": "GS Yuasa Corp",
     "themes": [
       "EV / Electric Vehicles",
       "Nuclear Power",
@@ -1191,7 +1191,7 @@
   "6473": {
     "code": "6473",
     "ticker": "6473.T",
-    "name": "ジェイテクト",
+    "name": "JTEKT Corp",
     "themes": [
       "EV / Electric Vehicles"
     ],
@@ -1202,7 +1202,7 @@
   "7201": {
     "code": "7201",
     "ticker": "7201.T",
-    "name": "Nissan",
+    "name": "Nissan Motor",
     "themes": [
       "EV / Electric Vehicles",
       "Autonomous Driving"
@@ -1238,7 +1238,7 @@
   "7211": {
     "code": "7211",
     "ticker": "7211.T",
-    "name": "三菱自動車",
+    "name": "Mitsubishi Motors",
     "themes": [
       "EV / Electric Vehicles"
     ],
@@ -1249,7 +1249,7 @@
   "7267": {
     "code": "7267",
     "ticker": "7267.T",
-    "name": "本田技研工業",
+    "name": "Honda Motor",
     "themes": [
       "EV / Electric Vehicles",
       "Autonomous Driving"
@@ -1308,7 +1308,7 @@
   "3402": {
     "code": "3402",
     "ticker": "3402.T",
-    "name": "Toray",
+    "name": "Toray Industries",
     "themes": [
       "All-Solid-State Battery",
       "Energy Storage",
@@ -1323,7 +1323,7 @@
   "3407": {
     "code": "3407",
     "ticker": "3407.T",
-    "name": "Asahi Kasei",
+    "name": "Asahi Kasei Corp",
     "themes": [
       "All-Solid-State Battery",
       "Energy Storage",
@@ -1340,7 +1340,7 @@
   "4023": {
     "code": "4023",
     "ticker": "4023.T",
-    "name": "クレハ",
+    "name": "Kureha Corp",
     "themes": [
       "All-Solid-State Battery",
       "Energy Storage",
@@ -1353,7 +1353,7 @@
   "6810": {
     "code": "6810",
     "ticker": "6810.T",
-    "name": "マクセル",
+    "name": "Maxell Ltd",
     "themes": [
       "All-Solid-State Battery",
       "Energy Storage"
@@ -1365,7 +1365,7 @@
   "5019": {
     "code": "5019",
     "ticker": "5019.T",
-    "name": "Idemitsu",
+    "name": "Idemitsu Kosan",
     "themes": [
       "All-Solid-State Battery",
       "Renewable Energy",
@@ -1380,7 +1380,7 @@
   "4667": {
     "code": "4667",
     "ticker": "4667.T",
-    "name": "アイサンテクノロジー",
+    "name": "Aisan Technology",
     "themes": [
       "Autonomous Driving"
     ],
@@ -1391,7 +1391,7 @@
   "278A": {
     "code": "278A",
     "ticker": "278A.T",
-    "name": "テラドローン",
+    "name": "Terra Drone",
     "themes": [
       "Drones",
       "Space & Satellite"
@@ -1414,7 +1414,7 @@
   "7011": {
     "code": "7011",
     "ticker": "7011.T",
-    "name": "Mitsubishi Heavy",
+    "name": "Mitsubishi Heavy Industries",
     "themes": [
       "Drones",
       "Shipbuilding",
@@ -1434,7 +1434,7 @@
   "4755": {
     "code": "4755",
     "ticker": "4755.T",
-    "name": "楽天グループ",
+    "name": "Rakuten Group",
     "themes": [
       "Drones",
       "Telecom",
@@ -1452,7 +1452,7 @@
   "6326": {
     "code": "6326",
     "ticker": "6326.T",
-    "name": "クボタ",
+    "name": "Kubota Corp",
     "themes": [
       "Drones",
       "Water Infrastructure",
@@ -1465,7 +1465,7 @@
   "9233": {
     "code": "9233",
     "ticker": "9233.T",
-    "name": "朝日航洋",
+    "name": "Asahi Koyo",
     "themes": [
       "Drones"
     ],
@@ -1488,7 +1488,7 @@
   "9735": {
     "code": "9735",
     "ticker": "9735.T",
-    "name": "セコム",
+    "name": "Secom Co",
     "themes": [
       "Drones",
       "警備"
@@ -1500,7 +1500,7 @@
   "9474": {
     "code": "9474",
     "ticker": "9474.T",
-    "name": "ゼンリン",
+    "name": "Zenrin Co",
     "themes": [
       "Drones"
     ],
@@ -1511,7 +1511,7 @@
   "7013": {
     "code": "7013",
     "ticker": "7013.T",
-    "name": "IHI",
+    "name": "IHI Corp",
     "themes": [
       "Drones",
       "Nuclear Fusion",
@@ -1528,7 +1528,7 @@
   "9147": {
     "code": "9147",
     "ticker": "9147.T",
-    "name": "NIPPON EXPRESSホールディングス",
+    "name": "Nippon Express Holdings",
     "themes": [
       "Transport & Logistics"
     ],
@@ -1539,7 +1539,7 @@
   "9171": {
     "code": "9171",
     "ticker": "9171.T",
-    "name": "栗林商船",
+    "name": "Kuribayashi Steamship",
     "themes": [
       "Transport & Logistics"
     ],
@@ -1550,7 +1550,7 @@
   "9069": {
     "code": "9069",
     "ticker": "9069.T",
-    "name": "センコーグループHD",
+    "name": "Senko Group Holdings",
     "themes": [
       "Transport & Logistics"
     ],
@@ -1561,7 +1561,7 @@
   "9064": {
     "code": "9064",
     "ticker": "9064.T",
-    "name": "ヤマトHD",
+    "name": "Yamato Holdings",
     "themes": [
       "Transport & Logistics"
     ],
@@ -1572,7 +1572,7 @@
   "9041": {
     "code": "9041",
     "ticker": "9041.T",
-    "name": "Kintetsu Group",
+    "name": "Kintetsu Group Holdings",
     "themes": [
       "Transport & Logistics",
       "Tourism & Hotels",
@@ -1596,7 +1596,7 @@
   "9101": {
     "code": "9101",
     "ticker": "9101.T",
-    "name": "Nippon Yusen",
+    "name": "Nippon Yusen (NYK Line)",
     "themes": [
       "Transport & Logistics"
     ],
@@ -1607,7 +1607,7 @@
   "9308": {
     "code": "9308",
     "ticker": "9308.T",
-    "name": "乾汽船",
+    "name": "Inui Steamship",
     "themes": [
       "Transport & Logistics"
     ],
@@ -1618,7 +1618,7 @@
   "9201": {
     "code": "9201",
     "ticker": "9201.T",
-    "name": "JAL",
+    "name": "Japan Airlines",
     "themes": [
       "Transport & Logistics",
       "Tourism & Hotels",
@@ -1642,7 +1642,7 @@
   "9107": {
     "code": "9107",
     "ticker": "9107.T",
-    "name": "K Line",
+    "name": "Kawasaki Kisen (K Line)",
     "themes": [
       "Transport & Logistics"
     ],
@@ -1653,7 +1653,7 @@
   "9119": {
     "code": "9119",
     "ticker": "9119.T",
-    "name": "飯野海運",
+    "name": "Iino Kaiun Kaisha",
     "themes": [
       "Transport & Logistics"
     ],
@@ -1664,7 +1664,7 @@
   "9202": {
     "code": "9202",
     "ticker": "9202.T",
-    "name": "ANA HD",
+    "name": "ANA Holdings",
     "themes": [
       "Transport & Logistics",
       "Tourism & Hotels",
@@ -1677,7 +1677,7 @@
   "9104": {
     "code": "9104",
     "ticker": "9104.T",
-    "name": "Mitsui OSK",
+    "name": "Mitsui O.S.K. Lines",
     "themes": [
       "Transport & Logistics"
     ],
@@ -1688,7 +1688,7 @@
   "7004": {
     "code": "7004",
     "ticker": "7004.T",
-    "name": "日立造船",
+    "name": "Hitachi Zosen",
     "themes": [
       "Shipbuilding"
     ],
@@ -1699,7 +1699,7 @@
   "6302": {
     "code": "6302",
     "ticker": "6302.T",
-    "name": "Sumitomo Heavy",
+    "name": "Sumitomo Heavy Industries",
     "themes": [
       "Shipbuilding",
       "Nuclear Fusion",
@@ -1714,7 +1714,7 @@
   "7030": {
     "code": "7030",
     "ticker": "7030.T",
-    "name": "新来島どっく",
+    "name": "Shin Kurushima Dockyard",
     "themes": [
       "Shipbuilding"
     ],
@@ -1736,7 +1736,7 @@
   "7014": {
     "code": "7014",
     "ticker": "7014.T",
-    "name": "名村造船所",
+    "name": "Namura Shipbuilding",
     "themes": [
       "Shipbuilding"
     ],
@@ -1747,7 +1747,7 @@
   "6016": {
     "code": "6016",
     "ticker": "6016.T",
-    "name": "ジャパンエンジンコーポレーション",
+    "name": "Japan Engine Corp",
     "themes": [
       "Shipbuilding"
     ],
@@ -1758,7 +1758,7 @@
   "7022": {
     "code": "7022",
     "ticker": "7022.T",
-    "name": "サノヤスHD",
+    "name": "Sanoyas Holdings",
     "themes": [
       "Shipbuilding"
     ],
@@ -1769,7 +1769,7 @@
   "9519": {
     "code": "9519",
     "ticker": "9519.T",
-    "name": "レノバ",
+    "name": "Renova Inc",
     "themes": [
       "Renewable Energy",
       "Solar Power",
@@ -1782,7 +1782,7 @@
   "8002": {
     "code": "8002",
     "ticker": "8002.T",
-    "name": "Marubeni",
+    "name": "Marubeni Corp",
     "themes": [
       "Renewable Energy",
       "LNG",
@@ -1797,7 +1797,7 @@
   "9517": {
     "code": "9517",
     "ticker": "9517.T",
-    "name": "エネコーポレーション",
+    "name": "Erex Co",
     "themes": [
       "Renewable Energy"
     ],
@@ -1808,7 +1808,7 @@
   "9502": {
     "code": "9502",
     "ticker": "9502.T",
-    "name": "Chubu Electric",
+    "name": "Chubu Electric Power",
     "themes": [
       "Renewable Energy",
       "Nuclear Power",
@@ -1821,7 +1821,7 @@
   "5076": {
     "code": "5076",
     "ticker": "5076.T",
-    "name": "テス・エンジニアリング",
+    "name": "Tes Engineering",
     "themes": [
       "Renewable Energy"
     ],
@@ -1832,7 +1832,7 @@
   "8001": {
     "code": "8001",
     "ticker": "8001.T",
-    "name": "Itochu",
+    "name": "Itochu Corp",
     "themes": [
       "Renewable Energy",
       "LNG",
@@ -1847,7 +1847,7 @@
   "9506": {
     "code": "9506",
     "ticker": "9506.T",
-    "name": "東北電力",
+    "name": "Tohoku Electric Power",
     "themes": [
       "Renewable Energy",
       "Nuclear Power",
@@ -1860,7 +1860,7 @@
   "9501": {
     "code": "9501",
     "ticker": "9501.T",
-    "name": "TEPCO",
+    "name": "Tokyo Electric Power",
     "themes": [
       "Renewable Energy",
       "Solar Power",
@@ -1875,7 +1875,7 @@
   "9508": {
     "code": "9508",
     "ticker": "9508.T",
-    "name": "九州電力",
+    "name": "Kyushu Electric Power",
     "themes": [
       "Renewable Energy",
       "Nuclear Power",
@@ -1888,7 +1888,7 @@
   "9503": {
     "code": "9503",
     "ticker": "9503.T",
-    "name": "Kansai Electric",
+    "name": "Kansai Electric Power",
     "themes": [
       "Renewable Energy",
       "Nuclear Power",
@@ -1902,7 +1902,7 @@
   "9513": {
     "code": "9513",
     "ticker": "9513.T",
-    "name": "Jパワー",
+    "name": "J-Power",
     "themes": [
       "Renewable Energy",
       "Electric Utilities",
@@ -1930,7 +1930,7 @@
   "1605": {
     "code": "1605",
     "ticker": "1605.T",
-    "name": "INPEX",
+    "name": "INPEX Corp",
     "themes": [
       "Renewable Energy",
       "LNG",
@@ -1944,7 +1944,7 @@
   "1407": {
     "code": "1407",
     "ticker": "1407.T",
-    "name": "ウエストHD",
+    "name": "West Holdings",
     "themes": [
       "Solar Power"
     ],
@@ -1955,7 +1955,7 @@
   "6971": {
     "code": "6971",
     "ticker": "6971.T",
-    "name": "Kyocera",
+    "name": "Kyocera Corp",
     "themes": [
       "Solar Power",
       "IOWN",
@@ -1969,7 +1969,7 @@
   "4118": {
     "code": "4118",
     "ticker": "4118.T",
-    "name": "カネカ",
+    "name": "Kaneka Corp",
     "themes": [
       "Solar Power",
       "Chemicals"
@@ -1981,7 +1981,7 @@
   "4204": {
     "code": "4204",
     "ticker": "4204.T",
-    "name": "積水化学工業",
+    "name": "Sekisui Chemical",
     "themes": [
       "Solar Power",
       "Chemicals",
@@ -1994,7 +1994,7 @@
   "5020": {
     "code": "5020",
     "ticker": "5020.T",
-    "name": "ENEOS HD",
+    "name": "ENEOS Holdings",
     "themes": [
       "Solar Power",
       "LNG",
@@ -2008,7 +2008,7 @@
   "9509": {
     "code": "9509",
     "ticker": "9509.T",
-    "name": "北海道電力",
+    "name": "Hokkaido Electric Power",
     "themes": [
       "Nuclear Power",
       "Electric Utilities"
@@ -2020,7 +2020,7 @@
   "9511": {
     "code": "9511",
     "ticker": "9511.T",
-    "name": "沖縄電力",
+    "name": "Okinawa Electric Power",
     "themes": [
       "Electric Utilities"
     ],
@@ -2031,7 +2031,7 @@
   "9507": {
     "code": "9507",
     "ticker": "9507.T",
-    "name": "四国電力",
+    "name": "Shikoku Electric Power",
     "themes": [
       "Electric Utilities"
     ],
@@ -2042,7 +2042,7 @@
   "9504": {
     "code": "9504",
     "ticker": "9504.T",
-    "name": "中国電力",
+    "name": "Chugoku Electric Power",
     "themes": [
       "Electric Utilities"
     ],
@@ -2053,7 +2053,7 @@
   "9505": {
     "code": "9505",
     "ticker": "9505.T",
-    "name": "北陸電力",
+    "name": "Hokuriku Electric Power",
     "themes": [
       "Electric Utilities"
     ],
@@ -2119,7 +2119,7 @@
   "5021": {
     "code": "5021",
     "ticker": "5021.T",
-    "name": "コスモエネルギーHD",
+    "name": "Cosmo Energy Holdings",
     "themes": [
       "LNG",
       "Oil & Gas"
@@ -2131,7 +2131,7 @@
   "1662": {
     "code": "1662",
     "ticker": "1662.T",
-    "name": "石油資源開発",
+    "name": "Japan Petroleum Exploration",
     "themes": [
       "LNG",
       "Oil & Gas"
@@ -2143,7 +2143,7 @@
   "4088": {
     "code": "4088",
     "ticker": "4088.T",
-    "name": "エア・ウォーター",
+    "name": "Air Water",
     "themes": [
       "Resources (H2/He/H2O)"
     ],
@@ -2170,7 +2170,7 @@
   "4091": {
     "code": "4091",
     "ticker": "4091.T",
-    "name": "大陽日酸",
+    "name": "Nippon Sanso Holdings",
     "themes": [
       "Resources (H2/He/H2O)"
     ],
@@ -2181,7 +2181,7 @@
   "8088": {
     "code": "8088",
     "ticker": "8088.T",
-    "name": "岩谷産業",
+    "name": "Iwatani Corp",
     "themes": [
       "Resources (H2/He/H2O)"
     ],
@@ -2205,7 +2205,7 @@
   "6965": {
     "code": "6965",
     "ticker": "6965.T",
-    "name": "浜松ホトニクス",
+    "name": "Hamamatsu Photonics",
     "themes": [
       "IOWN",
       "Optical Communication"
@@ -2217,7 +2217,7 @@
   "3110": {
     "code": "3110",
     "ticker": "3110.T",
-    "name": "日東紡績",
+    "name": "Nitto Boseki",
     "themes": [
       "Optical Communication"
     ],
@@ -2228,7 +2228,7 @@
   "7746": {
     "code": "7746",
     "ticker": "7746.T",
-    "name": "岡本硝子",
+    "name": "Okamoto Glass",
     "themes": [
       "Optical Communication"
     ],
@@ -2250,7 +2250,7 @@
   "3774": {
     "code": "3774",
     "ticker": "3774.T",
-    "name": "インターネットイニシアティブ",
+    "name": "Internet Initiative Japan",
     "themes": [
       "Telecom"
     ],
@@ -2261,7 +2261,7 @@
   "9412": {
     "code": "9412",
     "ticker": "9412.T",
-    "name": "スカパーJSATHD",
+    "name": "SKY Perfect JSAT",
     "themes": [
       "Telecom",
       "Space & Satellite"
@@ -2273,7 +2273,7 @@
   "9424": {
     "code": "9424",
     "ticker": "9424.T",
-    "name": "日本通信",
+    "name": "Nihon Tsushin",
     "themes": [
       "Telecom"
     ],
@@ -2296,7 +2296,7 @@
   "3923": {
     "code": "3923",
     "ticker": "3923.T",
-    "name": "ラクス",
+    "name": "Rakus Co",
     "themes": [
       "SaaS"
     ],
@@ -2318,7 +2318,7 @@
   "3984": {
     "code": "3984",
     "ticker": "3984.T",
-    "name": "ユーザーローカル",
+    "name": "User Local Inc",
     "themes": [
       "SaaS"
     ],
@@ -2342,7 +2342,7 @@
   "2492": {
     "code": "2492",
     "ticker": "2492.T",
-    "name": "インフォマート",
+    "name": "Infomart Corp",
     "themes": [
       "SaaS",
       "Fintech"
@@ -2366,7 +2366,7 @@
   "4165": {
     "code": "4165",
     "ticker": "4165.T",
-    "name": "プレイド",
+    "name": "Plaid Inc",
     "themes": [
       "SaaS"
     ],
@@ -2377,7 +2377,7 @@
   "6952": {
     "code": "6952",
     "ticker": "6952.T",
-    "name": "カシオ計算機",
+    "name": "Casio Computer",
     "themes": [
       "Wearables"
     ],
@@ -2388,7 +2388,7 @@
   "7762": {
     "code": "7762",
     "ticker": "7762.T",
-    "name": "シチズン時計",
+    "name": "Citizen Watch",
     "themes": [
       "Wearables"
     ],
@@ -2399,7 +2399,7 @@
   "8050": {
     "code": "8050",
     "ticker": "8050.T",
-    "name": "セイコーグループ",
+    "name": "Seiko Group Corp",
     "themes": [
       "Wearables"
     ],
@@ -2410,7 +2410,7 @@
   "4819": {
     "code": "4819",
     "ticker": "4819.T",
-    "name": "デジタルガレージ",
+    "name": "Digital Garage",
     "themes": [
       "Crypto"
     ],
@@ -2421,7 +2421,7 @@
   "4689": {
     "code": "4689",
     "ticker": "4689.T",
-    "name": "LINE（LINEヤフー）",
+    "name": "Z Holdings (Yahoo Japan)",
     "themes": [
       "Crypto",
       "Retail & E-Commerce"
@@ -2433,7 +2433,7 @@
   "8473": {
     "code": "8473",
     "ticker": "8473.T",
-    "name": "SBI HD",
+    "name": "SBI Holdings",
     "themes": [
       "Crypto",
       "Digital Banking",
@@ -2447,7 +2447,7 @@
   "7833": {
     "code": "7833",
     "ticker": "7833.T",
-    "name": "GMOフィナンシャルHD",
+    "name": "GMO Financial Holdings",
     "themes": [
       "Crypto",
       "Digital Banking"
@@ -2459,7 +2459,7 @@
   "8698": {
     "code": "8698",
     "ticker": "8698.T",
-    "name": "マネックスグループ",
+    "name": "Monex Group",
     "themes": [
       "Crypto",
       "Fintech"
@@ -2471,7 +2471,7 @@
   "3807": {
     "code": "3807",
     "ticker": "3807.T",
-    "name": "フィスコ",
+    "name": "Fisco Ltd",
     "themes": [
       "Crypto"
     ],
@@ -2482,7 +2482,7 @@
   "8591": {
     "code": "8591",
     "ticker": "8591.T",
-    "name": "オリックス",
+    "name": "Orix Corp",
     "themes": [
       "Digital Banking",
       "Banking / Finance"
@@ -2494,7 +2494,7 @@
   "8410": {
     "code": "8410",
     "ticker": "8410.T",
-    "name": "セブン銀行",
+    "name": "Moneytree",
     "themes": [
       "Digital Banking",
       "Fintech"
@@ -2506,7 +2506,7 @@
   "8267": {
     "code": "8267",
     "ticker": "8267.T",
-    "name": "イオン（イオン銀行）",
+    "name": "Aeon Co",
     "themes": [
       "Digital Banking",
       "Retail & E-Commerce",
@@ -2519,7 +2519,7 @@
   "5727": {
     "code": "5727",
     "ticker": "5727.T",
-    "name": "東邦チタニウム",
+    "name": "Toho Titanium",
     "themes": [
       "Steel & Materials",
       "Rare Earth & Resources"
@@ -2531,7 +2531,7 @@
   "5741": {
     "code": "5741",
     "ticker": "5741.T",
-    "name": "UACJ",
+    "name": "UACJ Corp",
     "themes": [
       "Steel & Materials"
     ],
@@ -2542,7 +2542,7 @@
   "5714": {
     "code": "5714",
     "ticker": "5714.T",
-    "name": "DOWA HD",
+    "name": "DOWA Holdings",
     "themes": [
       "Steel & Materials",
       "Rare Earth & Resources"
@@ -2554,7 +2554,7 @@
   "5703": {
     "code": "5703",
     "ticker": "5703.T",
-    "name": "日本軽金属HD",
+    "name": "Nippon Light Metal Holdings",
     "themes": [
       "Steel & Materials"
     ],
@@ -2565,7 +2565,7 @@
   "5423": {
     "code": "5423",
     "ticker": "5423.T",
-    "name": "東京製鐵",
+    "name": "Tokyo Steel Manufacturing",
     "themes": [
       "Steel & Materials"
     ],
@@ -2576,7 +2576,7 @@
   "5406": {
     "code": "5406",
     "ticker": "5406.T",
-    "name": "神戸製鋼所",
+    "name": "Kobe Steel",
     "themes": [
       "Steel & Materials"
     ],
@@ -2587,7 +2587,7 @@
   "5444": {
     "code": "5444",
     "ticker": "5444.T",
-    "name": "大和工業",
+    "name": "Yamato Kogyo",
     "themes": [
       "Steel & Materials"
     ],
@@ -2598,7 +2598,7 @@
   "5480": {
     "code": "5480",
     "ticker": "5480.T",
-    "name": "日本冶金工業",
+    "name": "Nihon Yakin Kogyo",
     "themes": [
       "Steel & Materials",
       "Rare Earth & Resources"
@@ -2610,7 +2610,7 @@
   "5726": {
     "code": "5726",
     "ticker": "5726.T",
-    "name": "大阪チタニウムテクノロジーズ",
+    "name": "Osaka Titanium Technologies",
     "themes": [
       "Steel & Materials",
       "Rare Earth & Resources"
@@ -2622,7 +2622,7 @@
   "4202": {
     "code": "4202",
     "ticker": "4202.T",
-    "name": "ダイセル",
+    "name": "Daicel Corp",
     "themes": [
       "Chemicals",
       "Defense & Aerospace"
@@ -2634,7 +2634,7 @@
   "4901": {
     "code": "4901",
     "ticker": "4901.T",
-    "name": "Fujifilm HD",
+    "name": "Fujifilm Holdings",
     "themes": [
       "Chemicals"
     ],
@@ -2645,7 +2645,7 @@
   "4452": {
     "code": "4452",
     "ticker": "4452.T",
-    "name": "花王",
+    "name": "Kao Corp",
     "themes": [
       "Chemicals"
     ],
@@ -2656,7 +2656,7 @@
   "6988": {
     "code": "6988",
     "ticker": "6988.T",
-    "name": "日東電工",
+    "name": "Nitto Denko",
     "themes": [
       "Chemicals"
     ],
@@ -2667,7 +2667,7 @@
   "4631": {
     "code": "4631",
     "ticker": "4631.T",
-    "name": "DIC",
+    "name": "DIC Corp",
     "themes": [
       "Chemicals",
       "Paints"
@@ -2679,7 +2679,7 @@
   "5393": {
     "code": "5393",
     "ticker": "5393.T",
-    "name": "ニチアス",
+    "name": "Nichias Corp",
     "themes": [
       "Building Materials"
     ],
@@ -2690,7 +2690,7 @@
   "5233": {
     "code": "5233",
     "ticker": "5233.T",
-    "name": "太平洋セメント",
+    "name": "Taiheiyo Cement",
     "themes": [
       "Building Materials",
       "National Resilience"
@@ -2702,7 +2702,7 @@
   "5332": {
     "code": "5332",
     "ticker": "5332.T",
-    "name": "TOTO",
+    "name": "TOTO Ltd",
     "themes": [
       "Building Materials"
     ],
@@ -2713,7 +2713,7 @@
   "5232": {
     "code": "5232",
     "ticker": "5232.T",
-    "name": "住友大阪セメント",
+    "name": "Sumitomo Osaka Cement",
     "themes": [
       "Building Materials",
       "National Resilience"
@@ -2725,7 +2725,7 @@
   "5938": {
     "code": "5938",
     "ticker": "5938.T",
-    "name": "LIXIL",
+    "name": "LIXIL Group",
     "themes": [
       "Building Materials"
     ],
@@ -2736,7 +2736,7 @@
   "5202": {
     "code": "5202",
     "ticker": "5202.T",
-    "name": "日本板硝子",
+    "name": "Nippon Sheet Glass",
     "themes": [
       "Building Materials"
     ],
@@ -2747,7 +2747,7 @@
   "1925": {
     "code": "1925",
     "ticker": "1925.T",
-    "name": "Daiwa House",
+    "name": "Daiwa House Industry",
     "themes": [
       "Building Materials",
       "Construction & Infra"
@@ -2759,7 +2759,7 @@
   "4634": {
     "code": "4634",
     "ticker": "4634.T",
-    "name": "東洋インキSCHD",
+    "name": "Toyo Ink SC Holdings",
     "themes": [
       "Paints"
     ],
@@ -2770,7 +2770,7 @@
   "4616": {
     "code": "4616",
     "ticker": "4616.T",
-    "name": "神東塗料",
+    "name": "Shinto Paint",
     "themes": [
       "Paints"
     ],
@@ -2781,7 +2781,7 @@
   "4612": {
     "code": "4612",
     "ticker": "4612.T",
-    "name": "日本ペイントHD",
+    "name": "Nippon Paint Holdings",
     "themes": [
       "Paints"
     ],
@@ -2792,7 +2792,7 @@
   "4613": {
     "code": "4613",
     "ticker": "4613.T",
-    "name": "関西ペイント",
+    "name": "Kansai Paint",
     "themes": [
       "Paints"
     ],
@@ -2803,7 +2803,7 @@
   "4617": {
     "code": "4617",
     "ticker": "4617.T",
-    "name": "中国塗料",
+    "name": "Chugoku Marine Paints",
     "themes": [
       "Paints"
     ],
@@ -2814,7 +2814,7 @@
   "4619": {
     "code": "4619",
     "ticker": "4619.T",
-    "name": "日本特殊塗料",
+    "name": "Nihon Tokushu Toryo",
     "themes": [
       "Paints"
     ],
@@ -2825,7 +2825,7 @@
   "4884": {
     "code": "4884",
     "ticker": "4884.T",
-    "name": "クリングルファーマ",
+    "name": "Kringle Pharma",
     "themes": [
       "Pharma & Biotech"
     ],
@@ -2836,7 +2836,7 @@
   "4565": {
     "code": "4565",
     "ticker": "4565.T",
-    "name": "そーせいグループ",
+    "name": "Sosei Group",
     "themes": [
       "Pharma & Biotech"
     ],
@@ -2847,7 +2847,7 @@
   "4530": {
     "code": "4530",
     "ticker": "4530.T",
-    "name": "Hisamitsu Pharma",
+    "name": "Hisamitsu Pharmaceutical",
     "themes": [
       "Pharma & Biotech"
     ],
@@ -2858,7 +2858,7 @@
   "4587": {
     "code": "4587",
     "ticker": "4587.T",
-    "name": "ペプチドリーム",
+    "name": "PeptiDream Inc",
     "themes": [
       "Pharma & Biotech"
     ],
@@ -2869,7 +2869,7 @@
   "4578": {
     "code": "4578",
     "ticker": "4578.T",
-    "name": "大塚HD",
+    "name": "Otsuka Holdings",
     "themes": [
       "Pharma & Biotech"
     ],
@@ -2880,7 +2880,7 @@
   "4516": {
     "code": "4516",
     "ticker": "4516.T",
-    "name": "日本新薬",
+    "name": "Nippon Shinyaku",
     "themes": [
       "Pharma & Biotech"
     ],
@@ -2891,7 +2891,7 @@
   "4523": {
     "code": "4523",
     "ticker": "4523.T",
-    "name": "Eisai",
+    "name": "Eisai Co",
     "themes": [
       "Pharma & Biotech"
     ],
@@ -2935,7 +2935,7 @@
   "4502": {
     "code": "4502",
     "ticker": "4502.T",
-    "name": "武田薬品",
+    "name": "Takeda Pharmaceutical",
     "themes": [
       "Pharma & Biotech"
     ],
@@ -2946,7 +2946,7 @@
   "4528": {
     "code": "4528",
     "ticker": "4528.T",
-    "name": "小野薬品",
+    "name": "Ono Pharmaceutical",
     "themes": [
       "Pharma & Biotech"
     ],
@@ -2957,7 +2957,7 @@
   "4519": {
     "code": "4519",
     "ticker": "4519.T",
-    "name": "Chugai",
+    "name": "Chugai Pharmaceutical",
     "themes": [
       "Pharma & Biotech"
     ],
@@ -2968,7 +2968,7 @@
   "4507": {
     "code": "4507",
     "ticker": "4507.T",
-    "name": "Shionogi",
+    "name": "Shionogi & Co",
     "themes": [
       "Pharma & Biotech"
     ],
@@ -2979,7 +2979,7 @@
   "4503": {
     "code": "4503",
     "ticker": "4503.T",
-    "name": "Astellas",
+    "name": "Astellas Pharma",
     "themes": [
       "Pharma & Biotech"
     ],
@@ -2990,7 +2990,7 @@
   "4571": {
     "code": "4571",
     "ticker": "4571.T",
-    "name": "ナノキャリア",
+    "name": "NanoCarrier Co",
     "themes": [
       "Pharma & Biotech"
     ],
@@ -3001,7 +3001,7 @@
   "4480": {
     "code": "4480",
     "ticker": "4480.T",
-    "name": "メドレー",
+    "name": "Medley Inc",
     "themes": [
       "Healthcare & Nursing"
     ],
@@ -3012,7 +3012,7 @@
   "6547": {
     "code": "6547",
     "ticker": "6547.T",
-    "name": "PHCホールディングス",
+    "name": "PHC Holdings",
     "themes": [
       "Healthcare & Nursing"
     ],
@@ -3023,7 +3023,7 @@
   "7733": {
     "code": "7733",
     "ticker": "7733.T",
-    "name": "オリンパス",
+    "name": "Olympus Corp",
     "themes": [
       "Healthcare & Nursing"
     ],
@@ -3034,7 +3034,7 @@
   "6869": {
     "code": "6869",
     "ticker": "6869.T",
-    "name": "シスメックス",
+    "name": "Sysmex Corp",
     "themes": [
       "Healthcare & Nursing"
     ],
@@ -3045,7 +3045,7 @@
   "6197": {
     "code": "6197",
     "ticker": "6197.T",
-    "name": "ソラスト",
+    "name": "Solasto Corp",
     "themes": [
       "Healthcare & Nursing"
     ],
@@ -3067,7 +3067,7 @@
   "4540": {
     "code": "4540",
     "ticker": "4540.T",
-    "name": "ツムラ",
+    "name": "Tsumura & Co",
     "themes": [
       "Healthcare & Nursing"
     ],
@@ -3078,7 +3078,7 @@
   "4543": {
     "code": "4543",
     "ticker": "4543.T",
-    "name": "Terumo",
+    "name": "Terumo Corp",
     "themes": [
       "Healthcare & Nursing"
     ],
@@ -3089,7 +3089,7 @@
   "8086": {
     "code": "8086",
     "ticker": "8086.T",
-    "name": "ニプロ",
+    "name": "Nipro Corp",
     "themes": [
       "Healthcare & Nursing"
     ],
@@ -3100,7 +3100,7 @@
   "7459": {
     "code": "7459",
     "ticker": "7459.T",
-    "name": "Medipal HD",
+    "name": "MediaDo Holdings",
     "themes": [
       "Healthcare & Nursing"
     ],
@@ -3111,7 +3111,7 @@
   "2413": {
     "code": "2413",
     "ticker": "2413.T",
-    "name": "エムスリー",
+    "name": "M3 Inc",
     "themes": [
       "Healthcare & Nursing"
     ],
@@ -3122,7 +3122,7 @@
   "2393": {
     "code": "2393",
     "ticker": "2393.T",
-    "name": "日本ケアサプライ",
+    "name": "Nihon Care Supply",
     "themes": [
       "Healthcare & Nursing"
     ],
@@ -3133,7 +3133,7 @@
   "9627": {
     "code": "9627",
     "ticker": "9627.T",
-    "name": "アインホールディングス",
+    "name": "Ain Holdings",
     "themes": [
       "Pharmacy / Drug Store"
     ],
@@ -3144,7 +3144,7 @@
   "2796": {
     "code": "2796",
     "ticker": "2796.T",
-    "name": "ファルマライズHD",
+    "name": "Pharmarise Holdings",
     "themes": [
       "Pharmacy / Drug Store"
     ],
@@ -3155,7 +3155,7 @@
   "3148": {
     "code": "3148",
     "ticker": "3148.T",
-    "name": "クリエイトSDホールディングス",
+    "name": "Create SD Holdings",
     "themes": [
       "Pharmacy / Drug Store"
     ],
@@ -3177,7 +3177,7 @@
   "3549": {
     "code": "3549",
     "ticker": "3549.T",
-    "name": "クスリのアオキHD",
+    "name": "Kusuri no Aoki Holdings",
     "themes": [
       "Pharmacy / Drug Store"
     ],
@@ -3188,7 +3188,7 @@
   "2664": {
     "code": "2664",
     "ticker": "2664.T",
-    "name": "カワチ薬品",
+    "name": "Kawachi Pharmacy",
     "themes": [
       "Pharmacy / Drug Store"
     ],
@@ -3199,7 +3199,7 @@
   "3088": {
     "code": "3088",
     "ticker": "3088.T",
-    "name": "Matsukiyo Kokkomin HD",
+    "name": "Matsumoto Kiyoshi Holdings",
     "themes": [
       "Pharmacy / Drug Store",
       "Retail & E-Commerce",
@@ -3212,7 +3212,7 @@
   "7649": {
     "code": "7649",
     "ticker": "7649.T",
-    "name": "スギHD",
+    "name": "Sugi Holdings",
     "themes": [
       "Pharmacy / Drug Store",
       "Retail & E-Commerce",
@@ -3225,7 +3225,7 @@
   "3349": {
     "code": "3349",
     "ticker": "3349.T",
-    "name": "コスモス薬品",
+    "name": "COSMOS Pharmaceutical",
     "themes": [
       "Pharmacy / Drug Store"
     ],
@@ -3236,7 +3236,7 @@
   "3391": {
     "code": "3391",
     "ticker": "3391.T",
-    "name": "Tsuruha HD",
+    "name": "Tsuruha Holdings",
     "themes": [
       "Pharmacy / Drug Store"
     ],
@@ -3247,7 +3247,7 @@
   "8308": {
     "code": "8308",
     "ticker": "8308.T",
-    "name": "りそな",
+    "name": "Resona Holdings",
     "themes": [
       "Banking / Finance"
     ],
@@ -3258,7 +3258,7 @@
   "8411": {
     "code": "8411",
     "ticker": "8411.T",
-    "name": "みずほ",
+    "name": "Mizuho Financial Group",
     "themes": [
       "Banking / Finance"
     ],
@@ -3269,7 +3269,7 @@
   "8316": {
     "code": "8316",
     "ticker": "8316.T",
-    "name": "三井住友",
+    "name": "SMFG (Sumitomo Mitsui)",
     "themes": [
       "Banking / Finance"
     ],
@@ -3280,7 +3280,7 @@
   "8306": {
     "code": "8306",
     "ticker": "8306.T",
-    "name": "三菱UFJ",
+    "name": "MUFG (Mitsubishi UFJ)",
     "themes": [
       "Banking / Finance",
       "Buffett Picks"
@@ -3292,7 +3292,7 @@
   "8309": {
     "code": "8309",
     "ticker": "8309.T",
-    "name": "三井住友トラストHD",
+    "name": "Sumitomo Mitsui Trust Holdings",
     "themes": [
       "Banking / Finance"
     ],
@@ -3303,7 +3303,7 @@
   "7182": {
     "code": "7182",
     "ticker": "7182.T",
-    "name": "ゆうちょ銀行",
+    "name": "Japan Post Bank",
     "themes": [
       "Banking / Finance"
     ],
@@ -3314,7 +3314,7 @@
   "8604": {
     "code": "8604",
     "ticker": "8604.T",
-    "name": "野村HD",
+    "name": "Nomura Holdings",
     "themes": [
       "Banking / Finance"
     ],
@@ -3325,7 +3325,7 @@
   "8304": {
     "code": "8304",
     "ticker": "8304.T",
-    "name": "あおぞら銀行",
+    "name": "Aozora Bank",
     "themes": [
       "Banking / Finance"
     ],
@@ -3336,7 +3336,7 @@
   "8628": {
     "code": "8628",
     "ticker": "8628.T",
-    "name": "松井証券",
+    "name": "Matsui Securities",
     "themes": [
       "Banking / Finance"
     ],
@@ -3347,7 +3347,7 @@
   "8601": {
     "code": "8601",
     "ticker": "8601.T",
-    "name": "Daiwa Securities",
+    "name": "Daiwa Securities Group",
     "themes": [
       "Banking / Finance"
     ],
@@ -3358,7 +3358,7 @@
   "8336": {
     "code": "8336",
     "ticker": "8336.T",
-    "name": "武蔵野銀行",
+    "name": "Musashino Bank",
     "themes": [
       "Regional Banks"
     ],
@@ -3369,7 +3369,7 @@
   "8418": {
     "code": "8418",
     "ticker": "8418.T",
-    "name": "山口FG",
+    "name": "Yamaguchi Financial Group",
     "themes": [
       "Regional Banks"
     ],
@@ -3380,7 +3380,7 @@
   "8387": {
     "code": "8387",
     "ticker": "8387.T",
-    "name": "四国銀行",
+    "name": "Shikoku Bank",
     "themes": [
       "Regional Banks"
     ],
@@ -3391,7 +3391,7 @@
   "8359": {
     "code": "8359",
     "ticker": "8359.T",
-    "name": "八十二銀行",
+    "name": "Hachijuni Bank",
     "themes": [
       "Regional Banks"
     ],
@@ -3402,7 +3402,7 @@
   "8354": {
     "code": "8354",
     "ticker": "8354.T",
-    "name": "ふくおかFG",
+    "name": "Fukuoka Financial Group",
     "themes": [
       "Regional Banks"
     ],
@@ -3413,7 +3413,7 @@
   "7186": {
     "code": "7186",
     "ticker": "7186.T",
-    "name": "コンコルディアFG",
+    "name": "Concordia FG",
     "themes": [
       "Regional Banks"
     ],
@@ -3446,7 +3446,7 @@
   "8366": {
     "code": "8366",
     "ticker": "8366.T",
-    "name": "滋賀銀行",
+    "name": "Shiga Bank",
     "themes": [
       "Regional Banks"
     ],
@@ -3457,7 +3457,7 @@
   "8346": {
     "code": "8346",
     "ticker": "8346.T",
-    "name": "東邦銀行",
+    "name": "Toho Bank",
     "themes": [
       "Regional Banks"
     ],
@@ -3468,7 +3468,7 @@
   "8377": {
     "code": "8377",
     "ticker": "8377.T",
-    "name": "北陸銀行",
+    "name": "Hokuriku Financial Group",
     "themes": [
       "Regional Banks"
     ],
@@ -3490,7 +3490,7 @@
   "8522": {
     "code": "8522",
     "ticker": "8522.T",
-    "name": "名古屋銀行",
+    "name": "Nagoya Bank",
     "themes": [
       "Regional Banks"
     ],
@@ -3501,7 +3501,7 @@
   "8750": {
     "code": "8750",
     "ticker": "8750.T",
-    "name": "第一生命",
+    "name": "Dai-ichi Life Holdings",
     "themes": [
       "Insurance"
     ],
@@ -3512,7 +3512,7 @@
   "8725": {
     "code": "8725",
     "ticker": "8725.T",
-    "name": "MS&AD",
+    "name": "MS&AD Insurance Group",
     "themes": [
       "Insurance"
     ],
@@ -3523,7 +3523,7 @@
   "8766": {
     "code": "8766",
     "ticker": "8766.T",
-    "name": "Tokio Marine",
+    "name": "Tokio Marine Holdings",
     "themes": [
       "Insurance"
     ],
@@ -3534,7 +3534,7 @@
   "8795": {
     "code": "8795",
     "ticker": "8795.T",
-    "name": "T&Dホールディングス",
+    "name": "T&D Holdings",
     "themes": [
       "Insurance"
     ],
@@ -3556,7 +3556,7 @@
   "8630": {
     "code": "8630",
     "ticker": "8630.T",
-    "name": "SOMPO HD",
+    "name": "Sompo Holdings",
     "themes": [
       "Insurance"
     ],
@@ -3567,7 +3567,7 @@
   "7383": {
     "code": "7383",
     "ticker": "7383.T",
-    "name": "ネットプロテクションHD",
+    "name": "Net Protections Holdings",
     "themes": [
       "Fintech"
     ],
@@ -3578,7 +3578,7 @@
   "8515": {
     "code": "8515",
     "ticker": "8515.T",
-    "name": "アイフル",
+    "name": "Aiful Corp",
     "themes": [
       "Fintech"
     ],
@@ -3589,7 +3589,7 @@
   "4385": {
     "code": "4385",
     "ticker": "4385.T",
-    "name": "Mercari",
+    "name": "Mercari Inc",
     "themes": [
       "Fintech",
       "Retail & E-Commerce",
@@ -3602,7 +3602,7 @@
   "3769": {
     "code": "3769",
     "ticker": "3769.T",
-    "name": "GMO PG",
+    "name": "GMO Payment Gateway",
     "themes": [
       "Fintech"
     ],
@@ -3613,7 +3613,7 @@
   "8830": {
     "code": "8830",
     "ticker": "8830.T",
-    "name": "住友不動産",
+    "name": "Sumitomo Realty & Development",
     "themes": [
       "Real Estate"
     ],
@@ -3646,7 +3646,7 @@
   "8848": {
     "code": "8848",
     "ticker": "8848.T",
-    "name": "レオパレス21",
+    "name": "Leopalace21",
     "themes": [
       "Real Estate"
     ],
@@ -3657,7 +3657,7 @@
   "1911": {
     "code": "1911",
     "ticker": "1911.T",
-    "name": "住友林業",
+    "name": "Sumitomo Forestry",
     "themes": [
       "Real Estate",
       "脱炭素・ESG"
@@ -3669,7 +3669,7 @@
   "3283": {
     "code": "3283",
     "ticker": "3283.T",
-    "name": "日本プロロジスリート投資法人",
+    "name": "Nippon Prologis REIT",
     "themes": [
       "Real Estate"
     ],
@@ -3680,7 +3680,7 @@
   "3289": {
     "code": "3289",
     "ticker": "3289.T",
-    "name": "東急不動産HD",
+    "name": "Tokyu Fudosan Holdings",
     "themes": [
       "Real Estate"
     ],
@@ -3691,7 +3691,7 @@
   "8803": {
     "code": "8803",
     "ticker": "8803.T",
-    "name": "平和不動産",
+    "name": "Heiwa Real Estate",
     "themes": [
       "Real Estate"
     ],
@@ -3702,7 +3702,7 @@
   "8804": {
     "code": "8804",
     "ticker": "8804.T",
-    "name": "東京建物",
+    "name": "Tokyo Tatemono",
     "themes": [
       "Real Estate"
     ],
@@ -3713,7 +3713,7 @@
   "3231": {
     "code": "3231",
     "ticker": "3231.T",
-    "name": "野村不動産HD",
+    "name": "Nomura Real Estate Holdings",
     "themes": [
       "Real Estate"
     ],
@@ -3724,7 +3724,7 @@
   "3003": {
     "code": "3003",
     "ticker": "3003.T",
-    "name": "ヒューリック",
+    "name": "Hulic Co",
     "themes": [
       "Real Estate"
     ],
@@ -3735,7 +3735,7 @@
   "1878": {
     "code": "1878",
     "ticker": "1878.T",
-    "name": "大東建託",
+    "name": "Daito Trust Construction",
     "themes": [
       "Real Estate"
     ],
@@ -3759,7 +3759,7 @@
   "1803": {
     "code": "1803",
     "ticker": "1803.T",
-    "name": "Shimizu",
+    "name": "Shimizu Corp",
     "themes": [
       "Construction & Infra",
       "National Resilience"
@@ -3771,7 +3771,7 @@
   "1812": {
     "code": "1812",
     "ticker": "1812.T",
-    "name": "Kajima",
+    "name": "Kajima Corp",
     "themes": [
       "Construction & Infra",
       "National Resilience"
@@ -3783,7 +3783,7 @@
   "1801": {
     "code": "1801",
     "ticker": "1801.T",
-    "name": "Taisei",
+    "name": "Taisei Corp",
     "themes": [
       "Construction & Infra",
       "National Resilience"
@@ -3795,7 +3795,7 @@
   "1893": {
     "code": "1893",
     "ticker": "1893.T",
-    "name": "五洋建設",
+    "name": "Goyo Construction",
     "themes": [
       "Construction & Infra",
       "National Resilience"
@@ -3807,7 +3807,7 @@
   "1820": {
     "code": "1820",
     "ticker": "1820.T",
-    "name": "西松建設",
+    "name": "Nishimatsu Construction",
     "themes": [
       "Construction & Infra"
     ],
@@ -3818,7 +3818,7 @@
   "1861": {
     "code": "1861",
     "ticker": "1861.T",
-    "name": "熊谷組",
+    "name": "Kumagai Gumi",
     "themes": [
       "Construction & Infra"
     ],
@@ -3829,7 +3829,7 @@
   "1802": {
     "code": "1802",
     "ticker": "1802.T",
-    "name": "Obayashi",
+    "name": "Obayashi Corp",
     "themes": [
       "Construction & Infra",
       "National Resilience"
@@ -3841,7 +3841,7 @@
   "1860": {
     "code": "1860",
     "ticker": "1860.T",
-    "name": "戸田建設",
+    "name": "Toda Corp",
     "themes": [
       "Construction & Infra"
     ],
@@ -3852,7 +3852,7 @@
   "1808": {
     "code": "1808",
     "ticker": "1808.T",
-    "name": "長谷工コーポレーション",
+    "name": "Haseko Corp",
     "themes": [
       "Construction & Infra"
     ],
@@ -3875,7 +3875,7 @@
   "1414": {
     "code": "1414",
     "ticker": "1414.T",
-    "name": "ショーボンドHD",
+    "name": "Shobond Holdings",
     "themes": [
       "Construction & Infra",
       "National Resilience"
@@ -3887,7 +3887,7 @@
   "1720": {
     "code": "1720",
     "ticker": "1720.T",
-    "name": "東急建設",
+    "name": "Tokyu Construction",
     "themes": [
       "National Resilience"
     ],
@@ -3898,7 +3898,7 @@
   "5269": {
     "code": "5269",
     "ticker": "5269.T",
-    "name": "日本コンクリート工業",
+    "name": "Nippon Concrete Industries",
     "themes": [
       "National Resilience"
     ],
@@ -3909,7 +3909,7 @@
   "6361": {
     "code": "6361",
     "ticker": "6361.T",
-    "name": "荏原製作所",
+    "name": "Ebara Corp",
     "themes": [
       "Water Infrastructure"
     ],
@@ -3920,7 +3920,7 @@
   "6332": {
     "code": "6332",
     "ticker": "6332.T",
-    "name": "月島ホールディングス",
+    "name": "Tsukishima Holdings",
     "themes": [
       "Water Infrastructure"
     ],
@@ -3931,7 +3931,7 @@
   "6367": {
     "code": "6367",
     "ticker": "6367.T",
-    "name": "ダイキン工業",
+    "name": "Daikin Industries",
     "themes": [
       "Water Infrastructure"
     ],
@@ -3942,7 +3942,7 @@
   "1815": {
     "code": "1815",
     "ticker": "1815.T",
-    "name": "鉄建建設",
+    "name": "Tekken Corp",
     "themes": [
       "Water Infrastructure"
     ],
@@ -3953,7 +3953,7 @@
   "6257": {
     "code": "6257",
     "ticker": "6257.T",
-    "name": "栗田工業",
+    "name": "Kurita Water Industries",
     "themes": [
       "Water Infrastructure"
     ],
@@ -3964,7 +3964,7 @@
   "9551": {
     "code": "9551",
     "ticker": "9551.T",
-    "name": "メタウォーター",
+    "name": "MetaWater Co",
     "themes": [
       "Water Infrastructure"
     ],
@@ -3975,7 +3975,7 @@
   "2802": {
     "code": "2802",
     "ticker": "2802.T",
-    "name": "Ajinomoto",
+    "name": "Ajinomoto Co",
     "themes": [
       "Food & Beverage",
       "Agritech & Foodtech"
@@ -3987,7 +3987,7 @@
   "2587": {
     "code": "2587",
     "ticker": "2587.T",
-    "name": "サントリー食品",
+    "name": "Suntory BF",
     "themes": [
       "Food & Beverage"
     ],
@@ -4009,7 +4009,7 @@
   "2810": {
     "code": "2810",
     "ticker": "2810.T",
-    "name": "ハウス食品",
+    "name": "House Foods Group",
     "themes": [
       "Food & Beverage"
     ],
@@ -4065,7 +4065,7 @@
   "2897": {
     "code": "2897",
     "ticker": "2897.T",
-    "name": "Nissin Food HD",
+    "name": "Nissin Foods Holdings",
     "themes": [
       "Food & Beverage"
     ],
@@ -4088,7 +4088,7 @@
   "2871": {
     "code": "2871",
     "ticker": "2871.T",
-    "name": "ニチレイ",
+    "name": "Nichirei Corp",
     "themes": [
       "Food & Beverage"
     ],
@@ -4111,7 +4111,7 @@
   "2602": {
     "code": "2602",
     "ticker": "2602.T",
-    "name": "日清オイリオグループ",
+    "name": "Nisshin OilliO Group",
     "themes": [
       "Food & Beverage"
     ],
@@ -4133,7 +4133,7 @@
   "2212": {
     "code": "2212",
     "ticker": "2212.T",
-    "name": "山崎製パン",
+    "name": "Yamazaki Baking",
     "themes": [
       "Food & Beverage"
     ],
@@ -4144,7 +4144,7 @@
   "4028": {
     "code": "4028",
     "ticker": "4028.T",
-    "name": "石原産業",
+    "name": "Ishihara Sangyo",
     "themes": [
       "Agritech & Foodtech"
     ],
@@ -4155,7 +4155,7 @@
   "6310": {
     "code": "6310",
     "ticker": "6310.T",
-    "name": "井関農機",
+    "name": "Iseki & Co",
     "themes": [
       "Agritech & Foodtech"
     ],
@@ -4166,7 +4166,7 @@
   "4997": {
     "code": "4997",
     "ticker": "4997.T",
-    "name": "日本農薬",
+    "name": "Nihon Nohyaku",
     "themes": [
       "Agritech & Foodtech"
     ],
@@ -4177,7 +4177,7 @@
   "4996": {
     "code": "4996",
     "ticker": "4996.T",
-    "name": "クミアイ化学工業",
+    "name": "Kumiai Chemical Industry",
     "themes": [
       "Agritech & Foodtech"
     ],
@@ -4188,7 +4188,7 @@
   "1379": {
     "code": "1379",
     "ticker": "1379.T",
-    "name": "ホクト",
+    "name": "Hokuto Corp",
     "themes": [
       "Agritech & Foodtech"
     ],
@@ -4199,7 +4199,7 @@
   "9983": {
     "code": "9983",
     "ticker": "9983.T",
-    "name": "Fast Retailing",
+    "name": "Fast Retailing (Uniqlo)",
     "themes": [
       "Retail & E-Commerce",
       "Inbound Tourism"
@@ -4211,7 +4211,7 @@
   "2678": {
     "code": "2678",
     "ticker": "2678.T",
-    "name": "アスクル",
+    "name": "Askul Corp",
     "themes": [
       "Retail & E-Commerce"
     ],
@@ -4222,7 +4222,7 @@
   "3092": {
     "code": "3092",
     "ticker": "3092.T",
-    "name": "ZOZO",
+    "name": "ZOZO Inc",
     "themes": [
       "Retail & E-Commerce",
       "Resale / Second-hand"
@@ -4234,7 +4234,7 @@
   "9843": {
     "code": "9843",
     "ticker": "9843.T",
-    "name": "Nitori HD",
+    "name": "Nitori Holdings",
     "themes": [
       "Retail & E-Commerce"
     ],
@@ -4245,7 +4245,7 @@
   "7532": {
     "code": "7532",
     "ticker": "7532.T",
-    "name": "ドン・キホーテ（PPIH）",
+    "name": "Pan Pacific International (Don Quijote)",
     "themes": [
       "Retail & E-Commerce"
     ],
@@ -4256,7 +4256,7 @@
   "3382": {
     "code": "3382",
     "ticker": "3382.T",
-    "name": "Seven & i",
+    "name": "Seven & i Holdings",
     "themes": [
       "Retail & E-Commerce",
       "Inbound Tourism"
@@ -4268,7 +4268,7 @@
   "9722": {
     "code": "9722",
     "ticker": "9722.T",
-    "name": "藤田観光",
+    "name": "Fujita Kanko",
     "themes": [
       "Tourism & Hotels",
       "Inbound Tourism"
@@ -4291,7 +4291,7 @@
   "9603": {
     "code": "9603",
     "ticker": "9603.T",
-    "name": "エイチ・アイ・エス",
+    "name": "H.I.S. Co",
     "themes": [
       "Tourism & Hotels",
       "Inbound Tourism"
@@ -4303,7 +4303,7 @@
   "4681": {
     "code": "4681",
     "ticker": "4681.T",
-    "name": "リゾートトラスト",
+    "name": "Resort Trust",
     "themes": [
       "Tourism & Hotels"
     ],
@@ -4325,7 +4325,7 @@
   "9042": {
     "code": "9042",
     "ticker": "9042.T",
-    "name": "阪急阪神HD",
+    "name": "Hankyu Hanshin Holdings",
     "themes": [
       "Tourism & Hotels",
       "Inbound Tourism"
@@ -4337,7 +4337,7 @@
   "4661": {
     "code": "4661",
     "ticker": "4661.T",
-    "name": "オリエンタルランド",
+    "name": "Oriental Land",
     "themes": [
       "Tourism & Hotels",
       "Inbound Tourism"
@@ -4349,7 +4349,7 @@
   "9024": {
     "code": "9024",
     "ticker": "9024.T",
-    "name": "Seibu HD",
+    "name": "Seibu Holdings",
     "themes": [
       "Tourism & Hotels"
     ],
@@ -4360,7 +4360,7 @@
   "9708": {
     "code": "9708",
     "ticker": "9708.T",
-    "name": "帝国ホテル",
+    "name": "Imperial Hotel",
     "themes": [
       "Tourism & Hotels",
       "Inbound Tourism"
@@ -4372,7 +4372,7 @@
   "3099": {
     "code": "3099",
     "ticker": "3099.T",
-    "name": "三越伊勢丹HD",
+    "name": "Isetan Mitsukoshi Holdings",
     "themes": [
       "Inbound Tourism"
     ],
@@ -4383,7 +4383,7 @@
   "8233": {
     "code": "8233",
     "ticker": "8233.T",
-    "name": "高島屋",
+    "name": "Takashimaya Co",
     "themes": [
       "Inbound Tourism"
     ],
@@ -4394,7 +4394,7 @@
   "2780": {
     "code": "2780",
     "ticker": "2780.T",
-    "name": "コメ兵HD",
+    "name": "Komehyo Holdings",
     "themes": [
       "Resale / Second-hand"
     ],
@@ -4405,7 +4405,7 @@
   "9278": {
     "code": "9278",
     "ticker": "9278.T",
-    "name": "ブックオフグループHD",
+    "name": "BookOff Group Holdings",
     "themes": [
       "Resale / Second-hand"
     ],
@@ -4416,7 +4416,7 @@
   "2681": {
     "code": "2681",
     "ticker": "2681.T",
-    "name": "ゲオHD",
+    "name": "Geo Holdings",
     "themes": [
       "Resale / Second-hand"
     ],
@@ -4427,7 +4427,7 @@
   "2674": {
     "code": "2674",
     "ticker": "2674.T",
-    "name": "ハードオフコーポレーション",
+    "name": "Hard Off Corp",
     "themes": [
       "Resale / Second-hand"
     ],
@@ -4438,7 +4438,7 @@
   "3093": {
     "code": "3093",
     "ticker": "3093.T",
-    "name": "トレジャー・ファクトリー",
+    "name": "Treasure Factory",
     "themes": [
       "Resale / Second-hand"
     ],
@@ -4449,7 +4449,7 @@
   "6301": {
     "code": "6301",
     "ticker": "6301.T",
-    "name": "Komatsu",
+    "name": "Komatsu Ltd",
     "themes": [
       "Defense & Aerospace"
     ],
@@ -4460,7 +4460,7 @@
   "6203": {
     "code": "6203",
     "ticker": "6203.T",
-    "name": "豊和工業",
+    "name": "Howa Machinery",
     "themes": [
       "Defense & Aerospace"
     ],
@@ -4471,7 +4471,7 @@
   "7701": {
     "code": "7701",
     "ticker": "7701.T",
-    "name": "島津製作所",
+    "name": "Shimadzu Corp",
     "themes": [
       "Defense & Aerospace"
     ],
@@ -4482,7 +4482,7 @@
   "9686": {
     "code": "9686",
     "ticker": "9686.T",
-    "name": "東洋テック",
+    "name": "Toyo Tec",
     "themes": [
       "Defense & Aerospace",
       "警備"
@@ -4505,7 +4505,7 @@
   "166A": {
     "code": "166A",
     "ticker": "166A.T",
-    "name": "アクセルスペースHD",
+    "name": "Axelspace Holdings",
     "themes": [
       "Space & Satellite"
     ],
@@ -4516,7 +4516,7 @@
   "6141": {
     "code": "6141",
     "ticker": "6141.T",
-    "name": "DMG森精機",
+    "name": "DMG Mori Co",
     "themes": [
       "Robotics & Automation"
     ],
@@ -4527,7 +4527,7 @@
   "6135": {
     "code": "6135",
     "ticker": "6135.T",
-    "name": "牧野フライス製作所",
+    "name": "Makino Milling Machine",
     "themes": [
       "Robotics & Automation"
     ],
@@ -4549,7 +4549,7 @@
   "4417": {
     "code": "4417",
     "ticker": "4417.T",
-    "name": "グローバルセキュリティエキスパート",
+    "name": "Global Security Expert",
     "themes": [
       "Cybersecurity"
     ],
@@ -4560,7 +4560,7 @@
   "2326": {
     "code": "2326",
     "ticker": "2326.T",
-    "name": "デジタルアーツ",
+    "name": "Digital Arts",
     "themes": [
       "Cybersecurity"
     ],
@@ -4571,7 +4571,7 @@
   "4704": {
     "code": "4704",
     "ticker": "4704.T",
-    "name": "トレンドマイクロ",
+    "name": "Trend Micro",
     "themes": [
       "Cybersecurity"
     ],
@@ -4582,7 +4582,7 @@
   "3692": {
     "code": "3692",
     "ticker": "3692.T",
-    "name": "FFRIセキュリティ",
+    "name": "FFRI Security",
     "themes": [
       "Cybersecurity"
     ],
@@ -4593,7 +4593,7 @@
   "4493": {
     "code": "4493",
     "ticker": "4493.T",
-    "name": "サイバーセキュリティクラウド",
+    "name": "CyberSecurity Cloud",
     "themes": [
       "Cybersecurity"
     ],
@@ -4604,7 +4604,7 @@
   "7739": {
     "code": "7739",
     "ticker": "7739.T",
-    "name": "キヤノン電子",
+    "name": "Canon Electronics",
     "themes": [
       "警備"
     ],
@@ -4615,7 +4615,7 @@
   "2331": {
     "code": "2331",
     "ticker": "2331.T",
-    "name": "綜合警備保障（ALSOK）",
+    "name": "ALSOK (Sohgo Security)",
     "themes": [
       "警備"
     ],
@@ -4626,7 +4626,7 @@
   "3861": {
     "code": "3861",
     "ticker": "3861.T",
-    "name": "王子HD",
+    "name": "Oji Holdings",
     "themes": [
       "脱炭素・ESG"
     ],
@@ -4637,7 +4637,7 @@
   "3880": {
     "code": "3880",
     "ticker": "3880.T",
-    "name": "大王製紙",
+    "name": "Daio Paper Corp",
     "themes": [
       "脱炭素・ESG"
     ],
@@ -4648,7 +4648,7 @@
   "9470": {
     "code": "9470",
     "ticker": "9470.T",
-    "name": "学研HD",
+    "name": "Gakken Holdings",
     "themes": [
       "教育・HR・人材"
     ],
@@ -4659,7 +4659,7 @@
   "4848": {
     "code": "4848",
     "ticker": "4848.T",
-    "name": "フルキャストHD",
+    "name": "Fullcast Holdings",
     "themes": [
       "人材派遣"
     ],
@@ -4670,7 +4670,7 @@
   "3662": {
     "code": "3662",
     "ticker": "3662.T",
-    "name": "エイチーム",
+    "name": "A-Team Inc",
     "themes": [
       "ゲーム・エンタメ"
     ],
@@ -4681,7 +4681,7 @@
   "2432": {
     "code": "2432",
     "ticker": "2432.T",
-    "name": "DeNA",
+    "name": "DeNA Co",
     "themes": [
       "ゲーム・エンタメ"
     ],
@@ -4692,7 +4692,7 @@
   "9697": {
     "code": "9697",
     "ticker": "9697.T",
-    "name": "カプコン",
+    "name": "Capcom Co",
     "themes": [
       "ゲーム・エンタメ"
     ],
@@ -4703,7 +4703,7 @@
   "9766": {
     "code": "9766",
     "ticker": "9766.T",
-    "name": "コナミ",
+    "name": "Konami Group",
     "themes": [
       "ゲーム・エンタメ"
     ],
@@ -4725,7 +4725,7 @@
   "9684": {
     "code": "9684",
     "ticker": "9684.T",
-    "name": "スクウェア・エニックス",
+    "name": "Square Enix Holdings",
     "themes": [
       "ゲーム・エンタメ"
     ],
@@ -4736,7 +4736,7 @@
   "3932": {
     "code": "3932",
     "ticker": "3932.T",
-    "name": "アカツキ",
+    "name": "Akatsuki Inc",
     "themes": [
       "ゲーム・エンタメ"
     ],
@@ -4747,7 +4747,7 @@
   "3632": {
     "code": "3632",
     "ticker": "3632.T",
-    "name": "グリー",
+    "name": "Gree Inc",
     "themes": [
       "ゲーム・エンタメ"
     ],
@@ -4758,7 +4758,7 @@
   "3635": {
     "code": "3635",
     "ticker": "3635.T",
-    "name": "コーエーテクモ",
+    "name": "Cygames (via DeNA)",
     "themes": [
       "ゲーム・エンタメ"
     ],
@@ -4769,7 +4769,7 @@
   "7832": {
     "code": "7832",
     "ticker": "7832.T",
-    "name": "バンダイナムコ",
+    "name": "Bandai Namco Holdings",
     "themes": [
       "ゲーム・エンタメ"
     ],
@@ -4780,7 +4780,7 @@
   "6460": {
     "code": "6460",
     "ticker": "6460.T",
-    "name": "セガサミー",
+    "name": "Sega Sammy Holdings",
     "themes": [
       "ゲーム・エンタメ"
     ],
@@ -4791,7 +4791,7 @@
   "3659": {
     "code": "3659",
     "ticker": "3659.T",
-    "name": "ネクソン",
+    "name": "Nexon Co",
     "themes": [
       "ゲーム・エンタメ"
     ],
@@ -4802,7 +4802,7 @@
   "7974": {
     "code": "7974",
     "ticker": "7974.T",
-    "name": "Nintendo",
+    "name": "Nintendo Co",
     "themes": [
       "ゲーム・エンタメ"
     ],
