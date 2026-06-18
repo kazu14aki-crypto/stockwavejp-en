@@ -1133,7 +1133,7 @@ function MonthlyVolChart({ volTrendData, allThemeNames, months }) {
                 <g key={t}>
                   <rect x={PL+si*160} y={PT-22} width="12" height="12" rx="2" fill={col} opacity="0.85"/>
                   <text x={PL+si*160+16} y={PT-12} fontSize="10" fill="rgba(255,255,255,0.75)">
-                    {t.length > 12 ? t.slice(0,12)+'…' : t}
+                    {tn(t).length > 14 ? tn(t).slice(0,14)+'…' : tn(t)}
                   </text>
                 </g>
               )
@@ -1235,7 +1235,7 @@ function MonthlyTVChart({ volTrendData, allThemeNames, months }) {
                 <g key={t}>
                   <rect x={PL+si*160} y={PT-22} width="12" height="12" rx="2" fill={col} opacity="0.85"/>
                   <text x={PL+si*160+16} y={PT-12} fontSize="10" fill="rgba(255,255,255,0.75)">
-                    {t.length > 12 ? t.slice(0,12)+'…' : t}
+                    {tn(t).length > 14 ? tn(t).slice(0,14)+'…' : tn(t)}
                   </text>
                 </g>
               )
