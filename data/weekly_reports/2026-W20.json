@@ -3,6 +3,54 @@
   "date": "2026/05/15",
   "title": "5/11〜5/15 Weekly Market Report",
   "generated_at": "2026/05/15 20:00 JST",
-  "summary": "34/67 themes advanced (-0.23% avg). Banking (+4.2%) led on BOJ normalization. Growth themes sold off on rate sensitivity.",
+  "summary": {
+    "avg_pct_1w": 2.84,
+    "rise_count": 45,
+    "fall_count": 22,
+    "top5_themes": [
+      {
+        "theme": "防衛・航空",
+        "pct": 11.2
+      },
+      {
+        "theme": "宇宙・衛星",
+        "pct": 9.8
+      },
+      {
+        "theme": "半導体製造装置",
+        "pct": 8.6
+      },
+      {
+        "theme": "AI半導体",
+        "pct": 7.9
+      },
+      {
+        "theme": "サイバーセキュリティ",
+        "pct": 7.3
+      }
+    ],
+    "bot5_themes": [
+      {
+        "theme": "石油",
+        "pct": -3.1
+      },
+      {
+        "theme": "LNG",
+        "pct": -2.8
+      },
+      {
+        "theme": "電力会社",
+        "pct": -2.2
+      },
+      {
+        "theme": "観光・ホテル・レジャー",
+        "pct": -1.9
+      },
+      {
+        "theme": "インバウンド",
+        "pct": -1.4
+      }
+    ]
+  },
   "report": "## Market Overview (Week of May 12–16)\n\nMixed week. 34 of 67 themes advanced, average return -0.23%. BOJ commentary on rate normalization pace added uncertainty.\n\n---\n\n## Rising Themes\n\n### 🥇 #1: Banking & Finance (+4.2%)\nBOJ governor reaffirmed normalization path. NIM expansion expectations drove MUFG and SMFG higher.\n\n### 🥈 #2: Insurance (+3.8%)\nLong-term yield increases enhanced investment return expectations.\n\n### 🥉 #3: National Resilience (+3.1%)\nNew infrastructure spending plans announced.\n\n---\n\n## Falling Themes\n\nGrowth themes (SaaS, Generative AI, Space & Satellite) declined as rate-sensitive valuation headwinds intensified.\n\n---\n\n## StockWaveJP Commentary\n\nBOJ timing uncertainty is creating a genuine sector rotation from growth/AI to value/financials. Classic late-cycle rotation. Recommendation: maintain AI/tech exposure but add banking/insurance as a hedge.\n\n> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility."
 }
