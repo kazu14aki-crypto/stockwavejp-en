@@ -155,11 +155,11 @@ function PickupStocks({ stocks, period }) {
                   <span>{'Trade Value ' + fmtL(s.trade_value)}</span>
                 )}
               </div>
-              {/* 注目度スコア */}
+              {/* Scoreスコア */}
               <div style={{ display:'flex', alignItems:'center', gap:'6px' }}>
                 <span style={{ fontSize:'9px', color:'var(--text3)', fontWeight:600,
                   textTransform:'uppercase', letterSpacing:'0.06em', flexShrink:0 }}>
-                  注目度
+                  Score
                 </span>
                 <span style={{ fontSize:'15px', fontWeight:800, fontFamily:'var(--mono)',
                   color:scoreColor, lineHeight:1 }}>
@@ -186,7 +186,7 @@ function PickupStocks({ stocks, period }) {
         color:'var(--text3)', lineHeight:1.8 }}>
         ⚠️ <strong style={{ color:'var(--text2)' }}>Note:</strong>
         Rankings are auto-calculated.
-        <strong style={{ color:'var(--text2)' }}>リアルタイムデータではなく</strong>、
+        <strong style={{ color:'var(--text2)' }}>Not real-time data</strong>;
         Results depend on data update timing.
         May differ from current market conditions.
         Not a recommendation to buy or sell.
@@ -202,7 +202,7 @@ function MrVolTvChart({ stocks }) {
   if (!stocks || stocks.length === 0) return (
     <div style={{ textAlign:'center', padding:'24px', color:'var(--text3)', fontSize:'12px',
       background:'var(--bg2)', border:'1px solid var(--border)', borderRadius:'10px' }}>
-      データ取得中...
+      Loading...
     </div>
   )
   const sorted = [...stocks].sort((a,b) => (b[mode==='tv'?'trade_value':'volume']||0)-(a[mode==='tv'?'trade_value':'volume']||0)).slice(0,15)
@@ -265,7 +265,7 @@ function MrVolTvChart({ stocks }) {
             padding:'20px', width:'min(92vw,900px)', maxHeight:'90vh', overflowY:'auto',
           }}>
             <div style={{ display:'flex', justifyContent:'space-between', alignItems:'center', marginBottom:'14px' }}>
-              <span style={{ fontSize:'14px', fontWeight:700, color:'var(--text)' }}>出来高・売買代金ランキング（拡大）</span>
+              <span style={{ fontSize:'14px', fontWeight:700, color:'var(--text)' }}>Volume & Trade Value (expanded)</span>
               <button onClick={()=>setExpanded(false)} style={{
                 background:'rgba(255,255,255,0.08)', border:'1px solid var(--border)',
                 borderRadius:'6px', color:'var(--text2)', cursor:'pointer', fontSize:'13px', padding:'4px 12px', fontFamily:'var(--font)',
@@ -285,7 +285,7 @@ function MrBubbleChart({ stocks }) {
   if (!stocks || !stocks.length) return (
     <div style={{ textAlign:'center', padding:'24px', color:'var(--text3)', fontSize:'12px',
       background:'var(--bg2)', border:'1px solid var(--border)', borderRadius:'10px' }}>
-      データ取得中...
+      Loading...
     </div>
   )
   const chart = <StockBubbleChart stocks={stocks} themeName="" onNavigate={null} />
@@ -308,7 +308,7 @@ function MrBubbleChart({ stocks }) {
             padding:'20px', width:'min(92vw,1000px)', maxHeight:'90vh', overflowY:'auto',
           }}>
             <div style={{ display:'flex', justifyContent:'space-between', alignItems:'center', marginBottom:'14px' }}>
-              <span style={{ fontSize:'14px', fontWeight:700, color:'var(--text)' }}>銘柄別ヒートマップ（拡大）</span>
+              <span style={{ fontSize:'14px', fontWeight:700, color:'var(--text)' }}>Stock Heatmap (expanded)</span>
               <button onClick={()=>setExpanded(false)} style={{
                 background:'rgba(255,255,255,0.08)', border:'1px solid var(--border)',
                 borderRadius:'6px', color:'var(--text2)', cursor:'pointer', fontSize:'13px', padding:'4px 12px', fontFamily:'var(--font)',
@@ -480,7 +480,7 @@ function StockTable({ stocks: rawStocks, onAddToTheme }) {
   const onMouseUp = () => { isDragging.current = false; if (tableRef.current) tableRef.current.style.cursor = 'grab' }
 
   const headers = ['Chart','Price','Return','Mkt.Cap','Contrib.%','Vol.Chg','Volume','Vol.Rank','Trade Value','TV.Rank','Add']
-  const sortBtns = [{key:'pct',label:'騰落率'},{key:'volume',label:'出来高'},{key:'trade_value',label:'売買代金'}]
+  const sortBtns = [{key:'pct',label:'Return'},{key:'volume',label:'Volume'},{key:'trade_value',label:'Trade Value'}]
 
   return (
     <>
@@ -896,7 +896,7 @@ const allGroups = {
             </div>
 
             {isLoading ? (
-              <Loading msg="データ取得中..." />
+              <Loading msg="Loading..." />
             ) : currentDetail ? (
               <div>
                 <div style={{ display:'flex', alignItems:'center', gap:'16px', marginBottom:'20px', flexWrap:'wrap' }}>
@@ -909,8 +909,8 @@ const allGroups = {
                 </div>
 
                 <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:'16px', marginBottom:'20px' }} className="top5g">
-                  <Top5Bar items={top5} title={`▲ Rising TOP5 (${stocks.filter(s=>s.pct>0).length} stocks)`} colorFn={pctColor} emptyMsg="上昇銘柄なし"/>
-                  <Top5Bar items={bot5} title={`▼ Falling TOP5 (${stocks.filter(s=>s.pct<0).length} stocks)`} colorFn={pctColor} emptyMsg="下落銘柄なし"/>
+                  <Top5Bar items={top5} title={`▲ Rising TOP5 (${stocks.filter(s=>s.pct>0).length} stocks)`} colorFn={pctColor} emptyMsg="No rising stocks"/>
+                  <Top5Bar items={bot5} title={`▼ Falling TOP5 (${stocks.filter(s=>s.pct<0).length} stocks)`} colorFn={pctColor} emptyMsg="No falling stocks"/>
                 </div>
 
                 {/* ③ 注目銘柄ピックアップ */}
@@ -958,7 +958,7 @@ const allGroups = {
 
       <style>{`
         @media (max-width:640px){.top5g{grid-template-columns:1fr !important;}}
-        /* ③ スマホ版パディング調整 */
+        /* Mobile padding */
         .mr-page-body { padding: 10px 12px 40px !important; }
         @media (min-width: 641px) {
           .mr-page-body { padding: 20px 32px 48px !important; }
@@ -977,11 +977,11 @@ const allGroups = {
             min-width: 0;
           }
         }
-        /* ② スマホ版: 右端をTOP5に揃える */
+        /* Mobile align */
         @media (max-width: 640px) {
           .mr-bottom-grid { padding: 0 !important; }
         }
-        /* ③ スマホ版の表・グラフはみ出し防止 */
+        /* Mobile overflow */
         @media (max-width: 640px) {
           .mr-page-body .sticky-table { max-width: calc(100vw - 20px); }
           .mr-page-body svg { max-width: 100%; }
