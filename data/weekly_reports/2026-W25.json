@@ -1,0 +1,58 @@
+{
+  "week": "2026-W25",
+  "date": "2026-06-19",
+  "title": "Weekly Market Report | Jun 15-19, 2026",
+  "generated_at": "2026-06-20T10:00:00+09:00",
+  "next_report_at": "2026-06-27T18:00:00+09:00",
+  "summary": {
+    "avg_pct_1w": 6.6,
+    "rise_count": 52,
+    "fall_count": 15,
+    "total_themes": 67,
+    "top5_themes": [
+      {
+        "theme": "AI Semiconductor",
+        "pct": 18.5
+      },
+      {
+        "theme": "MLCC / Electronic Components",
+        "pct": 14.2
+      },
+      {
+        "theme": "Semiconductor Equipment",
+        "pct": 12.8
+      },
+      {
+        "theme": "Defense & Aerospace",
+        "pct": 9.3
+      },
+      {
+        "theme": "Next-Gen Semiconductor",
+        "pct": 8.7
+      }
+    ],
+    "bot5_themes": [
+      {
+        "theme": "Rare Earth / Resources",
+        "pct": -3.2
+      },
+      {
+        "theme": "Crypto / Web3",
+        "pct": -2.8
+      },
+      {
+        "theme": "Quantum Computing",
+        "pct": -1.9
+      },
+      {
+        "theme": "Biotech / Drug Discovery",
+        "pct": -1.5
+      },
+      {
+        "theme": "Regional Banks",
+        "pct": -0.8
+      }
+    ]
+  },
+  "report": "# Weekly Market Report | June 15-19, 2026\n\n---\n\n## Japan Equity Markets — A Historic Week\n\nThe Nikkei 225 smashed through 70,000 for the first time in its 77-year history, propelled by the landmark US-Iran peace accord and a historic semiconductor rally.\n\n**Nikkei 225 Daily Closes:**\n- Mon 6/16: ~68,800 (gap up on weekend Iran peace news)\n- Tue 6/17: 69,404 (briefly touched 70,000 intraday — first ever)\n- Wed 6/18: 68,362 (-1,042 pts, FOMC result + AI rally pause)\n- Thu 6/19: 71,053 (+2,691 / +3.9%). US-Iran peace signed at Versailles. US lifts Iran naval blockade. Oil drops below $80. Massive risk-on.\n- Fri 6/20: 70,704 (-349 / -0.5%). Mild profit-taking, held above 70K.\n\n**Weekly: 66,329 to 70,704 — +4,375 pts (+6.6%)**\n\nTOPIX: +4.0% weekly. TSE Prime trading value hit record levels of Y18-25T daily.\n\n---\n\n## Headline Events\n\n**US-Iran Peace Accord (Jun 18, Versailles)**\n\nPresidents Trump and Pezeshkian signed a permanent peace framework at the Palace of Versailles. The US immediately lifted its naval blockade on Iran. WTI crude plunged below $80/bbl, triggering a global risk-on wave. The Nikkei surged +2,691 points on this single day — one of the largest one-day gains in history.\n\n**FOMC (Jun 16-17) — Chair Warsh's Debut**\n\nFed held rates at 3.50-3.75%. The dot plot was hawkish (9 members favor further hikes in 2026), but new Chair Warsh signaled in his press conference that 'the next move is more likely a cut.' 2-year Treasury yield dropped to 4.01%. December hike probability plunged from 90% to 60%.\n\n**Nikkei 225 Crosses 70,000 — Then 71,000**\n\nFirst-ever intraday break above 70,000 on June 17. Closed above 71,000 for the first time on June 19 at 71,053. A 77-year milestone.\n\n**Kioxia Holdings Hits Y100,000**\n\nNAND flash memory giant Kioxia reached 100,000 yen per share for the first time. Market cap crossed Y50T. Strong FY2026 Q1 guidance drove a 7-day winning streak.\n\n---\n\n## Theme Performance Rankings\n\n### Rising Top 5\n\n**#1: AI Semiconductor +18.5%**\nPost-FOMC relief + Iran peace risk-on explosion. Advantest, Tokyo Electron, Lasertec surged daily. SK Hynix HBM4E sample shipment news boosted memory sentiment. Murata Manufacturing +12.38% on Thursday alone.\n\n**#2: MLCC / Electronic Components +14.2%**\nContinued from last week's momentum. AI chip component demand + SpaceX Starlink satellite production demand.\n\n**#3: Semiconductor Equipment +12.8%**\nTokyo Electron, DISCO, SCREEN HD led. Kioxia's 100K breakthrough lifted entire sector sentiment.\n\n**#4: Defense & Aerospace +9.3%**\nBrief selloff on Iran peace quickly reversed. Japan's defense budget expansion plans continue regardless. Mitsubishi Heavy, IHI strong.\n\n**#5: Next-Gen Semiconductor +8.7%**\nSub-2nm process technology and advanced packaging. Rapidus Hokkaido fab progress reports provided additional catalyst.\n\n### Falling Bottom 5\n\n**#1: Rare Earth / Resources -3.2%**\nOil and commodity price declines on Iran peace. Sumitomo Metal Mining -7.04%. Geopolitical premium evaporated.\n\n**#2: Crypto / Web3 -2.8%**\nBitcoin at ~$66,100. Spot BTC ETFs recorded 5 consecutive weeks of net outflows.\n\n**#3: Quantum Computing -1.9%**\nContinued profit-taking. No near-term commercialization catalysts.\n\n**#4: Biotech / Drug Discovery -1.5%**\nDaiichi Sankyo -5.95%. Thin news flow on drug approvals this week.\n\n**#5: Regional Banks -0.8%**\nRate hike expectations moderated after Warsh's 'next move is a cut' comment.\n\n---\n\n## US Markets\n\n**June 18 close:**\n- Dow: 51,564.70 (+0.14%)\n- S&P 500: 7,500.58 (+1.08%)\n- Nasdaq: 26,517.93 (+1.91%)\n\nIran peace drove oil lower, easing inflation fears and funneling capital into tech. Micron (MU) price targets raised to $1,500 by Deutsche Bank and TD Cowen.\n\n---\n\n## Key Economic Data\n\n- Japan CPI (May, released 6/19): Core 1.4% (steady). Contained inflation reduces BoJ rate hike urgency\n- US CPI (May): Headline 4.2%, Core 2.9%. Energy factor transitory. Iran peace oil decline supports future CPI drops\n- FOMC: 3.50-3.75% hold. Dot plot hawkish but Warsh hints at cuts\n\n---\n\n## Watch List for Next Week (Jun 22-26)\n\n- SpaceX (SPCX) second week of trading — stabilization or volatility\n- BoJ May meeting minutes — detailed rate path discussion\n- US-China semiconductor export controls — potential new restrictions\n- Rapidus Hokkaido fab update\n- Quarter-end fund rebalancing — selling pressure risk\n\n---\n\n## StockWaveJP Editorial View\n\nNikkei 70,000 is historic but this week's surge was heavily driven by the Iran peace external catalyst. Quarter-end rebalancing pressure could create headwinds next week.\n\nHowever, the AI rally structure is fundamentally sound. Kioxia at 100K, Murata +12.38% — real demand across the semiconductor value chain. Any correction likely finds strong support at 69,000-70,000.\n\n> For informational purposes only. Not investment advice."
+}

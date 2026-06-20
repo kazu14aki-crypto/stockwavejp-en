@@ -210,7 +210,7 @@ function BubbleScatter({ data, mPeriod, setMPeriod, onNavigate }) {
     )
   }
   // ── レイアウト定数 ──────────────────────────────
-  const W = 800, H = 400
+  const W = 650, H = 320
   const PL = 60, PR = 28, PT = 40, PB = 48
   const GW = W - PL - PR
   const GH = H - PT - PB
@@ -358,7 +358,7 @@ function BubbleScatter({ data, mPeriod, setMPeriod, onNavigate }) {
       {/* SVGチャート */}
       <div style={{ width:'100%', overflowX:'auto', position:'relative', WebkitOverflowScrolling:'touch' }}>
         <svg
-          viewBox={`0 0 ${W} ${H}`}
+          viewBox={`0 0 ${W} ${H}`} style={{ maxHeight:'55vh', width:'100%' }}
           style={{ width:'100%', minWidth:'380px', display:'block',
             background:'var(--bg2)', borderRadius:'10px',
             border:'1px solid var(--border)' }}
