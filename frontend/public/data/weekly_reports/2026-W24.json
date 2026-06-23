@@ -1,58 +1,57 @@
 {
   "week": "2026-W24",
   "date": "2026-06-12",
-  "title": "Weekly Market Report | Jun 6-12, 2026",
+  "title": "Weekly Market Report | Jun 8–12, 2026",
   "generated_at": "2026-06-12T18:00:00+09:00",
-  "next_report_at": "2026-06-19T18:00:00+09:00",
   "summary": {
     "avg_pct_1w": -2.3,
-    "rise_count": 35,
-    "fall_count": 32,
+    "rise_count": 52,
+    "fall_count": 15,
     "total_themes": 67,
     "top5_themes": [
       {
-        "theme": "MLCC / Electronic Components",
-        "pct": 10.2
+        "theme": "AI半導体",
+        "pct": 8.4
       },
       {
-        "theme": "Defense & Aerospace",
-        "pct": 6.5
+        "theme": "防衛・航空",
+        "pct": 7.2
       },
       {
-        "theme": "Resources (LNG)",
-        "pct": 4.1
+        "theme": "半導体製造装置",
+        "pct": 6.8
       },
       {
-        "theme": "Buffett Picks",
-        "pct": 3.2
+        "theme": "銀行・金融",
+        "pct": 5.1
       },
       {
-        "theme": "EV / Battery",
-        "pct": 2.8
+        "theme": "MLCC・電子部品",
+        "pct": 4.7
       }
     ],
     "bot5_themes": [
       {
-        "theme": "Rare Earth / Resources",
-        "pct": -7.9
+        "theme": "レアアース・資源",
+        "pct": -6.4
       },
       {
-        "theme": "Generative AI / AI Datacenter",
-        "pct": -6.8
-      },
-      {
-        "theme": "Semiconductor Equipment",
-        "pct": -5.4
-      },
-      {
-        "theme": "Quantum Computing",
-        "pct": -4.9
-      },
-      {
-        "theme": "Crypto / Web3",
+        "theme": "仮想通貨・Web3",
         "pct": -4.2
+      },
+      {
+        "theme": "太陽光・再エネ",
+        "pct": -3.1
+      },
+      {
+        "theme": "バイオ・創薬",
+        "pct": -2.8
+      },
+      {
+        "theme": "量子コンピューター",
+        "pct": -2.1
       }
     ]
   },
-  "report": "# Weekly Market Report | June 6-12, 2026\n\n---\n\n## Japan Equity Markets — Weekly Overview\n\nJapan's equity market entered a consolidation after the YTD high of 68,786 (Jun 3). The decline was concentrated in AI/semiconductor leaders — a healthy rotation rather than a broad breakdown.\n\n**Nikkei 225 weekly trajectory:**\n- Jun 8 (Mon): ~65,900, volatile on Major SQ expiry\n- Jun 9-10 (Tue-Wed): range-bound 64,800-65,200\n- Jun 11 (Thu): closed 64,217 — apparent short-term floor\n- Jun 12 (Fri): rebounded to ~65,400 on geopolitical relief\n\n**Weekly change: -2,371 pts (-3.6%)** | Trading value: Y12-15T/day (elevated)\n\nOver 70% of TSE Prime stocks ROSE this week — a selective, rotation-driven correction.\n\n---\n\n## US Markets & Global Events\n\n**SpaceX IPO (SPCX) — Largest IPO in History**\n- IPO Price: $135/share (fixed-price method)\n- Total Raised: ~$75 billion\n- Valuation: ~$1.77 trillion (larger than Tesla on day one)\n- Oversubscription: 4x ($250B+ demand vs $75B offered)\n- 30% retail investor allocation\n\n**Marvell Technology (MRVL) +25%+ Weekly**\n- Nvidia CEO Jensen Huang called Marvell 'the next trillion-dollar company' at Computex\n- AI custom chip revenue to exceed $10B by FY2029\n- Positive read-through for Japan's electronic component makers\n\n**Iran Geopolitical Risk: Easing**\n- Trump cancelled strikes; peace deal signaled\n- Jun 11 US: Dow +1.86%, S&P 500 +1.75%, Nasdaq +2.54%\n\n---\n\n## Theme Rankings & Analysis\n\n### Rising Top 5\n\n**#1: MLCC / Electronic Components +10.2%**\nMarvell halo effect + AI chip demand. Murata, TDK, Taiyo Yuden saw concentrated buying.\n\n**#2: Defense & Aerospace +6.5%**\nSustained by Iran tensions, NATO spending demands, and PM's '17 Strategic Domains' policy.\n\n**#3: Resources (LNG) +4.1%**\nStable LNG demand, European export expansion, energy security theme. INPEX led.\n\n**#4: Buffett Picks +3.2%**\nRisk-on rotation into Berkshire-held Japanese trading companies.\n\n**#5: EV / Battery +2.8%**\nChinese EV maker Japan entry reports + EU EV subsidy continuations.\n\n### Falling Bottom 5\n\n**#1: Rare Earth / Resources -7.9%**\nChina rare earth export restriction signals reignited supply chain fears.\n\n**#2: Generative AI / AI Datacenter -6.8%**\nProfit-taking after driving 5+ weeks of gains. Fund rebalancing added pressure.\n\n**#3: Semiconductor Equipment -5.4%**\nTokyo Electron, Advantest, Lasertec gave back last week's surge gains.\n\n**#4: Quantum Computing -4.9%**\nSpeculative buying unwound; commercialization timeline skepticism resurfaced.\n\n**#5: Crypto / Web3 -4.2%**\nCapital rotated to SpaceX IPO. Continued regulatory headwinds.\n\n---\n\n## Watch List for Next Week (Jun 15-19)\n\n- **SPCX first-week trading**: Largest IPO ever — Nasdaq demand and index inclusion effects\n- **FOMC Jun 17-18**: Rate hold expected; Powell tone on inflation path matters\n- **Iran peace talks**: Resolution = risk-on; breakdown = defensive positioning\n- **Japan CPI Jun 19**: Most critical indicator for BoJ rate path\n- **PM's 17 Strategic Domains stocks**: Domestic capital inflows into defense/semicon/space/energy\n\n---\n\n## StockWaveJP Editorial View\n\nThis week's correction is a healthy pause. Easing geopolitics + SpaceX IPO support sentiment. Rotation into defense, MLCC, and trading companies looks durable.\n\n**Next Week Scenarios:**\n- Bull (55%): SPCX strong + Iran deal + FOMC neutral → recovery to 66,000-68,000\n- Neutral (30%): Any one risk factor → range-bound 64,000-66,000\n- Bear (15%): Multiple headwinds → test 61,000-64,000 (buy-the-dip opportunity)"
+  "report": "## Japan Equity Markets — Weekly Overview\n\nThe Nikkei 225 moved **+2,111 pts (+3.3%)** this week (64,218 → 66,329).\n\nThe average return across all 67 themes was **-2.3%**.\n\n---\n\n## 📅 Key Events & News This Week\n\n- SpaceX (SPCX) lists on Nasdaq (June 12): IPO $135, opens at $192.5 (+42.6%)\n- $75B raised — largest IPO in history\n- US May CPI: Core 3.0% (below 3.1% consensus) → rate cut odds improve\n- Middle East tensions: Israel-Lebanon border clash → oil hits $87\n\n---\n\n## 📊 Theme Performance Rankings\n\n### 🔥 Top 5 Rising Themes\n\n**🥇 AI半導体: +8.4%**\n  → AI and semiconductor capital inflows remain strong.\n\n**🥈 防衛・航空: +7.2%**\n  → Major constituent stocks rallied.\n\n**🥉 半導体製造装置: +6.8%**\n  → Major constituent stocks rallied.\n\n**4️⃣ 銀行・金融: +5.1%**\n  → Major constituent stocks rallied.\n\n**5️⃣ MLCC・電子部品: +4.7%**\n  → AI and semiconductor capital inflows remain strong.\n\n### ❄️ Bottom 5 Falling Themes\n\n**🥇 レアアース・資源: -6.4%**\n  → Profit-taking dominated.\n\n**🥈 仮想通貨・Web3: -4.2%**\n  → Profit-taking dominated.\n\n**🥉 太陽光・再エネ: -3.1%**\n  → Profit-taking dominated.\n\n**4️⃣ バイオ・創薬: -2.8%**\n  → Profit-taking dominated.\n\n**5️⃣ 量子コンピューター: -2.1%**\n  → Profit-taking dominated.\n\n---\n\n## 📌 Watch List for Next Week\n\n- **FOMC (June 16-17)**\n- **US-Iran nuclear talks outcome**\n- **BoJ tapering pace decision**\n\n---\n\n> ⚠️ For informational purposes only. Not investment advice. All investment decisions are your sole responsibility."
 }

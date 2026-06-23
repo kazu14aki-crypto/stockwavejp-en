@@ -31,100 +31,205 @@
   {
     "week": "2026-W24",
     "date": "2026-06-12",
-    "title": "Weekly Market Report | Jun 6-12, 2026",
+    "title": "Weekly Market Report | Jun 8–12, 2026",
     "generated_at": "2026-06-12T18:00:00+09:00",
     "avg_pct_1w": -2.3,
     "top5_themes": [
       {
-        "theme": "MLCC / Electronic Components",
-        "pct": 10.2
+        "theme": "AI半導体",
+        "pct": 8.4
       },
       {
-        "theme": "Defense & Aerospace",
-        "pct": 6.5
+        "theme": "防衛・航空",
+        "pct": 7.2
       },
       {
-        "theme": "Resources (LNG)",
-        "pct": 4.1
+        "theme": "半導体製造装置",
+        "pct": 6.8
       },
       {
-        "theme": "Buffett Picks",
-        "pct": 3.2
+        "theme": "銀行・金融",
+        "pct": 5.1
       },
       {
-        "theme": "EV / Battery",
-        "pct": 2.8
+        "theme": "MLCC・電子部品",
+        "pct": 4.7
       }
     ]
   },
   {
     "week": "2026-W23",
-    "date": "2026/06/06",
-    "title": "Jun 2–6 Weekly Market Report",
-    "generated_at": "2026/06/06 20:00 JST",
-    "avg_pct_1w": 1.45,
+    "date": "2026-06-05",
+    "title": "Weekly Market Report | Jun 1–5, 2026",
+    "generated_at": "2026-06-05T18:00:00+09:00",
+    "avg_pct_1w": 4.3,
     "top5_themes": [
       {
-        "theme": "MLCC / Electronic Components",
-        "pct": 8.2
+        "theme": "AI半導体",
+        "pct": 14.8
       },
       {
-        "theme": "AI Semiconductor",
-        "pct": 7.1
+        "theme": "MLCC・電子部品",
+        "pct": 12.3
       },
       {
-        "theme": "Semiconductor Equipment",
-        "pct": 5.8
+        "theme": "半導体製造装置",
+        "pct": 10.7
       },
       {
-        "theme": "Memory",
-        "pct": 5.3
+        "theme": "防衛・航空",
+        "pct": 9.1
       },
       {
-        "theme": "Wearables",
-        "pct": 4.9
+        "theme": "次世代半導体",
+        "pct": 8.4
       }
     ]
   },
   {
     "week": "2026-W22",
-    "date": "2026/05/29",
-    "title": "5/25〜5/29 Weekly Market Report",
-    "generated_at": "2026/05/29 20:00 JST",
-    "avg_pct_1w": 0,
-    "top5_themes": []
+    "date": "2026-05-29",
+    "title": "Weekly Market Report | May 25–29, 2026",
+    "generated_at": "2026-05-29T18:00:00+09:00",
+    "avg_pct_1w": 8.4,
+    "top5_themes": [
+      {
+        "theme": "AI半導体",
+        "pct": 35.8
+      },
+      {
+        "theme": "次世代半導体",
+        "pct": 28.4
+      },
+      {
+        "theme": "半導体製造装置",
+        "pct": 24.1
+      },
+      {
+        "theme": "MLCC・電子部品",
+        "pct": 18.7
+      },
+      {
+        "theme": "防衛・航空",
+        "pct": 14.2
+      }
+    ]
   },
   {
     "week": "2026-W21",
-    "date": "2026/05/22",
-    "title": "5/18〜5/22 Weekly Market Report",
-    "generated_at": "2026/05/22 20:00 JST",
-    "avg_pct_1w": 0,
-    "top5_themes": []
+    "date": "2026-05-22",
+    "title": "Weekly Market Report | May 18–22, 2026",
+    "generated_at": "2026-05-22T18:00:00+09:00",
+    "avg_pct_1w": 5.1,
+    "top5_themes": [
+      {
+        "theme": "AI半導体",
+        "pct": 18.2
+      },
+      {
+        "theme": "次世代半導体",
+        "pct": 14.7
+      },
+      {
+        "theme": "半導体製造装置",
+        "pct": 11.3
+      },
+      {
+        "theme": "量子コンピューター",
+        "pct": 8.9
+      },
+      {
+        "theme": "MLCC・電子部品",
+        "pct": 7.4
+      }
+    ]
   },
   {
     "week": "2026-W20",
-    "date": "2026/05/15",
-    "title": "5/11〜5/15 Weekly Market Report",
-    "generated_at": "2026/05/15 20:00 JST",
-    "avg_pct_1w": 0,
-    "top5_themes": []
+    "date": "2026-05-15",
+    "title": "Weekly Market Report | May 11–15, 2026",
+    "generated_at": "2026-05-15T18:00:00+09:00",
+    "avg_pct_1w": 2.8,
+    "top5_themes": [
+      {
+        "theme": "MLCC・電子部品",
+        "pct": 10.2
+      },
+      {
+        "theme": "AI半導体",
+        "pct": 9.1
+      },
+      {
+        "theme": "光ファイバー・通信",
+        "pct": 7.8
+      },
+      {
+        "theme": "次世代半導体",
+        "pct": 6.4
+      },
+      {
+        "theme": "防衛・航空",
+        "pct": 5.7
+      }
+    ]
   },
   {
     "week": "2026-W19",
-    "date": "2026/05/08",
-    "title": "5/4〜5/8 Weekly Market Report",
-    "generated_at": "2026/05/08 20:00 JST",
-    "avg_pct_1w": 0,
-    "top5_themes": []
+    "date": "2026-05-08",
+    "title": "Weekly Market Report | May 4–8, 2026",
+    "generated_at": "2026-05-08T18:00:00+09:00",
+    "avg_pct_1w": 4.5,
+    "top5_themes": [
+      {
+        "theme": "AI半導体",
+        "pct": 15.3
+      },
+      {
+        "theme": "次世代半導体",
+        "pct": 11.8
+      },
+      {
+        "theme": "半導体製造装置",
+        "pct": 9.4
+      },
+      {
+        "theme": "防衛・航空",
+        "pct": 8.2
+      },
+      {
+        "theme": "MLCC・電子部品",
+        "pct": 7.6
+      }
+    ]
   },
   {
     "week": "2026-W18",
-    "date": "2026/05/01",
-    "title": "4/27〜5/1 Weekly Market Report",
-    "generated_at": "2026/05/01 20:00 JST",
-    "avg_pct_1w": 0,
-    "top5_themes": []
+    "date": "2026-05-01",
+    "title": "Weekly Market Report | Apr 27 – May 1, 2026",
+    "generated_at": "2026-05-01T18:00:00+09:00",
+    "avg_pct_1w": 3.2,
+    "top5_themes": [
+      {
+        "theme": "防衛・航空",
+        "pct": 12.4
+      },
+      {
+        "theme": "AI半導体",
+        "pct": 8.7
+      },
+      {
+        "theme": "半導体製造装置",
+        "pct": 7.3
+      },
+      {
+        "theme": "MLCC・電子部品",
+        "pct": 5.9
+      },
+      {
+        "theme": "通信・光ファイバー",
+        "pct": 5.1
+      }
+    ]
   },
   {
     "week": "2026-W17",

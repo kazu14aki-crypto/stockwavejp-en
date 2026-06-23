@@ -55,7 +55,7 @@ export default function Settings({ viewMode, onViewModeChange, colorTheme, onCol
   }
 
   // Plan label color
-  const planColor = { free:'#4a9eff', standard:'#ff8c42', pro:'#aa77ff', pro_trial:'#aa77ff', dev:'#00c48c' }[plan] || '#4a9eff'
+  const planColor = { free:'#4a9eff', standard:'#ff8c42', pro:'#aa77ff', pro_trial:'#aa77ff', trial_expired:'#888', dev:'#00c48c' }[plan] || '#4a9eff'
 
   // Cancellation handler
   const handleCancel = async () => {
@@ -97,10 +97,10 @@ export default function Settings({ viewMode, onViewModeChange, colorTheme, onCol
               {plan === 'pro_trial' && (
                 <span style={{ fontSize:'11px', padding:'3px 10px', borderRadius:'20px',
                   background:'rgba(170,119,255,0.15)', color:'#aa77ff', border:'1px solid rgba(170,119,255,0.3)' }}>
-                  30-day free trial{(() => {
+                  14-day free trial{(() => {
                     const fl = user?.user_metadata?.first_login_at
                     if (!fl) return ''
-                    const end = new Date(new Date(fl).getTime() + 30*24*60*60*1000)
+                    const end = new Date(new Date(fl).getTime() + 14*24*60*60*1000)
                     const rem = Math.max(0, Math.ceil((end - new Date()) / 86400000))
                     return ' — ends ' + end.toLocaleDateString('en-US', {month:'long',day:'numeric',year:'numeric'}) + ' (' + rem + ' days remaining)'
                   })()}
@@ -111,7 +111,8 @@ export default function Settings({ viewMode, onViewModeChange, colorTheme, onCol
               {plan === 'free' && 'Free Plan: Access to basic features.'}
               {plan === 'standard' && 'Standard Plan: ¥980/month. Access to all periods and archives.'}
               {plan === 'pro' && 'Pro Plan: ¥1,980/month. Access to all features including institutional holdings.'}
-              {plan === 'pro_trial' && 'Pro Plan 30-day free trial. Automatically switches to Free plan after the trial period ends ends.'}
+              {plan === 'trial_expired' && 'Your 14-day free trial has ended. Subscribe to a paid plan to continue enjoying full access.'}
+            {plan === 'pro_trial' && 'Pro Plan 14-day free trial. Automatically switches to Free plan after the trial period ends ends.'}
               {plan === 'dev' && 'Developer account: All features available.'}
             </div>
 
