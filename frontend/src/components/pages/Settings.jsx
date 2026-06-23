@@ -4,6 +4,7 @@ import { useAuth }         from '../../hooks/useAuth.jsx'
 
 export default function Settings({ viewMode, onViewModeChange, colorTheme, onColorThemeChange, isMobile, onNavigate }) {
   const { plan, planLabel, isPro, isStandard, expiresAt } = useSubscription()
+  const { user } = useAuth()
   const { isLoggedIn, user } = useAuth()
   const [cancelling,  setCancelling]  = useState(false)
   const [cancelDone,  setCancelDone]  = useState(false)
@@ -97,7 +98,13 @@ export default function Settings({ viewMode, onViewModeChange, colorTheme, onCol
               {plan === 'pro_trial' && (
                 <span style={{ fontSize:'11px', padding:'3px 10px', borderRadius:'20px',
                   background:'rgba(170,119,255,0.15)', color:'#aa77ff', border:'1px solid rgba(170,119,255,0.3)' }}>
-                  14-day free trial active{expiresAt ? ' — expires ' + expiresAt.toLocaleDateString('en-US') : ''}
+                  30-day free trial{(() => {
+                    const fl = user?.user_metadata?.first_login_at
+                    if (!fl) return ''
+                    const end = new Date(new Date(fl).getTime() + 30*24*60*60*1000)
+                    const remaining = Math.max(0, Math.ceil((end - new Date()) / 86400000))
+                    return ' — ends ' + end.toLocaleDateString('en-US', {month:'long',day:'numeric',year:'numeric'}) + ' (' + remaining + ' days remaining)'
+                  })()}
                 </span>
               )}
             </div>
@@ -105,7 +112,7 @@ export default function Settings({ viewMode, onViewModeChange, colorTheme, onCol
               {plan === 'free' && 'Free Plan: Access to basic features.'}
               {plan === 'standard' && 'Standard Plan: ¥980/month. Access to all periods and archives.'}
               {plan === 'pro' && 'Pro Plan: ¥1,980/month. Access to all features including institutional holdings.'}
-              {plan === 'pro_trial' && 'Pro Plan trial active. Automatically switches to Free plan after the trial ends.'}
+              {plan === 'pro_trial' && 'Pro Plan 30-day free trial. Automatically switches to Free plan after the trial period ends ends.'}
               {plan === 'dev' && 'Developer account: All features available.'}
             </div>
 
