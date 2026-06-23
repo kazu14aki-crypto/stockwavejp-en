@@ -367,3 +367,32 @@ async def stripe_webhook(request: Request):
             }, on_conflict="user_id").execute()
     
     return {"received": True}
+
+# ── Stripe subscription cancellation ────────────────────────────────────────
+@app.post("/api/stripe/cancel-subscription")
+async def cancel_subscription(req: Request):
+    body = await req.json()
+    user_id = body.get("user_id", "")
+    if not user_id:
+        return {"error": "user_id required"}
+    try:
+        result = sb.table("subscriptions") \
+            .select("stripe_subscription_id") \
+            .eq("user_id", user_id) \
+            .eq("status", "active") \
+            .execute()
+        if not result.data:
+            return {"error": "No active subscription found"}
+        sub_id = result.data[0]["stripe_subscription_id"]
+        # Cancel at period end (user keeps access until renewal date)
+        stripe.Subscription.modify(sub_id, cancel_at_period_end=True)
+        sb.table("subscriptions") \
+            .update({"status": "canceling"}) \
+            .eq("stripe_subscription_id", sub_id) \
+            .execute()
+        return {"ok": True, "message": "Cancellation scheduled. You will retain access until your billing period ends."}
+    except stripe.error.StripeError as e:
+        return {"error": f"Stripe error: {str(e)}"}
+    except Exception as e:
+        return {"error": str(e)}
+
