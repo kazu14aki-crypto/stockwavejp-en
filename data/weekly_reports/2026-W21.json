@@ -1,57 +1,57 @@
 {
   "week": "2026-W21",
-  "date": "2026/05/22",
-  "title": "5/18〜5/22 Weekly Market Report",
-  "generated_at": "2026/05/22 20:00 JST",
+  "date": "2026-05-22",
+  "title": "Weekly Market Report | May 18–22, 2026",
+  "generated_at": "2026-05-22T18:00:00+09:00",
   "summary": {
-    "avg_pct_1w": 1.24,
-    "rise_count": 38,
-    "fall_count": 29,
+    "avg_pct_1w": 5.1,
+    "rise_count": 52,
+    "fall_count": 15,
     "total_themes": 67,
     "top5_themes": [
       {
-        "theme": "防衛・航空",
-        "pct": 8.1
-      },
-      {
-        "theme": "宇宙・衛星",
-        "pct": 6.9
-      },
-      {
-        "theme": "サイバーセキュリティ",
-        "pct": 5.8
+        "theme": "AI半導体",
+        "pct": 18.2
       },
       {
         "theme": "次世代半導体",
-        "pct": 5.3
+        "pct": 14.7
       },
       {
-        "theme": "ロボット・自動化",
-        "pct": 4.7
+        "theme": "半導体製造装置",
+        "pct": 11.3
+      },
+      {
+        "theme": "量子コンピューター",
+        "pct": 8.9
+      },
+      {
+        "theme": "MLCC・電子部品",
+        "pct": 7.4
       }
     ],
     "bot5_themes": [
       {
-        "theme": "石油",
-        "pct": -4.2
+        "theme": "レアアース・資源",
+        "pct": -5.2
       },
       {
-        "theme": "LNG",
-        "pct": -3.6
-      },
-      {
-        "theme": "電力会社",
-        "pct": -2.9
-      },
-      {
-        "theme": "不動産",
-        "pct": -2.1
+        "theme": "仮想通貨・Web3",
+        "pct": -3.8
       },
       {
         "theme": "地方銀行",
-        "pct": -1.8
+        "pct": -2.1
+      },
+      {
+        "theme": "太陽光・再エネ",
+        "pct": -1.9
+      },
+      {
+        "theme": "医薬品・バイオ",
+        "pct": -1.5
       }
     ]
   },
-  "report": "## Market Overview (Week of May 19–23)\n\nStrong broad advance. 51 of 67 themes (76%) rose, average return +3.14%. Nvidia earnings drove massive positive spillover to Japanese AI supply chain stocks.\n\n---\n\n## Rising Themes\n\n### 🥇 #1: Semiconductor Equipment (+11.2%)\nNvidia massively beat earnings. Tokyo Electron (8035), Advantest (6857), Lasertec (6920) surged 8–15%.\n\n### 🥈 #2: AI Datacenter (+9.8%)\nNvidia guidance validates datacenter infrastructure investment acceleration globally.\n\n### 🥉 #3: Optical Communication (+8.4%)\nFujikura (5803) and Furukawa Electric (5801) hit 52-week highs on datacenter bandwidth demand validation.\n\n### Additional: Power Semiconductor (+7.1%), Physical AI (+6.9%), Edge AI (+6.3%)\n\n---\n\n## Falling Themes\n\nDefensive themes (Food & Beverage, Healthcare, Telecom) lagged in risk-on environment.\n\n---\n\n## StockWaveJP Commentary\n\nNvidia's earnings = quarterly catalyst for Japan's entire semiconductor ecosystem. Semiconductor Equipment, Optical Communication, AI Datacenter now in 'Accelerating' momentum — highest priority tracking category.\n\n> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility."
+  "report": "## Japan Equity Markets — Weekly Overview\n\nThe Nikkei 225 moved **+1,285 pts (+3.3%)** this week (38,847 → 40,132).\n\nThe average return across all 67 themes was **+5.1%**.\n\n---\n\n## 📅 Key Events & News This Week\n\n- Google I/O 2026: Willow 3.0 quantum chip announced → quantum stocks surge\n- Bank of Japan reduces JGB purchases to Y1.5T/month (QT acceleration)\n- Tokyo Electron: order backlog hits all-time record\n- USD/JPY: ¥148 range\n\n---\n\n## 📊 Theme Performance Rankings\n\n### 🔥 Top 5 Rising Themes\n\n**🥇 AI半導体: +18.2%**\n  → AI and semiconductor capital inflows remain strong.\n\n**🥈 次世代半導体: +14.7%**\n  → Major constituent stocks rallied.\n\n**🥉 半導体製造装置: +11.3%**\n  → Major constituent stocks rallied.\n\n**4️⃣ 量子コンピューター: +8.9%**\n  → Major constituent stocks rallied.\n\n**5️⃣ MLCC・電子部品: +7.4%**\n  → AI and semiconductor capital inflows remain strong.\n\n### ❄️ Bottom 5 Falling Themes\n\n**🥇 レアアース・資源: -5.2%**\n  → Profit-taking dominated.\n\n**🥈 仮想通貨・Web3: -3.8%**\n  → Profit-taking dominated.\n\n**🥉 地方銀行: -2.1%**\n  → Profit-taking dominated.\n\n**4️⃣ 太陽光・再エネ: -1.9%**\n  → Profit-taking dominated.\n\n**5️⃣ 医薬品・バイオ: -1.5%**\n  → Profit-taking dominated.\n\n---\n\n## 📌 Watch List for Next Week\n\n- **NVIDIA earnings (May 28) — most anticipated in history**\n- **US May PCE (May 29)**\n- **Japan April CPI (May 23)**\n\n---\n\n> ⚠️ For informational purposes only. Not investment advice. All investment decisions are your sole responsibility."
 }

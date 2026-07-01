@@ -1,56 +1,57 @@
 {
   "week": "2026-W18",
-  "date": "2026/05/01",
-  "title": "4/27〜5/1 Weekly Market Report",
-  "generated_at": "2026/05/01 20:00 JST",
+  "date": "2026-05-01",
+  "title": "Weekly Market Report | Apr 27 – May 1, 2026",
+  "generated_at": "2026-05-01T18:00:00+09:00",
   "summary": {
-    "avg_pct_1w": 2.31,
-    "rise_count": 42,
-    "fall_count": 25,
+    "avg_pct_1w": 3.2,
+    "rise_count": 52,
+    "fall_count": 15,
+    "total_themes": 67,
     "top5_themes": [
       {
-        "theme": "SaaS",
-        "pct": 12.1
-      },
-      {
-        "theme": "生成AI",
-        "pct": 10.8
-      },
-      {
-        "theme": "サイバーセキュリティ",
-        "pct": 9.2
-      },
-      {
-        "theme": "エッジAI",
-        "pct": 8.6
+        "theme": "防衛・航空",
+        "pct": 12.4
       },
       {
         "theme": "AI半導体",
-        "pct": 7.4
+        "pct": 8.7
+      },
+      {
+        "theme": "半導体製造装置",
+        "pct": 7.3
+      },
+      {
+        "theme": "MLCC・電子部品",
+        "pct": 5.9
+      },
+      {
+        "theme": "通信・光ファイバー",
+        "pct": 5.1
       }
     ],
     "bot5_themes": [
       {
-        "theme": "LNG",
-        "pct": -5.1
+        "theme": "レアアース・資源",
+        "pct": -4.1
       },
       {
-        "theme": "石油",
-        "pct": -4.3
+        "theme": "原子力・核融合",
+        "pct": -2.8
       },
       {
-        "theme": "電力会社",
-        "pct": -3.8
+        "theme": "仮想通貨・Web3",
+        "pct": -2.3
       },
       {
-        "theme": "造船",
-        "pct": -3.2
+        "theme": "地方銀行",
+        "pct": -1.8
       },
       {
-        "theme": "資源（水素・ヘリウム・水）",
-        "pct": -2.1
+        "theme": "医薬品・バイオ",
+        "pct": -1.2
       }
     ]
   },
-  "report": "## Market Overview (Week of Apr 27–May 1, GW Holiday Week)\n\nA shortened trading week due to Golden Week. 42 of 67 themes (63%) advanced, average return +2.31%. Capital concentrating heavily in AI-related themes — particularly SaaS and Generative AI.\n\n---\n\n## Rising Themes\n\n### 🥇 #1: SaaS (+12.1%)\nStrong earnings from MoneyForward and Sansan. US rate cut expectations supported growth stocks broadly.\n\n### 🥈 #2: Generative AI (+10.8%)\nSoftBank Group announced expanded AI investment and deepened OpenAI ties, drawing large inflows from AI-focused funds.\n\n### 🥉 #3: Cybersecurity (+9.2%)\nWave of reported cyberattacks on Japanese corporations drove security demand higher. GMO Cybersecurity and Digital Arts hit year-to-date highs.\n\n### #4: Edge AI (+8.6%) / #5: AI Semiconductor (+7.4%)\nDistributed AI processing trend accelerated. Edge and embedded AI demand surging.\n\n---\n\n## Falling Themes\n\nEnergy themes (Oil & Gas, LNG) declined as Middle East risk premiums eased. Retail & E-Commerce pulled back on profit-taking.\n\n---\n\n## StockWaveJP Commentary\n\nCapital rotated clearly into high-growth AI themes during the holiday lull. SaaS earnings beats + SoftBank AI commitment = strong confirmation signal. Momentum shifted to 'Accelerating' for both Generative AI and SaaS.\n\n> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility."
+  "report": "## Japan Equity Markets — Weekly Overview\n\nThe Nikkei 225 moved **+728 pts (+2.1%)** this week (35,420 → 36,148).\n\nThe average return across all 67 themes was **+3.2%**.\n\n---\n\n## 📅 Key Events & News This Week\n\n- Bank of Japan holds rates at 0.5%\n- Position adjustments ahead of Golden Week\n- US April ISM Manufacturing (52.3) improved\n- Meta Q1 earnings: revenue +16%\n\n---\n\n## 📊 Theme Performance Rankings\n\n### 🔥 Top 5 Rising Themes\n\n**🥇 防衛・航空: +12.4%**\n  → Major constituent stocks rallied.\n\n**🥈 AI半導体: +8.7%**\n  → AI and semiconductor capital inflows remain strong.\n\n**🥉 半導体製造装置: +7.3%**\n  → Major constituent stocks rallied.\n\n**4️⃣ MLCC・電子部品: +5.9%**\n  → AI and semiconductor capital inflows remain strong.\n\n**5️⃣ 通信・光ファイバー: +5.1%**\n  → Major constituent stocks rallied.\n\n### ❄️ Bottom 5 Falling Themes\n\n**🥇 レアアース・資源: -4.1%**\n  → Profit-taking dominated.\n\n**🥈 原子力・核融合: -2.8%**\n  → Profit-taking dominated.\n\n**🥉 仮想通貨・Web3: -2.3%**\n  → Profit-taking dominated.\n\n**4️⃣ 地方銀行: -1.8%**\n  → Profit-taking dominated.\n\n**5️⃣ 医薬品・バイオ: -1.2%**\n  → Profit-taking dominated.\n\n---\n\n## 📌 Watch List for Next Week\n\n- **Golden Week (TSE closed May 3-6)**\n- **FOMC meeting (May 7-8)**\n- **US April jobs report (May 2)**\n\n---\n\n> ⚠️ For informational purposes only. Not investment advice. All investment decisions are your sole responsibility."
 }
