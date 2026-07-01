@@ -21,6 +21,39 @@ from data import (
     MARKET_SEGMENTS, SEGMENT_GROUPS, warmup_cache_extended,
 )
 
+
+# ── Subscription plan check (gating valuation columns) ──
+from supabase import create_client as _create_client
+import os as _os
+_sb_url = _os.environ.get("SUPABASE_URL", "")
+_sb_key = _os.environ.get("SUPABASE_SERVICE_ROLE_KEY", "")
+_sb_plan_client = _create_client(_sb_url, _sb_key) if _sb_url and _sb_key else None
+
+def _is_subscribed(uid: str | None) -> bool:
+    if not uid or not _sb_plan_client:
+        return False
+    try:
+        res = _sb_plan_client.table("subscriptions") \
+            .select("status,plan") \
+            .eq("user_id", uid) \
+            .eq("status", "active") \
+            .execute()
+        if res.data and len(res.data) > 0:
+            return True
+    except Exception:
+        pass
+    return False
+
+def _strip_valuation(stocks: list, uid: str | None) -> list:
+    subscribed = _is_subscribed(uid)
+    if not subscribed:
+        for s in stocks:
+            for k in ("per", "per_fwd", "pbr", "pbr_fwd", "peg", "peg_fwd"):
+                if k in s:
+                    s[k] = None
+    return stocks, (not subscribed)
+
+
 app = FastAPI(title="StockWaveJP API (English)", version="1.0.0")
 app.add_middleware(
     CORSMiddleware,
@@ -217,18 +250,19 @@ def get_market_rank_list_en(period: str = Query(default="1mo")):
     return {"period": period, "data": translated, "groups": SEGMENT_GROUPS}
 
 @app.get("/api/market-rank/{seg_name}")
-def get_segment_detail(seg_name: str, period: str = Query(default="1mo")):
+def get_segment_detail(seg_name: str, period: str = Query(default="1mo"), uid: str = Query(default=None)):
     ja_name = SEGMENT_NAME_JA.get(seg_name, seg_name)
     data = fetch_segment_detail(ja_name, period)
     stocks_en = [
         {**s, "name": translate_stock(s.get("name", ""))}
         for s in data.get("stocks", [])
     ]
-    return {"period": period, "segment": seg_name, "data": {**data, "stocks": stocks_en}}
+    stocks_en, locked = _strip_valuation(stocks_en, uid)
+    return {"period": period, "segment": seg_name, "data": {**data, "stocks": stocks_en}, "valuation_locked": locked}
 
 
 @app.get("/api/theme-detail/{theme_name}")
-def get_theme_detail(theme_name: str, period: str = Query(default="1mo")):
+def get_theme_detail(theme_name: str, period: str = Query(default="1mo"), uid: str = Query(default=None)):
     ja_name = next((k for k, v in THEME_NAME_EN.items() if v == theme_name), theme_name)
     themes_to_use = EXTRA_THEMES_EN if theme_name in EXTRA_THEMES_EN else DEFAULT_THEMES
     name_to_use = theme_name if theme_name in EXTRA_THEMES_EN else ja_name
@@ -238,7 +272,8 @@ def get_theme_detail(theme_name: str, period: str = Query(default="1mo")):
         {**s, "name": translate_stock(s.get("name", ""))}
         for s in data.get("stocks", [])
     ]
-    return {"period": period, "data": {**data, "theme": theme_name, "stocks": stocks_en}}
+    stocks_en, locked = _strip_valuation(stocks_en, uid)
+    return {"period": period, "data": {**data, "theme": theme_name, "stocks": stocks_en}, "valuation_locked": locked}
 
 
 @app.get("/api/stock-info/{ticker}")

@@ -1,5 +1,6 @@
 import { tn, THEME_NAME_EN } from '../../utils/themeNames'
 import React, { useState, useEffect, useRef } from 'react'
+import { useSubscription } from '../../hooks/useSubscription'
 import StockBubbleChart from '../StockBubbleChart'
 import AddToThemeModal from '../AddToThemeModal'
 
@@ -465,6 +466,8 @@ function PickupStocks({ stocks, period }) {
 
 // ── 銘柄テーブル ──
 function StockTable({ stocks: rawStocks }) {
+  const { plan } = useSubscription()
+  const isSubscribed = ['standard','pro','pro_trial','dev'].includes(plan)
   if (!rawStocks || !rawStocks.length) return null
   const [modalStock, setModalStock] = useState(null)
   // ⑤ ソート状態
@@ -526,7 +529,8 @@ function StockTable({ stocks: rawStocks }) {
     if (tableRef.current) tableRef.current.style.cursor = 'grab'
   }
 
-  const headers = ['Chart','Price','Return','Mkt.Cap','Contrib.%','Vol.Chg','Volume','Vol.Rank','Trade Value','Trade Value順位']
+  const headers = ['Chart','Price','Return','Mkt.Cap','Contrib.%','Vol.Chg','Volume','Vol.Rank','Trade Value','TV.Rank','PER','Fwd PER','PBR','Fwd PBR','PEG','Fwd PEG']
+  const VALUATION_HEADERS = ['PER','Fwd PER','PBR','Fwd PBR','PEG','Fwd PEG']
 
   // ⑤ ソートボタン定義
   const sortBtns = [
@@ -585,7 +589,7 @@ function StockTable({ stocks: rawStocks }) {
               <th className="sticky-col2" style={{ ...thStyle, textAlign:'left', minWidth:'120px', background:'var(--bg3)', position:'sticky', left:'32px', zIndex:3 }}>銘柄名</th>
               {headers.map(h => (
                 <th key={h} style={{ ...thStyle, minWidth: h === 'Chart' ? '72px' : '80px',
-                  width: h === 'Chart' ? '72px' : undefined }}>{h}</th>
+                  width: h === 'Chart' ? '72px' : undefined }}>{VALUATION_HEADERS.includes(h) && !isSubscribed ? '🔒 ' : ''}{h}</th>
               ))}
               <th style={{ ...thStyle, minWidth:'60px', background:'var(--bg3)' }}>Add</th>
             </tr>
@@ -631,6 +635,18 @@ function StockTable({ stocks: rawStocks }) {
                   <td style={tdC}>{s.vol_rank}</td>
                   <td style={{ ...tdR, fontFamily:'var(--mono)', color:'var(--text2)' }}>{formatLarge(s.trade_value)}</td>
                   <td style={tdC}>{s.tv_rank}</td>
+                  {isSubscribed ? (
+                    <>
+                      <td style={{ ...tdR, fontFamily:'var(--mono)', color:'var(--text2)' }}>{s.per != null ? s.per.toFixed(1) : '-'}</td>
+                      <td style={{ ...tdR, fontFamily:'var(--mono)', color:'var(--text2)' }}>{s.per_fwd != null ? s.per_fwd.toFixed(1) : '-'}</td>
+                      <td style={{ ...tdR, fontFamily:'var(--mono)', color:'var(--text2)' }}>{s.pbr != null ? s.pbr.toFixed(2) : '-'}</td>
+                      <td style={{ ...tdR, fontFamily:'var(--mono)', color:'var(--text2)' }}>{s.pbr_fwd != null ? s.pbr_fwd.toFixed(2) : '-'}</td>
+                      <td style={{ ...tdR, fontFamily:'var(--mono)', color:'var(--text2)' }}>{s.peg != null ? s.peg.toFixed(2) : '-'}</td>
+                      <td style={{ ...tdR, fontFamily:'var(--mono)', color:'var(--text2)' }}>{s.peg_fwd != null ? s.peg_fwd.toFixed(2) : '-'}</td>
+                    </>
+                  ) : (
+                    <td colSpan={6} style={{ ...tdC, color:'var(--text3)', fontSize:'11px' }}>🔒 Subscribers only</td>
+                  )}
                   <td style={tdC}>
                     <button onClick={() => setModalStock({ ticker: s.ticker, name: s.name, price: s.price })}
                       title="Add to Custom Theme"
