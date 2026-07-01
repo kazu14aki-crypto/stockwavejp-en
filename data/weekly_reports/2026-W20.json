@@ -1,56 +1,57 @@
 {
   "week": "2026-W20",
-  "date": "2026/05/15",
-  "title": "5/11〜5/15 Weekly Market Report",
-  "generated_at": "2026/05/15 20:00 JST",
+  "date": "2026-05-15",
+  "title": "Weekly Market Report | May 11–15, 2026",
+  "generated_at": "2026-05-15T18:00:00+09:00",
   "summary": {
-    "avg_pct_1w": 2.84,
-    "rise_count": 45,
-    "fall_count": 22,
+    "avg_pct_1w": 2.8,
+    "rise_count": 52,
+    "fall_count": 15,
+    "total_themes": 67,
     "top5_themes": [
       {
-        "theme": "防衛・航空",
-        "pct": 11.2
-      },
-      {
-        "theme": "宇宙・衛星",
-        "pct": 9.8
-      },
-      {
-        "theme": "半導体製造装置",
-        "pct": 8.6
+        "theme": "MLCC・電子部品",
+        "pct": 10.2
       },
       {
         "theme": "AI半導体",
-        "pct": 7.9
+        "pct": 9.1
       },
       {
-        "theme": "サイバーセキュリティ",
-        "pct": 7.3
+        "theme": "光ファイバー・通信",
+        "pct": 7.8
+      },
+      {
+        "theme": "次世代半導体",
+        "pct": 6.4
+      },
+      {
+        "theme": "防衛・航空",
+        "pct": 5.7
       }
     ],
     "bot5_themes": [
       {
-        "theme": "石油",
+        "theme": "仮想通貨・Web3",
+        "pct": -4.8
+      },
+      {
+        "theme": "レアアース・資源",
         "pct": -3.1
       },
       {
-        "theme": "LNG",
-        "pct": -2.8
+        "theme": "太陽光・再エネ",
+        "pct": -2.4
       },
       {
-        "theme": "電力会社",
-        "pct": -2.2
+        "theme": "地方銀行",
+        "pct": -1.7
       },
       {
-        "theme": "観光・ホテル・レジャー",
-        "pct": -1.9
-      },
-      {
-        "theme": "インバウンド",
-        "pct": -1.4
+        "theme": "量子コンピューター",
+        "pct": -1.3
       }
     ]
   },
-  "report": "## Market Overview (Week of May 12–16)\n\nMixed week. 34 of 67 themes advanced, average return -0.23%. BOJ commentary on rate normalization pace added uncertainty.\n\n---\n\n## Rising Themes\n\n### 🥇 #1: Banking & Finance (+4.2%)\nBOJ governor reaffirmed normalization path. NIM expansion expectations drove MUFG and SMFG higher.\n\n### 🥈 #2: Insurance (+3.8%)\nLong-term yield increases enhanced investment return expectations.\n\n### 🥉 #3: National Resilience (+3.1%)\nNew infrastructure spending plans announced.\n\n---\n\n## Falling Themes\n\nGrowth themes (SaaS, Generative AI, Space & Satellite) declined as rate-sensitive valuation headwinds intensified.\n\n---\n\n## StockWaveJP Commentary\n\nBOJ timing uncertainty is creating a genuine sector rotation from growth/AI to value/financials. Classic late-cycle rotation. Recommendation: maintain AI/tech exposure but add banking/insurance as a hedge.\n\n> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility."
+  "report": "## Japan Equity Markets — Weekly Overview\n\nThe Nikkei 225 moved **+1,326 pts (+3.5%)** this week (37,521 → 38,847).\n\nThe average return across all 67 themes was **+2.8%**.\n\n---\n\n## 📅 Key Events & News This Week\n\n- US April CPI: Core 2.8% (below forecast 2.9%) → rate cut hopes rekindled\n- Japan Q1 GDP: +0.7% QoQ (+2.8% annualized), beat expectations\n- Murata Manufacturing: FY2026 revenue +16.1% → stock surges\n- Tesla: Full-scale FSD China rollout boosts semiconductor stocks\n\n---\n\n## 📊 Theme Performance Rankings\n\n### 🔥 Top 5 Rising Themes\n\n**🥇 MLCC・電子部品: +10.2%**\n  → AI and semiconductor capital inflows remain strong.\n\n**🥈 AI半導体: +9.1%**\n  → AI and semiconductor capital inflows remain strong.\n\n**🥉 光ファイバー・通信: +7.8%**\n  → Major constituent stocks rallied.\n\n**4️⃣ 次世代半導体: +6.4%**\n  → Major constituent stocks rallied.\n\n**5️⃣ 防衛・航空: +5.7%**\n  → Major constituent stocks rallied.\n\n### ❄️ Bottom 5 Falling Themes\n\n**🥇 仮想通貨・Web3: -4.8%**\n  → Profit-taking dominated.\n\n**🥈 レアアース・資源: -3.1%**\n  → Profit-taking dominated.\n\n**🥉 太陽光・再エネ: -2.4%**\n  → Profit-taking dominated.\n\n**4️⃣ 地方銀行: -1.7%**\n  → Profit-taking dominated.\n\n**5️⃣ 量子コンピューター: -1.3%**\n  → Profit-taking dominated.\n\n---\n\n## 📌 Watch List for Next Week\n\n- **NVIDIA earnings (May 28)**\n- **Bank of Japan minutes release**\n- **US May Flash PMI (May 22)**\n\n---\n\n> ⚠️ For informational purposes only. Not investment advice. All investment decisions are your sole responsibility."
 }
