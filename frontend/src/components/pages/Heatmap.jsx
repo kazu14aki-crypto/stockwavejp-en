@@ -358,8 +358,8 @@ function BubbleScatter({ data, mPeriod, setMPeriod, onNavigate }) {
       {/* SVGチャート */}
       <div style={{ width:'100%', overflowX:'auto', position:'relative', WebkitOverflowScrolling:'touch' }}>
         <svg
-          viewBox={`0 0 ${W} ${H}`} style={{ maxHeight:'55vh', width:'100%' }}
-          style={{ width:'100%', minWidth:'380px', display:'block',
+          viewBox={`0 0 ${W} ${H}`}
+          style={{ width:'100%', minWidth:'380px', display:'block', maxHeight:'55vh',
             background:'var(--bg2)', borderRadius:'10px',
             border:'1px solid var(--border)' }}
           onMouseLeave={() => setHovered(null)}
