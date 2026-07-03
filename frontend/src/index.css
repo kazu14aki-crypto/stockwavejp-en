@@ -17,7 +17,7 @@ html { overflow-x: clip; }
   --accent:  #60A5FA;
   --logo-red:#e63030;
   --font:    'Noto Sans JP',sans-serif;
-  --mono:    'DM Mono',monospace;
+  --mono:    'Noto Sans JP',sans-serif;
   --radius:  10px; --sidebar:220px; --header:52px;
 }
 
@@ -35,7 +35,7 @@ html { overflow-x: clip; }
   --accent:  #c8b050;
   --logo-red:#e63030;
   --font:    'Noto Sans JP',sans-serif;
-  --mono:    'DM Mono',monospace;
+  --mono:    'Noto Sans JP',sans-serif;
   --radius:  10px; --sidebar:220px; --header:52px;
 }
 
@@ -54,7 +54,7 @@ html { overflow-x: clip; }
   --accent:  #2563EB;
   --logo-red:#e63030;
   --font:    'Noto Sans JP',sans-serif;
-  --mono:    'DM Mono',monospace;
+  --mono:    'Noto Sans JP',sans-serif;
   --radius:  10px; --sidebar:220px; --header:52px;
 }
 
@@ -96,6 +96,7 @@ body {
   background: var(--bg);
   color: var(--text);
   font-family: var(--font);
+  font-variant-numeric: tabular-nums;
   min-height: 100vh;
   font-size: 14px;
   line-height: 1.6;

@@ -509,6 +509,12 @@ const tdL = { padding:'8px 12px', textAlign:'left' }
 function StockTable({ stocks: rawStocks, onAddToTheme }) {
   const { plan } = useSubscription()
   const isSubscribed = ['standard','pro','pro_trial','dev'].includes(plan)
+  const [usdJpy, setUsdJpy] = React.useState(150)
+  React.useEffect(() => {
+    fetch('https://api.exchangerate-api.com/v4/latest/USD')
+      .then(r => r.json()).then(d => { if (d.rates?.JPY) setUsdJpy(d.rates.JPY) })
+      .catch(() => {})
+  }, [])
   if (!rawStocks||!rawStocks.length) return null
   const [sortKey, setSortKey] = useState('pct')
   const [sortAsc, setSortAsc] = useState(false)
@@ -571,7 +577,7 @@ function StockTable({ stocks: rawStocks, onAddToTheme }) {
   }
   const onMouseUp = () => { isDragging.current = false; if (tableRef.current) tableRef.current.style.cursor = 'grab' }
 
-  const headers = ['Chart','Price','Return','Mkt.Cap','Contrib.%','Vol.Chg','Volume','Vol.Rank','Trade Value','TV.Rank','PER','Fwd PER','PBR','Fwd PBR','PEG','Fwd PEG','Add']
+  const headers = ['Chart','Price','USD','Return','Mkt.Cap','Contrib.%','Vol.Chg','Volume','Vol.Rank','Trade Value','TV.Rank','PER','Fwd PER','PBR','Fwd PBR','PEG','Fwd PEG','Add']
   const VALUATION_HEADERS = ['PER','Fwd PER','PBR','Fwd PBR','PEG','Fwd PEG']
   const sortBtns = [{key:'pct',label:'Return'},{key:'volume',label:'Volume'},{key:'trade_value',label:'Trade Value'}]
 
@@ -634,6 +640,7 @@ function StockTable({ stocks: rawStocks, onAddToTheme }) {
                     </span>
                   </td>
                   <td style={tdR}><span style={{ fontFamily:'var(--mono)', color:'var(--text2)' }}>¥{s.price?.toLocaleString()}</span></td>
+                  <td style={{ ...tdR, fontFamily:'var(--mono)', color:'var(--text2)', fontSize:'11px' }}>${s.price ? (s.price / usdJpy).toFixed(2) : '-'}</td>
                   <td style={{ ...tdR, color:pColor, fontWeight:700, fontFamily:'var(--mono)' }}>{s.pct>=0?'+':''}{s.pct?.toFixed(1)}%</td>
                   <td style={{ ...tdR, fontFamily:'var(--mono)', color:'var(--text2)' }}>{s.market_cap > 0 ? formatLarge(s.market_cap) : '-'}</td>
                   <td style={{ ...tdR, fontFamily:'var(--mono)', color:(s.contribution??0)>=0.5?'#ff5370':(s.contribution??0)>=0.1?'#ff8c42':(s.contribution??0)>-0.1?'var(--text2)':'#4a9eff' }}
