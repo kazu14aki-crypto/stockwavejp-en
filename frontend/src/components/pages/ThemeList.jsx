@@ -437,7 +437,7 @@ function BubbleScatterMini({ onNavigate }) {
                 onClick={()=>onNavigate&&onNavigate('Theme Detail',d.theme)}>
                 <circle cx={cx} cy={cy} r={r+3} fill="none" stroke="white" strokeWidth="2" strokeOpacity="0.8"/>
                 <circle cx={cx} cy={cy} r={r} fill={col} opacity="0.9" stroke={col} strokeWidth="1.5"/>
-                {r>10&&<text x={cx} y={cy+3} textAnchor="middle" fontSize="8" fill="white" fontWeight="700" style={{ pointerEvents:'none' }}>{d.theme.slice(0,6)}</text>}
+                {r>10&&<text x={cx} y={cy+3} textAnchor="middle" fontSize="8" fill="white" fontWeight="700" style={{ pointerEvents:'none' }}>{(tn(d.theme)||d.theme).slice(0,6)}</text>}
                 <g style={{ pointerEvents:'none' }}>
                   <rect x={tx} y={ty} width="164" height="74" rx="6" fill="#1a1f2e" stroke="rgba(255,255,255,0.2)" strokeWidth="1"/>
                   <text x={tx+8} y={ty+16} fontSize="11" fill="#e8f0ff" fontWeight="700">{tn(d.theme)||d.theme}</text>
