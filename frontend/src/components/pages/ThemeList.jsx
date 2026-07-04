@@ -30,7 +30,7 @@ const THEME_NAME_EN = {
   '電力会社': 'Electric Utilities',
   '石油': 'Oil & Gas',
   '蓄電池': 'Energy Storage',
-  '光通信': 'Optical Communication',
+  '光ファイバー・光部品': 'Optical Fiber & Components',
   '通信': 'Telecom',
   '量子コンピューター': 'Quantum Computing',
   'ウェアラブル端末': 'Wearables',
@@ -185,7 +185,7 @@ function genThemeComment(themes, summary, period, momentum) {
 
   // All 体相場概況
   const mktTone = avg >= 2 ? 'bullish' : avg >= 0.5 ? 'mildly bullish' : avg <= -2 ? 'bearish' : avg <= -0.5 ? 'mildly bearish' : 'neutral'
-  lines.push(`[${periodLabel} Overview] Looking at all 67 themes, ${rising.length} Rising / ${falling.length} Falling (avg return ${avg >= 0 ? '+' : ''}${avg.toFixed(2)}%, ${mktTone}).`)
+  lines.push(`[${periodLabel} Overview] Looking at all 72 themes, ${rising.length} Rising / ${falling.length} Falling (avg return ${avg >= 0 ? '+' : ''}${avg.toFixed(2)}%, ${mktTone}).`)
 
   // トップ・ボトム
   lines.push(`Top Rising: '${tn(top?.theme)}' (${top?.pct >= 0 ? '+' : ''}${top?.pct?.toFixed(2)}%), Top Falling: '${tn(bot?.theme)}' (${bot?.pct >= 0 ? '+' : ''}${bot?.pct?.toFixed(2)}%). Spread: ${Math.abs((top?.pct||0)-(bot?.pct||0)).toFixed(1)}pt.`)
@@ -254,7 +254,7 @@ const THEME_ARTICLE_MAP = {
   '蓄電池':            'ev-green-theme',
   '資源（水素・ヘリウム・水）': 'rare-earth-resources-theme',
   'IOWN':              'optical-communication',
-  '光通信':            'optical-communication',
+  '光ファイバー・光部品':            'optical-communication',
   '通信':              'telecom-theme',
   '量子コンピューター':'ai-cloud-theme',
   'SaaS':              'fintech-theme',

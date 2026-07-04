@@ -25,7 +25,7 @@ export default function About() {
         <h2 style={{ fontSize:'15px', fontWeight:700, color:'#e8f0ff', marginBottom:'14px' }}>About This Site</h2>
         <p style={{ fontSize:'13px', color:'var(--text2)', lineHeight:1.9, marginBottom:'12px' }}>
           StockWaveJP is a dashboard for visually tracking Japanese stock theme trends.
-          It automatically aggregates price change %, volume, and trading value across 67 themes —
+          It automatically aggregates price change %, volume, and trading value across 72 themes —
           including Semiconductors, AI, Defense, and Inbound Tourism — letting you see in real time
           which themes are attracting capital.
         </p>

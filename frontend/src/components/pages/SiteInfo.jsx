@@ -1,8 +1,8 @@
 export default function SiteInfo() {
   const features = [
     { icon:'📡', title:'Price Momentum', desc:'5-state classification (🔥Accel / ↗Rev.↑ / →Flat / ↘Rev.↓ / ❄️Stall) — a unique StockWaveJP indicator' },
-    { icon:'🗺️', title:'Theme × Period Heatmap', desc:'Compare Return across 67 themes and multiple periods (1W to 1Y) simultaneously' },
-    { icon:'📊', title:'3-Metric View', desc:'Price change %, Volume, and Trading Value ranked across all 67 themes at once' },
+    { icon:'🗺️', title:'Theme × Period Heatmap', desc:'Compare Return across 72 themes and multiple periods (1W to 1Y) simultaneously' },
+    { icon:'📊', title:'3-Metric View', desc:'Price change %, Volume, and Trading Value ranked across all 72 themes at once' },
     { icon:'⚙️', title:'Custom Theme', desc:"Create your own theme and track a custom set of stocks" },
     { icon:'📈', title:'Macro Indicators', desc:'Monitor Nikkei 225, USD/JPY, VIX, and other macro indicators alongside theme trends' },
     { icon:'📰', title:'Weekly Report', desc:"Weekly market recap and next-week highlights written by the editorial team" },

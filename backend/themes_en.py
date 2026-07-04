@@ -1,9 +1,9 @@
 """
-themes_en.py — English version: 68-theme translation map + stock name map
+themes_en.py — English version: 72-theme translation map + stock name map
 StockWaveJP English Edition
 """
 
-# ── Theme name translation map (all 68 themes) ──
+# ── Theme name translation map (all 72 themes) ──
 THEME_NAME_EN = {
     "半導体製造装置":         "Semiconductor Equipment",
     "半導体検査装置":         "Semiconductor Testing",
@@ -33,7 +33,7 @@ THEME_NAME_EN = {
     "蓄電池":                 "Energy Storage",
     "資源（水素・ヘリウム・水）": "Resources (H2/He/H2O)",
     "IOWN":                   "IOWN",
-    "光通信":                 "Optical Communication",
+    "光ファイバー・光部品":                 "Optical Fiber & Components",
     "通信":                   "Telecom",
     "量子コンピューター":     "Quantum Computing",
     "SaaS":                   "SaaS",
@@ -73,6 +73,10 @@ THEME_NAME_EN = {
     "人材派遣":               "Staffing / HR",
     "ゲーム・エンタメ":       "Gaming & Entertainment",
     "MLCC・電子部品":         "MLCC / Electronic Components",
+    "電線・銅":               "Copper & Cable",
+    "先端パッケージング・基板": "Advanced Packaging & PCB",
+    "データセンター電力・冷却": "DC Power & Cooling",
+    "M&A・事業承継":           "M&A & Succession",
 }
 
 # ── Stock name translation map ──

@@ -16,7 +16,7 @@ const SECTIONS = [
   {
     icon: '🔥',
     title: 'Theme Heatmap',
-    desc: 'Visualize capital flows across 67 themes using a scatter plot.',
+    desc: 'Visualize capital flows across 72 themes using a scatter plot.',
     items: [
       'X-axis = price change % (right = more rising), Y-axis = volume surge rate (up = more volume), bubble size = trading value.',
       'Top-right "Hot Zone" = Rising + Volume spike = strongest signal. Top-left = selling pressure. Bottom-right = quiet rising. Bottom-left = quiet falling.',
@@ -90,7 +90,7 @@ const SECTIONS = [
     title: 'Column & Analysis',
     desc: 'In-depth analysis articles for each theme and key individual stocks.',
     items: [
-      'All 67 themes have dedicated column articles, plus individual stock analysis for major names.',
+      'All 72 themes have dedicated column articles, plus individual stock analysis for major names.',
       'You can also navigate directly from the Theme Detail page using the "Read Related Column" button.',
     ]
   },

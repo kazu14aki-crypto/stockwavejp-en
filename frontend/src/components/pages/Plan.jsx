@@ -25,7 +25,7 @@ export default function Plan({ onNavigate }) {
       monthly: { price: '$0', label: 'Forever Free (with ads)', perDay: null },
       yearly:  null,
       features: [
-        '67 themes real-time data',
+        '72 themes real-time data',
         'Theme Heatmap',
         'Market Ranking',
         'Stock Search',
@@ -39,7 +39,7 @@ export default function Plan({ onNavigate }) {
       key: 'standard',
       name: 'Standard', color: '#00c48c',
       badge: currentPlan === 'standard' ? 'Current Plan' : 'Recommended',
-      monthly: { price: '$15', label: 'Monthly', perDay: perDay(15) },
+      monthly: { price: '$9.9', label: 'Monthly', perDay: perDay(9.9) },
       yearly:  null,
       features: [
         'All Free Plan Features',
@@ -52,7 +52,7 @@ export default function Plan({ onNavigate }) {
       key: 'pro',
       name: 'Pro', color: '#ff8c42',
       badge: currentPlan === 'pro' ? 'Current Plan' : null,
-      monthly: { price: '$25', label: 'Monthly', perDay: perDay(25) },
+      monthly: { price: '$19.9', label: 'Monthly', perDay: perDay(19.9) },
       yearly:  null,
       features: [
         'All Standard Plan Features',
@@ -142,7 +142,7 @@ export default function Plan({ onNavigate }) {
             </thead>
             <tbody>
               {[
-                ['Theme List (67 themes)', '✓','✓','✓'],
+                ['Theme List (72 themes)', '✓','✓','✓'],
                 ['Theme Heatmap', '✓','✓','✓'],
                 ['Column Articles', '✓','✓','✓'],
                 ['Theme Detail / Market Ranking (short periods)', '✓','✓','✓'],

@@ -28,7 +28,7 @@ export const THEME_NAME_EN = {
   '蓄電池': 'Energy Storage',
   '資源（水素・ヘリウム・水）': 'Resources (H2/He/H2O)',
   'IOWN': 'IOWN',
-  '光通信': 'Optical Communication',
+  '光ファイバー・光部品': 'Optical Fiber & Components',
   '通信': 'Telecom',
   '量子コンピューター': 'Quantum Computing',
   'SaaS': 'SaaS',

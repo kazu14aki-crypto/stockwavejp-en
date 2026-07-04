@@ -33,7 +33,7 @@ const THEME_ARTICLE_MAP = {
   '蓄電池':            'ev-green-theme',
   '資源（水素・ヘリウム・水）': 'rare-earth-resources-theme',
   'IOWN':              'optical-communication',
-  '光通信':            'optical-communication',
+  '光ファイバー・光部品':            'optical-communication',
   '通信':              'telecom-theme',
   '量子コンピューター':'ai-cloud-theme',
   'SaaS':              'fintech-theme',
@@ -620,7 +620,7 @@ export default function Heatmap({ onNavigate }) {
         Theme Heatmap
       </h1>
       <p style={{ fontSize:'12px', color:'var(--text3)', marginBottom:'16px' }}>
-        Analyze Return, Volume, and Momentum across 67 themes with the Theme Heatmap.
+        Analyze Return, Volume, and Momentum across 72 themes with the Theme Heatmap.
       </p>
 
       {/* ⑥ タブ削除・散布図を直接表示 */}

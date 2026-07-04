@@ -34,7 +34,7 @@ const THEME_ARTICLE_MAP = {
   'Energy Storage':            'ev-green-theme',
   'Resources (H2/Helium/Water)': 'rare-earth-resources-theme',
   'IOWN':              'optical-communication',
-  'Optical Communication':            'optical-communication',
+  'Optical Fiber & Components':            'optical-communication',
   'Telecom':              'telecom-theme',
   'Quantum Computing':'ai-cloud-theme',
   'SaaS':              'fintech-theme',
