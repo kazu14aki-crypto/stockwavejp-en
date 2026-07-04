@@ -55,7 +55,7 @@ Policy news (Diet deliberations, Cabinet decisions, regulatory changes) is the m
 
 ## How to Use StockWaveJP Effectively
 
-The Theme List shows price change %, volume, and trading value for all 67 themes simultaneously — enabling quick identification of relative strength. Themes appearing at the top of the return ranking while also showing rising volume signal genuine institutional capital inflow.
+The Theme List shows price change %, volume, and trading value for all 72 themes simultaneously — enabling quick identification of relative strength. Themes appearing at the top of the return ranking while also showing rising volume signal genuine institutional capital inflow.
 
 The Heatmap page displays each theme's performance across multiple periods (1W, 1M, 3M, 6M, 1Y) in color. "Short-term red (rising), long-term green (falling)" patterns suggest a potential reversal from a trough; "short-term green (falling), long-term red (rising)" suggests a high-level correction in progress.
 
@@ -291,7 +291,7 @@ Using StockWaveJP's macro indicators panel alongside theme data provides the mos
 
 The Defense theme has clear structural foundations for medium to long-term investors. Use the weekly StockWaveJP momentum data to distinguish between temporary corrections within an intact trend (opportunities to add) and genuine trend reversals (opportunities to reduce).
 
-The most valuable habit: reviewing all 67 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
+The most valuable habit: reviewing all 72 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
 
 > **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"inbound-theme",category:"インバウンド",tag:"",title:"Inbound Tourism Theme: Record 35M+ Visitors and Japan's Consumption Boom",date:"2026/03/12",summary:"The Inbound Tourism theme groups companies that benefit from rising numbers of foreign visitors to Japan: hotels, ryokan, airlines, railways, department stores, duty-free retail, theme parks, restaura",body:`
 ## What Is the Inbound Tourism Theme?
@@ -371,7 +371,7 @@ Using StockWaveJP's macro indicators panel alongside theme data provides the mos
 
 The Inbound theme has clear structural foundations for medium to long-term investors. Use the weekly StockWaveJP momentum data to distinguish between temporary corrections within an intact trend (opportunities to add) and genuine trend reversals (opportunities to reduce).
 
-The most valuable habit: reviewing all 67 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
+The most valuable habit: reviewing all 72 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
 
 > **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"ev-green-theme",category:"EV・脱炭素",tag:"",title:"EV & Green Theme: Japan's Role in the EV Supply Chain and Decarbonization",date:"2026/03/10",summary:"The EV & Decarbonization theme covers electric vehicles (BEV, PHEV), fuel cell vehicles (FCV), and the companies supplying the technology and equipment required for a decarbonized economy. Climate cha",body:`
 ## What Is the EV & Decarbonization Theme?
@@ -449,7 +449,7 @@ Using StockWaveJP's macro indicators panel alongside theme data provides the mos
 
 The Ev Green theme has clear structural foundations for medium to long-term investors. Use the weekly StockWaveJP momentum data to distinguish between temporary corrections within an intact trend (opportunities to add) and genuine trend reversals (opportunities to reduce).
 
-The most valuable habit: reviewing all 67 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
+The most valuable habit: reviewing all 72 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
 
 > **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"how-to-read-data",category:"Analysis Methods",tag:"",title:"How to Read Price Change, Volume & Trading Value: The 3 Core Metrics for Theme Investing",date:"2026/03/08",summary:"StockWaveJP tracks every theme using three fundamental metrics: **price change %**, **volume**, and **trading value**. Understanding how to read each one — and how to combine them — is the foundation ",body:`
 ## The Three Core Metrics for Theme Analysis
@@ -538,7 +538,7 @@ Using StockWaveJP's macro indicators panel alongside theme data provides the mos
 
 The How To Read Data theme has clear structural foundations for medium to long-term investors. Use the weekly StockWaveJP momentum data to distinguish between temporary corrections within an intact trend (opportunities to add) and genuine trend reversals (opportunities to reduce).
 
-The most valuable habit: reviewing all 67 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
+The most valuable habit: reviewing all 72 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
 
 > **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"market-cycle",category:"Analysis Methods",tag:"",title:"Market Cycles and Theme Investing: Understanding Capital Rotation",date:"2026/03/06",summary:"Stock markets do not move in straight lines. They cycle through recognizable phases: expansion → overheating → contraction → recovery → expansion again. Understanding which phase the market is current",body:`
 ## Market Cycles and Theme Investing
@@ -625,7 +625,7 @@ Using StockWaveJP's macro indicators panel alongside theme data provides the mos
 
 The Market Cycle theme has clear structural foundations for medium to long-term investors. Use the weekly StockWaveJP momentum data to distinguish between temporary corrections within an intact trend (opportunities to add) and genuine trend reversals (opportunities to reduce).
 
-The most valuable habit: reviewing all 67 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
+The most valuable habit: reviewing all 72 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
 
 > **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"japan-theme-investing-guide",category:"Basics",tag:"",title:"Complete Guide to Japanese Stock Theme Investing: From Account Setup to Stock Selection",date:"2026/03/25",summary:"Japanese stock theme investing is the practice of identifying industry-level capital flows in Japan's equity market — grouping stocks by their common exposure to social trends, technological shifts, a",body:`
 ## What Is Japanese Stock Theme Investing?
@@ -648,7 +648,7 @@ Start with an amount you are prepared to hold for at least 6–12 months. Theme 
 
 **Step 3: Set up StockWaveJP**
 
-Register and begin monitoring the Theme List weekly. The weekly habit of reviewing price change %, volume, and momentum across all 67 themes is the information infrastructure for your investment decisions.
+Register and begin monitoring the Theme List weekly. The weekly habit of reviewing price change %, volume, and momentum across all 72 themes is the information infrastructure for your investment decisions.
 
 ## How to Choose Your Themes
 
@@ -705,7 +705,7 @@ Using StockWaveJP's macro indicators panel alongside theme data provides the mos
 
 The Japan  Investing Guide theme has clear structural foundations for medium to long-term investors. Use the weekly StockWaveJP momentum data to distinguish between temporary corrections within an intact trend (opportunities to add) and genuine trend reversals (opportunities to reduce).
 
-The most valuable habit: reviewing all 67 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
+The most valuable habit: reviewing all 72 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
 
 > **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"defense-space-theme",category:"防衛・航空",tag:"",title:"Defense & Space Theme Deep Dive: Japan's Defense Buildup and Emerging Opportunities",date:"2026/03/23",summary:`Russia's invasion of Ukraine in February 2022 rapidly elevated global security awareness. Japan responded in December 2022 by approving the "Three Security Documents" — committing to raise defense spe`,body:`
 ## Historical Background: Japan's Defense Policy Transformation
@@ -809,7 +809,7 @@ Momentum alone is insufficient. Always cross-check with volume and trading value
 
 ## StockWaveJP Editorial View
 
-Our data shows themes maintaining "Accelerating" momentum for 3+ consecutive weeks have significantly higher continuation probability than single-week spikes. Weekly consistency matters more than any individual data point. Build a Monday morning routine of checking momentum across all 67 themes.
+Our data shows themes maintaining "Accelerating" momentum for 3+ consecutive weeks have significantly higher continuation probability than single-week spikes. Weekly consistency matters more than any individual data point. Build a Monday morning routine of checking momentum across all 72 themes.
 
 ## Summary
 
@@ -846,7 +846,7 @@ Using StockWaveJP's macro indicators panel alongside theme data provides the mos
 
 The Momentum Investing theme has clear structural foundations for medium to long-term investors. Use the weekly StockWaveJP momentum data to distinguish between temporary corrections within an intact trend (opportunities to add) and genuine trend reversals (opportunities to reduce).
 
-The most valuable habit: reviewing all 67 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
+The most valuable habit: reviewing all 72 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
 
 > **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"shipbuilding-theme",category:"造船",tag:"",title:"Shipbuilding Theme: Multi-Decade High in Orders and Japan's Maritime Revival",date:"2026/03/19",summary:"Japan's shipbuilding industry suffered decades of decline as Chinese and Korean competitors undercut on price, forcing Japanese yards to consolidate and downsize. Since 2024, multiple structural tailw",body:`
 ## Why Shipbuilding Is Back in Focus
@@ -1235,9 +1235,9 @@ Using StockWaveJP's macro indicators panel alongside theme data provides the mos
 
 The Nisa Popular Stocks theme has clear structural foundations for medium to long-term investors. Use the weekly StockWaveJP momentum data to distinguish between temporary corrections within an intact trend (opportunities to add) and genuine trend reversals (opportunities to reduce).
 
-The most valuable habit: reviewing all 67 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
+The most valuable habit: reviewing all 72 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
 
-> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"optical-communication",category:"光通信",tag:"",title:"Optical Communication Theme: AI Datacenter Bandwidth Demand and Japanese Leaders",date:"2026/03/23",summary:"The optical communication theme covers companies that manufacture optical fiber cables, optical transceivers, optical amplifiers, photonic integrated circuits (PICs), and related components used in te",body:`
+> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"optical-communication",category:"光ファイバー・光部品",tag:"",title:"Optical Communication Theme: AI Datacenter Bandwidth Demand and Japanese Leaders",date:"2026/03/23",summary:"The optical communication theme covers companies that manufacture optical fiber cables, optical transceivers, optical amplifiers, photonic integrated circuits (PICs), and related components used in te",body:`
 ## What Is the Optical Communication Theme?
 
 The optical communication theme covers companies that manufacture optical fiber cables, optical transceivers, optical amplifiers, photonic integrated circuits (PICs), and related components used in telecommunications infrastructure and datacenter interconnects.
@@ -1438,7 +1438,7 @@ Using StockWaveJP's macro indicators panel alongside theme data provides the mos
 
 The Iraq Geopolitics theme has clear structural foundations for medium to long-term investors. Use the weekly StockWaveJP momentum data to distinguish between temporary corrections within an intact trend (opportunities to add) and genuine trend reversals (opportunities to reduce).
 
-The most valuable habit: reviewing all 67 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
+The most valuable habit: reviewing all 72 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
 
 > **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"renewable-energy-theme",category:"再生可能エネルギー",tag:"",title:"Renewable Energy Theme: Japan's GX Policy and the ¥150T Decarbonization Investment Wave",date:"2026/04/04",summary:"Japan's Renewable Energy theme covers solar power, offshore and onshore wind, energy storage, green hydrogen, and related infrastructure companies. The Japanese government has committed to carbon neut",body:`
 ## What Is the Renewable Energy Theme?
@@ -1506,7 +1506,7 @@ Using StockWaveJP's macro indicators panel alongside theme data provides the mos
 
 The Renewable Energy theme has clear structural foundations for medium to long-term investors. Use the weekly StockWaveJP momentum data to distinguish between temporary corrections within an intact trend (opportunities to add) and genuine trend reversals (opportunities to reduce).
 
-The most valuable habit: reviewing all 67 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
+The most valuable habit: reviewing all 72 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
 
 > **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"game-entertainment-theme",category:"ゲーム・エンタメ",tag:"",title:"Gaming & Entertainment Theme: Japan's Global Content Dominance and Investment Drivers",date:"2026/04/04",summary:"Japan's Gaming & Entertainment theme includes console game hardware and software, mobile gaming, anime, music, film, and esports. Japan is a global content powerhouse — Nintendo, Sony, Capcom, Sega, K",body:`
 ## What Is the Gaming & Entertainment Theme?
@@ -1564,7 +1564,7 @@ Using StockWaveJP's macro indicators panel alongside theme data provides the mos
 
 The Game Entertainment theme has clear structural foundations for medium to long-term investors. Use the weekly StockWaveJP momentum data to distinguish between temporary corrections within an intact trend (opportunities to add) and genuine trend reversals (opportunities to reduce).
 
-The most valuable habit: reviewing all 67 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
+The most valuable habit: reviewing all 72 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
 
 > **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"banking-finance-theme",category:"銀行・金融",tag:"",title:"Banking & Finance Theme: BOJ Rate Hike Cycle and Structural Improvement in Bank Profitability",date:"2026/04/04",summary:"Japan's Banking & Finance theme covers the three megabanks — MUFG (8306), SMFG (8316), and Mizuho FG (8411) — along with regional banks, securities companies, and other financial institutions. After m",body:`
 ## What Is the Banking & Finance Theme?
@@ -1692,7 +1692,7 @@ Using StockWaveJP's macro indicators panel alongside theme data provides the mos
 
 The Regional Bank theme has clear structural foundations for medium to long-term investors. Use the weekly StockWaveJP momentum data to distinguish between temporary corrections within an intact trend (opportunities to add) and genuine trend reversals (opportunities to reduce).
 
-The most valuable habit: reviewing all 67 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
+The most valuable habit: reviewing all 72 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
 
 > **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"insurance-theme",category:"保険",tag:"",title:"Insurance Theme: Rising Bond Yields and Cross-Shareholding Unwinding Drive Profitability",date:"2026/04/04",summary:"Japan's insurance theme covers the three major non-life (property & casualty) insurance groups — Tokio Marine Holdings (8766), MS&AD Insurance (8725), and SOMPO Holdings (8630) — as well as major life",body:`
 ## What Is the Insurance Theme?
@@ -1755,7 +1755,7 @@ Using StockWaveJP's macro indicators panel alongside theme data provides the mos
 
 The Insurance theme has clear structural foundations for medium to long-term investors. Use the weekly StockWaveJP momentum data to distinguish between temporary corrections within an intact trend (opportunities to add) and genuine trend reversals (opportunities to reduce).
 
-The most valuable habit: reviewing all 67 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
+The most valuable habit: reviewing all 72 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
 
 > **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"real-estate-theme",category:"不動産",tag:"",title:"Real Estate Theme: Inbound Tourism Demand vs. Rate Hike Risk — Where Opportunity Lies",date:"2026/04/04",summary:"Japan's real estate theme covers commercial developers (offices, retail, logistics), residential developers (condominiums, housing), hotel operators, and J-REITs (Japanese Real Estate Investment Trust",body:`
 ## What Is the Real Estate Theme?
@@ -1821,7 +1821,7 @@ Using StockWaveJP's macro indicators panel alongside theme data provides the mos
 
 The Real Estate theme has clear structural foundations for medium to long-term investors. Use the weekly StockWaveJP momentum data to distinguish between temporary corrections within an intact trend (opportunities to add) and genuine trend reversals (opportunities to reduce).
 
-The most valuable habit: reviewing all 67 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
+The most valuable habit: reviewing all 72 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
 
 > **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"pharma-bio-theme",category:"医薬品・バイオ",tag:"",title:"Pharma & Biotech Theme: Japan's ADC Pipeline and Global Drug Franchise Expansion",date:"2026/04/04",summary:"Japan's pharmaceutical and biotech theme covers prescription drug developers (Takeda, Daiichi Sankyo, Astellas, Eisai), generic drug makers, and biotech companies developing next-generation biologics.",body:`
 ## What Is the Pharma & Biotech Theme?
@@ -1881,7 +1881,7 @@ Using StockWaveJP's macro indicators panel alongside theme data provides the mos
 
 The Pharma Bio theme has clear structural foundations for medium to long-term investors. Use the weekly StockWaveJP momentum data to distinguish between temporary corrections within an intact trend (opportunities to add) and genuine trend reversals (opportunities to reduce).
 
-The most valuable habit: reviewing all 67 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
+The most valuable habit: reviewing all 72 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
 
 > **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"healthcare-nursing-theme",category:"ヘルスケア・介護",tag:"",title:"Healthcare & Nursing Theme: Japan's Aging Population as a Structural Investment Driver",date:"2026/04/04",summary:`Japan is the world's most aged society — 29%+ of the population is 65 or older, and the 2025 "super-aging milestone" (the entire baby boomer generation passing 75) has now been crossed. This demograph`,body:`
 ## What Is the Healthcare & Nursing Theme?
@@ -1939,7 +1939,7 @@ Using StockWaveJP's macro indicators panel alongside theme data provides the mos
 
 The Healthcare Nursing theme has clear structural foundations for medium to long-term investors. Use the weekly StockWaveJP momentum data to distinguish between temporary corrections within an intact trend (opportunities to add) and genuine trend reversals (opportunities to reduce).
 
-The most valuable habit: reviewing all 67 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
+The most valuable habit: reviewing all 72 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
 
 > **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"food-beverage-theme",category:"食品・飲料",tag:"",title:"Food & Beverage Theme: Pricing Power, Export Growth, and Inbound Spending",date:"2026/04/04",summary:"Japan's food and beverage companies produce seasonings, processed foods, instant foods, confectionery, soft drinks, alcoholic beverages, dairy, and meat products. The sector is traditionally defensive",body:`
 ## What Is the Food & Beverage Theme?
@@ -1999,7 +1999,7 @@ Using StockWaveJP's macro indicators panel alongside theme data provides the mos
 
 The Food Beverage theme has clear structural foundations for medium to long-term investors. Use the weekly StockWaveJP momentum data to distinguish between temporary corrections within an intact trend (opportunities to add) and genuine trend reversals (opportunities to reduce).
 
-The most valuable habit: reviewing all 67 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
+The most valuable habit: reviewing all 72 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
 
 > **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"retail-ec-theme",category:"小売・EC",tag:"",title:"Retail & E-Commerce Theme: Japan's Digital Commerce Shift and Key Players",date:"2026/04/04",summary:"Japan's retail landscape spans supermarkets, convenience stores (CVS), drug stores, department stores, specialty retail, and e-commerce platforms. Japan's total retail market is approximately ¥140 tri",body:`
 ## What Is the Retail & E-Commerce Theme?
@@ -2060,7 +2060,7 @@ Using StockWaveJP's macro indicators panel alongside theme data provides the mos
 
 The Retail Ec theme has clear structural foundations for medium to long-term investors. Use the weekly StockWaveJP momentum data to distinguish between temporary corrections within an intact trend (opportunities to add) and genuine trend reversals (opportunities to reduce).
 
-The most valuable habit: reviewing all 67 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
+The most valuable habit: reviewing all 72 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
 
 > **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"telecom-theme",category:"通信",tag:"",title:"Telecom Theme: 5G Monetization, AI Integration, and Dividend Sustainability",date:"2026/04/04",summary:"Japan's telecom theme centers on the three mobile carriers — NTT (9432), KDDI (9433), and SoftBank Corp (9434) — plus emerging player Rakuten Mobile (Rakuten Group, 4755). The theme is traditionally c",body:`
 ## What Is the Telecom Theme?
@@ -2120,7 +2120,7 @@ Using StockWaveJP's macro indicators panel alongside theme data provides the mos
 
 The Telecom theme has clear structural foundations for medium to long-term investors. Use the weekly StockWaveJP momentum data to distinguish between temporary corrections within an intact trend (opportunities to add) and genuine trend reversals (opportunities to reduce).
 
-The most valuable habit: reviewing all 67 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
+The most valuable habit: reviewing all 72 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
 
 > **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"steel-materials-theme",category:"鉄鋼・素材",tag:"",title:"Steel & Materials Theme: Nippon Steel's Global Ambitions and China Overcapacity Risk",date:"2026/04/04",summary:"Japan's Steel & Materials theme covers steel manufacturers (Nippon Steel, JFE Steel, Kobe Steel), non-ferrous metals, glass, cement, textiles, and paper/pulp. These are the foundational industrial mat",body:`
 ## What Is the Steel & Materials Theme?
@@ -2178,7 +2178,7 @@ Using StockWaveJP's macro indicators panel alongside theme data provides the mos
 
 The Steel Materials theme has clear structural foundations for medium to long-term investors. Use the weekly StockWaveJP momentum data to distinguish between temporary corrections within an intact trend (opportunities to add) and genuine trend reversals (opportunities to reduce).
 
-The most valuable habit: reviewing all 67 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
+The most valuable habit: reviewing all 72 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
 
 > **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"chemical-theme",category:"化学",tag:"",title:"Chemicals Theme: Specialty vs. Commodity — Finding Alpha in Japanese Chemicals",date:"2026/04/04",summary:"Japan's chemicals sector spans commodity petrochemicals (ethylene, polypropylene) to high-value specialty chemicals for semiconductors, displays, batteries, and coatings. Japan's competitive strength ",body:`
 ## What Is the Chemicals Theme?
@@ -2247,7 +2247,7 @@ Using StockWaveJP's macro indicators panel alongside theme data provides the mos
 
 The Chemical theme has clear structural foundations for medium to long-term investors. Use the weekly StockWaveJP momentum data to distinguish between temporary corrections within an intact trend (opportunities to add) and genuine trend reversals (opportunities to reduce).
 
-The most valuable habit: reviewing all 67 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
+The most valuable habit: reviewing all 72 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
 
 > **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"construction-infra-theme",category:"建設・インフラ",tag:"",title:"Construction & Infrastructure Theme: Government Spending Boom and Labor Shortage Dynamics",date:"2026/04/04",summary:"Japan's Construction & Infrastructure theme covers general contractors (ゼネコン), civil engineering specialists, building materials companies, and infrastructure maintenance firms. The theme is experienc",body:`
 ## What Is the Construction & Infrastructure Theme?
@@ -2309,7 +2309,7 @@ Using StockWaveJP's macro indicators panel alongside theme data provides the mos
 
 The Construction Infra theme has clear structural foundations for medium to long-term investors. Use the weekly StockWaveJP momentum data to distinguish between temporary corrections within an intact trend (opportunities to add) and genuine trend reversals (opportunities to reduce).
 
-The most valuable habit: reviewing all 67 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
+The most valuable habit: reviewing all 72 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
 
 > **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"transport-logistics-theme",category:"輸送・物流",tag:"",title:"Transport & Logistics Theme: E-Commerce Growth vs. the 2024 Driver Shortage Problem",date:"2026/04/04",summary:"Japan's Transport & Logistics theme spans container shipping (NYK Line 9101, MOL 9104, Kawasaki Kisen 9107), bulk carriers, LNG tankers, airlines (JAL, ANA), trucking, parcel delivery, and freight for",body:`
 ## What Is the Transport & Logistics Theme?
@@ -2367,7 +2367,7 @@ Using StockWaveJP's macro indicators panel alongside theme data provides the mos
 
 The Transport Logistics theme has clear structural foundations for medium to long-term investors. Use the weekly StockWaveJP momentum data to distinguish between temporary corrections within an intact trend (opportunities to add) and genuine trend reversals (opportunities to reduce).
 
-The most valuable habit: reviewing all 67 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
+The most valuable habit: reviewing all 72 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
 
 > **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"fintech-theme",category:"フィンテック",tag:"",title:"Fintech Theme: Japan's Cashless Revolution and Digital Finance Opportunity",date:"2026/04/04",summary:"Japan's Fintech theme covers smartphone payments (QR code and NFC), digital banking, B2B accounting SaaS, BNPL (Buy Now Pay Later), robo-advisors, crypto assets, and insurtech. Japan has been transfor",body:`
 ## What Is the Fintech Theme?
@@ -2495,7 +2495,7 @@ Using StockWaveJP's macro indicators panel alongside theme data provides the mos
 
 The Robot Automation theme has clear structural foundations for medium to long-term investors. Use the weekly StockWaveJP momentum data to distinguish between temporary corrections within an intact trend (opportunities to add) and genuine trend reversals (opportunities to reduce).
 
-The most valuable habit: reviewing all 67 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
+The most valuable habit: reviewing all 72 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
 
 > **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"rare-earth-resources-theme",category:"レアアース・資源",tag:"",title:"Rare Earth & Resources Theme: Supply Chain Decoupling from China and Critical Minerals",date:"2026/04/04",summary:"Japan's Rare Earth & Resources theme covers companies involved in the exploration, mining, refining, and trading of lithium, cobalt, nickel, rare earth elements (neodymium, dysprosium, etc.), and conv",body:`
 ## What Is the Rare Earth & Resources Theme?
@@ -2559,7 +2559,7 @@ Using StockWaveJP's macro indicators panel alongside theme data provides the mos
 
 The Rare Earth Resources theme has clear structural foundations for medium to long-term investors. Use the weekly StockWaveJP momentum data to distinguish between temporary corrections within an intact trend (opportunities to add) and genuine trend reversals (opportunities to reduce).
 
-The most valuable habit: reviewing all 67 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
+The most valuable habit: reviewing all 72 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
 
 > **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"cybersecurity-theme",category:"サイバーセキュリティ",tag:"",title:"Cybersecurity Theme: Rising Threats and Japan's Active Cyber Defense Legislation",date:"2026/04/04",summary:"Japan's Cybersecurity theme covers companies providing security software, managed security services (MSSP), consulting, endpoint protection, network security, and zero-trust infrastructure. After high",body:`
 ## What Is the Cybersecurity Theme?
@@ -2691,7 +2691,7 @@ Using StockWaveJP's macro indicators panel alongside theme data provides the mos
 
 The Drone theme has clear structural foundations for medium to long-term investors. Use the weekly StockWaveJP momentum data to distinguish between temporary corrections within an intact trend (opportunities to add) and genuine trend reversals (opportunities to reduce).
 
-The most valuable habit: reviewing all 67 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
+The most valuable habit: reviewing all 72 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
 
 > **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"tourism-hotel-theme",category:"観光・ホテル・レジャー",tag:"",title:"Tourism & Hotels Theme: Record Inbound Visitors and Japan's Hospitality Boom",date:"2026/04/04",summary:"Japan's Tourism & Hotels theme covers hotels, ryokan (traditional inns), airlines, railways, department stores, duty-free retail, theme parks, and leisure facilities that benefit from both domestic an",body:`
 ## What Is the Tourism & Hotels Theme?
@@ -2755,7 +2755,7 @@ Using StockWaveJP's macro indicators panel alongside theme data provides the mos
 
 The Tourism Hotel theme has clear structural foundations for medium to long-term investors. Use the weekly StockWaveJP momentum data to distinguish between temporary corrections within an intact trend (opportunities to add) and genuine trend reversals (opportunities to reduce).
 
-The most valuable habit: reviewing all 67 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
+The most valuable habit: reviewing all 72 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
 
 > **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"agritech-foodtech-theme",category:"農業・フードテック",tag:"",title:"Agritech & Foodtech Theme: Smart Farming, Food Security, and Alternative Proteins",date:"2026/04/04",summary:"Japan's Agritech & Foodtech theme covers smart farming technologies (IoT, drones, AI-powered crop management), plant factories (vertical farming), alternative proteins (plant-based meat, cultivated me",body:`
 ## What Is the Agritech & Foodtech Theme?
@@ -2815,7 +2815,7 @@ Using StockWaveJP's macro indicators panel alongside theme data provides the mos
 
 The Agritech Foodtech theme has clear structural foundations for medium to long-term investors. Use the weekly StockWaveJP momentum data to distinguish between temporary corrections within an intact trend (opportunities to add) and genuine trend reversals (opportunities to reduce).
 
-The most valuable habit: reviewing all 67 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
+The most valuable habit: reviewing all 72 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
 
 > **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"education-hr-theme",category:"教育・HR・人材",tag:"",title:"Education & HR Theme: Japan's ¥1T Reskilling Initiative and EdTech Growth",date:"2026/04/04",summary:"Japan's Education & HR theme covers cram schools (juku), prep schools, e-learning (EdTech), language schools, staffing agencies, HR technology (ATS, HRIS, payroll SaaS), and recruitment media. Two opp",body:`
 ## What Is the Education & HR Theme?
@@ -2881,7 +2881,7 @@ Using StockWaveJP's macro indicators panel alongside theme data provides the mos
 
 The Education Hr theme has clear structural foundations for medium to long-term investors. Use the weekly StockWaveJP momentum data to distinguish between temporary corrections within an intact trend (opportunities to add) and genuine trend reversals (opportunities to reduce).
 
-The most valuable habit: reviewing all 67 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
+The most valuable habit: reviewing all 72 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
 
 > **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"space-satellite-theme",category:"宇宙・衛星",tag:"",title:"Space & Satellite Theme: Japan's Constellation Strategy and Commercial Space Market",date:"2026/04/04",summary:"Japan's Space & Satellite theme covers rocket launch services, satellite manufacturing, Earth observation satellites, satellite communications, space situational awareness (SSA), and lunar/deep space ",body:`
 ## What Is the Space & Satellite Theme?
@@ -2952,7 +2952,7 @@ Using StockWaveJP's macro indicators panel alongside theme data provides the mos
 
 The Space Satellite theme has clear structural foundations for medium to long-term investors. Use the weekly StockWaveJP momentum data to distinguish between temporary corrections within an intact trend (opportunities to add) and genuine trend reversals (opportunities to reduce).
 
-The most valuable habit: reviewing all 67 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
+The most valuable habit: reviewing all 72 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
 
 > **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"value-investing-guide",category:"Strategy",tag:"",title:"Value Investing in Japanese Stocks: Finding Undervalued Gems with PBR and FCF",date:"2026/04/05",summary:"Value investing is the practice of buying stocks whose market price is significantly below their intrinsic value — the true economic worth of the business. Pioneered by Benjamin Graham (Security Analy",body:`
 ## What Is Value Investing?
@@ -3020,7 +3020,7 @@ Using StockWaveJP's macro indicators panel alongside theme data provides the mos
 
 The Value Investing Guide theme has clear structural foundations for medium to long-term investors. Use the weekly StockWaveJP momentum data to distinguish between temporary corrections within an intact trend (opportunities to add) and genuine trend reversals (opportunities to reduce).
 
-The most valuable habit: reviewing all 67 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
+The most valuable habit: reviewing all 72 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
 
 > **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"growth-investing-guide",category:"Strategy",tag:"",title:"Growth Investing in Japan: How to Identify High-Growth Companies and Time Entry",date:"2026/04/05",summary:"Growth investing identifies companies whose earnings, revenue, and market share are growing significantly faster than the broad market — and invests in them even when current valuations appear expensi",body:`
 ## What Is Growth Investing?
@@ -3086,7 +3086,7 @@ Using StockWaveJP's macro indicators panel alongside theme data provides the mos
 
 The Growth Investing Guide theme has clear structural foundations for medium to long-term investors. Use the weekly StockWaveJP momentum data to distinguish between temporary corrections within an intact trend (opportunities to add) and genuine trend reversals (opportunities to reduce).
 
-The most valuable habit: reviewing all 67 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
+The most valuable habit: reviewing all 72 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
 
 > **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"momentum-investing-advanced",category:"Strategy",tag:"",title:"Advanced Momentum Investing: Using Volume and Price Data to Follow Trends",date:"2026/04/05",summary:"Momentum investing exploits the empirically documented tendency for recent outperforming assets to continue outperforming over the next 3–12 months. Jegadeesh and Titman (1993) provided the first rigo",body:`
 ## What Is Momentum Investing?
@@ -3162,7 +3162,7 @@ Using StockWaveJP's macro indicators panel alongside theme data provides the mos
 
 The Momentum Investing Advanced theme has clear structural foundations for medium to long-term investors. Use the weekly StockWaveJP momentum data to distinguish between temporary corrections within an intact trend (opportunities to add) and genuine trend reversals (opportunities to reduce).
 
-The most valuable habit: reviewing all 67 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
+The most valuable habit: reviewing all 72 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
 
 > **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"technical-analysis-basics",category:"Strategy",tag:"",title:"Technical Analysis Basics: Moving Averages, RSI, and MACD for Japanese Stocks",date:"2026/04/05",summary:"Technical analysis uses historical price and volume data — displayed as charts — to identify patterns and signals that help predict future price movements and time buy/sell decisions. It operates on t",body:`
 ## What Is Technical Analysis?
@@ -3239,7 +3239,7 @@ Using StockWaveJP's macro indicators panel alongside theme data provides the mos
 
 The Technical  Basics theme has clear structural foundations for medium to long-term investors. Use the weekly StockWaveJP momentum data to distinguish between temporary corrections within an intact trend (opportunities to add) and genuine trend reversals (opportunities to reduce).
 
-The most valuable habit: reviewing all 67 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
+The most valuable habit: reviewing all 72 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
 
 > **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"stock-terms-glossary",category:"用語解説",tag:"",title:"50 Essential Japanese Stock Market Terms Every Investor Should Know",date:"2026/04/05",summary:"Stock market terminology can be a barrier for new investors — financial news, brokerage research, and company filings are dense with specialized vocabulary. This glossary covers the 50 most important ",body:`
 ## Why Understanding Key Terms Matters
@@ -3321,7 +3321,7 @@ Using StockWaveJP's macro indicators panel alongside theme data provides the mos
 
 The Stock Terms Glossary theme has clear structural foundations for medium to long-term investors. Use the weekly StockWaveJP momentum data to distinguish between temporary corrections within an intact trend (opportunities to add) and genuine trend reversals (opportunities to reduce).
 
-The most valuable habit: reviewing all 67 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
+The most valuable habit: reviewing all 72 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
 
 > **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"dividend-investing-guide",category:"Strategy",tag:"",title:"Dividend Investing in Japan: Yield, Consecutive Increases, and NISA Tax Efficiency",date:"2026/04/05",summary:`Dividend investing focuses on stocks that pay regular cash dividends — building a portfolio that generates stable income ("cash flow") regardless of stock price movements. With Japan's new NISA (intro`,body:`
 ## What Is Dividend Investing?
@@ -3390,7 +3390,7 @@ Using StockWaveJP's macro indicators panel alongside theme data provides the mos
 
 The Dividend Investing Guide theme has clear structural foundations for medium to long-term investors. Use the weekly StockWaveJP momentum data to distinguish between temporary corrections within an intact trend (opportunities to add) and genuine trend reversals (opportunities to reduce).
 
-The most valuable habit: reviewing all 67 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
+The most valuable habit: reviewing all 72 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
 
 > **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"portfolio-management",category:"Strategy",tag:"",title:"Portfolio Management: Diversification, Rebalancing, and Risk Control for Theme Investors",date:"2026/04/05",summary:"Portfolio management is the systematic process of building, monitoring, and adjusting a collection of investments to achieve risk-adjusted return goals. The foundation is diversification — spreading i",body:`
 ## What Is Portfolio Management?
@@ -3466,7 +3466,7 @@ Using StockWaveJP's macro indicators panel alongside theme data provides the mos
 
 The Portfolio Management theme has clear structural foundations for medium to long-term investors. Use the weekly StockWaveJP momentum data to distinguish between temporary corrections within an intact trend (opportunities to add) and genuine trend reversals (opportunities to reduce).
 
-The most valuable habit: reviewing all 67 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
+The most valuable habit: reviewing all 72 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
 
 > **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"toyota-analysis",category:"Stock Analysis",tag:"",title:"Toyota Motor (7203): EV Strategy, Hybrid Dominance, and 2026 Investment Outlook",date:"2026/04/05",summary:"Toyota Motor (7203) is Japan's largest company by market cap (reaching ¥50T at its peak) and the world's largest automaker by volume for three consecutive years, selling approximately 10.3 million veh",body:`
 ## What Kind of Company Is Toyota Motor?
@@ -3532,7 +3532,7 @@ Using StockWaveJP's macro indicators panel alongside theme data provides the mos
 
 The Toyota theme has clear structural foundations for medium to long-term investors. Use the weekly StockWaveJP momentum data to distinguish between temporary corrections within an intact trend (opportunities to add) and genuine trend reversals (opportunities to reduce).
 
-The most valuable habit: reviewing all 67 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
+The most valuable habit: reviewing all 72 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
 
 > **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"sony-analysis",category:"Stock Analysis",tag:"",title:"Sony Group (6758): Gaming, Music, Film, and Image Sensors — A Diversified Tech Powerhouse",date:"2026/04/05",summary:"Sony Group (6758) has transformed from a consumer electronics manufacturer into a diversified entertainment and technology company. Today's Sony operates in gaming (PlayStation), music (Sony Music Ent",body:`
 ## What Kind of Company Is Sony Group?
@@ -3596,7 +3596,7 @@ Using StockWaveJP's macro indicators panel alongside theme data provides the mos
 
 The Sony theme has clear structural foundations for medium to long-term investors. Use the weekly StockWaveJP momentum data to distinguish between temporary corrections within an intact trend (opportunities to add) and genuine trend reversals (opportunities to reduce).
 
-The most valuable habit: reviewing all 67 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
+The most valuable habit: reviewing all 72 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
 
 > **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"mitsubishi-ufj-analysis",category:"Stock Analysis",tag:"",title:"Mitsubishi UFJ Financial Group (8306): Japan's Largest Bank in the Rate Hike Era",date:"2026/04/05",summary:"Mitsubishi UFJ Financial Group (MUFG, 8306) is Japan's largest bank and one of the world's largest financial institutions by total assets (approximately ¥400 trillion). MUFG's businesses include Mitsu",body:`
 ## What Kind of Company Is MUFG?
@@ -3661,7 +3661,7 @@ Using StockWaveJP's macro indicators panel alongside theme data provides the mos
 
 The Mitsubishi Ufj theme has clear structural foundations for medium to long-term investors. Use the weekly StockWaveJP momentum data to distinguish between temporary corrections within an intact trend (opportunities to add) and genuine trend reversals (opportunities to reduce).
 
-The most valuable habit: reviewing all 67 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
+The most valuable habit: reviewing all 72 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
 
 > **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"nintendo-analysis",category:"Stock Analysis",tag:"",title:"Nintendo (7974): Switch 2 Launch, IP Monetization Strategy, and Long-Term Outlook",date:"2026/04/11",summary:"Nintendo (7974) was founded in 1889 as a playing card manufacturer and entered the video game business in 1977. Today it is Japan's most globally recognized gaming company, creator of Mario, Zelda, Po",body:`
 ## What Kind of Company Is Nintendo?
@@ -3727,7 +3727,7 @@ Using StockWaveJP's macro indicators panel alongside theme data provides the mos
 
 The Nintendo theme has clear structural foundations for medium to long-term investors. Use the weekly StockWaveJP momentum data to distinguish between temporary corrections within an intact trend (opportunities to add) and genuine trend reversals (opportunities to reduce).
 
-The most valuable habit: reviewing all 67 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
+The most valuable habit: reviewing all 72 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
 
 > **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"fujikura-analysis",category:"Stock Analysis",tag:"",title:"Fujikura (5803): Optical Fiber and AI Datacenter Power Cables Drive Rapid Growth",date:"2026/04/11",summary:"Fujikura (5803) is a comprehensive cable manufacturer founded in 1885, operating across optical fiber cables, power cables, automotive wire harnesses, and flexible printed circuits (FPC). Revenue is a",body:`
 ## What Kind of Company Is Fujikura?
@@ -3789,7 +3789,7 @@ Using StockWaveJP's macro indicators panel alongside theme data provides the mos
 
 The Fujikura theme has clear structural foundations for medium to long-term investors. Use the weekly StockWaveJP momentum data to distinguish between temporary corrections within an intact trend (opportunities to add) and genuine trend reversals (opportunities to reduce).
 
-The most valuable habit: reviewing all 67 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
+The most valuable habit: reviewing all 72 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
 
 > **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"softbank-analysis",category:"Stock Analysis",tag:"",title:"SoftBank Corp (9434): Telecom + PayPay + AI — Japan's Integrated Digital Ecosystem",date:"2026/04/11",summary:"SoftBank Corp (9434) — listed separately from SoftBank Group (9984) — is Japan's third-largest mobile carrier and a comprehensive digital services company. Core businesses: mobile communications (Soft",body:`
 ## What Kind of Company Is SoftBank Corp (9434)?
@@ -3860,7 +3860,7 @@ Using StockWaveJP's macro indicators panel alongside theme data provides the mos
 
 The Softbank theme has clear structural foundations for medium to long-term investors. Use the weekly StockWaveJP momentum data to distinguish between temporary corrections within an intact trend (opportunities to add) and genuine trend reversals (opportunities to reduce).
 
-The most valuable habit: reviewing all 67 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
+The most valuable habit: reviewing all 72 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
 
 > **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"mitsui-mining-analysis",category:"Stock Analysis",tag:"",title:"Mitsui Mining & Smelting (5706): Copper Foil for EVs and EV Supply Chain Positioning",date:"2026/04/11",summary:'Mitsui Mining & Smelting (5706, "Mitsui Kinzoku") is a non-ferrous metals company within the Mitsui Group, specializing in zinc smelting, copper foil, electronic materials, and automotive parts materi',body:`
 ## What Kind of Company Is Mitsui Mining & Smelting?
@@ -3922,7 +3922,7 @@ Using StockWaveJP's macro indicators panel alongside theme data provides the mos
 
 The Mitsui Mining theme has clear structural foundations for medium to long-term investors. Use the weekly StockWaveJP momentum data to distinguish between temporary corrections within an intact trend (opportunities to add) and genuine trend reversals (opportunities to reduce).
 
-The most valuable habit: reviewing all 67 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
+The most valuable habit: reviewing all 72 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
 
 > **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"ajinomoto-analysis",category:"Stock Analysis",tag:"",title:"Ajinomoto (2802): From Seasoning Giant to Global Amino Acid and Pharma Leader",date:"2026/04/11",summary:"Ajinomoto (2802) was founded in 1909 and sells its signature MSG seasoning (AJI-NO-MOTO) in 130+ countries. Revenue approximately ¥1.4 trillion (FY2024), with overseas sales exceeding 55% of total — a",body:`
 ## What Kind of Company Is Ajinomoto?
@@ -3982,7 +3982,7 @@ Using StockWaveJP's macro indicators panel alongside theme data provides the mos
 
 The Ajinomoto theme has clear structural foundations for medium to long-term investors. Use the weekly StockWaveJP momentum data to distinguish between temporary corrections within an intact trend (opportunities to add) and genuine trend reversals (opportunities to reduce).
 
-The most valuable habit: reviewing all 67 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
+The most valuable habit: reviewing all 72 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
 
 > **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"furukawa-analysis",category:"Stock Analysis",tag:"",title:"Furukawa Electric (5801): Optical Fiber, Power Cables, and Automotive Parts",date:"2026/04/11",summary:`Furukawa Electric (5801, "Furukawa Denki") was founded in 1884 and is the oldest member of Japan's electric cable triumvirate (with Fujikura 5803 and Sumitomo Electric 5802). Primary businesses: optic`,body:`
 ## What Kind of Company Is Furukawa Electric?
@@ -4040,7 +4040,7 @@ Using StockWaveJP's macro indicators panel alongside theme data provides the mos
 
 The Furukawa theme has clear structural foundations for medium to long-term investors. Use the weekly StockWaveJP momentum data to distinguish between temporary corrections within an intact trend (opportunities to add) and genuine trend reversals (opportunities to reduce).
 
-The most valuable habit: reviewing all 67 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
+The most valuable habit: reviewing all 72 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
 
 > **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"advantest-analysis",category:"Stock Analysis",tag:"",title:"Advantest (6857): World #1 Semiconductor Test Equipment and the AI Chip Tailwind",date:"2026/04/11",summary:"Advantest (6857) designs and manufactures semiconductor test equipment (ATE — Automatic Test Equipment) — the machines that verify whether chips function correctly after fabrication. Founded in 1954, ",body:`
 ## What Kind of Company Is Advantest?
@@ -4102,7 +4102,7 @@ Using StockWaveJP's macro indicators panel alongside theme data provides the mos
 
 The Advantest theme has clear structural foundations for medium to long-term investors. Use the weekly StockWaveJP momentum data to distinguish between temporary corrections within an intact trend (opportunities to add) and genuine trend reversals (opportunities to reduce).
 
-The most valuable habit: reviewing all 67 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
+The most valuable habit: reviewing all 72 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
 
 > **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"kioxia-analysis",category:"Stock Analysis",tag:"",title:"Kioxia (285A): NAND Flash Memory World #2 — AI Storage Demand and Recovery Cycle",date:"2026/04/11",summary:"Kioxia Holdings (285A) is the world's second-largest NAND flash memory manufacturer, spun out from Toshiba's semiconductor division in 2019 (when Toshiba Memory was renamed Kioxia) and relisted on TSE",body:`
 ## What Kind of Company Is Kioxia?
@@ -4164,7 +4164,7 @@ Using StockWaveJP's macro indicators panel alongside theme data provides the mos
 
 The Kioxia theme has clear structural foundations for medium to long-term investors. Use the weekly StockWaveJP momentum data to distinguish between temporary corrections within an intact trend (opportunities to add) and genuine trend reversals (opportunities to reduce).
 
-The most valuable habit: reviewing all 67 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
+The most valuable habit: reviewing all 72 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
 
 > **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"nittobo-analysis",category:"Stock Analysis",tag:"",title:"Nittobo (3110): Glass Fiber World #4, Sound Insulation, and Residential Materials",date:"2026/04/11",summary:"Nittobo (Nitto Boseki, 3110) is a glass fiber and functional materials company founded in 1923. Revenue approximately ¥150 billion (FY2024), headquartered in Chiyoda, Tokyo. Nittobo is Japan's largest",body:`
 ## What Kind of Company Is Nittobo?
@@ -4224,7 +4224,7 @@ Using StockWaveJP's macro indicators panel alongside theme data provides the mos
 
 The Nittobo theme has clear structural foundations for medium to long-term investors. Use the weekly StockWaveJP momentum data to distinguish between temporary corrections within an intact trend (opportunities to add) and genuine trend reversals (opportunities to reduce).
 
-The most valuable habit: reviewing all 67 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
+The most valuable habit: reviewing all 72 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
 
 > **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"inpex-analysis",category:"Stock Analysis",tag:"",title:"INPEX (1605): Japan's Largest O&G Developer — Ichthys LNG and Dividend Appeal",date:"2026/04/11",summary:"INPEX Corporation (1605) is Japan's largest oil and gas exploration & production (E&P) company, operating upstream assets in over 20 countries. Revenue approximately ¥1.5 trillion (FY2024), headquarte",body:`
 ## What Kind of Company Is INPEX?
@@ -4286,7 +4286,7 @@ Using StockWaveJP's macro indicators panel alongside theme data provides the mos
 
 The Inpex theme has clear structural foundations for medium to long-term investors. Use the weekly StockWaveJP momentum data to distinguish between temporary corrections within an intact trend (opportunities to add) and genuine trend reversals (opportunities to reduce).
 
-The most valuable habit: reviewing all 67 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
+The most valuable habit: reviewing all 72 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
 
 > **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"skyperfect-analysis",category:"Stock Analysis",tag:"",title:"SKY Perfect JSAT (9412): Satellite Broadcasting, Communications, and Commercial Space",date:"2026/04/11",summary:"SKY Perfect JSAT Holdings (9412) is Japan's largest satellite broadcasting and communications company, formed by the 2007 merger of SkyPerfect (pay-TV) and JSAT (commercial satellite operator). Revenu",body:`
 ## What Kind of Company Is SKY Perfect JSAT?
@@ -4348,7 +4348,7 @@ Using StockWaveJP's macro indicators panel alongside theme data provides the mos
 
 The Skyperfect theme has clear structural foundations for medium to long-term investors. Use the weekly StockWaveJP momentum data to distinguish between temporary corrections within an intact trend (opportunities to add) and genuine trend reversals (opportunities to reduce).
 
-The most valuable habit: reviewing all 67 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
+The most valuable habit: reviewing all 72 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
 
 > **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"axelspace-analysis",category:"Stock Analysis",tag:"",title:"Japan's Space Startups: Small Satellites, Earth Observation, and the New Space Economy",date:"2026/04/11",summary:"Axelspace Holdings (166A, TSE Growth) is Japan's leading small satellite Earth observation company, founded in 2008 by University of Tokyo satellite engineering researchers. Axelspace builds, launches",body:`
 ## What Kind of Company Is Axelspace?
@@ -4421,7 +4421,7 @@ Using StockWaveJP's macro indicators panel alongside theme data provides the mos
 
 The Axelspace theme has clear structural foundations for medium to long-term investors. Use the weekly StockWaveJP momentum data to distinguish between temporary corrections within an intact trend (opportunities to add) and genuine trend reversals (opportunities to reduce).
 
-The most valuable habit: reviewing all 67 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
+The most valuable habit: reviewing all 72 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
 
 > **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"sogo-shosha-analysis",category:"Stock Analysis",tag:"",title:"Japan's 5 Major Trading Houses: Comparing Buffett's Picks on ROE, Dividend, and Strategy",date:"2026/04/11",summary:`Japan's "Sogo Shosha" (general trading houses) are uniquely Japanese enterprises with no direct Western equivalent. Originally commodity and product trading intermediaries, today's five major trading `,body:`
 ## What Is Japan's Sogo Shosha Business Model?
@@ -4491,7 +4491,7 @@ Using StockWaveJP's macro indicators panel alongside theme data provides the mos
 
 The Sogo Shosha theme has clear structural foundations for medium to long-term investors. Use the weekly StockWaveJP momentum data to distinguish between temporary corrections within an intact trend (opportunities to add) and genuine trend reversals (opportunities to reduce).
 
-The most valuable habit: reviewing all 67 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
+The most valuable habit: reviewing all 72 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
 
 > **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"murata-seisakusho-analysis",category:"Stock Analysis",tag:"電子部品",title:"Murata Manufacturing (6981): Electronic Components Giant That Crossed ¥14T Market Cap",date:"2026/05/29",summary:"Murata Manufacturing (6981) is the world's largest manufacturer of MLCC (Multi-Layer Ceramic Capacitors) and a global leader in electronic components. Founded in 1944 in Nagaokakyo, Kyoto. In FY2026 (",body:`
 ## What Kind of Company Is Murata Manufacturing?
@@ -4560,7 +4560,7 @@ Using StockWaveJP's macro indicators panel alongside theme data provides the mos
 
 The Murata Seisakusho theme has clear structural foundations for medium to long-term investors. Use the weekly StockWaveJP momentum data to distinguish between temporary corrections within an intact trend (opportunities to add) and genuine trend reversals (opportunities to reduce).
 
-The most valuable habit: reviewing all 67 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
+The most valuable habit: reviewing all 72 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
 
 > **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"mlcc-murata-analysis",category:"Theme",tag:"MLCC・電子部品",title:"MLCC Industry: The Critical Component for AI Servers and the EV Transition",date:"2026/05/29",summary:"MLCC stands for Multi-Layer Ceramic Capacitor — one of the most critical and widely used passive electronic components. A capacitor stores electrical charge and releases it rapidly, performing essenti",body:`
 ## What Is MLCC? The Critical Component for AI and EVs
@@ -4641,7 +4641,7 @@ Using StockWaveJP's macro indicators panel alongside theme data provides the mos
 
 The Mlcc Murata theme has clear structural foundations for medium to long-term investors. Use the weekly StockWaveJP momentum data to distinguish between temporary corrections within an intact trend (opportunities to add) and genuine trend reversals (opportunities to reduce).
 
-The most valuable habit: reviewing all 67 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
+The most valuable habit: reviewing all 72 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
 
 > **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"spacex-analysis-en",themes:["宇宙・衛星","防衛・航空"],keywords:["SpaceX","SPCX","Elon Musk","Starlink","IPO","rocket","space investment","個別銘柄"],category:"個別銘柄",icon:"🚀",title:"SpaceX (SPCX) Deep Dive: History's Largest IPO & Japan Stock Impact",date:"2026/06/12",summary:"SpaceX listed on Nasdaq June 12, 2026 raising $75B at a $1.77T valuation — history's largest IPO. Analysis of business model, growth drivers, competitors, and Japanese stock opportunities.",body:`SpaceX (Space Exploration Technologies Corp.) was founded in 2002 by Elon Musk to reduce the cost of space transportation and ultimately enable human life on multiple planets.
 

@@ -36,7 +36,7 @@
     "avg_pct_1w": -1.8,
     "top5_themes": [
       {
-        "theme": "Optical Communication",
+        "theme": "Optical Fiber & Components",
         "pct": 6.8
       },
       {
@@ -300,7 +300,7 @@
   {
     "week": "2026-W16",
     "date": "2026/04/18",
-    "title": "Week of Apr 14–18: Semiconductor Testing Leads; Optical Communications Joins Top 5",
+    "title": "Week of Apr 14–18: Semiconductor Testing Leads; Optical Fiber & Componentss Joins Top 5",
     "generated_at": "",
     "avg_pct_1w": 0,
     "top5_themes": []
