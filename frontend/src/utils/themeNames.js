@@ -67,6 +67,10 @@ export const THEME_NAME_EN = {
   '教育・HR・人材': 'Education & HR',
   '人材派遣': 'Staffing / HR',
   'ゲーム・エンタメ': 'Gaming & Entertainment',
+  '電線・銅': 'Copper & Cable',
+  '先端パッケージング・基板': 'Advanced Packaging & PCB',
+  'データセンター電力・冷却': 'DC Power & Cooling',
+  'M&A・事業承継': 'M&A & Succession',
   'MLCC・電子部品': 'MLCC / Electronic Components',
 }
 
