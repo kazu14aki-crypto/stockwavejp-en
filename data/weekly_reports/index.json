@@ -1,5 +1,63 @@
 [
   {
+    "week": "2026-W27",
+    "date": "2026-07-03",
+    "title": "Weekly Market Report | Jun 29 - Jul 3, 2026",
+    "generated_at": "2026-07-03T18:00:00+09:00",
+    "avg_pct_1w": 0.9,
+    "top5_themes": [
+      {
+        "theme": "Cyber Security",
+        "pct": 7.2
+      },
+      {
+        "theme": "Banking",
+        "pct": 5.8
+      },
+      {
+        "theme": "EV / Electric Vehicles",
+        "pct": 4.6
+      },
+      {
+        "theme": "Food & Beverage",
+        "pct": 3.9
+      },
+      {
+        "theme": "Rare Earth & Resources",
+        "pct": 3.4
+      }
+    ]
+  },
+  {
+    "week": "2026-W26",
+    "date": "2026-06-26",
+    "title": "Weekly Market Report | Jun 22-26, 2026",
+    "generated_at": "2026-06-26T18:00:00+09:00",
+    "avg_pct_1w": -1.8,
+    "top5_themes": [
+      {
+        "theme": "Optical Communication",
+        "pct": 6.8
+      },
+      {
+        "theme": "Defense & Aerospace",
+        "pct": 3.4
+      },
+      {
+        "theme": "Banking",
+        "pct": 2.9
+      },
+      {
+        "theme": "High Dividend",
+        "pct": 2.1
+      },
+      {
+        "theme": "Food & Beverage",
+        "pct": 1.5
+      }
+    ]
+  },
+  {
     "week": "2026-W25",
     "date": "2026-06-19",
     "title": "Weekly Market Report | Jun 15-19, 2026",
