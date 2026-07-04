@@ -1,0 +1,58 @@
+{
+  "week": "2026-W26",
+  "date": "2026-06-26",
+  "title": "Weekly Market Report | Jun 22-26, 2026",
+  "generated_at": "2026-06-26T18:00:00+09:00",
+  "next_report_at": "2026-07-03T18:00:00+09:00",
+  "summary": {
+    "avg_pct_1w": -1.8,
+    "rise_count": 22,
+    "fall_count": 45,
+    "total_themes": 67,
+    "top5_themes": [
+      {
+        "theme": "Optical Communication",
+        "pct": 6.8
+      },
+      {
+        "theme": "Defense & Aerospace",
+        "pct": 3.4
+      },
+      {
+        "theme": "Banking",
+        "pct": 2.9
+      },
+      {
+        "theme": "High Dividend",
+        "pct": 2.1
+      },
+      {
+        "theme": "Food & Beverage",
+        "pct": 1.5
+      }
+    ],
+    "bot5_themes": [
+      {
+        "theme": "Memory",
+        "pct": -8.4
+      },
+      {
+        "theme": "AI Semiconductor",
+        "pct": -6.2
+      },
+      {
+        "theme": "Semiconductor Equipment",
+        "pct": -4.8
+      },
+      {
+        "theme": "Next-Gen Semiconductor",
+        "pct": -4.1
+      },
+      {
+        "theme": "MLCC/Electronic Components",
+        "pct": -3.5
+      }
+    ]
+  },
+  "report": "# Weekly Market Report | June 22-26, 2026\n\n---\n\n## Japan Market Overview\n\nThe Nikkei posted its first sharp weekly decline in two weeks. After the prior week's record surge of over 5,000 points, this week became a \"memory frenzy\" rollercoaster, with memory and AI semiconductor stocks whipsawing the entire index. Intraday ranges reached 2,500-3,200 points on three separate days -- a clear spike in volatility at all-time-high territory.\n\n**Nikkei 225 Weekly Path**\n- Mon 6/22: 72,353 (+1,103). Eighth straight gain, fresh all-time high. Intraday YTD high of 72,831\n- Tue 6/23: 69,788 (-2,565 / -4.0%). Fifth-largest point drop on record; back below 70,000 for the first time in four sessions. Index P/E stretched to the upper bound; SoftBank Group plunged and Kioxia briefly broke below 100,000 yen\n- Wed 6/24: 69,174 (-613). Continued decline but showed resilience\n- Thu 6/25: 72,366 (+3,191). Fourth-largest point gain in history. Micron's blowout earnings (revenue x4.5, net income x15) validated AI memory demand and drove a new record closing high\n- Fri 6/26: 69,360 (-3,005). Back below 70,000 in a single day. SoftBank Group fell -12.5% (reports of OpenAI IPO delay), Kioxia -11.2%. Sharp losses in Korean equities and reports of a halted Strait of Hormuz escape route added pressure\n\n**Weekly Change: 71,250 -> 69,360, -1,889 (-2.65%)**\n\nForeign investors turned net buyers (1.06 trillion yen) in the third week of June for the first time in four weeks -- their behavior on dips is next week's key focus.\n\n---\n\n## Big Events This Week\n\n**Micron Reignites the AI Memory Trade (6/24 after close)**\n\nRevenue up 4.5x year-on-year and net income up 15x for the Mar-May quarter. Soaring HBM/DRAM prices flowed straight to the bottom line, propelling Tokyo to a historic rally on 6/25. At the same time, cost concerns surfaced for memory *buyers*, exposing the trade's double-edged nature.\n\n**SoftBank Group Plunge and Kioxia Whiplash**\n\nReports of an OpenAI IPO delay sent SoftBank Group down -12.5% on 6/26. Kioxia, Japan's largest company by market cap, swung more than +/-10% repeatedly through the week, dragging the index with it.\n\n---\n\n## Weekly Theme Ranking & Analysis\n\n### Top 5 Gainers\nOptical Communication led the week, with Fujikura spiking as much as +14%. Beneath the AI turbulence, money rotated defensively into Defense & Aerospace, Banking, and High Dividend names.\n\n### Bottom 5 Decliners\nThis year's leading themes -- Memory, AI Semiconductor, Semiconductor Equipment -- all finished the week lower. Profit-taking spread to electronic components as analysts cut ratings on Taiyo Yuden.\n\n---\n\n## U.S. Market\n\nThe Dow stayed firm on Micron's results and the Fed's bank stress test (all banks passed), while the Nasdaq lagged as markets priced in \"memory inflation = Big Tech cost pressure.\" The Magnificent 7 underperformance highlights a qualitative shift in the AI trade on both sides of the Pacific.\n\n---\n\n## Key Economic Data\n\n- May department store sales: +8.3% YoY (5th straight monthly gain, led by art/jewelry/precious metals)\n- Oracle Japan FY5/26: net income +4.6% to 63.5 billion yen (cloud & datacenter strength)\n- Foreign investor flows (3rd week of June): net buying of 1.06 trillion yen (first in 4 weeks)\n\n---\n\n## What to Watch Next Week (6/29-7/3)\n\n1. **BOJ Tankan (7/1)**: Consensus for the large manufacturers' DI is +16. Watch for AI capex breadth\n2. **U.S. Jobs Report (7/2)**: Released Thursday due to Independence Day; will steer Fed rate-hike expectations\n3. **Kioxia & SoftBank Group price action**: Stabilization in these two heavyweights is a precondition for an index rebound\n4. **Post-dividend reinvestment flows**: With June-end dividend payments done, supply-demand momentum may shift\n\n---\n\n## StockWaveJP Editorial View\n\nIntraday swings of 3,000 points argue for keeping leverage firmly in check. We see the long-term AI boom as intact, but a pullback toward the 6-week moving average (low-67,000s) is within normal range. This was a week that rewarded portfolios holding pillars beyond AI -- optical communication, defense, and banks -- rather than chasing the index.\n\n*This report is for informational purposes only and does not constitute investment advice. All investment decisions are your sole responsibility.*"
+}

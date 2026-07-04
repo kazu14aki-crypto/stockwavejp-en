@@ -542,7 +542,6 @@ function StockTable({ stocks: rawStocks, onAddToTheme }) {
       .then(r => r.json()).then(d => { if (d.rates?.JPY) setUsdJpy(d.rates.JPY) })
       .catch(() => {})
   }, [])
-  if (!rawStocks||!rawStocks.length) return null
   const [sortKey, setSortKey] = useState('pct')
   const [sortAsc, setSortAsc] = useState(false)
   const tableRef = useRef(null)
@@ -592,7 +591,10 @@ function StockTable({ stocks: rawStocks, onAddToTheme }) {
       document.getElementById('mr-bottom-scroll')?.removeEventListener('scroll', syncBot)
       ro?.disconnect()
     }
-  }, [])
+  }, [rawStocks && rawStocks.length > 0])
+
+  // 全フック実行後にearly return（フック数を一定に保ちReact #310を防止）
+  if (!rawStocks||!rawStocks.length) return null
 
   const onMouseDown = (e) => {
     isDragging.current = true; startX.current = e.pageX - tableRef.current.offsetLeft
@@ -657,7 +659,7 @@ function StockTable({ stocks: rawStocks, onAddToTheme }) {
                     {i+1}
                   </td>
                   <td style={{ ...tdL, fontWeight:600, color:'var(--text)', minWidth:'120px', background: i%2===0?'var(--bg2)':'var(--bg3)', position:'sticky', left:'32px', zIndex:2 }}>
-                    <div style={{ fontSize:'10px', color:'var(--text3)', fontFamily:'var(--mono)', marginBottom:'1px' }}>{s.ticker.replace('.T','')}</div>
+                    <div style={{ fontSize:'10px', color:'var(--text3)', fontFamily:'var(--mono)', marginBottom:'1px' }}>{s.ticker.replace('.T','')}{ADR_CODE_SET.has(String(s.ticker||'').replace('.T','')) && <span style={{ fontSize:'10px', color:'#4a9eff', fontWeight:700, marginLeft:'5px' }}>ADR</span>}</div>
                     <span style={{ fontSize:'13px', overflow:'hidden', textOverflow:'ellipsis', whiteSpace:'nowrap', display:'block' }}>{s.name}</span>
                   </td>
                   {/* ① ミニチャート列（固定なし・横スクロールで動く） */}
@@ -811,6 +813,7 @@ const ADR_STOCKS = [
   { us:'RCRUY', jp:'6098', name:'Recruit Holdings',   sector:'HR/Tech',       mktcap:'$78B',  note:'HR services (Indeed parent)' },
   { us:'PCRFY', jp:'6752', name:'Panasonic',          sector:'Electronics',   mktcap:'$19B',  note:'Electronics & batteries' },
 ]
+const ADR_CODE_SET = new Set(ADR_STOCKS.map(s => s.jp))
 
 export default function MarketRank() {
   const [modalStock,  setModalStock]  = useState(null)
@@ -851,6 +854,7 @@ const allGroups = {
   useEffect(() => {
     if (activeGroup !== 'ADR' || !activeSeg) return
     setDetail(null)
+    const API_BASE = import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000'
     const adrCodes = new Set(ADR_STOCKS.map(s => s.jp))
     const fetchADR = async () => {
       try {

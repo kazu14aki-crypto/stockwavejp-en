@@ -464,6 +464,13 @@ function PickupStocks({ stocks, period }) {
 }
 
 
+// ── ADR銘柄コード（MarketRank.jsxのADR_STOCKSと同一リスト） ──
+const ADR_CODE_SET = new Set([
+  '8306','8316','8411','8591','8766','6758','6971','6954','6857','8035',
+  '4063','6501','6702','7203','7267','6902','9432','9433','9984','8058',
+  '8001','6098','6752',
+])
+
 // ── 銘柄テーブル ──
 function StockTable({ stocks: rawStocks }) {
   const { plan } = useSubscription()
@@ -474,7 +481,6 @@ function StockTable({ stocks: rawStocks }) {
       .then(r => r.json()).then(d => { if (d.rates?.JPY) setUsdJpy(d.rates.JPY) })
       .catch(() => {})
   }, [])
-  if (!rawStocks || !rawStocks.length) return null
   const [modalStock, setModalStock] = useState(null)
   // ⑤ ソート状態
   const [sortKey, setSortKey] = useState('pct')
@@ -514,7 +520,10 @@ function StockTable({ stocks: rawStocks }) {
       top.removeEventListener('scroll', syncFromTop)
       ro?.disconnect()
     }
-  }, [])
+  }, [rawStocks && rawStocks.length > 0])
+
+  // 全フック実行後にearly return（フック数を一定に保ちReact #310を防止）
+  if (!rawStocks || !rawStocks.length) return null
 
   // ② ドラッグハンドラ
   const onMouseDown = (e) => {
@@ -615,7 +624,7 @@ function StockTable({ stocks: rawStocks }) {
                   <td style={{ ...tdL, fontWeight:600, color:'var(--text)',
                     background: i%2===0?'var(--bg2)':'var(--bg3)', position:'sticky',
                     left:'32px', zIndex:2, minWidth:'160px', maxWidth:'220px' }}>
-                    <div style={{ fontSize:'10px', color:'var(--text3)', fontFamily:'var(--mono)', marginBottom:'1px' }}>{s.ticker.replace('.T','')}</div>
+                    <div style={{ fontSize:'10px', color:'var(--text3)', fontFamily:'var(--mono)', marginBottom:'1px' }}>{s.ticker.replace('.T','')}{ADR_CODE_SET.has(String(s.ticker||'').replace('.T','')) && <span style={{ fontSize:'10px', color:'#4a9eff', fontWeight:700, marginLeft:'5px' }}>ADR</span>}</div>
                     <div style={{ display:'flex', alignItems:'center' }}>
                       <span style={{ fontSize:'13px', overflow:'hidden',
                         textOverflow:'ellipsis', whiteSpace:'nowrap' }}>{s.name}</span>

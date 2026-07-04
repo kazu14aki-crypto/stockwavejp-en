@@ -1,0 +1,58 @@
+{
+  "week": "2026-W27",
+  "date": "2026-07-03",
+  "title": "Weekly Market Report | Jun 29 - Jul 3, 2026",
+  "generated_at": "2026-07-03T18:00:00+09:00",
+  "next_report_at": "2026-07-10T18:00:00+09:00",
+  "summary": {
+    "avg_pct_1w": 0.9,
+    "rise_count": 41,
+    "fall_count": 26,
+    "total_themes": 67,
+    "top5_themes": [
+      {
+        "theme": "Cyber Security",
+        "pct": 7.2
+      },
+      {
+        "theme": "Banking",
+        "pct": 5.8
+      },
+      {
+        "theme": "EV / Electric Vehicles",
+        "pct": 4.6
+      },
+      {
+        "theme": "Food & Beverage",
+        "pct": 3.9
+      },
+      {
+        "theme": "Rare Earth & Resources",
+        "pct": 3.4
+      }
+    ],
+    "bot5_themes": [
+      {
+        "theme": "Memory",
+        "pct": -6.5
+      },
+      {
+        "theme": "AI Semiconductor",
+        "pct": -4.2
+      },
+      {
+        "theme": "Semiconductor Equipment",
+        "pct": -3.1
+      },
+      {
+        "theme": "MLCC/Electronic Components",
+        "pct": -2.4
+      },
+      {
+        "theme": "Next-Gen Semiconductor",
+        "pct": -1.8
+      }
+    ]
+  },
+  "report": "# Weekly Market Report | June 29 - July 3, 2026\n\n---\n\n## Japan Market Overview\n\nThe Nikkei rebounded modestly this week. Three straight gains on AI/semiconductor dip-buying early in the week gave way to a sharp pullback after the U.S. SOX index tumbled -- still a rough ride around the 70,000 line. The week's most important development, however, was the *broadening* of the market. Even on 7/2, when the index fell more than 1,700 points, roughly 80% of TSE Prime names rose and TOPIX extended gains, confirming a rotation into value stocks such as autos, banks, and trading houses.\n\n**Nikkei 225 Weekly Path**\n- Mon 6/29: 69,468 (+107). Modest rebound. U.S. and Iran agreed to halt mutual attacks, with talks set in Bahrain. Growth 250 index jumped +2.96% as money flowed into small caps\n- Tue 6/30: 70,062 (+594). Reclaimed 70,000 on the prior day's +3.8% SOX rally. Tokyo Electron, Advantest, and Fujikura led -- but 64% of names declined, an index-heavy advance\n- Wed 7/1: 70,474 (+412). Third straight gain. BOJ Tankan large manufacturers' DI hit +22 (consensus +16), the highest in 8 years 3 months. An early +1,900 surge faded by the close\n- Thu 7/2: 68,733 (-1,741 / -2.47%). First decline in four sessions after SOX plunged -6.27% overnight. AI/semiconductor names fell across the board and Kioxia broke its 25-day line. Yet TOPIX extended gains with ~80% of Prime advancing -- value rotation in full view\n- Fri 7/3: 69,744 (+1,010 / +1.47%). Rebounded as weak U.S. payrolls (+57k vs +113k expected) cooled rate-hike expectations, with the Dow's record close as a tailwind\n\n**Weekly Change: 69,360 -> 69,744, +383 (+0.55%)**\n\n---\n\n## Big Events This Week\n\n**BOJ Tankan at an 8-Year High (7/1)**\n\nThe large manufacturers' DI came in at +22, well above the +16 consensus. The data confirms that AI demand is lifting both capex and business sentiment, reinforcing the medium-term earnings-driven bull case for Japanese equities.\n\n**The \"Index Down, Stocks Up\" Reversal (7/2)**\n\nA rare configuration: the Nikkei fell -2.47% while ~80% of Prime names rose and TOPIX gained. Crude oil retreating to pre-conflict levels added comfort, drawing retail and foreign money into laggard autos, banks, insurers, and trading houses. Escaping the index-only regime is a sign of a healthier market.\n\n**Five Eyes Emergency Advisory Ignites Cybersecurity Names (7/2)**\n\nFFRI, HENNGE, and Cybozu all surged. As a policy-driven theme, the momentum could persist.\n\n---\n\n## Weekly Theme Ranking & Analysis\n\n### Top 5 Gainers\nCyber Security topped the week. Value plays -- Banking and EV/autos -- followed, while Food & Beverage (consumption tax cut hopes) and Rare Earth & Resources (national policy to cut China dependence) also climbed.\n\n### Bottom 5 Decliners\nMemory and AI semiconductor names extended their correction, symbolized by Kioxia's break below the 25-day line. Semiconductor Equipment saw dip-buying on large Korean capex expectations, limiting downside.\n\n---\n\n## U.S. Market\n\nEarly in the week the Dow notched consecutive record highs with SOX up ~4%, but the tone flipped when SOX crashed -6.27% on 7/1. On 7/2, soft payrolls pushed back rate-hike expectations and the Dow closed at a record 52,900 (+594), while memory names like SanDisk and Seagate dragged the Nasdaq lower -- a striking \"Dow up, Nasdaq down\" divergence. U.S. markets are closed 7/3 for Independence Day.\n\n---\n\n## Key Economic Data\n\n- BOJ Tankan (June): Large manufacturers' DI +22 (consensus +16; highest in 8 years 3 months)\n- U.S. Nonfarm Payrolls (June): +57k (far below +113k consensus)\n- USD/JPY: modest yen strength into the low-161s (161.83 early week -> ~161.43)\n\n---\n\n## What to Watch Next Week (7/6-7/10)\n\n1. **ETF distribution selling**: Roughly 1 trillion yen of cash-raising sales typically hits around 7/8-7/10 -- the week's biggest supply-demand event\n2. **Options SQ (7/10)**: SQ week in a volatile tape invites positioning-driven swings\n3. **Kioxia vs. its 25-day line**: The memory trade's thermometer. Recapture = index rebound; failure = longer correction\n4. **Apr-Jun earnings previews**: Early reporters such as Yaskawa Electric will offer a first read on manufacturing\n5. **Durability of the value rotation**: Whether flows into banks, autos, and trading houses persist is the key branching point\n\n---\n\n## StockWaveJP Editorial View\n\nBeneath the index turbulence, a qualitative shift is underway -- from AI mono-focus toward earnings- and value-driven breadth. The strong Tankan lays the groundwork for the earnings rally to spread beyond AI. With ETF distribution selling looming next week, we favor buying dips in tranches. Policy and domestic-demand themes -- cybersecurity, rare earths, food -- carry low correlation to the index and offer genuine diversification value.\n\n*This report is for informational purposes only and does not constitute investment advice. All investment decisions are your sole responsibility.*"
+}
