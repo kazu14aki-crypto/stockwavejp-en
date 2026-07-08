@@ -37,6 +37,8 @@ const SECTIONS = [
       'The table supports click-and-drag horizontal scrolling. A scrollbar is also shown at the top of the table.',
       'Each chart can be enlarged by clicking.',
       'Use the "+" button to add stocks to your Custom Theme.',
+      'A USD price column is shown alongside JPY prices, converted with a real-time exchange rate.',
+      'The six valuation columns (P/E, Forward P/E, P/B, Forward P/B, PEG, Forward PEG) are subscriber-only. A 🔒 mark is shown on the Free plan.',
     ]
   },
   {
@@ -48,6 +50,9 @@ const SECTIONS = [
       'Bottom of page is 2-column layout (desktop): left column has the stock table; right column has a stock heatmap and volume/trading value charts.',
       'The stock table supports drag-scroll and sort buttons. A scrollbar is shown at the top.',
       'Hover over bubbles to see stock name, price change %, volume, and trading value.',
+      'The "Japan ADR (US-Listed)" tab lists Japanese companies that also trade in the U.S. as ADRs, with their U.S. ticker shown next to the name — useful if you prefer to trade them on U.S. exchanges.',
+      'USD price columns are provided across tabs, converted with a real-time exchange rate.',
+      'Valuation columns (P/E, P/B, PEG and forward figures) are subscriber-only; the Free plan shows a 🔒 mark.',
     ]
   },
   {
@@ -83,6 +88,7 @@ const SECTIONS = [
       '"Theme Detail" and "Read Column" buttons appear near theme names mentioned in the report.',
       'Click Rising/Falling TOP5 theme badges to navigate to that theme\'s detail page.',
       'Reports are manually written based on market data, not AI-generated.',
+      'Each report includes the strongest and weakest themes and stocks of the week with individual commentary, a read on the final session, and next week\'s key events, themes, and stocks to watch.',
     ]
   },
   {
@@ -114,6 +120,10 @@ const QA = [
   {
     q: 'How are the Featured Stocks picks selected?',
     a: 'Stocks are ranked mechanically using a proprietary composite score based on price change %, volume, price trend, and trading value. Since this is not real-time data and depends on the data fetch timing, it may differ from the latest market conditions. Please use it only as a reference for investment research.',
+  },
+  {
+    q: 'Why do the P/E, P/B, and PEG columns show 🔒 or "—"?',
+    a: 'Valuation metrics are a subscriber-only feature. A 🔒 mark means you are on the Free plan; "—" means the data-provider integration is still being prepared and figures will appear automatically once live.',
   },
   {
     q: 'What unit is Trading Value displayed in?',
