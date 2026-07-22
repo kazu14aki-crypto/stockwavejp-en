@@ -20,7 +20,7 @@ import Column      from './components/pages/Column'
 import PrivacyPolicy from './components/pages/PrivacyPolicy'
 import TermsOfService from './components/pages/TermsOfService'
 import SiteInfo    from './components/pages/SiteInfo'
-import WeeklyReport from './components/pages/WeeklyReport'
+import ReportHub from './components/pages/ReportHub'
 import Plan         from './components/pages/Plan'
 import InstitutionalHoldings from './components/pages/InstitutionalHoldings'
 import RelatedPageNav, { hasRelatedPageNav } from './components/RelatedPageNav'
@@ -33,7 +33,7 @@ const PAGES = [
   { icon:'🔍', label:'Theme Detail',         component:ThemeDetail           },
   { icon:'🔍', label:'Stock Search',   component:StockSearch            },
   { icon:'🎨', label:'Custom Theme',         component:CustomTheme           },
-  { icon:'📰', label:'Weekly Report',        component:WeeklyReport          },
+  { icon:'📰', label:'Reports',              component:ReportHub             },
   { icon:'📝', label:'Column',               component:Column                },
 ]
 // Stock Search is in PAGES
@@ -180,7 +180,7 @@ function AppInner() {
     if (currentPage === 'Theme List') return { onNavigate: handlePageChange, isMobile }
     if (currentPage === 'Theme Detail') return { onNavigate: handlePageChange, initialTheme: targetTheme, isMobile }
     if (currentPage === 'Heatmap') return { onNavigate: handlePageChange, isMobile }
-    if (currentPage === 'Weekly Report') return { onNavigate: handlePageChange, isMobile }
+    if (currentPage === 'Reports') return { onNavigate: handlePageChange, isMobile }
     if (currentPage === 'Market Detail') return { onNavigate: handlePageChange, isMobile }
     return { isMobile }
   })()

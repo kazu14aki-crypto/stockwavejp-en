@@ -57,7 +57,7 @@ def _strip_valuation(stocks: list, uid: str | None) -> list:
 app = FastAPI(title="StockWaveJP API (English)", version="1.0.0")
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"], allow_methods=["*"], allow_headers=["*"],
+    allow_origins=['https://stockwavejp-en.com','https://www.stockwavejp-en.com','http://localhost:5173','http://127.0.0.1:5173'], allow_credentials=True, allow_methods=['*'], allow_headers=['*'], expose_headers=['*'],
 )
 
 THEMES_EN = {**translate_themes_dict(DEFAULT_THEMES), **EXTRA_THEMES_EN}

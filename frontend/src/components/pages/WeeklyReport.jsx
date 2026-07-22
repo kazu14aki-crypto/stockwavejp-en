@@ -230,10 +230,11 @@ export default function WeeklyReport({ onNavigate }) {
     fetch('/data/weekly_reports/index.json?t=' + Date.now())
       .then(r => r.ok ? r.json() : [])
       .then(d => {
-        setIndex(d)
+        const rows = Array.isArray(d) ? d : (Array.isArray(d?.reports) ? d.reports : [])
+        setIndex(rows)
         // 最新Weekly Reportを自動的に取得して表示
-        if (d.length > 0 && !selWeek) {
-          const latest = d[0]
+        if (rows.length > 0 && !selWeek) {
+          const latest = rows[0]
           // 最新Weekly Reportをプリフェッチ（表示はユーザーのクリック後）
           fetch(`/data/weekly_reports/${latest.week}.json?t=${Date.now()}`)
             .then(r => r.ok ? r.json() : null)
@@ -411,7 +412,7 @@ export default function WeeklyReport({ onNavigate }) {
   // ① カード一覧モード（コラム形式）
   return (
     <div style={{ padding:'20px 24px 80px', maxWidth:'960px', margin:'0 auto' }}>
-      <h1 style={{ fontSize:'20px', fontWeight:700, color:'var(--text)', marginBottom:'4px' }}>📰 Weekly Report</h1>
+      <h1 style={{ fontSize:'20px', fontWeight:700, color:'var(--text)', marginBottom:'4px' }}>📰 Weekly Reports</h1>
 
       {error && index.length === 0 ? (
         <div style={{ textAlign:'center', padding:'40px' }}>
@@ -422,7 +423,7 @@ export default function WeeklyReport({ onNavigate }) {
       ) : (
         <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fill,minmax(280px,1fr))', gap:'12px' }}>
           {/* 最新Weekly Reportを先頭に */}
-          {[...index].sort((a, b) => {
+          {[...(Array.isArray(index) ? index : [])].sort((a, b) => {
             // dateフィールド優先、なければweekで比較
             const da = a.date ? a.date.replace(/\//g, '-') : a.week
             const db = b.date ? b.date.replace(/\//g, '-') : b.week

@@ -3,13 +3,13 @@ const PAGE_LINKS = {
     ['📊','Theme List','Find strong themes'],
     ['🔥','Heatmap','View capital flows'],
     ['🔎','Stock Search','Search by company or ticker'],
-    ['📰','Weekly Report','Check continuation'],
+    ['📰','Reports','Check continuation'],
   ],
   'Theme List': [
     ['🔥','Heatmap','Compare return and volume'],
     ['🔍','Theme Detail','Inspect constituents'],
     ['🔎','Stock Search','Research a company'],
-    ['📰','Weekly Report','Review prior rankings'],
+    ['📰','Reports','Review prior rankings'],
   ],
   'Heatmap': [
     ['📊','Theme List','Compare rankings'],
@@ -20,20 +20,20 @@ const PAGE_LINKS = {
     ['📊','Theme List','Compare other themes'],
     ['🔥','Heatmap','Check capital flow'],
     ['🔎','Stock Search','Research constituents'],
-    ['📰','Weekly Report','Check continuation'],
+    ['📰','Reports','Check continuation'],
   ],
   'Stock Search': [
     ['📊','Theme List','Find candidates by theme'],
     ['🔍','Theme Detail','Compare theme membership'],
     ['🎨','Custom Theme','Build a watch group'],
-    ['📰','Weekly Report','Return to market context'],
+    ['📰','Reports','Return to market context'],
   ],
   'Custom Theme': [
     ['🔎','Stock Search','Add stocks'],
     ['📊','Theme List','Compare official themes'],
-    ['📰','Weekly Report','Check market context'],
+    ['📰','Reports','Check market context'],
   ],
-  'Weekly Report': [
+  'Reports': [
     ['📊','Theme List','Check current rankings'],
     ['🔥','Heatmap','View capital flows'],
     ['🔎','Stock Search','Research mentioned stocks'],
