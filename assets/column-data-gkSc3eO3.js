@@ -1,4 +1,561 @@
-const e=[{id:"nvidia-japan-physical-ai-collaboration-2026",themes:["フィジカルAI","AIデータセンター","ロボット・自動化","自動運転"],keywords:["NVIDIA","Japan","physical AI","Noetra","Fujitsu","Fanuc","Yaskawa","YE Digital"],category:"Market Analysis",icon:"🤖",date:"2026/07/22",title:"NVIDIA’s Japan Partnerships: Physical AI, Noetra and the Robotics Investment Chain",summary:"A review of direct partners, indirect beneficiaries including YE Digital, global related companies and the path from demonstrations to recurring revenue.",body:`
+const e=[{id:"theme-selection-criteria",themes:["テーマ一覧"],keywords:["How StockWaveJP Selects Themes and Constituent Stocks","analysis","related companies"],category:"Basics",icon:"🧭",date:"2026/07/22",title:"How StockWaveJP Selects Themes and Constituent Stocks",summary:"An investor-oriented explanation of the topic, its market structure, risks and related companies.",body:`
+H2: Theme Creation
+
+A theme is created when the underlying demand driver is economically meaningful, supported by public information and broad enough to include a useful group of listed companies. Temporary news labels are not automatically promoted into permanent themes.
+
+H2: Constituent Selection
+
+Selection considers disclosed products and services, expected revenue relevance, customer industries, liquidity and whether the relationship is direct or merely associative. A stock may belong to several themes when different business segments are genuinely relevant.
+
+H2: Removal and Review
+
+Companies can be removed after business exits, mergers, delisting or when the original relationship becomes immaterial. Theme definitions should be reviewed periodically and changes documented.
+
+H2: Limitations
+
+Inclusion is not a recommendation and does not imply equal revenue exposure. Large diversified companies may have only modest theme sensitivity.
+
+> Disclaimer: General information only.`},{id:"major-shareholders-guide",themes:["テーマ一覧"],keywords:["How to Read Major Shareholders in Japanese Securities Reports","analysis","related companies"],category:"Basics",icon:"🏛️",date:"2026/07/22",title:"How to Read Major Shareholders in Japanese Securities Reports",summary:"An investor-oriented explanation of the topic, its market structure, risks and related companies.",body:`
+H2: Why Shareholder Structure Matters
+
+Companies with similar earnings can trade differently because their free float, controlling shareholders and institutional ownership differ.
+
+H2: Five Common Shareholder Types
+
+Founder families can support long-term control but reduce free float. Trust banks often represent institutional or index assets rather than a single discretionary owner. Foreign institutions can increase governance pressure and volatility. Strategic corporate holders may stabilize control but weaken capital efficiency. Activists can become catalysts while increasing event risk.
+
+H2: What to Compare
+
+Compare the current filing with the prior year, adjust for treasury shares and stock splits, and distinguish custody accounts from beneficial owners. Large-shareholding reports may provide more timely changes but are subject to filing thresholds and delays.
+
+H2: Investment Use
+
+Shareholder structure is not a buy signal by itself. Combine it with liquidity, governance, capital policy and operating results.
+
+> Disclaimer: General information only.`},{id:"global-selloff-kospi-2026-july",themes:["AI半導体","メモリ","半導体製造装置","石油","LNG","銀行・金融"],keywords:["Global Selloff and the KOSPI: Was the July 2026 Correction the End of the AI Trade","analysis","related companies"],category:"Macro / Market",icon:"🌐",date:"2026/07/22",title:"Global Selloff and the KOSPI: Was the July 2026 Correction the End of the AI Trade",summary:"An investor-oriented explanation of the topic, its market structure, risks and related companies.",body:`
+H2: Why Korea Matters
+
+The KOSPI is unusually concentrated in semiconductors and large exporters. A sharp move in Samsung Electronics and SK Hynix can dominate the index and transmit sentiment to Japanese semiconductor equipment, memory and materials stocks.
+
+H2: Drivers of the Selloff
+
+The correction combined high AI valuations, leveraged positioning, higher bond yields, oil-price pressure and concern that semiconductor capital expenditure had moved ahead of near-term demand. Index concentration amplified the move.
+
+H2: What Would Confirm Stabilization
+
+Investors should watch HBM contract pricing, memory inventories, semiconductor-equipment orders, Korean margin financing, US yields, oil and the breadth of the rebound. A rebound led by only one or two mega-cap names is less convincing than improving participation across memory, equipment and materials.
+
+H2: Japan Implications
+
+Japanese equipment and materials companies can retain strong long-term fundamentals while experiencing severe valuation compression. Separate order deterioration from a multiple reset.
+
+> Disclaimer: General information only. Not investment advice.`},{id:"wires-copper-history-present-future",themes:["電線・銅"],keywords:["Wires and Copper","history","current market","future","related companies"],category:"Materials & Infrastructure",icon:"🔌",date:"2026/07/22",title:"Wires and Copper: History, Current Market and Future Scenarios",summary:"A structured guide to the history, current demand, future scenarios, related companies and financial indicators for Wires and Copper.",body:`
+H2: What the Theme Includes
+
+Copper became fundamental to electricity, communications, vehicles and appliances because of its conductivity and workability. Cable companies expanded into power cables, wiring harnesses and optical fiber.
+
+A theme is not a single product market. Materials, components, equipment, systems, construction, software and maintenance can have different demand cycles and margins. Investors should identify where each company sits in the value chain.
+
+H2: Current Market Structure
+
+Renewable-grid connections, EVs, semiconductor fabs and AI data centers are increasing demand for copper, power cables and optical connectivity. Copper prices affect revenue, inventory and working capital.
+
+The main analytical questions are the source of demand, supply constraints, the revenue model and expectations already reflected in valuation. A growing market does not automatically produce high returns for every supplier.
+
+H2: Future Scenarios
+
+High-voltage subsea cables and grid expansion may become bottlenecks. Global references include Freeport-McMoRan, Southern Copper and Nexans. Risks include recession, resource nationalism, project delays and material substitution.
+
+H3: Bull Case
+
+Demand lasts longer than expected, supply remains constrained and leading firms maintain pricing power. Capital expenditure can be financed from operating cash flow.
+
+H3: Base Case
+
+The market expands but competition rises. Revenue growth is partly offset by falling prices or higher costs, increasing the importance of company selection.
+
+H3: Bear Case
+
+Demand is pulled forward, projects are delayed or a different technology becomes standard. Stocks priced for exceptional growth can fall even when earnings remain positive.
+
+H2: What to Check in Results
+
+- Related-segment revenue, profit, orders and backlog
+- Gross and operating margins
+- Capital expenditure, depreciation and R&D
+- Customer and regional concentration
+- Pricing power and raw-material exposure
+- Operating cash flow, debt and potential dilution
+
+H2: Portfolio Risks
+
+Owning several stocks in one theme may still create a concentrated exposure to the same policy, interest-rate, commodity or capital-expenditure factor. Upstream and downstream companies can peak at different times.
+
+H2: Using StockWaveJP
+
+Compare one-week, one-month and three-month theme returns and excess performance. In Theme Detail, review the average, median, breadth, volume, trading value, top three and worst three constituents. Then verify company disclosures before making an investment decision.
+
+> Disclaimer: General information only. This article does not recommend buying, selling or holding any security.`},{id:"wearable-devices-history-present-future",themes:["ウェアラブル端末"],keywords:["Wearable Devices","history","current market","future","related companies"],category:"Consumer Technology",icon:"⌚",date:"2026/07/22",title:"Wearable Devices: History, Current Market and Future Scenarios",summary:"A structured guide to the history, current demand, future scenarios, related companies and financial indicators for Wearable Devices.",body:`
+H2: What the Theme Includes
+
+Wearables developed from electronic watches, hearing devices and sports monitors. Smartphone ecosystems enabled mass-market fitness trackers and smartwatches.
+
+A theme is not a single product market. Materials, components, equipment, systems, construction, software and maintenance can have different demand cycles and margins. Investors should identify where each company sits in the value chain.
+
+H2: Current Market Structure
+
+Current functions include notifications, payments, exercise, sleep, heart rate, location and voice control. Japanese suppliers participate through sensors, batteries, passive components, displays and optical parts.
+
+The main analytical questions are the source of demand, supply constraints, the revenue model and expectations already reflected in valuation. A growing market does not automatically produce high returns for every supplier.
+
+H2: Future Scenarios
+
+Future growth may come from continuous health monitoring, remote care, AR glasses and AI assistants. Apple, Garmin, Alphabet, Meta and Samsung are major global platforms. Battery life, privacy, medical accuracy and replacement cycles remain constraints.
+
+H3: Bull Case
+
+Demand lasts longer than expected, supply remains constrained and leading firms maintain pricing power. Capital expenditure can be financed from operating cash flow.
+
+H3: Base Case
+
+The market expands but competition rises. Revenue growth is partly offset by falling prices or higher costs, increasing the importance of company selection.
+
+H3: Bear Case
+
+Demand is pulled forward, projects are delayed or a different technology becomes standard. Stocks priced for exceptional growth can fall even when earnings remain positive.
+
+H2: What to Check in Results
+
+- Related-segment revenue, profit, orders and backlog
+- Gross and operating margins
+- Capital expenditure, depreciation and R&D
+- Customer and regional concentration
+- Pricing power and raw-material exposure
+- Operating cash flow, debt and potential dilution
+
+H2: Portfolio Risks
+
+Owning several stocks in one theme may still create a concentrated exposure to the same policy, interest-rate, commodity or capital-expenditure factor. Upstream and downstream companies can peak at different times.
+
+H2: Using StockWaveJP
+
+Compare one-week, one-month and three-month theme returns and excess performance. In Theme Detail, review the average, median, breadth, volume, trading value, top three and worst three constituents. Then verify company disclosures before making an investment decision.
+
+> Disclaimer: General information only. This article does not recommend buying, selling or holding any security.`},{id:"security-services-history-present-future",themes:["警備"],keywords:["Security Services","history","current market","future","related companies"],category:"Services",icon:"🛡️",date:"2026/07/22",title:"Security Services: History, Current Market and Future Scenarios",summary:"A structured guide to the history, current demand, future scenarios, related companies and financial indicators for Security Services.",body:`
+H2: What the Theme Includes
+
+Security services evolved from labor-intensive guarding and cash transport into monitored alarms, access control and integrated facility management.
+
+A theme is not a single product market. Materials, components, equipment, systems, construction, software and maintenance can have different demand cycles and margins. Investors should identify where each company sits in the value chain.
+
+H2: Current Market Structure
+
+Labor shortages and wage inflation are accelerating the use of cameras, computer vision, robots, drones and cloud monitoring. Elderly monitoring and physical-cyber convergence broaden demand.
+
+The main analytical questions are the source of demand, supply constraints, the revenue model and expectations already reflected in valuation. A growing market does not automatically produce high returns for every supplier.
+
+H2: Future Scenarios
+
+Future operations will use AI for anomaly detection while people focus on judgment and emergency response. Risks include false alarms, privacy, facial-recognition rules, liability and the capital cost of upgrading installed systems.
+
+H3: Bull Case
+
+Demand lasts longer than expected, supply remains constrained and leading firms maintain pricing power. Capital expenditure can be financed from operating cash flow.
+
+H3: Base Case
+
+The market expands but competition rises. Revenue growth is partly offset by falling prices or higher costs, increasing the importance of company selection.
+
+H3: Bear Case
+
+Demand is pulled forward, projects are delayed or a different technology becomes standard. Stocks priced for exceptional growth can fall even when earnings remain positive.
+
+H2: What to Check in Results
+
+- Related-segment revenue, profit, orders and backlog
+- Gross and operating margins
+- Capital expenditure, depreciation and R&D
+- Customer and regional concentration
+- Pricing power and raw-material exposure
+- Operating cash flow, debt and potential dilution
+
+H2: Portfolio Risks
+
+Owning several stocks in one theme may still create a concentrated exposure to the same policy, interest-rate, commodity or capital-expenditure factor. Upstream and downstream companies can peak at different times.
+
+H2: Using StockWaveJP
+
+Compare one-week, one-month and three-month theme returns and excess performance. In Theme Detail, review the average, median, breadth, volume, trading value, top three and worst three constituents. Then verify company disclosures before making an investment decision.
+
+> Disclaimer: General information only. This article does not recommend buying, selling or holding any security.`},{id:"quantum-computing-history-present-future",themes:["量子コンピューター"],keywords:["Quantum Computing","history","current market","future","related companies"],category:"Industry & Technology",icon:"⚛️",date:"2026/07/22",title:"Quantum Computing: History, Current Market and Future Scenarios",summary:"A structured guide to the history, current demand, future scenarios, related companies and financial indicators for Quantum Computing.",body:`
+H2: What the Theme Includes
+
+Quantum computing uses superposition and entanglement to address selected computational problems. The field accelerated after quantum algorithms showed potential advantages in factoring, chemistry and optimization.
+
+A theme is not a single product market. Materials, components, equipment, systems, construction, software and maintenance can have different demand cycles and margins. Investors should identify where each company sits in the value chain.
+
+H2: Current Market Structure
+
+Superconducting, trapped-ion, photonic, neutral-atom and semiconductor-spin approaches compete. Useful performance depends on fidelity, connectivity, control systems, cryogenics and software, not only qubit count.
+
+The main analytical questions are the source of demand, supply constraints, the revenue model and expectations already reflected in valuation. A growing market does not automatically produce high returns for every supplier.
+
+H2: Future Scenarios
+
+Fault correction is the central long-term challenge. IBM, Alphabet, Microsoft, IonQ, Rigetti and D-Wave represent different approaches. Commercial timing and the eventual winning architecture remain uncertain.
+
+H3: Bull Case
+
+Demand lasts longer than expected, supply remains constrained and leading firms maintain pricing power. Capital expenditure can be financed from operating cash flow.
+
+H3: Base Case
+
+The market expands but competition rises. Revenue growth is partly offset by falling prices or higher costs, increasing the importance of company selection.
+
+H3: Bear Case
+
+Demand is pulled forward, projects are delayed or a different technology becomes standard. Stocks priced for exceptional growth can fall even when earnings remain positive.
+
+H2: What to Check in Results
+
+- Related-segment revenue, profit, orders and backlog
+- Gross and operating margins
+- Capital expenditure, depreciation and R&D
+- Customer and regional concentration
+- Pricing power and raw-material exposure
+- Operating cash flow, debt and potential dilution
+
+H2: Portfolio Risks
+
+Owning several stocks in one theme may still create a concentrated exposure to the same policy, interest-rate, commodity or capital-expenditure factor. Upstream and downstream companies can peak at different times.
+
+H2: Using StockWaveJP
+
+Compare one-week, one-month and three-month theme returns and excess performance. In Theme Detail, review the average, median, breadth, volume, trading value, top three and worst three constituents. Then verify company disclosures before making an investment decision.
+
+> Disclaimer: General information only. This article does not recommend buying, selling or holding any security.`},{id:"nuclear-power-history-present-future",themes:["原子力発電"],keywords:["Nuclear Power","history","current market","future","related companies"],category:"Energy",icon:"⚛️",date:"2026/07/22",title:"Nuclear Power: History, Current Market and Future Scenarios",summary:"A structured guide to the history, current demand, future scenarios, related companies and financial indicators for Nuclear Power.",body:`
+H2: What the Theme Includes
+
+Japan introduced nuclear power to reduce imported-fuel dependence and provide large-scale baseload electricity. The industry created broad capabilities in reactors, turbines, control systems, pumps, valves and maintenance.
+
+A theme is not a single product market. Materials, components, equipment, systems, construction, software and maintenance can have different demand cycles and margins. Investors should identify where each company sits in the value chain.
+
+H2: Current Market Structure
+
+After Fukushima, safety standards tightened and restarts became dependent on regulatory approval, local consent, construction and court decisions. Decarbonization, AI-related electricity demand and energy security have returned nuclear policy to the center of debate.
+
+The main analytical questions are the source of demand, supply constraints, the revenue model and expectations already reflected in valuation. A growing market does not automatically produce high returns for every supplier.
+
+H2: Future Scenarios
+
+Future themes include safe long-term operation, decommissioning, waste, fuel cycles, SMRs and advanced reactors. Global references include Constellation Energy, Vistra, Cameco, BWX Technologies and GE Vernova. Policy and project-delay risks remain substantial.
+
+H3: Bull Case
+
+Demand lasts longer than expected, supply remains constrained and leading firms maintain pricing power. Capital expenditure can be financed from operating cash flow.
+
+H3: Base Case
+
+The market expands but competition rises. Revenue growth is partly offset by falling prices or higher costs, increasing the importance of company selection.
+
+H3: Bear Case
+
+Demand is pulled forward, projects are delayed or a different technology becomes standard. Stocks priced for exceptional growth can fall even when earnings remain positive.
+
+H2: What to Check in Results
+
+- Related-segment revenue, profit, orders and backlog
+- Gross and operating margins
+- Capital expenditure, depreciation and R&D
+- Customer and regional concentration
+- Pricing power and raw-material exposure
+- Operating cash flow, debt and potential dilution
+
+H2: Portfolio Risks
+
+Owning several stocks in one theme may still create a concentrated exposure to the same policy, interest-rate, commodity or capital-expenditure factor. Upstream and downstream companies can peak at different times.
+
+H2: Using StockWaveJP
+
+Compare one-week, one-month and three-month theme returns and excess performance. In Theme Detail, review the average, median, breadth, volume, trading value, top three and worst three constituents. Then verify company disclosures before making an investment decision.
+
+> Disclaimer: General information only. This article does not recommend buying, selling or holding any security.`},{id:"next-generation-semiconductors-history-present-future",themes:["次世代半導体"],keywords:["Next-Generation Semiconductors","history","current market","future","related companies"],category:"Industry & Technology",icon:"🧪",date:"2026/07/22",title:"Next-Generation Semiconductors: History, Current Market and Future Scenarios",summary:"A structured guide to the history, current demand, future scenarios, related companies and financial indicators for Next-Generation Semiconductors.",body:`
+H2: What the Theme Includes
+
+The semiconductor industry long relied on transistor scaling. As physical and economic limits intensified, performance improvement expanded to GAA transistors, EUV, 3D structures, chiplets, SiC and GaN power devices.
+
+A theme is not a single product market. Materials, components, equipment, systems, construction, software and maintenance can have different demand cycles and margins. Investors should identify where each company sits in the value chain.
+
+H2: Current Market Structure
+
+AI logic, HBM, electric vehicles, optical interconnects and domestic supply-chain investment now create several overlapping capital cycles. Japan remains important in wafers, photoresists, tools, inspection and precision processing.
+
+The main analytical questions are the source of demand, supply constraints, the revenue model and expectations already reflected in valuation. A growing market does not automatically produce high returns for every supplier.
+
+H2: Future Scenarios
+
+Future competition will optimize compute, memory, networking, power and cooling as one system. Key global companies include NVIDIA, AMD, TSMC, ASML, Applied Materials and Micron. Risks include export controls, technology transitions and depreciation from enormous capex.
+
+H3: Bull Case
+
+Demand lasts longer than expected, supply remains constrained and leading firms maintain pricing power. Capital expenditure can be financed from operating cash flow.
+
+H3: Base Case
+
+The market expands but competition rises. Revenue growth is partly offset by falling prices or higher costs, increasing the importance of company selection.
+
+H3: Bear Case
+
+Demand is pulled forward, projects are delayed or a different technology becomes standard. Stocks priced for exceptional growth can fall even when earnings remain positive.
+
+H2: What to Check in Results
+
+- Related-segment revenue, profit, orders and backlog
+- Gross and operating margins
+- Capital expenditure, depreciation and R&D
+- Customer and regional concentration
+- Pricing power and raw-material exposure
+- Operating cash flow, debt and potential dilution
+
+H2: Portfolio Risks
+
+Owning several stocks in one theme may still create a concentrated exposure to the same policy, interest-rate, commodity or capital-expenditure factor. Upstream and downstream companies can peak at different times.
+
+H2: Using StockWaveJP
+
+Compare one-week, one-month and three-month theme returns and excess performance. In Theme Detail, review the average, median, breadth, volume, trading value, top three and worst three constituents. Then verify company disclosures before making an investment decision.
+
+> Disclaimer: General information only. This article does not recommend buying, selling or holding any security.`},{id:"ma-business-succession-history-present-future",themes:["M&A・事業承継"],keywords:["M&A and Business Succession","history","current market","future","related companies"],category:"Corporate Strategy",icon:"🤝",date:"2026/07/22",title:"M&A and Business Succession: History, Current Market and Future Scenarios",summary:"A structured guide to the history, current demand, future scenarios, related companies and financial indicators for M&A and Business Succession.",body:`
+H2: What the Theme Includes
+
+Japan’s aging owner-manager population and lack of successors turned third-party M&A into an increasingly common alternative to closure or family succession.
+
+A theme is not a single product market. Materials, components, equipment, systems, construction, software and maintenance can have different demand cycles and margins. Investors should identify where each company sits in the value chain.
+
+H2: Current Market Structure
+
+Advisers source sellers and buyers, value businesses, manage negotiations and earn success fees. Growth depends on consultant hiring, productivity, deal quality, transparency and post-merger integration support.
+
+The main analytical questions are the source of demand, supply constraints, the revenue model and expectations already reflected in valuation. A growing market does not automatically produce high returns for every supplier.
+
+H2: Future Scenarios
+
+Long-term demand should remain, but competition, reputation, regulation and fee pressure will differentiate firms. Global advisory references include Evercore, Houlihan Lokey and Lazard.
+
+H3: Bull Case
+
+Demand lasts longer than expected, supply remains constrained and leading firms maintain pricing power. Capital expenditure can be financed from operating cash flow.
+
+H3: Base Case
+
+The market expands but competition rises. Revenue growth is partly offset by falling prices or higher costs, increasing the importance of company selection.
+
+H3: Bear Case
+
+Demand is pulled forward, projects are delayed or a different technology becomes standard. Stocks priced for exceptional growth can fall even when earnings remain positive.
+
+H2: What to Check in Results
+
+- Related-segment revenue, profit, orders and backlog
+- Gross and operating margins
+- Capital expenditure, depreciation and R&D
+- Customer and regional concentration
+- Pricing power and raw-material exposure
+- Operating cash flow, debt and potential dilution
+
+H2: Portfolio Risks
+
+Owning several stocks in one theme may still create a concentrated exposure to the same policy, interest-rate, commodity or capital-expenditure factor. Upstream and downstream companies can peak at different times.
+
+H2: Using StockWaveJP
+
+Compare one-week, one-month and three-month theme returns and excess performance. In Theme Detail, review the average, median, breadth, volume, trading value, top three and worst three constituents. Then verify company disclosures before making an investment decision.
+
+> Disclaimer: General information only. This article does not recommend buying, selling or holding any security.`},{id:"fusion-power-history-present-future",themes:["核融合発電"],keywords:["Fusion Power","history","current market","future","related companies"],category:"Energy",icon:"☀️",date:"2026/07/22",title:"Fusion Power: History, Current Market and Future Scenarios",summary:"A structured guide to the history, current demand, future scenarios, related companies and financial indicators for Fusion Power.",body:`
+H2: What the Theme Includes
+
+Fusion research attempts to use the energy released when light nuclei combine. Magnetic confinement, laser-driven inertial confinement and alternative reactor designs have been studied for decades.
+
+A theme is not a single product market. Materials, components, equipment, systems, construction, software and maintenance can have different demand cycles and margins. Investors should identify where each company sits in the value chain.
+
+H2: Current Market Structure
+
+Current projects require superconducting magnets, vacuum systems, cryogenics, power electronics, remote maintenance, plasma measurement and advanced materials. Large public programs and private start-ups are proceeding in parallel.
+
+The main analytical questions are the source of demand, supply constraints, the revenue model and expectations already reflected in valuation. A growing market does not automatically produce high returns for every supplier.
+
+H2: Future Scenarios
+
+Commercial timing remains uncertain. A sensible investment approach is to examine suppliers of common enabling technologies rather than assuming one reactor design will win. Global private names are mostly unlisted, while listed industrial beneficiaries include Air Liquide, GE Vernova and specialist superconducting-equipment suppliers.
+
+H3: Bull Case
+
+Demand lasts longer than expected, supply remains constrained and leading firms maintain pricing power. Capital expenditure can be financed from operating cash flow.
+
+H3: Base Case
+
+The market expands but competition rises. Revenue growth is partly offset by falling prices or higher costs, increasing the importance of company selection.
+
+H3: Bear Case
+
+Demand is pulled forward, projects are delayed or a different technology becomes standard. Stocks priced for exceptional growth can fall even when earnings remain positive.
+
+H2: What to Check in Results
+
+- Related-segment revenue, profit, orders and backlog
+- Gross and operating margins
+- Capital expenditure, depreciation and R&D
+- Customer and regional concentration
+- Pricing power and raw-material exposure
+- Operating cash flow, debt and potential dilution
+
+H2: Portfolio Risks
+
+Owning several stocks in one theme may still create a concentrated exposure to the same policy, interest-rate, commodity or capital-expenditure factor. Upstream and downstream companies can peak at different times.
+
+H2: Using StockWaveJP
+
+Compare one-week, one-month and three-month theme returns and excess performance. In Theme Detail, review the average, median, breadth, volume, trading value, top three and worst three constituents. Then verify company disclosures before making an investment decision.
+
+> Disclaimer: General information only. This article does not recommend buying, selling or holding any security.`},{id:"data-center-power-cooling-history-present-future",themes:["データセンター電力・冷却"],keywords:["Data Center Power and Cooling","history","current market","future","related companies"],category:"Infrastructure",icon:"❄️",date:"2026/07/22",title:"Data Center Power and Cooling: History, Current Market and Future Scenarios",summary:"A structured guide to the history, current demand, future scenarios, related companies and financial indicators for Data Center Power and Cooling.",body:`
+H2: What the Theme Includes
+
+Data centers grew from centralized corporate computer rooms into critical cloud infrastructure. Power distribution, UPS systems, backup generation, cooling, monitoring and fire protection have always been essential.
+
+A theme is not a single product market. Materials, components, equipment, systems, construction, software and maintenance can have different demand cycles and margins. Investors should identify where each company sits in the value chain.
+
+H2: Current Market Structure
+
+AI servers sharply increase rack-level power density. Grid connections, transformers, switchgear, UPS capacity and liquid cooling can constrain deployment more than the availability of buildings.
+
+The main analytical questions are the source of demand, supply constraints, the revenue model and expectations already reflected in valuation. A growing market does not automatically produce high returns for every supplier.
+
+H2: Future Scenarios
+
+Future systems may use high-voltage DC, batteries, liquid immersion, heat reuse and AI-based facility control. Vertiv, Eaton, Schneider Electric, GE Vernova, Equinix and Digital Realty are major global references. Risks include overbuilding, power regulation, construction delays and technology obsolescence.
+
+H3: Bull Case
+
+Demand lasts longer than expected, supply remains constrained and leading firms maintain pricing power. Capital expenditure can be financed from operating cash flow.
+
+H3: Base Case
+
+The market expands but competition rises. Revenue growth is partly offset by falling prices or higher costs, increasing the importance of company selection.
+
+H3: Bear Case
+
+Demand is pulled forward, projects are delayed or a different technology becomes standard. Stocks priced for exceptional growth can fall even when earnings remain positive.
+
+H2: What to Check in Results
+
+- Related-segment revenue, profit, orders and backlog
+- Gross and operating margins
+- Capital expenditure, depreciation and R&D
+- Customer and regional concentration
+- Pricing power and raw-material exposure
+- Operating cash flow, debt and potential dilution
+
+H2: Portfolio Risks
+
+Owning several stocks in one theme may still create a concentrated exposure to the same policy, interest-rate, commodity or capital-expenditure factor. Upstream and downstream companies can peak at different times.
+
+H2: Using StockWaveJP
+
+Compare one-week, one-month and three-month theme returns and excess performance. In Theme Detail, review the average, median, breadth, volume, trading value, top three and worst three constituents. Then verify company disclosures before making an investment decision.
+
+> Disclaimer: General information only. This article does not recommend buying, selling or holding any security.`},{id:"coatings-industry-history-present-future",themes:["塗料"],keywords:["Coatings Industry","history","current market","future","related companies"],category:"Materials",icon:"🎨",date:"2026/07/22",title:"Coatings Industry: History, Current Market and Future Scenarios",summary:"A structured guide to the history, current demand, future scenarios, related companies and financial indicators for Coatings Industry.",body:`
+H2: What the Theme Includes
+
+Coatings developed from decorative pigments into functional materials that protect buildings, vehicles, ships and industrial equipment from corrosion, heat, water and chemicals.
+
+A theme is not a single product market. Materials, components, equipment, systems, construction, software and maintenance can have different demand cycles and margins. Investors should identify where each company sits in the value chain.
+
+H2: Current Market Structure
+
+Current demand comes from construction, automotive, marine, packaging and electronics. Profitability depends on raw-material costs, pricing power, geographic mix and customer production volumes.
+
+The main analytical questions are the source of demand, supply constraints, the revenue model and expectations already reflected in valuation. A growing market does not automatically produce high returns for every supplier.
+
+H2: Future Scenarios
+
+Water-based, low-VOC, antimicrobial, heat-reflective, self-healing and electronic-material coatings are important growth areas. The main risks are feedstock inflation, mature end markets and integration of overseas acquisitions.
+
+H3: Bull Case
+
+Demand lasts longer than expected, supply remains constrained and leading firms maintain pricing power. Capital expenditure can be financed from operating cash flow.
+
+H3: Base Case
+
+The market expands but competition rises. Revenue growth is partly offset by falling prices or higher costs, increasing the importance of company selection.
+
+H3: Bear Case
+
+Demand is pulled forward, projects are delayed or a different technology becomes standard. Stocks priced for exceptional growth can fall even when earnings remain positive.
+
+H2: What to Check in Results
+
+- Related-segment revenue, profit, orders and backlog
+- Gross and operating margins
+- Capital expenditure, depreciation and R&D
+- Customer and regional concentration
+- Pricing power and raw-material exposure
+- Operating cash flow, debt and potential dilution
+
+H2: Portfolio Risks
+
+Owning several stocks in one theme may still create a concentrated exposure to the same policy, interest-rate, commodity or capital-expenditure factor. Upstream and downstream companies can peak at different times.
+
+H2: Using StockWaveJP
+
+Compare one-week, one-month and three-month theme returns and excess performance. In Theme Detail, review the average, median, breadth, volume, trading value, top three and worst three constituents. Then verify company disclosures before making an investment decision.
+
+> Disclaimer: General information only. This article does not recommend buying, selling or holding any security.`},{id:"advanced-packaging-substrates-history-present-future",themes:["先端パッケージング・基板"],keywords:["Advanced Packaging and Substrates","history","current market","future","related companies"],category:"Semiconductors",icon:"🧩",date:"2026/07/22",title:"Advanced Packaging and Substrates: History, Current Market and Future Scenarios",summary:"A structured guide to the history, current demand, future scenarios, related companies and financial indicators for Advanced Packaging and Substrates.",body:`
+H2: What the Theme Includes
+
+Advanced packaging evolved from a protective back-end step into a core performance technology. AI accelerators and HBM require interposers, fine-pitch connections, large substrates, molding materials, inspection and thermal management.
+
+A theme is not a single product market. Materials, components, equipment, systems, construction, software and maintenance can have different demand cycles and margins. Investors should identify where each company sits in the value chain.
+
+H2: Current Market Structure
+
+Demand is being driven by AI accelerators, HBM and chiplets. Japanese companies are strong in package substrates, solder resist, molding compounds, cutting, grinding and bonding equipment. Global leaders include TSMC, Intel, Amkor, ASE, Applied Materials and Lam Research.
+
+The main analytical questions are the source of demand, supply constraints, the revenue model and expectations already reflected in valuation. A growing market does not automatically produce high returns for every supplier.
+
+H2: Future Scenarios
+
+Future growth depends on chiplets, 3D stacking and co-packaged optics. Major risks are substrate warpage, yield, customer concentration and the heavy capital expenditure needed for new capacity.
+
+H3: Bull Case
+
+Demand lasts longer than expected, supply remains constrained and leading firms maintain pricing power. Capital expenditure can be financed from operating cash flow.
+
+H3: Base Case
+
+The market expands but competition rises. Revenue growth is partly offset by falling prices or higher costs, increasing the importance of company selection.
+
+H3: Bear Case
+
+Demand is pulled forward, projects are delayed or a different technology becomes standard. Stocks priced for exceptional growth can fall even when earnings remain positive.
+
+H2: What to Check in Results
+
+- Related-segment revenue, profit, orders and backlog
+- Gross and operating margins
+- Capital expenditure, depreciation and R&D
+- Customer and regional concentration
+- Pricing power and raw-material exposure
+- Operating cash flow, debt and potential dilution
+
+H2: Portfolio Risks
+
+Owning several stocks in one theme may still create a concentrated exposure to the same policy, interest-rate, commodity or capital-expenditure factor. Upstream and downstream companies can peak at different times.
+
+H2: Using StockWaveJP
+
+Compare one-week, one-month and three-month theme returns and excess performance. In Theme Detail, review the average, median, breadth, volume, trading value, top three and worst three constituents. Then verify company disclosures before making an investment decision.
+
+> Disclaimer: General information only. This article does not recommend buying, selling or holding any security.`},{id:"nvidia-japan-physical-ai-collaboration-2026",themes:["フィジカルAI","AIデータセンター","ロボット・自動化","自動運転"],keywords:["NVIDIA","Japan","physical AI","Noetra","Fujitsu","Fanuc","Yaskawa","YE Digital"],category:"Market Analysis",icon:"🤖",date:"2026/07/22",title:"NVIDIA’s Japan Partnerships: Physical AI, Noetra and the Robotics Investment Chain",summary:"A review of direct partners, indirect beneficiaries including YE Digital, global related companies and the path from demonstrations to recurring revenue.",body:`
 H2: The Structure of NVIDIA’s Japan Announcements
 
 NVIDIA’s July 2026 Japan announcements covered physical AI, robotics, a large AI factory, industry-specific models, automotive systems and AI-native communications.
@@ -4872,7 +5429,7 @@ The Mlcc Murata theme has clear structural foundations for medium to long-term i
 
 The most valuable habit: reviewing all 72 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
 
-> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"spacex-analysis-en",themes:["宇宙・衛星","防衛・航空"],keywords:["SpaceX","SPCX","Elon Musk","Starlink","IPO","rocket","space investment","個別銘柄"],category:"個別銘柄",icon:"🚀",title:"SpaceX (SPCX) Deep Dive: History's Largest IPO & Japan Stock Impact",date:"2026/06/12",summary:"SpaceX listed on Nasdaq June 12, 2026 raising $75B at a $1.77T valuation — history's largest IPO. Analysis of business model, growth drivers, competitors, and Japanese stock opportunities.",body:`SpaceX (Space Exploration Technologies Corp.) was founded in 2002 by Elon Musk to reduce the cost of space transportation and ultimately enable human life on multiple planets.
+> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"spacex-analysis",themes:["宇宙・衛星","防衛・航空"],keywords:["SpaceX","SPCX","Elon Musk","Starlink","IPO","rocket","space investment","個別銘柄"],category:"個別銘柄",icon:"🚀",title:"SpaceX (SPCX) Deep Dive: History's Largest IPO & Japan Stock Impact",date:"2026/06/12",summary:"SpaceX listed on Nasdaq June 12, 2026 raising $75B at a $1.77T valuation — history's largest IPO. Analysis of business model, growth drivers, competitors, and Japanese stock opportunities.",body:`SpaceX (Space Exploration Technologies Corp.) was founded in 2002 by Elon Musk to reduce the cost of space transportation and ultimately enable human life on multiple planets.
 
 H2: Business Model and Operations
 
