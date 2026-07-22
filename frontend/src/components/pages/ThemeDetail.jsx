@@ -1,3 +1,4 @@
+import { useEnglishCompanyNames } from '../../hooks/useEnglishCompanyNames'
 import { tn, THEME_NAME_EN } from '../../utils/themeNames'
 import React, { useState, useEffect, useRef } from 'react'
 import { useSubscription } from '../../hooks/useSubscription'
@@ -473,6 +474,7 @@ const ADR_CODE_SET = new Set([
 
 // ── Stockテーブル ──
 function StockTable({ stocks: rawStocks }) {
+  const englishCompanyName = useEnglishCompanyNames()
   const { plan } = useSubscription()
   const isSubscribed = ['standard','pro','pro_trial','dev'].includes(plan)
   const [usdJpy, setUsdJpy] = React.useState(150)
@@ -493,7 +495,12 @@ function StockTable({ stocks: rawStocks }) {
   const scrollLeft = useRef(0)
 
   // ⑤ ソート処理
-  const stocks = [...rawStocks].sort((a, b) => {
+  const stocks = [...rawStocks]
+    .map(stock => ({
+      ...stock,
+      name: englishCompanyName(stock.code || stock.ticker, stock.name),
+    }))
+    .sort((a, b) => {
     const va = a[sortKey] ?? 0
     const vb = b[sortKey] ?? 0
     return sortAsc ? va - vb : vb - va

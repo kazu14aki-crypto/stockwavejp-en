@@ -7,7 +7,10 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "deploy": "npm run build && gh-pages -d dist"
+    "deploy": "npm run build && gh-pages -d dist",
+    "check:english-ui": "node scripts/check-english-ui.mjs",
+    "check:reports": "node scripts/check-report-data.mjs",
+    "prebuild": "npm run check:english-ui && npm run check:reports"
   },
   "dependencies": {
     "react": "^18.3.1",

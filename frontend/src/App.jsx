@@ -24,6 +24,7 @@ import ReportHub from './components/pages/ReportHub'
 import Plan         from './components/pages/Plan'
 import InstitutionalHoldings from './components/pages/InstitutionalHoldings'
 import RelatedPageNav, { hasRelatedPageNav } from './components/RelatedPageNav'
+import PageErrorBoundary from './components/PageErrorBoundary'
 import { useSubscription } from './hooks/useSubscription.jsx'
 
 const PAGES = [
@@ -220,17 +221,19 @@ function AppInner() {
       }}>
         <RelatedPageNav currentPage={currentPage} onNavigate={handlePageChange} />
         {PageComponent ? (
-          currentPage === 'Institutional Holdings' ? (
-            <PlanGate feature="institutional" onNavigate={handlePageChange}>
+          <PageErrorBoundary resetKey={currentPage} onNavigate={handlePageChange}>
+            {currentPage === 'Institutional Holdings' ? (
+              <PlanGate feature="institutional" onNavigate={handlePageChange}>
+                <PageComponent {...pageProps} />
+              </PlanGate>
+            ) : currentPage === 'Market Detail' ? (
+              <PlanGate feature="market_detail" onNavigate={handlePageChange}>
+                <PageComponent {...pageProps} />
+              </PlanGate>
+            ) : (
               <PageComponent {...pageProps} />
-            </PlanGate>
-          ) : currentPage === 'Market Detail' ? (
-            <PlanGate feature="market_detail" onNavigate={handlePageChange}>
-              <PageComponent {...pageProps} />
-            </PlanGate>
-          ) : (
-            <PageComponent {...pageProps} />
-          )
+            )}
+          </PageErrorBoundary>
         ) : (
           <div style={{ display:'flex', alignItems:'center', justifyContent:'center',
             height:'calc(100vh - var(--header))', flexDirection:'column', gap:'16px', color:'var(--text3)' }}>

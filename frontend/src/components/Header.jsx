@@ -81,7 +81,7 @@ export default function Header({ status={}, onMenuClick, sidebarOpen, viewMode, 
             </span>
             <div className="data-time-desktop" title="Update time is when StockWaveJP fetched the file. Data as of is the timestamp represented by the market data." style={{ display:'flex', alignItems:'center', gap:'5px', whiteSpace:'nowrap' }}>
               <span style={{ fontSize:'9px', color:errorColor, padding:'2px 5px', borderRadius:'4px', background:'var(--bg3)', border:'1px solid var(--border)' }}>
-                Updated {formatDateTime(updatedAt)}
+                Last refreshed {formatDateTime(updatedAt)}
               </span>
               <span style={{ fontSize:'9px', color:errorColor, padding:'2px 5px', borderRadius:'4px', background:'var(--bg3)', border:'1px solid var(--border)' }}>
                 Data as of {formatDateTime(dataAsOf)}

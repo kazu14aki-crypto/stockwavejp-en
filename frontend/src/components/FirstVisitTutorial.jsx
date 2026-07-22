@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 const KEY='swjp_en_onboarding_v1_shown', COOKIE='swjp_en_onboarding_v1_shown'
 const STEPS=[
- {icon:'①',title:'Find strong themes',text:'Open Theme List, choose one week and rank by Market-Excess Return.'},
+ {icon:'①',title:'Find strong themes',text:'Open Theme List, choose one week and rank by Excess Return vs. Market.'},
  {icon:'②',title:'Check breadth',text:'Use Theme Detail to compare volume, distribution and constituents.'},
  {icon:'③',title:'Compare stocks',text:'Use Stock Search and company disclosures to compare earnings, valuation and liquidity.'},
  {icon:'④',title:'Track continuation',text:'Use Reports to review whether prior leaders continued or reversed.'},

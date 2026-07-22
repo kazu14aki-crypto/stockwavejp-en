@@ -63,7 +63,7 @@ function IssuerDetailPage({ issuerName, secCode, docs, allData, onBack }) {
 
   return (
     <div style={{ padding:'20px 16px 60px', maxWidth:'900px', margin:'0 auto' }}>
-      <button onClick={onBack} style={{ background:'none', border:'none', color:'var(--text3)', cursor:'pointer', fontFamily:'var(--font)', fontSize:'13px', marginBottom:'18px', padding:0 }}>← 銘柄一覧に戻る</button>
+      <button onClick={onBack} style={{ background:'none', border:'none', color:'var(--text3)', cursor:'pointer', fontFamily:'var(--font)', fontSize:'13px', marginBottom:'18px', padding:0 }}>← Back to stock list</button>
       <div style={{ marginBottom:'16px' }}>
         <div style={{ display:'flex', alignItems:'center', gap:'10px', flexWrap:'wrap' }}>
           <h1 style={{ fontSize:'20px', fontWeight:700, color:'var(--text)', margin:0 }}>{issuerName}</h1>
@@ -88,7 +88,7 @@ function IssuerDetailPage({ issuerName, secCode, docs, allData, onBack }) {
 
       {/* 機関別詳細 */}
       <div style={{ marginBottom:'16px' }}>
-        <div style={{ fontSize:'13px', fontWeight:700, color:'var(--text)', marginBottom:'12px' }}>🏦 機関投資家別 Holding状況・変遷</div>
+        <div style={{ fontSize:'13px', fontWeight:700, color:'var(--text)', marginBottom:'12px' }}>🏦 Holdings by Institutional Investor</div>
         {holders.map((h,i) => {
           const color = colors[i % colors.length]
           const trend = h.records.length > 1 ? (h.latestRatio >= (parseFloat(h.records[0].holdingRatio)||0) ? '↑ 増加' : '↓ 減少') : '→ 初回Filings: '
@@ -196,11 +196,11 @@ function InvestorView({ query, onNavigate }) {
     return (
       <div>
         <div style={{ fontSize: '13px', color: 'var(--text2)', lineHeight: 1.9, marginBottom: '16px' }}>
-          特定の機関投資家名（例: <b>光通信</b>）をSearchすると、その投資家が5%超HoldingするTotal 銘柄と、各銘柄でのHolding割合の推移（Increaseペース）を確認できます。Increaseを続けている銘柄は、純投資を超えた出口イベント（TOB・完Total 子会社化）を待つポジションの可能性があります。
+          Search for an institutional investor to review disclosed positions above 5% and changes in ownership over time. Continued accumulation may indicate a strategic position, but intent should be confirmed from the original filing.
         </div>
         {suggest.length > 0 && (
           <div>
-            <div style={{ fontSize: '11px', color: 'var(--text3)', marginBottom: '8px' }}>Holding銘柄数の多い投資家（クリックでSearch）</div>
+            <div style={{ fontSize: '11px', color: 'var(--text3)', marginBottom: '8px' }}>Investors with the largest number of disclosed holdings</div>
             <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap' }}>
               {suggest.map(inv => (
                 <span key={inv.key} className="inv-chip" data-inv={inv.key}
@@ -214,7 +214,7 @@ function InvestorView({ query, onNavigate }) {
       </div>
     )
   }
-  if (loading) return <div style={{ color: 'var(--text3)', padding: '20px' }}>読み込み中…</div>
+  if (loading) return <div style={{ color: 'var(--text3)', padding: '20px' }}>Loading…</div>
   if (!data || data.notFound || !data.positions?.length) {
     return <div style={{ color: 'var(--text3)', padding: '20px' }}>「{query}」のLarge holdingFilings: 書データが見つかりません。名称の一部（例: 光通信）でお試しください。データはバッチ巡回後に追加されます。</div>
   }
@@ -222,14 +222,14 @@ function InvestorView({ query, onNavigate }) {
     <div>
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '10px', flexWrap: 'wrap', marginBottom: '14px' }}>
         <div style={{ fontSize: '13px', color: 'var(--text)' }}>
-          <b>{data.investor}</b> が5%超Holdingする <b style={{ color: 'var(--accent)' }}>{data.positionCount}</b> 銘柄
+          <b>{data.investor}</b> holds more than 5% in <b style={{ color: 'var(--accent)' }}>{data.positionCount}</b> stocks
         </div>
         <label style={{ display: 'flex', alignItems: 'center', gap: '7px', fontSize: '11px', color: 'var(--text3)' }}>
           Holding率順
           <select value={sortOrder} onChange={e => setSortOrder(e.target.value)}
             style={{ padding: '6px 9px', borderRadius: '7px', border: '1px solid var(--border)', background: 'var(--bg2)', color: 'var(--text)', fontFamily: 'var(--font)', fontSize: '11px', cursor: 'pointer' }}>
-            <option value="desc">高い順（降順）</option>
-            <option value="asc">低い順（昇順）</option>
+            <option value="desc">Highest first</option>
+            <option value="asc">Lowest first</option>
           </select>
         </label>
       </div>
@@ -415,11 +415,11 @@ export default function InstitutionalHoldings({ onNavigate, isMobile } = {}) {
       {tab==='issuer' && (
         loading ? <div style={{ textAlign:'center', padding:'40px', color:'var(--text3)' }}>⏳ Loading...</div>
         : allData.length===0 ? <div style={{ padding:'18px', background:'rgba(74,158,255,0.08)', borderRadius:'8px', fontSize:'13px', color:'var(--text2)' }}>📋 Data is being prepared and updated automatically each day.</div>
-        : !searchQ ? <div style={{ padding:'40px 20px', textAlign:'center', color:'var(--text3)', fontSize:'13px', lineHeight:2 }}><div style={{ fontSize:'32px', marginBottom:'10px' }}>🔍</div><div style={{ fontWeight:600, color:'var(--text2)', marginBottom:'6px' }}>Enter a company name or tickerしてSearch</div><div style={{ fontSize:'11px' }}>Example: Toyota, 7203, Sony Group</div></div>
+        : !searchQ ? <div style={{ padding:'40px 20px', textAlign:'center', color:'var(--text3)', fontSize:'13px', lineHeight:2 }}><div style={{ fontSize:'32px', marginBottom:'10px' }}>🔍</div><div style={{ fontWeight:600, color:'var(--text2)', marginBottom:'6px' }}>Enter a company name or ticker to search</div><div style={{ fontSize:'11px' }}>Example: Toyota, 7203, Sony Group</div></div>
         : (
           <>
             <div style={{ fontSize:'12px', color:'var(--text3)', marginBottom:'12px' }}>「{searchQ}」: {issuerGroups.length}銘柄</div>
-            {issuerGroups.length===0 ? <div style={{ padding:'16px', background:'rgba(255,83,112,0.08)', borderRadius:'8px', fontSize:'13px', color:'#ff5370' }}>⚠️ 該当なし</div>
+            {issuerGroups.length===0 ? <div style={{ padding:'16px', background:'rgba(255,83,112,0.08)', borderRadius:'8px', fontSize:'13px', color:'#ff5370' }}>⚠️ No matching records</div>
             : issuerGroups.slice(0,50).map((group,i) => {
               const holderCount = new Set(group.docs.map(d=>d.filerName)).size
               const maxRatio = Math.max(...group.docs.map(d=>parseFloat(d.holdingRatio)||0))
@@ -434,7 +434,7 @@ export default function InstitutionalHoldings({ onNavigate, isMobile } = {}) {
                       </div>
                       <div style={{ display:'flex', gap:'12px', flexWrap:'wrap', fontSize:'12px', color:'var(--text3)' }}>
                         <span>🏦 {holderCount}社Holding</span>
-                        <span>📊 最大 <strong style={{ color:'#4a9eff' }}>{maxRatio.toFixed(2)}%</strong></span>
+                        <span>📊 Largest <strong style={{ color:'#4a9eff' }}>{maxRatio.toFixed(2)}%</strong></span>
                         <span>📅 {latestDate}</span>
                       </div>
                     </div>
@@ -449,12 +449,12 @@ export default function InstitutionalHoldings({ onNavigate, isMobile } = {}) {
 
       {tab==='holder' && (
         loading ? <div style={{ textAlign:'center', padding:'40px', color:'var(--text3)' }}>⏳ Loading...</div>
-        : allData.length===0 ? <div style={{ padding:'18px', background:'rgba(74,158,255,0.08)', borderRadius:'8px', fontSize:'13px', color:'var(--text2)' }}>📋 データを準備中です。</div>
+        : allData.length===0 ? <div style={{ padding:'18px', background:'rgba(74,158,255,0.08)', borderRadius:'8px', fontSize:'13px', color:'var(--text2)' }}>📋 Data is being prepared.</div>
         : <div style={{ display:'flex', flexDirection:'column', gap:'10px' }}>
           {holderGroups.slice(0,30).map((h,i) => (
             <div key={i} style={{ background:'var(--bg2)', border:'1px solid var(--border)', borderRadius:'10px', padding:'14px 18px' }}>
               <div style={{ fontSize:'14px', fontWeight:700, color:'var(--text)', marginBottom:'6px' }}>{h.name}</div>
-              <div style={{ fontSize:'12px', color:'var(--text3)', marginBottom:'8px' }}>Holding銘柄: <strong style={{ color:'var(--text2)' }}>{h.issuerCount}社</strong>　Filings:  records数: <strong style={{ color:'var(--text2)' }}>{h.docs.length} records</strong></div>
+              <div style={{ fontSize:'12px', color:'var(--text3)', marginBottom:'8px' }}>Holdings: <strong style={{ color:'var(--text2)' }}>{h.issuerCount} companies</strong>　Filings: <strong style={{ color:'var(--text2)' }}>{h.docs.length} records</strong></div>
               <div style={{ display:'flex', flexWrap:'wrap', gap:'6px' }}>
                 {[...new Set(h.docs.map(d=>d.issuerName))].filter(Boolean).slice(0,8).map((issuer,ii) => {
                   const latestDoc = h.docs.filter(d=>d.issuerName===issuer).sort((a,b)=>(b.submitDate||'').localeCompare(a.submitDate||''))[0]

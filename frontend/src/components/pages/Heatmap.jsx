@@ -470,7 +470,7 @@ function SelectedThemePanel({ theme, period, bubble, onNavigate }) {
       <div className="heatmap-kpi-grid">
         <div><span>Theme return</span><strong style={{color:pctColor(bubble?.pct)}}>{Number(bubble?.pct)>=0?'+':''}{Number(bubble?.pct || 0).toFixed(2)}%</strong></div>
         <div><span>Constituents</span><strong>{stocks.length || '—'} stocks</strong></div>
-        <div><span>Rising stocks</span><strong>{stocks.length ? `${upCount}/${stocks.length}` : '—'}</strong></div>
+        <div><span>Advancers</span><strong>{stocks.length ? `${upCount}/${stocks.length}` : '—'}</strong></div>
         <div><span>Median</span><strong style={{color:pctColor(median)}}>{median == null ? '—' : `${median>=0?'+':''}${median.toFixed(2)}%`}</strong></div>
         <div><span>Total volume</span><strong>{totalVolume ? formatCompact(totalVolume) : formatCompact(bubble?.volume)}</strong></div>
         <div><span>Total trading value</span><strong>{totalTrade ? formatCompact(totalTrade,'JPY') : formatCompact(bubble?.trade_value,'JPY')}</strong></div>
@@ -486,14 +486,14 @@ function SelectedThemePanel({ theme, period, bubble, onNavigate }) {
       </div>
 
       <div className="heatmap-trend-grid">
-        <div className={mobileMetric==='pct'?'mobile-active':''}><TrendChart title="Theme Return Trend" rows={trendRows} suffix="%" /></div>
+        <div className={mobileMetric==='pct'?'mobile-active':''}><TrendChart title="Theme Performance" rows={trendRows} suffix="%" /></div>
         <div className={mobileMetric==='volume'?'mobile-active':''}><TrendChart title="Volume Trend" rows={volumeRows} compactUnit="" tone="volume" /></div>
         <div className={mobileMetric==='trade'?'mobile-active':''}><TrendChart title="Trading Value Trend" rows={tradeRows} compactUnit="JPY" tone="trade" /></div>
       </div>
 
       <div className="heatmap-ranking-grid">
-        <StockRankList title="Top 3 Constituents" rows={top} positive onNavigate={onNavigate} />
-        <StockRankList title="Worst 3 Constituents" rows={worst} positive={false} onNavigate={onNavigate} />
+        <StockRankList title="Top 3 Performers" rows={top} positive onNavigate={onNavigate} />
+        <StockRankList title="Bottom 3 Performers" rows={worst} positive={false} onNavigate={onNavigate} />
       </div>
 
       <div className="heatmap-reading-guide">

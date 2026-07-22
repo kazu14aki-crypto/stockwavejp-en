@@ -1307,7 +1307,7 @@ export default function ThemeList({ onNavigate }) {
   const marketPct = pct1306 ?? pct1321 ?? 0
   const rankingConfig = {
     pct:{label:'Return'},
-    relative_pct:{label:'Market-Excess Return',color:'#aa77ff'},
+    relative_pct:{label:'Excess Return vs. Market',color:'#aa77ff'},
     volume:{label:'Volume',color:'#378ADD'},
     trade_value:{label:'Trading Value',color:'#ff8c42'},
   }[rankingMetric]
@@ -1447,7 +1447,7 @@ export default function ThemeList({ onNavigate }) {
               <span className="ranking-metric-label" style={{ fontSize:'11px', color:'var(--text3)', fontWeight:600 }}>Metric</span>
               <select className="ranking-select" aria-label="Ranking metric" value={rankingMetric} onChange={e => setRankingMetric(e.target.value)} style={selStyle}>
                 <option value="pct">Return</option>
-                <option value="relative_pct">Market-Excess Return</option>
+                <option value="relative_pct">Excess Return vs. Market</option>
                 <option value="volume">Volume</option>
                 <option value="trade_value">Trading Value</option>
               </select>
@@ -1487,8 +1487,8 @@ export default function ThemeList({ onNavigate }) {
                 <div className="monthly-chart-grid">
                   {/* MonthlyReturn */}
                   <div className="monthly-chart-cell">
-                    <div style={{ fontSize:'13px', fontWeight:700, color:'var(--text)', marginBottom:'8px' }}>📅 Monthly Theme Return Trend</div>
-          <ExpandableChart title="Monthly Theme Return Trend">
+                    <div style={{ fontSize:'13px', fontWeight:700, color:'var(--text)', marginBottom:'8px' }}>📅 Monthly Theme Performance</div>
+          <ExpandableChart title="Monthly Theme Performance">
                       <MonthlyLineChart data={monthlyData} months={months} onNavigate={onNavigate} />
                     </ExpandableChart>
                   </div>

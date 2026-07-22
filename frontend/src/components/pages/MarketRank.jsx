@@ -1,3 +1,4 @@
+import { useEnglishCompanyNames } from '../../hooks/useEnglishCompanyNames'
 import React, { useState, useEffect, useRef } from 'react'
 import { useSubscription } from '../../hooks/useSubscription'
 import AddToThemeModal from '../AddToThemeModal'
@@ -830,6 +831,7 @@ const displaySegmentName = value => ({
 }[value] || value)
 
 export default function MarketRank() {
+  const englishCompanyName = useEnglishCompanyNames()
   const [modalStock,  setModalStock]  = useState(null)
   const [period,      setPeriod]      = useState('1mo')
   const [summary,     setSummary]     = useState(null)
