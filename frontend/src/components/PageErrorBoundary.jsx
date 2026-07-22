@@ -37,7 +37,7 @@ export default class PageErrorBoundary extends React.Component {
         </p>
         <div style={{display:'flex',justifyContent:'center',gap:'8px',flexWrap:'wrap'}}>
           <button onClick={()=>this.setState({error:null})} style={{
-            padding:'8px 12px',borderRadius:'7px',border:'1px solid var(--border),
+            padding:'8px 12px',borderRadius:'7px',border:'1px solid var(--border)',
             background:'var(--bg3)',color:'var(--text2)',cursor:'pointer',
           }}>Retry</button>
           <button onClick={()=>this.props.onNavigate?.('Home')} style={{
