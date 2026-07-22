@@ -110,7 +110,9 @@ const CAT_COLORS = {
 
 // Markdown風テキストを簡易レンダリング
 function RenderBody({ text }) {
-  const lines = text.trim().split('\n')
+  const safeText = typeof text === 'string' ? text : ''
+  if (!safeText.trim()) return <p style={{fontSize:'13px',color:'var(--text3)'}}>This article is temporarily unavailable.</p>
+  const lines = safeText.trim().split('\n')
   const elements = []
   let i = 0
   while (i < lines.length) {
@@ -276,12 +278,20 @@ export default function Column({ initialArticleId = null, onNavigate }) {
 
   const totalPages = Math.ceil(filtered.length / ITEMS_PER_PAGE)
   const pagedItems = filtered.slice((page - 1) * ITEMS_PER_PAGE, page * ITEMS_PER_PAGE)
+  const activeArticle = activeCol ? COLUMNS.find(c => c.id === activeCol) : null
 
-  if (activeCol) {
-    const col = COLUMNS.find(c => c.id === activeCol)
-    if (!col) { setActiveCol(null); return null }
+  useEffect(() => {
+    if (activeCol && !activeArticle) {
+      setActiveCol(null)
+      window.history.replaceState(null, '', window.location.pathname)
+    }
+  }, [activeCol, activeArticle])
+
+  if (activeArticle) {
+    const col = activeArticle
     const cat = CAT_COLORS[normalizeCategory(col.category)] || { bg:'rgba(74,158,255,0.1)', color:'#4a9eff', border:'rgba(74,158,255,0.25)' }
-    const globalRelatedStocks = getGlobalStocksForThemes(col.themes || [])
+    const articleThemes = Array.isArray(col.themes) ? col.themes : []
+    const globalRelatedStocks = getGlobalStocksForThemes(articleThemes)
     return (
       <div style={{ padding:'20px 32px 60px', maxWidth:'760px', margin:'0 auto' }}>
         <button onClick={() => closeArticle()} style={{
@@ -297,7 +307,7 @@ export default function Column({ initialArticleId = null, onNavigate }) {
           <div className="column-article-meta">
             <span className="column-category-badge" style={{ fontSize:'10px', fontWeight:700, padding:'3px 9px', borderRadius:'20px', background:cat.bg, color:cat.color, border:`1px solid ${cat.border}` }}>{categoryEn(col.category)}</span>
             <span className="column-article-date">{col.date}</span>
-            {col.themes?.slice(0,2).map(theme => <span key={theme} className="column-theme-label">#{tn(theme)}</span>)}
+            {articleThemes.slice(0,2).map(theme => <span key={theme} className="column-theme-label">#{tn(theme)}</span>)}
           </div>
         </div>
         <div style={{ background:'var(--bg2)', border:'1px solid var(--border)', borderRadius:'10px',
@@ -326,7 +336,7 @@ export default function Column({ initialArticleId = null, onNavigate }) {
         </div>
 
 {/* ⑤ Related Theme section */}
-        {col.themes && col.themes.length > 0 && onNavigate && (
+        {articleThemes.length > 0 && onNavigate && (
           <div style={{ marginTop:'24px', padding:'16px 20px',
             background:'var(--bg2)', border:'1px solid var(--border)',
             borderRadius:'10px' }}>
@@ -335,17 +345,17 @@ export default function Column({ initialArticleId = null, onNavigate }) {
                     🔗 Related Theme
             </div>
             <p style={{ fontSize:'12px', color:'var(--text2)', lineHeight:1.8, marginBottom:'12px' }}>
-              {'Related themes: ' + col.themes.map(tn).join(', ')}
+              {'Related themes: ' + articleThemes.map(tn).join(', ')}
             </p>
             <div style={{ display:'flex', flexDirection:'column', gap:'10px' }}>
-              {col.themes.map(theme => (
+              {articleThemes.map(theme => (
                 <div key={theme} style={{
                   background:'rgba(255,255,255,0.03)', borderRadius:'6px',
                   padding:'10px 12px', border:'1px solid rgba(255,255,255,0.06)',
                 }}>
                   <div style={{ fontSize:'12px', fontWeight:700, color:'var(--text)',
                     marginBottom:'8px' }}>
-                    {theme}
+                    {tn(theme)}
                   </div>
                   <div style={{ display:'flex', flexWrap:'wrap', gap:'6px' }}>
                     <button

@@ -375,12 +375,12 @@ export default function TopPage({ onNavigate }) {
           arrow={s ? (s.avg >= 0 ? 'up' : 'down') : null}
           sub="Period: 1 Month"/>
         <KpiCard delay={0.15} loading={loading} label="Top Inflow"
-          value={<span>{s?.top?.theme||'-'}</span>}
+          value={<span>{s?.top?.theme ? tn(s.top.theme) : '-'}</span>}
           valueColor="var(--red)"
           arrow="up"
           sub={s?.top?<span style={{ color:'var(--red)', fontWeight:600 }}>+{s.top.pct.toFixed(1)}%</span>:'-'}/>
         <KpiCard delay={0.2} loading={loading} label="Top Outflow"
-          value={<span>{s?.bot?.theme||'-'}</span>}
+          value={<span>{s?.bot?.theme ? tn(s.bot.theme) : '-'}</span>}
           valueColor="var(--green)"
           arrow="down"
           sub={s?.bot?<span style={{ color:'var(--green)', fontWeight:600 }}>{s.bot.pct.toFixed(1)}%</span>:'-'}/>

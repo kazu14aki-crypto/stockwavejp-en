@@ -830,13 +830,13 @@ const displaySegmentName = value => ({
   'StockWaveJP｜時価総額上位150':'StockWaveJP | Top 150 by Market Cap',
 }[value] || value)
 
-export default function MarketRank() {
+export default function MarketRank({ onNavigate, isMobile } = {}) {
   const englishCompanyName = useEnglishCompanyNames()
   const [modalStock,  setModalStock]  = useState(null)
   const [period,      setPeriod]      = useState('1mo')
   const [summary,     setSummary]     = useState(null)
   const [groups,      setGroups]      = useState({})
-  const [activeGroup, setActiveGroup] = useState('国内主要株')
+  const [activeGroup, setActiveGroup] = useState('時価総額順')
   const [activeSeg,   setActiveSeg]   = useState(null)
   const [detail,      setDetail]      = useState(null)
   // ETF専用状態
@@ -850,16 +850,18 @@ export default function MarketRank() {
     setSummary(marketData.data)
     // ①「ETF」グループをmarket.jsonの外でフロント側に追加
     const baseGroups = marketData.groups || {}
-    
-// ─── Japanese ADR Data (US-listed Japanese stocks) ───────────────────────────
-
-const allGroups = {
-    'ADR': ['Japan ADR (US-Listed)'],
-      ...baseGroups,
+    const marketCapSegments = baseGroups['時価総額順']
+      || (marketData.data?.['StockWaveJP｜時価総額上位150'] ? ['StockWaveJP｜時価総額上位150'] : [])
+    const swjpSegments = baseGroups['StockWaveJP独自分類']
+      || Object.keys(marketData.data || {}).filter(k => k.startsWith('StockWaveJP｜') && k !== 'StockWaveJP｜時価総額上位150')
+    const allGroups = {
+      '時価総額順': marketCapSegments,
+      'StockWaveJP独自分類': swjpSegments,
       'ETF': Object.keys(ETF_GROUPS),
+      'ADR': ['Japan ADR (US-Listed)'],
     }
     setGroups(allGroups)
-    const firstSeg = (baseGroups['国内主要株'] || Object.values(baseGroups)[0] || [])[0]
+    const firstSeg = (allGroups[activeGroup] || marketCapSegments || swjpSegments || [])[0]
     if (firstSeg && !activeSeg) setActiveSeg(firstSeg)
   },[marketData])
 
@@ -955,7 +957,7 @@ const allGroups = {
   }, [activeSeg, activeGroup, period])
 
   // ETFグループ以外のセグメント詳細取得
-  const segNameForHook = activeGroup !== 'ETF' ? activeSeg : null
+  const segNameForHook = !['ETF','ADR'].includes(activeGroup) ? activeSeg : null
   const { data: segDetailRaw, loading: loadingD } = useSegmentDetail(segNameForHook, period)
   useEffect(()=>{
     if (!segDetailRaw) { setDetail(null); return }
@@ -969,7 +971,7 @@ const allGroups = {
   const pctColor = (v) => v>=0 ? 'var(--red)' : 'var(--green)'
   // ETFグループ時はetfDetailを使用
   const currentDetail = activeGroup === 'ETF' ? etfDetail : detail
-  const isLoading = activeGroup === 'ETF' ? etfLoading : loadingD
+  const isLoading = activeGroup === 'ETF' ? etfLoading : (activeGroup === 'ADR' ? !detail : loadingD)
   const rawStocks = currentDetail?.stocks ?? []
   const volSorted = [...rawStocks].sort((a,b) => (b.volume||0)-(a.volume||0))
   const tvSorted  = [...rawStocks].sort((a,b) => (b.trade_value||0)-(a.trade_value||0))
@@ -982,7 +984,7 @@ const allGroups = {
     vol_rank: volRankMap.get(s.ticker) ?? s.vol_rank,
     tv_rank:  tvRankMap.get(s.ticker)  ?? s.tv_rank,
   }))
-  const stocks = activeGroup === '国内全般'
+  const stocks = activeGroup === '時価総額順'
     ? [...mappedStocks].sort((a,b) => (b.market_cap||0) - (a.market_cap||0))
     : [...mappedStocks].sort((a,b) => b.pct - a.pct)
   const detailAvg = currentDetail?.avg ?? 0
@@ -1007,17 +1009,15 @@ const allGroups = {
           borderRadius:'8px', padding:'12px 16px', marginBottom:'16px', fontSize:'12px',
           color:'var(--text)', lineHeight:1.8 }}>
           <span style={{ fontWeight:700, color:'#06d6a0' }}>📋 About this page:</span>
-          For Top 150 by Mkt Cap, Market Segments (Prime/Standard/Growth), and ETFs (6 categories):
-          View constituent stock Return rankings and detailed data.
-          Use the tabs above to switch groups, then select a segment.
+          Compare StockWaveJP's representative 150 companies by market capitalization, ten proprietary business classifications, ETF categories and the existing ADR view.
+          These are not official exchange segments, index classifications or official industry groups. Market-cap ranking reorders StockWaveJP's representative 150 companies, while classification returns are simple averages calculated by StockWaveJP.
           <br/>
           <span style={{ fontSize:'11px', color:'var(--text3)' }}>
-            Tip: When Technology is strong, also check Semiconductor and AI themes
-            in Theme List for better capital flow insights.
+            💡 Example: If Digital & Semiconductors is strong, move to Theme List and inspect semiconductor and AI themes for more detailed capital-flow and constituent data.
           </span>
         </div>
 
-        <div style={{ display:'flex', gap:'4px', borderBottom:'1px solid var(--border)', marginBottom:'0' }}>
+        <div style={{ display:'flex', gap:'4px', borderBottom:'1px solid var(--border)', marginBottom:'0', overflowX:'auto', WebkitOverflowScrolling:'touch' }}>
           {Object.keys(groups).map(g=>(
             <button key={g} onClick={()=>{ setActiveGroup(g); setActiveSeg(groups[g][0]) }} style={{
               padding:'8px 16px', fontSize:'13px', cursor:'pointer', border:'none', background:'transparent',
@@ -1076,7 +1076,7 @@ const allGroups = {
                 </div>
 
                 {/* ③ 注目Stockピックアップ */}
-                <PickupStocks stocks={stocks} period={period} />
+                <PickupStocks stocks={stocks} period={period} onNavigate={onNavigate} />
 
                 {/* ① Theme Detailと同じレイアウト: 左=グラフ群 / 右=Stock表 */}
                 <div className="mr-bottom-grid">
@@ -1085,16 +1085,17 @@ const allGroups = {
                     <div style={{ fontSize:'13px', fontWeight:700, color:'var(--text)', marginBottom:'10px' }}>
                       📊 Volume & Trade Value (Top 15)
                     </div>
-                    <MrVolTvChart stocks={stocks} />
+                    <MrVolTvChart stocks={stocks} onNavigate={onNavigate} />
                     <div style={{ fontSize:'13px', fontWeight:700, color:'var(--text)', margin:'20px 0 10px' }}>
                       🔥 Stock Heatmap
                     </div>
-                    <MrBubbleChart stocks={stocks} />
+                    <MrBubbleChart stocks={stocks} onNavigate={onNavigate} />
                   </div>
                   {/* 右: Stock詳細表 */}
                   <div style={{ minWidth: 0 }}>
                     <div style={{ fontSize:'11px', fontWeight:600, letterSpacing:'0.1em', color:'var(--text3)', textTransform:'uppercase', marginBottom:'8px' }}>
       
+              {activeGroup === '時価総額順' && (<span style={{ fontSize:'10px', color:'var(--accent)', padding:'2px 7px', border:'1px solid rgba(74,158,255,0.3)', borderRadius:'999px', background:'rgba(74,158,255,0.08)' }}>Sorted by market capitalization</span>)}
               {activeGroup === 'ADR' && (
                 <div style={{ padding:'12px 16px', background:'rgba(74,158,255,0.06)',
                   border:'1px solid rgba(74,158,255,0.18)', borderRadius:'10px',
@@ -1108,7 +1109,7 @@ const allGroups = {
                 {activeGroup === 'ADR' ? 'Japan ADR Stocks' : 'Constituent Stocks'} <span style={{ color:'var(--text3)', fontSize:'10px', fontWeight:400 }}>← Swipe for details</span>
                     </div>
                     <div style={{ background:'var(--bg2)', border:'1px solid var(--border)', borderRadius:'var(--radius)', overflow:'hidden' }}>
-                      <StockTable stocks={stocks} onAddToTheme={setModalStock} />
+                      <StockTable stocks={stocks} onAddToTheme={setModalStock} onNavigate={onNavigate} />
                     </div>
                   </div>
                 </div>

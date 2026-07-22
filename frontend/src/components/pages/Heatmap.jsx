@@ -894,7 +894,7 @@ function BubbleScatter({ data, mPeriod, setMPeriod, onNavigate }) {
                       <rect x={tx} y={ty} width={TW} height={TH}
                         rx="8" fill="#1a1f2e" stroke="rgba(255,255,255,0.25)" strokeWidth="1.2" />
                       <text x={tx+12} y={ty+20} fontSize="13" fill="#e8f0ff" fontWeight="700">
-                        {d.theme}
+                        {tn(d.theme)}
                       </text>
                       <text x={tx+12} y={ty+38} fontSize="12" fill={bColor(d.pct)}>
                         {'Return: ' + (d.pct >= 0 ? '+' : '') + (d.pct?.toFixed(2) ?? '-') + '%'}
@@ -964,6 +964,13 @@ function BubbleScatter({ data, mPeriod, setMPeriod, onNavigate }) {
         </svg>
       </div>
 
+      <SelectedThemePanel
+        theme={selectedTheme?.theme}
+        period={mPeriod}
+        bubble={selectedTheme}
+        onNavigate={onNavigate}
+      />
+
       {/* 上位Themeリスト（注目ゾーン） */}
       {(() => {
         const hot = filtered
@@ -986,7 +993,7 @@ function BubbleScatter({ data, mPeriod, setMPeriod, onNavigate }) {
                   borderRadius:'6px', padding:'6px 12px',
                   display:'flex', alignItems:'center', gap:'8px',
                 }}>
-                  <span style={{ fontSize:'12px', fontWeight:700, color:'var(--text)' }}>{d.theme}</span>
+                  <span style={{ fontSize:'12px', fontWeight:700, color:'var(--text)' }}>{tn(d.theme)}</span>
                   <span style={{ fontSize:'11px', fontFamily:'var(--mono)', color:'#ff5370', fontWeight:700 }}>
                     {d.pct >= 0 ? '+' : ''}{d.pct?.toFixed(1)}%
                   </span>
@@ -1008,12 +1015,6 @@ function BubbleScatter({ data, mPeriod, setMPeriod, onNavigate }) {
         )
       })()}
 
-      <SelectedThemePanel
-        theme={selectedTheme?.theme}
-        period={mPeriod}
-        bubble={selectedTheme}
-        onNavigate={onNavigate}
-      />
     </div>
   )
 }
@@ -1052,10 +1053,8 @@ export default function Heatmap({ onNavigate }) {
           overflow:hidden;
           position:relative;
         }
-        .heatmap-main-svg {
-          min-height:390px;
-          touch-action:manipulation;
-        }
+        .heatmap-main-svg { width:100%; height:auto; max-height:58vh; min-height:360px; touch-action:manipulation; }
+        @media (min-width: 900px) { .heatmap-chart-shell { max-height:620px; } .heatmap-main-svg { min-height:420px; } }
         .heatmap-selected-empty {
           margin-top:18px;
           padding:30px 18px;
@@ -1188,8 +1187,9 @@ export default function Heatmap({ onNavigate }) {
             -webkit-overflow-scrolling:touch;
           }
           .heatmap-main-svg {
-            min-width:620px;
+            min-width:560px;
             min-height:auto;
+            max-height:none;
           }
           .heatmap-selected-panel { padding:14px 10px;margin-top:14px;border-radius:11px; }
           .heatmap-selected-header { display:block;margin-bottom:12px; }
