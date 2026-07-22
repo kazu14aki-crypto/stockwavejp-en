@@ -1,24 +1,27 @@
 import { tn } from '../../utils/themeNames'
 import { useState, useEffect } from 'react'
 
-const CATEGORY_EN = {
-  '半導体製造装置':'Semiconductor Equipment','生成AI':'Generative AI','防衛・航空':'Defense & Aerospace',
-  'インバウンド':'Inbound Tourism','EV・脱炭素':'EV & Decarbonization','造船':'Shipbuilding',
-  '親子上場':'Parent-Subsidiary Listings','バフェット銘柄':'Buffett Holdings','フィジカルAI':'Physical AI',
-  'パワー半導体':'Power Semiconductors','光ファイバー・光部品':'Optical Communications',
-  '国土強靭化計画':'National Resilience','再生可能エネルギー':'Renewable Energy',
-  'ゲーム・エンタメ':'Gaming & Entertainment','銀行・金融':'Banking & Finance','地方銀行':'Regional Banks',
-  '保険':'Insurance','不動産':'Real Estate','医薬品・バイオ':'Pharma & Biotech',
-  'ヘルスケア・介護':'Healthcare & Care Services','食品・飲料':'Food & Beverages','小売・EC':'Retail & E-Commerce',
-  '通信':'Telecommunications','鉄鋼・素材':'Steel & Materials','化学':'Chemicals',
-  '建設・インフラ':'Construction & Infrastructure','輸送・物流':'Transport & Logistics',
-  'フィンテック':'Fintech','ロボット・自動化':'Robotics & Automation',
-  'レアアース・資源':'Rare Earths & Resources','サイバーセキュリティ':'Cybersecurity',
-  'ドローン':'Drones','観光・ホテル・レジャー':'Tourism & Hotels',
-  '農業・フードテック':'Agriculture & Foodtech','教育・HR・人材':'Education & HR',
-  '宇宙・衛星':'Space & Satellites','用語解説':'Glossary','個別銘柄':'Individual Stock',
+const THEME_CATEGORY_VALUES = new Set([
+  'Theme','Semiconductors','Materials & Infrastructure','Consumer Technology','Services',
+  'Industry & Technology','Energy','Corporate Strategy','Infrastructure','Materials',
+  '半導体製造装置','生成AI','防衛・航空','インバウンド','EV・脱炭素','造船','親子上場',
+  'バフェット銘柄','フィジカルAI','パワー半導体','光ファイバー・光部品','国土強靭化計画',
+  '再生可能エネルギー','ゲーム・エンタメ','銀行・金融','地方銀行','保険','不動産',
+  '医薬品・バイオ','ヘルスケア・介護','食品・飲料','小売・EC','通信','鉄鋼・素材','化学',
+  '建設・インフラ','輸送・物流','フィンテック','ロボット・自動化','レアアース・資源',
+  'サイバーセキュリティ','ドローン','観光・ホテル・レジャー','農業・フードテック',
+  '教育・HR・人材','宇宙・衛星','個別銘柄'
+])
+
+function normalizeCategory(value) {
+  if (THEME_CATEGORY_VALUES.has(value)) return 'Theme'
+  if (value === 'Market Analysis') return 'Macro / Market'
+  if (value === '用語解説') return 'Glossary'
+  if (value === '個別Stock' || value === 'Individual Stock') return 'Stock Analysis'
+  return value || 'Theme'
 }
-const categoryEn = value => CATEGORY_EN[value] || value
+
+const categoryEn = normalizeCategory
 
 const THEME_ARTICLE_MAP = {
   '半導体製造装置':    'semiconductor-theme',
@@ -92,7 +95,8 @@ const THEME_ARTICLE_MAP = {
 import COLUMNS from './columnData'
 import { getGlobalStocksForThemes } from '../../data/globalRelatedStocks'
 
-const CATEGORIES = ['All', ...Array.from(new Set(COLUMNS.map(c => c.category)))]
+const CATEGORY_ORDER = ['All','Basics','Macro / Market','Theme','Analysis Methods','Strategy','Stock Analysis','Glossary']
+const CATEGORIES = CATEGORY_ORDER.filter(cat => cat === 'All' || COLUMNS.some(col => normalizeCategory(col.category) === cat))
 
 const CAT_COLORS = {
   'Basics':           { bg:'rgba(74,158,255,0.1)',  color:'#4a9eff',  border:'rgba(74,158,255,0.25)' },
@@ -253,30 +257,9 @@ export default function Column({ initialArticleId = null, onNavigate }) {
     window.history.replaceState(null, '', window.location.pathname)
     window.scrollTo(0, 0)
   }
-
-  const THEME_CATS = [
-    '半導体製造装置','半導体検査装置','半導体材料','メモリ','パワー半導体','次世代半導体',
-    '生成AI','AIデータセンター','フィジカルAI','AI半導体','AI人材','エッジAI',
-    'EV・電気自動車','全固体電池','自動運転','ドローン','輸送・物流','造船',
-    '再生可能エネルギー','太陽光発電','核融合発電','原子力発電','電力会社',
-    'LNG','石油','蓄電池','資源（水素・ヘリウム・水）','IOWN','光通信',
-    '通信','量子コンピューター','SaaS','ウェアラブル端末','仮想通貨','ネット銀行',
-    '鉄鋼・素材','化学','建築資材','塗料',
-    '医薬品・バイオ','ヘルスケア・介護','薬局・ドラッグストア',
-    '銀行・金融','地方銀行','保険','フィンテック',
-    '不動産','建設・インフラ','国土強靭化計画','下水道',
-    '食品・飲料','農業・フードテック','小売・EC','観光・ホテル・レジャー',
-    'インバウンド','リユース・中古品',
-    '防衛・航空','宇宙・衛星','ロボット・自動化',
-    'レアアース・資源','バフェット銘柄',
-    'サイバーセキュリティ','警備','脱炭素・ESG',
-    '教育・HR・人材','人材派遣','ゲーム・エンタメ',
-  ]
   const _base = activeCat === 'All'
     ? COLUMNS
-    : activeCat === 'Theme'
-    ? COLUMNS.filter(c => THEME_CATS.includes(c.category))
-    : COLUMNS.filter(c => c.category === activeCat)
+    : COLUMNS.filter(c => normalizeCategory(c.category) === activeCat)
 
   const filtered = [..._base]
     .filter(col => {
@@ -297,7 +280,7 @@ export default function Column({ initialArticleId = null, onNavigate }) {
   if (activeCol) {
     const col = COLUMNS.find(c => c.id === activeCol)
     if (!col) { setActiveCol(null); return null }
-    const cat = CAT_COLORS[col.category] || { bg:'rgba(74,158,255,0.1)', color:'#4a9eff', border:'rgba(74,158,255,0.25)' }
+    const cat = CAT_COLORS[normalizeCategory(col.category)] || { bg:'rgba(74,158,255,0.1)', color:'#4a9eff', border:'rgba(74,158,255,0.25)' }
     const globalRelatedStocks = getGlobalStocksForThemes(col.themes || [])
     return (
       <div style={{ padding:'20px 32px 60px', maxWidth:'760px', margin:'0 auto' }}>
@@ -537,7 +520,7 @@ export default function Column({ initialArticleId = null, onNavigate }) {
 {/* Column list */}
       <div style={{ display:'grid', gridTemplateColumns:'repeat(2, 1fr)', gap:'14px' }} className="col-grid">
         {pagedItems.filter(Boolean).map((col, i) => {
-          const cat = CAT_COLORS[col.category] || { bg:'rgba(74,158,255,0.1)', color:'#4a9eff', border:'rgba(74,158,255,0.25)' }
+          const cat = CAT_COLORS[normalizeCategory(col.category)] || { bg:'rgba(74,158,255,0.1)', color:'#4a9eff', border:'rgba(74,158,255,0.25)' }
           return (
             <div key={col.id} onClick={() => openArticle(col.id)} style={{
               background:'var(--bg2)', border:'1px solid var(--border)',

@@ -4,6 +4,21 @@ import { useMomentum } from '../../hooks/useMarketData'
 
 const API = import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000'
 
+const stockCode = value => String(value || '').replace('.T','').trim()
+
+async function loadEnglishStockNames() {
+  try {
+    const response = await fetch(`/data/stock_index.json?t=${Date.now()}`)
+    if (!response.ok) return {}
+    const index = await response.json()
+    return Object.fromEntries(
+      Object.values(index || {}).map(row => [stockCode(row.ticker || row.code), row.name])
+    )
+  } catch {
+    return {}
+  }
+}
+
 const THEME_ARTICLE_MAP = {
   '半導体製造装置':    'semiconductor-theme',
   '半導体検査装置':    'semiconductor-theme',
@@ -82,6 +97,7 @@ const STATE_COLORS = {
   '🔥 Accel':'#ff4560', '↗ Rev.↑':'#ff8c42', '→ Flat':'var(--text3)', '↘ Rev.↓':'#4a9eff', '❄️ Stall':'#00c48c',
   '🔥 Accelerating':  '#ff4560',
   '↗ Turning Up': '#ff8c42',
+  '→ Flat': 'var(--text3)',
   '↘ Turning Down': '#4a9eff',
   '❄️ Losing Momentum':  '#00c48c',
 }
@@ -351,6 +367,7 @@ function SelectedThemePanel({ theme, period, bubble, onNavigate }) {
 
     ;(async () => {
       try {
+        const englishNames = await loadEnglishStockNames()
         let staticJson = null
         try {
           const response = await fetch(`/data/market.json?t=${Date.now()}`)
@@ -400,7 +417,10 @@ function SelectedThemePanel({ theme, period, bubble, onNavigate }) {
           setTrendRows(pctRows)
           setVolumeRows(volRows)
           setTradeRows(tvRows)
-          setStocks(Array.isArray(detail?.stocks) ? detail.stocks : [])
+          setStocks((Array.isArray(detail?.stocks) ? detail.stocks : []).map(stock => ({
+            ...stock,
+            name: englishNames[stockCode(stock.ticker || stock.code)] || stock.name || stock.ticker,
+          })))
           setError(!pctRows.length && !volRows.length && !(detail?.stocks?.length) ? 'Detailed data could not be retrieved.' : null)
         }
       } finally {
