@@ -82,7 +82,6 @@ const STATE_COLORS = {
   '🔥 Accel':'#ff4560', '↗ Rev.↑':'#ff8c42', '→ Flat':'var(--text3)', '↘ Rev.↓':'#4a9eff', '❄️ Stall':'#00c48c',
   '🔥 Accelerating':  '#ff4560',
   '↗ Turning Up': '#ff8c42',
-  '→ Flat': 'var(--text3)',
   '↘ Turning Down': '#4a9eff',
   '❄️ Losing Momentum':  '#00c48c',
 }

@@ -1,7 +1,7 @@
 import { tn } from '../../utils/themeNames'
 import { useState } from 'react'
 import FirstVisitTutorial from '../FirstVisitTutorial'
-import { DataStateBanner } from '../DataStateBanner'
+import DataStateBanner from '../DataStateBanner'
 import { useThemes, useMacro } from '../../hooks/useMarketData'
 import MacroLineChart, { MacroCard, SHead } from '../MacroLineChart'
 
