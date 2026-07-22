@@ -1,0 +1,59 @@
+{
+  "week": "2026-W29",
+  "date": "2026-07-17",
+  "title": "July 13–17 Weekly Market Report",
+  "generated_at": "2026-07-18T02:00:00+09:00",
+  "next_report_at": "2026-07-24T18:00:00+09:00",
+  "summary": {
+    "avg_pct_1w": null,
+    "rise_count": null,
+    "fall_count": null,
+    "total_themes": 72,
+    "data_status": "Theme aggregates were not calculated because the Infoway data contract is not yet active.",
+    "top5_themes": [
+      {
+        "theme": "Oil",
+        "pct": null
+      },
+      {
+        "theme": "LNG",
+        "pct": null
+      },
+      {
+        "theme": "Banks & Finance",
+        "pct": null
+      },
+      {
+        "theme": "Insurance",
+        "pct": null
+      },
+      {
+        "theme": "Cybersecurity",
+        "pct": null
+      }
+    ],
+    "bot5_themes": [
+      {
+        "theme": "Memory",
+        "pct": null
+      },
+      {
+        "theme": "AI Chips",
+        "pct": null
+      },
+      {
+        "theme": "Semiconductor Equipment",
+        "pct": null
+      },
+      {
+        "theme": "MLCC & Electronic Components",
+        "pct": null
+      },
+      {
+        "theme": "AI Data Centers",
+        "pct": null
+      }
+    ]
+  },
+  "report": "# Weekly Market Report | July 13–17\n\n---\n\n## Japanese Equity Market Overview\n\nJapanese equities entered a clear risk-off correction as aggressive position reduction in AI and semiconductor shares combined with higher oil prices, interest-rate concerns and Middle East tension.\n\nThe Nikkei 225 fell from 68,557.73 to 64,141.12, a weekly decline of 4,416.61 points, or 6.44%. It was more than 11% below its June 25 high. TOPIX declined by approximately 2.90%, showing that selling pressure was concentrated in expensive index-heavy AI, semiconductor and electronic-component stocks rather than distributed equally across the entire market.\n\n**Nikkei 225 daily path**\n\n- July 13: 67,242.73, down 1,315.00 points. Higher oil prices and a global memory selloff hit Kioxia and other AI-related stocks.\n- July 14: 67,743.50, up 500.77 points. Expectations for domestic capital returning to Japanese equities and government bonds supported a rebound.\n- July 15: 68,751.51, up 1,008.01 points. US inflation data and bank earnings encouraged short covering.\n- July 16: 66,835.54, down 1,915.97 points. Weakness in US semiconductor shares spread to index-heavy Japanese names.\n- July 17: 64,141.12, down 2,694.42 points. AI valuation concerns, deleveraging, oil prices and geopolitical risk produced a broad defensive move.\n\n**Weekly change: 68,557.73 → 64,141.12, down 4,416.61 points (-6.44%)**\n\nThe central issue was not the disappearance of AI demand. The market was recalculating excessive expectations and leverage.\n\n---\n\n## Major Events\n\n### Global AI and Semiconductor Deleveraging\n\nThe Philadelphia Semiconductor Index weakened sharply and selling spread across Korea, Taiwan and Japan. Kioxia, SUMCO, SCREEN Holdings, Advantest and Tokyo Electron became central sources of index pressure.\n\n### Strong TSMC Results Failed to Lift the Market\n\nTSMC reported solid demand and an aggressive investment plan, yet its share price fell. This suggested that the market had moved from asking whether AI demand exists to asking whether future cash flows justify current valuations.\n\n🌍 Global: TSMC (TSM), NVIDIA (NVDA), Micron (MU), ASML (ASML)\n\n### Middle East Tension and Higher Oil Prices\n\nHigher crude prices favored energy and resource names while pressuring airlines, transport, chemicals, utilities, restaurants and hotels.\n\n---\n\n## Relatively Strong Themes\n\n*StockWaveJP theme return, volume and trading-value aggregates were not calculated because the Infoway contract was not active. The following assessment is qualitative.*\n\n### Oil, LNG and Resources\n\nEnergy-related shares acted as relative shelters. The trade remained highly sensitive to ceasefire and supply-normalization headlines.\n\n🌍 Global: Exxon Mobil (XOM), Chevron (CVX), ConocoPhillips (COP), Cheniere Energy (LNG)\n\n### Banks and Insurance\n\nValue and rate-sensitive financial stocks were more resilient as money left expensive AI shares. Their relative strength also explains why TOPIX outperformed the Nikkei.\n\n🌍 Global: JPMorgan Chase (JPM), Bank of America (BAC), Goldman Sachs (GS), Chubb (CB)\n\n### Defensive Retail\n\nSelected domestic retail names with company-specific catalysts attracted capital as investors reduced exposure to high-beta technology.\n\n### Cybersecurity and Security Services\n\nThese themes were less dependent on semiconductor capital expenditure and could benefit from elevated geopolitical risk. They should still be treated as relatively resilient, not immune to a broad liquidity contraction.\n\n🌍 Global: Palo Alto Networks (PANW), CrowdStrike (CRWD), Fortinet (FTNT), Zscaler (ZS)\n\n---\n\n## Weak Themes\n\n### Memory\n\nKioxia and global memory names suffered severe position reduction. Investors should monitor volume contraction and the ability to stop making new lows rather than attempting to identify a bottom from the percentage decline alone.\n\n🌍 Global: Micron (MU), SK Hynix (000660.KS), Samsung Electronics (005930.KS)\n\n### AI Chips and Semiconductor Equipment\n\nAdvantest, Tokyo Electron, SCREEN, SUMCO and other index-heavy names fell sharply. Fundamentals had not necessarily collapsed, but positive demand commentary was no longer enough to produce buying.\n\n🌍 Global: NVIDIA (NVDA), AMD (AMD), Broadcom (AVGO), ASML (ASML), Applied Materials (AMAT)\n\n### MLCC and Electronic Components\n\nCompanies linked to AI servers, data centers and automobiles were pulled into the semiconductor correction. Long-term demand may remain intact while short-term valuation and positioning continue to contract.\n\n### AI Data Centers and Advanced Packaging\n\nInvestors began to focus on the time required for enormous AI capital expenditure to generate revenue and free cash flow.\n\n🌍 Global: Vertiv (VRT), Eaton (ETN), Arista Networks (ANET), Equinix (EQIX)\n\n---\n\n## US Market and Macro\n\nUS AI and semiconductor shares weakened as investors questioned the sustainability and return on AI capital expenditure. Higher oil prices revived inflation concerns and increased the risk of tighter monetary policy. Major US bank earnings were comparatively resilient, widening the performance gap between financials and technology.\n\n---\n\n## Watch List for July 20–24\n\n1. Japan is closed on July 20 for Marine Day, creating a four-session week\n2. Whether the Nikkei can hold the 64,000 area\n3. Kioxia, Advantest and Tokyo Electron trading value and low formation\n4. US technology earnings and capital-expenditure plans\n5. Oil prices and Middle East developments\n6. USD/JPY and Japanese government-bond yields\n7. Progress in reducing leveraged and margin positions\n8. Whether positive company news begins to receive a positive share-price response again\n\n---\n\n## StockWaveJP View\n\nThe week represented the first serious recalculation of expectations for the 2026 AI and semiconductor rally. A short-term rebound is possible after such a severe decline, but one positive session should not be treated as proof of a bottom.\n\nThree confirmation signals matter:\n\n1. Semiconductor trading value begins to normalize\n2. Major stocks stop making lower lows\n3. Good earnings and demand news again produce positive price reactions\n\nA selective approach based on balance sheets, backlog, customer diversification, margins and capital intensity is more rational than buying the entire AI complex.\n\n> Disclaimer: This report is general information and does not recommend buying, selling or holding any security.\n"
+}

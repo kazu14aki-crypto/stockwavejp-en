@@ -1,4 +1,4 @@
-const e=[{id:"theme-selection-criteria",themes:["テーマ一覧"],keywords:["How StockWaveJP Selects Themes and Constituent Stocks","analysis","related companies"],category:"Basics",icon:"🧭",date:"2026/07/22",title:"How StockWaveJP Selects Themes and Constituent Stocks",summary:"An investor-oriented explanation of the topic, its market structure, risks and related companies.",body:`
+const e=[{id:"theme-selection-criteria",themes:["Theme List"],keywords:["How StockWaveJP Selects Themes and Constituent Stocks","analysis","related companies"],category:"Basics",icon:"🧭",date:"2026/07/22",title:"How StockWaveJP Selects Themes and Constituent Stocks",summary:"An investor-oriented explanation of the topic, its market structure, risks and related companies.",body:`
 H2: Theme Creation
 
 A theme is created when the underlying demand driver is economically meaningful, supported by public information and broad enough to include a useful group of listed companies. Temporary news labels are not automatically promoted into permanent themes.
@@ -15,7 +15,7 @@ H2: Limitations
 
 Inclusion is not a recommendation and does not imply equal revenue exposure. Large diversified companies may have only modest theme sensitivity.
 
-> Disclaimer: General information only.`},{id:"major-shareholders-guide",themes:["テーマ一覧"],keywords:["How to Read Major Shareholders in Japanese Securities Reports","analysis","related companies"],category:"Basics",icon:"🏛️",date:"2026/07/22",title:"How to Read Major Shareholders in Japanese Securities Reports",summary:"An investor-oriented explanation of the topic, its market structure, risks and related companies.",body:`
+> Disclaimer: General information only.`},{id:"major-shareholders-guide",themes:["Theme List"],keywords:["How to Read Major Shareholders in Japanese Securities Reports","analysis","related companies"],category:"Basics",icon:"🏛️",date:"2026/07/22",title:"How to Read Major Shareholders in Japanese Securities Reports",summary:"An investor-oriented explanation of the topic, its market structure, risks and related companies.",body:`
 H2: Why Shareholder Structure Matters
 
 Companies with similar earnings can trade differently because their free float, controlling shareholders and institutional ownership differ.
@@ -1244,7 +1244,7 @@ StockWaveJP tracks every theme using three fundamental metrics: **price change %
 
 ## Reading Price Change %
 
-Price change % (騰落率) measures the average price movement of all stocks within a theme over a given period (1D, 1W, 1M, 3M, 6M, 1Y). A +5.2% one-week price change for the Semiconductor theme means the average stock within that theme rose 5.2% over the past week.
+Price change % (Return) measures the average price movement of all stocks within a theme over a given period (1D, 1W, 1M, 3M, 6M, 1Y). A +5.2% one-week price change for the Semiconductor theme means the average stock within that theme rose 5.2% over the past week.
 
 **What it tells you**: Direction and magnitude of capital flows into (positive) or out of (negative) a theme.
 
@@ -1263,7 +1263,7 @@ For theme investing, comparing a theme's current volume to its 4-week average pr
 
 ## Reading Trading Value
 
-Trading value (売買代金) measures the total yen amount traded (price × shares) across a theme. It is more useful than raw volume because it normalizes for price — a ¥10,000 stock trading 1,000 shares generates the same signal as a ¥1,000 stock trading 10,000 shares.
+Trading value (Trading Value) measures the total yen amount traded (price × shares) across a theme. It is more useful than raw volume because it normalizes for price — a ¥10,000 stock trading 1,000 shares generates the same signal as a ¥1,000 stock trading 10,000 shares.
 
 Trading value is particularly useful for identifying institutional participation. Institutions trade in large monetary amounts; a surge in trading value — even if share volume is only moderately elevated — indicates large orders are entering the market.
 
@@ -4040,7 +4040,7 @@ Stock market terminology can be a barrier for new investors — financial news, 
 
 **Volume**: Total shares traded in a given period. High volume confirms price moves; low volume makes them less reliable.
 
-**Trading Value (売買代金)**: Volume × price — total yen value traded. More useful than raw share volume as it normalizes for stock price differences.
+**Trading Value (Trading Value)**: Volume × price — total yen value traded. More useful than raw share volume as it normalizes for stock price differences.
 
 **52-Week High/Low**: The highest and lowest price in the past year. Stocks breaking to new 52-week highs often continue advancing (momentum).
 
@@ -5429,7 +5429,7 @@ The Mlcc Murata theme has clear structural foundations for medium to long-term i
 
 The most valuable habit: reviewing all 72 themes every Monday morning using StockWaveJP's Theme List to identify which themes are accelerating and which are stalling — then adjusting your portfolio allocations accordingly over the following weeks.
 
-> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"spacex-analysis",themes:["宇宙・衛星","防衛・航空"],keywords:["SpaceX","SPCX","Elon Musk","Starlink","IPO","rocket","space investment","個別銘柄"],category:"個別銘柄",icon:"🚀",title:"SpaceX (SPCX) Deep Dive: History's Largest IPO & Japan Stock Impact",date:"2026/06/12",summary:"SpaceX listed on Nasdaq June 12, 2026 raising $75B at a $1.77T valuation — history's largest IPO. Analysis of business model, growth drivers, competitors, and Japanese stock opportunities.",body:`SpaceX (Space Exploration Technologies Corp.) was founded in 2002 by Elon Musk to reduce the cost of space transportation and ultimately enable human life on multiple planets.
+> **Disclaimer**: For informational purposes only. All investment decisions are your sole responsibility.`},{id:"spacex-analysis",themes:["宇宙・衛星","防衛・航空"],keywords:["SpaceX","SPCX","Elon Musk","Starlink","IPO","rocket","space investment","個別Stock"],category:"個別Stock",icon:"🚀",title:"SpaceX (SPCX) Deep Dive: History's Largest IPO & Japan Stock Impact",date:"2026/06/12",summary:"SpaceX listed on Nasdaq June 12, 2026 raising $75B at a $1.77T valuation — history's largest IPO. Analysis of business model, growth drivers, competitors, and Japanese stock opportunities.",body:`SpaceX (Space Exploration Technologies Corp.) was founded in 2002 by Elon Musk to reduce the cost of space transportation and ultimately enable human life on multiple planets.
 
 H2: Business Model and Operations
 
