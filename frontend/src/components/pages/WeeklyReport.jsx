@@ -1,6 +1,7 @@
 import { tn } from '../../utils/themeNames'
 import { useState, useEffect } from 'react'
 import { useSubscription } from '../../hooks/useSubscription.jsx'
+import { getGlobalStocksForThemes } from '../../data/globalRelatedStocks'
 
 function Loading() {
   return (
@@ -89,6 +90,13 @@ function RenderMd({ text, onNavigate }) {
                   )}
                 </>
               )}
+            </div>
+          )
+          const globalRows = getGlobalStocksForThemes([capturedTheme]).slice(0,4)
+          if (globalRows.length) result.push(
+            <div key={`global-${i}`} style={{ margin:'-4px 0 12px', padding:'8px 10px', borderRadius:'7px', background:'rgba(74,158,255,.045)', border:'1px solid rgba(74,158,255,.12)', fontSize:'10px', color:'var(--text2)' }}>
+              <strong style={{ color:'var(--accent)' }}>🌍 Global:</strong>{' '}
+              {globalRows.map(row => `${row.name} (${row.ticker})`).join(' · ')}
             </div>
           )
           currentTheme = null

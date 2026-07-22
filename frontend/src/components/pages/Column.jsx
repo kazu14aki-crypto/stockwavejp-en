@@ -71,6 +71,7 @@ const THEME_ARTICLE_MAP = {
   'ゲーム・エンタメ':  'game-entertainment-theme',
 }
 import COLUMNS from './columnData'
+import { getGlobalStocksForThemes } from '../../data/globalRelatedStocks'
 
 const CATEGORIES = ['All', 'Theme', 'Basics', 'Analysis Methods', 'Strategy', 'Glossary', 'Stock Analysis']
 
@@ -278,6 +279,7 @@ export default function Column({ initialArticleId = null, onNavigate }) {
     const col = COLUMNS.find(c => c.id === activeCol)
     if (!col) { setActiveCol(null); return null }
     const cat = CAT_COLORS[col.category] || { bg:'rgba(74,158,255,0.1)', color:'#4a9eff', border:'rgba(74,158,255,0.25)' }
+    const globalRelatedStocks = getGlobalStocksForThemes(col.themes || [])
     return (
       <div style={{ padding:'20px 32px 60px', maxWidth:'760px', margin:'0 auto' }}>
         <button onClick={() => closeArticle()} style={{
@@ -303,6 +305,19 @@ export default function Column({ initialArticleId = null, onNavigate }) {
           padding:'6px 20px 20px', marginBottom:'28px' }}>
           <RenderBody text={col.body} />
         </div>
+        {globalRelatedStocks.length > 0 && (
+          <div style={{ marginBottom:'24px', padding:'16px 18px', background:'var(--bg2)', border:'1px solid var(--border)', borderRadius:'10px' }}>
+            <div style={{ fontSize:'13px', fontWeight:700, color:'var(--text)', marginBottom:'10px' }}>🌍 Global Related Companies</div>
+            <div style={{ display:'flex', flexWrap:'wrap', gap:'7px' }}>
+              {globalRelatedStocks.slice(0,12).map(stock => (
+                <span key={stock.ticker} style={{ padding:'6px 9px', borderRadius:'7px', background:'rgba(74,158,255,.07)', border:'1px solid rgba(74,158,255,.17)', fontSize:'10px', color:'var(--text2)' }}>
+                  <b style={{ color:'var(--accent)' }}>{stock.ticker}</b> {stock.name}
+                </span>
+              ))}
+            </div>
+          </div>
+        )}
+
         <div style={{ background:'rgba(255,140,66,0.07)', border:'1px solid rgba(255,140,66,0.2)',
           borderRadius:'8px', padding:'14px 18px', fontSize:'12px', color:'#e8f0ff', lineHeight:1.8 }}>
           ⚠️ This column is for informational purposes only and does not recommend any specific stock or investment method.

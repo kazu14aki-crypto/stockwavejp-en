@@ -4,7 +4,7 @@ const SECTIONS = [
   {
     icon: '📊',
     title: 'Theme List',
-    desc: 'Compare price change %, volume, and trading value across 67+ themes at a glance. Data is sourced from Infoway (Japanese stock API service).',
+    desc: 'Compare price change %, volume, and trading value across 72 themes at a glance. Data is sourced from Infoway (Japanese stock API service).',
     items: [
       'Use the period selector at the top (1D / 1W / 1M / 3M / 6M / 1Y) to switch the display period. Note: Free plan users can only select 3M, 6M, and 1Y.',
       'The "Return Ranking TOP5" section shows 4 themes by default. Use "Top 10" or "All Themes" buttons to expand.',

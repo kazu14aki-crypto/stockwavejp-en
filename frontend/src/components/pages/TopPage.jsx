@@ -76,6 +76,7 @@ const THEME_ARTICLE_MAP = {
 }
 
 const ALL_NEWS = [
+  { date:'2026/07/22', tag:'COLUMN', title:'Japan’s Growth Strategy and 17 strategic fields analyzed' },
   { date:'2026/05/29', tag:'NEW',    title:'MLCC Theme Added & Murata/MLCC Column Articles Published' },
   { date:'2026/05/29', tag:'NEW',    title:'Weekly Report (May 25-29) Published' },
   { date:'2026/05/22', tag:'NEW',    title:'Weekly Report (May 18-22) Published' },

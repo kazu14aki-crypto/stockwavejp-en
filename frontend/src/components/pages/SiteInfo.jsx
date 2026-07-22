@@ -21,7 +21,7 @@ export default function SiteInfo() {
   const qa = [
     {
       title: "Purpose of This Site",
-      content: `Free tools for understanding which themes are moving in the Japanese stock market are scarce. StockWaveJP automatically aggregates price change %, volume, and trading value for 67 investment themes — including Semiconductors, AI, Defense, and Inbound Tourism — making capital flow visible as a free dashboard. Our primary purpose is to provide objective data showing "what the market is focusing on now" — not investment advice or stock recommendations.`
+      content: `Free tools for understanding which themes are moving in the Japanese stock market are scarce. StockWaveJP automatically aggregates price change %, volume, and trading value for 72 investment themes — including Semiconductors, AI, Defense, and Inbound Tourism — making capital flow visible as a free dashboard. Our primary purpose is to provide objective data showing "what the market is focusing on now" — not investment advice or stock recommendations.`
     },
     {
       title: "Background & Motivation",
