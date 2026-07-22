@@ -1,7 +1,7 @@
 """
 main_en.py — FastAPI English Edition
 """
-from fastapi import FastAPI, Request, Query
+from fastapi import FastAPI, Request, Query, HTTPException
 import stripe
 import os
 from fastapi.responses import Response
@@ -403,31 +403,94 @@ async def stripe_webhook(request: Request):
     
     return {"received": True}
 
-# ── Stripe subscription cancellation ────────────────────────────────────────
-@app.post("/api/stripe/cancel-subscription")
-async def cancel_subscription(req: Request):
-    body = await req.json()
-    user_id = body.get("user_id", "")
-    if not user_id:
-        return {"error": "user_id required"}
-    try:
-        result = sb.table("subscriptions") \
-            .select("stripe_subscription_id") \
-            .eq("user_id", user_id) \
-            .eq("status", "active") \
-            .execute()
-        if not result.data:
-            return {"error": "No active subscription found"}
-        sub_id = result.data[0]["stripe_subscription_id"]
-        # Cancel at period end (user keeps access until renewal date)
-        stripe.Subscription.modify(sub_id, cancel_at_period_end=True)
-        sb.table("subscriptions") \
-            .update({"status": "canceling"}) \
-            .eq("stripe_subscription_id", sub_id) \
-            .execute()
-        return {"ok": True, "message": "Cancellation scheduled. You will retain access until your billing period ends."}
-    except stripe.error.StripeError as e:
-        return {"error": f"Stripe error: {str(e)}"}
-    except Exception as e:
-        return {"error": str(e)}
 
+# ── Authenticated billing and account management ────────────────────────────
+def _authenticated_supabase_user(request: Request):
+    auth_header = request.headers.get("authorization", "")
+    if not auth_header.lower().startswith("bearer "):
+        raise HTTPException(status_code=401, detail="Please sign in again and retry.")
+    token = auth_header.split(" ", 1)[1].strip()
+    sb_url = os.environ.get("SUPABASE_URL", "")
+    sb_key = os.environ.get("SUPABASE_SERVICE_ROLE_KEY", "")
+    if not sb_url or not sb_key:
+        raise HTTPException(status_code=503, detail="Authentication integration is not configured.")
+    sb = _create_client(sb_url, sb_key)
+    response = sb.auth.get_user(token)
+    user = getattr(response, "user", None)
+    if not user:
+        raise HTTPException(status_code=401, detail="The sign-in session could not be verified.")
+    return sb, user
+
+
+def _subscription_rows(sb, user_id: str):
+    result = sb.table("subscriptions").select(
+        "stripe_subscription_id,stripe_customer_id,status,plan,current_period_end"
+    ).eq("user_id", user_id).execute()
+    return result.data or []
+
+
+@app.post("/api/stripe/create-portal")
+async def create_portal(request: Request):
+    try:
+        sb, auth_user = _authenticated_supabase_user(request)
+        rows = _subscription_rows(sb, auth_user.id)
+        customer_id = next((row.get("stripe_customer_id") for row in rows if row.get("stripe_customer_id")), None)
+        if not customer_id:
+            raise HTTPException(status_code=404, detail="Stripe customer information was not found.")
+        session = stripe.billing_portal.Session.create(
+            customer=customer_id,
+            return_url="https://stockwavejp-en.com",
+        )
+        return {"url": session.url}
+    except HTTPException:
+        raise
+    except Exception as exc:
+        raise HTTPException(status_code=500, detail=str(exc))
+
+
+@app.post("/api/stripe/cancel-subscription")
+async def cancel_subscription(request: Request):
+    try:
+        sb, auth_user = _authenticated_supabase_user(request)
+        rows = _subscription_rows(sb, auth_user.id)
+        row = next((r for r in rows if r.get("status") in ("active", "past_due", "trialing", "canceling") and r.get("stripe_subscription_id")), None)
+        if not row:
+            raise HTTPException(status_code=404, detail="No active subscription was found.")
+        if row.get("status") == "canceling":
+            return {"ok": True, "message": "Cancellation is already scheduled for the end of the billing period.", "current_period_end": row.get("current_period_end")}
+        sub_id = row["stripe_subscription_id"]
+        subscription = stripe.Subscription.modify(sub_id, cancel_at_period_end=True)
+        period_end = getattr(subscription, "current_period_end", None)
+        sb.table("subscriptions").update({"status": "canceling"}).eq("stripe_subscription_id", sub_id).execute()
+        return {"ok": True, "message": "Cancellation has been scheduled. Access continues until the billing period ends.", "current_period_end": period_end}
+    except HTTPException:
+        raise
+    except Exception as exc:
+        raise HTTPException(status_code=500, detail=str(exc))
+
+
+@app.post("/api/account/delete")
+async def delete_account(request: Request):
+    try:
+        sb, auth_user = _authenticated_supabase_user(request)
+        user_id = auth_user.id
+        rows = _subscription_rows(sb, user_id)
+        for row in rows:
+            sub_id = row.get("stripe_subscription_id")
+            if sub_id and row.get("status") in ("active", "canceling", "past_due", "trialing"):
+                try:
+                    stripe.Subscription.modify(sub_id, cancel_at_period_end=True)
+                except Exception as exc:
+                    raise HTTPException(status_code=502, detail=f"The account was not deleted because subscription cancellation could not be scheduled: {exc}")
+        for table in ("custom_themes", "favorites", "user_settings"):
+            try:
+                sb.table(table).delete().eq("user_id", user_id).execute()
+            except Exception:
+                pass
+        # Keep subscription records for billing/audit purposes; remove the auth account last.
+        sb.auth.admin.delete_user(user_id)
+        return {"ok": True}
+    except HTTPException:
+        raise
+    except Exception as exc:
+        raise HTTPException(status_code=500, detail=f"Account deletion failed: {exc}")

@@ -1,123 +1,213 @@
 export default function SiteInfo() {
-  const features = [
-    { icon:'📡', title:'Price Momentum', desc:'5-state classification (🔥Accel / ↗Rev.↑ / →Flat / ↘Rev.↓ / ❄️Stall) — a unique StockWaveJP indicator' },
-    { icon:'🗺️', title:'Theme × Period Heatmap', desc:'Compare Return across 72 themes and multiple periods (1W to 1Y) simultaneously' },
-    { icon:'📊', title:'3-Metric View', desc:'Price change %, Volume, and Trading Value ranked across all 72 themes at once' },
-    { icon:'⚙️', title:'Custom Theme', desc:"Create your own theme and track a custom set of stocks" },
-    { icon:'📈', title:'Macro Indicators', desc:'Monitor Nikkei 225, USD/JPY, VIX, and other macro indicators alongside theme trends' },
-    { icon:'📰', title:'Weekly Report', desc:"Weekly market recap and next-week highlights written by the editorial team" },
-  ]
-
-  const siteInfo = [
-    ['Site Name', 'StockWaveJP'],
-    ['URL', 'https://stockwavejp-en.com'],
-    ['Launched', 'March 2026'],
-    ['Purpose', 'Visualize Japanese stock theme price change %, volume, and trading value in real time to support investment decisions'],
-    ['Target Users', 'Individual investors and beginners interested in Japanese equities'],
-    ['Data Source', 'Infoway API (Japanese stock data), FSA EDINET (large shareholding disclosures)'],
-    ['Update Frequency', 'Several times daily (weekdays, automated via GitHub Actions)'],
-  ]
-
-  const qa = [
-    {
-      title: "Purpose of This Site",
-      content: `Free tools for understanding which themes are moving in the Japanese stock market are scarce. StockWaveJP automatically aggregates price change %, volume, and trading value for 72 investment themes — including Semiconductors, AI, Defense, and Inbound Tourism — making capital flow visible as a free dashboard. Our primary purpose is to provide objective data showing "what the market is focusing on now" — not investment advice or stock recommendations.`
-    },
-    {
-      title: "Background & Motivation",
-      content: `In stock markets, understanding the broad picture — not just individual stock analysis, but "which themes or sectors capital is flowing into" — is crucial for investment decisions. We wanted to build a place where anyone can freely access comparative theme data, and share the enjoyment of "reading the flow" of theme investing with more people.`
-    },
-  ]
-
   return (
     <div style={{ padding: '28px 32px 60px', maxWidth: '760px', margin: '0 auto' }}>
       <h1 style={{ fontSize: '24px', fontWeight: 700, color: '#e8f0ff', marginBottom: '4px' }}>
-        About StockWaveJP
+        当サイトについて
       </h1>
       <p style={{ fontSize: '12px', color: 'var(--text3)', marginBottom: '32px' }}>
-        Purpose and Background of StockWaveJP
+        StockWaveJP のPurposeと作成の背景
       </p>
 
-      {/* Main Vision */}
-      <div style={{ background: 'linear-gradient(135deg, rgba(74,158,255,0.1), rgba(25,35,60,0.3))',
-        border: '1px solid rgba(74,158,255,0.2)', borderRadius: '12px', padding: '24px 28px', marginBottom: '24px' }}>
-        <div style={{ fontSize: '18px', fontWeight: 700, color: '#4a9eff', marginBottom: '8px' }}>
-          "Making invisible capital flows visible to everyone"
+      {/* メインビジョン */}
+      <div style={{
+        background: 'linear-gradient(135deg, rgba(74,158,255,0.1), rgba(255,69,96,0.07))',
+        border: '1px solid rgba(74,158,255,0.2)',
+        borderRadius: '12px', padding: '28px 32px', marginBottom: '24px',
+      }}>
+        <div style={{ fontSize: '11px', fontWeight: 600, color: 'var(--accent)', letterSpacing: '0.15em',
+          textTransform: 'uppercase', marginBottom: '12px' }}>
+          Mission
         </div>
-        <p style={{ fontSize: '13px', color: 'var(--text2)', lineHeight: 1.9 }}>
-          StockWaveJP is designed to deliver maximum insight within limited analysis time — an objective data platform for Japanese stock theme investors.
-        </p>
+        <div style={{ fontSize: '20px', fontWeight: 700, color: '#e8f0ff', marginBottom: '20px', lineHeight: 1.5 }}>
+          StockWaveJPが目指すもの：主観を排した相場の可視化
+        </div>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
+          <p style={{ fontSize: '13px', color: 'var(--text2)', lineHeight: 2, margin: 0 }}>
+            株式市場において、投資家が分析に割ける時間は限られています。StockWaveJPは、その限られた時間の中で最大のインサイト（洞察）を得るために設計された客観的データプラットフォームです。
+          </p>
+          <p style={{ fontSize: '13px', color: 'var(--text2)', lineHeight: 2, margin: 0 }}>
+            独自のセクター分類と集計アルゴリズムにより、国内主要大型株の騰落トレンドを数値化。個別のニュースや主観的なバイアスを完全に排除し、純粋な資金の流入・流出という「事実」のみをランキング形式で直感的に表示します。
+          </p>
+          <p style={{ fontSize: '13px', color: 'var(--text2)', lineHeight: 2, margin: 0 }}>
+            複雑な分析にかかる労力を最小化し、誰もが瞬時に現在の相場の全体像を掴める。そんな「速さ」と「客観性」を両立したツールとして、皆様のフラットな投資判断に貢献します。
+          </p>
+        </div>
       </div>
 
-      {/* Unique Features */}
-      <div style={{ background: 'var(--bg2)', border: '1px solid var(--border)', borderRadius: '12px', padding: '24px 28px', marginBottom: '24px' }}>
-        <h2 style={{ fontSize: '15px', fontWeight: 700, color: 'var(--text)', marginBottom: '14px' }}>Features Unique to StockWaveJP</h2>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(220px,1fr))', gap: '12px' }}>
-          {features.map((f, i) => (
-            <div key={i} style={{ background: 'rgba(74,158,255,0.05)', border: '1px solid rgba(74,158,255,0.12)', borderRadius: '8px', padding: '12px 14px' }}>
-              <div style={{ fontSize: '18px', marginBottom: '4px' }}>{f.icon}</div>
-              <div style={{ fontSize: '12px', fontWeight: 700, color: 'var(--text)', marginBottom: '4px' }}>{f.title}</div>
-              <div style={{ fontSize: '11px', color: 'var(--text3)', lineHeight: 1.6 }}>{f.desc}</div>
+      {/* 独自機能バッジ */}
+      <div style={{ background:'var(--bg2)', border:'1px solid var(--border)',
+        borderRadius:'12px', padding:'22px 26px', marginBottom:'16px' }}>
+        <div style={{ display:'flex', alignItems:'center', gap:'10px', marginBottom:'16px' }}>
+          <span style={{ fontSize:'22px' }}>⚡</span>
+          <h2 style={{ fontSize:'15px', fontWeight:700, color:'#e8f0ff', margin:0,
+            borderLeft:'3px solid #ffd619', paddingLeft:'10px' }}>
+            StockWaveJPでしか見られない機能
+          </h2>
+        </div>
+        <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit,minmax(220px,1fr))', gap:'10px' }}>
+          {[
+            { icon:'📡', title:'Return Momentum', desc:'Five proprietary states: accelerating, turning up, flat, turning down and losing momentum' },
+            { icon:'🗺️', title:'Theme × Period Heatmap', desc:'Compare returns across 72 themes and multiple periods from one week to one year' },
+            { icon:'📊', title:'Three Metrics Together', desc:'Rank return, volume and trading value across 72 themes' },
+            { icon:'⚙️', title:'Custom Themes', desc:'Build and track your own stock groups' },
+            { icon:'📈', title:'Macro Context', desc:'View major market, FX and volatility indicators alongside themes' },
+            { icon:'📰', title:'Reports', desc:'Review theme rotation and subsequent ranking performance' },
+          ].map(({ icon, title, desc }) => (
+            <div key={title} style={{ background:'rgba(74,158,255,0.04)',
+              border:'1px solid rgba(74,158,255,0.15)', borderRadius:'8px',
+              padding:'12px 14px' }}>
+              <div style={{ fontSize:'18px', marginBottom:'6px' }}>{icon}</div>
+              <div style={{ fontSize:'12px', fontWeight:700, color:'var(--accent)', marginBottom:'4px' }}>{title}</div>
+              <div style={{ fontSize:'11px', color:'var(--text3)', lineHeight:1.7 }}>{desc}</div>
             </div>
           ))}
         </div>
       </div>
 
-      {/* Site Info */}
-      <div style={{ background: 'var(--bg2)', border: '1px solid var(--border)', borderRadius: '12px', padding: '24px 28px', marginBottom: '24px' }}>
-        <h2 style={{ fontSize: '15px', fontWeight: 700, color: 'var(--text)', marginBottom: '14px' }}>Site Information</h2>
-        <div style={{ display: 'grid', gridTemplateColumns: '140px 1fr', gap: '12px 20px', fontSize: '13px' }}>
-          {siteInfo.map(([label, value], i) => (
-            <div key={i} style={{ display: 'contents' }}>
-              <span style={{ color: 'var(--text3)', fontWeight: 600, fontSize: '11px', textTransform: 'uppercase', paddingTop: '2px' }}>{label}</span>
-              <span style={{ color: 'var(--text2)', lineHeight: 1.7 }}>{value}</span>
-            </div>
-          ))}
-        </div>
-      </div>
+      {[
+        {
+          icon: '🎯',
+          title: 'Purpose of This Site',
+          color: '#4a9eff',
+          content: `日本株の投資情報は、証券会社のツールや有料サービスに集中しており、初心者が「今どのテーマが動いているか」を無料で把握できる場所が少ないという課題がありました。
 
-      {/* Q&A */}
-      {qa.map((q, i) => (
-        <div key={i} style={{ background: 'var(--bg2)', border: '1px solid var(--border)', borderRadius: '12px', padding: '20px 24px', marginBottom: '16px' }}>
-          <h2 style={{ fontSize: '14px', fontWeight: 700, color: 'var(--text)', marginBottom: '10px' }}>{q.title}</h2>
-          <p style={{ fontSize: '13px', color: 'var(--text2)', lineHeight: 1.8 }}>{q.content}</p>
+StockWaveJPは、半導体・AI・防衛・インバウンドなど72の投資テーマについて、騰落率・出来高・売買代金を自動集計し、「資金の流れ」を視覚的に把握できるダッシュボードとして開発しました。
+
+投資助言や個別銘柄の推奨ではなく、「今市場は何を注目しているか」を客観的なデータで提供することを第一のPurposeとしています。`,
+        },
+        {
+          icon: '💡',
+          title: 'Background and Rationale',
+          color: '#aa77ff',
+          content: `株式市場では、個別銘柄の分析だけでなく「どのテーマやセクターに資金が流れているか」という大局観が投資判断に非常に重要です。しかし、テーマ別の騰落率・出来高・売買代金を一元管理できる無料ツールは国内に限られていました。
+
+特に投資初心者の方が「今日半導体が上がっているのはわかった、でも他のテーマはどうなの？」という疑問を持ったとき、比較できるデータに無料でアクセスできる場所を作りたいという思いから、このサイトを開発しました。
+
+また、テーマ株投資の「流れを読む」楽しさを、より多くの方に体験してもらいたいという思いも込めています。`,
+        },
+
+      ].map((sec, i) => (
+        <div key={i} style={{
+          background: 'var(--bg2)', border: '1px solid var(--border)',
+          borderRadius: '12px', padding: '22px 26px', marginBottom: '16px',
+          animation: `fadeUp 0.3s ease ${i * 0.08}s both`,
+        }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '14px' }}>
+            <span style={{ fontSize: '22px' }}>{sec.icon}</span>
+            <h2 style={{ fontSize: '15px', fontWeight: 700, color: '#e8f0ff', margin: 0,
+              borderLeft: `3px solid ${sec.color}`, paddingLeft: '10px' }}>
+              {sec.title}
+            </h2>
+          </div>
+          <div style={{ fontSize: '13px', color: 'var(--text2)', lineHeight: 2, whiteSpace: 'pre-line' }}>
+            {sec.content}
+          </div>
         </div>
       ))}
 
-      {/* Disclaimer */}
-      <div style={{ background: 'rgba(255,193,7,0.05)', border: '1px solid rgba(255,193,7,0.2)', borderRadius: '8px', padding: '14px 18px', marginBottom: '24px', fontSize: '12px', color: 'var(--text3)', lineHeight: 1.8 }}>
-        ⚠️ All information on this site is for reference purposes only and does not constitute a recommendation to buy or sell any specific stock. All investment decisions are the sole responsibility of the user.
+
+      {/* Operator情報 */}
+      <div style={{ background:'var(--bg2)', border:'1px solid var(--border)', borderRadius:'12px', padding:'22px 26px', marginBottom:'16px' }}>
+        <div style={{ display:'flex', alignItems:'center', gap:'10px', marginBottom:'14px' }}>
+          <span style={{ fontSize:'22px' }}>🏢</span>
+          <h2 style={{ fontSize:'15px', fontWeight:700, color:'#e8f0ff', margin:0,
+            borderLeft:'3px solid #4a9eff', paddingLeft:'10px' }}>
+            Operator情報
+          </h2>
+        </div>
+        <div style={{ display:'grid', gridTemplateColumns:'120px 1fr', gap:'12px 24px', fontSize:'13px', marginBottom:'14px' }}>
+          {[
+            ['Site name', 'StockWaveJP'],
+            ['URL', 'https://stockwavejp.com'],
+            ['Launched', 'March 2026'],
+            ['Operator', 'StockWaveJP Editorial Team (Japan and US equity investors)'],
+            ['Purpose', 'Visualize return, volume and trading value by Japanese equity theme at each plan’s update frequency and provide research reference information'],
+            ['Intended users', 'Individual investors and beginners interested in Japanese equities'],
+          ].map(([label, value], i) => (
+            <div key={i} style={{ display:'contents' }}>
+              <span style={{ color:'var(--text3)', fontWeight:600, letterSpacing:'0.05em', fontSize:'11px',
+                textTransform:'uppercase', alignSelf:'start', paddingTop:'2px' }}>{label}</span>
+              <span style={{ color:'var(--text2)', lineHeight:1.7 }}>
+                {label === 'Operator' ? (
+                  <a href="https://twitter.com/StockWaveJP" target="_blank" rel="noopener noreferrer"
+                    style={{ color:'var(--accent)', textDecoration:'none' }}>
+                    {value}
+                  </a>
+                ) : value}
+              </span>
+            </div>
+          ))}
+        </div>
+        <div style={{ fontSize:'13px', color:'var(--text2)', lineHeight:1.9 }}>
+          StockWaveJPは、日本株のテーマ別動向を視覚的に把握するためのダッシュボードです。
+          個別銘柄の推奨や投資助言は行っておらず、あくまで「市場全体のテーマの流れを把握する」ための
+          情報提供ツールです。実際の投資判断は、必ずご自身の責任において行ってください。
+        </div>
       </div>
 
-      {/* Contact */}
-      <div style={{ marginTop: '24px' }}>
-        <h2 style={{ fontSize: '15px', fontWeight: 700, color: 'var(--text)', marginBottom: '14px' }}>Contact & Feedback</h2>
-        <p style={{ fontSize: '13px', color: 'var(--text2)', lineHeight: 1.8, marginBottom: '16px' }}>
-          For bug reports, feature requests, or general feedback, please use the form below.
-        </p>
-        <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', alignItems: 'center' }}>
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLSeHLMXrJAttWONfyfe94OSsiP039PX5xi918R3kuDHFJ0Aiow/viewform?usp=dialog" target="_blank" rel="noopener noreferrer"
-            style={{
-              display: 'inline-flex', alignItems: 'center', gap: '8px',
-              background: 'rgba(74,158,255,0.1)', border: '1px solid rgba(74,158,255,0.3)',
-              borderRadius: '8px', padding: '12px 24px',
-              color: 'var(--accent)', textDecoration: 'none', fontWeight: 600, fontSize: '14px',
-            }}>
-            📬 Open Contact Form
-          </a>
-          <a href="https://twitter.com/StockWaveJP" target="_blank" rel="noopener noreferrer"
-            style={{
-              display: 'inline-flex', alignItems: 'center', gap: '8px',
-              background: 'rgba(91,156,246,0.1)', border: '1px solid rgba(91,156,246,0.25)',
-              borderRadius: '8px', padding: '12px 24px',
-              color: 'var(--accent)', textDecoration: 'none', fontWeight: 600, fontSize: '14px',
-            }}>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-            </svg>
-            X (Twitter) @StockWaveJP
-          </a>
+      {/* Operatorプロフィール */}
+      <div style={{ background:'var(--bg2)', border:'1px solid rgba(74,158,255,0.2)',
+        borderRadius:'12px', padding:'22px 26px', marginBottom:'16px' }}>
+        <div style={{ display:'flex', alignItems:'center', gap:'10px', marginBottom:'16px' }}>
+          <span style={{ fontSize:'22px' }}>👤</span>
+          <h2 style={{ fontSize:'15px', fontWeight:700, color:'#e8f0ff', margin:0,
+            borderLeft:'3px solid #aa77ff', paddingLeft:'10px' }}>
+            Operatorプロフィール
+          </h2>
         </div>
+        <div style={{ display:'flex', alignItems:'flex-start', gap:'20px', flexWrap:'wrap' }}>
+          <div style={{ width:'64px', height:'64px', borderRadius:'50%',
+            background:'linear-gradient(135deg,#4a9eff,#aa77ff)',
+            display:'flex', alignItems:'center', justifyContent:'center',
+            fontSize:'28px', flexShrink:0 }}>📊</div>
+          <div style={{ flex:1, minWidth:'200px' }}>
+            <div style={{ fontSize:'16px', fontWeight:700, color:'#e8f0ff', marginBottom:'4px' }}>
+              StockWaveJP編集部
+            </div>
+            <div style={{ fontSize:'12px', color:'var(--accent)', marginBottom:'12px', fontWeight:600 }}>
+              兼業日米株投資家
+            </div>
+            <div style={{ fontSize:'13px', color:'var(--text2)', lineHeight:2 }}>
+              日本株・米国株に投資する個人投資家として、テーマ株の資金フローを独自に追跡・分析しています。
+              「どのテーマに資金が集まっているか」「モメンタムはどう変化しているか」を客観的なデータで
+              可視化することで、感情に左右されない投資判断をサポートしたいという思いからStockWaveJPを開発しました。
+              <br /><br />
+              日米両市場の特性の違い（日本株のテーマ集中度の高さ・政策感応度の強さ）を踏まえた
+              分析視点を大切にしています。騰落率・出来高・売買代金・モメンタムの4指標を組み合わせた
+              テーマ分析アプローチを通じて、個人投資家が機関投資家と同じ目線でマーケットを俯瞰できる
+              ツールの提供を目指しています。
+            </div>
+            <div style={{ display:'flex', gap:'12px', marginTop:'14px', flexWrap:'wrap' }}>
+              {[
+                { label:'Investment style', value:'Theme momentum and long-term value investing' },
+                { label:'Markets',   value:'Japanese and US equities' },
+              ].map(({ label, value }) => (
+                <div key={label} style={{ background:'rgba(74,158,255,0.07)',
+                  border:'1px solid rgba(74,158,255,0.15)', borderRadius:'6px',
+                  padding:'6px 12px', fontSize:'11px' }}>
+                  <span style={{ color:'var(--text3)', marginRight:'6px' }}>{label}:</span>
+                  <span style={{ color:'var(--accent)', fontWeight:600 }}>{value}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* 連絡先 */}
+      <div style={{ textAlign: 'center', marginTop: '32px' }}>
+        <a href="https://twitter.com/StockWaveJP" target="_blank" rel="noopener noreferrer"
+          style={{
+            display: 'inline-flex', alignItems: 'center', gap: '10px',
+            background: 'rgba(91,156,246,0.1)', border: '1px solid rgba(91,156,246,0.25)',
+            borderRadius: '8px', padding: '12px 24px',
+            color: 'var(--accent)', textDecoration: 'none', fontWeight: 600, fontSize: '14px',
+          }}>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+          </svg>
+          X（旧Twitter）@StockWaveJP
+        </a>
       </div>
     </div>
   )

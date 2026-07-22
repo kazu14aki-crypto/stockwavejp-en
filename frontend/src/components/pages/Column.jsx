@@ -73,7 +73,7 @@ const THEME_ARTICLE_MAP = {
 import COLUMNS from './columnData'
 import { getGlobalStocksForThemes } from '../../data/globalRelatedStocks'
 
-const CATEGORIES = ['All', 'Theme', 'Basics', 'Analysis Methods', 'Strategy', 'Glossary', 'Stock Analysis']
+const CATEGORIES = ['All', ...Array.from(new Set(COLUMNS.map(c => c.category)))]
 
 const CAT_COLORS = {
   'Basics':           { bg:'rgba(74,158,255,0.1)',  color:'#4a9eff',  border:'rgba(74,158,255,0.25)' },
@@ -290,16 +290,13 @@ export default function Column({ initialArticleId = null, onNavigate }) {
         }}>
           ← Back to Column List
         </button>
-        <span style={{ fontSize:'11px', fontWeight:600, padding:'3px 10px', borderRadius:'20px',
-          background:cat.bg, color:cat.color, border:`1px solid ${cat.border}`,
-          display:'inline-block', marginBottom:'12px' }}>
-          {col.category}
-        </span>
-        <h1 style={{ fontSize:'20px', fontWeight:700, color:'#e8f0ff', lineHeight:1.5, marginBottom:'8px' }}>
-          {col.title}
-        </h1>
-        <div style={{ fontSize:'11px', color:'var(--text3)', marginBottom:'24px' }}>
-          {col.date}
+        <div className="column-article-heading">
+          <h1 style={{ fontSize:'20px', fontWeight:700, color:'#e8f0ff', lineHeight:1.5, margin:'0' }}>{col.title}</h1>
+          <div className="column-article-meta">
+            <span className="column-category-badge" style={{ fontSize:'10px', fontWeight:700, padding:'3px 9px', borderRadius:'20px', background:cat.bg, color:cat.color, border:`1px solid ${cat.border}` }}>{col.category}</span>
+            <span className="column-article-date">{col.date}</span>
+            {col.themes?.slice(0,2).map(theme => <span key={theme} className="column-theme-label">#{tn(theme)}</span>)}
+          </div>
         </div>
         <div style={{ background:'var(--bg2)', border:'1px solid var(--border)', borderRadius:'10px',
           padding:'6px 20px 20px', marginBottom:'28px' }}>
@@ -308,11 +305,13 @@ export default function Column({ initialArticleId = null, onNavigate }) {
         {globalRelatedStocks.length > 0 && (
           <div style={{ marginBottom:'24px', padding:'16px 18px', background:'var(--bg2)', border:'1px solid var(--border)', borderRadius:'10px' }}>
             <div style={{ fontSize:'13px', fontWeight:700, color:'var(--text)', marginBottom:'10px' }}>🌍 Global Related Companies</div>
-            <div style={{ display:'flex', flexWrap:'wrap', gap:'7px' }}>
+            <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit,minmax(220px,1fr))', gap:'8px' }}>
               {globalRelatedStocks.slice(0,12).map(stock => (
-                <span key={stock.ticker} style={{ padding:'6px 9px', borderRadius:'7px', background:'rgba(74,158,255,.07)', border:'1px solid rgba(74,158,255,.17)', fontSize:'10px', color:'var(--text2)' }}>
-                  <b style={{ color:'var(--accent)' }}>{stock.ticker}</b> {stock.name}
-                </span>
+                <div key={stock.ticker} style={{ padding:'10px', borderRadius:'8px', background:'rgba(74,158,255,.045)', border:'1px solid rgba(74,158,255,.15)' }}>
+                  <div style={{ display:'flex', justifyContent:'space-between', gap:'8px', marginBottom:'5px' }}><strong style={{ fontSize:'11px', color:'var(--text)' }}>{stock.name}</strong><span style={{ fontSize:'10px', fontFamily:'var(--mono)', color:'var(--accent)' }}>{stock.ticker}</span></div>
+                  <div style={{ fontSize:'10px', color:'var(--text2)', lineHeight:1.55 }}><b>Strength:</b> {stock.strength}</div>
+                  <div style={{ fontSize:'10px', color:'var(--text3)', lineHeight:1.55, marginTop:'3px' }}><b>Risk:</b> {stock.risk}</div>
+                </div>
               ))}
             </div>
           </div>
@@ -334,7 +333,7 @@ export default function Column({ initialArticleId = null, onNavigate }) {
                     🔗 Related Theme
             </div>
             <p style={{ fontSize:'12px', color:'var(--text2)', lineHeight:1.8, marginBottom:'12px' }}>
-              {'Related Themes: ' + col.themes.join('、')}
+              {'Related themes: ' + col.themes.map(tn).join(', ')}
             </p>
             <div style={{ display:'flex', flexDirection:'column', gap:'10px' }}>
               {col.themes.map(theme => (
@@ -594,6 +593,10 @@ export default function Column({ initialArticleId = null, onNavigate }) {
       <style>{`
         @media (max-width:640px) { .col-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 10px !important; } }
         @media (max-width:640px) { .col-grid > div { padding: 12px 12px !important; } }
+      `}</style>
+      <style>{`
+        .column-article-heading{margin-bottom:22px}.column-article-meta{display:flex;align-items:center;flex-wrap:wrap;gap:7px;margin-top:10px}.column-article-date{font-size:10px;color:var(--text3);font-family:var(--mono)}.column-theme-label{font-size:9px;color:var(--text3);padding:2px 7px;border-radius:999px;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.06)}
+        @media(max-width:640px){.column-article-heading h1{font-size:18px!important;line-height:1.55!important}.column-article-meta{gap:6px;margin-top:9px}}
       `}</style>
     </div>
   )

@@ -3,11 +3,10 @@ import { useSubscription } from '../../hooks/useSubscription.jsx'
 import { useAuth }         from '../../hooks/useAuth.jsx'
 
 export default function Settings({ viewMode, onViewModeChange, colorTheme, onColorThemeChange, isMobile, onNavigate }) {
-  const { plan, planLabel, isPro, isStandard, expiresAt } = useSubscription()
-  const { isLoggedIn, user } = useAuth()
-  const [cancelling,  setCancelling]  = useState(false)
-  const [cancelDone,  setCancelDone]  = useState(false)
-  const [cancelError, setCancelError] = useState(null)
+  const { plan, planLabel } = useSubscription()
+  const { isLoggedIn, user, signOut } = useAuth()
+  const [accountBusy,setAccountBusy]=useState(false)
+  const [accountError,setAccountError]=useState(null)
 
   const API = import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000'
 
@@ -28,52 +27,49 @@ export default function Settings({ viewMode, onViewModeChange, colorTheme, onCol
   ]
 
   const VIEW_MODES = [
-    { key:'auto',   label:'🖥️ Auto',   desc:'Auto-detect by screen width' },
+    { key:'auto',   label:'🖥️ Auto',   desc:'Detect from screen width' },
     { key:'mobile', label:'📱 Mobile', desc:'Force mobile layout' },
-    { key:'pc',     label:'💻 Desktop',    desc:'Force desktop layout' },
+    { key:'pc',     label:'💻 PC',    desc:'Force desktop layout' },
   ]
 
   const COLOR_DIRS = [
-    { key:'jp', label:'Japan Style', desc:'Rising=Red / Falling=Green (default)' },
-    { key:'us', label:'US Style', desc:'Rising=Green / Falling=Red' },
+    { key:'jp', label:'Japan style', desc:'Up = red / Down = green (default)' },
+    { key:'us', label:'US style', desc:'Up = green / Down = red' },
   ]
 
-  const [colorDir, setColorDirState] = useState(localStorage.getItem('swjp_color_dir') || 'jp')
+  const colorDir = localStorage.getItem('swjp_color_dir') || 'jp'
   const setColorDir = (v) => {
     localStorage.setItem('swjp_color_dir', v)
-    setColorDirState(v)
-    // CSSカスタムプロパティを即時変更
-    const root = document.documentElement
-    if (v === 'us') {
-      root.style.setProperty('--red',   '#1a9a50')  // US style: green=rising
-      root.style.setProperty('--green', '#e63030')  // US style: red=falling
-    } else {
-      root.style.setProperty('--red',   '')          // Japan style: reset to default
-      root.style.setProperty('--green', '')
-    }
     window.dispatchEvent(new Event('storage'))
   }
 
-  // Plan label color
+  // プランラベル色
   const planColor = { free:'#4a9eff', standard:'#ff8c42', pro:'#aa77ff', pro_trial:'#aa77ff', trial_expired:'#888', dev:'#00c48c' }[plan] || '#4a9eff'
 
-  // Cancellation handler
-  const handleCancel = async () => {
-    if (!window.confirm('Cancel your subscription?\nYou can continue to use the service for the remainder of your current billing period.')) return
-    setCancelling(true)
-    setCancelError(null)
+  const deleteAccount = async () => {
+    const first = window.confirm('Delete your account?\nSaved themes, settings and sign-in information cannot be restored.')
+    if (!first) return
+    const second = window.confirm('Final confirmation. Delete the account?\nThis action cannot be undone.')
+    if (!second) return
+    setAccountBusy(true)
+    setAccountError(null)
     try {
-      const res = await fetch(`${API}/api/stripe/cancel-subscription`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ user_id: user?.id }),
+      const { supabase } = await import('../../lib/supabase')
+      const { data:{ session } } = await supabase.auth.getSession()
+      const res = await fetch(`${API}/api/account/delete`, {
+        method:'POST',
+        headers:{ 'Content-Type':'application/json', 'Authorization':`Bearer ${session?.access_token || ''}` },
       })
-      if (!res.ok) throw new Error((await res.json()).detail || 'Failed to cancel subscription')
-      setCancelDone(true)
+      const d = await res.json()
+      if (!res.ok) throw new Error(d.detail || 'Account deletion failed')
+      await signOut()
+      localStorage.clear()
+      window.alert('Account deleted')
+      window.location.reload()
     } catch (e) {
-      setCancelError(e.message)
+      setAccountError(e.message)
     } finally {
-      setCancelling(false)
+      setAccountBusy(false)
     }
   }
 
@@ -87,9 +83,9 @@ export default function Settings({ viewMode, onViewModeChange, colorTheme, onCol
     <div style={{ padding:'20px 16px 60px', maxWidth:'700px', margin:'0 auto' }}>
       <h1 style={{ fontSize:'22px',fontWeight:700,color:'var(--text)',marginBottom:'20px' }}>⚙️ Settings</h1>
 
-      {/* ── Current Plan ── */}
+      {/* ── Current plan ── */}
       <Card>
-        <SLabel>💰 Current Plan</SLabel>
+        <SLabel>💰 Current plan</SLabel>
         {isLoggedIn ? (
           <>
             <div style={{ display:'flex', alignItems:'center', gap:'12px', marginBottom:'14px', flexWrap:'wrap' }}>
@@ -97,108 +93,45 @@ export default function Settings({ viewMode, onViewModeChange, colorTheme, onCol
               {plan === 'pro_trial' && (
                 <span style={{ fontSize:'11px', padding:'3px 10px', borderRadius:'20px',
                   background:'rgba(170,119,255,0.15)', color:'#aa77ff', border:'1px solid rgba(170,119,255,0.3)' }}>
-                  14-day free trial{(() => {
+                  14-day free trial active{(() => {
                     const fl = user?.user_metadata?.first_login_at
                     if (!fl) return ''
                     const end = new Date(new Date(fl).getTime() + 14*24*60*60*1000)
                     const rem = Math.max(0, Math.ceil((end - new Date()) / 86400000))
-                    return ' — ends ' + end.toLocaleDateString('en-US', {month:'long',day:'numeric',year:'numeric'}) + ' (' + rem + ' days remaining)'
+                    return ' End date: ' + end.toLocaleDateString('en-US', {year:'numeric',month:'long',day:'numeric'}) + ' (' + rem + ' days remaining)'
                   })()}
                 </span>
               )}
             </div>
             <div style={{ fontSize:'12px', color:'var(--text3)', marginBottom:'14px' }}>
-              {plan === 'free' && 'Free Plan: Access to basic features.'}
-              {plan === 'standard' && 'Standard Plan: ¥980/month. Access to all periods and archives.'}
-              {plan === 'pro' && 'Pro Plan: ¥1,980/month. Access to all features including institutional holdings.'}
-              {plan === 'trial_expired' && 'Your 14-day free trial has ended. Subscribe to a paid plan to continue enjoying full access.'}
-            {plan === 'pro_trial' && 'Pro Plan 14-day free trial. Automatically switches to Free plan after the trial period ends ends.'}
-              {plan === 'dev' && 'Developer account: All features available.'}
+              {plan === 'free' && 'Free: core features are available.'}
+              {plan === 'standard' && 'Standard: $9.90/month with all periods and full report archives.'}
+              {plan === 'pro' && 'Pro: $19.90/month with Pro features.'}
+              {plan === 'trial_expired' && 'The 14-day trial has ended. Subscribe to continue using paid features.'}
+            {plan === 'pro_trial' && '14-day Pro trial. The account automatically moves to Free when the trial ends.'}
+              {plan === 'dev' && 'Developer account: all features enabled.'}
             </div>
 
-            {/* Plan upgrade button */}
-            {(plan === 'free' || plan === 'pro_trial') && (
-              <button onClick={() => onNavigate?.('Plan & Pricing')}
-                style={{ ...btnBase, background:'var(--accent)', color:'#fff', border:'none', marginBottom:'10px' }}>
-                💰 Upgrade to Paid Plan
-              </button>
-            )}
-
-            {/* Cancel subscription button */}
-            {(plan === 'standard' || plan === 'pro' || plan === 'pro_trial') && !cancelDone && (
-              <div style={{ marginTop:'8px', padding:'14px', background:'rgba(255,100,100,0.08)',
-                border:'1px solid rgba(255,100,100,0.25)', borderRadius:'10px' }}>
-                <div style={{ fontSize:'13px', fontWeight:600, color:'#ff6464', marginBottom:'8px' }}>
-                  Cancel Subscription
-                </div>
-                <div style={{ fontSize:'12px', color:'var(--text3)', marginBottom:'10px', lineHeight:1.7 }}>
-                  You can continue using the service <strong>until the end of your billing period</strong>.<br/>
-                  After the next renewal date, your plan will automatically revert to Free.
-                </div>
-                {cancelError && (
-                  <div style={{ fontSize:'12px', color:'#ff4560', marginBottom:'8px' }}>
-                    ⚠️ {cancelError}
-                  </div>
-                )}
-                <button onClick={handleCancel} disabled={cancelling}
-                  style={{ ...btnBase, background:'rgba(255,100,100,0.15)', color:'#ff6464',
-                    border:'1px solid rgba(255,100,100,0.4)', opacity: cancelling ? 0.6 : 1 }}>
-                  {cancelling ? 'Processing...' : '🔴 Cancel Subscription'}
-                </button>
-                <div style={{ fontSize:'11px', color:'var(--text3)', marginTop:'8px', lineHeight:1.7 }}>
-                  * You can continue using the service until the end of your billing period.<br/>
-                  * If you subscribed during a free trial, your paid plan started at the time of subscription.
-                </div>
-              </div>
-            )}
-
-            {cancelDone && (
-              <div style={{ padding:'14px', background:'rgba(0,196,140,0.08)',
-                border:'1px solid rgba(0,196,140,0.3)', borderRadius:'10px', fontSize:'13px', color:'#00c48c' }}>
-                ✅ Cancellation complete. You can continue using the service until the end of your billing period.
-              </div>
-            )}
+            <button onClick={() => onNavigate?.('Plans & Pricing')}
+              style={{ ...btnBase, background:'rgba(74,158,255,0.1)', color:'var(--accent)',
+                border:'1px solid rgba(74,158,255,0.3)' }}>
+              Open Plans & Billing
+            </button>
           </>
         ) : (
           <div style={{ fontSize:'13px', color:'var(--text3)', lineHeight:1.7 }}>
-            Sign in with Google to manage your plan and sync Custom Themes across devices.<br/>
-            <button onClick={() => onNavigate?.('Plan & Pricing')}
+            Sign in with Google to manage plans and synchronize custom themes.<br/>
+            <button onClick={() => onNavigate?.('Plans & Pricing')}
               style={{ marginTop:'10px', ...btnBase, background:'var(--accent)', color:'#fff', border:'none' }}>
-              View Plans
+              View plans
             </button>
           </div>
         )}
       </Card>
 
-      {/* ── Payment Method ── */}
-      {(plan === 'standard' || plan === 'pro') && (
-        <Card>
-          <SLabel>💳 Payment & Billing</SLabel>
-          <div style={{ fontSize:'13px', color:'var(--text3)', lineHeight:1.7, marginBottom:'12px' }}>
-            To change your payment method or view billing history, please use the Stripe Customer Portal.
-          </div>
-          <button onClick={async () => {
-            try {
-              const res = await fetch(`${API}/api/stripe/create-portal`, {
-                method:'POST',
-                headers:{'Content-Type':'application/json'},
-                body: JSON.stringify({ user_id: user?.id })
-              })
-              const d = await res.json()
-              if (d.url) window.open(d.url, '_blank')
-              else alert('Failed to load the portal')
-            } catch { alert('Failed to load the portal') }
-          }}
-            style={{ ...btnBase, background:'rgba(74,158,255,0.1)', color:'var(--accent)',
-              border:'1px solid rgba(74,158,255,0.3)' }}>
-            🔗 Open Billing Portal
-          </button>
-        </Card>
-      )}
-
-      {/* ── Color Theme ── */}
+      {/* ── Appearance ── */}
       <Card>
-        <SLabel>🎨 Color Theme</SLabel>
+        <SLabel>🎨 Appearance</SLabel>
         <div style={{ display:'flex', gap:'10px', flexWrap:'wrap' }}>
           {COLOR_THEMES.map(t => (
             <button key={t.key} onClick={() => onColorThemeChange?.(t.key)}
@@ -214,9 +147,9 @@ export default function Settings({ viewMode, onViewModeChange, colorTheme, onCol
         </div>
       </Card>
 
-      {/* ── Rising/Falling Color ── */}
+      {/* ── RisingFallingカラー ── */}
       <Card>
-        <SLabel>📈 Rising/Falling Color</SLabel>
+        <SLabel>📈 Rising / Falling Colors</SLabel>
         <div style={{ display:'flex', gap:'10px', flexWrap:'wrap', marginBottom:'12px' }}>
           {COLOR_DIRS.map(d => (
             <button key={d.key} onClick={() => setColorDir(d.key)}
@@ -230,7 +163,7 @@ export default function Settings({ viewMode, onViewModeChange, colorTheme, onCol
             </button>
           ))}
         </div>
-        {/* ── Color example ── */}
+        {/* ④ RisingFallingカラーの例 */}
         <div style={{ display:'flex', gap:'10px', marginBottom:'10px' }}>
           <div style={{ fontSize:'12px', color:'var(--text3)', marginRight:'8px', lineHeight:'28px' }}>Example:</div>
           <div style={{ display:'flex', gap:'6px', alignItems:'center' }}>
@@ -250,14 +183,11 @@ export default function Settings({ viewMode, onViewModeChange, colorTheme, onCol
             <span style={{ fontSize:'11px', color:'var(--text3)' }}>Falling</span>
           </div>
         </div>
-        <div style={{ fontSize:'11px', color:'var(--text3)' }}>
-          * Changes take effect immediately
-        </div>
       </Card>
 
-      {/* ── Display Mode ── */}
+      {/* ── Layout mode ── */}
       <Card>
-        <SLabel>🖥️ Display Mode</SLabel>
+        <SLabel>🖥️ Layout mode</SLabel>
         <div style={{ display:'flex', gap:'10px', flexWrap:'wrap' }}>
           {VIEW_MODES.map(m => (
             <button key={m.key} onClick={() => onViewModeChange?.(m.key)}
@@ -272,6 +202,28 @@ export default function Settings({ viewMode, onViewModeChange, colorTheme, onCol
           ))}
         </div>
       </Card>
+
+      {/* ── Account Deletion（誤操作防止のため最下部） ── */}
+      {isLoggedIn && (
+        <Card style={{ marginTop:'34px', border:'1px solid rgba(255,100,100,.3)', background:'rgba(255,100,100,.045)' }}>
+          <SLabel>Account management</SLabel>
+          <div style={{ fontSize:'13px', fontWeight:700, color:'#ff647c', marginBottom:'7px' }}>Account Deletion</div>
+          <div style={{ fontSize:'11px', color:'var(--text3)', lineHeight:1.8, marginBottom:'12px' }}>
+            Deletes sign-in data, cloud-saved custom themes, favorites and user settings. The data cannot be restored.<br/>
+            Check the subscription status before deletion if a paid plan is active.
+          </div>
+          {accountError && <div style={{ fontSize:'11px', color:'#ff647c', marginBottom:'8px' }}>⚠ {accountError}</div>}
+          <button disabled={accountBusy} onClick={deleteAccount} style={{
+            ...btnBase, background:'transparent', color:'#ff647c',
+            border:'1px solid rgba(255,100,100,.45)', opacity:accountBusy ? .6 : 1,
+          }}>
+            {accountBusy ? 'Deleting...' : 'Delete account'}
+          </button>
+          <div style={{ fontSize:'10px', color:'var(--text3)', marginTop:'9px' }}>
+            Two confirmation prompts appear after pressing the button.
+          </div>
+        </Card>
+      )}
     </div>
   )
 }

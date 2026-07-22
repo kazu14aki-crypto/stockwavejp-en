@@ -17,7 +17,7 @@ function Loading() {
 
 function RenderMd({ text, onNavigate }) {
   if (!text) return null
-  // テーマ名を抽出するためのパターン（### X位: テーマ名 形式）
+  // Theme名を抽出するためのパターン（### X位: Theme名 形式）
   const lines = text.split('\n')
   const result = []
   let currentTheme = null
@@ -25,7 +25,7 @@ function RenderMd({ text, onNavigate }) {
   for (let i = 0; i < lines.length; i++) {
     const line = lines[i]
 
-    // ### 1位: SaaS のような行からテーマ名を抽出
+    // ### 1位: SaaS のような行からTheme名を抽出
     const themeMatch = line.match(/^###?\s*(?:\d+位[：:]\s*)?(.+?)(?:（.+）)?$/)
 
     if (line.startsWith('# ')) {
@@ -34,11 +34,11 @@ function RenderMd({ text, onNavigate }) {
       result.push(<h2 key={i} style={{ fontSize:'16px', fontWeight:700, color:'var(--text)', margin:'18px 0 8px' }}>{line.slice(3)}</h2>)
     } else if (line.startsWith('### ')) {
       const title = line.slice(4)
-      // テーマ名を「位：」の後ろから抽出
+      // Theme名を「位：」の後ろから抽出
       const m = title.match(/\d+位[：:]\s*(.+?)(?:\s*（|$)/)
       currentTheme = m ? m[1].trim() : null
       result.push(<h3 key={i} style={{ fontSize:'14px', fontWeight:700, color:'var(--text2)', margin:'14px 0 6px' }}>{title}</h3>)
-    } else if (line.startsWith('- ') || line.startsWith('• ')) {
+    } else if (line.startsWith('- ') || line.startsWith('・')) {
       result.push(
         <div key={i} style={{ display:'flex', gap:'8px', marginBottom:'4px', paddingLeft:'8px' }}>
           <span style={{ color:'var(--accent)', flexShrink:0 }}>▸</span>
@@ -164,7 +164,7 @@ function ReportCard({ entry, isActive, onClick, isLocked, onUpgrade }) {
         <div style={{ padding:'5px 12px', background:'rgba(74,158,255,0.1)',
           border:'1px solid rgba(74,158,255,0.3)', borderRadius:'6px',
           fontSize:'11px', color:'var(--accent)', fontWeight:600, flexShrink:0 }}>
-          Standard or above: view all periods
+          Standard or above unlocks all periods
         </div>
       </div>
     </div>
@@ -186,9 +186,9 @@ function ReportCard({ entry, isActive, onClick, isLocked, onUpgrade }) {
       </div>
       <div style={{ display:'flex', alignItems:'center', gap:'10px', flexWrap:'wrap' }}>
         <span style={{ fontSize:'18px', fontWeight:800, fontFamily:'var(--mono)', color:col }}>
-          {avg >= 0 ? '+' : ''}{avg?.toFixed(2)}%
+          {Number.isFinite(avg) ? `${avg >= 0 ? '+' : ''}${avg.toFixed(2)}%` : 'Not calculated'}
         </span>
-        <span style={{ fontSize:'10px', color:'var(--text3)' }}>Weekly Theme Avg</span>
+        <span style={{ fontSize:'10px', color:'var(--text3)' }}>Weekly theme average</span>
         {entry.generated_at && (
           <span style={{ fontSize:'10px', color:'var(--text3)', marginLeft:'auto' }}>
             {entry.generated_at.slice(0, 10)}
@@ -204,9 +204,20 @@ function ReportCard({ entry, isActive, onClick, isLocked, onUpgrade }) {
   )
 }
 
+
+function RankingFollowup({ data, onNavigate }) {
+  if (!data) return null
+  const rows = data.rows || []
+  return <div style={{background:'var(--bg2)',border:'1px solid var(--border)',borderRadius:'12px',padding:'16px 18px',marginBottom:'16px'}}>
+    <div style={{fontSize:'13px',fontWeight:700,color:'var(--text)',marginBottom:'5px'}}>🔍 Follow-up Performance of Prior Rankings</div>
+    <div style={{fontSize:'10px',color:'var(--text3)',lineHeight:1.6,marginBottom:'10px'}}>{data.note || 'Tracks how prior leading themes performed against the market proxy afterward.'}</div>
+    {rows.length ? <div style={{overflowX:'auto'}}><table style={{width:'100%',borderCollapse:'collapse',minWidth:'520px'}}><thead><tr>{['Prior rank','Theme','Subsequent return','Market proxy','Excess','Result'].map(h=><th key={h} style={{fontSize:'10px',color:'var(--text3)',textAlign:'right',padding:'6px',borderBottom:'1px solid var(--border)'}}>{h}</th>)}</tr></thead><tbody>{rows.map(r=><tr key={r.theme} onClick={()=>onNavigate?.('Theme Detail',r.theme)} style={{cursor:'pointer'}}><td style={{padding:'7px',fontSize:'11px',textAlign:'right',color:'var(--text3)'}}>{r.rank}</td><td style={{padding:'7px',fontSize:'11px',color:'var(--text)',fontWeight:600}}>{tn(r.theme)}</td>{['return_pct','market_pct','excess_pct'].map(k=><td key={k} style={{padding:'7px',fontSize:'11px',textAlign:'right',fontFamily:'var(--mono)',color:Number(r[k])>=0?'var(--red)':'var(--green)'}}>{Number.isFinite(Number(r[k]))?`${Number(r[k])>=0?'+':''}${Number(r[k]).toFixed(2)}%`:'Not calculated'}</td>)}<td style={{padding:'7px',fontSize:'11px',textAlign:'right',color:r.hit?'var(--red)':'var(--text3)'}}>{r.hit?'Outperformed':'Below market'}</td></tr>)}</tbody></table></div> : <div style={{fontSize:'11px',color:'var(--text3)',padding:'12px 0'}}>Calculated automatically after sufficient history is available.</div>}
+  </div>
+}
+
 export default function WeeklyReport({ onNavigate }) {
   const { isStandard, isDev } = useSubscription()
-  const canViewRecent = isStandard || isDev  // Free: only reports older than 1 month
+  const canViewRecent = isStandard || isDev  // Freeは1ヶ月以上前のみ閲覧可
   const [report,    setReport]    = useState(null)
   const [index,     setIndex]     = useState([])
   const [loading,   setLoading]   = useState(true)
@@ -264,24 +275,24 @@ export default function WeeklyReport({ onNavigate }) {
     const { summary } = report || {}
     return (
       <div style={{ padding:'20px 24px 80px', maxWidth:'860px', margin:'0 auto' }}>
-        {/* Back button */}
+        {/* 戻るボタン */}
         <button onClick={() => setShowReport(false)} style={{
           display:'flex', alignItems:'center', gap:'6px', marginBottom:'16px',
           background:'transparent', border:'1px solid var(--border)', borderRadius:'6px',
           color:'var(--text2)', cursor:'pointer', fontSize:'12px', padding:'6px 12px',
           fontFamily:'var(--font)',
         }}>
-          ← Back to Report List
+          ← Back to report list
         </button>
 
-        {/* Header */}
+        {/* ヘッダー */}
         <div style={{ background:'linear-gradient(135deg,rgba(91,156,246,0.1),rgba(170,119,255,0.08))',
           border:'1px solid var(--border)', borderRadius:'12px', padding:'20px 24px', marginBottom:'16px' }}>
           <div style={{ fontSize:'11px', color:'var(--text3)', marginBottom:'6px', letterSpacing:'0.1em', textTransform:'uppercase' }}>
             📰 Weekly Market Report
           </div>
           <h1 style={{ fontSize:'18px', fontWeight:700, color:'var(--text)', marginBottom:'8px' }}>
-            {report?.title || 'No report available'}
+            {report?.title || 'No report'}
           </h1>
           <div style={{ display:'flex', alignItems:'center', gap:'12px', flexWrap:'wrap', fontSize:'11px', color:'var(--text3)' }}>
             <span>Created: {report?.generated_at}</span>
@@ -293,20 +304,28 @@ export default function WeeklyReport({ onNavigate }) {
           {summary && (
             <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit,minmax(110px,1fr))', gap:'8px', marginTop:'14px' }}>
               <div style={{ background:'var(--bg2)', borderRadius:'8px', padding:'8px 12px', textAlign:'center' }}>
-                <div style={{ fontSize:'10px', color:'var(--text3)', marginBottom:'3px' }}>Weekly Avg</div>
+                <div style={{ fontSize:'10px', color:'var(--text3)', marginBottom:'3px' }}>Weekly average</div>
                 <div style={{ fontSize:'17px', fontWeight:700, fontFamily:'var(--mono)',
                   color: summary.avg_pct_1w >= 0 ? 'var(--red)' : 'var(--green)' }}>
-                  {summary.avg_pct_1w >= 0 ? '+' : ''}{summary.avg_pct_1w}%
+                  {Number.isFinite(summary.avg_pct_1w) ? `${summary.avg_pct_1w >= 0 ? '+' : ''}${summary.avg_pct_1w}%` : 'Not calculated'}
                 </div>
               </div>
               <div style={{ background:'var(--bg2)', borderRadius:'8px', padding:'8px 12px', textAlign:'center' }}>
-                <div style={{ fontSize:'10px', color:'var(--text3)', marginBottom:'3px' }}>Rising</div>
-                <div style={{ fontSize:'17px', fontWeight:700, color:'var(--red)' }}>{summary.rise_count}</div>
+                <div style={{ fontSize:'10px', color:'var(--text3)', marginBottom:'3px' }}>Rising themes</div>
+                <div style={{ fontSize:'17px', fontWeight:700, color:'var(--red)' }}>{Number.isFinite(summary.rise_count) ? summary.rise_count : 'Not calculated'}</div>
               </div>
               <div style={{ background:'var(--bg2)', borderRadius:'8px', padding:'8px 12px', textAlign:'center' }}>
-                <div style={{ fontSize:'10px', color:'var(--text3)', marginBottom:'3px' }}>Falling</div>
-                <div style={{ fontSize:'17px', fontWeight:700, color:'var(--green)' }}>{summary.fall_count}</div>
+                <div style={{ fontSize:'10px', color:'var(--text3)', marginBottom:'3px' }}>Falling themes</div>
+                <div style={{ fontSize:'17px', fontWeight:700, color:'var(--green)' }}>{Number.isFinite(summary.fall_count) ? summary.fall_count : 'Not calculated'}</div>
               </div>
+            </div>
+          )}
+
+          {summary?.data_status && (
+            <div style={{ marginTop:'10px', padding:'7px 10px', borderRadius:'6px',
+              background:'rgba(255,184,77,0.08)', border:'1px solid rgba(255,184,77,0.22)',
+              color:'var(--text2)', fontSize:'10px', lineHeight:1.6 }}>
+              ⚠️ {summary.data_status}
             </div>
           )}
 
@@ -319,9 +338,9 @@ export default function WeeklyReport({ onNavigate }) {
                     fontSize:'11px', marginBottom:'3px', padding:'3px 8px',
                     background:'rgba(255,83,112,0.06)', borderRadius:'4px', cursor: onNavigate ? 'pointer' : 'default' }}
                     onClick={() => onNavigate?.('Theme Detail', t.theme)}>
-                    <span style={{ color:'var(--text2)' }}>{i+1}. {t.theme}</span>
+                    <span style={{ color:'var(--text2)' }}>{i+1}. {tn(t.theme)}</span>
                     <span style={{ color:'var(--red)', fontFamily:'var(--mono)', fontWeight:700, marginLeft:'6px', flexShrink:0 }}>
-                      {t.pct >= 0 ? '+' : ''}{t.pct?.toFixed(1)}%
+                      {Number.isFinite(t.pct) ? `${t.pct >= 0 ? '+' : ''}${t.pct.toFixed(1)}%` : 'Qualitative'}
                     </span>
                   </div>
                 ))}
@@ -333,9 +352,9 @@ export default function WeeklyReport({ onNavigate }) {
                     fontSize:'11px', marginBottom:'3px', padding:'3px 8px',
                     background:'rgba(0,196,140,0.06)', borderRadius:'4px', cursor: onNavigate ? 'pointer' : 'default' }}
                     onClick={() => onNavigate?.('Theme Detail', t.theme)}>
-                    <span style={{ color:'var(--text2)' }}>{i+1}. {t.theme}</span>
+                    <span style={{ color:'var(--text2)' }}>{i+1}. {tn(t.theme)}</span>
                     <span style={{ color:'var(--green)', fontFamily:'var(--mono)', fontWeight:700, marginLeft:'6px', flexShrink:0 }}>
-                      {t.pct >= 0 ? '+' : ''}{t.pct?.toFixed(1)}%
+                      {Number.isFinite(t.pct) ? `${t.pct >= 0 ? '+' : ''}${t.pct.toFixed(1)}%` : 'Qualitative'}
                     </span>
                   </div>
                 ))}
@@ -345,18 +364,20 @@ export default function WeeklyReport({ onNavigate }) {
 
           {summary?.top5_themes && onNavigate && (
             <div style={{ marginTop:'12px', display:'flex', flexWrap:'wrap', gap:'6px' }}>
-              <span style={{ fontSize:'10px', color:'var(--text3)', alignSelf:'center' }}>Featured Themes:</span>
+              <span style={{ fontSize:'10px', color:'var(--text3)', alignSelf:'center' }}>Review featured themes:</span>
               {summary.top5_themes.slice(0,3).map(t => (
                 <button key={t.theme} onClick={() => onNavigate('Theme Detail', t.theme)}
                   style={{ padding:'4px 10px', borderRadius:'5px', fontSize:'11px', fontFamily:'var(--font)',
                     background:'rgba(170,119,255,0.1)', border:'1px solid rgba(170,119,255,0.3)',
                     color:'#aa77ff', cursor:'pointer', fontWeight:600 }}>
-                  📊 {t.theme}
+                  📊 {tn(t.theme)}
                 </button>
               ))}
             </div>
           )}
         </div>
+
+        <RankingFollowup data={report?.ranking_followup} onNavigate={onNavigate} />
 
         {loading ? <Loading /> : (
           <div style={{ background:'var(--bg2)', border:'1px solid var(--border)', borderRadius:'12px', padding:'24px 28px' }}>
@@ -366,11 +387,11 @@ export default function WeeklyReport({ onNavigate }) {
 
         <div style={{ marginTop:'14px', padding:'10px 14px', background:'rgba(255,255,255,0.02)',
           border:'1px solid rgba(255,255,255,0.05)', borderRadius:'8px', fontSize:'11px', color:'var(--text3)', lineHeight:1.7 }}>
-          ⚠️ This report is for informational purposes only based on StockWaveJP market data. Not a recommendation to buy or sell any security.
-          
+          ⚠️ This report is reference information based on StockWaveJP market data and is not a recommendation to buy or sell any security. 
+          <strong style={{ color:'var(--text2)' }}>Investment decisions remain your responsibility.</strong>
         </div>
 
-        {/* Back to list button */}
+        {/* ④ 最下部に一覧に戻るボタン */}
         <div style={{ textAlign:'center', marginTop:'24px' }}>
           <button onClick={() => setShowReport(false)} style={{
             padding:'10px 28px', borderRadius:'8px', fontSize:'13px', fontWeight:600,
@@ -378,7 +399,7 @@ export default function WeeklyReport({ onNavigate }) {
             background:'rgba(74,158,255,0.1)', border:'1px solid rgba(74,158,255,0.3)',
             color:'var(--accent)',
           }}>
-            ← Back to Report List
+            ← Back to report list
           </button>
         </div>
 
@@ -390,17 +411,17 @@ export default function WeeklyReport({ onNavigate }) {
   // ① カード一覧モード（コラム形式）
   return (
     <div style={{ padding:'20px 24px 80px', maxWidth:'960px', margin:'0 auto' }}>
-      <h1 style={{ fontSize:'20px', fontWeight:700, color:'var(--text)', marginBottom:'4px' }}>📰 Weekly Market Reports</h1>
+      <h1 style={{ fontSize:'20px', fontWeight:700, color:'var(--text)', marginBottom:'4px' }}>📰 Weekly Report</h1>
 
       {error && index.length === 0 ? (
         <div style={{ textAlign:'center', padding:'40px' }}>
           <div style={{ fontSize:'48px', marginBottom:'16px' }}>📭</div>
-          <div style={{ color:'var(--text2)', fontSize:'15px' }}>No reports available yet</div>
-          <div style={{ color:'var(--text3)', fontSize:'12px', marginTop:'4px' }}>Published every weekend</div>
+          <div style={{ color:'var(--text2)', fontSize:'15px' }}>No reports are available yet</div>
+          <div style={{ color:'var(--text3)', fontSize:'12px', marginTop:'4px' }}>Scheduled for weekly updates</div>
         </div>
       ) : (
         <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fill,minmax(280px,1fr))', gap:'12px' }}>
-          {/* Latest report first */}
+          {/* 最新レポートを先頭に */}
           {[...index].sort((a, b) => {
             // dateフィールド優先、なければweekで比較
             const da = a.date ? a.date.replace(/\//g, '-') : a.week
@@ -425,7 +446,7 @@ export default function WeeklyReport({ onNavigate }) {
                 loadArchive(entry.week)
               }}
             isLocked={isLocked}
-            onUpgrade={() => onNavigate?.('Plan & Pricing')}
+            onUpgrade={() => onNavigate?.('Plans & Pricing')}
             />
             )
           })}
