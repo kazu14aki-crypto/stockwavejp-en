@@ -47,7 +47,7 @@ const THEME_NAME_EN = {
   'SaaS': 'SaaS',
   'DX': 'DX',
   'MLCC・電子部品': 'MLCC/Electronic Components',
-  'バフェット銘柄': 'Buffett Picks',
+  'バフェットStock': 'Buffett Picks',
   '親子上場': 'Parent-Child Listing',
   'フィンテック': 'Fintech',
   'ロボット・自動化': 'Robotics & Automation',
@@ -170,11 +170,11 @@ function genThemeComment(themes, summary, period, momentum) {
   const top     = themes[0]
   const bot     = themes[themes.length - 1]
 
-  // surging・plungingテーマ
+  // surging・plungingTheme
   const hotThemes  = themes.filter(t => t.pct >= 5).map(t => tn(t.theme))
   const coldThemes = themes.filter(t => t.pct <= -5).map(t => tn(t.theme))
 
-  // Volume急増テーマ（vs prev+30%以上）
+  // Volume急増Theme（vs prev+30%以上）
   const volSurge = themes.filter(t => (t.volume_chg || 0) >= 30).map(t => tn(t.theme))
 
   // モメンタム（accelerating・decelerating）
@@ -190,12 +190,12 @@ function genThemeComment(themes, summary, period, momentum) {
   // トップ・ボトム
   lines.push(`Top Rising: '${tn(top?.theme)}' (${top?.pct >= 0 ? '+' : ''}${top?.pct?.toFixed(2)}%), Top Falling: '${tn(bot?.theme)}' (${bot?.pct >= 0 ? '+' : ''}${bot?.pct?.toFixed(2)}%). Spread: ${Math.abs((top?.pct||0)-(bot?.pct||0)).toFixed(1)}pt.`)
 
-  // surgingテーマ
+  // surgingTheme
   if (hotThemes.length > 0) {
   lines.push(`▲ Surging 5%+: ${hotThemes.slice(0, 3).join(', ')}${hotThemes.length > 3 ? ` and ${hotThemes.length - 3} more` : ''}. Strong trend with concentrated capital flows.`)
   }
 
-  // plungingテーマ
+  // plungingTheme
   if (coldThemes.length > 0) {
   lines.push(`▼ Falling 5%+: ${coldThemes.slice(0, 3).join(', ')}${coldThemes.length > 3 ? ` and ${coldThemes.length - 3} more` : ''}. Possible overheating correction or external pressure.`)
   }
@@ -286,7 +286,7 @@ const THEME_ARTICLE_MAP = {
   '宇宙・衛星':        'space-satellite-theme',
   'ロボット・自動化':  'robot-automation-theme',
   'レアアース・資源':  'rare-earth-resources-theme',
-  'バフェット銘柄':    'sogo-shosha-analysis',
+  'バフェットStock':    'sogo-shosha-analysis',
   'サイバーセキュリティ': 'cybersecurity-theme',
   '警備':              'cybersecurity-theme',
   '脱炭素・ESG':       'ev-green-theme',
@@ -512,7 +512,7 @@ function HBarChart({ items, valueKey = 'pct', formatFn, colorFn, title, emptyMsg
         {items.map((item, i) => {
           const v     = item[valueKey] || 0
           const color = colorFn(v)
-          // 幅はMax値基準で0〜100%
+          // 幅はMax値Data as ofで0〜100%
           const w = Math.abs(v) / maxAbs * 100
 
           return (
@@ -727,7 +727,7 @@ function ThemeCard({ item, rank, maxAbs, valueKey='pct', barColor, pctColor, pct
                 {rankTag(tvRank, '#ff8c42')}
               </span>
             </div>
-            {/* テーマ詳細ボタン + 関連コラムリンク */}
+            {/* Theme詳細ボタン + 関連コラムリンク */}
             {onNavigate && (
               <button
                 onClick={e => { e.stopPropagation(); onNavigate('Theme Detail', item.theme) }}
@@ -849,13 +849,13 @@ function ThemeCardGrid({ items, pctColor, valueKey='pct', barColor, pctRankMap, 
 }
 
 
-// ── Monthlyテーマ別折れ線グラフ ─────────────────────────────────
+// ── MonthlyTheme別折れ線グラフ ─────────────────────────────────
 const MONTHLY_COLORS = [
   '#4a9eff', '#ff5370', '#00c48c', '#ffd166',
   '#aa77ff', '#ff8c42', '#4ecdc4', '#ff6b6b',
 ]
 
-// Monthlyチャートの共通テーマ選択UI（Return・Volume・Trade Valueで共有）
+// Monthlyチャートの共通Theme選択UI（Return・Volume・Trade Valueで共有）
 function MonthlyThemePicker({ allThemes, selected, setSelected }) {
   const [showPicker, setShowPicker] = useState(false)
   const toggleTheme = t =>
@@ -1258,6 +1258,8 @@ function MonthlyTVChart({ volTrendData, allThemeNames, months }) {
 
 export default function ThemeList({ onNavigate }) {
   const [period, setPeriod] = useState('1mo')
+  const [rankingMetric, setRankingMetric] = useState('pct')
+  const [rankingOrder, setRankingOrder] = useState('desc')
   const { data: monthlyRaw } = useMonthlyHeatmap()
   const monthlyData = monthlyRaw?.data || null
   const months = monthlyRaw?.months || []
@@ -1302,6 +1304,22 @@ export default function ThemeList({ onNavigate }) {
   const byPctAsc = [...themes].sort((a, b) => a.pct - b.pct)
   const byVol    = [...themes].sort((a, b) => (b.volume || 0) - (a.volume || 0))
   const byTV     = [...themes].sort((a, b) => (b.trade_value || 0) - (a.trade_value || 0))
+  const marketPct = pct1306 ?? pct1321 ?? 0
+  const rankingConfig = {
+    pct:{label:'Return'},
+    relative_pct:{label:'Market-Excess Return',color:'#aa77ff'},
+    volume:{label:'Volume',color:'#378ADD'},
+    trade_value:{label:'Trading Value',color:'#ff8c42'},
+  }[rankingMetric]
+  const rankingItems = [...themes].sort((a,b) => {
+    const value = item => rankingMetric === 'relative_pct'
+      ? Number(item.pct || 0) - Number(marketPct || 0)
+      : Number(item[rankingMetric] || 0)
+    return rankingOrder === 'desc' ? value(b) - value(a) : value(a) - value(b)
+  }).map(item => rankingMetric === 'relative_pct'
+    ? {...item, relative_pct:Number(item.pct || 0)-Number(marketPct || 0)}
+    : item)
+
   // ランクマップ（Theme Name→順位）
   const pctRankMap = new Map(themes.map((t, i) => [t.theme, i + 1]))
   const volRankMap = new Map(byVol.map((t, i) => [t.theme, i + 1]))
@@ -1336,7 +1354,7 @@ export default function ThemeList({ onNavigate }) {
         {/* 説明文 */}
         <div style={{ background:'rgba(74,158,255,0.05)', border:'1px solid rgba(74,158,255,0.15)',
           borderRadius:'8px', padding:'12px 16px', marginBottom:'12px', fontSize:'13px', color:'var(--text)', lineHeight:1.9 }}>
-            Compare Return, Volume, and Trading Value across 67 Japanese stock themes.
+            Compare Return, Volume, and Trading Value across 72 Japanese stock themes.
             Switch periods (1W to 1Y) to identify both short-term capital inflows and long-term trends.
           <br />
           <span style={{ fontSize:'11px', color:'var(--text2)' }}>
@@ -1364,7 +1382,7 @@ export default function ThemeList({ onNavigate }) {
                 arrow={summary.rise > summary.fall ? 'up' : summary.rise < summary.fall ? 'down' : null}
             sub={`Falling: ${summary.fall}`} />
               <KpiCard delay={0.1}
-                label="All ThemesAvgReturn"
+                label="All-Theme Average Return"
                 value={`${summary.avg >= 0 ? '+' : ''}${summary.avg?.toFixed(2)}%`}
                 valueColor={summary.avg >= 0 ? 'var(--red)' : 'var(--green)'}
                 arrow={summary.avg >= 0 ? 'up' : 'down'}
@@ -1423,10 +1441,36 @@ export default function ThemeList({ onNavigate }) {
               </div>
             )}
 
-            {/* All Themes Returnランキング（カードグリッド） */}
-        <SectionHead title="📊 All Themes Return Ranking" />
-            <ThemeCardGrid items={themes} pctColor={pctColor} valueKey="pct" pctRankMap={pctRankMap} volRankMap={volRankMap} tvRankMap={tvRankMap} onNavigate={onNavigate} momentumMap={momentumMap} />
-
+            {/* Unified all-theme ranking */}
+            <SectionHead title="📊 All-Theme Ranking" />
+            <div className="ranking-controls" style={{ display:'flex', gap:'8px', alignItems:'center', flexWrap:'wrap', marginBottom:'12px', padding:'10px 12px', background:'var(--bg2)', border:'1px solid var(--border)', borderRadius:'10px' }}>
+              <span className="ranking-metric-label" style={{ fontSize:'11px', color:'var(--text3)', fontWeight:600 }}>Metric</span>
+              <select className="ranking-select" aria-label="Ranking metric" value={rankingMetric} onChange={e => setRankingMetric(e.target.value)} style={selStyle}>
+                <option value="pct">Return</option>
+                <option value="relative_pct">Market-Excess Return</option>
+                <option value="volume">Volume</option>
+                <option value="trade_value">Trading Value</option>
+              </select>
+              <span className="ranking-order-label" style={{ fontSize:'11px', color:'var(--text3)', fontWeight:600 }}>Order</span>
+              <select className="ranking-select" aria-label="Ranking order" value={rankingOrder} onChange={e => setRankingOrder(e.target.value)} style={selStyle}>
+                <option value="desc">Descending (high to low)</option>
+                <option value="asc">Ascending (low to high)</option>
+              </select>
+              <span className="ranking-summary" style={{ marginLeft:'auto', fontSize:'11px', color:'var(--text3)' }}>
+                {rankingConfig.label} · {rankingOrder==='desc'?'High to low':'Low to high'}
+              </span>
+            </div>
+            <ThemeCardGrid
+              items={rankingItems}
+              pctColor={pctColor}
+              valueKey={rankingMetric}
+              barColor={rankingConfig.color}
+              pctRankMap={pctRankMap}
+              volRankMap={volRankMap}
+              tvRankMap={tvRankMap}
+              onNavigate={onNavigate}
+              momentumMap={rankingMetric==='pct' ? momentumMap : undefined}
+            />
 
             {/* マイCustom Theme（Returnつき） */}
             {customThemes.length > 0 && (
@@ -1435,14 +1479,6 @@ export default function ThemeList({ onNavigate }) {
                 <CustomThemeRows themes={customThemes} period={period} pctColor={pctColor} />
               </>
             )}
-
-            {/* All Themes Volumeランキング（カードグリッド） */}
-        <SectionHead title="🔢 All Themes Volume Ranking" />
-            <ThemeCardGrid items={byVol} pctColor={pctColor} valueKey="volume" barColor="#378ADD" pctRankMap={pctRankMap} volRankMap={volRankMap} tvRankMap={tvRankMap} onNavigate={onNavigate} />
-
-            {/* All Themes Trade Valueランキング（カードグリッド） */}
-        <SectionHead title="💴 All Themes Trade Value Ranking" />
-            <ThemeCardGrid items={byTV} pctColor={pctColor} valueKey="trade_value" barColor="#ff8c42" pctRankMap={pctRankMap} volRankMap={volRankMap} tvRankMap={tvRankMap} onNavigate={onNavigate} />
 
             {/* 📅 Monthlyグラフ ＋ Heatmap: PC版2×2グリッド */}
             {Object.keys(volTrendData).length > 0 && months.length > 0 && (() => {
@@ -1470,7 +1506,7 @@ export default function ThemeList({ onNavigate }) {
                       <MonthlyTVChart volTrendData={volTrendData} allThemeNames={allThemeNames} months={months} />
                     </ExpandableChart>
                   </div>
-                  {/* テーマHeatmap（BubbleScatter） */}
+                  {/* ThemeHeatmap（BubbleScatter） */}
                   <div className="monthly-chart-cell">
                     <div style={{ fontSize:'13px', fontWeight:700, color:'var(--text)', marginBottom:'8px' }}>🔥 Theme Heatmap</div>
           <ExpandableChart title="Theme Heatmap (Capital Flow)" showZoneDesc>
@@ -1560,6 +1596,9 @@ export default function ThemeList({ onNavigate }) {
       <style>{`
         @media (max-width: 640px) {
           .mobile-hidden-card { display: none !important; }
+          .ranking-controls { display:grid !important; grid-template-columns:auto minmax(0,1fr) minmax(0,1fr) !important; gap:6px !important; flex-wrap:nowrap !important; }
+          .ranking-order-label, .ranking-summary { display:none !important; }
+          .ranking-select { width:100% !important; min-width:0 !important; }
         }
       `}</style>
     </div>

@@ -13,7 +13,7 @@ function Loading() {
           animation: `pulse 1.2s ease-in-out ${d}s infinite`,
         }} />
       ))}
-      <div style={{ marginTop: '12px', fontSize: '12px' }}>データ取得中...</div>
+      <div style={{ marginTop: '12px', fontSize: '12px' }}>Loading data...</div>
     </div>
   )
 }
@@ -61,15 +61,15 @@ export default function Favorites() {
   return (
     <div style={{ padding: '28px 32px 48px' }}>
       <h1 style={{ fontSize: '24px', fontWeight: 700, letterSpacing: '-0.02em', color: '#e8f0ff', marginBottom: '4px' }}>
-        お気に入り
+        Favorites
       </h1>
       <p style={{ fontSize: '12px', color: 'var(--text3)', marginBottom: '20px' }}>
         Add themes to your favorites for quick access
       </p>
 
-      {/* テーマ選択 */}
+      {/* Theme選択 */}
       <div style={sHead}>
-        <span style={sTitle}>テーマを選択</span>
+        <span style={sTitle}>Select Theme</span>
         <div style={sLine} />
       </div>
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginBottom: '24px' }}>
@@ -86,7 +86,7 @@ export default function Favorites() {
         ))}
       </div>
 
-      {/* お気に入りデータ */}
+      {/* Favoritesデータ */}
       {favorites.length === 0 ? (
         <div style={{
           background: 'var(--bg2)', border: '1px solid var(--border)',

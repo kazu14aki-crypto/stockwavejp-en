@@ -146,8 +146,8 @@ const getStockName = (name, ticker) => {
 }
 
 
-// 出来高・売買代金 棒グラフ（MarketRank用）
-// ── 注目銘柄ピックアップ ──────────────────────────────
+// Volume・Trading Value 棒グラフ（MarketRank用）
+// ── 注目Stockピックアップ ──────────────────────────────
 function PickupStocks({ stocks, period }) {
   if (!stocks || stocks.length === 0) return null
 
@@ -242,7 +242,7 @@ function PickupStocks({ stocks, period }) {
               borderTop:'3px solid ' + medalColors[i],
               display:'flex', flexDirection:'column', gap:'6px',
             }}>
-              {/* 順位 + ティッカー + 騰落率 */}
+              {/* 順位 + ティッカー + Return */}
               <div style={{ display:'flex', alignItems:'center', gap:'6px' }}>
                 <span style={{ fontSize:'14px' }}>{medals[i]}</span>
                 <span style={{ fontSize:'10px', color:'var(--text3)', fontFamily:'var(--mono)' }}>
@@ -253,7 +253,7 @@ function PickupStocks({ stocks, period }) {
                   {(s.pct ?? 0) >= 0 ? '+' : ''}{s.pct?.toFixed(1)}%
                 </span>
               </div>
-              {/* 銘柄名（必ず表示） */}
+              {/* Stock名（必ず表示） */}
               <div style={{ fontSize:'13px', fontWeight:700, color:'var(--text)',
                 lineHeight:1.4 }}>
                 {s.name || s.ticker.replace('.T', '')}
@@ -264,7 +264,7 @@ function PickupStocks({ stocks, period }) {
                   <Sparkline data={s.spark} />
                 </span>
               )}
-              {/* 株価 + 売買代金 */}
+              {/* 株価 + Trading Value */}
               <div style={{ display:'flex', gap:'10px', fontSize:'10px',
                 fontFamily:'var(--mono)', color:'var(--text3)' }}>
                 {'¥' + (s.price?.toLocaleString() || '-')}
@@ -396,7 +396,7 @@ function MrVolTvChart({ stocks }) {
   )
 }
 
-// 銘柄別ヒートマップ（MarketRank用・拡大機能付き）
+// Stock別ヒートマップ（MarketRank用・拡大機能付き）
 function MrBubbleChart({ stocks }) {
   const [expanded, setExpanded] = useState(false)
   if (!stocks || !stocks.length) return (
@@ -503,7 +503,7 @@ function Top5Bar({ items, title, colorFn, emptyMsg }) {
   )
 }
 
-// スパークライン（銘柄の6ヶ月騰落率推移）
+// スパークライン（Stockの6ヶ月Return推移）
 function Sparkline({ data }) {
   if (!data || data.length < 3) return null
   const W = 64, H = 24
@@ -574,7 +574,7 @@ function StockTable({ stocks: rawStocks, onAddToTheme }) {
     table.addEventListener('scroll', syncT)
     top.addEventListener('scroll', syncH)
     document.getElementById('mr-bottom-scroll')?.addEventListener('scroll', syncBot)
-    // table実際のscrollWidthをspacerに設定してスクロールバーを正確に表示
+    // table実際のscrollWidthをspacerにSettingsしてスクロールバーを正確に表示
     const updateSpacer = () => {
       const w = table.scrollWidth + 'px'
       const spacer = document.getElementById('mr-scroll-spacer')
@@ -642,7 +642,7 @@ function StockTable({ stocks: rawStocks, onAddToTheme }) {
               <th style={{ ...thStyle, textAlign:'center', width:'32px', minWidth:'32px', maxWidth:'32px', padding:'8px 4px', background:'var(--bg3)', position:'sticky', left:0, zIndex:3 }}>#</th>
               <th style={{ ...thStyle, textAlign:'left', minWidth:'120px', background:'var(--bg3)', position:'sticky', left:'32px', zIndex:3 }}>Stock Name</th>
               {headers.map(h => (
-                <th key={h} style={{ ...thStyle, minWidth: h==='株価'||h==='騰落率'?'70px':'80px',
+                <th key={h} style={{ ...thStyle, minWidth: h==='Price'||h==='Return'?'70px':'80px',
                   color: VALUATION_HEADERS.includes(h) && !isSubscribed ? 'var(--text3)' : undefined }}>
                   {VALUATION_HEADERS.includes(h) && !isSubscribed ? '🔒 ' : ''}{h}
                 </th>
@@ -815,6 +815,20 @@ const ADR_STOCKS = [
 ]
 const ADR_CODE_SET = new Set(ADR_STOCKS.map(s => s.jp))
 
+const displayGroupName = value => ({
+  '国内主要株':'Japan Large Caps',
+  '国内全般':'All Japan',
+  '時価総額順':'Market-Cap Ranking',
+  'StockWaveJP独自分類':'StockWaveJP Classification',
+  'ETF':'ETF',
+}[value] || value)
+const displaySegmentName = value => ({
+  '国内主要株（上位50）':'Japan Large Caps (Top 50)',
+  '国内主要株（51-100）':'Japan Large Caps (51–100)',
+  '国内主要株（101-150）':'Japan Large Caps (101–150)',
+  'StockWaveJP｜時価総額上位150':'StockWaveJP | Top 150 by Market Cap',
+}[value] || value)
+
 export default function MarketRank() {
   const [modalStock,  setModalStock]  = useState(null)
   const [period,      setPeriod]      = useState('1mo')
@@ -928,7 +942,7 @@ const allGroups = {
           }
         }
       } catch {}
-      // Step3: APIも失敗 → 銘柄名だけ表示
+      // Step3: APIも失敗 → Stock名だけ表示
       const placeholders = Object.entries(tickerMap).map(([code, name]) => ({
         ticker: code+'.T', name, price:0, pct:0, volume:0, trade_value:0,
         volume_chg:0, market_cap:0, spark:[], contribution:null, vol_rank:0, tv_rank:0, _noData:true,
@@ -959,7 +973,7 @@ const allGroups = {
   const tvSorted  = [...rawStocks].sort((a,b) => (b.trade_value||0)-(a.trade_value||0))
   const volRankMap = new Map(volSorted.map((s,i) => [s.ticker, i+1]))
   const tvRankMap  = new Map(tvSorted.map((s,i) => [s.ticker, i+1]))
-  // ①国内全般は時価総額降順、ETFは騰落率降順、その他は騰落率降順
+  // ①国内全般は時価総額Descending、ETFはReturnDescending、その他はReturnDescending
   const mappedStocks = rawStocks.map(s => ({
     ...s,
     name: getStockName(s.name, s.ticker),
@@ -1022,7 +1036,7 @@ const allGroups = {
                 const rawShort = seg.split('｜')[1] || seg.split('（')[0]
                 const shortName = strans(rawShort) || strans(seg) || rawShort
                 return (
-                  <button key={seg} onClick={()=>setActiveSeg(seg)} style={{
+                  <button key={displaySegmentName(seg)} onClick={()=>setActiveSeg(seg)} style={{
                     padding:'6px 14px', borderRadius:'6px', fontSize:'12px', cursor:'pointer',
                     border:`1px solid ${activeSeg===seg?'var(--accent)':'var(--border)'}`,
                     background: activeSeg===seg?'rgba(91,156,246,0.12)':'transparent',
@@ -1059,12 +1073,12 @@ const allGroups = {
                   <Top5Bar items={bot5} title={`▼ Falling TOP5 (${stocks.filter(s=>s.pct<0).length} stocks)`} colorFn={pctColor} emptyMsg="No falling stocks"/>
                 </div>
 
-                {/* ③ 注目銘柄ピックアップ */}
+                {/* ③ 注目Stockピックアップ */}
                 <PickupStocks stocks={stocks} period={period} />
 
-                {/* ① テーマ別詳細と同じレイアウト: 左=グラフ群 / 右=銘柄表 */}
+                {/* ① Theme Detailと同じレイアウト: 左=グラフ群 / 右=Stock表 */}
                 <div className="mr-bottom-grid">
-                  {/* 左: 出来高グラフ → ヒートマップ */}
+                  {/* 左: Volumeグラフ → ヒートマップ */}
                   <div>
                     <div style={{ fontSize:'13px', fontWeight:700, color:'var(--text)', marginBottom:'10px' }}>
                       📊 Volume & Trade Value (Top 15)
@@ -1075,7 +1089,7 @@ const allGroups = {
                     </div>
                     <MrBubbleChart stocks={stocks} />
                   </div>
-                  {/* 右: 銘柄詳細表 */}
+                  {/* 右: Stock詳細表 */}
                   <div style={{ minWidth: 0 }}>
                     <div style={{ fontSize:'11px', fontWeight:600, letterSpacing:'0.1em', color:'var(--text3)', textTransform:'uppercase', marginBottom:'8px' }}>
       

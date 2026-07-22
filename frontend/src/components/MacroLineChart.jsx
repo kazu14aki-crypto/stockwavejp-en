@@ -89,7 +89,7 @@ export default function MacroLineChart({ macro }) {
 
   const W = 800, H = 160, PL = 46, PR = 16, PT = 12, PB = 28
 
-  // Normalize each metric independently（0基準→期間内の相対変化を均等表示）
+  // Normalize each metric independently（0Data as of→期間内の相対変化を均等表示）
   // Y-axis: relative return（各指標の期間内変化幅を揃える）」
   const scaledData = {}
   names.forEach(n => {

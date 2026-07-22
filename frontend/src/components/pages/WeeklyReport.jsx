@@ -113,7 +113,7 @@ function RenderMd({ text, onNavigate }) {
   return <div>{result}</div>
 }
 
-// ① レポートカード（コラム形式）
+// ① Weekly Reportカード（コラム形式）
 function ReportCard({ entry, isActive, onClick, isLocked, onUpgrade }) {
   const avg = entry.avg_pct_1w
   const col = avg >= 0 ? 'var(--red)' : 'var(--green)'
@@ -226,15 +226,15 @@ export default function WeeklyReport({ onNavigate }) {
   const [showReport, setShowReport] = useState(false)
 
   useEffect(() => {
-    // index.jsonを取得し、最新（先頭）のレポートを自動選択
+    // index.jsonを取得し、最新（先頭）のWeekly Reportを自動選択
     fetch('/data/weekly_reports/index.json?t=' + Date.now())
       .then(r => r.ok ? r.json() : [])
       .then(d => {
         setIndex(d)
-        // 最新レポートを自動的に取得して表示
+        // 最新Weekly Reportを自動的に取得して表示
         if (d.length > 0 && !selWeek) {
           const latest = d[0]
-          // 最新レポートをプリフェッチ（表示はユーザーのクリック後）
+          // 最新Weekly Reportをプリフェッチ（表示はユーザーのクリック後）
           fetch(`/data/weekly_reports/${latest.week}.json?t=${Date.now()}`)
             .then(r => r.ok ? r.json() : null)
             .then(rd => { if (rd) setReport(rd) })
@@ -270,7 +270,7 @@ export default function WeeklyReport({ onNavigate }) {
 
   if (loading && index.length === 0) return <Loading />
 
-  // レポート本文表示モード
+  // Weekly Report本文表示モード
   if (showReport) {
     const { summary } = report || {}
     return (
@@ -421,7 +421,7 @@ export default function WeeklyReport({ onNavigate }) {
         </div>
       ) : (
         <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fill,minmax(280px,1fr))', gap:'12px' }}>
-          {/* 最新レポートを先頭に */}
+          {/* 最新Weekly Reportを先頭に */}
           {[...index].sort((a, b) => {
             // dateフィールド優先、なければweekで比較
             const da = a.date ? a.date.replace(/\//g, '-') : a.week

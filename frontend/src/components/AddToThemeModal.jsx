@@ -1,6 +1,6 @@
 /**
- * AddToThemeModal — 銘柄をCustom Themeに追加するミニモーダル
- * ThemeDetail・MarketRankの銘柄テーブル各行から呼び出す
+ * AddToThemeModal — StockをAdd to Custom Themeするミニモーダル
+ * ThemeDetail・MarketRankのStockテーブル各行から呼び出す
  */
 import { useState } from 'react'
 import { useCustomThemes } from '../hooks/useCustomThemes'
@@ -45,7 +45,7 @@ export default function AddToThemeModal({ stock, onClose }) {
         <div style={{ display:'flex', alignItems:'flex-start', justifyContent:'space-between', marginBottom:'14px' }}>
           <div>
             <div style={{ fontSize:'13px', fontWeight:700, color:'var(--text)', marginBottom:'2px' }}>
-              Custom Themeに追加
+              Add to Custom Theme
             </div>
             <div style={{ fontSize:'11px', color:'var(--text3)' }}>
               {stock.ticker.replace('.T','')} · {stock.name}
@@ -108,7 +108,7 @@ export default function AddToThemeModal({ stock, onClose }) {
             ) : (
               <div>
                 <div style={{ fontSize:'11px', color:'var(--text3)', marginBottom:'6px' }}>
-                  新しいテーマ名
+                  New theme name
                 </div>
                 <div style={{ display:'flex', gap:'6px' }}>
                   <input

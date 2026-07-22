@@ -66,7 +66,7 @@ export function useCustomThemes() {
   const [themes,  setThemes]  = useState([])
   const [syncing, setSyncing] = useState(false)
 
-  // テーマ読み込み（ログイン状態が変わるたびに実行）
+  // Theme読み込み（ログイン状態が変わるたびに実行）
   useEffect(() => {
     let cancelled = false
     const load = async () => {
@@ -79,7 +79,7 @@ export function useCustomThemes() {
           if (!cancelled) setThemes(lsLoad())
         }
       } catch (e) {
-        console.error('テーマ読み込みエラー:', e)
+        console.error('Theme loading error:', e)
         if (!cancelled) setThemes(lsLoad()) // フォールバック
       } finally {
         if (!cancelled) setSyncing(false)
@@ -96,13 +96,13 @@ export function useCustomThemes() {
     return () => { cancelled = true }
   }, [isLoggedIn, user?.id])
 
-  // テーマ保存（作成・編集）
+  // Theme保存（作成・編集）
   // MAX_THEMES はuseSubscription().maxThemesで動的に取得
 
   const saveTheme = useCallback(async (theme, editIndex = null) => {
     // 新規追加の場合は上限チェック
     if (editIndex === null && themes.length >= maxThemes) {
-      alert(`Custom Themeは現在のプランでは最大${maxThemes}つまでです。\n既存のテーマを削除するかプランをアップグレードしてください。`)
+      alert(`Your current plan allows up to ${maxThemes} custom themes.\nDelete an existing theme or upgrade your plan.`)
       return false
     }
     if (isLoggedIn && user) {
@@ -125,7 +125,7 @@ export function useCustomThemes() {
     return true
   }, [isLoggedIn, user, themes])
 
-  // テーマ削除
+  // Theme削除
   const deleteTheme = useCallback(async (index) => {
     const target = themes[index]
     if (isLoggedIn && user && target?.id) {
@@ -138,7 +138,7 @@ export function useCustomThemes() {
     }
   }, [isLoggedIn, user, themes])
 
-  // 既存テーマへ銘柄追加
+  // 既存ThemeへStock追加
   const addStockToTheme = useCallback(async (themeIndex, stock) => {
     const target = themes[themeIndex]
     if (!target) return
@@ -147,7 +147,7 @@ export function useCustomThemes() {
     await saveTheme(updated, themeIndex)
   }, [themes, saveTheme])
 
-  // 新規テーマを作成して銘柄追加
+  // 新規Themeを作成してStock追加
   const createThemeWithStock = useCallback(async (themeName, stock) => {
     if (!themeName.trim()) return
     await saveTheme({ name: themeName.trim(), stocks: [stock] })

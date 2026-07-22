@@ -1,6 +1,6 @@
 /**
- * RefreshIndicator — バックグラウンド更新中の表示
- * ページ上部に小さく表示し、ユーザーに更新中であることを伝える
+ * RefreshIndicator — バックグラウンドUpdated中の表示
+ * ページ上部に小さく表示し、ユーザーにUpdated中であることを伝える
  */
 export default function RefreshIndicator({ refreshing, lastUpdate, onRefresh }) {
   const timeStr = lastUpdate
@@ -21,7 +21,7 @@ export default function RefreshIndicator({ refreshing, lastUpdate, onRefresh }) 
               stroke="var(--accent)" strokeWidth="1.5"
               strokeDasharray="14 7" />
           </svg>
-          <span style={{ color: 'var(--accent)' }}>更新中...</span>
+          <span style={{ color: 'var(--accent)' }}>Updating...</span>
         </>
       ) : (
         <>
@@ -36,7 +36,7 @@ export default function RefreshIndicator({ refreshing, lastUpdate, onRefresh }) 
               color: 'var(--accent)', fontSize: '11px', padding: '0 4px',
               fontFamily: 'var(--font)', textDecoration: 'underline',
             }}>
-              再取得
+              Refresh
             </button>
           )}
         </>

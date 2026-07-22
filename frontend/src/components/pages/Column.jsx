@@ -1,6 +1,25 @@
 import { tn } from '../../utils/themeNames'
 import { useState, useEffect } from 'react'
 
+const CATEGORY_EN = {
+  '半導体製造装置':'Semiconductor Equipment','生成AI':'Generative AI','防衛・航空':'Defense & Aerospace',
+  'インバウンド':'Inbound Tourism','EV・脱炭素':'EV & Decarbonization','造船':'Shipbuilding',
+  '親子上場':'Parent-Subsidiary Listings','バフェット銘柄':'Buffett Holdings','フィジカルAI':'Physical AI',
+  'パワー半導体':'Power Semiconductors','光ファイバー・光部品':'Optical Communications',
+  '国土強靭化計画':'National Resilience','再生可能エネルギー':'Renewable Energy',
+  'ゲーム・エンタメ':'Gaming & Entertainment','銀行・金融':'Banking & Finance','地方銀行':'Regional Banks',
+  '保険':'Insurance','不動産':'Real Estate','医薬品・バイオ':'Pharma & Biotech',
+  'ヘルスケア・介護':'Healthcare & Care Services','食品・飲料':'Food & Beverages','小売・EC':'Retail & E-Commerce',
+  '通信':'Telecommunications','鉄鋼・素材':'Steel & Materials','化学':'Chemicals',
+  '建設・インフラ':'Construction & Infrastructure','輸送・物流':'Transport & Logistics',
+  'フィンテック':'Fintech','ロボット・自動化':'Robotics & Automation',
+  'レアアース・資源':'Rare Earths & Resources','サイバーセキュリティ':'Cybersecurity',
+  'ドローン':'Drones','観光・ホテル・レジャー':'Tourism & Hotels',
+  '農業・フードテック':'Agriculture & Foodtech','教育・HR・人材':'Education & HR',
+  '宇宙・衛星':'Space & Satellites','用語解説':'Glossary','個別銘柄':'Individual Stock',
+}
+const categoryEn = value => CATEGORY_EN[value] || value
+
 const THEME_ARTICLE_MAP = {
   '半導体製造装置':    'semiconductor-theme',
   '半導体検査装置':    'semiconductor-theme',
@@ -216,7 +235,7 @@ export default function Column({ initialArticleId = null, onNavigate }) {
   const [page,        setPage]        = useState(1)
   const ITEMS_PER_PAGE = 20
 
-  // Theme List・テーマ詳細から特定記事IDで来たときに追従
+  // Theme List・Theme詳細から特定記事IDで来たときに追従
   useEffect(() => {
     if (initialArticleId) {
       setActiveCol(initialArticleId)
@@ -293,7 +312,7 @@ export default function Column({ initialArticleId = null, onNavigate }) {
         <div className="column-article-heading">
           <h1 style={{ fontSize:'20px', fontWeight:700, color:'#e8f0ff', lineHeight:1.5, margin:'0' }}>{col.title}</h1>
           <div className="column-article-meta">
-            <span className="column-category-badge" style={{ fontSize:'10px', fontWeight:700, padding:'3px 9px', borderRadius:'20px', background:cat.bg, color:cat.color, border:`1px solid ${cat.border}` }}>{col.category}</span>
+            <span className="column-category-badge" style={{ fontSize:'10px', fontWeight:700, padding:'3px 9px', borderRadius:'20px', background:cat.bg, color:cat.color, border:`1px solid ${cat.border}` }}>{categoryEn(col.category)}</span>
             <span className="column-article-date">{col.date}</span>
             {col.themes?.slice(0,2).map(theme => <span key={theme} className="column-theme-label">#{tn(theme)}</span>)}
           </div>
@@ -533,7 +552,7 @@ export default function Column({ initialArticleId = null, onNavigate }) {
                 <span style={{ fontSize:'20px' }}>{col.icon}</span>
                 <span style={{ fontSize:'11px', fontWeight:600, padding:'2px 8px', borderRadius:'12px',
                   background:cat.bg, color:cat.color, border:`1px solid ${cat.border}` }}>
-                  {col.category}
+                  {categoryEn(col.category)}
                 </span>
                 <span style={{ fontSize:'10px', color:'var(--text3)', marginLeft:'auto', fontFamily:'var(--mono)' }}>
                   {col.date}

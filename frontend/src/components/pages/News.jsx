@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-// 手動更新のNewsリスト（新しい順）
+// 手動UpdatedのNewsリスト（新しい順）
 const MANUAL_NEWS = [
   { date:'2026/07/22', title:'Japan’s Growth Strategy and current policy column published', body:'Covers proactive fiscal policy, 17 strategic fields, AI and semiconductors, defense, energy, shipbuilding, resilience, wages, regions and finance.' },
   { date:'2026/07/22', title:'NVIDIA and Japanese-company collaboration column published', body:'Reviews physical AI, Noetra, the Fujitsu/Fanuc/Yaskawa/Kawasaki platform, Toyota, SoftBank, Hitachi and the revenue opportunities and risks for Japanese companies.' },
@@ -16,7 +16,7 @@ const DATA_URL = '/data/market.json'
 export default function News() {
   const [actions, setActions] = useState([])
 
-  // market.jsonから銘柄Action（分割・廃止等）を取得
+  // market.jsonからStockAction（分割・廃止等）を取得
   useEffect(() => {
     fetch(`${DATA_URL}?t=${Date.now()}`)
       .then(r => r.json())
@@ -37,10 +37,10 @@ export default function News() {
         News
       </h1>
       <p style={{ fontSize:'12px', color:'var(--text3)', marginBottom:'28px' }}>
-        StockWaveJPのColumns, reports and theme updates
+        StockWaveJP columns, reports and theme updates
       </p>
 
-      {/* 銘柄Action（自動取得） */}
+      {/* StockAction（自動取得） */}
       {actions.length > 0 && (
         <div style={{ marginBottom:'24px' }}>
           <div style={{ fontSize:'12px', fontWeight:700, color:'var(--text2)',
@@ -71,8 +71,8 @@ export default function News() {
                   {a.detail}
                 </div>
                 <div style={{ fontSize:'10px', color:'var(--text3)', marginTop:'4px', fontFamily:'var(--mono)' }}>
-                  確認日: {a.detected_at}
-                  {a.effective_date && ` ／ 実施予定日: ${a.effective_date}`}
+                  Detected: {a.detected_at}
+                  {a.effective_date && ` / Effective date: ${a.effective_date}`}
                 </div>
               </div>
             </div>

@@ -1,88 +1,13 @@
-import React from 'react'
-
-export default function Footer() {
-  return (
-    <footer style={{
-      borderTop: '1px solid var(--border)',
-      background: 'var(--bg2)',
-      padding: '20px 24px',
-      marginTop: '40px',
-      fontSize: '11px',
-      color: 'var(--text3)',
-    }}>
-      <div style={{
-        maxWidth: '1280px', margin: '0 auto',
-        display: 'flex', flexWrap: 'wrap',
-        justifyContent: 'space-between', alignItems: 'flex-start',
-        gap: '16px',
-      }}>
-        {/* ロゴ・説明 */}
-        <div style={{ maxWidth: '320px' }}>
-          <div style={{ fontSize: '13px', fontWeight: 700, color: 'var(--text)', marginBottom: '6px' }}>
-            <span style={{ color: '#e63030' }}>Stock</span>WaveJP
-          </div>
-          <div style={{ lineHeight: 1.7 }}>
-            Japanese Stock Theme Investment Information Service. For informational purposes only.
-            Not investment advice or recommendations.
-          </div>
-        </div>
-
-        {/* リンク */}
-        <div style={{ display: 'flex', gap: '24px', flexWrap: 'wrap', alignItems: 'flex-start' }}>
-          <div>
-            <div style={{ fontWeight: 600, color: 'var(--text2)', marginBottom: '8px', fontSize: '11px' }}>法的情報</div>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
-              <a href="/#/disclaimer" onClick={e => { e.preventDefault(); window.dispatchEvent(new CustomEvent('navigate', { detail: 'Disclaimer' })) }}
-                style={{ color: 'var(--text3)', textDecoration: 'none', cursor: 'pointer' }}
-                onMouseEnter={e => e.target.style.color = 'var(--accent)'}
-                onMouseLeave={e => e.target.style.color = 'var(--text3)'}>
-                Disclaimer
-              </a>
-              <a href="/#/privacy" onClick={e => { e.preventDefault(); window.dispatchEvent(new CustomEvent('navigate', { detail: 'Privacy Policy' })) }}
-                style={{ color: 'var(--text3)', textDecoration: 'none', cursor: 'pointer' }}
-                onMouseEnter={e => e.target.style.color = 'var(--accent)'}
-                onMouseLeave={e => e.target.style.color = 'var(--text3)'}>
-                Privacy Policy
-              </a>
-            </div>
-          </div>
-          <div>
-            <div style={{ fontWeight: 600, color: 'var(--text2)', marginBottom: '8px', fontSize: '11px' }}>メニュー</div>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
-              <a href="/#/" onClick={e => { e.preventDefault(); window.dispatchEvent(new CustomEvent('navigate', { detail: 'ホーム' })) }}
-                style={{ color: 'var(--text3)', textDecoration: 'none', cursor: 'pointer' }}
-                onMouseEnter={e => e.target.style.color = 'var(--accent)'}
-                onMouseLeave={e => e.target.style.color = 'var(--text3)'}>
-                ホーム
-              </a>
-              <a href="/#/themes" onClick={e => { e.preventDefault(); window.dispatchEvent(new CustomEvent('navigate', { detail: 'Theme List' })) }}
-                style={{ color: 'var(--text3)', textDecoration: 'none', cursor: 'pointer' }}
-                onMouseEnter={e => e.target.style.color = 'var(--accent)'}
-                onMouseLeave={e => e.target.style.color = 'var(--text3)'}>
-                Theme List
-              </a>
-              <a href="/column.html"
-                style={{ color: 'var(--text3)', textDecoration: 'none', cursor: 'pointer' }}
-                onMouseEnter={e => e.target.style.color = 'var(--accent)'}
-                onMouseLeave={e => e.target.style.color = 'var(--text3)'}>
-                コラム
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* コピーライト */}
-      <div style={{
-        maxWidth: '1280px', margin: '16px auto 0',
-        paddingTop: '12px', borderTop: '1px solid var(--border)',
-        display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: '8px',
-      }}>
-        <span>© 2026 StockWaveJP. All rights reserved.</span>
-        <span style={{ color: 'var(--text3)' }}>
-          ※ 本サービスの情報は投資助言ではありません。投資は自己責任で行ってください。
-        </span>
-      </div>
-    </footer>
-  )
+export default function Footer({ onNavigate, contactUrl }) {
+  const buttonStyle={background:'none',border:'none',color:'var(--text3)',cursor:'pointer',fontFamily:'var(--font)',fontSize:'11px',padding:0,textDecoration:'underline',textUnderlineOffset:'2px'}
+  return <footer style={{borderTop:'1px solid var(--border)',padding:'18px 24px',textAlign:'center',color:'var(--text3)',fontSize:'11px'}}>
+    <div style={{display:'flex',justifyContent:'center',gap:'18px',flexWrap:'wrap',marginBottom:'8px'}}>
+      <button style={buttonStyle} onClick={()=>onNavigate?.('Disclaimer')}>Disclaimer</button>
+      <button style={buttonStyle} onClick={()=>onNavigate?.('Privacy Policy')}>Privacy Policy</button>
+      <button style={buttonStyle} onClick={()=>onNavigate?.('Terms of Service')}>Terms of Service</button>
+      <a href={contactUrl} target="_blank" rel="noopener noreferrer" style={{...buttonStyle,display:'inline-block'}}>Contact</a>
+    </div>
+    <div><b style={{color:'#e63030'}}>Stock</b><b style={{color:'var(--text2)'}}>Wave</b><b style={{color:'#e63030',fontSize:'9px'}}>JP</b> — Japanese equity theme research — © 2026</div>
+    <div style={{marginTop:'5px'}}>Information is provided for research purposes and is not investment advice.</div>
+  </footer>
 }

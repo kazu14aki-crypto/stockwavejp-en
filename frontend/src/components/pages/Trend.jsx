@@ -12,7 +12,7 @@ const COLORS = [
   '#ff4560','#ff8c42','#ffd166','#06d6a0','#4a9eff',
   '#aa77ff','#ff77aa','#44dddd','#aaddff','#ffaa77',
 ]
-const MODES = ['🏆 Top5 + Bottom5', '✅ Manual Select', '📊 全テーマ']
+const MODES = ['🏆 Top5 + Bottom5', '✅ Manual Select', '📊 All Themes']
 
 function Loading() {
   return (
@@ -24,7 +24,7 @@ function Loading() {
           animation: `pulse 1.2s ease-in-out ${d}s infinite`,
         }} />
       ))}
-      <div style={{ marginTop: '12px', fontSize: '12px' }}>日次データ取得中...（初回は時間がかかります）</div>
+      <div style={{ marginTop: '12px', fontSize: '12px' }}>Loading daily data. The first request may take longer.</div>
     </div>
   )
 }
@@ -168,7 +168,7 @@ export default function Trend() {
   const [loading,  setLoading]  = useState(true)
   const [error,    setError]    = useState(null)
 
-  // テーマ名一覧取得
+  // Theme名一覧取得
   useEffect(() => {
     fetch(`${API}/api/theme-names`)
       .then(r => r.json())
@@ -176,7 +176,7 @@ export default function Trend() {
       .catch(() => {})
   }, [])
 
-  // 全テーマの推移取得
+  // 全Themeの推移取得
   useEffect(() => {
     if (!themeNames.length) return
     const fetch_ = async () => {
@@ -218,7 +218,7 @@ export default function Trend() {
       const top5 = sorted.slice(0, 5).map(x => x.name)
       const bot5 = sorted.slice(-5).map(x => x.name)
       setSelected([...new Set([...top5, ...bot5])])
-    } else if (mode === '📊 全テーマ') {
+    } else if (mode === '📊 All Themes') {
       setSelected(Object.keys(trends))
     }
   }, [mode])
@@ -232,7 +232,7 @@ export default function Trend() {
         Return Trend
       </h1>
       <p style={{ fontSize: '12px', color: 'var(--text3)', marginBottom: '20px' }}>
-        yfinanceの日次終値から算出したテーマ別累積Price Change %の推移
+        Cumulative theme returns calculated from daily closing prices
       </p>
 
       {/* コントロール */}

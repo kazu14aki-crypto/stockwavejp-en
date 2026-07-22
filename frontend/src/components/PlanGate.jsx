@@ -5,10 +5,10 @@ import { useAuth }         from '../hooks/useAuth.jsx'
 import { useSubscription } from '../hooks/useSubscription.jsx'
 
 const FEATURE_LABELS = {
-  institutional:   { name:'Institutional Holdings', status:'coming_soon' },
+  institutional:   { name:'Institutional Holdings', status:'developer_only' },
   weekly_archive:  { name:'Weekly Report Archive',  requiredPlan:'Standard or above', requiredKey:'standard' },
   custom_theme_ai: { name:'Custom Theme AI Analysis', requiredPlan:'Pro', requiredKey:'pro' },
-  market_detail:   { name:'Market Ranking (All Periods)', requiredPlan:'Standard or above', requiredKey:'standard' },
+  market_detail:   { name:'Market Detail', status:'developer_only' },
 }
 
 export default function PlanGate({ feature, children, onNavigate }) {
@@ -19,7 +19,20 @@ export default function PlanGate({ feature, children, onNavigate }) {
 
   const info = FEATURE_LABELS[feature] || { name:'This feature', requiredPlan:'a higher plan' }
 
-  // Coming Soon 表示
+  if (info.status === 'developer_only') {
+    return (
+      <div style={{ padding:'60px 24px', textAlign:'center', maxWidth:'520px', margin:'0 auto' }}>
+        <div style={{ fontSize:'52px', marginBottom:'14px' }}>🧪</div>
+        <h2 style={{ fontSize:'20px', fontWeight:700, color:'var(--text)', marginBottom:'10px' }}>
+          Developer Preview
+        </h2>
+        <p style={{ fontSize:'13px', color:'var(--text3)', lineHeight:1.8 }}>
+          {info.name} is still under development and is visible only to the site developer.
+        </p>
+      </div>
+    )
+  }
+
   if (info.status === 'coming_soon') {
     return (
       <div style={{ padding:'60px 24px', textAlign:'center', maxWidth:'500px', margin:'0 auto' }}>

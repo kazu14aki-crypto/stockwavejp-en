@@ -41,8 +41,8 @@ function guessETF(ticker, themes = []) {
   if (code) etfs.push('1306 (TOPIX ETF)')
   const n225 = [7203,6758,8306,6861,8035,9983,4063,9433,7974,6367,6501,8316,8058]
   if (n225.includes(code)) etfs.push('1321 (Nikkei225 ETF)')
-  if (themes.some(t => ['AI半導体','半導体製造装置','MLCC・電子部品'].includes(t))) etfs.push('2644（グローバルX半導体）')
-  if (themes.some(t => ['防衛・航空','防衛・セキュリティ'].includes(t))) etfs.push('2648 (GlobalX Defense衛）')
+  if (themes.some(t => ['AI半導体','半導体製造装置','MLCC・電子部品'].includes(t))) etfs.push('2644 (Global X Japan Semiconductor ETF)')
+  if (themes.some(t => ['防衛・航空','防衛・セキュリティ'].includes(t))) etfs.push('2648 (Global X Japan Defense Tech ETF)')
   if (themes.some(t => ['EV・電気自動車'].includes(t))) etfs.push('2636 (GlobalX EV)')
   return etfs
 }
@@ -252,7 +252,7 @@ export default function StockSearch({ onNavigate }) {
         </>
       )}
 
-      {/* 銘柄詳細 */}
+      {/* Stock詳細 */}
       {selected && (() => {
         const s = selected
         const code = s.ticker.replace('.T','')
@@ -329,7 +329,7 @@ export default function StockSearch({ onNavigate }) {
               <StockChart ticker={s.ticker} period={period} />
             </div>
 
-            {/* 所属テーマ */}
+            {/* 所属Theme */}
             <div style={{ background:'var(--bg2)', border:'1px solid var(--border)',
               borderRadius:'12px', padding:'16px 20px', marginBottom:'14px' }}>
               <div style={{ fontSize:'12px', fontWeight:700, color:'var(--text3)',
@@ -368,7 +368,7 @@ export default function StockSearch({ onNavigate }) {
               </p>
             </div>
 
-            {/* 同テーマ関連銘柄 */}
+            {/* 同Theme関連Stock */}
             <div style={{ background:'var(--bg2)', border:'1px solid var(--border)',
               borderRadius:'12px', padding:'16px 20px' }}>
               <div style={{ fontSize:'12px', fontWeight:700, color:'var(--text3)',

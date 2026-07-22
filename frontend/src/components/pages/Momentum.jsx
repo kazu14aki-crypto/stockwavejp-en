@@ -10,15 +10,15 @@ const PERIODS = [
   { label: '1Y',   value: '1y'  },
 ]
 
-const SORT_KEYS = ['Price Change %（降順）', '先週比変化（降順）', '先月比変化（降順）']
-const STATES    = ['🔥加速', '↗転換↑', '→横ばい', '↘転換↓', '❄️失速']
+const SORT_KEYS = ['Return (Descending)', 'Weekly Change (Descending)', 'Monthly Change (Descending)']
+const STATES    = ['🔥 Accelerating', '↗ Turning Up', '→ Flat', '↘ Turning Down', '❄️ Losing Momentum']
 
 const STATE_COLORS = {
-  '🔥加速':  '#ff4560',
-  '↗転換↑': '#ff8c42',
-  '→横ばい': '#4a6080',
-  '↘転換↓': '#4a9eff',
-  '❄️失速':  '#00c48c',
+  '🔥 Accelerating':  '#ff4560',
+  '↗ Turning Up': '#ff8c42',
+  '→ Flat': '#4a6080',
+  '↘ Turning Down': '#4a9eff',
+  '❄️ Losing Momentum':  '#00c48c',
 }
 
 function Loading() {
@@ -31,14 +31,14 @@ function Loading() {
           animation: `pulse 1.2s ease-in-out ${d}s infinite`,
         }} />
       ))}
-      <div style={{ marginTop: '12px', fontSize: '12px' }}>データ取得中...</div>
+      <div style={{ marginTop: '12px', fontSize: '12px' }}>Loading data...</div>
     </div>
   )
 }
 
 export default function Momentum() {
   const [period,   setPeriod]   = useState('1mo')
-  const [sortKey,  setSortKey]  = useState('Price Change %（降順）')
+  const [sortKey,  setSortKey]  = useState('Return (Descending)')
   const [filter,   setFilter]   = useState([])
   const [data,     setData]     = useState([])
   const [loading,  setLoading]  = useState(true)
@@ -62,9 +62,9 @@ export default function Momentum() {
 
   // ソート
   let sorted = [...data]
-  if (sortKey === 'Price Change %（降順）')      sorted.sort((a,b) => b.pct - a.pct)
-  if (sortKey === '先週比変化（降順）')   sorted.sort((a,b) => b.week_diff - a.week_diff)
-  if (sortKey === '先月比変化（降順）')   sorted.sort((a,b) => b.month_diff - a.month_diff)
+  if (sortKey === 'Return (Descending)')      sorted.sort((a,b) => b.pct - a.pct)
+  if (sortKey === 'Weekly Change (Descending)')   sorted.sort((a,b) => b.week_diff - a.week_diff)
+  if (sortKey === 'Monthly Change (Descending)')   sorted.sort((a,b) => b.month_diff - a.month_diff)
 
   // フィルター
   if (filter.length > 0) sorted = sorted.filter(d => filter.includes(d.state))
@@ -81,7 +81,7 @@ export default function Momentum() {
         Price Momentum
       </h1>
       <p style={{ fontSize: '12px', color: 'var(--text3)', marginBottom: '20px' }}>
-        現在のPrice Change % ＋ 先週比・先月比の変化で「加速・失速・転換」テーマを把握
+        Identify accelerating, weakening and reversing themes using current return and weekly/monthly changes.
       </p>
 
       {/* コントロール */}
@@ -113,7 +113,7 @@ export default function Momentum() {
             border: '1px solid var(--border)', background: 'transparent',
             color: 'var(--text3)', fontFamily: 'var(--font)',
           }}>
-            クリア
+            Clear
           </button>
         )}
       </div>
@@ -125,7 +125,7 @@ export default function Momentum() {
           {/* テーブルヘッダー */}
           <div style={{ ...rowStyle, background: 'transparent', borderColor: 'transparent',
             padding: '4px 16px', marginBottom: '4px' }}>
-            <span style={hdrStyle}>テーマ名</span>
+            <span style={hdrStyle}>Theme</span>
             <span style={{ ...hdrStyle, textAlign: 'right' }}>Price Change %</span>
             <span style={{ ...hdrStyle, textAlign: 'right' }}>WoW</span>
             <span style={{ ...hdrStyle, textAlign: 'right' }}>MoM</span>
@@ -171,7 +171,7 @@ export default function Momentum() {
           ))}
 
           <p style={{ fontSize: '11px', color: 'var(--text3)', marginTop: '16px' }}>
-            💡 Price Change %=選択期間の変化率 / 先週比・先月比=1週間・1ヶ月との差分 / 🔥加速=両方↑ / ❄️失速=両方↓
+            💡 Return = selected-period change; weekly/monthly changes compare prior periods; acceleration means both improve; losing momentum means both weaken.
           </p>
         </>
       )}

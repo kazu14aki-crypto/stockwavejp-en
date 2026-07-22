@@ -1,5 +1,5 @@
 /**
- * AuthButton — ヘッダー右側のログイン/ユーザーボタン
+ * AuthButton — ヘッダー右側のSign in/ユーザーボタン
  */
 import { useState } from 'react'
 import { useAuth } from '../hooks/useAuth.jsx'
@@ -33,7 +33,7 @@ export default function AuthButton() {
     </button>
   )
 
-  // ログイン済み
+  // Sign in済み
   return (
     <div style={{ position:'relative', flexShrink:0 }}>
       <button
@@ -91,7 +91,7 @@ export default function AuthButton() {
               onMouseEnter={e => e.currentTarget.style.background='rgba(255,83,112,0.08)'}
               onMouseLeave={e => e.currentTarget.style.background='none'}
             >
-              ログアウト
+              Sign out
             </button>
           </div>
         </>

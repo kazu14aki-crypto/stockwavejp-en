@@ -8,9 +8,9 @@
  *   'dev'      → 開発者（全機能解放）
  *
  * 機能制限:
- *   機関投資家保有 → pro のみ
- *   週次レポートアーカイブ → standard以上
- *   カスタムテーマ分析（AI） → pro のみ
+ *   Institutional Holdings → pro のみ
+ *   週次Weekly Reportアーカイブ → standard以上
+ *   Custom Theme分析（AI） → pro のみ
  */
 import { useState, useEffect, createContext, useContext } from 'react'
 import { supabase } from '../lib/supabaseClient'
@@ -126,8 +126,8 @@ export function SubscriptionProvider({ children }) {
         'portfolio_analysis':  ['pro', 'pro_trial', 'dev'],
         // ① 短期期間（1日・1週・1ヶ月・2ヶ月）はStandard以上のみ
         'short_period':        ['standard', 'pro', 'pro_trial', 'dev'],
-        // ① 市場別詳細はStandard以上のみ
-        'market_detail':       ['standard', 'pro', 'pro_trial', 'dev'],
+        // ① Market DetailはStandard以上のみ
+        'market_detail':       ['dev'],
       }
       return rules[feature]?.includes(plan) ?? true
     },
@@ -137,7 +137,7 @@ export function SubscriptionProvider({ children }) {
       if (['standard', 'pro', 'pro_trial', 'dev'].includes(plan)) return true
       return FREE_PERIODS.includes(period)
     },
-    // ② カスタムテーマ上限
+    // ② Custom Theme上限
     maxThemes: { free:1, standard:5, pro:10, pro_trial:10, dev:999 }[plan] ?? 1,
     maxStocks: { free:10, standard:20, pro:50, pro_trial:50, dev:999 }[plan] ?? 10,
     planLabel: {

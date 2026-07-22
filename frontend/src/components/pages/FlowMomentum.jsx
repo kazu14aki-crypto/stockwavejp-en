@@ -13,7 +13,7 @@ const PERIODS = [
   { label: '6M', value: '6mo' },
   { label: '1Y',   value: '1y'  },
 ]
-const SORT_KEYS = ['Price Change %（降順）', 'Price Change %（昇順）']
+const SORT_KEYS = ['Price Change %（Descending）', 'Price Change %（Ascending）']
 const STATE_COLORS = {
   '🔥加速':  '#ff4560',
   '↗転換↑': '#ff8c42',
@@ -29,7 +29,7 @@ function Loading() {
         <span key={i} style={{ display:'inline-block', width:'6px', height:'6px', borderRadius:'50%',
           background:'var(--accent)', margin:'0 3px', animation:`pulse 1.2s ease-in-out ${d}s infinite`}} />
       ))}
-      <div style={{ marginTop:'12px', fontSize:'12px' }}>データ取得中...</div>
+      <div style={{ marginTop:'12px', fontSize:'12px' }}>Loading data...</div>
     </div>
   )
 }
@@ -108,7 +108,7 @@ function AutoComment({ lines }) {
 function genMomentumComment(momentumData, period) {
   const data = momentumData?.data || momentumData || []
   if (!data.length) return null
-  const periodLabel = { '1d':'Today', '5d':'Weekly', '1mo':'1M', '3mo':'3M', '6mo':'6M', '1y':'1年間' }[period] || period
+  const periodLabel = { '1d':'Today', '5d':'Weekly', '1mo':'1M', '3mo':'3M', '6mo':'6M', '1y':'1 Year' }[period] || period
 
   const accel   = data.filter(t => t.state?.includes('Accelerating'))
   const decel   = data.filter(t => t.state?.includes('Stalling'))
@@ -121,44 +121,44 @@ function genMomentumComment(momentumData, period) {
 
   const lines = []
 
-  lines.push(`【${periodLabel}のPrice Momentum概況】全${data.length}テーマ中、上昇${rising.length}・下落${falling.length}テーマ。平均Price Change %${avg>=0?'+':''}${avg.toFixed(2)}%。モメンタム別では加速${accel.length}・転換↑${turnUp.length}・横ばい${flat.length}・転換↓${turnDn.length}・失速${decel.length}テーマ。`)
+  lines.push(`[${periodLabel} Momentum Overview] ${rising.length} of ${data.length} themes are rising and ${falling.length} are falling. Average return is ${avg>=0?'+':''}${avg.toFixed(2)}%. States: ${accel.length} accelerating, ${turnUp.length} turning up, ${flat.length} flat, ${turnDn.length} turning down and ${decel.length} losing momentum.`)
 
   if (accel.length > 0) {
     const top = accel.slice(0,4).map(t=>t.theme).join('」「')
-    lines.push(`🔥 加速モメンタム（${accel.length}テーマ）：「${top}」など。短中期ともに上昇が加速中。トレンドフォロー戦略が有効で、高値でも追随資金が集まりやすい局面。`)
+    lines.push(`🔥 Accelerating (${accel.length} themes): ${top}. Short- and medium-term momentum is improving.`)
   }
   if (turnUp.length > 0) {
     const top = turnUp.slice(0,3).map(t=>t.theme).join('」「')
-    lines.push(`↗ 転換↑（${turnUp.length}テーマ）：「${top}」など。下落から上昇への転換初動の可能性。Volume増加を確認できれば底値仕込みのチャンスになりうる。`)
+    lines.push(`↗ Turning Up (${turnUp.length} themes): ${top}. A rise in volume can help confirm an early reversal.`)
   }
   if (flat.length > 0) {
     const top = flat.slice(0,3).map(t=>t.theme).join('」「')
-    lines.push(`→ 横ばい（${flat.length}テーマ）：「${top}」など。方向感が定まらない状態。ブレイクの方向を見極めてから参入するのが無難。`)
+    lines.push(`→ Flat (${flat.length} themes): ${top}. Direction remains unclear; wait for confirmation.`)
   }
   if (turnDn.length > 0) {
     const top = turnDn.slice(0,3).map(t=>t.theme).join('」「')
-    lines.push(`↘ 転換↓（${turnDn.length}テーマ）：「${top}」など。上昇トレンドが失速し始めたシグナル。利益確定や新規参入の見送りを検討する局面。`)
+    lines.push(`↘ Turning Down (${turnDn.length} themes): ${top}. Upward momentum is beginning to weaken.`)
   }
   if (decel.length > 0) {
     const top = decel.slice(0,4).map(t=>t.theme).join('」「')
-    lines.push(`❄️ 失速モメンタム（${decel.length}テーマ）：「${top}」など。下落が継続・加速中。反転サインが出るまでは慎重姿勢が望ましく、過度な逆張りは禁物。`)
+    lines.push(`❄️ Losing Momentum (${decel.length} themes): ${top}. Downward pressure remains dominant.`)
   }
 
-  lines.push(`💡 活用ポイント：「加速」と「転換↑」の組み合わせが最も強い買いシグナル。「転換↓」と「失速」の組み合わせは売り圧力が継続中のサイン。週次で状態変化を追うことで、トレンド転換のタイミングを先読みできる。`)
+  lines.push(`💡 Use the weekly state changes to distinguish improving momentum from weakening trends. These labels are research signals, not buy or sell instructions.`)
 
   return lines
 }
 
 export default function FlowMomentum() {
   const [period,  setPeriod]  = useState('1d')
-  const [sortKey, setSortKey] = useState('Price Change %（降順）')
+  const [sortKey, setSortKey] = useState('Price Change %（Descending）')
 
   const { data: momentumRaw, loading: loadingM } = useMomentum(period)
   const momentumData = momentumRaw?.data || []
 
   let sorted = [...momentumData]
-  if (sortKey === 'Price Change %（降順）') sorted.sort((a, b) => b.pct - a.pct)
-  if (sortKey === 'Price Change %（昇順）') sorted.sort((a, b) => a.pct - b.pct)
+  if (sortKey === 'Price Change %（Descending）') sorted.sort((a, b) => b.pct - a.pct)
+  if (sortKey === 'Price Change %（Ascending）') sorted.sort((a, b) => a.pct - b.pct)
   const pctColor = v => v >= 0 ? 'var(--red)' : 'var(--green)'
   const pctSign  = v => v >= 0 ? '+' : ''
   const flowComment = genMomentumComment(momentumData, period)
@@ -169,7 +169,7 @@ export default function FlowMomentum() {
         Price Momentum
       </h1>
       <p style={{ fontSize:'12px', color:'var(--text3)', marginBottom:'20px' }}>
-        テーマ別のPrice Momentum（加速・転換・横ばい・失速）を確認できます。
+        Review theme momentum states: accelerating, turning, flat and losing momentum.
       </p>
 
       {/* コントロール */}
@@ -191,7 +191,7 @@ export default function FlowMomentum() {
           {/* ヘッダー行 */}
           <div style={{ ...rowStyle, background:'transparent', border:'none',
             padding:'4px 16px', marginBottom:'4px' }}>
-            <span style={hdrStyle}>テーマ名</span>
+            <span style={hdrStyle}>Theme</span>
             <span style={{ ...hdrStyle, textAlign:'right' }}>Price Change %</span>
             <span style={{ ...hdrStyle, textAlign:'right' }}>WoW</span>
             <span style={{ ...hdrStyle, textAlign:'center' }}>State</span>
@@ -225,7 +225,7 @@ export default function FlowMomentum() {
           ))}
           {sorted.length === 0 && (
             <div style={{ textAlign:'center', padding:'40px', color:'var(--text3)', fontSize:'13px' }}>
-              データがありません
+              No data available
             </div>
           )}
         </>

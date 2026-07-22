@@ -144,7 +144,7 @@ function Top5Bar({ items, title, colorFn, emptyMsg }) {
 }
 
 // ── 複数折れ線グラフ（Compare移植）──
-// スパークライン（銘柄の6ヶ月Return推移）
+// スパークライン（Stockの6ヶ月Return推移）
 function Sparkline({ data }) {
   if (!data || data.length < 3) return null
   const W = 200, H = 56
@@ -193,9 +193,9 @@ function VolTvChart({ selTheme }) {
     })()
   }, [selTheme])
 
-  if (loading) return <div style={{ textAlign:'center', padding:'40px', color:'var(--text3)', fontSize:'13px' }}>データ読み込み中...</div>
+  if (loading) return <div style={{ textAlign:'center', padding:'40px', color:'var(--text3)', fontSize:'13px' }}>Loading data...</div>
   if (!data || !data.dates || data.dates.length === 0)
-    return <div style={{ textAlign:'center', padding:'32px', color:'var(--text3)', fontSize:'12px' }}>推移データがありません（GitHub Actionsの次回実行後に表示されます）</div>
+    return <div style={{ textAlign:'center', padding:'32px', color:'var(--text3)', fontSize:'12px' }}>Trend data is unavailable. It will appear after the next scheduled data update.</div>
 
   const { dates, volumes, trade_values } = data
   // Trade Valueが全て0の場合はvolumesのみ表示
@@ -403,7 +403,7 @@ function PickupStocks({ stocks, period }) {
                   {(s.pct ?? 0) >= 0 ? '+' : ''}{s.pct?.toFixed(1)}%
                 </span>
               </div>
-              {/* 銘柄名（必ず表示） */}
+              {/* Stock（必ず表示） */}
               <div style={{ fontSize:'13px', fontWeight:700, color:'var(--text)',
                 lineHeight:1.4 }}>
                 {s.name || s.ticker.replace('.T', '')}
@@ -464,14 +464,14 @@ function PickupStocks({ stocks, period }) {
 }
 
 
-// ── ADR銘柄コード（MarketRank.jsxのADR_STOCKSと同一リスト） ──
+// ── ADRStockコード（MarketRank.jsxのADR_STOCKSと同一リスト） ──
 const ADR_CODE_SET = new Set([
   '8306','8316','8411','8591','8766','6758','6971','6954','6857','8035',
   '4063','6501','6702','7203','7267','6902','9432','9433','9984','8058',
   '8001','6098','6752',
 ])
 
-// ── 銘柄テーブル ──
+// ── Stockテーブル ──
 function StockTable({ stocks: rawStocks }) {
   const { plan } = useSubscription()
   const isSubscribed = ['standard','pro','pro_trial','dev'].includes(plan)
@@ -590,7 +590,7 @@ function StockTable({ stocks: rawStocks }) {
         <div id="td-scroll-spacer" style={{ height:'1px' }} />
       </div>
 
-      {/* ② ドラッグ可能な銘柄表 */}
+      {/* ② ドラッグ可能なStock表 */}
       <div ref={tableRef} className="sticky-table"
         style={{ cursor:'grab', userSelect:'none' }}
         onMouseDown={onMouseDown}
@@ -600,8 +600,8 @@ function StockTable({ stocks: rawStocks }) {
         <table style={{ borderCollapse:'collapse', fontSize:'12px', fontFamily:'var(--font)', width:'100%' }}>
           <thead>
             <tr style={{ borderBottom:'1px solid var(--border)' }}>
-              <th className="sticky-col1" style={{ ...thStyle, textAlign:'center', width:'32px', minWidth:'32px', maxWidth:'32px', padding:'8px 4px', background:'var(--bg3)', position:'sticky', left:0, zIndex:3 }}>順</th>
-              <th className="sticky-col2" style={{ ...thStyle, textAlign:'left', minWidth:'120px', background:'var(--bg3)', position:'sticky', left:'32px', zIndex:3 }}>銘柄名</th>
+              <th className="sticky-col1" style={{ ...thStyle, textAlign:'center', width:'32px', minWidth:'32px', maxWidth:'32px', padding:'8px 4px', background:'var(--bg3)', position:'sticky', left:0, zIndex:3 }}>#</th>
+              <th className="sticky-col2" style={{ ...thStyle, textAlign:'left', minWidth:'120px', background:'var(--bg3)', position:'sticky', left:'32px', zIndex:3 }}>Stock</th>
               {headers.map(h => (
                 <th key={h} style={{ ...thStyle, minWidth: h === 'Chart' ? '72px' : '80px',
                   width: h === 'Chart' ? '72px' : undefined }}>{VALUATION_HEADERS.includes(h) && !isSubscribed ? '🔒 ' : ''}{h}</th>
@@ -800,7 +800,7 @@ export default function ThemeDetail({ onNavigate, initialTheme }) {
       .then(d => {
         setThemeNames(d.themes || [])
         if (d.themes?.length) {
-          // initialThemeが指定されていればそれを優先、なければ先頭テーマ
+          // initialThemeが指定されていればそれを優先、なければ先頭Theme
           const preferred = initialTheme && d.themes.includes(initialTheme)
             ? initialTheme : d.themes[0]
           setSelTheme(s => s || preferred)
@@ -810,7 +810,7 @@ export default function ThemeDetail({ onNavigate, initialTheme }) {
       .catch(() => {})
   }, [])
 
-  // initialThemeが変わった場合にselThemeを更新
+  // initialThemeが変わった場合にselThemeをUpdated
   useEffect(() => {
     if (initialTheme) setSelTheme(initialTheme)
   }, [initialTheme])
@@ -874,7 +874,7 @@ export default function ThemeDetail({ onNavigate, initialTheme }) {
     })()
   }, [selTheme, period])
 
-  // テーマ比較データ取得（market.json優先）
+  // Theme比較データ取得（market.json優先）
   useEffect(() => {
     if (!selThemes.length) return
     setLoadingT(true)
@@ -922,7 +922,7 @@ export default function ThemeDetail({ onNavigate, initialTheme }) {
 
   const toggleTheme = (t) =>
     setSelThemes(s => s.includes(t) ? s.filter(x => x !== t) : [...s, t])
-  // ⑥ 選択テーマのHeatmapデータ取得
+  // ⑥ 選択ThemeのHeatmapデータ取得
   const [themeHeatmap, setThemeHeatmap] = useState(null)
   useEffect(() => {
     if (!selTheme) return
@@ -1051,14 +1051,14 @@ export default function ThemeDetail({ onNavigate, initialTheme }) {
 
             {/* TOP5グラフ - 全幅 */}
             <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:'12px', marginBottom:'12px' }} className="top5g">
-              <Top5Bar items={top5} title={`▲ Rising TOP5 (${stocks.filter(s=>s.pct>0).length} Rising)`} colorFn={pctColor} emptyMsg="Rising銘柄なし"/>
-              <Top5Bar items={bot5} title={`▼ Falling TOP5 (${stocks.filter(s=>s.pct<0).length} Falling)`} colorFn={pctColor} emptyMsg="Falling銘柄なし"/>
+              <Top5Bar items={top5} title={`▲ Rising TOP5 (${stocks.filter(s=>s.pct>0).length} Rising)`} colorFn={pctColor} emptyMsg="No rising stocks"/>
+              <Top5Bar items={bot5} title={`▼ Falling TOP5 (${stocks.filter(s=>s.pct<0).length} Falling)`} colorFn={pctColor} emptyMsg="No falling stocks"/>
             </div>
 
             {/* Featured Stocks - 全幅 */}
             <PickupStocks stocks={stocks} period={period} />
 
-            {/* ── ④ 下部2カラム: 左=グラフ群 / 右=銘柄表 ── */}
+            {/* ── ④ 下部2カラム: 左=グラフ群 / 右=Stock表 ── */}
             <div className="td-bottom-grid">
 
               {/* 左カラム: グラフ群 */}
@@ -1171,7 +1171,7 @@ export default function ThemeDetail({ onNavigate, initialTheme }) {
                 )}
               </div>
 
-              {/* 右カラム: 銘柄表 */}
+              {/* 右カラム: Stock表 */}
               <div className="td-right">
                 <div style={{ fontSize:'11px', fontWeight:600, letterSpacing:'0.1em', color:'var(--text3)',
                   textTransform:'uppercase', marginBottom:'8px' }}>

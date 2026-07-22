@@ -130,7 +130,7 @@ function ThemeTrendChart({ stocks, period }) {
   )
 }
 
-// ── 銘柄テーブル ─────────────────────────────────
+// ── Stockテーブル ─────────────────────────────────
 function CustomStockTable({ stocks, period, onRemove }) {
   const [details, setDetails] = useState({})
   const [loading, setLoading] = useState(true)
@@ -549,7 +549,7 @@ export default function CustomTheme() {
     </div>
   )
 
-  // ── テーマ詳細 ──────────────────────────────
+  // ── Theme詳細 ──────────────────────────────
   if (mode === 'detail' && activeTheme) return (
     <div style={{ padding:'20px 24px 48px' }}>
       <div style={{ display:'flex', alignItems:'center', gap:'12px', marginBottom:'20px', flexWrap:'wrap' }}>
@@ -573,7 +573,7 @@ export default function CustomTheme() {
         </div>
       </div>
 
-      {/* ③ 2カラムレイアウト: 左=グラフ群 / 右=銘柄表 */}
+      {/* ③ 2カラムレイアウト: 左=グラフ群 / 右=Stock表 */}
       <div className="ct-detail-grid">
         {/* 左: グラフ群 */}
         <div>
@@ -597,11 +597,11 @@ export default function CustomTheme() {
             <CustomVolTvChart stocks={activeTheme.stocks} />
           </div>
 
-          {/* 銘柄別散布図 */}
+          {/* Stock別散布図 */}
           <CustomBubbleScatter stocks={activeTheme.stocks} period={period} />
         </div>
 
-        {/* 右: 銘柄表（拡充版） */}
+        {/* 右: Stock表（拡充版） */}
         <div>
           <div style={{ fontSize:'12px', fontWeight:600, color:'var(--text3)', marginBottom:'8px',
             display:'flex', alignItems:'center', gap:'8px' }}>

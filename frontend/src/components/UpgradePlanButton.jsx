@@ -87,7 +87,7 @@ export default function UpgradePlanButton({ priceKey, label, color, disabled }) 
       })
       const data = await res.json()
       if (data.url) window.location.href = data.url
-      else throw new Error(data.error || 'エラー')
+      else throw new Error(data.error || 'Error')
     } catch (e) {
       console.error('Checkout error:', e)
       alert('Failed to load checkout page. Please try again later.')

@@ -24,7 +24,7 @@ function Loading() {
           animation: `pulse 1.2s ease-in-out ${d}s infinite`,
         }} />
       ))}
-      <div style={{ marginTop: '12px', fontSize: '12px' }}>データ取得中...</div>
+      <div style={{ marginTop: '12px', fontSize: '12px' }}>Loading data...</div>
     </div>
   )
 }
@@ -165,7 +165,7 @@ export default function Compare() {
         Theme & Macro Comparison
       </h1>
       <p style={{ fontSize: '12px', color: 'var(--text3)', marginBottom: '20px' }}>
-        テーマPrice Change %の比較 ＋ マクロ指標との対比
+        Compare theme returns with major macro indicators
       </p>
 
       {/* 期間選択 */}
@@ -173,7 +173,7 @@ export default function Compare() {
         {PERIODS.map(p => <option key={p.value} value={p.value}>{p.label}</option>)}
       </select>
 
-      {/* テーマ比較 */}
+      {/* Theme比較 */}
       <div style={sHead}>
         <span style={sTitle}>Theme Comparison</span>
         <div style={sLine} />

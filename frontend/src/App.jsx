@@ -23,16 +23,16 @@ import SiteInfo    from './components/pages/SiteInfo'
 import WeeklyReport from './components/pages/WeeklyReport'
 import Plan         from './components/pages/Plan'
 import InstitutionalHoldings from './components/pages/InstitutionalHoldings'
+import RelatedPageNav, { hasRelatedPageNav } from './components/RelatedPageNav'
+import { useSubscription } from './hooks/useSubscription.jsx'
 
 const PAGES = [
   { icon:'🏠', label:'Home',                 component:TopPage               },
   { icon:'📊', label:'Theme List',           component:ThemeList             },
   { icon:'🔥', label:'Heatmap',              component:Heatmap               },
   { icon:'🔍', label:'Theme Detail',         component:ThemeDetail           },
-  { icon:'📋', label:'Market Detail',       component:MarketRank            },
   { icon:'🔍', label:'Stock Search',   component:StockSearch            },
   { icon:'🎨', label:'Custom Theme',         component:CustomTheme           },
-  { icon:'🏦', label:'Institutional Holdings', component:InstitutionalHoldings, locked:true },
   { icon:'📰', label:'Weekly Report',        component:WeeklyReport          },
   { icon:'📝', label:'Column',               component:Column                },
 ]
@@ -52,13 +52,20 @@ const PAGES_FOOTER = [
   { icon:'📋', label:'Terms of Service',    component:TermsOfService        },
 ]
 
+
+const MARKET_DEV_PAGE = { icon:'📋', label:'Market Detail', component:MarketRank }
+const INSTITUTIONAL_DEV_PAGE = { icon:'🏦', label:'Institutional Holdings', component:InstitutionalHoldings }
+const DEV_PAGES = [MARKET_DEV_PAGE, INSTITUTIONAL_DEV_PAGE]
+const DEV_ONLY_LABELS = new Set(DEV_PAGES.map(page => page.label))
+
 // Contact form URL
 const CONTACT_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSeHLMXrJAttWONfyfe94OSsiP039PX5xi918R3kuDHFJ0Aiow/viewform?usp=dialog'
-const ALL_PAGES = [...PAGES, ...PAGES_OTHER, ...PAGES_FOOTER]
+const STATIC_PAGES = [...PAGES, ...PAGES_OTHER, ...PAGES_FOOTER]
 const COLOR_THEME_KEY = 'swjp_color_theme'
 const COLOR_DIR_KEY   = 'sw_color_dir'
 
 function AppInner() {
+  const { isDev } = useSubscription()
   const [currentPage,   setCurrentPage]   = useState('Home')
   const [targetArticleId, setTargetArticleId] = useState(null)
   const [targetTheme,     setTargetTheme]     = useState(null)
@@ -135,9 +142,12 @@ function AppInner() {
     }
   }, [viewMode])
 
-  const currentPageObj = ALL_PAGES.find(p => p.label === currentPage)
+  const visiblePages = isDev ? [...PAGES, ...DEV_PAGES] : PAGES
+  const allPages = [...visiblePages, ...PAGES_OTHER, ...PAGES_FOOTER]
+  const currentPageObj = allPages.find(p => p.label === currentPage)
   const PageComponent  = currentPageObj?.component
   const handlePageChange = (label, articleId = null) => {
+    if (DEV_ONLY_LABELS.has(label) && !isDev) return
     setCurrentPage(label)
     setSidebarOpen(false)
     setTargetArticleId(articleId)
@@ -193,7 +203,7 @@ function AppInner() {
       )}
 
       <Sidebar
-        pages={PAGES} pagesOther={PAGES_OTHER}
+        pages={visiblePages} pagesOther={PAGES_OTHER}
         currentPage={currentPage} onPageChange={handlePageChange}
         isOpen={sidebarOpen} isMobile={isMobile}
         onOpen={() => setSidebarOpen(true)}
@@ -201,13 +211,14 @@ function AppInner() {
         contactUrl={CONTACT_FORM_URL}
       />
 
-      <main style={{
+      <main className={hasRelatedPageNav(currentPage) ? 'has-related-page-nav' : ''} style={{
         marginLeft: isMobile ? '0' : 'var(--sidebar)',
         paddingTop: 'var(--header)',
         minHeight: '100vh',
         transition: 'margin-left 0.25s',
         background: 'var(--bg)',
       }}>
+        <RelatedPageNav currentPage={currentPage} onNavigate={handlePageChange} />
         {PageComponent ? (
           currentPage === 'Institutional Holdings' ? (
             <PlanGate feature="institutional" onNavigate={handlePageChange}>

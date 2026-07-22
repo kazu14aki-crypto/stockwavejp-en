@@ -242,3 +242,6 @@ body {
 [data-theme="light"] ::-webkit-scrollbar-thumb { background: rgba(15,23,42,0.2); }
 [data-theme="light"] ::-webkit-scrollbar-track  { background: rgba(15,23,42,0.05); }
 [data-theme="light"] .sticky-table::-webkit-scrollbar-thumb { background: rgba(15,23,42,0.2); }
+
+:root { --related-nav-height: 51px; }
+.has-related-page-nav .page-header-sticky { top:calc(var(--header) + var(--related-nav-height)); }
