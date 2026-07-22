@@ -1,4 +1,233 @@
-const e=[{id:"theme-investing-basics",category:"Basics",tag:"",title:"What is Theme Investing? How It Differs from Individual Stocks and Index Funds",date:"2026/03/20",summary:'Theme investing groups multiple related stocks under a single "theme" — such as Semiconductors, AI & Cloud, Defense & Aerospace, or Inbound Tourism — and analyzes capital flows across that entire indu',body:`
+const e=[{id:"nvidia-japan-physical-ai-collaboration-2026",themes:["フィジカルAI","AIデータセンター","ロボット・自動化","自動運転"],keywords:["NVIDIA","Japan","physical AI","Noetra","Fujitsu","Fanuc","Yaskawa","YE Digital"],category:"Market Analysis",icon:"🤖",date:"2026/07/22",title:"NVIDIA’s Japan Partnerships: Physical AI, Noetra and the Robotics Investment Chain",summary:"A review of direct partners, indirect beneficiaries including YE Digital, global related companies and the path from demonstrations to recurring revenue.",body:`
+H2: The Structure of NVIDIA’s Japan Announcements
+
+NVIDIA’s July 2026 Japan announcements covered physical AI, robotics, a large AI factory, industry-specific models, automotive systems and AI-native communications.
+
+Core Japanese participants included Fujitsu, Fanuc, Yaskawa Electric, Kawasaki Heavy Industries, Hitachi, NEC, SoftBank, Sony Group, Toyota, Omron and NTT DATA.
+
+YE Digital should be classified as an indirect ecosystem beneficiary. Its strengths are factory and logistics digitalization and its relationship with Yaskawa Electric. It was not announced as a direct contracting party in the same category as the core participants.
+
+H2: Global Related Companies
+
+NVIDIA is the clearest early beneficiary. Other global companies include Arista Networks and Broadcom for networking, Vertiv and Eaton for power and cooling, TSMC, Micron and SK Hynix for accelerators and HBM, and ABB, Rockwell Automation, Teradyne and Symbotic for automation.
+
+H2: Revenue Path
+
+The revenue chain is hardware investment, development and demonstrations, production deployment, and recurring software or maintenance.
+
+Japanese partners need to create recurring value from factory data, simulation, model updates, monitoring and maintenance rather than acting only as hardware resellers or one-off systems integrators.
+
+H2: Risks
+
+- Announcements may remain demonstrations
+- Power and cooling requirements are large
+- Factory data may be difficult to share
+- Safety certification can delay deployment
+- NVIDIA may capture more economics than local partners
+- Market valuations may move before orders and profits
+
+H2: Conclusion
+
+The announcements are strategically important, but formal contracts, paid deployments, margins and recurring revenue matter more than the number of companies mentioned.
+
+> Disclaimer: General information only. Not investment advice.`},{id:"japan-current-policy-growth-strategy-2026",themes:["AI半導体","防衛・航空","原子力発電","国土強靭化計画","銀行・金融","造船"],keywords:["Japan policy","Takaichi Cabinet","Japan Growth Strategy","proactive fiscal policy","17 strategic fields"],category:"Market Analysis",icon:"🏛️",date:"2026/07/22",title:"Japan’s 2026 Policy Strategy: Proactive Fiscal Policy, 17 Strategic Fields and Investable Themes",summary:"An investor-oriented guide to Japan’s Growth Strategy, covering AI, semiconductors, defense, energy, shipbuilding, resilience, wages, regional growth and global peers.",body:`
+H2: Japan’s Policy Direction in July 2026
+
+On July 21, 2026, the Takaichi Cabinet approved Japan’s Growth Strategy. The shift is broader than short-term stimulus. Japan is moving toward multi-year industrial policy intended to reduce strategic risks, rebuild domestic capacity and induce private investment.
+
+The central phrase is “responsible proactive fiscal policy.” Crisis-management investment covers economic security, food, energy and resources, healthcare security, national resilience and cybersecurity. Growth investment includes AI, semiconductors, shipbuilding and other advanced industries.
+
+The important change is budget visibility through initial budgets, multi-year commitments, funds and public-private investment roadmaps. At the same time, the government says debt growth should remain within economic growth and the debt-to-GDP ratio should decline over time.
+
+H2: Three Layers
+
+H3: Household Protection and Income
+
+Inflation relief, wage growth, minimum wages, price pass-through and disposable income.
+
+H3: Productive Capacity
+
+AI, semiconductors, digital infrastructure, telecommunications, shipbuilding, defense, energy, biotech, healthcare and mobility.
+
+H3: National Sustainability
+
+Demographics, regions, food, social security, national resilience, economic security, defense and intelligence.
+
+Markets focus on industrial themes, but long-term returns also depend on household consumption, electricity, labor and fiscal credibility.
+
+H2: How Proactive Fiscal Policy Is Intended to Work
+
+1. Government publishes strategic fields and multi-year budgets
+2. Companies invest in R&D, factories and infrastructure
+3. Orders flow to equipment, construction, materials, power and IT suppliers
+4. New capacity starts operating
+5. Revenue, profit, employment, exports and tax receipts rise
+
+Share prices can move during the first three stages. Corporate value is created only if the last two stages occur.
+
+H2: The 17 Strategic Fields
+
+Japan’s growth framework covers AI and semiconductors, digital and cybersecurity, information and communications, shipbuilding, quantum technology, aviation and space, energy and GX, disaster prevention and national resilience, food technology and agriculture, resources and economic security, synthetic biology and biotechnology, drug discovery and advanced medicine, mobility, content, tourism and finance.
+
+Investors should focus on eligible products, budgets, duration, subsidy ratios, implementing ministries and procurement mechanisms.
+
+H2: AI and Semiconductors
+
+The AI and Semiconductor Industrial Infrastructure Framework targets more than JPY10 trillion of public support through fiscal 2030, aiming to encourage over JPY50 trillion of public-private investment and around JPY160 trillion of spillover.
+
+Japanese companies include Tokyo Electron, Advantest, SCREEN, Disco, Lasertec, Shin-Etsu Chemical, SUMCO, Resonac, Ibiden, Taiyo Holdings, Kioxia, Socionext and Renesas.
+
+Global companies include NVIDIA, AMD, Broadcom, Micron, TSMC, ASML, Applied Materials, Lam Research, KLA, Synopsys and Cadence.
+
+Japan is strong in equipment, materials, inspection, substrates and precision processing. It remains weaker in advanced logic manufacturing experience, software, design IP and cloud-scale demand.
+
+H2: Digital and Cybersecurity
+
+Japanese companies include NEC, Fujitsu, Hitachi, NTT DATA, SCSK, Nomura Research Institute, Trend Micro, FFRI Security and S&J.
+
+Global peers include Palo Alto Networks, CrowdStrike, Fortinet, Zscaler, Cloudflare, Microsoft, Cisco and Okta.
+
+Recurring revenue, retention, engineering capacity, resale dependence and incident liability matter more than headline public contracts.
+
+H2: Communications and AI Infrastructure
+
+AI data centers require power, cooling, optical connectivity, networking and land.
+
+Japanese companies include SoftBank, NTT, KDDI, Fujikura, Sumitomo Electric, Furukawa Electric, Fuji Electric, Meidensha, Daikin, Takasago Thermal Engineering, Kinden and Kandenko.
+
+Global peers include NVIDIA, Arista Networks, Broadcom, Vertiv, Eaton, GE Vernova, Equinix, Digital Realty and Super Micro Computer.
+
+Announced capacity is not operating capacity. Grid connections, construction, accelerator supply and customer utilization remain constraints.
+
+H2: Energy and GX
+
+Japan’s Seventh Strategic Energy Plan looks toward 2040 and supports reactor restarts, next-generation reactors at existing sites, perovskite solar, geothermal, hydrogen, ammonia, storage, grid investment, fusion, resource development and recycling.
+
+Japanese companies include Mitsubishi Heavy Industries, IHI, Hitachi, Toshiba, Kansai Electric, Kyushu Electric, Tokyo Electric Power, INPEX, ENEOS, Idemitsu, Sekisui Chemical, GS Yuasa and Sumitomo Electric.
+
+Global peers include Constellation Energy, Vistra, Cameco, BWX Technologies, GE Vernova, NextEra Energy, First Solar, Bloom Energy and Air Products.
+
+Benefits spread to grids, transformers, cables, cooling, maintenance and construction. Regulation, local consent, schedules, fuel prices and rates are major risks.
+
+H2: Defense, Space and Intelligence
+
+Japan is implementing its Defense Buildup Program through fiscal 2027 and plans an early revision of its security documents in 2026.
+
+Japanese companies include Mitsubishi Heavy Industries, Kawasaki Heavy Industries, IHI, Mitsubishi Electric, NEC, Fujitsu, Subaru, Nippon Avionics, Tokyo Keiki and Ishikawa Seisakusho.
+
+Global companies include Lockheed Martin, RTX, Northrop Grumman, General Dynamics, Boeing, L3Harris, Kratos, AeroVironment and Palantir.
+
+Defense demand has visibility, but margins depend on contract terms, cost inflation, delivery schedules and export rules.
+
+H2: Shipbuilding
+
+Japanese companies include Japan Engine Corporation, Mitsui E&S, Namura Shipbuilding, Naikai Zosen, Furuno Electric, Terasaki Electric, Kawasaki Heavy Industries and Mitsubishi Heavy Industries.
+
+Global peers include HD Hyundai, Hanwha Ocean, Samsung Heavy Industries, Huntington Ingalls, Wärtsilä and Kongsberg.
+
+Capacity, labor, suppliers, steel prices and schedules are the key constraints.
+
+H2: National Resilience
+
+Japanese companies include Taisei, Obayashi, Kajima, Shimizu, Sho-Bond, Raito Kogyo, NJS, Kurimoto, Kubota, Metawater and Maezawa Industries.
+
+Global peers include Caterpillar, United Rentals, Vulcan Materials, Martin Marietta, Xylem, AECOM and Quanta Services.
+
+Public investment supports demand, while labor shortages, materials and low-margin bidding can limit profits.
+
+H2: Food Security
+
+Japanese companies include Kubota, Iseki, Sakata Seed, Kaneko Seeds, Nisshin Seifun, Nichirei, Mitsubishi Shokuhin and Nousouken.
+
+Global companies include Deere, Corteva, Nutrien, ADM, Bunge and CNH Industrial.
+
+Producer profitability, input costs, land consolidation, exports and labor availability are more important than subsidy totals.
+
+H2: Drug Discovery and Advanced Medicine
+
+Japanese companies include Takeda, Daiichi Sankyo, Astellas, Chugai, Eisai, Sysmex, Terumo, Olympus, HOYA and Fujifilm.
+
+Global peers include Eli Lilly, Novo Nordisk, Merck, Regeneron, Thermo Fisher, Danaher, Intuitive Surgical, Boston Scientific and Abbott.
+
+R&D support does not remove clinical, regulatory or commercialization risk.
+
+H2: Wages and Smaller Companies
+
+Minimum-wage increases can support consumption while pressuring restaurants, retail, care and logistics.
+
+Japanese companies linked to productivity and labor reform include Recruit, Persol, Visional, Obic, Cybozu, M&A Research Institute, Nihon M&A Center, Fanuc and Yaskawa.
+
+Global peers include ADP, Workday, ServiceNow, Rockwell Automation, ABB and Symbotic.
+
+H2: Regional Growth
+
+Semiconductor fabs and data centers can stimulate construction, electricity, housing, logistics, banks and staffing. A region still needs transport, healthcare, education and housing capacity.
+
+Relevant themes include regional banks, construction, tourism, staffing, real estate, utilities and semiconductor equipment.
+
+H2: Asset Management Nation
+
+Japanese companies include Nomura, Daiwa Securities, MUFG, SMFG, Mizuho, SBI and Monex.
+
+Global companies include BlackRock, Blackstone, KKR, Apollo, JPMorgan, Goldman Sachs and Morgan Stanley.
+
+Assets under management can support fees, while market declines, fee pressure and regulation remain risks.
+
+H2: Demographics and Social Security
+
+A shrinking workforce constrains every strategy. Policies combine family support, employment participation, foreign-worker systems, automation and healthcare reform.
+
+Relevant industries include care, staffing, education, housing, robotics, SaaS and medical IT.
+
+H2: Six Stages of a Policy Trade
+
+1. Policy statement
+2. Legislation and design
+3. Budget approval
+4. Project selection
+5. Corporate orders
+6. Revenue, profit and cash flow
+
+The market can react at Stage 1. Corporate value is created at Stages 5 and 6.
+
+H2: Scenarios
+
+H3: Bull Case
+
+Multi-year budgets accelerate investment in AI, semiconductors, power, defense, shipbuilding and infrastructure, while wage gains support consumption.
+
+H3: Base Case
+
+Investment rises, but labor, materials and electricity delay projects. Revenue grows, while margins vary sharply by company.
+
+H3: Bear Case
+
+Higher rates, inflation, yen weakness, fiscal-credibility concerns or policy changes reduce private investment. Subsidy-dependent companies struggle after support ends.
+
+H2: How to Use StockWaveJP
+
+Compare AI Chips, Defense, Shipbuilding, Nuclear Power, Wires and Copper, National Resilience, Cybersecurity and Banking across several periods.
+
+Use the heatmap to check whether capital is concentrated in a few large names or spreading into materials, equipment, construction and services.
+
+In Theme Detail, compare average, median, rising-stock count, volume, trading value, top three and worst three.
+
+H2: Conclusion
+
+Japan’s 2026 policy framework combines responsible proactive fiscal policy with multi-year crisis-management and growth investment.
+
+AI, semiconductors, defense, energy, shipbuilding and national resilience may become durable themes. The key is to track the path from policy to project selection, orders, operation and cash flow.
+
+> Disclaimer: General information based on public government sources. This article does not recommend buying, selling or holding any security.
+
+H2: Main Sources
+
+- Prime Minister’s Office, Policy Speech to the 221st Session of the Diet
+- Cabinet Secretariat, Japan’s Growth Strategy, July 21, 2026
+- Cabinet Secretariat, Public-Private Investment Roadmaps for 17 Strategic Fields
+- METI, AI and Semiconductor Industrial Infrastructure Framework
+- Agency for Natural Resources and Energy, Seventh Strategic Energy Plan
+- Ministry of Defense, National Security Strategy and Defense Buildup Program`},{id:"theme-investing-basics",category:"Basics",tag:"",title:"What is Theme Investing? How It Differs from Individual Stocks and Index Funds",date:"2026/03/20",summary:'Theme investing groups multiple related stocks under a single "theme" — such as Semiconductors, AI & Cloud, Defense & Aerospace, or Inbound Tourism — and analyzes capital flows across that entire indu',body:`
 ## What Is Theme Investing?
 
 Theme investing groups multiple related stocks under a single "theme" — such as Semiconductors, AI & Cloud, Defense & Aerospace, or Inbound Tourism — and analyzes capital flows across that entire industry cluster. Unlike individual stock analysis, theme investing helps you see where the market's money is actually moving.
