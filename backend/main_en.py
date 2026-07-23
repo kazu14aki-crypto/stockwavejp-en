@@ -343,8 +343,8 @@ PRICE_MAP = {
     "pro_monthly":      os.environ.get("STRIPE_PRICE_PRO_MONTHLY", ""),
 }
 
-@app.post("/api/stripe/create-checkout")
-async def create_checkout(request: Request):
+@app.post("/api/stripe/create-checkout-legacy-disabled")
+async def create_checkout_legacy_disabled(request: Request):
     body = await request.json()
     price_key = body.get("price_key") or body.get("priceKey", "")
     user_id   = body.get("userId", "")
@@ -428,6 +428,57 @@ def _subscription_rows(sb, user_id: str):
     ).eq("user_id", user_id).execute()
     return result.data or []
 
+
+@app.post("/api/stripe/create-checkout")
+async def create_checkout_authenticated(request: Request):
+    body = await request.json()
+    if not body.get('legal_consent'):
+        raise HTTPException(status_code=400, detail='You must accept the Terms, Privacy Policy and Disclaimer.')
+    sb, auth_user = _authenticated_supabase_user(request)
+    user_id = auth_user.id
+    price_key = body.get('price_key') or body.get('priceKey', '')
+    price_id = PRICE_MAP.get(price_key, '')
+    if not price_id:
+        raise HTTPException(status_code=503, detail='The Stripe price is not configured.')
+    try:
+        sb.table('legal_consents').insert({
+            'user_id': user_id,
+            'terms_version': body.get('terms_version',''),
+            'privacy_version': body.get('privacy_version',''),
+            'disclaimer_version': body.get('disclaimer_version',''),
+            'locale': 'en',
+            'source': 'subscription_checkout',
+            'user_agent': request.headers.get('user-agent',''),
+        }).execute()
+    except Exception as exc:
+        raise HTTPException(status_code=500, detail=f'The consent record could not be saved: {exc}')
+    rows = _subscription_rows(sb, user_id)
+    plan = 'standard' if 'standard' in price_key else 'pro'
+    active = next((r for r in rows if r.get('status') in ('active','canceling','past_due','trialing') and r.get('stripe_subscription_id')), None)
+    if active:
+        if active.get('status') == 'canceling' and active.get('plan') == plan:
+            stripe.Subscription.modify(active['stripe_subscription_id'], cancel_at_period_end=False)
+            sb.table('subscriptions').update({'status':'active'}).eq('stripe_subscription_id', active['stripe_subscription_id']).execute()
+            return {'resumed':True,'message':'The scheduled cancellation was removed. No new subscription or immediate charge was created.'}
+        raise HTTPException(status_code=409, detail='An active subscription already exists. Use the billing portal to change plans.')
+    customer_id = next((r.get('stripe_customer_id') for r in rows if r.get('stripe_customer_id')), None)
+    metadata={'user_id':user_id,'plan':plan,'legal_consent':'true','terms_version':body.get('terms_version',''),'privacy_version':body.get('privacy_version',''),'disclaimer_version':body.get('disclaimer_version','')}
+    params={'payment_method_types':['card'],'mode':'subscription','line_items':[{'price':price_id,'quantity':1}],'client_reference_id':user_id,'success_url':body.get('success_url','https://stockwavejp-en.com')+'?checkout=success','cancel_url':body.get('cancel_url','https://stockwavejp-en.com')+'?checkout=cancel','metadata':metadata,'subscription_data':{'metadata':metadata},'locale':'en'}
+    if customer_id: params['customer']=customer_id
+    else: params['customer_email']=getattr(auth_user,'email',None) or body.get('email')
+    session=stripe.checkout.Session.create(**params)
+    return {'url':session.url}
+
+@app.post("/api/stripe/resume-subscription")
+async def resume_subscription(request: Request):
+    sb, auth_user = _authenticated_supabase_user(request)
+    rows = _subscription_rows(sb, auth_user.id)
+    row = next((r for r in rows if r.get('status') == 'canceling' and r.get('stripe_subscription_id')), None)
+    if not row:
+        raise HTTPException(status_code=404, detail='No subscription scheduled for cancellation was found.')
+    stripe.Subscription.modify(row['stripe_subscription_id'], cancel_at_period_end=False)
+    sb.table('subscriptions').update({'status':'active'}).eq('stripe_subscription_id', row['stripe_subscription_id']).execute()
+    return {'ok':True,'message':'The scheduled cancellation was removed and the subscription will continue.'}
 
 @app.post("/api/stripe/create-portal")
 async def create_portal(request: Request):

@@ -466,6 +466,17 @@ function BubbleScatterMini({ onNavigate }) {
   )
 }
 
+function StockWaveScoreComparisonChart({ themes }) {
+  const names=(themes||[]).filter(t=>Number.isFinite(Number(t.stockwave_score))).map(t=>t.theme)
+  const [selected,setSelected]=useState(()=>names.slice(0,3))
+  useEffect(()=>{if(names.length&&selected.length===0)setSelected(names.slice(0,3))},[names.length])
+  const items=selected.map(name=>(themes||[]).find(t=>t.theme===name)).filter(Boolean).slice(0,5)
+  return <div>
+    <MonthlyThemePicker allThemes={names} selected={selected} setSelected={setSelected}/>
+    <div style={{display:'grid',gap:'8px'}}>{items.map(item=>{const score=Math.max(0,Math.min(100,Number(item.stockwave_score)||0));return <div key={item.theme} style={{display:'grid',gridTemplateColumns:'minmax(120px,220px) 1fr 44px',gap:'8px',alignItems:'center'}}><span style={{fontSize:'11px',color:'var(--text2)',overflow:'hidden',textOverflow:'ellipsis',whiteSpace:'nowrap'}}>{item.theme}</span><div style={{height:'22px',background:'rgba(255,255,255,.06)',borderRadius:'6px',overflow:'hidden'}}><div style={{height:'100%',width:score+'%',background:'#4a9eff',opacity:.78}}/></div><b style={{fontFamily:'var(--mono)',fontSize:'12px',color:'var(--text)'}}>{score.toFixed(0)}</b></div>})}</div>
+  </div>
+}
+
 function SectionHead({ title }) {
   return (
     <div style={{ display: 'flex', alignItems: 'center', gap: '10px', margin: '28px 0 14px' }}>
@@ -875,8 +886,11 @@ const MONTHLY_COLORS = [
 // Monthlyチャートの共通Theme選択UI（Return・Volume・Trade Valueで共有）
 function MonthlyThemePicker({ allThemes, selected, setSelected }) {
   const [showPicker, setShowPicker] = useState(false)
-  const toggleTheme = t =>
-    setSelected(s => s.includes(t) ? s.filter(x => x !== t) : [...s, t])
+  const toggleTheme = t => setSelected(current => {
+    if (current.includes(t)) return current.filter(x => x !== t)
+    if (current.length >= 5) { window.alert('You can compare up to five themes.'); return current }
+    return [...current, t]
+  })
 
   return (
     <div style={{ marginBottom:'12px' }}>
@@ -1274,6 +1288,7 @@ function MonthlyTVChart({ volTrendData, allThemeNames, months }) {
 }
 
 export default function ThemeList({ onNavigate }) {
+  const [comparisonMetric, setComparisonMetric] = useState('return')
   const [period, setPeriod] = useState('1mo')
   const [rankingMetric, setRankingMetric] = useState('pct')
   const [rankingOrder, setRankingOrder] = useState('desc')
@@ -1509,44 +1524,11 @@ export default function ThemeList({ onNavigate }) {
               </>
             )}
 
-            {/* 📅 Monthlyグラフ ＋ Heatmap: PC版2×2グリッド */}
-            {!canAccess('theme_trend_charts')?(
-              <LockedFeaturePanel title='Theme Trend Charts' description='Monthly return, volume, trading-value and heatmap charts are available on Standard and Pro plans.' onNavigate={onNavigate} />
-            ):Object.keys(volTrendData).length > 0 && months.length > 0 && (() => {
-              const allThemeNames = Object.keys(volTrendData).map(k => k.replace('vol_trend_', ''))
-              return (
-                <div className="monthly-chart-grid">
-                  {/* MonthlyReturn */}
-                  <div className="monthly-chart-cell">
-                    <div style={{ fontSize:'13px', fontWeight:700, color:'var(--text)', marginBottom:'8px' }}>📅 Monthly Theme Performance</div>
-          <ExpandableChart title="Monthly Theme Performance">
-                      <MonthlyLineChart data={monthlyData} months={months} onNavigate={onNavigate} />
-                    </ExpandableChart>
-                  </div>
-                  {/* MonthlyVolume */}
-                  <div className="monthly-chart-cell">
-                    <div style={{ fontSize:'13px', fontWeight:700, color:'var(--text)', marginBottom:'8px' }}>📊 Monthly Theme Volume Trend</div>
-          <ExpandableChart title="Monthly Theme Volume Trend">
-                      <MonthlyVolChart volTrendData={volTrendData} allThemeNames={allThemeNames} months={months} />
-                    </ExpandableChart>
-                  </div>
-                  {/* MonthlyTrade Value */}
-                  <div className="monthly-chart-cell">
-                    <div style={{ fontSize:'13px', fontWeight:700, color:'var(--text)', marginBottom:'8px' }}>💴 Monthly Theme Trade Value Trend</div>
-          <ExpandableChart title="Monthly Theme Trade Value Trend">
-                      <MonthlyTVChart volTrendData={volTrendData} allThemeNames={allThemeNames} months={months} />
-                    </ExpandableChart>
-                  </div>
-                  {/* ThemeHeatmap（BubbleScatter） */}
-                  <div className="monthly-chart-cell">
-                    <div style={{ fontSize:'13px', fontWeight:700, color:'var(--text)', marginBottom:'8px' }}>🔥 Theme Heatmap</div>
-          <ExpandableChart title="Theme Heatmap (Capital Flow)" showZoneDesc>
-                      <BubbleScatterMini onNavigate={onNavigate} />
-                    </ExpandableChart>
-                  </div>
-                </div>
-              )
-            })()}
+            {/* Theme comparison: metric tabs + heatmap */}
+            {!canAccess('theme_trend_charts') ? (
+              <LockedFeaturePanel title="Theme Comparison" description="Theme comparison charts are available on Standard and Pro plans." onNavigate={onNavigate}/>
+            ) : Object.keys(volTrendData).length>0 && months.length>0 && (()=>{const allThemeNames=Object.keys(volTrendData).map(k=>k.replace('vol_trend_',''));return <div style={{marginTop:'24px'}}><SectionHead title="Theme Comparison"/><div style={{fontSize:'11px',color:'var(--text3)',margin:'-8px 0 12px'}}>Select up to five themes and switch metrics with the tabs.</div><div style={{display:'grid',gridTemplateColumns:'repeat(4,minmax(0,1fr))',gap:'6px',marginBottom:'10px'}}>{[['return','Return'],['volume','Volume'],['trade_value','Trading Value'],['score','StockWave Score']].map(([key,label])=><button key={key} onClick={()=>setComparisonMetric(key)} style={{padding:'8px 5px',borderRadius:'7px',border:comparisonMetric===key?'1px solid var(--accent)':'1px solid var(--border)',background:comparisonMetric===key?'rgba(74,158,255,.12)':'var(--bg2)',color:comparisonMetric===key?'var(--accent)':'var(--text3)',fontFamily:'var(--font)',fontSize:'11px',fontWeight:700,cursor:'pointer'}}>{label}</button>)}</div><div className="monthly-chart-grid"><div className="monthly-chart-cell"><div style={{fontSize:'13px',fontWeight:700,color:'var(--text)',marginBottom:'8px'}}>Theme Comparison</div><ExpandableChart title="Theme Comparison">{comparisonMetric==='return'&&<MonthlyLineChart data={monthlyData} months={months} onNavigate={onNavigate}/>} {comparisonMetric==='volume'&&<MonthlyVolChart volTrendData={volTrendData} allThemeNames={allThemeNames} months={months}/>} {comparisonMetric==='trade_value'&&<MonthlyTVChart volTrendData={volTrendData} allThemeNames={allThemeNames} months={months}/>} {comparisonMetric==='score'&&<StockWaveScoreComparisonChart themes={themes}/>}</ExpandableChart></div><div className="monthly-chart-cell"><div style={{fontSize:'13px',fontWeight:700,color:'var(--text)',marginBottom:'8px'}}>🔥 Theme Heatmap</div><ExpandableChart title="Theme Heatmap" showZoneDesc><BubbleScatterMini onNavigate={onNavigate}/></ExpandableChart></div></div></div>})()}
+
 
           </>
         )}

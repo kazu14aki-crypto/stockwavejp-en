@@ -245,3 +245,5 @@ body {
 
 :root { --related-nav-height: 51px; }
 .has-related-page-nav .page-header-sticky { top:calc(var(--header) + var(--related-nav-height)); }
+
+@media(min-width:769px){.has-related-page-nav .page-header-sticky{top:var(--header)!important}}

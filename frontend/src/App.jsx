@@ -23,8 +23,8 @@ import SiteInfo    from './components/pages/SiteInfo'
 import ReportHub from './components/pages/ReportHub'
 import Plan         from './components/pages/Plan'
 import InstitutionalHoldings from './components/pages/InstitutionalHoldings'
+import LegalConsentGate from './components/LegalConsentGate'
 import RelatedPageNav, { hasRelatedPageNav } from './components/RelatedPageNav'
-import PageErrorBoundary from './components/PageErrorBoundary'
 import { useSubscription } from './hooks/useSubscription.jsx'
 
 const PAGES = [
@@ -80,6 +80,8 @@ function AppInner() {
       setTargetArticleId(articleId)
     } else if (hash === 'terms') {
       setCurrentPage('Terms of Service')
+    } else if (hash === 'disclaimer') {
+      setCurrentPage('Disclaimer')
     } else if (hash === 'privacy') {
       setCurrentPage('Privacy Policy')
     }
@@ -196,6 +198,7 @@ function AppInner() {
         onViewModeChange={setViewMode}
         onLogoClick={handleLogoClick}
       />
+      <LegalConsentGate onNavigate={handlePageChange} />
 
       {sidebarOpen && isMobile && (
         <div onClick={() => setSidebarOpen(false)} style={{
@@ -221,19 +224,17 @@ function AppInner() {
       }}>
         <RelatedPageNav currentPage={currentPage} onNavigate={handlePageChange} />
         {PageComponent ? (
-          <PageErrorBoundary resetKey={currentPage} onNavigate={handlePageChange}>
-            {currentPage === 'Institutional Holdings' ? (
-              <PlanGate feature="institutional" onNavigate={handlePageChange}>
-                <PageComponent {...pageProps} />
-              </PlanGate>
-            ) : currentPage === 'Market Detail' ? (
-              <PlanGate feature="market_detail" onNavigate={handlePageChange}>
-                <PageComponent {...pageProps} />
-              </PlanGate>
-            ) : (
+          currentPage === 'Institutional Holdings' ? (
+            <PlanGate feature="institutional" onNavigate={handlePageChange}>
               <PageComponent {...pageProps} />
-            )}
-          </PageErrorBoundary>
+            </PlanGate>
+          ) : currentPage === 'Market Detail' ? (
+            <PlanGate feature="market_detail" onNavigate={handlePageChange}>
+              <PageComponent {...pageProps} />
+            </PlanGate>
+          ) : (
+            <PageComponent {...pageProps} />
+          )
         ) : (
           <div style={{ display:'flex', alignItems:'center', justifyContent:'center',
             height:'calc(100vh - var(--header))', flexDirection:'column', gap:'16px', color:'var(--text3)' }}>

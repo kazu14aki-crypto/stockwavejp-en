@@ -1,6 +1,7 @@
 import { tn } from '../../utils/themeNames'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useMomentum } from '../../hooks/useMarketData'
+import { useSubscription } from '../../hooks/useSubscription.jsx'
 import StockWaveScoreCard from '../StockWaveScoreCard'
 import { calculateStockWaveScore } from '../../utils/stockWaveScore'
 
@@ -510,7 +511,7 @@ function SelectedThemePanel({ theme, period, bubble, onNavigate }) {
 }
 
 
-function BubbleScatter({ data, mPeriod, setMPeriod, onNavigate }) {
+function BubbleScatter({ data, mPeriod, setMPeriod, onNavigate, canAccessPeriod }) {
   const [popupTheme, setPopupTheme] = React.useState(null)
   const [popupPos,   setPopupPos]   = React.useState({ x: 0, y: 0 })
   const [hovered, setHovered] = useState(null)
@@ -757,7 +758,7 @@ function BubbleScatter({ data, mPeriod, setMPeriod, onNavigate }) {
             fontFamily:'var(--font)', fontSize:'13px',
             padding:'6px 12px', cursor:'pointer', outline:'none' }}>
           {[{v:'1d',l:'1 Day'},{v:'5d',l:'1 Week'},{v:'1mo',l:'1 Month'},{v:'3mo',l:'3 Months'},{v:'6mo',l:'6 Months'}].map(p => (
-            <option key={p.v} value={p.v}>{p.l}</option>
+            <option key={p.v} value={p.v} disabled={!canAccessPeriod(p.v)}>{p.l}{!canAccessPeriod(p.v)?' 🔒':''}</option>
           ))}
         </select>
         <span style={{ fontSize:'11px', color:'var(--text3)' }}>
@@ -1027,7 +1028,9 @@ function BubbleScatter({ data, mPeriod, setMPeriod, onNavigate }) {
 
 
 export default function Heatmap({ onNavigate }) {
-  const [mPeriod, setMPeriod] = useState('1mo')
+  const { canAccessPeriod } = useSubscription()
+  const [mPeriod, setMPeriod] = useState('3mo')
+  useEffect(() => { if (!canAccessPeriod(mPeriod)) setMPeriod('3mo') }, [mPeriod, canAccessPeriod])
   const { data: momentumRaw, loading: loadingM } = useMomentum(mPeriod)
   const momentumData = momentumRaw?.data || []
 
@@ -1038,7 +1041,7 @@ export default function Heatmap({ onNavigate }) {
       </h1>
 
       {/* ⑥ タブ削除・散布図を直接表示 */}
-      <BubbleScatter data={momentumData} mPeriod={mPeriod} setMPeriod={setMPeriod} onNavigate={onNavigate} />
+      <BubbleScatter data={momentumData} mPeriod={mPeriod} setMPeriod={setMPeriod} onNavigate={onNavigate} canAccessPeriod={canAccessPeriod} />
 
       <style>{`
         /* ⑥ PC版：注目ゾーン説明を横並び4列 */
