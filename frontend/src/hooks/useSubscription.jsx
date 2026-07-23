@@ -127,6 +127,8 @@ export function SubscriptionProvider({ children }) {
         // ① 短期期間（1日・1週・1ヶ月・2ヶ月）はStandard以上のみ
         'short_period':        ['standard', 'pro', 'pro_trial', 'dev'],
         // ① Market DetailはStandard以上のみ
+        'stockwave_score':     ['standard', 'pro', 'pro_trial', 'dev'],
+        'theme_trend_charts':  ['standard', 'pro', 'pro_trial', 'dev'],
         'market_detail':       ['dev'],
       }
       return rules[feature]?.includes(plan) ?? true

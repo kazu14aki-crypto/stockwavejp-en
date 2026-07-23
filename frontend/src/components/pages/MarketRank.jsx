@@ -551,11 +551,18 @@ function StockTable({ stocks: rawStocks, onAddToTheme }) {
   const startX = useRef(0)
   const scrollLeft = useRef(0)
 
-  // ⑤ ソート
-  const stocks = [...rawStocks].sort((a, b) => {
-    const va = a[sortKey] ?? 0; const vb = b[sortKey] ?? 0
-    return sortAsc ? va - vb : vb - va
-  })
+  const getSortValue=(row,key)=>{
+    if(key==='_originalIndex')return row._originalIndex
+    if(key==='name')return String(row.name||'')
+    if(key==='spark_last'){const a=Array.isArray(row.spark)?row.spark:[];return a.length?Number(a[a.length-1]):null}
+    if(key==='usd_price')return Number(row.price||0)/Number(usdJpy||1)
+    return row[key]
+  }
+  const handleSort=key=>{if(!key)return;if(sortKey===key)setSortAsc(v=>!v);else{setSortKey(key);setSortAsc(false)}}
+  const sortIndicator=key=>sortKey===key?(sortAsc?' ↑':' ↓'):''
+  const stocks=[...rawStocks].map((stock,index)=>({...stock,_originalIndex:index}))
+    .map(stock=>({...stock,name:englishCompanyName(stock.code||stock.ticker,stock.name)}))
+    .sort((a,b)=>{const va=getSortValue(a,sortKey),vb=getSortValue(b,sortKey);const am=va==null||va==='',bm=vb==null||vb=='';if(am||bm)return am===bm?0:am?1:-1;const r=(typeof va==='string'||typeof vb==='string')?String(va).localeCompare(String(vb),undefined,{numeric:true,sensitivity:'base'}):Number(va)-Number(vb);return sortAsc?r:-r})
 
   // ① 上下スクロールバー同期 + table実幅をspacerに反映
   useEffect(() => {
@@ -608,6 +615,7 @@ function StockTable({ stocks: rawStocks, onAddToTheme }) {
   const onMouseUp = () => { isDragging.current = false; if (tableRef.current) tableRef.current.style.cursor = 'grab' }
 
   const headers = ['Chart','Price','USD','Return','Mkt.Cap','Contrib.%','Vol.Chg','Volume','Vol.Rank','Trade Value','TV.Rank','PER','Fwd PER','PBR','Fwd PBR','PEG','Fwd PEG','Add']
+  const HEADER_SORT_KEYS={'Chart':'spark_last','Price':'price','USD':'usd_price','Return':'pct','Mkt.Cap':'market_cap','Contrib.%':'contribution','Vol.Chg':'volume_chg','Volume':'volume','Vol.Rank':'vol_rank','Trade Value':'trade_value','TV.Rank':'tv_rank','PER':'per','Fwd PER':'per_fwd','PBR':'pbr','Fwd PBR':'pbr_fwd','PEG':'peg','Fwd PEG':'peg_fwd'}
   const VALUATION_HEADERS = ['PER','Fwd PER','PBR','Fwd PBR','PEG','Fwd PEG']
   const sortBtns = [{key:'pct',label:'Return'},{key:'volume',label:'Volume'},{key:'trade_value',label:'Trade Value'}]
 
@@ -640,14 +648,9 @@ function StockTable({ stocks: rawStocks, onAddToTheme }) {
         <table style={{ borderCollapse:'collapse', fontSize:'12px', fontFamily:'var(--font)', width:'100%' }}>
           <thead>
             <tr style={{ borderBottom:'1px solid var(--border)' }}>
-              <th style={{ ...thStyle, textAlign:'center', width:'32px', minWidth:'32px', maxWidth:'32px', padding:'8px 4px', background:'var(--bg3)', position:'sticky', left:0, zIndex:3 }}>#</th>
-              <th style={{ ...thStyle, textAlign:'left', minWidth:'120px', background:'var(--bg3)', position:'sticky', left:'32px', zIndex:3 }}>Stock Name</th>
-              {headers.map(h => (
-                <th key={h} style={{ ...thStyle, minWidth: h==='Price'||h==='Return'?'70px':'80px',
-                  color: VALUATION_HEADERS.includes(h) && !isSubscribed ? 'var(--text3)' : undefined }}>
-                  {VALUATION_HEADERS.includes(h) && !isSubscribed ? '🔒 ' : ''}{h}
-                </th>
-              ))}
+              <th style={{ ...thStyle, textAlign:'center', width:'32px', minWidth:'32px', maxWidth:'32px', padding:'8px 4px', background:'var(--bg3)', position:'sticky', left:0, zIndex:3 }} onClick={()=>handleSort('_originalIndex')}>#{sortIndicator('_originalIndex')}</th>
+              <th onClick={()=>handleSort('name')} style={{ ...thStyle, textAlign:'left', minWidth:'120px', background:'var(--bg3)', position:'sticky', left:'32px', zIndex:3, cursor:'pointer' }}>Stock Name{sortIndicator('name')}</th>
+              {headers.map(h=>{const key=HEADER_SORT_KEYS[h];const locked=VALUATION_HEADERS.includes(h)&&!isSubscribed;const sortable=Boolean(key)&&!locked;return <th key={h} onClick={()=>sortable&&handleSort(key)} style={{...thStyle,minWidth:(h==='ミニチャート'||h==='Chart')?'72px':'80px',width:(h==='ミニチャート'||h==='Chart')?'72px':undefined,color:locked?'var(--text3)':undefined,cursor:sortable?'pointer':'default'}}>{locked?'🔒 ':''}{h}{sortable?sortIndicator(key):''}</th>})}
             </tr>
           </thead>
           <tbody>
