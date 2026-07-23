@@ -313,28 +313,6 @@ export default function TopPage({ onNavigate }) {
       </div>
 
       <DataStateBanner state={dataState} reason={reason} onRetry={refresh} />
-<div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit,minmax(215px,1fr))', gap:'8px', marginBottom:'18px' }}>
-        {[
-          { n:'1', title:'Find strong themes', page:'Theme List', detail:'Use the one-week market-excess ranking to find themes outperforming the market proxy.', example:'Example: theme +3.2%, market proxy +1.0%, excess +2.2 points' },
-          { n:'2', title:'Check breadth and overheating', page:'Theme Detail', detail:'Open a candidate theme and inspect volume and the return distribution to check whether only a few stocks are driving the move.', example:'Example: rising volume and broad participation can indicate wider capital inflow' },
-          { n:'3', title:'Narrow the candidates', page:'Theme Detail & Stock Search', detail:'Compare earnings, liquidity and disclosures instead of buying only because a theme is strong.', example:'Example: compare backlog, margins and valuation across constituents' },
-          { n:'4', title:'Track continuation or reversal', page:'Reports', detail:'Use report follow-up data to see whether prior leaders continued to outperform.', example:'Example: negative excess performance after a top ranking can signal short-term overheating' },
-        ].map(step => (
-          <button key={step.n} type="button" onClick={() => onNavigate?.(step.n==='1' ? 'Theme List' : step.n==='4' ? 'Reports' : 'Theme Detail')}
-            style={{padding:'13px 14px',border:'1px solid var(--border)',borderRadius:'9px',background:'var(--bg2)',textAlign:'left',cursor:'pointer',fontFamily:'var(--font)'}}
-            onMouseEnter={e => { e.currentTarget.style.borderColor='rgba(74,158,255,.45)' }}
-            onMouseLeave={e => { e.currentTarget.style.borderColor='var(--border)' }}>
-            <div style={{display:'flex',justifyContent:'space-between',gap:'8px',alignItems:'center'}}>
-              <div style={{fontSize:'10px',fontWeight:800,color:'var(--accent)'}}>STEP {step.n}</div>
-              <div style={{fontSize:'9px',fontWeight:700,color:'var(--accent)',background:'rgba(74,158,255,.08)',border:'1px solid rgba(74,158,255,.22)',borderRadius:'12px',padding:'2px 7px'}}>{step.page}</div>
-            </div>
-            <div style={{fontSize:'12px',fontWeight:700,color:'var(--text)',margin:'7px 0 5px'}}>{step.title}</div>
-            <div style={{fontSize:'10px',color:'var(--text2)',lineHeight:1.7}}>{step.detail}</div>
-            <div style={{fontSize:'9px',color:'var(--text3)',lineHeight:1.65,marginTop:'7px',paddingTop:'7px',borderTop:'1px dashed var(--border)'}}>{step.example}</div>
-          </button>
-        ))}
-      </div>
-
       {/* News（小見出しのみ・コンパクト） */}
       <SHead title="📣 News" />
       <div style={{ display:'flex', flexDirection:'column', gap:'4px', marginBottom:'4px' }}>
