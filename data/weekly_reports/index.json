@@ -1,6 +1,20 @@
 {
   "reports": [
     {
+      "week": "2026-W30",
+      "date": "2026-07-24",
+      "title": "July 21–24 Weekly Market Report",
+      "generated_at": "2026-07-25T00:30:00+09:00",
+      "next_report_at": "2026-07-31T18:00:00+09:00",
+      "avg_pct_1w": null,
+      "rise_count": null,
+      "fall_count": null,
+      "total_themes": 72,
+      "top_theme": null,
+      "top_pct": null,
+      "file": "2026-W30.json"
+    },
+    {
       "week": "2026-W29",
       "date": "2026-07-17",
       "title": "July 13–17 Weekly Market Report",
@@ -225,5 +239,5 @@
       "file": "2026-W14.json"
     }
   ],
-  "updated_at": "2026-07-22T23:59:00+09:00"
+  "updated_at": "2026-07-25T00:30:00+09:00"
 }
