@@ -16,10 +16,35 @@ from data import (
 )
 
 app = FastAPI(title="StockWaveJP API", version="2.1.0")
+ALLOWED_ORIGINS = [
+    "https://stockwavejp-en.com",
+    "https://www.stockwavejp-en.com",
+    "http://localhost:5173",
+    "http://127.0.0.1:5173"
+]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=['https://stockwavejp-en.com','https://www.stockwavejp-en.com','http://localhost:5173','http://127.0.0.1:5173'], allow_credentials=True, allow_methods=['*'], allow_headers=['*'], expose_headers=['*'],
+    allow_origins=ALLOWED_ORIGINS,
+    allow_credentials=True,
+    allow_methods=["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+    allow_headers=["Authorization", "Content-Type", "Accept", "Origin", "X-Requested-With"],
+    expose_headers=["Content-Type", "Content-Length"],
+    max_age=86400,
+
 )
+
+@app.options("/{path:path}", include_in_schema=False)
+async def cors_preflight(path: str):
+    return Response(status_code=204)
+
+@app.get("/api/cors-check", include_in_schema=False)
+def cors_check(request: Request):
+    return {
+        "ok": True,
+        "origin": request.headers.get("origin"),
+        "allowed_origins": ALLOWED_ORIGINS,
+    }
 
 
 @app.on_event("startup")

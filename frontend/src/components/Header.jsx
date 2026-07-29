@@ -90,10 +90,10 @@ export default function Header({ status={}, onMenuClick, sidebarOpen, viewMode, 
                 Next {formatDateTime(nextUpdate)}
               </span>
             </div>
-            <div className="data-time-mobile" title={`Updated: ${formatDateTime(updatedAt)} / Data as of: ${formatDateTime(dataAsOf)} / Next: ${formatDateTime(nextUpdate)}`} style={{ display:'none', flexDirection:'column', lineHeight:1.2, whiteSpace:'nowrap' }}>
-              <span style={{ fontSize:'8px', color:errorColor }}>Up {formatDateTime(updatedAt, true)}</span>
-              <span style={{ fontSize:'8px', color:errorColor }}>As {formatDateTime(dataAsOf, true)}</span>
-              <span style={{ fontSize:'8px', color:'var(--text3)' }}>Nx {formatDateTime(nextUpdate, true)}</span>
+            <div className="data-time-mobile" title={`Last refreshed: ${formatDateTime(updatedAt)} / Data as of: ${formatDateTime(dataAsOf)} / Next update: ${formatDateTime(nextUpdate)}`} style={{ display:'none', flexDirection:'column', gap:'1px', lineHeight:1.18, whiteSpace:'nowrap' }}>
+              <span style={{ fontSize:'8px', color:errorColor }}>Last refreshed {formatDateTime(updatedAt, true)}</span>
+              <span style={{ fontSize:'8px', color:errorColor }}>Data as of {formatDateTime(dataAsOf, true)}</span>
+              <span style={{ fontSize:'8px', color:'var(--text3)' }}>Next update {formatDateTime(nextUpdate, true)}</span>
             </div>
           </div>
 
