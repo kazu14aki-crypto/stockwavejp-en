@@ -5,7 +5,7 @@ import { useAuth }         from '../hooks/useAuth.jsx'
 import { useSubscription } from '../hooks/useSubscription.jsx'
 
 const FEATURE_LABELS = {
-  institutional:   { name:'Institutional Holdings', status:'developer_only' },
+  institutional:   { name:'Institutional Intelligence', status:'developer_only' },
   weekly_archive:  { name:'Weekly Report Archive',  requiredPlan:'Standard or above', requiredKey:'standard' },
   custom_theme_ai: { name:'Custom Theme AI Analysis', requiredPlan:'Pro', requiredKey:'pro' },
   market_detail:   { name:'Market Detail', status:'developer_only' },

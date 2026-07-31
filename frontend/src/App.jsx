@@ -55,7 +55,7 @@ const PAGES_FOOTER = [
 
 
 const MARKET_DEV_PAGE = { icon:'📋', label:'Market Detail', component:MarketRank }
-const INSTITUTIONAL_DEV_PAGE = { icon:'🏦', label:'Institutional Holdings', component:InstitutionalHoldings }
+const INSTITUTIONAL_DEV_PAGE = { icon:'🏦', label:'Institutional Intelligence', component:InstitutionalHoldings }
 const DEV_PAGES = [MARKET_DEV_PAGE, INSTITUTIONAL_DEV_PAGE]
 const DEV_ONLY_LABELS = new Set(DEV_PAGES.map(page => page.label))
 
@@ -224,7 +224,7 @@ function AppInner() {
       }}>
         <RelatedPageNav currentPage={currentPage} onNavigate={handlePageChange} />
         {PageComponent ? (
-          currentPage === 'Institutional Holdings' ? (
+          currentPage === 'Institutional Intelligence' ? (
             <PlanGate feature="institutional" onNavigate={handlePageChange}>
               <PageComponent {...pageProps} />
             </PlanGate>

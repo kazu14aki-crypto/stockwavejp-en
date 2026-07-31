@@ -8,7 +8,7 @@
  *   'dev'      → 開発者（全機能解放）
  *
  * 機能制限:
- *   Institutional Holdings → pro のみ
+ *   Institutional Intelligence → pro のみ
  *   週次Weekly Reportアーカイブ → standard以上
  *   Custom Theme分析（AI） → pro のみ
  */

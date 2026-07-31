@@ -84,7 +84,7 @@ export default function RelatedPageNav({ currentPage, onNavigate }) {
         ))}
       </div>
       <style>{`
-        @media(min-width:769px){.related-page-nav{display:none!important}}
+        @media(min-width:641px){.related-page-nav{display:block!important}}
         @media(max-width:640px){
           .related-page-nav{padding:6px 8px!important}
           .related-page-nav-title,.related-page-nav-desc{display:none!important}
