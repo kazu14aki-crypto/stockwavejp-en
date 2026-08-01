@@ -112,6 +112,33 @@ def cors_check(request: Request):
         "allowed_origins": ALLOWED_ORIGINS,
     }
 
+
+@app.get("/api/ping", include_in_schema=False)
+def ping():
+    return {
+        "ok": True,
+        "service": "stockwavejp-en-api",
+        "stripe_configured": bool(os.environ.get("STRIPE_SECRET_KEY")),
+        "standard_price_configured": bool(
+            os.environ.get("STRIPE_PRICE_STD_MONTHLY")
+        ),
+        "pro_price_configured": bool(
+            os.environ.get("STRIPE_PRICE_PRO_MONTHLY")
+        ),
+    }
+
+
+
+@app.get("/api/deployment-version", include_in_schema=False)
+def deployment_version():
+    return {
+        "service": "stockwavejp-en-api",
+        "version": "2026-08-01-v4",
+        "entrypoint": "main_en:app",
+        "consent_storage": "upsert",
+        "ping_method": "GET",
+    }
+
 @app.on_event("startup")
 async def startup_event():
     warmup_cache_extended(DEFAULT_THEMES)
@@ -453,45 +480,235 @@ def _subscription_rows(sb, user_id: str):
     return result.data or []
 
 
+def _checkout_origin(value: str | None, fallback: str) -> str:
+    candidate = (value or fallback).strip()
+    if not candidate.startswith(("https://", "http://")):
+        return fallback
+    return candidate.split("?", 1)[0].split("#", 1)[0].rstrip("/")
+
+
+def _stripe_error_detail(exc) -> str:
+    user_message = getattr(exc, "user_message", None)
+    code = getattr(exc, "code", None)
+    raw = user_message or str(exc)
+    return (
+        f"Stripe Checkout could not be created: {raw}"
+        + (f" (code: {code})" if code else "")
+    )
+
+
 @app.post("/api/stripe/create-checkout")
 async def create_checkout_authenticated(request: Request):
-    body = await request.json()
-    if not body.get('legal_consent'):
-        raise HTTPException(status_code=400, detail='You must accept the Terms, Privacy Policy and Disclaimer.')
-    sb, auth_user = _authenticated_supabase_user(request)
-    user_id = auth_user.id
-    price_key = body.get('price_key') or body.get('priceKey', '')
-    price_id = PRICE_MAP.get(price_key, '')
-    if not price_id:
-        raise HTTPException(status_code=503, detail='The Stripe price is not configured.')
     try:
-        sb.table('legal_consents').insert({
-            'user_id': user_id,
-            'terms_version': body.get('terms_version',''),
-            'privacy_version': body.get('privacy_version',''),
-            'disclaimer_version': body.get('disclaimer_version',''),
-            'locale': 'en',
-            'source': 'subscription_checkout',
-            'user_agent': request.headers.get('user-agent',''),
-        }).execute()
+        body = await request.json()
+    except Exception:
+        raise HTTPException(
+            status_code=400,
+            detail="The request body could not be read.",
+        )
+
+    legal_consent = body.get("legal_consent")
+    if legal_consent is None:
+        legal_consent = body.get("legalConsent", False)
+    if not legal_consent:
+        raise HTTPException(
+            status_code=400,
+            detail=(
+                "You must accept the Terms, Privacy Policy and Disclaimer."
+            ),
+        )
+
+    sb, auth_user = _authenticated_supabase_user(request)
+    user_id = str(auth_user.id)
+    requested_user_id = body.get("user_id") or body.get("userId")
+    if requested_user_id and str(requested_user_id) != user_id:
+        raise HTTPException(
+            status_code=403,
+            detail="The authenticated user does not match the request.",
+        )
+
+    price_key = str(
+        body.get("price_key") or body.get("priceKey") or ""
+    ).strip()
+    if price_key not in PRICE_MAP:
+        raise HTTPException(
+            status_code=400,
+            detail=f"Invalid plan key: {price_key or '(empty)'}.",
+        )
+
+    price_id = PRICE_MAP.get(price_key, "")
+    if not price_id:
+        env_name = (
+            "STRIPE_PRICE_STD_MONTHLY"
+            if price_key == "standard_monthly"
+            else "STRIPE_PRICE_PRO_MONTHLY"
+        )
+        raise HTTPException(
+            status_code=503,
+            detail=f"The Stripe price is not configured: {env_name}.",
+        )
+    if not str(price_id).startswith("price_"):
+        raise HTTPException(
+            status_code=503,
+            detail=(
+                f"The Stripe Price ID for {price_key} is invalid. "
+                "It must start with price_."
+            ),
+        )
+
+    try:
+        sb.table("legal_consents").upsert(
+            {
+                "user_id": user_id,
+                "terms_version": body.get("terms_version")
+                or body.get("termsVersion")
+                or "",
+                "privacy_version": body.get("privacy_version")
+                or body.get("privacyVersion")
+                or "",
+                "disclaimer_version": body.get("disclaimer_version")
+                or body.get("disclaimerVersion")
+                or "",
+                "locale": "en",
+                "source": "subscription_checkout",
+                "user_agent": request.headers.get("user-agent", ""),
+            },
+            on_conflict=(
+                "user_id,terms_version,privacy_version,"
+                "disclaimer_version,source"
+            ),
+        ).execute()
     except Exception as exc:
-        raise HTTPException(status_code=500, detail=f'The consent record could not be saved: {exc}')
+        raise HTTPException(
+            status_code=500,
+            detail=f"The consent record could not be saved: {exc}",
+        )
+
     rows = _subscription_rows(sb, user_id)
-    plan = 'standard' if 'standard' in price_key else 'pro'
-    active = next((r for r in rows if r.get('status') in ('active','canceling','past_due','trialing') and r.get('stripe_subscription_id')), None)
+    plan = "standard" if price_key == "standard_monthly" else "pro"
+    active = next(
+        (
+            row
+            for row in rows
+            if row.get("status")
+            in ("active", "canceling", "past_due", "trialing")
+            and row.get("stripe_subscription_id")
+        ),
+        None,
+    )
     if active:
-        if active.get('status') == 'canceling' and active.get('plan') == plan:
-            stripe.Subscription.modify(active['stripe_subscription_id'], cancel_at_period_end=False)
-            sb.table('subscriptions').update({'status':'active'}).eq('stripe_subscription_id', active['stripe_subscription_id']).execute()
-            return {'resumed':True,'message':'The scheduled cancellation was removed. No new subscription or immediate charge was created.'}
-        raise HTTPException(status_code=409, detail='An active subscription already exists. Use the billing portal to change plans.')
-    customer_id = next((r.get('stripe_customer_id') for r in rows if r.get('stripe_customer_id')), None)
-    metadata={'user_id':user_id,'plan':plan,'legal_consent':'true','terms_version':body.get('terms_version',''),'privacy_version':body.get('privacy_version',''),'disclaimer_version':body.get('disclaimer_version','')}
-    params={'payment_method_types':['card'],'mode':'subscription','line_items':[{'price':price_id,'quantity':1}],'client_reference_id':user_id,'success_url':body.get('success_url','https://stockwavejp-en.com')+'?checkout=success','cancel_url':body.get('cancel_url','https://stockwavejp-en.com')+'?checkout=cancel','metadata':metadata,'subscription_data':{'metadata':metadata},'locale':'en'}
-    if customer_id: params['customer']=customer_id
-    else: params['customer_email']=getattr(auth_user,'email',None) or body.get('email')
-    session=stripe.checkout.Session.create(**params)
-    return {'url':session.url}
+        if (
+            active.get("status") == "canceling"
+            and active.get("plan") == plan
+        ):
+            stripe.Subscription.modify(
+                active["stripe_subscription_id"],
+                cancel_at_period_end=False,
+            )
+            sb.table("subscriptions").update(
+                {"status": "active"}
+            ).eq(
+                "stripe_subscription_id",
+                active["stripe_subscription_id"],
+            ).execute()
+            return {
+                "resumed": True,
+                "message": (
+                    "The scheduled cancellation was removed. "
+                    "No new subscription or immediate charge was created."
+                ),
+            }
+        raise HTTPException(
+            status_code=409,
+            detail=(
+                "An active subscription already exists. "
+                "Use the billing portal to change plans."
+            ),
+        )
+
+    customer_id = next(
+        (
+            row.get("stripe_customer_id")
+            for row in rows
+            if row.get("stripe_customer_id")
+        ),
+        None,
+    )
+
+    success_origin = _checkout_origin(
+        body.get("success_url") or body.get("successUrl"),
+        "https://stockwavejp-en.com",
+    )
+    cancel_origin = _checkout_origin(
+        body.get("cancel_url") or body.get("cancelUrl"),
+        "https://stockwavejp-en.com",
+    )
+
+    metadata = {
+        "user_id": user_id,
+        "plan": plan,
+        "legal_consent": "true",
+        "terms_version": body.get("terms_version")
+        or body.get("termsVersion")
+        or "",
+        "privacy_version": body.get("privacy_version")
+        or body.get("privacyVersion")
+        or "",
+        "disclaimer_version": body.get("disclaimer_version")
+        or body.get("disclaimerVersion")
+        or "",
+    }
+    params = {
+        "payment_method_types": ["card"],
+        "mode": "subscription",
+        "line_items": [{"price": price_id, "quantity": 1}],
+        "client_reference_id": user_id,
+        "success_url": f"{success_origin}?checkout=success",
+        "cancel_url": f"{cancel_origin}?checkout=cancel",
+        "metadata": metadata,
+        "subscription_data": {"metadata": metadata},
+        "locale": "en",
+    }
+    if customer_id:
+        params["customer"] = customer_id
+    else:
+        params["customer_email"] = (
+            getattr(auth_user, "email", None)
+            or body.get("email")
+        )
+
+    try:
+        session = stripe.checkout.Session.create(**params)
+    except stripe.error.StripeError as exc:
+        print(
+            "[STRIPE_CHECKOUT_EN]",
+            {
+                "price_key": price_key,
+                "stripe_code": getattr(exc, "code", None),
+                "message": str(exc),
+            },
+        )
+        raise HTTPException(
+            status_code=502,
+            detail=_stripe_error_detail(exc),
+        )
+    except Exception as exc:
+        print(
+            "[CHECKOUT_EN_UNEXPECTED]",
+            {"price_key": price_key, "message": repr(exc)},
+        )
+        raise HTTPException(
+            status_code=500,
+            detail=f"Checkout server error: {exc}",
+        )
+
+    if not getattr(session, "url", None):
+        raise HTTPException(
+            status_code=502,
+            detail="Stripe did not return a Checkout URL.",
+        )
+    return {"url": session.url}
+
 
 @app.post("/api/stripe/resume-subscription")
 async def resume_subscription(request: Request):
