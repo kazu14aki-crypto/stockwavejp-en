@@ -1,0 +1,57 @@
+{
+  "week": "2026-W18",
+  "date": "2026-05-01",
+  "title": "Weekly Market Report | Apr 27 – May 1, 2026",
+  "generated_at": "2026-05-01T18:00:00+09:00",
+  "summary": {
+    "avg_pct_1w": 3.2,
+    "rise_count": 52,
+    "fall_count": 15,
+    "total_themes": 67,
+    "top5_themes": [
+      {
+        "theme": "防衛・航空",
+        "pct": 12.4
+      },
+      {
+        "theme": "AI半導体",
+        "pct": 8.7
+      },
+      {
+        "theme": "半導体製造装置",
+        "pct": 7.3
+      },
+      {
+        "theme": "MLCC・電子部品",
+        "pct": 5.9
+      },
+      {
+        "theme": "通信・光ファイバー",
+        "pct": 5.1
+      }
+    ],
+    "bot5_themes": [
+      {
+        "theme": "レアアース・資源",
+        "pct": -4.1
+      },
+      {
+        "theme": "原子力・核融合",
+        "pct": -2.8
+      },
+      {
+        "theme": "仮想通貨・Web3",
+        "pct": -2.3
+      },
+      {
+        "theme": "地方銀行",
+        "pct": -1.8
+      },
+      {
+        "theme": "医薬品・バイオ",
+        "pct": -1.2
+      }
+    ]
+  },
+  "report": "## Japan Equity Markets — Weekly Overview\n\nThe Nikkei 225 moved **+728 pts (+2.1%)** this week (35,420 → 36,148).\n\nThe average return across all 67 themes was **+3.2%**.\n\n---\n\n## 📅 Key Events & News This Week\n\n- Bank of Japan holds rates at 0.5%\n- Position adjustments ahead of Golden Week\n- US April ISM Manufacturing (52.3) improved\n- Meta Q1 earnings: revenue +16%\n\n---\n\n## 📊 Theme Performance Rankings\n\n### 🔥 Top 5 Rising Themes\n\n**🥇 防衛・航空: +12.4%**\n  → Major constituent stocks rallied.\n\n**🥈 AI半導体: +8.7%**\n  → AI and semiconductor capital inflows remain strong.\n\n**🥉 半導体製造装置: +7.3%**\n  → Major constituent stocks rallied.\n\n**4️⃣ MLCC・電子部品: +5.9%**\n  → AI and semiconductor capital inflows remain strong.\n\n**5️⃣ 通信・光ファイバー: +5.1%**\n  → Major constituent stocks rallied.\n\n### ❄️ Bottom 5 Falling Themes\n\n**🥇 レアアース・資源: -4.1%**\n  → Profit-taking dominated.\n\n**🥈 原子力・核融合: -2.8%**\n  → Profit-taking dominated.\n\n**🥉 仮想通貨・Web3: -2.3%**\n  → Profit-taking dominated.\n\n**4️⃣ 地方銀行: -1.8%**\n  → Profit-taking dominated.\n\n**5️⃣ 医薬品・バイオ: -1.2%**\n  → Profit-taking dominated.\n\n---\n\n## 📌 Watch List for Next Week\n\n- **Golden Week (TSE closed May 3-6)**\n- **FOMC meeting (May 7-8)**\n- **US April jobs report (May 2)**\n\n---\n\n> ⚠️ For informational purposes only. Not investment advice. All investment decisions are your sole responsibility."
+}

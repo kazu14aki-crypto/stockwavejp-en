@@ -1,0 +1,57 @@
+{
+  "week": "2026-W23",
+  "date": "2026-06-05",
+  "title": "Weekly Market Report | Jun 1–5, 2026",
+  "generated_at": "2026-06-05T18:00:00+09:00",
+  "summary": {
+    "avg_pct_1w": 4.3,
+    "rise_count": 52,
+    "fall_count": 15,
+    "total_themes": 67,
+    "top5_themes": [
+      {
+        "theme": "AI半導体",
+        "pct": 14.8
+      },
+      {
+        "theme": "MLCC・電子部品",
+        "pct": 12.3
+      },
+      {
+        "theme": "半導体製造装置",
+        "pct": 10.7
+      },
+      {
+        "theme": "防衛・航空",
+        "pct": 9.1
+      },
+      {
+        "theme": "次世代半導体",
+        "pct": 8.4
+      }
+    ],
+    "bot5_themes": [
+      {
+        "theme": "仮想通貨・Web3",
+        "pct": -5.1
+      },
+      {
+        "theme": "レアアース・資源",
+        "pct": -3.7
+      },
+      {
+        "theme": "量子コンピューター",
+        "pct": -2.3
+      },
+      {
+        "theme": "太陽光・再エネ",
+        "pct": -1.8
+      },
+      {
+        "theme": "農業・食料品",
+        "pct": -1.2
+      }
+    ]
+  },
+  "report": "## Japan Equity Markets — Weekly Overview\n\nThe Nikkei 225 moved **+1,371 pts (+2.2%)** this week (62,847 → 64,218).\n\nThe average return across all 67 themes was **+4.3%**.\n\n---\n\n## 📅 Key Events & News This Week\n\n- SpaceX files for Nasdaq IPO at ~$1.5T valuation → semiconductor/space stocks surge\n- US May payrolls: +185K (slightly below +195K consensus)\n- ECB cuts rates 0.25% (2nd consecutive cut) → European equities rally\n- Kioxia Holdings: first-ever Y60,000/share (NAND demand upgrade)\n\n---\n\n## 📊 Theme Performance Rankings\n\n### 🔥 Top 5 Rising Themes\n\n**🥇 AI半導体: +14.8%**\n  → AI and semiconductor capital inflows remain strong.\n\n**🥈 MLCC・電子部品: +12.3%**\n  → AI and semiconductor capital inflows remain strong.\n\n**🥉 半導体製造装置: +10.7%**\n  → Major constituent stocks rallied.\n\n**4️⃣ 防衛・航空: +9.1%**\n  → Major constituent stocks rallied.\n\n**5️⃣ 次世代半導体: +8.4%**\n  → Major constituent stocks rallied.\n\n### ❄️ Bottom 5 Falling Themes\n\n**🥇 仮想通貨・Web3: -5.1%**\n  → Profit-taking dominated.\n\n**🥈 レアアース・資源: -3.7%**\n  → Profit-taking dominated.\n\n**🥉 量子コンピューター: -2.3%**\n  → Profit-taking dominated.\n\n**4️⃣ 太陽光・再エネ: -1.8%**\n  → Profit-taking dominated.\n\n**5️⃣ 農業・食料品: -1.2%**\n  → Profit-taking dominated.\n\n---\n\n## 📌 Watch List for Next Week\n\n- **FOMC (June 16-17, Chair Warsh debut)**\n- **US-Japan trade deal finalization?**\n- **SpaceX (SPCX) pricing**\n\n---\n\n> ⚠️ For informational purposes only. Not investment advice. All investment decisions are your sole responsibility."
+}

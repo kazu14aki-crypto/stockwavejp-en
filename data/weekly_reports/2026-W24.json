@@ -1,0 +1,57 @@
+{
+  "week": "2026-W24",
+  "date": "2026-06-12",
+  "title": "Weekly Market Report | Jun 8–12, 2026",
+  "generated_at": "2026-06-12T18:00:00+09:00",
+  "summary": {
+    "avg_pct_1w": -2.3,
+    "rise_count": 52,
+    "fall_count": 15,
+    "total_themes": 67,
+    "top5_themes": [
+      {
+        "theme": "AI半導体",
+        "pct": 8.4
+      },
+      {
+        "theme": "防衛・航空",
+        "pct": 7.2
+      },
+      {
+        "theme": "半導体製造装置",
+        "pct": 6.8
+      },
+      {
+        "theme": "銀行・金融",
+        "pct": 5.1
+      },
+      {
+        "theme": "MLCC・電子部品",
+        "pct": 4.7
+      }
+    ],
+    "bot5_themes": [
+      {
+        "theme": "レアアース・資源",
+        "pct": -6.4
+      },
+      {
+        "theme": "仮想通貨・Web3",
+        "pct": -4.2
+      },
+      {
+        "theme": "太陽光・再エネ",
+        "pct": -3.1
+      },
+      {
+        "theme": "バイオ・創薬",
+        "pct": -2.8
+      },
+      {
+        "theme": "量子コンピューター",
+        "pct": -2.1
+      }
+    ]
+  },
+  "report": "## Japan Equity Markets — Weekly Overview\n\nThe Nikkei 225 moved **+2,111 pts (+3.3%)** this week (64,218 → 66,329).\n\nThe average return across all 67 themes was **-2.3%**.\n\n---\n\n## 📅 Key Events & News This Week\n\n- SpaceX (SPCX) lists on Nasdaq (June 12): IPO $135, opens at $192.5 (+42.6%)\n- $75B raised — largest IPO in history\n- US May CPI: Core 3.0% (below 3.1% consensus) → rate cut odds improve\n- Middle East tensions: Israel-Lebanon border clash → oil hits $87\n\n---\n\n## 📊 Theme Performance Rankings\n\n### 🔥 Top 5 Rising Themes\n\n**🥇 AI半導体: +8.4%**\n  → AI and semiconductor capital inflows remain strong.\n\n**🥈 防衛・航空: +7.2%**\n  → Major constituent stocks rallied.\n\n**🥉 半導体製造装置: +6.8%**\n  → Major constituent stocks rallied.\n\n**4️⃣ 銀行・金融: +5.1%**\n  → Major constituent stocks rallied.\n\n**5️⃣ MLCC・電子部品: +4.7%**\n  → AI and semiconductor capital inflows remain strong.\n\n### ❄️ Bottom 5 Falling Themes\n\n**🥇 レアアース・資源: -6.4%**\n  → Profit-taking dominated.\n\n**🥈 仮想通貨・Web3: -4.2%**\n  → Profit-taking dominated.\n\n**🥉 太陽光・再エネ: -3.1%**\n  → Profit-taking dominated.\n\n**4️⃣ バイオ・創薬: -2.8%**\n  → Profit-taking dominated.\n\n**5️⃣ 量子コンピューター: -2.1%**\n  → Profit-taking dominated.\n\n---\n\n## 📌 Watch List for Next Week\n\n- **FOMC (June 16-17)**\n- **US-Iran nuclear talks outcome**\n- **BoJ tapering pace decision**\n\n---\n\n> ⚠️ For informational purposes only. Not investment advice. All investment decisions are your sole responsibility."
+}

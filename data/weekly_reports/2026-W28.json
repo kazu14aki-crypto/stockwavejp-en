@@ -1,0 +1,58 @@
+{
+  "week": "2026-W28",
+  "date": "2026-07-10",
+  "title": "July 6–10 Weekly Market Report",
+  "generated_at": "2026-07-10T18:00:00+09:00",
+  "next_report_at": "2026-07-17T18:00:00+09:00",
+  "summary": {
+    "avg_pct_1w": -0.4,
+    "rise_count": 33,
+    "fall_count": 37,
+    "total_themes": 72,
+    "top5_themes": [
+      {
+        "theme": "Semiconductor Equipment",
+        "pct": 8.4
+      },
+      {
+        "theme": "Memory",
+        "pct": 6.9
+      },
+      {
+        "theme": "Banks & Finance",
+        "pct": 4.2
+      },
+      {
+        "theme": "AI Chips",
+        "pct": 3.8
+      },
+      {
+        "theme": "Rare Earths & Resources",
+        "pct": 2.1
+      }
+    ],
+    "bot5_themes": [
+      {
+        "theme": "MLCC & Electronic Components",
+        "pct": -7.2
+      },
+      {
+        "theme": "Defense & Aerospace",
+        "pct": -4.8
+      },
+      {
+        "theme": "Next-Generation Semiconductors",
+        "pct": -3.1
+      },
+      {
+        "theme": "National Resilience",
+        "pct": -1.6
+      },
+      {
+        "theme": "Food & Beverages",
+        "pct": -0.9
+      }
+    ]
+  },
+  "report": "# Weekly Market Report | July 6–10\n\n---\n\n## Japanese Equity Market Overview\n\nThe Nikkei 225 fell 1,186.34 points, or 1.70%, over the week. The headline decline concealed a highly unstable sequence of sector rotation, a global semiconductor selloff triggered by Samsung Electronics, renewed Middle East tension and a late-week return of the AI trade.\n\nTOPIX remained relatively resilient early in the week as banks and insurers attracted capital. The difference between TOPIX and the Nikkei showed that the market was not moving as one block. Expensive semiconductor and AI names were responsible for much of the volatility.\n\n**Nikkei 225 daily path**\n\n- July 6: 69,737.69, down 6.38 points. TOPIX remained near record territory while banks and insurers outperformed.\n- July 7: 68,256.96, down 1,480.73 points. Samsung Electronics’ preliminary results triggered a global semiconductor selloff.\n- July 8: 66,819.05, down 1,437.91 points. Middle East tension and higher oil prices produced a broad risk-off session.\n- July 9: 67,743.85, up 924.80 points. AI and semiconductor shares rebounded with the Philadelphia Semiconductor Index.\n- July 10: 68,557.73, up 813.88 points. Buying returned to major AI-related names, although ETF distribution-related selling limited the upside.\n\n**Weekly change: 69,744.07 → 68,557.73, down 1,186.34 points (-1.70%)**\n\nThe week demonstrated how quickly Japanese equities can rotate between domestic value, global technology and geopolitical-risk trades.\n\n---\n\n## Major Events\n\n### Samsung Electronics Shock\n\nSamsung Electronics’ preliminary quarterly results missed market expectations and were treated as a warning for the global memory cycle. Japan’s semiconductor index dropped sharply, with electronic-component and equipment names suffering double-digit declines in some sessions.\n\n### Renewed US–Iran Tension\n\nReports of additional US attacks following incidents around the Strait of Hormuz raised expectations for higher crude-oil prices. Airlines, real estate and other fuel-sensitive industries weakened.\n\n### AI Rally Reignites\n\nThe Philadelphia Semiconductor Index rebounded late in the week. Kioxia Holdings rose sharply despite the overhang from Bain Capital’s disposal of its stake. The ability to absorb negative supply-demand news suggested that medium-term demand for selected AI and memory names remained strong.\n\n---\n\n## Strong Themes\n\n### Semiconductor Equipment\n\nCapital returned toward the end of the week. SUMCO, Tokyo Electron and Advantest were among the important beneficiaries.\n\n🌍 Global: ASML (ASML), Applied Materials (AMAT), Lam Research (LRCX), KLA (KLAC)\n\n### Memory\n\nKioxia’s rebound from its moving-average support became a key signal. Investors should still distinguish a technical rebound from a confirmed improvement in memory pricing.\n\n🌍 Global: Micron (MU), SK Hynix (000660.KS), Samsung Electronics (005930.KS)\n\n### Banks and Finance\n\nFinancial stocks absorbed capital that rotated away from expensive AI names. Higher long-term yields and yen weakness supported the group.\n\n🌍 Global: JPMorgan Chase (JPM), Goldman Sachs (GS), Morgan Stanley (MS), BlackRock (BLK)\n\n---\n\n## Weak Themes\n\n### MLCC and Electronic Components\n\nThe group was hit by both the semiconductor shock and profit-taking after strong prior gains. Long-term AI-server and EV demand did not prevent short-term valuation compression.\n\n### Defense and Aerospace\n\nHigher oil prices created pressure on airlines, demonstrating that geopolitical risk does not automatically benefit every company placed inside a defense-related theme.\n\n### Drugstores\n\nSelected drugstore names weakened as investors took profits after company-specific events.\n\n---\n\n## US Market and Macro\n\nUS equities began the week firmly, weakened as oil and geopolitical risk increased, and later recovered as AI and semiconductor shares rebounded. Federal Reserve minutes were monitored for signals on inflation and the future rate path.\n\nKey variables included the USD/JPY rate, US long-term yields, crude oil and the Philadelphia Semiconductor Index.\n\n---\n\n## Watch List for July 13–17\n\n1. US CPI and producer-price data\n2. Congressional testimony from the Federal Reserve chair\n3. Major US bank earnings\n4. Chinese GDP, industrial production and retail sales\n5. Japanese machinery orders and industrial production\n6. Advantest, Tokyo Electron and Kioxia price action\n7. Crude oil and Middle East headlines\n8. Whether the Nikkei can stabilize after the sharp weekly decline\n\n---\n\n## StockWaveJP View\n\nThe most important feature of the week was not the index decline itself, but the sequence of rotation, shock and recovery. Companies that can absorb negative supply-demand news without making new lows deserve attention, but one rebound session is not sufficient evidence of a durable bottom.\n\n> Disclaimer: This report is general information and does not recommend buying, selling or holding any security.\n"
+}
