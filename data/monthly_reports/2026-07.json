@@ -1,0 +1,46 @@
+{
+  "id": "2026-07",
+  "title": "July 2026 Monthly Report",
+  "period": "July 2026",
+  "generated_at": "2026/07/31",
+  "metrics": [
+    {
+      "label": "Monthly character",
+      "value": "A rapid reset after an AI- and semiconductor-led market"
+    },
+    {
+      "label": "Key divergence",
+      "value": "TOPIX held up better than the Nikkei 225"
+    },
+    {
+      "label": "Primary risk",
+      "value": "Concentrated positioning and elevated expectations"
+    }
+  ],
+  "sections": [
+    {
+      "heading": "1. July in review: expectations were repriced",
+      "body": [
+        "Japanese equities entered July with strong momentum in AI, semiconductor, and memory-related shares, but those areas later corrected sharply as investors reassessed the durability and cost of AI investment.",
+        "TOPIX was relatively firmer than the Nikkei 225, suggesting that selling was concentrated in high-priced semiconductor leaders rather than reflecting a uniform deterioration across all listed companies.",
+        "A rebound near month-end improved sentiment, but volatility remained high and did not by itself establish a stable uptrend."
+      ]
+    },
+    {
+      "heading": "2. Theme rotation",
+      "body": [
+        "Capital moved unevenly between AI-related growth themes and areas such as financials, defense, infrastructure, and domestic demand.",
+        "The month demonstrated why index performance alone is insufficient. Breadth, volume, trading value, and the number of participating stocks are necessary to judge whether a theme is genuinely strengthening."
+      ]
+    },
+    {
+      "heading": "3. August checklist",
+      "body": [
+        "Watch earnings revisions, order momentum, capital-expenditure guidance, and whether rebounds are supported by broader participation.",
+        "A durable recovery would require improving fundamentals and trading breadth, not merely short covering in a small number of large-cap names."
+      ]
+    }
+  ],
+  "sources": [],
+  "disclaimer": "This report is a market review based on public information and does not recommend the purchase or sale of any security."
+}

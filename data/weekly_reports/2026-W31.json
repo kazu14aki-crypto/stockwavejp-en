@@ -1,0 +1,21 @@
+{
+  "week": "2026-W31",
+  "date": "2026-08-03",
+  "title": "July 29–August 3 Weekly Market Report",
+  "generated_at": "2026-08-03T19:20:00+09:00",
+  "next_report_at": "2026-08-10T18:00:00+09:00",
+  "summary": {
+    "avg_pct_1w": 0.0,
+    "rise_count": 0,
+    "fall_count": 0,
+    "total_themes": 72,
+    "data_status": "commentary edition",
+    "top5_themes": [],
+    "bot5_themes": []
+  },
+  "report": "# Weekly Market Report | July 29–August 3\n\n---\n\n## Weekly conclusion\n\nJapanese equities experienced unusually sharp swings as selling in AI and semiconductor shares was followed by a rapid rebound. The central issue was not the disappearance of AI demand, but a sudden reset in expectations and positioning.\n\nInvestors should avoid treating a single rebound session as proof that the correction has ended. Confirmation should come from earnings, orders, capital-expenditure plans, and cash-flow trends.\n\n---\n\n## Major developments\n\n### AI and semiconductor volatility\n\nSemiconductor and memory-related shares came under broad pressure as investors reassessed competition, the funding burden of data-center investment, and valuations after a strong advance. Later in the week, results from major US technology companies reduced some of the most pessimistic assumptions and prompted short covering.\n\n### What to watch next\n\n- Revisions to earnings forecasts and order guidance\n- Whether trading volume broadens beyond a small group of large-cap names\n- Relative performance of TOPIX versus the Nikkei 225\n- Signs that capital is rotating into banks, defense, infrastructure, or domestic-demand themes\n\n---\n\n## Risk assessment\n\nThe market remains vulnerable to large price gaps because positioning is concentrated and expectations are still elevated. Theme selection matters more than simply following the headline index.\n\nThis report is based on public information and is not a recommendation to buy or sell any security.",
+  "ranking_followup": {
+    "note": "Theme ranking follow-up will be expanded as comparable English-site data accumulates.",
+    "rows": []
+  }
+}

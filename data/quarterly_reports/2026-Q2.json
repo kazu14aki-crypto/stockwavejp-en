@@ -1,0 +1,52 @@
+{
+  "id": "2026-Q2",
+  "title": "April–June 2026 Quarterly Report",
+  "period": "April–June 2026",
+  "generated_at": "2026/07/20",
+  "metrics": [
+    {
+      "label": "Nikkei 225",
+      "value": "Strong quarterly advance led by high-priced growth shares"
+    },
+    {
+      "label": "TOPIX",
+      "value": "Positive, but materially behind the Nikkei 225"
+    },
+    {
+      "label": "Market structure",
+      "value": "Leadership was concentrated rather than uniform"
+    }
+  ],
+  "sections": [
+    {
+      "heading": "1. Q2 overview: a powerful but uneven advance",
+      "body": [
+        "Japanese equities rose strongly during April–June 2026. The Nikkei 225 outperformed TOPIX by a wide margin, indicating that high-priced large-cap growth stocks had an outsized influence on index performance.",
+        "The quarter should therefore not be interpreted as a uniform rise across all industries. Theme selection and stock selection remained important even while the headline indices were advancing."
+      ]
+    },
+    {
+      "heading": "2. Main leadership groups",
+      "body": [
+        "AI infrastructure, semiconductor equipment, memory, optical communications, power systems, and data-center-related themes attracted substantial attention.",
+        "The strongest themes combined earnings growth expectations with visible physical bottlenecks, including manufacturing capacity, power supply, cooling, advanced packaging, and networking."
+      ]
+    },
+    {
+      "heading": "3. Risks carried into the next quarter",
+      "body": [
+        "Rapid gains increased sensitivity to earnings disappointments, capital-expenditure delays, interest rates, and geopolitical developments.",
+        "When leadership is concentrated, reversals in a small group of large stocks can produce a much larger index decline than the broader market fundamentals would imply."
+      ]
+    },
+    {
+      "heading": "4. How to evaluate the next phase",
+      "body": [
+        "Monitor theme returns together with volume, trading value, breadth, earnings revisions, and order trends.",
+        "A healthy continuation would involve broader participation. A weakening market would show narrowing leadership, falling volume, and repeated failures to hold rebounds."
+      ]
+    }
+  ],
+  "sources": [],
+  "disclaimer": "This report is a review based on public information and does not constitute investment advice. Investment decisions remain the reader's responsibility."
+}
