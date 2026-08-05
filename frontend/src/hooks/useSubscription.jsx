@@ -1,32 +1,67 @@
 /**
- * useSubscription — サブスクリプション状態管理
- * 
- * プラン種別:
- *   'free'     → Free（未ログイン or サブスクなし）
- *   'standard' → スタンダード（月額¥980 or 年額¥9,800）
- *   'pro'      → プロ（月額¥1,980 or 年額¥19,800）
- *   'dev'      → 開発者（全機能解放）
- *
- * 機能制限:
- *   Institutional Intelligence → pro のみ
- *   週次Weekly Reportアーカイブ → standard以上
- *   Custom Theme分析（AI） → pro のみ
+ * useSubscription — subscription and explicit Pro trial state.
+ * The 14-day Pro trial starts only after the user explicitly accepts it.
  */
-import { useState, useEffect, createContext, useContext } from 'react'
-import { supabase } from '../lib/supabaseClient'
+import { useState, useEffect, createContext, useContext, useCallback } from 'react'
+import { supabase } from '../lib/supabase'
 
-// 開発者メールアドレス（全機能解放）
-const DEV_EMAILS = [
-  'stockwavejp26@gmail.com',
-]
-
+const DEV_EMAILS = ['stockwavejp26@gmail.com']
+const TRIAL_DAYS = 14
+const DAY_MS = 24 * 60 * 60 * 1000
 const SubscriptionContext = createContext(null)
 
+function trialStateFromMetadata(metadata = {}) {
+  // first_login_at is retained as a legacy marker so users who already consumed
+  // the former automatic trial cannot claim a second trial.
+  const startedAt = metadata.pro_trial_started_at || metadata.first_login_at || null
+  const claimed = Boolean(metadata.pro_trial_claimed || metadata.first_login_at || startedAt)
+  const startedDate = startedAt ? new Date(startedAt) : null
+  const validStartedDate = startedDate && !Number.isNaN(startedDate.getTime()) ? startedDate : null
+  const endsAt = validStartedDate ? new Date(validStartedDate.getTime() + TRIAL_DAYS * DAY_MS) : null
+  const active = Boolean(endsAt && endsAt.getTime() > Date.now())
+  return { claimed, startedAt: validStartedDate, endsAt, active }
+}
+
 export function SubscriptionProvider({ children }) {
-  const [plan,      setPlan]      = useState('free')   // 'free' | 'standard' | 'pro' | 'trial_expired' | 'dev'
-  const [loading,   setLoading]   = useState(true)
+  const [plan, setPlan] = useState('free')
+  const [loading, setLoading] = useState(true)
   const [expiresAt, setExpiresAt] = useState(null)
   const [status, setStatus] = useState(null)
+  const [trialEligible, setTrialEligible] = useState(false)
+  const [trialUsed, setTrialUsed] = useState(false)
+  const [refreshKey, setRefreshKey] = useState(0)
+
+  const refreshSubscription = useCallback(() => {
+    setLoading(true)
+    setRefreshKey(key => key + 1)
+  }, [])
+
+  const startTrial = useCallback(async (source = 'manual') => {
+    const { data: { session }, error: sessionError } = await supabase.auth.getSession()
+    if (sessionError) throw sessionError
+    if (!session?.user) throw new Error('Please sign in first.')
+
+    const current = trialStateFromMetadata(session.user.user_metadata || {})
+    if (current.claimed) throw new Error('This account has already used the free trial.')
+
+    const startedAt = new Date()
+    const { error } = await supabase.auth.updateUser({
+      data: {
+        pro_trial_started_at: startedAt.toISOString(),
+        pro_trial_claimed: true,
+        pro_trial_source: source,
+      },
+    })
+    if (error) throw error
+
+    setPlan('pro_trial')
+    setStatus('trialing')
+    setExpiresAt(new Date(startedAt.getTime() + TRIAL_DAYS * DAY_MS))
+    setTrialEligible(false)
+    setTrialUsed(true)
+    setLoading(false)
+    return true
+  }, [])
 
   useEffect(() => {
     let cancelled = false
@@ -34,32 +69,32 @@ export function SubscriptionProvider({ children }) {
     const checkSubscription = async () => {
       try {
         const { data: { session } } = await supabase.auth.getSession()
-
         if (!session?.user) {
-          if (!cancelled) { setPlan('free'); setLoading(false) }
+          if (!cancelled) {
+            setPlan('free'); setStatus(null); setExpiresAt(null)
+            setTrialEligible(false); setTrialUsed(false); setLoading(false)
+          }
           return
         }
 
-        const email = session.user.email
-
-        // 開発者チェック（常に全機能解放）
+        const email = (session.user.email || '').toLowerCase()
         if (DEV_EMAILS.includes(email)) {
-          if (!cancelled) { setPlan('dev'); setLoading(false) }
+          if (!cancelled) {
+            setPlan('dev'); setStatus('active'); setExpiresAt(null)
+            setTrialEligible(false); setTrialUsed(true); setLoading(false)
+          }
           return
         }
 
-        // ③ Supabaseのサブスクリプション状態を先に確認（サブスク契約済みが最優先）
-        // active または canceling（解約予約中）のサブスクを取得
         const { data: subData, error: subError } = await supabase
           .from('subscriptions')
           .select('plan, status, current_period_end, stripe_subscription_id')
           .eq('user_id', session.user.id)
-          .in('status', ['active', 'canceling'])
+          .in('status', ['active', 'canceling', 'trialing', 'past_due'])
           .order('created_at', { ascending: false })
           .limit(1)
           .maybeSingle()
 
-        // 有効なサブスクリプションがあれば最優先で返す
         if (!subError && subData) {
           const expiry = subData.current_period_end ? new Date(subData.current_period_end) : null
           const isValid = expiry ? expiry > new Date() : true
@@ -68,86 +103,74 @@ export function SubscriptionProvider({ children }) {
               setPlan(subData.plan || 'free')
               setStatus(subData.status || null)
               setExpiresAt(expiry)
+              setTrialEligible(false)
+              setTrialUsed(true)
               setLoading(false)
             }
-            return  // サブスク確認済み → 以降のチェック不要
+            return
           }
         }
 
-        // サブスクなし → 初回ログイン14日間はProプラン体験版
-        const userMeta = session.user.user_metadata || {}
-        const firstLoginAt = userMeta.first_login_at
-        if (!firstLoginAt) {
-          // 初回ログイン日時を記録
-          await supabase.auth.updateUser({
-            data: { first_login_at: new Date().toISOString() }
-          }).catch(() => {})
-          if (!cancelled) { setPlan('pro_trial'); setLoading(false) }
-          return
+        const trial = trialStateFromMetadata(session.user.user_metadata || {})
+        if (!cancelled) {
+          setTrialUsed(trial.claimed)
+          setTrialEligible(!trial.claimed)
+          if (trial.active) {
+            setPlan('pro_trial')
+            setStatus('trialing')
+            setExpiresAt(trial.endsAt)
+          } else {
+            setPlan('free')
+            setStatus(null)
+            setExpiresAt(null)
+          }
+          setLoading(false)
         }
-        const daysSinceFirst = (Date.now() - new Date(firstLoginAt).getTime()) / (1000 * 60 * 60 * 24)
-        if (daysSinceFirst < 14) {
-          if (!cancelled) { setPlan('pro_trial'); setLoading(false) }
-          return
+      } catch (error) {
+        console.error('[subscription]', error)
+        if (!cancelled) {
+          setPlan('free'); setStatus(null); setExpiresAt(null)
+          setTrialEligible(false); setLoading(false)
         }
-
-        // 14日経過・サブスクなし → Free
-        if (!cancelled) { setPlan('free'); setLoading(false) }
-      } catch {
-        if (!cancelled) { setPlan('free'); setLoading(false) }
       }
     }
 
     checkSubscription()
-
-    // ログイン状態変化を監視
     const { data: { subscription } } = supabase.auth.onAuthStateChange(() => {
       setLoading(true)
       checkSubscription()
     })
-
     return () => { cancelled = true; subscription.unsubscribe() }
-  }, [])
+  }, [refreshKey])
 
   const value = {
-    plan,
-    loading,
-    expiresAt,
-    status,
-    // 便利なbooleanヘルパー
-    isFree:     plan === 'free',
+    plan, loading, expiresAt, status, trialEligible, trialUsed,
+    startTrial, refreshSubscription,
+    isFree: plan === 'free',
     isStandard: ['standard','pro','pro_trial','dev'].includes(plan),
-    isPro:      ['pro','pro_trial','dev'].includes(plan),
-    isDev:      plan === 'dev',
-    // 機能アクセス判定
+    isPro: ['pro','pro_trial','dev'].includes(plan),
+    isDev: plan === 'dev',
     canAccess: (feature) => {
       const rules = {
-        'weekly_archive':      ['standard', 'pro', 'pro_trial', 'dev'],
-        'institutional':       ['dev'],  // Developer only — Coming Soon
-        'custom_theme_ai':     ['pro', 'pro_trial', 'dev'],
-        'multiple_alerts':     ['pro', 'pro_trial', 'dev'],
-        'portfolio_analysis':  ['pro', 'pro_trial', 'dev'],
-        // ① 短期期間（1日・1週・1ヶ月・2ヶ月）はStandard以上のみ
-        'short_period':        ['standard', 'pro', 'pro_trial', 'dev'],
-        // ① Market DetailはStandard以上のみ
-        'stockwave_score':     ['standard', 'pro', 'pro_trial', 'dev'],
-        'theme_trend_charts':  ['standard', 'pro', 'pro_trial', 'dev'],
-        'market_detail':       ['dev'],
+        weekly_archive: ['standard', 'pro', 'pro_trial', 'dev'],
+        institutional: ['dev'],
+        custom_theme_ai: ['pro', 'pro_trial', 'dev'],
+        multiple_alerts: ['pro', 'pro_trial', 'dev'],
+        portfolio_analysis: ['pro', 'pro_trial', 'dev'],
+        short_period: ['standard', 'pro', 'pro_trial', 'dev'],
+        stockwave_score: ['standard', 'pro', 'pro_trial', 'dev'],
+        theme_trend_charts: ['standard', 'pro', 'pro_trial', 'dev'],
+        market_detail: ['dev'],
       }
       return rules[feature]?.includes(plan) ?? true
     },
-    // ① 期間アクセス判定（Free: 3ヶ月/6ヶ月/1年のみ、Standard以上: 全期間）
     canAccessPeriod: (period) => {
-      const FREE_PERIODS = ['3mo', '6mo', '1y', '2y']  // Freeで閲覧可能
-      if (['standard', 'pro', 'pro_trial', 'dev'].includes(plan)) return true
-      return FREE_PERIODS.includes(period)
+      const freePeriods = ['3mo', '6mo', '1y', '2y']
+      return ['standard', 'pro', 'pro_trial', 'dev'].includes(plan) || freePeriods.includes(period)
     },
-    // ② Custom Theme上限
     maxThemes: { free:1, standard:5, pro:10, pro_trial:10, dev:999 }[plan] ?? 1,
     maxStocks: { free:10, standard:20, pro:50, pro_trial:50, dev:999 }[plan] ?? 10,
-    planLabel: {
-      free:'Free', standard:'Standard', pro:'Pro', pro_trial:'Pro Trial', trial_expired:'Trial Ended', dev:'Developer'
-    }[plan] || 'Free',
+    planLabel: { free:'Free', standard:'Standard', pro:'Pro', pro_trial:'Pro Trial', dev:'Developer' }[plan] || 'Free',
   }
 
   return <SubscriptionContext.Provider value={value}>{children}</SubscriptionContext.Provider>

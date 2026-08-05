@@ -55,7 +55,7 @@ const PAGES_FOOTER = [
 
 
 const MARKET_DEV_PAGE = { icon:'📋', label:'Market Detail', component:MarketRank }
-const INSTITUTIONAL_DEV_PAGE = { icon:'🏦', label:'Institutional Intelligence', component:InstitutionalHoldings }
+const INSTITUTIONAL_DEV_PAGE = { icon:'🏦', label:'Institutional Investor Information', component:InstitutionalHoldings }
 const DEV_PAGES = [MARKET_DEV_PAGE, INSTITUTIONAL_DEV_PAGE]
 const DEV_ONLY_LABELS = new Set(DEV_PAGES.map(page => page.label))
 
@@ -224,7 +224,7 @@ function AppInner() {
       }}>
         <RelatedPageNav currentPage={currentPage} onNavigate={handlePageChange} />
         {PageComponent ? (
-          currentPage === 'Institutional Intelligence' ? (
+          currentPage === 'Institutional Investor Information' ? (
             <PlanGate feature="institutional" onNavigate={handlePageChange}>
               <PageComponent {...pageProps} />
             </PlanGate>
@@ -271,7 +271,7 @@ function AppInner() {
             <span style={{ color:'#e63030', fontWeight:700 }}>Stock</span>
             <span style={{ fontWeight:700, color:'var(--text2)' }}>Wave</span>
             <span style={{ color:'#e63030', fontWeight:700, fontSize:'10px' }}>JP</span>
-            <span style={{ whiteSpace:'nowrap' }}>&nbsp;—&nbsp;stockwavejp.com</span>
+            <span style={{ whiteSpace:'nowrap' }}>&nbsp;—&nbsp;stockwavejp-en.com</span>
             <span style={{ whiteSpace:'nowrap' }}>&nbsp;—&nbsp;Not investment advice</span>
             <span style={{ whiteSpace:'nowrap' }}>&nbsp;—&nbsp;© 2026</span>
           </div>

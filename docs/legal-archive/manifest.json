@@ -1,0 +1,29 @@
+{
+  "current_version": "2026-08-04",
+  "versioning_rule": "YYYY-MM-DD",
+  "current_source_locations": {
+    "jp": "apps/jp/frontend/src/components/pages",
+    "en": "apps/en/frontend/src/components/pages"
+  },
+  "archived_versions": [
+    {
+      "version": "2026-07-23",
+      "status": "archived",
+      "basis": "Previous legal consent version identifier",
+      "path": "docs/legal-archive/2026-07-23"
+    }
+  ],
+  "documents": [
+    "terms",
+    "privacy",
+    "disclaimer",
+    "legal_notice"
+  ],
+  "process": [
+    "Before changing a legal document, copy the current source into docs/legal-archive/<current-version>/<locale>/.",
+    "Assign the new version using YYYY-MM-DD.",
+    "Update LEGAL_VERSIONS in both LegalConsentGate files.",
+    "Update the visible date/version in each legal page.",
+    "Never overwrite or delete an archived version."
+  ]
+}

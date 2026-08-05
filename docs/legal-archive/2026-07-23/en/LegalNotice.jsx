@@ -25,8 +25,8 @@ export default function LegalNotice() {
       <h2 style={h2}>Pricing</h2>
       <div>
         {row('Free Plan', 'Free (permanent)')}
-        {row('Standard Plan', '$9.90/month')}
-        {row('Pro Plan', '$19.90/month')}
+        {row('Standard Plan', '¥980/month')}
+        {row('Pro Plan', '¥1,980/month')}
       </div>
       <h2 style={h2}>Payment</h2>
       <div>
@@ -37,7 +37,7 @@ export default function LegalNotice() {
       <p style={p}>As a general rule, no refunds are provided. Exceptions may apply in cases of service outages lasting 7+ consecutive days, duplicate charges, or as required by applicable consumer protection laws.</p>
       <h2 style={h2}>Contact</h2>
       <p style={p}><a href="mailto:stockwavejp26@gmail.com" style={{ color:'var(--accent)' }}>stockwavejp26@gmail.com</a><br/>We respond within 5 business days.</p>
-      <p style={{ fontSize:'11px', color:'var(--text3)', marginTop:'24px' }}>Last updated: August 4, 2026 · Version: 2026-08-04</p>
+      <p style={{ fontSize:'11px', color:'var(--text3)', marginTop:'24px' }}>Last updated: May 2026</p>
     </div>
   )
 }

@@ -1,6 +1,6 @@
 import { useEnglishCompanyNames } from '../../hooks/useEnglishCompanyNames'
 import React, { useState, useEffect, useRef } from 'react'
-import { useSubscription } from '../../hooks/useSubscription'
+import { useSubscription } from '../../hooks/useSubscription.jsx'
 import AddToThemeModal from '../AddToThemeModal'
 import StockBubbleChart from '../StockBubbleChart'
 import { useSegmentDetail, useMarketRankList } from '../../hooks/useMarketData'

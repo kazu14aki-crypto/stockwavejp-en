@@ -6,7 +6,7 @@ import TermsOfService from './pages/TermsOfService.jsx'
 import PrivacyPolicy from './pages/PrivacyPolicy.jsx'
 import Disclaimer from './pages/Disclaimer.jsx'
 
-export const LEGAL_VERSIONS={terms:'2026-07-23',privacy:'2026-07-23',disclaimer:'2026-07-23'}
+export const LEGAL_VERSIONS={terms:'2026-08-04',privacy:'2026-08-04',disclaimer:'2026-08-04'}
 const storageKey=id=>`swjp_legal_consent_${id}_${LEGAL_VERSIONS.terms}_${LEGAL_VERSIONS.privacy}_${LEGAL_VERSIONS.disclaimer}`
 
 export default function LegalConsentGate(){

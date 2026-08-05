@@ -52,7 +52,7 @@ export default function PrivacyPolicy() {
   return (
     <div style={{ padding:'28px 32px 60px', maxWidth:'760px', margin:'0 auto' }}>
       <h1 style={{ fontSize:'24px', fontWeight:700, color:'#e8f0ff', marginBottom:'4px' }}>Privacy Policy</h1>
-      <p style={{ fontSize:'12px', color:'var(--text3)', marginBottom:'32px' }}>Last updated: August 4, 2026 · Version: 2026-08-04</p>
+      <p style={{ fontSize:'12px', color:'var(--text3)', marginBottom:'32px' }}>Last updated: July 5, 2026</p>
       {sections.map((s, i) => (
         <div key={i} style={{ marginBottom:'28px' }}>
           <h2 style={{ fontSize:'15px', fontWeight:700, color:'#e8f0ff', marginBottom:'10px',

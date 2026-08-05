@@ -47,7 +47,7 @@ const PAGE_LINKS = {
     ['📊','Theme List','Return to theme analysis'],
     ['🔎','Stock Search','Research stocks'],
   ],
-  'Institutional Holdings': [
+  'Institutional Investor Information': [
     ['📊','Theme List','Return to theme analysis'],
     ['🔎','Stock Search','Research disclosed stocks'],
   ],

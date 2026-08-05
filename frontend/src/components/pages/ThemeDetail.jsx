@@ -1,7 +1,7 @@
 import { useEnglishCompanyNames } from '../../hooks/useEnglishCompanyNames'
 import { tn, THEME_NAME_EN } from '../../utils/themeNames'
 import React, { useState, useEffect, useRef } from 'react'
-import { useSubscription } from '../../hooks/useSubscription'
+import { useSubscription } from '../../hooks/useSubscription.jsx'
 import StockBubbleChart from '../StockBubbleChart'
 import AddToThemeModal from '../AddToThemeModal'
 import StockWaveScoreCard from '../StockWaveScoreCard'
@@ -745,6 +745,7 @@ const THEME_ARTICLE_MAP = {
 
 
 export default function ThemeDetail({ onNavigate, initialTheme }) {
+  const { canAccessPeriod, loading: subscriptionLoading } = useSubscription()
   const [period,      setPeriod]      = useState('1mo')
   useEffect(() => { if (!subscriptionLoading && !canAccessPeriod(period)) setPeriod('3mo') }, [period, subscriptionLoading, canAccessPeriod])
   const [themeNames,  setThemeNames]  = useState([])

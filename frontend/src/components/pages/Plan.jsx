@@ -6,9 +6,11 @@ import { useSubscription } from '../../hooks/useSubscription.jsx'
 export default function Plan({ onNavigate }) {
   const [isMobile, setIsMobile] = useState(false)
   const { isLoggedIn, signIn } = useAuth()
-  const { plan: currentPlan, planLabel } = useSubscription()
+  const { plan: currentPlan, planLabel, trialEligible, startTrial } = useSubscription()
   const [portalBusy, setPortalBusy] = useState(false)
   const [portalError, setPortalError] = useState(null)
+  const [trialBusy, setTrialBusy] = useState(false)
+  const [trialError, setTrialError] = useState('')
 
   useEffect(() => {
     const check = () => setIsMobile(window.innerWidth < 640)
@@ -36,6 +38,23 @@ export default function Plan({ onNavigate }) {
       setPortalError(error.message)
     } finally {
       setPortalBusy(false)
+    }
+  }
+
+
+  const beginFreeTrial = async () => {
+    setTrialError('')
+    if (!isLoggedIn) {
+      await signIn('trial')
+      return
+    }
+    setTrialBusy(true)
+    try {
+      await startTrial('pricing_page')
+    } catch (error) {
+      setTrialError(error?.message || 'The free trial could not be started.')
+    } finally {
+      setTrialBusy(false)
     }
   }
 
@@ -105,12 +124,21 @@ export default function Plan({ onNavigate }) {
   return (
     <div style={{ padding:'16px 16px 60px', maxWidth:'860px', margin:'0 auto' }}>
       <h1 style={{ fontSize:'22px', fontWeight:700, color:'var(--text)', marginBottom:'6px' }}>💰 Plans & Pricing</h1>
+
+      {(currentPlan === 'free' && (!isLoggedIn || trialEligible)) && (
+        <div style={{padding:'18px',marginBottom:'20px',borderRadius:'12px',background:'linear-gradient(135deg,rgba(170,119,255,0.16),rgba(74,158,255,0.10))',border:'1px solid rgba(170,119,255,0.35)'}}>
+          <div style={{fontSize:'15px',fontWeight:800,color:'var(--text)',marginBottom:'6px'}}>Try Pro free for 14 days</div>
+          <div style={{fontSize:'12px',lineHeight:1.7,color:'var(--text2)',marginBottom:'12px'}}>No card and no automatic charge. One free trial per account.</div>
+          <button onClick={beginFreeTrial} disabled={trialBusy} style={{border:'none',borderRadius:'8px',padding:'11px 16px',background:'#aa77ff',color:'#fff',fontWeight:800,cursor:'pointer',fontFamily:'var(--font)'}}>{trialBusy ? 'Starting…' : 'Sign in and start the Pro free trial'}</button>
+          {trialError && <div style={{fontSize:'12px',color:'var(--red)',marginTop:'8px'}}>{trialError}</div>}
+        </div>
+      )}
       {currentPlan === 'pro_trial' && (
         <div style={{ padding:'12px 16px', background:'rgba(170,119,255,0.12)',
           border:'1px solid rgba(170,119,255,0.3)', borderRadius:'10px',
           fontSize:'13px', color:'#aa77ff', marginBottom:'16px', lineHeight:1.7 }}>
           🎉 <strong>Pro Trial</strong> is active.<br/>
-          <span style={{ fontSize:'11px', color:'var(--text2)' }}>All features are available for 14 days after the first sign-in. The account automatically moves to Free when the trial ends.</span>
+          <span style={{ fontSize:'11px', color:'var(--text2)' }}>The free trial period is 14 days. The account automatically moves to Free when the trial ends.</span>
         </div>
       )}
       <p style={{ fontSize:'12px', color:'var(--text3)', marginBottom:'24px', lineHeight:1.7 }}>

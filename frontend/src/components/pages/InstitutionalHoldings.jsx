@@ -383,7 +383,7 @@ export default function InstitutionalHoldings({ onNavigate, isMobile } = {}) {
 
   return (
     <div style={{ padding:'24px 20px 60px', maxWidth:'900px', margin:'0 auto' }}>
-      <h1 style={{ fontSize:'22px', fontWeight:700, color:'var(--text)', marginBottom:'4px' }}>🏦 Institutional and Large-Shareholding Disclosures</h1>
+      <h1 style={{ fontSize:'22px', fontWeight:700, color:'var(--text)', marginBottom:'4px' }}>🏦 Institutional Investor Information</h1>
       {updatedAt && <div style={{ fontSize:'11px', color:'var(--text3)', marginTop:'4px' }}>📅 Data updated: {updatedAt}　Total {allData.length} records</div>}
 
       <div style={{ display:'flex', gap:'4px', marginBottom:'18px', borderBottom:'1px solid var(--border)', marginTop:'16px', overflowX:'auto' }}>

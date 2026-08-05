@@ -1,0 +1,2 @@
+frontend/src/hooks/useSubscription.js
+frontend/src/lib/supabaseClient.js

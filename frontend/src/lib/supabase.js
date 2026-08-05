@@ -15,7 +15,8 @@ export const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
   },
 })
 
-export async function signInWithGoogle() {
+export async function signInWithGoogle(intent = 'header') {
+  localStorage.setItem('swjp_en_trial_login_intent', intent)
   const { error } = await supabase.auth.signInWithOAuth({
     provider: 'google',
     options: {
