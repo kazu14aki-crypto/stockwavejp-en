@@ -184,12 +184,14 @@ function VolTvChart({ selTheme }) {
       // 1. market.json から取得
       try {
         const mj = await fetch('/data/market.json?t=' + Date.now()).then(r => r.json())
-        const d = mj[`vol_trend_${tn(selTheme)}`]
+        const d = mj[`vol_trend_${selTheme}`]
         if (d && d.dates && d.dates.length > 0) { setData(d); setLoading(false); return }
       } catch {}
       // 2. Render API にフォールバック
       try {
-        const d = await fetch(`${API}/api/vol-trend/${encodeURIComponent(selTheme)}`).then(r => r.json())
+        const response = await fetch(`${API}/api/vol-trend/${encodeURIComponent(selTheme)}`)
+        if (!response.ok) throw new Error(`HTTP ${response.status}`)
+        const d = await response.json()
         if (d && d.dates && d.dates.length > 0) { setData(d); setLoading(false); return }
       } catch {}
       setLoading(false)
@@ -1126,7 +1128,7 @@ export default function ThemeDetail({ onNavigate, initialTheme }) {
                 {/* Volume・Trade Valueグラフ（Heatmapの下） */}
                 <TdExpandable title="📊 Volume & Trading Value Trend (weekly)" style={{ marginTop:'14px' }}>
                   <div style={{ height:'200px' }}>
-                    <VolTvChart selTheme={tn(selTheme)} />
+                    <VolTvChart selTheme={selTheme} />
                   </div>
                 </TdExpandable>
 

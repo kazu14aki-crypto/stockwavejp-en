@@ -818,6 +818,7 @@ const displaySegmentName = value => ({
 
 export default function MarketRank({ onNavigate, isMobile } = {}) {
   const englishCompanyName = useEnglishCompanyNames()
+  const { canAccessPeriod, loading: subscriptionLoading } = useSubscription()
   const [modalStock,  setModalStock]  = useState(null)
   const [period,      setPeriod]      = useState('1mo')
   const [summary,     setSummary]     = useState(null)
@@ -830,6 +831,10 @@ export default function MarketRank({ onNavigate, isMobile } = {}) {
   const [etfLoading,  setEtfLoading]  = useState(false)
 
   const { data: marketData, loading: loadingS } = useMarketRankList(period)
+
+  useEffect(() => {
+    if (!subscriptionLoading && !canAccessPeriod(period)) setPeriod('3mo')
+  }, [period, subscriptionLoading, canAccessPeriod])
 
   useEffect(()=>{
     if (!marketData) return

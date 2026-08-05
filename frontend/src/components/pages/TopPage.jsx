@@ -154,7 +154,7 @@ function generateMarketComment(themeData, macro) {
   const mktState = riseCount >= total*0.7 ? 'broad rally' :
                    riseCount >= total*0.55 ? 'mostly rising' :
                    fallCount >= total*0.7  ? 'broad decline' :
-                   fallCount >= total*0.55 ? 'mostly falling' : 'mixed market'
+                   fallCount >= total*0.55 ? 'mostly falling' : 'mixed'
 
   const top3 = [...t].sort((a,b)=>b.pct-a.pct).slice(0,3)
   const bot3 = [...t].sort((a,b)=>a.pct-b.pct).slice(0,3)

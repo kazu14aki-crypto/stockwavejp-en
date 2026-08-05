@@ -100,7 +100,6 @@ const STATE_COLORS = {
   '🔥 Accel':'#ff4560', '↗ Rev.↑':'#ff8c42', '→ Flat':'var(--text3)', '↘ Rev.↓':'#4a9eff', '❄️ Stall':'#00c48c',
   '🔥 Accelerating':  '#ff4560',
   '↗ Turning Up': '#ff8c42',
-  '→ Flat': 'var(--text3)',
   '↘ Turning Down': '#4a9eff',
   '❄️ Losing Momentum':  '#00c48c',
 }
@@ -395,10 +394,15 @@ function SelectedThemePanel({ theme, period, bubble, onNavigate }) {
           } catch {}
         }
 
-        try {
-          const response = await fetch(`${API}/api/vol-trend/${encodeURIComponent(theme)}`)
-          if (response.ok) volData = await response.json()
-        } catch {}
+        const staticVolData = staticJson?.[`vol_trend_${theme}`]
+        if (staticVolData?.dates?.length) {
+          volData = staticVolData
+        } else {
+          try {
+            const response = await fetch(`${API}/api/vol-trend/${encodeURIComponent(theme)}`)
+            if (response.ok) volData = await response.json()
+          } catch {}
+        }
 
         if (!detail?.stocks?.length) {
           try {
