@@ -5513,4 +5513,265 @@ H2: Principal sources and cautions
 
 Intervention totals are published monthly, while transaction-day and currency details are released quarterly. Treat early reports and market estimates as provisional until official statistics are available.
 
-> Disclaimer: This column is for general information only and does not recommend buying, selling, or holding any security. Exchange rates, interest rates, oil prices, policy, and corporate earnings can change. Review the latest official statistics and company disclosures and make investment decisions at your own responsibility.`}];export{e as C};
+> Disclaimer: This column is for general information only and does not recommend buying, selling, or holding any security. Exchange rates, interest rates, oil prices, policy, and corporate earnings can change. Review the latest official statistics and company disclosures and make investment decisions at your own responsibility.`},{id:"domestic-demand-defensive-theme-2026",themes:["Domestic Demand & Defensives"],keywords:["domestic demand","defensives","consumer spending","pricing power","essential goods","real income"],category:"Theme Analysis",icon:"🏠",date:"2026/08/09",title:"Domestic Demand and Defensives: Why “Resilient in a Downturn” Is Not Enough",summary:"A practical framework for assessing companies tied to Japanese domestic demand: the durability of demand, pricing power, wages and inflation, productivity, interest rates, and regulation.",body:`
+H2: What domestic demand and defensives mean
+
+Domestic-demand businesses earn revenue from Japanese households, companies, or government spending. “Defensive” describes demand that is less likely to fall sharply in a weak economy. Food, household goods, pharmaceuticals, telecoms, utilities, railways, drugstores, security, care services, and other everyday services are common examples. The label does not mean that a share price cannot fall or that a company is automatically safe.
+
+The key question is not only where revenue is booked, but what customers buy, how often they buy it, and how easily they can switch. Housing and advertising can be domestic businesses yet remain highly sensitive to the economy, interest rates, and corporate capital spending. Conversely, recurring contracts and essential infrastructure can make demand relatively stable even where a company has overseas sales.
+
+H2: Why the theme attracts attention in uncertain markets
+
+When recession risk or external uncertainty rises, investors may rotate from capital-spending and export-led sectors toward businesses supported by daily consumption or fixed contracts. Essentials, communications, healthcare, care services, and utility bills are difficult for households to eliminate entirely. A domestic demand base can therefore be valued more highly when global growth, tariffs, currencies, or geopolitics become less predictable.
+
+Revenue stability is not the same as profit stability. A weak yen and higher prices for materials, fuel, logistics, and labour can compress margins where price increases are difficult. A proper comparison must therefore extend beyond cyclicality to the company’s ability to pass costs through to customers.
+
+H2: Four lenses for deeper analysis
+
+H3: 1. Frequency of demand and ease of substitution
+
+Services used daily or monthly tend to have steadier demand, but customers can still switch in price-sensitive or highly competitive categories. Track the operating measure that fits the business: renewal and cancellation rates, store visits, members, prescriptions filled, or passenger volumes.
+
+H3: 2. Pricing power and product mix
+
+Pricing depends on brand, quality, convenience, competition, regulation, and consumers’ incomes. Higher revenue after a price increase can conceal lower volumes. Separate customer traffic from average spend, volume from price, and shifts from low-priced products to premium products.
+
+H3: 3. Labour costs and productivity
+
+Wage growth can support household income and domestic demand, but it is also a cost for service companies. Self-checkouts, reservation and dispatch systems, delivery efficiency, and standardised store operations can determine whether margins withstand labour shortages.
+
+H3: 4. Interest rates and institutions
+
+Telecoms, utilities, railways, and property-related businesses require large investment and can be sensitive to financing costs. Drug prices, utility tariffs, premiums, and fares may also be shaped by regulation. Consider rate sensitivity, regulation, and the investment-payback period alongside stable demand.
+
+H2: What to watch in 2026
+
+Japan’s monthly economic assessments point to signs of recovery in consumer spending while retaining caution over inflation’s effect on consumption. Household Survey data should be read by separating real from nominal changes, categories and household types, and month-on-month from year-on-year movements. At company level, follow volumes after price rises, like-for-like sales, subscriber numbers, revenue per customer, labour-cost ratios, and SG&A ratios.
+
+H2: Common misunderstandings
+
+A high dividend yield is not the same thing as defensiveness: unstable profits or heavy investment can still put dividends at risk. Domestic companies are not immune to a weak yen, because imported inputs, fuel, overseas procurement, and logistics all matter. Nor do defensives necessarily outperform in every downturn; higher rates and valuation resets can weigh on their shares.
+
+H2: Conclusion: selectivity still matters in defensive sectors
+
+Domestic-demand and defensive names can moderate portfolio volatility in unsettled markets, but classification alone is not analysis. Compare demand durability, pricing power, productivity, balance sheets, and institutional risk. In an environment of moving wages and prices, the decisive question is whether a company can remain chosen by customers while absorbing its costs.
+
+Primary references: Cabinet Office Monthly Economic Report; Statistics Bureau Household Survey.`},{id:"weak-yen-benefit-theme-2026",themes:["Weak-Yen Beneficiaries"],keywords:["weak yen","foreign exchange","exports","overseas sales","currency hedging","import costs"],category:"Theme Analysis",icon:"💱",date:"2026/08/09",title:"Weak-Yen Beneficiaries: Why Buying Exporters Alone Is Not the Answer",summary:"A weak yen can lift the translated value of overseas earnings, but import costs, overseas production, hedging, and competitive dynamics matter just as much. This guide explains how to assess true currency sensitivity company by company.",body:`
+H2: A weak-yen benefit is not determined by the exchange rate alone
+
+A weaker yen can increase the yen value of dollar- and euro-denominated sales and profits, and may create room to improve the foreign-currency competitiveness of products made in Japan. The benefit varies enormously by company. A group that sells overseas but produces, sources, and pays wages locally may see revenue and costs move in the same currency, limiting any gain on translation. Companies with substantial Japanese production and overseas sales may be better placed.
+
+The relevant question is not the export ratio alone. Investors should examine revenue, costs, production locations, and hedges by currency.
+
+H2: Four channels through which the yen affects profits
+
+H3: 1. Translation
+
+When overseas subsidiaries are consolidated, a weaker yen increases their reported yen revenue and profit. This changes reported numbers, but does not automatically mean that local competitiveness or cash generation has improved. Separate underlying local-currency growth from translation effects.
+
+H3: 2. Price competitiveness
+
+For products made in Japan and sold in foreign currencies, a weaker yen can support margins at unchanged prices or allow lower prices to pursue volume. The outcome depends on rivals’ production locations, brand and quality, and the timing of contract renegotiations; currency moves do not instantly create orders.
+
+H3: 3. Imported costs
+
+Imported raw materials, parts, fuel, feed, and overseas equipment become more expensive in yen terms. Even exporters can see gains offset by foreign-currency procurement of semiconductors, metals, energy, or plant equipment.
+
+H3: 4. Hedges and contract currency
+
+Forward contracts and swaps can delay the impact of currency moves. They protect earnings but can also cap an abrupt weak-yen benefit. Contract currency and renewal frequency matter, while a company’s assumed exchange rate and the profit impact of a one-yen move are often the most useful disclosed indicators.
+
+H2: A practical earnings checklist
+
+1. Review sales and operating profit by region and currency, not just overseas-sales ratios.
+2. Check domestic versus overseas production and dependence on imported parts and fuel.
+3. Compare the assumed exchange rate, year-on-year change, and disclosed sensitivities.
+4. Confirm hedge ratios and hedge periods.
+5. Separate volume, selling price, and translation effects wherever possible.
+
+H2: A weak yen is not automatically a gain for Japan as a whole
+
+Higher exporter profits do not necessarily translate directly into stronger household welfare. Import inflation can raise the cost of food, energy, daily goods, and transport, reducing real income. It also matters whether corporate gains are recycled into capital expenditure, wage growth, and domestic procurement. Tourism and cross-border e-commerce can benefit, while overseas travel, study abroad, and imported goods become more expensive.
+
+H2: Conclusion: assess the net foreign-currency position
+
+The most useful test is to subtract foreign-currency costs from foreign-currency earnings and assess the resulting net position. Bring together overseas revenue, Japanese production, imported inputs, hedges, pricing actions, and assumed exchange rates. The yen can become either a tailwind or a headwind, so durable product competitiveness and resilient profit structures matter more than a simple currency label.
+
+Primary references: Ministry of Finance materials on the economic effects of a weaker yen and foreign-exchange risk.`},{id:"electric-utilities-theme-2026",themes:["Electric Utilities"],keywords:["power demand","decarbonised generation","transmission grid","capacity market","power tariffs","energy plan"],category:"Theme Analysis",icon:"⚡",date:"2026/08/09",title:"Japan’s Electric Utilities: AI-Era Demand, Decarbonisation Investment, and Tariff Regulation",summary:"Utilities are no longer captured by an “income stock” label alone. This article explains demand, generation mix, grids, storage, fuel, regulation, and the investment burden behind reliable decarbonised power.",body:`
+H2: Utilities support an electricity system, not simply electricity sales
+
+Electricity is difficult to store at scale, so supply and demand must be balanced almost continuously. Generation, transmission and distribution, demand balancing, fuel procurement, and tariff systems are linked; a change in one can affect earnings and capital needs elsewhere. Data centres, semiconductor fabs, and wider electrification have made future demand security more important, while growing renewable output adds weather-related balancing challenges.
+
+H2: Four entry points for assessing earnings
+
+H3: 1. Fuel prices and the yen
+
+Where thermal generation remains important, LNG and coal procurement costs—and the exchange rate—matter. Fuel-cost adjustment schemes can pass through some costs, but timing lags, scheme caps, and customers’ conservation responses still need to be considered. Read commodity prices together with each company’s fuel mix and tariff rules.
+
+H3: 2. Generation mix and utilisation
+
+The balance of renewables, nuclear, and thermal generation affects fuel costs, emissions costs, utilisation, and future capital spending. Higher output from a source can support profits, but safety rules, scheduled inspections, local consent, and grid connections remain material. Go beyond “restart” or “new build” headlines: ask when capacity begins, how much output it represents, and which cost it displaces.
+
+H3: 3. Investment in grids and storage
+
+More renewables and distributed generation require lines, substations, grid-scale batteries, and demand-control investment. These can raise depreciation and funding needs in the short term but support long-term reliability. Investors should examine how spending is recovered through regulated or wheeling charges and whether projects are progressing as planned.
+
+H3: 4. Regulation and market design
+
+Capacity markets, renewable-support frameworks, support for decarbonised sources, wheeling charges, and fuel-cost adjustment directly shape economics and willingness to invest. Analyse any policy change by the assets it covers, the recovery period, and the burden placed on customers.
+
+H2: Points to monitor in 2026
+
+Japan’s Seventh Strategic Energy Plan pursues stable supply, decarbonisation, and affordability together. As DX and GX may raise demand, the focus is on combining low-carbon sources—including renewables and nuclear—without excessive reliance on any one source. Compare utilities in this order: sales volumes and large-load demand; generation mix and operating plans; grid, renewable-connection, and battery investment; balance sheets, borrowing, dividends, and capex; and the timing of regulatory pass-through.
+
+H2: How to read supply-tightness headlines
+
+Heatwaves, severe winters, unplanned outages, and fuel disruption can make supply tightness prominent. Do not equate a “power shortage” headline with permanently higher utility profits. Reserve margins, interregional transfers, demand restraint, renewable curtailment, and fuel inventories are all part of the response. The earnings effect of higher wholesale prices differs by generation and sales positions, fuel adjustments, hedges, and regulation.
+
+H2: Conclusion: look beyond dividends
+
+Utilities face potential demand growth but also investment, regulatory, safety, fuel, and currency risks. Their strength lies in operating critical infrastructure through long recovery periods. In results, assess demand outlook, the substance of capital spending, funding, and changes in policy assumptions—not only daily fuel-price moves or dividend yields.
+
+Primary references: Agency for Natural Resources and Energy, Seventh Strategic Energy Plan.`},{id:"hydrogen-helium-water-resources-theme-2026",themes:["Hydrogen / Helium / Water Resources"],keywords:["hydrogen","helium","water resources","supply chain","industrial gas","water treatment","resource security"],category:"Theme Analysis",icon:"💧",date:"2026/08/09",title:"Hydrogen, Helium, and Water: Invest in Usable Supply Chains, Not Scarcity Alone",summary:"Hydrogen, helium, and water can become important resource themes, but scarcity alone does not create earnings. This article focuses on applications, supply chains, economics, infrastructure, and the metrics that separate viable businesses from narratives.",body:`
+H2: Scarcity is only the starting point
+
+Resource themes often attract attention because a material is scarce or strategically important. For investors, however, the more useful question is whether a company can deliver reliable supply at a cost customers will pay. Hydrogen requires production, transport, storage, and demand-side equipment; helium depends on source quality, purification, liquefaction, and distribution; water businesses rely on intake, treatment, networks, maintenance, and regulation. The value lies in an operating supply chain, not a compelling label.
+
+H2: Hydrogen: demand, cost, and infrastructure must align
+
+Hydrogen may support decarbonisation in sectors that are difficult to electrify, but demand will not scale merely because production targets are announced. Compare the delivered cost of hydrogen, the customer’s alternative fuel, infrastructure availability, contract duration, and the extent of public support. Electrolysers, renewable power, pipelines, shipping, storage, ammonia or other carriers, and end-use equipment must work as a system. Announcements should be distinguished from financed projects with offtake agreements.
+
+H2: Helium: an industrial gas with specialised uses
+
+Helium is indispensable in applications such as semiconductors, medical imaging, research, fibre optics, and space-related uses. Supply disruptions can have an outsized effect because substitution is often difficult, but price spikes alone do not make every related company a beneficiary. Examine sourcing contracts, purification and distribution capability, customer mix, inventory, and whether higher procurement costs can be passed through.
+
+H2: Water: resilience, treatment, and recurring operations
+
+Water demand is fundamental, yet earnings models differ widely among utilities, equipment makers, engineering contractors, treatment-chemical suppliers, and maintenance firms. Drought, flood risk, ageing infrastructure, industrial water reuse, and stricter quality standards can support investment. The relevant measures are contract backlog, recurring maintenance revenue, treatment capacity, pricing rules, non-revenue-water reduction, and the client’s ability to finance projects.
+
+H2: What investors should verify
+
+1. Is the application commercially necessary rather than merely technically possible?
+2. Does the company control a viable route from sourcing to delivery and service?
+3. Are offtake contracts, utilisation, prices, and subsidies disclosed clearly?
+4. How much capital is required before positive cash flow, and who bears commodity or volume risk?
+5. Do regulation, safety, environmental permits, and local acceptance create material timing risk?
+
+H2: Conclusion: follow economics and execution
+
+Hydrogen, helium, and water can address real industrial and social needs, but they are not interchangeable “rare-resource” trades. Durable value is more likely where a company combines technical capability with contracts, infrastructure, regulatory permission, and repeatable operations. Focus on delivered cost, utilisation, cash conversion, and customer demand rather than scarcity headlines.
+
+Primary references: Ministry of Economy, Trade and Industry hydrogen policy materials; industrial-gas and water-policy disclosures.`},{id:"saas-theme-2026",themes:["SaaS"],keywords:["SaaS","ARR","MRR","net revenue retention","ARPU","churn","free cash flow"],category:"Theme Analysis",icon:"☁️",date:"2026/08/09",title:"SaaS: Revenue Growth Alone Is Not Enough—Read Retention and Revenue per Customer",summary:"A framework for evaluating SaaS businesses through recurring revenue, retention, ARPU, customer acquisition costs, margins, cash flow, and the durability of their competitive position.",body:`
+H2: SaaS is a recurring-revenue model, not a guarantee of quality
+
+Software as a Service delivers software through cloud subscriptions, usually generating recurring revenue. It can be attractive because customers may pay continuously and providers can expand the service over time. Yet growth in reported sales does not by itself demonstrate a durable business. Investors need to understand whether customers continue using the product, increase spending, and can be served at improving unit economics.
+
+H2: The core metrics
+
+H3: 1. ARR and MRR
+
+Annual recurring revenue and monthly recurring revenue measure the recurring portion of subscription sales. They should be read with contract duration, the proportion of usage-based revenue, and whether large one-off implementation fees are being mixed in.
+
+H3: 2. Retention and churn
+
+Gross retention shows how much existing recurring revenue remains before expansion; net revenue retention includes upsells and cross-sells. A company can report strong new-customer growth while losing customers or discounting heavily. Track logo churn, revenue churn, downgrades, and the concentration of large accounts.
+
+H3: 3. ARPU and product expansion
+
+Rising average revenue per user can reflect greater product value, but it can also come from price increases or a changing customer mix. Check usage, seat counts, modules adopted, and the affordability of the service for the target customer.
+
+H3: 4. Customer acquisition efficiency and cash flow
+
+Sales and marketing spending may precede revenue by a long period. Compare customer-acquisition cost, payback period, gross margin, renewal economics, free cash flow, and the capitalisation of development costs. Fast growth that consumes increasing cash is different from growth that improves operating leverage.
+
+H2: AI does not remove the need for execution
+
+AI can increase the value of workflow software, improve automation, and create new pricing opportunities. It can also raise infrastructure costs, accelerate feature competition, and make basic functionality easier to replicate. The relevant questions are whether AI solves a costly customer problem, supports higher retention or ARPU, and produces returns above the cost of data, models, and implementation.
+
+H2: A practical earnings review
+
+Read customer count, ARR/MRR growth, retention, ARPU, gross margin, sales efficiency, and cash flow together. Then ask whether the company’s market is expanding, whether switching costs or proprietary data protect its position, and whether the price reflects a realistic path to profitability.
+
+H2: Conclusion: retention reveals the quality of growth
+
+SaaS deserves attention when it builds recurring customer value, not merely when it reports a large percentage-growth figure. Strong businesses retain customers, expand economically within accounts, manage acquisition costs, and convert recurring revenue into cash. A durable investment case rests on the quality and repeatability of those relationships.
+
+Primary references: company earnings materials and standard SaaS KPI disclosures.`},{id:"building-materials-theme-2026",themes:["Building Materials"],keywords:["housing starts","price pass-through","renovation demand","cement","steel","insulation","construction backlog"],category:"Theme Analysis",icon:"🏗️",date:"2026/08/09",title:"Building Materials: Read Housing Starts, Pricing Power, and Replacement Demand Together",summary:"Building-material companies are shaped by more than new construction. This guide connects residential and non-residential demand, renewal, price pass-through, energy costs, labour shortages, decarbonisation, and order quality.",body:`
+H2: Building materials are not a one-variable housing-starts theme
+
+Housing starts matter, but building-material demand also comes from renovation, energy efficiency, disaster resilience, infrastructure renewal, factories, warehouses, stores, offices, hotels, and data centres. Investors should separate residential, non-residential, and public or replacement demand, because each has a different timing and sensitivity to rates, corporate capex, and budgets.
+
+H2: Demand by end market
+
+H3: Residential
+
+New homes are influenced by household formation, mortgage rates, land prices, and confidence. Renovation, insulation, seismic upgrades, and replacements can provide a different source of demand. A shift toward higher-performance windows, insulation, and equipment can alter product mix even if unit starts are weak.
+
+H3: Non-residential
+
+Factories, warehouses, retail, offices, hotels, and data centres are tied to corporate investment and supply-chain restructuring. Large projects are volatile, so evaluate order-backlog quality, completion timing, end use, and regional concentration rather than treating a single semiconductor-fab project as permanent demand.
+
+H3: Public works and renewal
+
+Ageing bridges, roads, water systems, and public facilities create demand separate from the cycle, but policy announcements precede revenue by design, tender, procurement, construction, and inspection stages. Identify the material and timing involved.
+
+H2: Pricing power and energy efficiency decide margins
+
+Many materials are heavy, making transport distance and energy costs important. Cement and glass have energy-intensive processes; steel and timber are exposed to commodity, freight, and currency moves. A price-revision announcement is not the same as realised pricing. Check implementation rates, volume response, lags versus input costs, inventories, gross-margin trends, and earnings bridges.
+
+H2: Energy efficiency, resilience, and retrofit demand
+
+Population decline makes it difficult to rely on new construction alone. Insulation, seismic resilience, fire resistance, longevity, and labour-saving construction can create higher-value retrofit demand. The advantage goes beyond supplying a material: firms able to specify a solution, demonstrate performance, support installers, and provide after-sales service can have a different profit structure.
+
+H2: Labour shortages, decarbonisation, and order quality
+
+Labour shortages can favour prefabrication, unitisation, and materials that shorten schedules, yet severe shortages can delay construction and shipments. Decarbonisation can require costly equipment upgrades but may differentiate low-carbon, high-insulation, long-life, or recycled-content products. Finally, a large order backlog is not automatically profitable; check mix, pricing after cost inflation, delays, capacity utilisation, and inventory. Long-term winners can shift their mix toward renovation, renewal, and higher performance across cycles.
+
+Primary references: Ministry of Land, Infrastructure, Transport and Tourism surveys on major construction-material supply, demand, and prices; housing-start statistics.`},{id:"reuse-secondhand-theme-2026",themes:["Reuse & Secondhand"],keywords:["reuse","secondhand","circular economy","authentication","inventory turnover","cross-border ecommerce"],category:"Theme Analysis",icon:"♻️",date:"2026/08/09",title:"Reuse and Secondhand: Growth Depends on Trust and Inventory Turnover, Not Purchase Volume Alone",summary:"The reuse market benefits from circular-economy and value-seeking trends, but profitability depends on sourcing discipline, authentication, inventory velocity, channels, and the ability to earn customers’ trust.",body:`
+H2: Reuse is an operating system for circulation, not simply retailing used goods
+
+A reuse business must buy from individuals or companies at appropriate prices, assess condition, repair or clean where needed, authenticate items, and sell through the most suitable channel. Unlike new retail, identical stock cannot always be replenished on the same terms. Inventory quality and turnover therefore have an outsized effect on profits.
+
+Circular-economy policy can support the market backdrop, but company-level advantage rests on brand strength, appraisal skill, store and logistics networks, digital customer acquisition, and trust.
+
+H2: Four profit drivers
+
+H3: 1. Quantity and quality of purchases
+
+More items bought can help, but overpaying compresses gross margin while overly low appraisals deter sellers. Category price data, trained appraisers, online estimates, and varied sourcing channels help secure quality inventory at disciplined prices.
+
+H3: 2. Inventory turnover
+
+Secondhand inventory is often unique. Long holding periods raise storage, impairment, and markdown risk. Review inventory days, markdown rates, category turnover, seasonality, and the relationship between higher-ticket profit per sale and time-to-sale.
+
+H3: 3. Trust and authentication
+
+For luxury goods, watches, jewellery, trading cards, and electronics, authentication and accurate condition descriptions are fundamental. Counterfeits, stolen goods, poor data handling, or weak returns and warranty policies can damage a brand far beyond a single quarter. Assess authentication systems, compliance with secondhand-dealer rules, and post-sale guarantees.
+
+H3: 4. Sales channels
+
+Stores, e-commerce, auctions, dealer markets, and overseas sales reach different buyers and have different costs. Stores can be sourcing hubs; e-commerce expands the catchment area. Cross-border sales can expand demand but introduce currency, logistics, tariff, returns, and regulatory risk. The aim is not channel count, but matching each item efficiently to the customer who values it most.
+
+H2: Do not overstate the circular-economy tailwind
+
+Reuse can reduce resource consumption and waste, but environmental value varies with transport, repair, packaging, returns, and disposal. Economic weakness can support value-seeking purchases, while simultaneously reducing demand for high-ticket goods or changing the quality of supply. The business must be assessed category by category.
+
+H2: E-commerce, stores, and external conditions
+
+Online sales can be particularly useful for scarce or expensive items, but photographs, descriptions, delivery damage, returns, packaging, and customer service all create costs. Examine freight, return rates, selling fees, turnover, and the division of labour with stores—not revenue growth alone. A weak yen may make Japanese secondhand goods more attractive abroad, but can raise overseas sourcing, delivery, insurance, and payment costs.
+
+Physical stores are also local sourcing points. Expansion can lift awareness and purchase volume, but adds rent, labour, inventory, and management costs. Compare existing-store sourcing and margins with new-store growth to ensure expansion is not masking declining efficiency.
+
+H2: A practical earnings checklist
+
+1. Separate existing-store from new-store sales.
+2. Identify whether growth came from purchase count, average purchase price, or selling price.
+3. Monitor inventory days, impairments, and markdown rates.
+4. Ask for channel-level margins and costs across stores, e-commerce, and cross-border sales.
+5. Confirm continuing policies on authentication, returns, and fraud prevention.
+
+H2: Conclusion: measure the speed and trust of the cycle
+
+Look beyond store count and gross merchandise value to purchase margin, inventory turnover, authentication, warranties, e-commerce mix, and customer-acquisition costs. Strong operators source at sensible prices, maintain trust, and move products rapidly to their next user. The investable question is whether that circular flow is supported by disciplined day-to-day operations and cash flow.
+
+Primary references: Ministry of the Environment White Paper on the Environment, Sound Material-Cycle Society and Biodiversity; reuse-promotion roadmap materials.`}];export{e as C};
