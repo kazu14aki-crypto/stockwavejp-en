@@ -1,0 +1,10 @@
+{
+  "policy": "When legal documents are revised, retain existing versions and append the new version to this history.",
+  "current_version": "2026-08-04",
+  "documents": {
+    "terms_of_service": [{ "version": "2026-08-04", "effective_date": "2026-08-04", "status": "current", "summary": "Version management started" }],
+    "privacy_policy": [{ "version": "2026-08-04", "effective_date": "2026-08-04", "status": "current", "summary": "Version management started" }],
+    "disclaimer": [{ "version": "2026-08-04", "effective_date": "2026-08-04", "status": "current", "summary": "Version management started" }],
+    "legal_notice": [{ "version": "2026-08-04", "effective_date": "2026-08-04", "status": "current", "summary": "Version management started" }]
+  }
+}
